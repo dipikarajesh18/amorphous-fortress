@@ -1,4 +1,5 @@
 import random
+from fortress import Fortress
 class Engine():
     def __init__(self,seed=None):
 
@@ -13,7 +14,7 @@ class Engine():
         self.seed = seed if seed else random.randint(0,1000000)
         random.seed(self.seed)
 
-
+    # run the simulation
     def run(self):
         self.sim_tick = 0
 
