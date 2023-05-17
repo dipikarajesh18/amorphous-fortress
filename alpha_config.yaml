@@ -1,4 +1,4 @@
 action_space : ['take', 'move', 'die']
 character : ['@', '$', '&', '+']
-edge_conditions : ['touch', 'step']
+edge_conditions : ['none','touch', 'step']
 step_range : [1,10]

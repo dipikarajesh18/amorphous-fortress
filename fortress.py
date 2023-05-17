@@ -3,7 +3,7 @@ import random
 
 # the environment where all of the simulation takes place
 class Fortress():
-    def __init__(self, width, height, borderChar='#',floorChar='.'):
+    def __init__(self, config, width, height, borderChar='#',floorChar='.',seed=None):
         self.floor = floorChar
         self.border = borderChar
         self.width = width
@@ -11,6 +11,9 @@ class Fortress():
         self.entities = []  #object list
         self.entIDs = []    #ID list
         self.entPos = []    #position list
+
+        self.CONFIG = config  # a dictionary of values for configuration
+        self.seed = random.randint(0,1000000) if seed == None else seed
 
     def blankFortress(self):
         self.fortress = np.full((self.height, self.width), self.floor)
@@ -37,14 +40,18 @@ class Fortress():
 
 
     # render the entities on the map
-    def renderEntities(self):
+    def renderEntities(self,printMap=False):
         entMap = self.fortress.copy()
         for ent in self.entities:
-            entMap[ent.y,ent.x] = ent.char
+            x,y = ent.pos
+            entMap[y,x] = ent.char
     
         # print to console
-        for row in entMap:
-            print(''.join(row))
+        if printMap:
+            for row in entMap:
+                print(''.join(row))
+
+        return '\n'.join(([''.join(row) for row in entMap]))
 
     # check if a position is valid
     def validPos(self, x, y):
