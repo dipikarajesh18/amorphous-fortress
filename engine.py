@@ -1,7 +1,6 @@
 import random
 import yaml
 from fortress import Fortress
-
 class Engine():
     def __init__(self,seed=None):
 
@@ -22,7 +21,7 @@ class Engine():
 
         
 
-
+    # run the simulation
     def run(self):
         self.sim_tick = 0
 

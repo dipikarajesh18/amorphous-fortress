@@ -13,8 +13,8 @@ class Fortress():
         self.entPos = []    #position list
 
         self.CONFIG = config  # a dictionary of values for configuration
-        self.seed = random.randint(0,1000000) if seed == None else seed
-
+        self.seed = random.randint(0,1000000) if seed == None else seed\
+    # create a blank fortress
     def blankFortress(self):
         self.fortress = np.full((self.height, self.width), self.floor)
         self.fortress[0,:] = self.border
@@ -71,6 +71,7 @@ class Fortress():
         # check if a position is occupied
         return self.collision(ent)
     
+    # check if an entity has collided with another entity
     def collision(self, ent):
         entInd = self.entIDs.index(ent.id)
 
@@ -83,6 +84,7 @@ class Fortress():
 
         return collided_with
     
+    # check if the simulation should terminate
     def terminate(self):
         # if everything is dead
         if len(self.entities) == 0:
