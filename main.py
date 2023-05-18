@@ -57,6 +57,11 @@ def update_loop(screen_set, screen_dims, engine):
     # draw the fortress environment from the engine
     fortmap = engine.fortress.renderEntities()
     fortmapChar = [c for r in fortmap for c in r]
+    row_length = fortmap.index('\n')
+    col_length = fortmap.count('\n')
+    sx = max(0,sim_width//2 - row_length//2)
+    sy = max(0,sim_height//2 - col_length//2)
+    
     y = 0
     x = 0
     for c in fortmapChar:
@@ -64,31 +69,35 @@ def update_loop(screen_set, screen_dims, engine):
             y += 1
             x = 0
             continue
-        sim.addch(y, x, c)
+        sim.addch(y+sy, x+sx, c)
         x += 1
 
     # add a border?
-    # for i in range(tree_height):
-    #     tree.addch(i, 0, "|")
-    #     tree.addch(i, tree_width-1, "|")
+    for i in range(tree_height):
+        tree.addch(i, 0, "|")
+        # tree.addch(i, tree_width-1, "|")
+
 
 
     # draw the log window
-    log.addstr(1, 1, f"=== DUCK FORTRESS [{engine.seed}] ===")
+    title_text = f"====== DUCK FORTRESS [{engine.seed}] ======"
+    log.addstr(1, log_width//2-len(title_text)//2, title_text)
 
-    # # draw the tree window
-    # # just use a sample tree for now lol
-
+    # draw the tree window
+    # just use a sample tree for now lol
+    ent_txt = "======= ENTITY TREE ======="
+    tree.addstr(0, tree_width//2-len(ent_txt)//2, ent_txt)
     num_entities = len(engine.fortress.entities)
 
     cur_line = 0
-    offX = 0
-    for i in range(len(engine.fortress.entities)):
+    offY = 2
+    offX = 3
+    for i in range(num_entities):
         ent = engine.fortress.entities[i]
         entTree = ent.printTree()
         entTree_lines = entTree.split("\n")
         for j in range(len(entTree_lines)):
-            tree.addstr(cur_line, offX, entTree_lines[j])
+            tree.addstr(offY+cur_line, offX, entTree_lines[j])
             cur_line += 1
         cur_line += 1
 
