@@ -38,4 +38,3 @@ class Engine():
         with open(filename, 'w') as file:
             for line in self.fortress.log:
                 file.write(line + '\n')
-

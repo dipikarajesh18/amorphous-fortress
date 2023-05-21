@@ -1,0 +1,6 @@
+w
+-- NODES --
+0: idle
+1: die
+-- EDGES --
+0-1: step 20

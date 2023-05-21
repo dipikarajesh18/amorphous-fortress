@@ -56,7 +56,7 @@ class Entity:
                 return i
             all_num.remove(int(i,16))
 
-        return f'%{id_len}x' % random.randrange(16**(id_len+1))
+        return f'%0{id_len}x' % random.randrange(16**(id_len+1))
 
 
     #######     NODE ACTIONS     #######
@@ -101,7 +101,7 @@ class Entity:
     # if entity touches another entity with the specified character
     def touch(self, entityChar):
         # self.fortress.addLog(f"[{self.char}.{self.id}] checking if touching [{entityChar}]")
-        
+
         # currently returns true if the entity is touching another entity
         for i,ent in self.fortress.entities.items():
             # skip self

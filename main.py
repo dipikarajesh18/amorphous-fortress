@@ -1,6 +1,7 @@
 import curses
 import time
-import re
+import random
+import numpy as np
 
 from engine import Engine
 from fortress import Fortress
@@ -8,7 +9,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = "AMOEBA"
+TEST = "GRASS"
 
 # Initialize the screen
 if not DEBUG:
@@ -134,6 +135,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
         ent = ent_list[i]
         entTree = ent.printTree()
         entTree_lines = entTree.split("\n")
+        entTree_lines = [l for l in entTree_lines if l != ""]
         for j in range(len(entTree_lines)):
 
             # highlight the character (add id and position)
@@ -151,9 +153,13 @@ def curses_render_loop(screen_set, screen_dims, engine):
             cur_line += 1
         cur_line += 1
 
-        if cur_line >= tree_height:
+        if cur_line >= tree_height or (i<(num_entities-1) and cur_line+len(ent_list[i+1].printTree().split('\n')) >= tree_height):
             cur_line = 0
             offX += 20
+
+            # not enough room to draw the next entity
+            if offX > tree_width-20: 
+                break
 
 
     # refresh all the windows
@@ -166,12 +172,15 @@ def curses_render_loop(screen_set, screen_dims, engine):
 def main():
     global ENGINE
 
+    # setup the engine
+    ENGINE = Engine()
+    np.random.seed(ENGINE.seed)
+    random.seed(ENGINE.seed)
+
     # setup the screens
     if not DEBUG:
         screen_set, screen_dims = init_screens()
 
-    # setup the engine
-    ENGINE = Engine()
 
     # add a fake entity
     if TEST == "DUCK":
@@ -192,6 +201,22 @@ def main():
         a3.pos = [3,3]
         ENGINE.fortress.addEntity(a3)
 
+    elif TEST == "GRASS":
+        # get 10 random positions
+        rposx = np.random.randint(1,ENGINE.fortress.width-1,10)
+        rposy = np.random.randint(1,ENGINE.fortress.height-1,10)
+
+        for i in range(10):
+            ent = Entity(ENGINE.fortress, filename="ENT/grass.txt")
+            ent.pos = [rposx[i], rposy[i]]
+            ENGINE.fortress.addLog(f"Added grass at {ent.pos}")
+            ENGINE.fortress.addEntity(ent)
+
+        # ent = Entity(ENGINE.fortress, filename="ENT/grass.txt")
+        # ent.pos = ent.randPos()
+        # ENGINE.fortress.addLog(f"Added grass at {ent.pos}")
+        # ENGINE.fortress.addEntity(ent)
+
     # run the update loop
     if not DEBUG:
         loops = 0
@@ -208,7 +233,7 @@ def main():
     # End the simulation
     if not DEBUG:
         curses.endwin()
-        if ENGINE.config['save_log'] and ENGINE.config['min_log'] >= len(ENGINE.fortress.log):
+        if ENGINE.config['save_log'] and ENGINE.config['min_log'] <= len(ENGINE.fortress.log):
             ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))
 
 
@@ -222,7 +247,7 @@ if __name__ == "__main__":
         curses.echo()
         curses.endwin()
 
-        if ENGINE.config['save_log'] and ENGINE.config['min_log'] >= len(ENGINE.fortress.log):
+        if ENGINE.config['save_log'] and ENGINE.config['min_log'] <= len(ENGINE.fortress.log):
             ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))
 
         raise
