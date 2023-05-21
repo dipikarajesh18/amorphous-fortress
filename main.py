@@ -7,6 +7,8 @@ from fortress import Fortress
 from entities import Entity
 
 DEBUG = False   # shows in curses
+ENGINE = None   # the engine
+TEST = "DUCK"
 
 # Initialize the screen
 if not DEBUG:
@@ -127,21 +129,22 @@ def curses_render_loop(screen_set, screen_dims, engine):
     cur_line = 0
     offY = 2
     offX = 3
+    ent_list = list(engine.fortress.entities.values())
     for i in range(num_entities):
-        ent = engine.fortress.entities[i]
+        ent = ent_list[i]
         entTree = ent.printTree()
         entTree_lines = entTree.split("\n")
         for j in range(len(entTree_lines)):
 
             # highlight the character (add id and position)
             if j == 0:
-                tree.addstr(offY+cur_line, offX, f"{entTree_lines[j][0]} [{ent.id}] ({ent.pos})", curses.color_pair(COLORS['RED']))
+                tree.addstr(offY+cur_line, offX, f"{ent.char}.{ent.id} ({ent.pos})", curses.color_pair(COLORS['RED']))
             # highlight current node
             elif entTree_lines[j].split(":")[0] == str(ent.cur_node):
                 tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['CYAN']))
             # highlight the current edge (if there is one)
             elif ent.moved_edge and entTree_lines[j].split(":")[0] == ent.moved_edge:
-                tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['CYAN']))
+                tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['GREEN']))
             # write everything else
             else:
                 tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['WHITE']))
@@ -161,36 +164,48 @@ def curses_render_loop(screen_set, screen_dims, engine):
 
 # main function
 def main():
+    global ENGINE
 
     # setup the screens
     if not DEBUG:
         screen_set, screen_dims = init_screens()
 
     # setup the engine
-    engine = Engine()
+    ENGINE = Engine()
 
     # add a fake entity
-    ent = Entity(engine.fortress, filename="ENT/amoeba.txt")
-    # ent.id = 1
-    ent.pos = [3,3]
-    engine.fortress.addEntity(ent)
+    if TEST == "DUCK":
+        ent = Entity(ENGINE.fortress, filename="ENT/duck.txt")
+        ent.pos = [3,3]
+        ENGINE.fortress.addEntity(ent)
+
+    elif TEST == "AMOEBA":
+        a1 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
+        a1.pos = [3,3]
+        ENGINE.fortress.addEntity(a1)
+
+        a2 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
+        a2.pos = [7,6]
+        ENGINE.fortress.addEntity(a2)
 
     # run the update loop
     if not DEBUG:
         loops = 0
-        while not engine.fortress.terminate() or loops < 2:
-            engine.update()
-            curses_render_loop(screen_set, screen_dims, engine)
-            time.sleep(engine.config['sim_speed'])
+        while not ENGINE.fortress.terminate() or loops < 2:
+            ENGINE.update()
+            curses_render_loop(screen_set, screen_dims, ENGINE)
+            time.sleep(ENGINE.config['sim_speed'])
 
             # that swan's coming thomas.... kill it. RAAAARRRR!
             # if loops == 0:
-            #     engine.fortress.removeFromMap(ent)
+            #     ENGINE.fortress.removeFromMap(ent)
             loops+=1
 
     # End the simulation
     if not DEBUG:
         curses.endwin()
+        if ENGINE.config['save_log'] and ENGINE.config['min_log'] >= len(ENGINE.fortress.log):
+            ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))
 
 
 if __name__ == "__main__":
@@ -202,4 +217,8 @@ if __name__ == "__main__":
         SCREEN.keypad(0)
         curses.echo()
         curses.endwin()
+
+        if ENGINE.config['save_log'] and ENGINE.config['min_log'] >= len(ENGINE.fortress.log):
+            ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))
+
         raise

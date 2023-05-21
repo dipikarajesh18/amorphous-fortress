@@ -25,7 +25,7 @@ class Entity:
         self.NODE_DICT = {
             "move": {'func':self.move, 'args':[]},
             "die": {'func':self.die, 'args':[]},
-            "take": {'func':self.take, 'args':['entityChar']},
+            "take": {'func':self.take, 'args':[]},  #only activated if other_ent is not None
             "idle": {'func':self.noneAct, 'args':[]}
         }
 
@@ -48,10 +48,11 @@ class Entity:
 
     # create a new id for the entity
     def newID(self,id_len=4):
-        all_num = range(16**4)
+        all_num = list(range(16**4))
+        all_ids = self.fortress.entities.keys()
         while len(all_num) > 0:
             i = f'%{id_len}x' % random.choice(all_num)
-            if i not in self.fortress.entIDs:
+            if i not in all_ids:
                 return i
             all_num.remove(int(i,16))
 
@@ -67,11 +68,13 @@ class Entity:
 
     # if entity dies, remove from map
     def die(self):
-        self.fortress.removefromMap(self)
+        self.fortress.removeFromMap(self)
     
     # if entity takes another entity, remove from map
-    def take(self, entityTaken):
-        self.fortress.removefromMap(entityTaken)
+    def take(self):
+        if self.other_ent:
+            self.other_ent.die()
+            self.other_ent = None
     
     # if entity moves, update position
     def move(self):
@@ -101,7 +104,7 @@ class Entity:
     # if entity touches another entity with the specified character
     def touch(self, entityChar):
         # currently returns true if the entity is touching another entity
-        for ent in self.fortress.entities:
+        for ent in self.fortress.entities.values():
             if ent.char == entityChar:
                 if ent.pos == self.pos:
                     self.other_ent = ent   # save the other entity that was touched
@@ -291,7 +294,7 @@ if __name__ == "__main__":
     # create test engine, fortress, and entity
     testEngine = Engine()
     # entTest = Entity(testEngine.fortress,"@")
-    entTest = Entity(testEngine.fortress,filename="sample_entities/amoeba.txt")
+    entTest = Entity(testEngine.fortress,filename="sample_entities/duck.txt")
     print(f"SEED: {testEngine.fortress.seed}")
     print(entTest.printTree())
 
