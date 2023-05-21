@@ -2,3 +2,5 @@ action_space : ['take', 'move', 'die']
 character : ['@', '$', '&', '+']
 edge_conditions : ['none','touch', 'step']
 step_range : [1,10]
+seed : 'any'
+sim_speed : 1  # in seconds, speed of simulation

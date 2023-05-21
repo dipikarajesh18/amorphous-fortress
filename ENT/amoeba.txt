@@ -1,0 +1,7 @@
+@
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-1: step 3
+1-0: none

@@ -8,22 +8,29 @@ class Fortress():
         self.border = borderChar
         self.width = width
         self.height = height
+        self.fortmap = []
+
         self.entities = []  #object list
         self.entIDs = []    #ID list
         self.entPos = []    #position list
 
         self.CONFIG = config  # a dictionary of values for configuration
-        self.seed = random.randint(0,1000000) if seed == None else seed\
+        self.seed = random.randint(0,1000000) if seed == None else seed
+
+        self.log = ["Fortress initialized!"]
+
+
     # create a blank fortress
     def blankFortress(self):
-        self.fortress = np.full((self.height, self.width), self.floor)
-        self.fortress[0,:] = self.border
-        self.fortress[-1,:] = self.border
-        self.fortress[:,0] = self.border
-        self.fortress[:,-1] = self.border
+        self.fortmap = np.full((self.height, self.width), self.floor)
+        self.fortmap[0,:] = self.border
+        self.fortmap[-1,:] = self.border
+        self.fortmap[:,0] = self.border
+        self.fortmap[:,-1] = self.border
 
+    # print the fortress to the console
     def printFortress(self):
-        for row in self.fortress:
+        for row in self.fortmap:
             print(''.join(row))
 
     # add an entity to the map
@@ -33,15 +40,15 @@ class Fortress():
         self.entPos.append(f"{ent.pos[0]},{ent.pos[1]}")
 
     # remove from the entity list and ID list based on the entity ID
-    def removeFromMap(self, entID):
-        ind = self.entIDs.index(entID)
+    def removeFromMap(self, ent):
+        ind = self.entIDs.index(ent.id)
         self.entities.pop(ind)
         self.entIDs.pop(ind)
 
 
     # render the entities on the map
     def renderEntities(self,printMap=False):
-        entMap = self.fortress.copy()
+        entMap = self.fortmap.copy()
         for ent in self.entities:
             x,y = ent.pos
             entMap[y,x] = ent.char
@@ -57,8 +64,13 @@ class Fortress():
     def validPos(self, x, y):
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
             return False
+        
+        # DEBUG
+        # self.addLog(f"\tValid position: {x},{y}?")
+        # self.addLog(f"\tFortress: {self.width}x{self.height}")
+        # self.addLog(f"\tFortress: {self.fortmap.shape}")
 
-        if self.fortress[y,x] == self.floor:
+        if self.fortmap[y,x] == self.floor:
             return True
         else:
             return False
@@ -69,9 +81,9 @@ class Fortress():
         self.entPos[ind] = f"{ent.pos[0]},{ent.pos[1]}"
 
         # check if a position is occupied
-        return self.collision(ent)
+        # return self.collision(ent)
     
-    # check if an entity has collided with another entity
+    # check if an entity has# collided with another entity
     def collision(self, ent):
         entInd = self.entIDs.index(ent.id)
 
@@ -91,5 +103,7 @@ class Fortress():
             return True
         return False
         
-
+    # adds a message to the log
+    def addLog(self, txt):
+        self.log.append(txt)
 
