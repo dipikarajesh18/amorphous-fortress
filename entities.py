@@ -1,11 +1,14 @@
 import random
-from fortress import Fortress
-from engine import Engine
+# from fortress import Fortress
+# from engine import Engine
 
 
 
 class Entity:  
-    def __init__(self, fortress, char=None, filename=None):
+
+    #######     NODE ACTIONS     #######
+
+    def __init__(self, fortress, char=None, filename=None, nodes=None, edges=None):
         self.char = char if char else '?'
         self.pos = [None, None]
         self.fortress = fortress  
@@ -41,10 +44,13 @@ class Entity:
         self.edges = {}      # dictionary of node -> node activations; the key is the 2 node ID separated by a - and the value is the condition that activates the edge followed by any arguments with the value in parentheses
  
         # initalize a new behavior tree or import from a file
-        if filename == None:
-            self.makeTree()
-        else:
+        if filename != None:
             self.importTree(filename)
+        elif nodes != None and edges != None:
+            self.nodes = nodes
+            self.edges = edges
+        else:
+            self.makeTree()
 
     # create a new id for the entity
     def newID(self,id_len=4):
@@ -57,6 +63,20 @@ class Entity:
             all_num.remove(int(i,16))
 
         return f'%0{id_len}x' % random.randrange(16**(id_len+1))
+    
+    # create another instance of the entity but with different id and position
+    def clone(self,pos=None):
+        new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
+        new_ent.id = self.newID()
+
+        new_ent.pos = pos if pos else self.fortress.randomPos()
+        # clone on top of the current entity if the position is invalid
+        if new_ent.pos == None:
+            new_ent.pos = self.pos
+        
+        self.fortress.addEntity(new_ent)
+        return new_ent
+
 
 
     #######     NODE ACTIONS     #######
@@ -64,6 +84,7 @@ class Entity:
 
     # if entity dies, remove from map
     def die(self):
+        self.fortress.addLog(f"[{self.char}.{self.id}] died")
         self.fortress.removeFromMap(self)
     
     # if entity takes another entity, remove from map
@@ -88,7 +109,9 @@ class Entity:
     def noneAct(self):
         pass
 
+
     #######     EDGE CONDITIONS     #######
+
 
     # every x steps in the simulation
     def every_step(self, steps):
@@ -152,8 +175,10 @@ class Entity:
     # create a new FSM tree
     def makeTree(self):
 
+        random.seed(self.fortress.seed+int(self.id,16))  # set the seed for the entity
+
         # add base idle node
-        self.nodes.append("none")
+        self.nodes.append("idle")
         
         # create the nodes (must have at least 2)
         num_nodes = random.randint(2, 5)
@@ -290,15 +315,5 @@ class Entity:
 
 
 
-    
-
-# test out the entity class
-if __name__ == "__main__":
-    # create test engine, fortress, and entity
-    testEngine = Engine()
-    # entTest = Entity(testEngine.fortress,"@")
-    entTest = Entity(testEngine.fortress,filename="sample_entities/duck.txt")
-    print(f"SEED: {testEngine.fortress.seed}")
-    print(entTest.printTree())
 
     

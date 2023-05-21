@@ -1,5 +1,7 @@
 import numpy as np
 import random
+import re
+# from entities import Entity
 
 # the environment where all of the simulation takes place
 class Fortress():
@@ -15,7 +17,12 @@ class Fortress():
         self.CONFIG = config  # a dictionary of values for configuration
         self.seed = random.randint(0,1000000) if seed == None else seed
 
-        self.log = ["Fortress initialized!"]
+        random.seed(self.seed)
+        np.random.seed(self.seed)
+
+        self.log = ["Fortress initialized! - <0>"]
+        self.steps = 0
+        self.end_cause = "Code Interruption"
 
 
     # create a blank fortress
@@ -30,6 +37,7 @@ class Fortress():
     def printFortress(self):
         for row in self.fortmap:
             print(''.join(row))
+
 
     # add an entity to the map
     def addEntity(self, ent):
@@ -69,14 +77,51 @@ class Fortress():
         else:
             return False
         
+    # return a random position in the fortress
+    def randomPos(self,inc_ent=True):
+        all_pos = [(x,y) for x in range(1,self.width-1) for y in range(1,self.height-1)]
+        random.shuffle(all_pos)
+        for p in all_pos:
+            x,y = p
+            if self.validPos(x,y) and (not inc_ent or self.entAtPos(x,y) == None):
+                return p
+            
+        # if no valid position is found
+        return None
+    
+    # check if an entity is at a position
+    def entAtPos(self, x, y):
+        for ent in self.entities.values():
+            if ent.pos[0] == x and ent.pos[1] == y:
+                return ent
+        return None
+
+        
     # check if the simulation should terminate
     def terminate(self):
         # if everything is dead
         if len(self.entities) == 0:
+            self.end_cause = "Termination"
             return True
+        return False
+    
+    # check if no activity has occurred in the fortress (based on the log information)
+    def inactive(self):
+        limit = self.CONFIG['inactive_limit']
+
+        # check if over time from start
+        if len(self.log) < 2 and self.steps > limit:
+            return True
+
+        # check if over time from last log
+        last_log_time = re.match(r' -- <(\d+)>', self.log[-1])
+        if (last_log_time) and (self.steps - int(last_log_time.group(1))) > limit:
+            self.end_cause = "Inactivity"
+            return True
+        
         return False
         
     # adds a message to the log
     def addLog(self, txt):
-        self.log.append(txt)
+        self.log.append(f"{txt} -- <{self.steps}>")
 

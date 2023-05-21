@@ -9,7 +9,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = "GRASS"
+TEST = ""       # test a specific setup
 
 # Initialize the screen
 if not DEBUG:
@@ -182,7 +182,7 @@ def main():
         screen_set, screen_dims = init_screens()
 
 
-    # add a fake entity
+    # add entities based on preset or at random
     if TEST == "DUCK":
         ent = Entity(ENGINE.fortress, filename="ENT/duck.txt")
         ent.pos = [3,3]
@@ -203,24 +203,21 @@ def main():
 
     elif TEST == "GRASS":
         # get 10 random positions
+        # cannot just do random positions since the seed call will return the same value every time
         rposx = np.random.randint(1,ENGINE.fortress.width-1,10)
         rposy = np.random.randint(1,ENGINE.fortress.height-1,10)
 
         for i in range(10):
             ent = Entity(ENGINE.fortress, filename="ENT/grass.txt")
             ent.pos = [rposx[i], rposy[i]]
-            ENGINE.fortress.addLog(f"Added grass at {ent.pos}")
             ENGINE.fortress.addEntity(ent)
-
-        # ent = Entity(ENGINE.fortress, filename="ENT/grass.txt")
-        # ent.pos = ent.randPos()
-        # ENGINE.fortress.addLog(f"Added grass at {ent.pos}")
-        # ENGINE.fortress.addEntity(ent)
+    else:
+        ENGINE.populateFortress()
 
     # run the update loop
     if not DEBUG:
         loops = 0
-        while not ENGINE.fortress.terminate() or loops < 2:
+        while not ENGINE.fortress.terminate() and not ENGINE.fortress.inactive():
             ENGINE.update()
             curses_render_loop(screen_set, screen_dims, ENGINE)
             time.sleep(ENGINE.config['sim_speed'])
@@ -229,6 +226,10 @@ def main():
             # if loops == 0:
             #     ENGINE.fortress.removeFromMap(ent)
             loops+=1
+
+    # show cause of termination
+    END_CAUSE = ENGINE.fortress.end_cause
+    ENGINE.fortress.log.append(f"==== SIMULATION ENDED: {END_CAUSE} ====")
 
     # End the simulation
     if not DEBUG:
@@ -246,6 +247,10 @@ if __name__ == "__main__":
         SCREEN.keypad(0)
         curses.echo()
         curses.endwin()
+
+        # show cause of termination
+        END_CAUSE = ENGINE.fortress.end_cause
+        ENGINE.fortress.log.append(f"==== SIMULATION ENDED: {END_CAUSE} ====")
 
         if ENGINE.config['save_log'] and ENGINE.config['min_log'] <= len(ENGINE.fortress.log):
             ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))

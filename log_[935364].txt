@@ -1,0 +1,11 @@
+Fortress initialized!
+Fortress randomly populated -- <0>
+[@.84df] died -- <10>
+[@.e414] died -- <10>
+[$.cbd4] died -- <10>
+[$.c9bc] died -- <10>
+[&.bac6] died -- <10>
+[&.1172] died -- <10>
+[+.5e2e] died -- <10>
+[+.f32a] died -- <10>
+==== SIMULATION ENDED: Termination ====
