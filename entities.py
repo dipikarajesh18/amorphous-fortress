@@ -56,10 +56,6 @@ class Entity:
                 return i
             all_num.remove(int(i,16))
 
-        # for a in range(100):
-        #     i = f'%{id_len}x' % random.randrange(16**(id_len))
-        #     if i not in self.fortress.entIDs:
-        #         return i
         return f'%{id_len}x' % random.randrange(16**(id_len+1))
 
 
@@ -73,6 +69,7 @@ class Entity:
     # if entity takes another entity, remove from map
     def take(self):
         if self.other_ent:
+            self.fortress.addLog(f"[{self.char}.{self.id}] took [{self.other_ent.char}.{self.other_ent.id}]")
             self.other_ent.die()
             self.other_ent = None
     
@@ -103,10 +100,16 @@ class Entity:
     
     # if entity touches another entity with the specified character
     def touch(self, entityChar):
+        # self.fortress.addLog(f"[{self.char}.{self.id}] checking if touching [{entityChar}]")
+        
         # currently returns true if the entity is touching another entity
-        for ent in self.fortress.entities.values():
+        for i,ent in self.fortress.entities.items():
+            # skip self
+            if i == self.id:
+                continue
+            # check if the entity is touching another entity
             if ent.char == entityChar:
-                if ent.pos == self.pos:
+                if ent.pos[0] == self.pos[0] and ent.pos[1] == self.pos[1]:
                     self.other_ent = ent   # save the other entity that was touched
                     return True
         return False

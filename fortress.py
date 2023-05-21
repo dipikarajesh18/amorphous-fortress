@@ -10,10 +10,6 @@ class Fortress():
         self.height = height
         self.fortmap = []
 
-        # self.entities = []  #object list
-        # self.entIDs = []    #ID list
-        # self.entPos = []    #position list
-
         self.entities = {}   # dictionary of entities
 
         self.CONFIG = config  # a dictionary of values for configuration
@@ -38,17 +34,10 @@ class Fortress():
     # add an entity to the map
     def addEntity(self, ent):
         self.entities[ent.id] = ent
-        # self.entities.append(ent)
-        # self.entIDs.append(ent.id)
-        # self.entPos.append(f"{ent.pos[0]},{ent.pos[1]}")
 
     # remove from the entity list and ID list based on the entity ID
     def removeFromMap(self, ent):
         del self.entities[ent.id]
-        # ind = self.entIDs.index(ent.id)
-        # self.entities.pop(ind)
-        # self.entIDs.pop(ind)
-        # self.entPos.pop(ind)
 
 
     # render the entities on the map
@@ -80,37 +69,6 @@ class Fortress():
         else:
             return False
         
-    # update the position of an entity
-    # def updatePos(self, ent):
-    #     # ind = self.entIDs.index(ent.id)
-    #     # self.entPos[ind] = f"{ent.pos[0]},{ent.pos[1]}"
-    #     self.entities[ent.id].pos = ent.pos
-
-        # check if a position is occupied
-        # return self.collision(ent)
-    
-    # check if an entity has# collided with another entity
-    # def collision(self, ent):
-    #     # entInd = self.entIDs.index(ent.id)
-
-    #     # collided_with = []
-    #     # for i in range(len(self.entIDs)):
-    #     #     if i == entInd:
-    #     #         continue
-    #     #     if self.entPos[i] == self.entPos[entInd]:
-    #     #         collided_with.append(self.entities[i])
-
-    #     # return collided_with
-
-    #     collided_with = []
-    #     for ent2 in self.entities.values():
-    #         if ent2.id == ent.id:
-    #             continue
-    #         if ent2.pos == ent.pos:
-    #             collided_with.append(ent2)
-
-    #     return collided_with
-    
     # check if the simulation should terminate
     def terminate(self):
         # if everything is dead

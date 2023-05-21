@@ -25,10 +25,14 @@ class Engine():
         self.sim_tick += 1
 
         # update all of the entities
-        for ent in self.fortress.entities.values():
-            ent.update()
-            # self.fortress.updatePos(ent)  # update the position of the entity
+        cur_ents = list(self.fortress.entities.keys())
 
+        # go through all of the living entities
+        for k in cur_ents:
+            # if still alive
+            if k in self.fortress.entities:
+                ent = self.fortress.entities[k]
+                ent.update()
     # export the log to a file
     def exportLog(self,filename):
         with open(filename, 'w') as file:

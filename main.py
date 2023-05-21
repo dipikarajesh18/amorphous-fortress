@@ -8,7 +8,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = "DUCK"
+TEST = "AMOEBA"
 
 # Initialize the screen
 if not DEBUG:
@@ -187,6 +187,10 @@ def main():
         a2 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
         a2.pos = [7,6]
         ENGINE.fortress.addEntity(a2)
+
+        a3 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
+        a3.pos = [3,3]
+        ENGINE.fortress.addEntity(a3)
 
     # run the update loop
     if not DEBUG:

@@ -6,5 +6,5 @@ $
 -- EDGES --
 0-1: touch $
 1-0: none
-0-2: step 10
+0-2: step 5
 2-0: none
