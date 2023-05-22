@@ -198,7 +198,7 @@ def main():
         ENGINE.fortress.addEntity(a2)
 
         a3 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
-        a3.pos = [3,3]
+        a3.pos = [4,3]
         ENGINE.fortress.addEntity(a3)
 
     elif TEST == "GRASS":
@@ -251,6 +251,9 @@ if __name__ == "__main__":
         # show cause of termination
         END_CAUSE = ENGINE.fortress.end_cause
         ENGINE.fortress.log.append(f"==== SIMULATION ENDED: {END_CAUSE} ====")
+        ENGINE.fortress.log.append(f"\n{ENGINE.init_ent_str}")
+
+        # print the trees of each entity that was at the start of the simulation
 
         if ENGINE.config['save_log'] and ENGINE.config['min_log'] <= len(ENGINE.fortress.log):
             ENGINE.exportLog(ENGINE.config['log_file'].replace("<SEED>", str(ENGINE.seed)))

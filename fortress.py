@@ -20,7 +20,7 @@ class Fortress():
         random.seed(self.seed)
         np.random.seed(self.seed)
 
-        self.log = ["Fortress initialized! - <0>"]
+        self.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
         self.steps = 0
         self.end_cause = "Code Interruption"
 

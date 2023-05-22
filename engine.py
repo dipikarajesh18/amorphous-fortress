@@ -24,6 +24,8 @@ class Engine():
 
         self.sim_tick = 0    # simulation tick
 
+        self.init_ent_str = ""    # string of all entities at the start of the simulation
+
     # update the simulation entirely 
     def update(self):
         self.sim_tick += 1
@@ -69,8 +71,12 @@ class Engine():
 
         self.fortress.addLog("Fortress randomly populated") # add a log message
 
+        # save the trees of all of the entities at the start
+        self.init_ent_str = ""
+        for e in self.fortress.entities:
+            self.init_ent_str += self.fortress.entities[e].printTree() + "\n\n"
+
     
-        
 
 # test out the entity class
 if __name__ == "__main__":
