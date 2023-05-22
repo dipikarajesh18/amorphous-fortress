@@ -1,0 +1,10 @@
+G
+-- NODES --
+0: idle
+1: push
+2: move
+-- EDGES --
+0-1: within * 2
+0-2: step 5
+1-0: none
+2-0: none

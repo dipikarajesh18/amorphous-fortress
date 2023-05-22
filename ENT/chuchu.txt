@@ -1,0 +1,9 @@
+C
+-- NODES --
+0: idle
+1: move
+2: clone
+-- EDGES --
+0-1: step 2
+0-2: step 10
+1-2: within * 3

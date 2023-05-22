@@ -1,0 +1,10 @@
+=
+-- NODES --
+0: idle
+1: add $
+2: move
+-- EDGES --
+0-1: touch *
+0-2: step 5
+1-0: none
+2-0: none
