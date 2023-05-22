@@ -5,10 +5,10 @@ from entities import Entity
 import numpy as np
 
 class Engine():
-    def __init__(self):
+    def __init__(self,config_file):
 
         # load the config file
-        with open('alpha_config.yaml', 'r') as file:
+        with open(config_file, 'r') as file:
             self.config = yaml.safe_load(file)
 
         # set the random seed
@@ -74,14 +74,14 @@ class Engine():
         # save the trees of all of the entities at the start
         self.init_ent_str = ""
         for e in self.fortress.entities:
-            self.init_ent_str += self.fortress.entities[e].printTree() + "\n\n"
+            self.init_ent_str += self.fortress.entities[e].printTree() + "\n"
 
     
 
 # test out the entity class
 if __name__ == "__main__":
     # create test engine, fortress, and entity
-    testEngine = Engine()
+    testEngine = Engine("alpha_config.yaml")
     # entTest = Entity(testEngine.fortress,"@")
     entTest = Entity(testEngine.fortress,filename="sample_entities/duck.txt")
     print(f"SEED: {testEngine.fortress.seed}")

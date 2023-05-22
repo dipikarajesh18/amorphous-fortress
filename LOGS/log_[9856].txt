@@ -1,0 +1,72 @@
+============    FORTRESS SEED [9856]    =========
+Fortress initialized! - <0>
+Fortress randomly populated -- <0>
+[&.df8f] moved to [5, 1] -- <3>
+[&.de79] moved to [4, 2] -- <3>
+[&.de79] moved to [3, 2] -- <4>
+[&.df8f] moved to [5, 2] -- <5>
+[&.de79] moved to [3, 3] -- <5>
+[&.df8f] moved to [4, 2] -- <6>
+[&.de79] moved to [4, 3] -- <6>
+[&.df8f] moved to [5, 2] -- <7>
+[&.de79] moved to [3, 3] -- <7>
+[&.df8f] moved to [6, 2] -- <8>
+[&.de79] moved to [2, 3] -- <8>
+==== SIMULATION ENDED: Code Interruption ====
+
+$:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+1-1: step 4
+
+
+&:
+-- NODES --
+0: idle
+1: move
+2: take
+-- EDGES --
+0-2: none
+2-1: none
+2-2: step 6
+
+
+&:
+-- NODES --
+0: idle
+1: move
+2: take
+-- EDGES --
+0-2: none
+2-1: none
+2-2: step 6
+
+
++:
+-- NODES --
+0: idle
+1: take
+-- EDGES --
+1-1: step 10
+
+
++:
+-- NODES --
+0: idle
+1: take
+-- EDGES --
+1-1: step 10
+
+
+@:
+-- NODES --
+0: idle
+1: take
+-- EDGES --
+0-0: none
+1-1: touch &
+
+
+

@@ -1,0 +1,5 @@
+*
+-- NODES --
+0: idle
+-- EDGES --
+0-0: none

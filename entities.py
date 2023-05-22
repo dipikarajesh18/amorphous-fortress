@@ -36,10 +36,11 @@ class Entity:
         }
 
         # associates names to functions for the edge conditions that will activate the node actions
+        # lower number means it will happen last
         self.EDGE_DICT = {
             "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
-            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':1},
-            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':3},
+            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':3},
+            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':1},
             "none": {'func':self.noneCond, 'args':[], 'priority':0}
         }
 
@@ -72,12 +73,11 @@ class Entity:
 
     # create another instance of the entity but with different id and position
     def clone(self,pos=None):
-
-
         new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
         new_ent.id = self.newID()
 
-        new_ent.pos = pos if pos else self.fortress.randomPos()
+        #new_ent.pos = pos if pos else self.fortress.randomPos()
+        new_ent.pos = pos if pos else self.pos.copy()
 
         # don't clone if the position is invalid
         if new_ent.pos == None:
@@ -97,15 +97,22 @@ class Entity:
             self.fortress.addLog(f"[{self.char}.{self.id}] took [{self.other_ent.char}.{self.other_ent.id}]")
             self.other_ent.die()
             self.other_ent = None
-    
-    # if entity moves, update position
-    def move(self):
+
+    def _randAdjPos(self):
         # TODO: currently moves one tile at a tile in a random direction
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
         rpos = random.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
         # self.fortress.addLog("Entity trying to move to " + str(new_pos))
         if self.fortress.validPos(new_pos[0], new_pos[1]):
+            return new_pos
+        return None
+    
+    # if entity moves, update position
+    def move(self):
+        new_pos = self._randAdjPos()
+        # self.fortress.addLog("Entity trying to move to " + str(new_pos))
+        if new_pos:
             self.pos = new_pos
             self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)}")
 
@@ -164,9 +171,7 @@ class Entity:
         new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
         if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
             self.other_ent.pos = new_pos_e
-
-        self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
-
+            self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
 
     # do nothing
     def noneAct(self):
@@ -213,6 +218,10 @@ class Entity:
                     self.other_ent = ent
                     return True
         return False
+    
+    # if entity is next to another entity
+    def nextTo(self,entityChar):
+        return self.within(entityChar,1)
 
 
     def noneCond(self):
@@ -230,16 +239,10 @@ class Entity:
         self.possible_actions.remove(new_state)
         
         new_node = f"{new_state}"
-
-        if self.NODE_DICT[new_state]['args'] != []:
-            for arg in self.NODE_DICT[new_state]['args']:
-                if arg == "entityChar":
-                    new_node += f"? "   # use the entity passed in as an argument
-        new_node = new_node.strip()
         return new_node
     
     # return a new random edge with the condition and parameters provided
-    def newEdge(self,endNode):
+    def newEdge(self):
         new_edge = ""
         new_cond = random.choice(self.fortress.CONFIG['edge_conditions'])
 
@@ -275,10 +278,30 @@ class Entity:
             edge = f"{node1}-{node2}"   # create the edge
 
             # add the condition
-            self.edges[edge] = self.newEdge(node2)
+            self.edges[edge] = self.newEdge()
+
+        # minimum spanning tree algorithm to remove dead nodes not connected to 0 (idle)
+        # visited_nodes = []
+        # for e in self.edges.keys():
+        #     if e.split("-")[0] == "0":
+        #         visited_nodes.append(e.split("-")[1])
+        #     elif e.split("-")[0] in visited_nodes:
+        #         visited_nodes.append(e.split("-")[1])
+
+        # add unconnected nodes
+        right_nodes = list(set([e.split("-")[1] for e in self.edges.keys() if e.split("-")[0] == e.split("-")[1]]))
+        for i in range(len(self.nodes)):
+            if i not in right_nodes:
+                other_nodes = list(range(len(self.nodes)))
+                other_nodes.remove(i)
+                new_edge_left = random.choice(other_nodes)
+                ne = f"{new_edge_left}-{i}"
+                self.edges[ne] = self.newEdge()
+                right_nodes.append(i)
 
         # sort the edges by key
         self.edges = dict(sorted(self.edges.items()))
+
 
 
 

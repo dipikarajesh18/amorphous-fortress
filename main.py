@@ -2,6 +2,7 @@ import curses
 import time
 import random
 import numpy as np
+import sys
 
 from engine import Engine
 from fortress import Fortress
@@ -9,7 +10,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = ""       # test a specific setup
+TEST = "BOKO"       # test a specific setup
 
 # Initialize the screen
 if not DEBUG:
@@ -169,11 +170,11 @@ def curses_render_loop(screen_set, screen_dims, engine):
 
 
 # main function
-def main():
+def main(config_file):
     global ENGINE
 
     # setup the engine
-    ENGINE = Engine()
+    ENGINE = Engine(config_file)
     np.random.seed(ENGINE.seed)
     random.seed(ENGINE.seed)
 
@@ -211,6 +212,16 @@ def main():
             ent = Entity(ENGINE.fortress, filename="ENT/grass.txt")
             ent.pos = [rposx[i], rposy[i]]
             ENGINE.fortress.addEntity(ent)
+
+    elif TEST == "BOKO":
+        b = Entity(ENGINE.fortress, filename="ENT/boko.txt")
+        b.pos = [5,5]
+        ENGINE.fortress.addEntity(b)
+
+        r = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+        r.pos = [2,2]
+        ENGINE.fortress.addEntity(r)
+
     else:
         ENGINE.populateFortress()
 
@@ -239,8 +250,11 @@ def main():
 
 
 if __name__ == "__main__":
+
     try:
-        main()
+        conf_file = sys.argv[1] if len(sys.argv) > 1 else "alpha_config.yaml"
+        main(conf_file)
+
     # handle crashes
     except:
         curses.nocbreak()

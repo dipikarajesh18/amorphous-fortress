@@ -1,0 +1,11 @@
+============    FORTRESS SEED [14135]    =========
+Fortress initialized! - <0>
+[B.f95d] moved to [5, 4] goto [2, 2] -- <2>
+[B.f95d] moved to [5, 3] goto [2, 2] -- <3>
+[B.f95d] moved to [5, 2] goto [2, 2] -- <4>
+[B.f95d] moved to [4, 2] goto [2, 2] -- <5>
+[B.f95d] moved to [3, 2] goto [2, 2] -- <6>
+[B.f95d] moved to [2, 2] goto [2, 2] -- <7>
+==== SIMULATION ENDED: Code Interruption ====
+
+

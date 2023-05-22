@@ -1,0 +1,114 @@
+============    FORTRESS SEED [254844]    =========
+Fortress initialized! - <0>
+Fortress randomly populated -- <0>
+[@.fc6c] moved to [8, 2] -- <2>
+[@.6c2f] moved to [8, 4] -- <2>
+[@.fc6c] moved to [8, 3] -- <3>
+[@.6c2f] moved to [7, 4] -- <3>
+[@.fc6c] moved to [9, 3] -- <4>
+[@.6c2f] moved to [6, 4] -- <4>
+[@.fc6c] moved to [9, 4] -- <5>
+[@.6c2f] moved to [5, 4] -- <5>
+[@.fc6c] moved to [10, 4] -- <6>
+[@.6c2f] moved to [5, 3] -- <6>
+[@.fc6c] moved to [10, 3] -- <7>
+[@.6c2f] moved to [6, 3] -- <7>
+[@.fc6c] moved to [11, 3] -- <8>
+[@.6c2f] moved to [6, 4] -- <8>
+[@.fc6c] moved to [11, 2] -- <9>
+[@.6c2f] moved to [7, 4] -- <9>
+[@.fc6c] moved to [10, 2] -- <10>
+[@.6c2f] moved to [8, 4] -- <10>
+[@.fc6c] moved to [10, 1] -- <11>
+[@.6c2f] moved to [8, 3] -- <11>
+[@.6c2f] moved to [8, 2] -- <12>
+[@.fc6c] moved to [10, 2] -- <13>
+[@.6c2f] moved to [7, 2] -- <13>
+[@.fc6c] moved to [11, 2] -- <14>
+[@.6c2f] moved to [8, 2] -- <14>
+[@.fc6c] moved to [12, 2] -- <15>
+[@.6c2f] moved to [9, 2] -- <15>
+[@.fc6c] moved to [12, 3] -- <16>
+[@.6c2f] moved to [9, 3] -- <16>
+[@.fc6c] moved to [12, 4] -- <17>
+[@.6c2f] moved to [10, 3] -- <17>
+[@.fc6c] moved to [12, 5] -- <18>
+[@.6c2f] moved to [10, 2] -- <18>
+[@.fc6c] moved to [11, 5] -- <19>
+[@.6c2f] moved to [10, 3] -- <19>
+[@.fc6c] moved to [10, 5] -- <20>
+[@.6c2f] moved to [9, 3] -- <20>
+[@.fc6c] moved to [11, 5] -- <21>
+[@.6c2f] moved to [9, 2] -- <21>
+[@.fc6c] moved to [12, 5] -- <22>
+[@.6c2f] moved to [10, 2] -- <22>
+[@.fc6c] moved to [13, 5] -- <23>
+[@.6c2f] moved to [10, 1] -- <23>
+[@.fc6c] moved to [13, 4] -- <24>
+[@.6c2f] moved to [9, 1] -- <24>
+[@.fc6c] moved to [13, 3] -- <25>
+[@.6c2f] moved to [9, 2] -- <25>
+[@.6c2f] moved to [9, 3] -- <26>
+[@.fc6c] moved to [12, 3] -- <27>
+[@.6c2f] moved to [9, 4] -- <27>
+[@.fc6c] moved to [11, 3] -- <28>
+[@.6c2f] moved to [9, 3] -- <28>
+[@.fc6c] moved to [11, 4] -- <29>
+[@.6c2f] moved to [8, 3] -- <29>
+[@.fc6c] moved to [10, 4] -- <30>
+[@.6c2f] moved to [9, 3] -- <30>
+[@.fc6c] moved to [9, 4] -- <31>
+[@.6c2f] moved to [9, 4] -- <31>
+[@.fc6c] moved to [9, 5] -- <32>
+[@.6c2f] moved to [9, 3] -- <32>
+[@.fc6c] moved to [9, 6] -- <33>
+[@.6c2f] moved to [10, 3] -- <33>
+[@.fc6c] moved to [9, 5] -- <34>
+[@.6c2f] moved to [10, 2] -- <34>
+==== SIMULATION ENDED: Code Interruption ====
+
+@:
+-- NODES --
+0: idle
+1: die
+2: move
+-- EDGES --
+0-1: touch $
+0-2: none
+1-1: step 1
+2-0: touch &
+2-2: touch &
+
+
+@:
+-- NODES --
+0: idle
+1: die
+2: move
+-- EDGES --
+0-1: touch $
+0-2: none
+1-1: step 1
+2-0: touch &
+2-2: touch &
+
+
++:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-0: none
+1-1: touch $
+
+
++:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-0: none
+1-1: touch $
+
+
+

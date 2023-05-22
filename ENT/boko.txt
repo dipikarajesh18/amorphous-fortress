@@ -1,4 +1,4 @@
-^
+B
 -- NODES --
 0: idle
 1: take
@@ -9,6 +9,7 @@
 1-0: none
 0-2: step 5
 2-0: none
-0-3: within 5 *
-3-3: within 5 *
+0-3: within * 5
+3-3: within * 5
 3-0: none
+3-1: touch *

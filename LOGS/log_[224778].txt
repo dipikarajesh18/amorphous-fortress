@@ -1,0 +1,93 @@
+============    FORTRESS SEED [224778]    =========
+Fortress initialized! - <0>
+Fortress randomly populated -- <0>
+[@.9714] died -- <2>
+[&.8425] moved to [6, 4] -- <2>
+[&.9890] moved to [5, 3] -- <2>
+[+.a0db] died -- <2>
+[&.8425] moved to [6, 5] -- <4>
+[&.9890] moved to [6, 3] -- <4>
+[&.8425] moved to [6, 4] -- <6>
+[&.9890] moved to [6, 4] -- <6>
+[&.8425] moved to [6, 3] -- <7>
+[&.9890] moved to [7, 4] -- <7>
+[&.8425] moved to [7, 3] -- <9>
+[&.9890] moved to [7, 3] -- <9>
+[&.8425] moved to [8, 3] -- <10>
+[&.9890] moved to [7, 2] -- <10>
+[&.8425] moved to [7, 3] -- <12>
+[&.9890] moved to [7, 3] -- <12>
+[&.8425] moved to [8, 3] -- <13>
+[&.9890] moved to [6, 3] -- <13>
+[&.8425] moved to [9, 3] -- <15>
+[&.9890] moved to [7, 3] -- <15>
+[&.8425] moved to [9, 4] -- <16>
+[&.9890] moved to [7, 4] -- <16>
+[&.8425] moved to [8, 4] -- <18>
+[&.9890] moved to [7, 3] -- <18>
+[&.8425] moved to [7, 4] -- <19>
+[&.9890] moved to [7, 2] -- <19>
+[&.8425] moved to [7, 5] -- <21>
+[&.9890] moved to [8, 2] -- <21>
+[&.8425] moved to [6, 5] -- <22>
+[&.9890] moved to [8, 3] -- <22>
+[&.8425] moved to [6, 4] -- <24>
+[&.9890] moved to [9, 3] -- <24>
+[&.8425] moved to [5, 4] -- <25>
+[&.9890] moved to [8, 3] -- <25>
+[&.8425] moved to [6, 4] -- <27>
+[&.9890] moved to [9, 3] -- <27>
+[&.8425] moved to [7, 4] -- <28>
+[&.9890] moved to [9, 2] -- <28>
+[&.8425] moved to [8, 4] -- <30>
+[&.9890] moved to [9, 1] -- <30>
+[&.8425] moved to [7, 4] -- <31>
+==== SIMULATION ENDED: Code Interruption ====
+
+@:
+-- NODES --
+0: idle
+1: move
+2: die
+-- EDGES --
+0-2: none
+1-1: none
+2-0: touch $
+2-1: touch &
+2-2: none
+
+
+&:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-1: none
+1-0: none
+1-1: step 3
+
+
+&:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-1: none
+1-0: none
+1-1: step 3
+
+
++:
+-- NODES --
+0: idle
+1: take
+2: die
+-- EDGES --
+0-2: none
+1-0: touch $
+1-1: touch &
+1-2: step 10
+2-1: step 8
+
+
+
