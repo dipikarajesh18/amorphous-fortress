@@ -19,6 +19,7 @@ class Entity:
         self.cur_node = 0        # the current node the agent is on
         self.moved_edge = None   # the edge that was activated when the node state changed
         self.other_ent = None    # the other entity that was involved in the edge activation
+        self.possible_actions = self.fortress.CONFIG['action_space'].copy()
 
         # get the random seed from the fortress and set it
         seed = self.fortress.seed
@@ -146,7 +147,8 @@ class Entity:
     # return a new random node with the name and parameters provided
     def newNode(self):
         new_node = ""
-        new_state = random.choice(self.fortress.CONFIG['action_space'])
+        new_state = random.choice(self.possible_actions)
+        self.possible_actions.remove(new_state)
 
         new_node = f"{new_state} "
         if self.NODE_DICT[new_state]['args'] != []:
@@ -181,7 +183,7 @@ class Entity:
         self.nodes.append("idle")
         
         # create the nodes (must have at least 2)
-        num_nodes = random.randint(2, 5)
+        num_nodes = random.randint(1, len(self.possible_actions)-1)
         for i in range(num_nodes):
             self.nodes.append(self.newNode())
 

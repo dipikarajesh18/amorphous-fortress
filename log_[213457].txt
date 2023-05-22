@@ -1,21 +1,11 @@
 Fortress initialized! - <0>
 Fortress randomly populated -- <0>
-[$.af7a] moved to [11, 2] -- <2>
-[$.af7a] moved to [10, 2] -- <3>
-[$.8dd6] moved to [7, 5] -- <4>
-[$.af7a] moved to [9, 2] -- <4>
-[$.8dd6] moved to [6, 5] -- <5>
-[$.af7a] moved to [10, 2] -- <5>
-[$.8dd6] moved to [6, 6] -- <7>
-[$.af7a] moved to [10, 1] -- <7>
-[$.8dd6] moved to [6, 5] -- <8>
-[$.af7a] moved to [10, 2] -- <8>
-[$.8dd6] moved to [7, 5] -- <9>
-[$.af7a] moved to [9, 2] -- <9>
-[$.8dd6] moved to [6, 5] -- <10>
-[$.af7a] moved to [9, 1] -- <10>
-[$.8dd6] moved to [5, 5] -- <12>
-[$.af7a] moved to [10, 1] -- <12>
-[$.8dd6] moved to [5, 6] -- <13>
-[$.af7a] moved to [10, 2] -- <13>
+[$.8dd6] moved to [8, 6] -- <9>
+[$.8dd6] moved to [8, 5] -- <10>
+[$.8dd6] moved to [8, 6] -- <11>
+[$.8dd6] moved to [7, 6] -- <12>
+[$.8dd6] moved to [7, 5] -- <13>
+[$.8dd6] moved to [6, 5] -- <14>
+[$.8dd6] moved to [7, 5] -- <15>
+[$.8dd6] moved to [6, 5] -- <16>
 ==== SIMULATION ENDED: Code Interruption ====
