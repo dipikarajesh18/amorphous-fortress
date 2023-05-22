@@ -30,6 +30,8 @@ class Entity:
             "move": {'func':self.move, 'args':[]},
             "die": {'func':self.die, 'args':[]},
             "take": {'func':self.take, 'args':[]},  #only activated if other_ent is not None
+            "chase": {'func':self.chase, 'args':[]},
+            "clone": {'func':self.clone, 'args':[]},
             "idle": {'func':self.noneAct, 'args':[]}
         }
 
@@ -37,6 +39,7 @@ class Entity:
         self.EDGE_DICT = {
             "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
             "touch": {'func':self.touch, 'args':['entityChar'], 'priority':1},
+            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':3},
             "none": {'func':self.noneCond, 'args':[], 'priority':0}
         }
 
@@ -64,24 +67,24 @@ class Entity:
             all_num.remove(int(i,16))
 
         return f'%0{id_len}x' % random.randrange(16**(id_len+1))
-    
+
+    #######     NODE ACTIONS     #######
+
     # create another instance of the entity but with different id and position
     def clone(self,pos=None):
+
+
         new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
         new_ent.id = self.newID()
 
         new_ent.pos = pos if pos else self.fortress.randomPos()
-        # clone on top of the current entity if the position is invalid
+
+        # don't clone if the position is invalid
         if new_ent.pos == None:
-            new_ent.pos = self.pos
+            return None
         
         self.fortress.addEntity(new_ent)
         return new_ent
-
-
-
-    #######     NODE ACTIONS     #######
-
 
     # if entity dies, remove from map
     def die(self):
@@ -105,6 +108,65 @@ class Entity:
         if self.fortress.validPos(new_pos[0], new_pos[1]):
             self.pos = new_pos
             self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)}")
+
+    # moves the entity towards a particular entity on the map
+    def chase(self):
+        if not self.other_ent:
+            return
+
+        # set the target position to the other entity's position
+        pos = self.other_ent.pos
+
+        new_pos = self.pos.copy()
+        dir = []
+
+        if pos[0] > self.pos[0]:   # go east
+            dir.append('east')
+        elif pos[0] < self.pos[0]:  # go west
+            dir.append('west')
+        if pos[1] > self.pos[1]:    # go south
+            dir.append('south')
+        elif pos[1] < self.pos[1]:  # go north
+            dir.append('north')
+
+        if len(dir) == 0:
+            return
+        
+        # randomly choose a direction to move from the directions need to go in
+        rdir = random.choice(dir)
+        if rdir == 'east':
+            new_pos[0] += 1
+        elif rdir == 'west':
+            new_pos[0] -= 1
+        elif rdir == 'south':
+            new_pos[1] += 1
+        elif rdir == 'north':
+            new_pos[1] -= 1
+
+        # check if the new position is valid
+        if self.fortress.validPos(new_pos[0], new_pos[1]):
+            self.pos = new_pos
+            self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)} goto {str(pos)}")
+
+    # if entity pushes another entity, move the other entity
+    def push(self):
+        if not self.other_ent:
+            return
+            
+        # move the first entity
+        pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
+        rpos = random.choice(pos_mod)
+        new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
+        if self.fortress.validPos(new_pos[0], new_pos[1]):
+            self.pos = new_pos
+        
+        # move the other entity in the same direction as the entity
+        new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
+        if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
+            self.other_ent.pos = new_pos_e
+
+        self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
+
 
     # do nothing
     def noneAct(self):
@@ -138,6 +200,21 @@ class Entity:
                     return True
         return False
     
+    # if entity is within x spaces of another entity
+    def within(self,entityChar,range):
+        range = int(range)
+        for i,ent in self.fortress.entities.items():
+            # skip self
+            if i == self.id:
+                continue
+            # check if the entity is touching another entity
+            if ent.char == entityChar:
+                if abs(ent.pos[0] - self.pos[0]) <= range and abs(ent.pos[1] - self.pos[1]) <= range:
+                    self.other_ent = ent
+                    return True
+        return False
+
+
     def noneCond(self):
         return True
         
@@ -147,10 +224,13 @@ class Entity:
     # return a new random node with the name and parameters provided
     def newNode(self):
         new_node = ""
+        new_state = random.choice(self.fortress.CONFIG['action_space'])
+        # did away with arguments altogether
         new_state = random.choice(self.possible_actions)
         self.possible_actions.remove(new_state)
+        
+        new_node = f"{new_state}"
 
-        new_node = f"{new_state} "
         if self.NODE_DICT[new_state]['args'] != []:
             for arg in self.NODE_DICT[new_state]['args']:
                 if arg == "entityChar":

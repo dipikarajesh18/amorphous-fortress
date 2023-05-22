@@ -1,0 +1,22 @@
+Fortress initialized! - <0>
+[@.56b1] moved to [3, 2] -- <4>
+[@.56b1] moved to [3, 3] -- <7>
+[@.56b1] moved to [2, 3] -- <10>
+[@.56b1] moved to [3, 3] -- <13>
+[@.56b1] moved to [4, 3] -- <16>
+[@.56b1] moved to [5, 3] -- <19>
+[@.56b1] moved to [6, 3] -- <22>
+[@.56b1] moved to [6, 4] -- <25>
+[@.56b1] moved to [6, 5] -- <28>
+[@.56b1] moved to [7, 5] -- <31>
+[@.56b1] moved to [6, 5] -- <34>
+[@.56b1] moved to [7, 5] -- <37>
+[@.56b1] moved to [7, 6] -- <40>
+[@.56b1] moved to [7, 5] -- <46>
+[@.56b1] moved to [7, 4] -- <49>
+[@.56b1] moved to [7, 3] -- <52>
+[@.56b1] moved to [7, 4] -- <55>
+[@.56b1] moved to [6, 4] -- <58>
+[@.56b1] moved to [7, 4] -- <61>
+[@.56b1] moved to [7, 3] -- <64>
+==== SIMULATION ENDED: Code Interruption ====
