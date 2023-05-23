@@ -1,0 +1,50 @@
+============    FORTRESS SEED [618990]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+[L.3d14] moved to [7, 4] -- <3>
+[L.3d14] moved to [7, 5] -- <5>
+[X.c68b] moved to [12, 1] -- <6>
+[X.f73a] moved to [13, 5] -- <6>
+[L.3d14] moved to [7, 6] -- <7>
+[L.3d14] moved to [8, 6] -- <11>
+[X.c68b] moved to [13, 1] -- <11>
+[X.  bc] moved to [2, 1] -- <11>
+[L.3d14] moved to [8, 5] -- <13>
+[L.3d14] moved to [8, 6] -- <15>
+[X.  bc] moved to [3, 1] -- <16>
+[X.b09b] moved to [2, 6] -- <16>
+[X.f73a] moved to [12, 5] -- <16>
+[L.3d14] moved to [9, 6] -- <17>
+[L.3d14] moved to [9, 5] -- <19>
+[L.3d14] moved to [10, 5] -- <21>
+[X.f73a] moved to [12, 6] -- <21>
+[L.3d14] moved to [9, 5] -- <23>
+[L.3d14] moved to [10, 5] -- <25>
+[X.  bc] moved to [3, 2] -- <26>
+[X.b09b] moved to [2, 5] -- <26>
+[X.f73a] moved to [13, 6] -- <26>
+[L.3d14] moved to [10, 6] -- <27>
+[L.3d14] moved to [9, 6] -- <29>
+[L.3d14] moved to [10, 6] -- <31>
+[X.  bc] moved to [4, 2] -- <31>
+[X.b09b] moved to [3, 5] -- <31>
+[L.3d14] moved to [11, 6] -- <33>
+[L.3d14] moved to [10, 6] -- <35>
+[X.c68b] moved to [13, 2] -- <36>
+[X.  bc] moved to [5, 2] -- <36>
+[X.b09b] moved to [3, 4] -- <36>
+[X.f73a] moved to [12, 6] -- <36>
+[L.3d14] moved to [10, 5] -- <37>
+[L.3d14] moved to [10, 6] -- <39>
+[X.c68b] moved to [13, 1] -- <41>
+[X.  bc] moved to [5, 3] -- <41>
+[X.b09b] moved to [3, 3] -- <41>
+[L.3d14] moved to [11, 6] -- <43>
+[L.3d14] moved to [12, 6] -- <45>
+[X.  bc] moved to [5, 4] -- <46>
+[X.b09b] moved to [3, 4] -- <46>
+[X.f73a] moved to [12, 5] -- <46>
+[L.3d14] moved to [13, 6] -- <47>
+==== SIMULATION ENDED: Code Interruption ====
+
+

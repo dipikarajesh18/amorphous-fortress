@@ -20,6 +20,7 @@ class Engine():
         # define the fortress
         self.fortress = Fortress(self.config,15,8,seed=self.seed)
         self.fortress.blankFortress()
+        self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
         # self.fortress.printFortress()
 
         self.sim_tick = 0    # simulation tick
@@ -47,34 +48,53 @@ class Engine():
             for line in self.fortress.log:
                 file.write(line + '\n')
 
+    
+
 
     # populate the fortress with entities
     def populateFortress(self):
-        num_classes = random.randint(1,len(self.config['character']))  #only use a subset of the characters (1-all)
-        rposx = np.random.randint(1,self.fortress.width-1,num_classes)
-        rposy = np.random.randint(1,self.fortress.height-1,num_classes)
 
-        char_left = self.config['character'].copy()
+        self.fortress.makeCharacters()
 
-        for i in range(num_classes):
+        # populate the fortress with entities randomly
+        map_size = self.fortress.width * self.fortress.height
+        num_entities = random.randint(1,int(map_size*self.config['pop_perc']))    # number of entities to add
 
-            c = random.choice(char_left)  # pick a random character
-            ent = Entity(self.fortress, char=c)
-            ent.pos = [rposx[i], rposy[i]]
+        rposx = np.random.randint(1,self.fortress.width-1,num_entities)
+        rposy = np.random.randint(1,self.fortress.height-1,num_entities)
+
+        for e in range(num_entities):
+            c = random.choice(list(self.fortress.CHARACTER_DICT.keys()))
+            ent = self.CHARACTER_DICT[c].clone([rposx[e], rposy[e]])
             self.fortress.addEntity(ent)
 
-            # have a chance to make copies of the same entity
-            if random.random() < self.config['pop_chance']:
-                ent.clone()
+        self.fortress.addLog(f"Fortress randomly populated with {num_entities}")    # add a log message
 
-            char_left.remove(c) # remove the character from the list
+        # num_classes = random.randint(1,len(self.config['character']))  #only use a subset of the characters (1-all)
+        # rposx = np.random.randint(1,self.fortress.width-1,num_classes)
+        # rposy = np.random.randint(1,self.fortress.height-1,num_classes)
 
-        self.fortress.addLog("Fortress randomly populated") # add a log message
+        # char_left = self.config['character'].copy()
 
-        # save the trees of all of the entities at the start
-        self.init_ent_str = ""
-        for e in self.fortress.entities:
-            self.init_ent_str += self.fortress.entities[e].printTree() + "\n"
+        # for i in range(num_classes):
+
+        #     c = random.choice(char_left)  # pick a random character
+        #     ent = Entity(self.fortress, char=c)
+        #     ent.pos = [rposx[i], rposy[i]]
+        #     self.fortress.addEntity(ent)
+
+        #     # have a chance to make copies of the same entity
+        #     if random.random() < self.config['pop_chance']:
+        #         ent.clone()
+
+        #     char_left.remove(c) # remove the character from the list
+
+        # self.fortress.addLog("Fortress randomly populated") # add a log message
+
+        # # save the trees of all of the entities at the start
+        # self.init_ent_str = ""
+        # for e in self.fortress.entities:
+        #     self.init_ent_str += self.fortress.entities[e].printTree() + "\n"
 
     
 

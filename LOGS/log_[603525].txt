@@ -1,0 +1,23 @@
+============    FORTRESS SEED [603525]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+[L.dc77] moved to [6, 3] -- <3>
+[L.dc77] moved to [6, 4] -- <5>
+[L.dc77] moved to [7, 4] -- <7>
+[L.dc77] moved to [8, 4] -- <9>
+[$.83c8] cloned to [$.83c8] at [9, 5] -- <10>
+[k.8975] transformed into [$.83c8] at [9, 5] -- <10>
+[k.8975] died -- <10>
+[L.dc77] moved to [8, 5] -- <11>
+[L.dc77] moved to [9, 5] -- <13>
+[L.dc77] took [$.83c8] -- <15>
+[$.83c8] died -- <15>
+[L.dc77] moved to [10, 5] -- <17>
+[L.dc77] moved to [11, 5] -- <19>
+[L.dc77] moved to [11, 6] -- <21>
+[L.dc77] moved to [11, 5] -- <29>
+[L.dc77] moved to [10, 5] -- <31>
+[L.dc77] moved to [10, 6] -- <33>
+==== SIMULATION ENDED: Code Interruption ====
+
+

@@ -1,0 +1,93 @@
+============    FORTRESS SEED [431169]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+[G.123a] moved to [6, 5] - (not able to push) -- <2>
+[G. 4d0] moved to [2, 3] -- <3>
+[G.123a] moved to [6, 4] - (not able to push) -- <4>
+[G. 4d0] moved to [2, 4] -- <5>
+[G.123a] moved to [7, 4] - (not able to push) -- <6>
+[G. 4d0] moved to [2, 3] -- <7>
+[G.123a] moved to [6, 4] - (not able to push) -- <8>
+[G. 4d0] moved to [2, 2] -- <9>
+[G.123a] moved to [5, 4] - (not able to push) -- <10>
+[G. 4d0] moved to [3, 2] -- <11>
+[G.123a] moved to [6, 4] - (not able to push) -- <12>
+[G. 4d0] moved to [3, 3] -- <13>
+[G.123a] moved to [6, 5] - (not able to push) -- <14>
+[G. 4d0] moved to [2, 3] -- <15>
+[G.123a] moved to [7, 5] - (not able to push) -- <16>
+[G. 4d0] moved to [3, 3] -- <17>
+[G. 4d0] moved to [2, 3] -- <19>
+[G.123a] moved to [8, 5] -- <19>
+[G. 4d0] moved to [2, 4] -- <21>
+[G.123a] moved to [8, 4] -- <21>
+[G. 4d0] moved to [2, 5] -- <23>
+[G.123a] moved to [8, 5] - (not able to push) -- <23>
+[G. 4d0] moved to [3, 5] -- <25>
+[G.123a] moved to [8, 6] -- <25>
+[G. 4d0] moved to [4, 5] -- <27>
+[G.123a] moved to [7, 6] -- <27>
+[G. 4d0] moved to [4, 6] - (not able to push) -- <29>
+[G.123a] moved to [8, 6] -- <29>
+[G. 4d0] moved to [5, 6] - (not able to push) -- <31>
+[G. 4d0] moved to [6, 6] - (not able to push) -- <33>
+[G.123a] moved to [9, 6] -- <33>
+[G. 4d0] moved to [6, 5] - (not able to push) -- <35>
+[G.123a] moved to [9, 5] -- <35>
+[G. 4d0] moved to [7, 5] - (not able to push) -- <37>
+[G.123a] moved to [9, 4] -- <37>
+[G. 4d0] moved to [6, 5] -- <39>
+[G.123a] moved to [10, 4] -- <39>
+[G. 4d0] moved to [7, 5] - (not able to push) -- <41>
+[G.123a] moved to [10, 3] - (not able to push) -- <41>
+[G. 4d0] moved to [7, 4] -- <43>
+[G.123a] moved to [10, 2] - (not able to push) -- <43>
+[G. 4d0] pushed [*.ef00] -- <45>
+[G.123a] moved to [11, 2] -- <45>
+[G. 4d0] pushed [*.ef00] -- <47>
+[G.123a] moved to [10, 2] -- <47>
+[G.123a] moved to [11, 2] -- <49>
+[G.123a] moved to [11, 1] -- <51>
+[G. 4d0] moved to [7, 3] - (not able to push) -- <53>
+[G.123a] moved to [11, 2] -- <53>
+[G. 4d0] moved to [7, 4] -- <55>
+[G.123a] moved to [11, 3] -- <55>
+[G. 4d0] moved to [7, 5] -- <57>
+[G.123a] moved to [10, 3] - (not able to push) -- <57>
+[G. 4d0] moved to [6, 5] -- <59>
+[G.123a] moved to [10, 4] - (not able to push) -- <59>
+[G. 4d0] moved to [6, 6] - (not able to push) -- <61>
+[G.123a] moved to [10, 3] - (not able to push) -- <61>
+[G. 4d0] moved to [5, 6] - (not able to push) -- <63>
+[G.123a] moved to [11, 3] - (not able to push) -- <63>
+[G. 4d0] moved to [4, 6] - (not able to push) -- <65>
+[G.123a] moved to [11, 2] - (not able to push) -- <65>
+[G.123a] moved to [10, 2] -- <67>
+[G.123a] moved to [9, 2] -- <69>
+[G. 4d0] moved to [4, 5] - (not able to push) -- <71>
+[G.123a] moved to [9, 3] -- <71>
+[G. 4d0] pushed [*.2a7d] -- <73>
+[G.123a] moved to [8, 3] -- <73>
+[G. 4d0] moved to [5, 4] - (not able to push) -- <75>
+[G.123a] moved to [8, 4] -- <75>
+[G. 4d0] moved to [4, 4] - (not able to push) -- <77>
+[G.123a] moved to [8, 5] -- <77>
+[G. 4d0] moved to [4, 3] -- <79>
+[G.123a] moved to [8, 4] -- <79>
+[G. 4d0] moved to [3, 3] -- <81>
+[G.123a] moved to [8, 5] -- <81>
+[G. 4d0] moved to [3, 4] -- <83>
+[G.123a] moved to [8, 4] -- <83>
+[G. 4d0] moved to [3, 3] -- <85>
+[G.123a] moved to [9, 4] -- <85>
+[G. 4d0] moved to [4, 3] -- <87>
+[G.123a] moved to [9, 5] -- <87>
+[G. 4d0] moved to [3, 3] -- <89>
+[G.123a] moved to [8, 5] -- <89>
+[G. 4d0] moved to [3, 2] -- <91>
+[G.123a] moved to [9, 5] -- <91>
+[G. 4d0] moved to [4, 2] -- <93>
+[G.123a] moved to [9, 6] -- <93>
+==== SIMULATION ENDED: Code Interruption ====
+
+

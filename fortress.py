@@ -1,7 +1,7 @@
 import numpy as np
 import random
 import re
-# from entities import Entity
+from entities import Entity
 
 # the environment where all of the simulation takes place
 class Fortress():
@@ -13,6 +13,7 @@ class Fortress():
         self.fortmap = []
 
         self.entities = {}   # dictionary of entities
+        self.CHARACTER_DICT = {}    # definition of all of the characters classes in the simulation 
 
         self.CONFIG = config  # a dictionary of values for configuration
         self.seed = random.randint(0,1000000) if seed == None else seed
@@ -51,7 +52,9 @@ class Fortress():
     # render the entities on the map
     def renderEntities(self,printMap=False):
         entMap = self.fortmap.copy()
-        for ent in self.entities.values():
+        entDraw = list(self.entities.values())
+
+        for ent in reversed(entDraw):
             x,y = ent.pos
             entMap[y,x] = ent.char
     
@@ -95,6 +98,17 @@ class Fortress():
             if ent.pos[0] == x and ent.pos[1] == y:
                 return ent
         return None
+
+
+    # create new trees for every character in the config file
+    def makeCharacters(self):
+        self.CHARACTER_DICT = {}
+        for c in self.config['character']:
+            ent = Entity(self.fortress,char=c)
+            ent.pos = [-1,-1]
+            self.CHARACTER_DICT[c] = ent
+
+        self.addLog(f"{len(self.CHARACTER_DICT)} Unique character trees created")
 
         
     # check if the simulation should terminate

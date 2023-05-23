@@ -10,7 +10,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = "BOKO"       # test a specific setup
+TEST = "KOROK"       # test a specific setup
 
 # Initialize the screen
 if not DEBUG:
@@ -169,7 +169,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
     tree.refresh()
 
 
-# main function
+# main functionå
 def main(config_file):
     global ENGINE
 
@@ -183,12 +183,13 @@ def main(config_file):
         screen_set, screen_dims = init_screens()
 
 
-    # add entities based on preset or at random
+    # test move
     if TEST == "DUCK":
         ent = Entity(ENGINE.fortress, filename="ENT/duck.txt")
         ent.pos = [3,3]
         ENGINE.fortress.addEntity(ent)
 
+    # test take
     elif TEST == "AMOEBA":
         a1 = Entity(ENGINE.fortress, filename="ENT/amoeba.txt")
         a1.pos = [3,3]
@@ -202,6 +203,7 @@ def main(config_file):
         a3.pos = [4,3]
         ENGINE.fortress.addEntity(a3)
 
+    # test die
     elif TEST == "GRASS":
         # get 10 random positions
         # cannot just do random positions since the seed call will return the same value every time
@@ -213,6 +215,7 @@ def main(config_file):
             ent.pos = [rposx[i], rposy[i]]
             ENGINE.fortress.addEntity(ent)
 
+    # test chase
     elif TEST == "BOKO":
         b = Entity(ENGINE.fortress, filename="ENT/boko.txt")
         b.pos = [5,5]
@@ -221,6 +224,71 @@ def main(config_file):
         r = Entity(ENGINE.fortress, filename="ENT/rock.txt")
         r.pos = [2,2]
         ENGINE.fortress.addEntity(r)
+
+    # test push
+    elif TEST == "GORON":
+        g = Entity(ENGINE.fortress, filename="ENT/goron.txt")
+        g.pos = [2,2]
+        ENGINE.fortress.addEntity(g)
+
+        g2 = Entity(ENGINE.fortress, filename="ENT/goron.txt")
+        g2.pos = [6,4]
+        ENGINE.fortress.addEntity(g2)
+
+        r = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+        r.pos = [5,5]
+        ENGINE.fortress.addEntity(r)
+
+        r2 = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+        r2.pos = [7,3]
+        ENGINE.fortress.addEntity(r2)
+
+        r3 = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+        r3.pos = [5,1]
+        ENGINE.fortress.addEntity(r3)
+
+        r4 = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+        r4.pos = [11,4]
+        ENGINE.fortress.addEntity(r4)
+
+    # test add
+    # TODO: do something about too many entities being stacked on top of each other
+    elif TEST == "BLUPEE":
+        l = Entity(ENGINE.fortress, filename="ENT/link.txt")
+        l.pos = [7,3]
+        ENGINE.fortress.addEntity(l)
+
+        b = Entity(ENGINE.fortress, filename="ENT/blupee.txt")
+        b.pos = [13,1]
+        ENGINE.fortress.addEntity(b)
+
+        b2 = Entity(ENGINE.fortress, filename="ENT/blupee.txt")
+        b2.pos = [1,1]
+        ENGINE.fortress.addEntity(b2)
+
+        b3 = Entity(ENGINE.fortress, filename="ENT/blupee.txt")
+        b3.pos = [1,6]
+        ENGINE.fortress.addEntity(b3)
+
+        b4 = Entity(ENGINE.fortress, filename="ENT/blupee.txt")
+        b4.pos = [13,6]
+        ENGINE.fortress.addEntity(b4)
+
+        # add to the list to spawn later
+        ENGINE.fortress.CHARACTER_DICT['$'] = Entity(ENGINE.fortress, char='$', nodes=["idle"], edges={'0-0':'none'})
+
+    # test transform
+    elif TEST == "KOROK":
+        l = Entity(ENGINE.fortress, filename="ENT/link.txt")
+        l.pos = [7,3]
+        ENGINE.fortress.addEntity(l)
+
+        k = Entity(ENGINE.fortress, filename="ENT/korok.txt")
+        k.pos = [9,5]
+        ENGINE.fortress.addEntity(k)
+
+        # add to the list to spawn later
+        ENGINE.fortress.CHARACTER_DICT['$'] = Entity(ENGINE.fortress, char='$', nodes=["idle"], edges={'0-0':'none'})
 
     else:
         ENGINE.populateFortress()

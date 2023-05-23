@@ -1,7 +1,0 @@
-============    FORTRESS SEED [698365]    =========
-Fortress initialized! - <0>
-[@.65e7] moved to [3, 2] -- <4>
-[@.65e7] moved to [3, 1] -- <7>
-==== SIMULATION ENDED: Code Interruption ====
-
-

@@ -32,6 +32,9 @@ class Entity:
             "take": {'func':self.take, 'args':[]},  #only activated if other_ent is not None
             "chase": {'func':self.chase, 'args':[]},
             "clone": {'func':self.clone, 'args':[]},
+            "push": {'func':self.push, 'args':[]},
+            "add": {'func':self.addEnt, 'args':['entityChar']},
+            'transform': {'func':self.transform, 'args':['entityChar']},
             "idle": {'func':self.noneAct, 'args':[]}
         }
 
@@ -39,8 +42,9 @@ class Entity:
         # lower number means it will happen last
         self.EDGE_DICT = {
             "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
-            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':3},
+            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4},
             "within": {'func':self.within, 'args':['entityChar','range'], 'priority':1},
+            "nextTo": {'func':self.nextTo, 'args':['entityChar'], 'priority':3},
             "none": {'func':self.noneCond, 'args':[], 'priority':0}
         }
 
@@ -77,13 +81,14 @@ class Entity:
         new_ent.id = self.newID()
 
         #new_ent.pos = pos if pos else self.fortress.randomPos()
-        new_ent.pos = pos if pos else self.pos.copy()
+        new_ent.pos = pos if pos else self._randAdjPos()
 
         # don't clone if the position is invalid
         if new_ent.pos == None:
             return None
         
         self.fortress.addEntity(new_ent)
+        self.fortress.addLog(f"[{self.char}.{self.id}] cloned to [{new_ent.char}.{new_ent.id}] at {str(new_ent.pos)}")
         return new_ent
 
     # if entity dies, remove from map
@@ -155,23 +160,57 @@ class Entity:
             self.pos = new_pos
             self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)} goto {str(pos)}")
 
+    # check if 2 positions are the same
+    def _samePos(self, pos1, pos2):
+        return pos1[0] == pos2[0] and pos1[1] == pos2[1]
+
     # if entity pushes another entity, move the other entity
     def push(self):
         if not self.other_ent:
             return
             
-        # move the first entity
+        # get the next position over
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
         rpos = random.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
-        if self.fortress.validPos(new_pos[0], new_pos[1]):
+
+        # check if the other entity is in the next position
+        if self._samePos(new_pos, self.other_ent.pos):
+            # move the other entity in the same direction as the entity (if the previous position matched)
+            new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
+            if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
+                # move this entity
+                self.pos = new_pos
+
+                # move the other entity
+                self.other_ent.pos = new_pos_e
+                self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
+
+        elif self.fortress.validPos(new_pos[0], new_pos[1]):
+            # move this entity
             self.pos = new_pos
-        
-        # move the other entity in the same direction as the entity
-        new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
-        if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
-            self.other_ent.pos = new_pos_e
-            self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
+            self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)} - (not able to push)")
+
+    # add another entity to the map
+    def addEnt(self, entityChar):
+        new_ent_def = self.fortress.CHARACTER_DICT[entityChar]
+        adj_pos = self._randAdjPos()
+        if not adj_pos:
+            return
+        new_ent = new_ent_def.clone(adj_pos)
+        if new_ent:
+            self.fortress.addEntity(new_ent)
+            self.fortress.addLog(f"[{self.char}.{self.id}] added [{new_ent.char}.{new_ent.id}] at {str(new_ent.pos)}")
+
+    # transform this entity into another entity
+    def transform(self, entityChar):
+        new_ent_def = self.fortress.CHARACTER_DICT[entityChar]
+        new_ent = new_ent_def.clone(self.pos)
+        if new_ent:
+            self.fortress.addEntity(new_ent)
+            self.fortress.addLog(f"[{self.char}.{self.id}] transformed into [{new_ent.char}.{new_ent.id}] at {str(new_ent.pos)}")
+            self.die()
+
 
     # do nothing
     def noneAct(self):
@@ -185,7 +224,6 @@ class Entity:
     def every_step(self, steps):
         steps = int(steps)
         if self.cur_step % steps == 0:
-            self.cur_step = 0
             return True
         return False
     
@@ -232,14 +270,18 @@ class Entity:
 
     # return a new random node with the name and parameters provided
     def newNode(self):
-        new_node = ""
-        new_state = random.choice(self.fortress.CONFIG['action_space'])
-        # did away with arguments altogether
         new_state = random.choice(self.possible_actions)
         self.possible_actions.remove(new_state)
         
-        new_node = f"{new_state}"
-        return new_node
+        new_node = f"{new_state} "
+
+        # add the arguments to the node
+        if self.NODE_DICT[new_state]['args'] != []:
+            for arg in self.NODE_DICT[new_state]['args']:
+                if arg == "entityChar":
+                    new_node += f"{random.choice(self.fortress.CONFIG['character'])} "
+        
+        return new_node.strip()
     
     # return a new random edge with the condition and parameters provided
     def newEdge(self):
@@ -253,6 +295,9 @@ class Entity:
                     new_edge += f"{random.choice(self.fortress.CONFIG['character'])} "
                 elif arg == "steps":
                     new_edge += f"{random.randint(self.fortress.CONFIG['step_range'][0],self.fortress.CONFIG['step_range'][1])} "
+                elif arg == "range":
+                    new_edge += f"{random.randint(self.fortress.CONFIG['prox_range'][0],self.fortress.CONFIG['prox_range'][1])} "
+
 
         return new_edge.strip()
 
@@ -340,6 +385,7 @@ class Entity:
             outstr = self.printTree()
             f.write(outstr)
             f.close()
+
 
     # import a tree from a file
     def importTree(self,filename):

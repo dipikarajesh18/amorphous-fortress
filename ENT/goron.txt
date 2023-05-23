@@ -4,7 +4,7 @@ G
 1: push
 2: move
 -- EDGES --
-0-1: within * 2
-0-2: step 5
+0-1: nextTo *
+0-2: step 2
 1-0: none
 2-0: none
