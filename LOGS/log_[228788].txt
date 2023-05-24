@@ -1,0 +1,515 @@
+============    FORTRESS SEED [228788]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+15 Unique character trees created -- <0>
+[!.d9ab] cloned to [!.69ba] at [7, 5] -- <0>
+[X.73d2] cloned to [X.85dd] at [3, 4] -- <0>
+[+.165d] cloned to [+.33ea] at [9, 6] -- <0>
+[^.8d6a] cloned to [^.b010] at [5, 5] -- <0>
+[M.c028] cloned to [M.c9ca] at [2, 5] -- <0>
+[X.73d2] cloned to [X.8081] at [11, 1] -- <0>
+[&. 2a0] cloned to [&.247a] at [3, 6] -- <0>
+[<.9b40] cloned to [<.7175] at [9, 2] -- <0>
+[;.39ab] cloned to [;.47b9] at [10, 2] -- <0>
+[@.69ba] cloned to [@. fa1] at [11, 3] -- <0>
+[!.d9ab] cloned to [!.59bd] at [10, 1] -- <0>
+[O.6f3c] cloned to [O.fda4] at [9, 6] -- <0>
+[O.6f3c] cloned to [O.984d] at [10, 5] -- <0>
+[$.5a30] cloned to [$.f4ad] at [13, 4] -- <0>
+[$.5a30] cloned to [$.1a04] at [2, 3] -- <0>
+[$.5a30] cloned to [$.10de] at [1, 2] -- <0>
+[S.afdc] cloned to [S.ec15] at [8, 5] -- <0>
+[$.5a30] cloned to [$.1599] at [9, 2] -- <0>
+[<.9b40] cloned to [<.7aee] at [13, 5] -- <0>
+[>.dc20] cloned to [>.63eb] at [5, 1] -- <0>
+[&. 2a0] cloned to [&.f5a7] at [7, 4] -- <0>
+[&. 2a0] cloned to [&.2f35] at [9, 2] -- <0>
+[>.dc20] cloned to [>.6476] at [1, 2] -- <0>
+[M.c028] cloned to [M.c7c4] at [13, 4] -- <0>
+[@.69ba] cloned to [@. 34b] at [5, 1] -- <0>
+Fortress randomly populated with 25 -- <0>
+[&. 2a0] cloned to [&.d761] at [2, 4] -- <2>
+[X.85dd] added [&.d761] at [2, 4] -- <2>
+[&. 2a0] cloned to [&.a9da] at [10, 1] -- <2>
+[X.8081] added [&.a9da] at [10, 1] -- <2>
+[&.247a] moved to [3, 5] goto [8, 5] -- <2>
+[D.f6a5] cloned to [D.be80] at [8, 2] -- <2>
+[<.7175] added [D.be80] at [8, 2] -- <2>
+[;.47b9] died -- <2>
+[@. fa1] took [M.c7c4] -- <2>
+[M.c7c4] died -- <2>
+[$.5a30] cloned to [$.47b9] at [13, 4] -- <2>
+[$.f4ad] transformed into [$.47b9] at [13, 4] -- <2>
+[$.f4ad] died -- <2>
+[$.5a30] cloned to [$.f4ad] at [2, 3] -- <2>
+[$.1a04] transformed into [$.f4ad] at [2, 3] -- <2>
+[$.1a04] died -- <2>
+[$.5a30] cloned to [$.1a04] at [1, 2] -- <2>
+[$.10de] transformed into [$.1a04] at [1, 2] -- <2>
+[$.10de] died -- <2>
+[$.5a30] cloned to [$.10de] at [9, 2] -- <2>
+[$.1599] transformed into [$.10de] at [9, 2] -- <2>
+[$.1599] died -- <2>
+[>.63eb] moved to [5, 2] - (not able to push) -- <2>
+[&.f5a7] moved to [7, 5] goto [8, 5] -- <2>
+[&.2f35] moved to [9, 3] goto [8, 5] -- <2>
+[>.6476] moved to [1, 1] - (not able to push) -- <2>
+[@. 34b] took [M.c9ca] -- <2>
+[M.c9ca] died -- <2>
+[X.85dd] moved to [3, 5] goto [9, 6] -- <3>
+[*.6434] cloned to [*.c9ca] at [9, 6] -- <3>
+[+.33ea] transformed into [*.c9ca] at [9, 6] -- <3>
+[+.33ea] died -- <3>
+[X.8081] moved to [10, 1] goto [9, 6] -- <3>
+[&.247a] moved to [4, 5] goto [8, 5] -- <3>
+[@. fa1] took [O.fda4] -- <3>
+[O.fda4] died -- <3>
+[D.f6a5] cloned to [D.33ea] at [9, 5] -- <3>
+[S.ec15] added [D.33ea] at [9, 5] -- <3>
+[S.afdc] cloned to [S.fda4] at [5, 1] -- <3>
+[>.63eb] added [S.fda4] at [5, 1] -- <3>
+[S.afdc] cloned to [S.1599] at [1, 2] -- <3>
+[>.6476] added [S.1599] at [1, 2] -- <3>
+[@. 34b] took [O.fda4] -- <3>
+[O.fda4] died -- <3>
+[X.85dd] moved to [3, 6] goto [9, 6] -- <4>
+[X.8081] moved to [10, 2] goto [9, 6] -- <4>
+[&.247a] moved to [5, 5] goto [8, 5] -- <4>
+[D.f6a5] cloned to [D.fda4] at [8, 2] -- <4>
+[<.7175] added [D.fda4] at [8, 2] -- <4>
+[@. fa1] took [O.984d] -- <4>
+[O.984d] died -- <4>
+[D.f6a5] cloned to [D.984d] at [8, 6] -- <4>
+[S.ec15] added [D.984d] at [8, 6] -- <4>
+[S.afdc] cloned to [S.c7c4] at [5, 3] -- <4>
+[>.63eb] added [S.c7c4] at [5, 3] -- <4>
+[&.f5a7] moved to [8, 5] goto [8, 5] -- <4>
+[&.2f35] moved to [9, 4] goto [8, 5] -- <4>
+[@. 34b] took [O.984d] -- <4>
+[O.984d] died -- <4>
+[&.d761] moved to [2, 5] goto [8, 5] -- <4>
+[&.a9da] moved to [10, 2] goto [8, 5] -- <4>
+[$.5a30] cloned to [$.984d] at [13, 4] -- <4>
+[$.47b9] transformed into [$.984d] at [13, 4] -- <4>
+[$.47b9] died -- <4>
+[$.5a30] cloned to [$.47b9] at [2, 3] -- <4>
+[$.f4ad] transformed into [$.47b9] at [2, 3] -- <4>
+[$.f4ad] died -- <4>
+[$.5a30] cloned to [$.f4ad] at [1, 2] -- <4>
+[$.1a04] transformed into [$.f4ad] at [1, 2] -- <4>
+[$.1a04] died -- <4>
+[$.5a30] cloned to [$.1a04] at [9, 2] -- <4>
+[$.10de] transformed into [$.1a04] at [9, 2] -- <4>
+[$.10de] died -- <4>
+[X.85dd] moved to [4, 6] goto [9, 6] -- <5>
+[X.8081] moved to [9, 2] goto [9, 6] -- <5>
+[D.f6a5] cloned to [D.10de] at [5, 5] -- <5>
+[&.247a] transformed into [D.10de] at [5, 5] -- <5>
+[&.247a] died -- <5>
+[D.f6a5] cloned to [D.247a] at [8, 6] -- <5>
+[S.ec15] added [D.247a] at [8, 6] -- <5>
+[S.afdc] cloned to [S.d734] at [4, 2] -- <5>
+[>.63eb] added [S.d734] at [4, 2] -- <5>
+[&.d761] moved to [3, 5] goto [8, 5] -- <5>
+[S.1599] died -- <5>
+[X.85dd] moved to [5, 6] goto [9, 6] -- <6>
+[X.8081] moved to [9, 3] goto [9, 6] -- <6>
+[D.f6a5] cloned to [D.1599] at [8, 2] -- <6>
+[<.7175] added [D.1599] at [8, 2] -- <6>
+[@. fa1] died -- <6>
+[D.f6a5] cloned to [D. fa1] at [7, 5] -- <6>
+[S.ec15] added [D. fa1] at [7, 5] -- <6>
+[S.afdc] cloned to [S.7239] at [6, 2] -- <6>
+[>.63eb] added [S.7239] at [6, 2] -- <6>
+[&.2f35] moved to [9, 5] goto [8, 5] -- <6>
+[S.afdc] cloned to [S.e686] at [2, 1] -- <6>
+[>.6476] added [S.e686] at [2, 1] -- <6>
+[@. 34b] died -- <6>
+[&.d761] moved to [4, 5] goto [8, 5] -- <6>
+[&.a9da] moved to [10, 3] goto [8, 5] -- <6>
+[S.c7c4] died -- <6>
+[$.5a30] cloned to [$.c7c4] at [13, 4] -- <6>
+[$.984d] transformed into [$.c7c4] at [13, 4] -- <6>
+[$.984d] died -- <6>
+[$.5a30] cloned to [$.984d] at [2, 3] -- <6>
+[$.47b9] transformed into [$.984d] at [2, 3] -- <6>
+[$.47b9] died -- <6>
+[$.5a30] cloned to [$.47b9] at [1, 2] -- <6>
+[$.f4ad] transformed into [$.47b9] at [1, 2] -- <6>
+[$.f4ad] died -- <6>
+[$.5a30] cloned to [$.f4ad] at [9, 2] -- <6>
+[$.1a04] transformed into [$.f4ad] at [9, 2] -- <6>
+[$.1a04] died -- <6>
+[X.85dd] moved to [6, 6] goto [9, 6] -- <7>
+[X.8081] moved to [9, 4] goto [9, 6] -- <7>
+[D.f6a5] cloned to [D.1a04] at [8, 6] -- <7>
+[S.ec15] added [D.1a04] at [8, 6] -- <7>
+[S.afdc] cloned to [S. 34b] at [5, 3] -- <7>
+[>.63eb] added [S. 34b] at [5, 3] -- <7>
+[&.d761] moved to [5, 5] goto [8, 5] -- <7>
+[S.d734] died -- <7>
+[X.85dd] moved to [7, 6] goto [9, 6] -- <8>
+[X.8081] moved to [9, 5] goto [9, 6] -- <8>
+[D.f6a5] cloned to [D.d734] at [8, 2] -- <8>
+[<.7175] added [D.d734] at [8, 2] -- <8>
+[D.f6a5] cloned to [D.6d36] at [7, 5] -- <8>
+[S.ec15] added [D.6d36] at [7, 5] -- <8>
+[S.afdc] cloned to [S.c26f] at [6, 2] -- <8>
+[>.63eb] added [S.c26f] at [6, 2] -- <8>
+[&.2f35] moved to [8, 5] goto [8, 5] -- <8>
+[D.f6a5] cloned to [D.c39b] at [5, 5] -- <8>
+[&.d761] transformed into [D.c39b] at [5, 5] -- <8>
+[&.d761] died -- <8>
+[&.a9da] moved to [10, 4] goto [8, 5] -- <8>
+[S.7239] died -- <8>
+[S.e686] died -- <8>
+[$.5a30] cloned to [$.d761] at [13, 4] -- <8>
+[$.c7c4] transformed into [$.d761] at [13, 4] -- <8>
+[$.c7c4] died -- <8>
+[$.5a30] cloned to [$.c7c4] at [2, 3] -- <8>
+[$.984d] transformed into [$.c7c4] at [2, 3] -- <8>
+[$.984d] died -- <8>
+[$.5a30] cloned to [$.984d] at [1, 2] -- <8>
+[$.47b9] transformed into [$.984d] at [1, 2] -- <8>
+[$.47b9] died -- <8>
+[$.5a30] cloned to [$.47b9] at [9, 2] -- <8>
+[$.f4ad] transformed into [$.47b9] at [9, 2] -- <8>
+[$.f4ad] died -- <8>
+[X.85dd] moved to [8, 6] goto [9, 6] -- <9>
+[^.b010] moved to [6, 5] - (not able to push) -- <9>
+[X.8081] moved to [9, 6] goto [9, 6] -- <9>
+[D.f6a5] cloned to [D.f4ad] at [8, 6] -- <9>
+[S.ec15] added [D.f4ad] at [8, 6] -- <9>
+[S.afdc] cloned to [S.7239] at [5, 3] -- <9>
+[>.63eb] added [S.7239] at [5, 3] -- <9>
+[S. 34b] died -- <9>
+[X.85dd] moved to [9, 6] goto [9, 6] -- <10>
+[^.b010] pushed [D.10de] -- <10>
+[D.f6a5] cloned to [D. 34b] at [8, 2] -- <10>
+[<.7175] added [D. 34b] at [8, 2] -- <10>
+[D.f6a5] cloned to [D.e686] at [7, 5] -- <10>
+[S.ec15] added [D.e686] at [7, 5] -- <10>
+[S.afdc] cloned to [S.a06c] at [4, 2] -- <10>
+[>.63eb] added [S.a06c] at [4, 2] -- <10>
+[S.afdc] cloned to [S.4109] at [2, 1] -- <10>
+[>.6476] added [S.4109] at [2, 1] -- <10>
+[&.a9da] moved to [10, 5] goto [8, 5] -- <10>
+[S.c26f] died -- <10>
+[$.5a30] cloned to [$.c26f] at [13, 4] -- <10>
+[$.d761] transformed into [$.c26f] at [13, 4] -- <10>
+[$.d761] died -- <10>
+[$.5a30] cloned to [$.d761] at [2, 3] -- <10>
+[$.c7c4] transformed into [$.d761] at [2, 3] -- <10>
+[$.c7c4] died -- <10>
+[$.5a30] cloned to [$.c7c4] at [1, 2] -- <10>
+[$.984d] transformed into [$.c7c4] at [1, 2] -- <10>
+[$.984d] died -- <10>
+[$.5a30] cloned to [$.984d] at [9, 2] -- <10>
+[$.47b9] transformed into [$.984d] at [9, 2] -- <10>
+[$.47b9] died -- <10>
+[!.69ba] cloned to [!.47b9] at [7, 6] -- <11>
+[^.b010] moved to [6, 5] - (not able to push) -- <11>
+[D.f6a5] cloned to [D.9c09] at [8, 6] -- <11>
+[S.ec15] added [D.9c09] at [8, 6] -- <11>
+[S.afdc] cloned to [S.c6ff] at [4, 2] -- <11>
+[>.63eb] added [S.c6ff] at [4, 2] -- <11>
+[S.7239] died -- <11>
+[;.39ab] cloned to [;.7239] at [7, 5] -- <12>
+[!.69ba] transformed into [;.7239] at [7, 5] -- <12>
+[!.69ba] died -- <12>
+[^.b010] moved to [5, 5] - (not able to push) -- <12>
+[D.f6a5] cloned to [D.69ba] at [10, 2] -- <12>
+[<.7175] added [D.69ba] at [10, 2] -- <12>
+[D.f6a5] cloned to [D.62ad] at [8, 4] -- <12>
+[S.ec15] added [D.62ad] at [8, 4] -- <12>
+[S.afdc] cloned to [S.f29c] at [4, 2] -- <12>
+[>.63eb] added [S.f29c] at [4, 2] -- <12>
+[&.a9da] moved to [9, 5] goto [8, 5] -- <12>
+[S.a06c] died -- <12>
+[S.4109] died -- <12>
+[$.5a30] cloned to [$.a06c] at [13, 4] -- <12>
+[$.c26f] transformed into [$.a06c] at [13, 4] -- <12>
+[$.c26f] died -- <12>
+[$.5a30] cloned to [$.c26f] at [2, 3] -- <12>
+[$.d761] transformed into [$.c26f] at [2, 3] -- <12>
+[$.d761] died -- <12>
+[$.5a30] cloned to [$.d761] at [1, 2] -- <12>
+[$.c7c4] transformed into [$.d761] at [1, 2] -- <12>
+[$.c7c4] died -- <12>
+[$.5a30] cloned to [$.c7c4] at [9, 2] -- <12>
+[$.984d] transformed into [$.c7c4] at [9, 2] -- <12>
+[$.984d] died -- <12>
+[^.b010] moved to [5, 6] - (not able to push) -- <13>
+[D.f6a5] cloned to [D.984d] at [7, 5] -- <13>
+[S.ec15] added [D.984d] at [7, 5] -- <13>
+[S.afdc] cloned to [S.4109] at [5, 3] -- <13>
+[>.63eb] added [S.4109] at [5, 3] -- <13>
+[S.c6ff] died -- <13>
+[^.b010] moved to [4, 6] - (not able to push) -- <14>
+[D.f6a5] cloned to [D.c6ff] at [8, 2] -- <14>
+[<.7175] added [D.c6ff] at [8, 2] -- <14>
+[D.f6a5] cloned to [D.cbe2] at [7, 5] -- <14>
+[S.ec15] added [D.cbe2] at [7, 5] -- <14>
+[S.afdc] cloned to [S.c7b5] at [4, 2] -- <14>
+[>.63eb] added [S.c7b5] at [4, 2] -- <14>
+[&.a9da] moved to [8, 5] goto [8, 5] -- <14>
+[;.7239] died -- <14>
+[S.f29c] died -- <14>
+[$.5a30] cloned to [$.7239] at [13, 4] -- <14>
+[$.a06c] transformed into [$.7239] at [13, 4] -- <14>
+[$.a06c] died -- <14>
+[$.5a30] cloned to [$.a06c] at [2, 3] -- <14>
+[$.c26f] transformed into [$.a06c] at [2, 3] -- <14>
+[$.c26f] died -- <14>
+[$.5a30] cloned to [$.c26f] at [1, 2] -- <14>
+[$.d761] transformed into [$.c26f] at [1, 2] -- <14>
+[$.d761] died -- <14>
+[$.5a30] cloned to [$.d761] at [9, 2] -- <14>
+[$.c7c4] transformed into [$.d761] at [9, 2] -- <14>
+[$.c7c4] died -- <14>
+[^.b010] moved to [3, 6] - (not able to push) -- <15>
+[D.f6a5] cloned to [D.c7c4] at [7, 5] -- <15>
+[S.ec15] added [D.c7c4] at [7, 5] -- <15>
+[S.afdc] cloned to [S.f29c] at [5, 3] -- <15>
+[>.63eb] added [S.f29c] at [5, 3] -- <15>
+[S.4109] died -- <15>
+[^.b010] moved to [2, 6] - (not able to push) -- <16>
+[D.f6a5] cloned to [D.4109] at [10, 2] -- <16>
+[<.7175] added [D.4109] at [10, 2] -- <16>
+[D.f6a5] cloned to [D.65c8] at [7, 5] -- <16>
+[S.ec15] added [D.65c8] at [7, 5] -- <16>
+[S.afdc] cloned to [S.7d0c] at [4, 2] -- <16>
+[>.63eb] added [S.7d0c] at [4, 2] -- <16>
+[S.afdc] cloned to [S.4acf] at [2, 1] -- <16>
+[>.6476] added [S.4acf] at [2, 1] -- <16>
+[S.c7b5] died -- <16>
+[$.5a30] cloned to [$.c7b5] at [13, 4] -- <16>
+[$.7239] transformed into [$.c7b5] at [13, 4] -- <16>
+[$.7239] died -- <16>
+[$.5a30] cloned to [$.7239] at [2, 3] -- <16>
+[$.a06c] transformed into [$.7239] at [2, 3] -- <16>
+[$.a06c] died -- <16>
+[$.5a30] cloned to [$.a06c] at [1, 2] -- <16>
+[$.c26f] transformed into [$.a06c] at [1, 2] -- <16>
+[$.c26f] died -- <16>
+[$.5a30] cloned to [$.c26f] at [9, 2] -- <16>
+[$.d761] transformed into [$.c26f] at [9, 2] -- <16>
+[$.d761] died -- <16>
+[^.b010] cloned to [^.d761] at [1, 6] -- <17>
+[D.f6a5] cloned to [D.8b43] at [7, 5] -- <17>
+[S.ec15] added [D.8b43] at [7, 5] -- <17>
+[S.afdc] cloned to [S.c81e] at [6, 2] -- <17>
+[>.63eb] added [S.c81e] at [6, 2] -- <17>
+[S.afdc] cloned to [S.b327] at [2, 1] -- <17>
+[>.6476] added [S.b327] at [2, 1] -- <17>
+[S.f29c] died -- <17>
+[^.b010] cloned to [^.f29c] at [1, 6] -- <18>
+[D.f6a5] cloned to [D.5fce] at [8, 2] -- <18>
+[<.7175] added [D.5fce] at [8, 2] -- <18>
+[D.f6a5] cloned to [D. 325] at [8, 6] -- <18>
+[S.ec15] added [D. 325] at [8, 6] -- <18>
+[S.afdc] cloned to [S.a5d1] at [4, 2] -- <18>
+[>.63eb] added [S.a5d1] at [4, 2] -- <18>
+[S.7d0c] died -- <18>
+[S.4acf] died -- <18>
+[$.5a30] cloned to [$.7d0c] at [13, 4] -- <18>
+[$.c7b5] transformed into [$.7d0c] at [13, 4] -- <18>
+[$.c7b5] died -- <18>
+[$.5a30] cloned to [$.c7b5] at [2, 3] -- <18>
+[$.7239] transformed into [$.c7b5] at [2, 3] -- <18>
+[$.7239] died -- <18>
+[$.5a30] cloned to [$.7239] at [1, 2] -- <18>
+[$.a06c] transformed into [$.7239] at [1, 2] -- <18>
+[$.a06c] died -- <18>
+[$.5a30] cloned to [$.a06c] at [9, 2] -- <18>
+[$.c26f] transformed into [$.a06c] at [9, 2] -- <18>
+[$.c26f] died -- <18>
+[^.b010] moved to [2, 5] goto [4, 5] -- <19>
+[D.f6a5] cloned to [D.c26f] at [7, 5] -- <19>
+[S.ec15] added [D.c26f] at [7, 5] -- <19>
+[S.afdc] cloned to [S.4acf] at [6, 2] -- <19>
+[>.63eb] added [S.4acf] at [6, 2] -- <19>
+[S.afdc] cloned to [S.cfc2] at [2, 1] -- <19>
+[>.6476] added [S.cfc2] at [2, 1] -- <19>
+[S.c81e] died -- <19>
+[S.b327] died -- <19>
+[^.b010] moved to [3, 5] goto [4, 5] -- <20>
+[D.f6a5] cloned to [D.c81e] at [9, 3] -- <20>
+[<.7175] added [D.c81e] at [9, 3] -- <20>
+[D.f6a5] cloned to [D.b327] at [9, 5] -- <20>
+[S.ec15] added [D.b327] at [9, 5] -- <20>
+[S.afdc] cloned to [S.71ae] at [6, 2] -- <20>
+[>.63eb] added [S.71ae] at [6, 2] -- <20>
+[S.afdc] cloned to [S.f329] at [1, 2] -- <20>
+[>.6476] added [S.f329] at [1, 2] -- <20>
+[S.a5d1] died -- <20>
+[$.5a30] cloned to [$.a5d1] at [13, 4] -- <20>
+[$.7d0c] transformed into [$.a5d1] at [13, 4] -- <20>
+[$.7d0c] died -- <20>
+[$.5a30] cloned to [$.7d0c] at [2, 3] -- <20>
+[$.c7b5] transformed into [$.7d0c] at [2, 3] -- <20>
+[$.c7b5] died -- <20>
+[$.5a30] cloned to [$.c7b5] at [1, 2] -- <20>
+[$.7239] transformed into [$.c7b5] at [1, 2] -- <20>
+[$.7239] died -- <20>
+[$.5a30] cloned to [$.7239] at [9, 2] -- <20>
+[$.a06c] transformed into [$.7239] at [9, 2] -- <20>
+[$.a06c] died -- <20>
+[&. 2a0] cloned to [&.a06c] at [2, 5] -- <21>
+[^.b010] added [&.a06c] at [2, 5] -- <21>
+[D.f6a5] cloned to [D. 82a] at [9, 5] -- <21>
+[S.ec15] added [D. 82a] at [9, 5] -- <21>
+[S.afdc] cloned to [S.23e5] at [5, 1] -- <21>
+[>.63eb] added [S.23e5] at [5, 1] -- <21>
+[S.afdc] cloned to [S. df8] at [1, 2] -- <21>
+[>.6476] added [S. df8] at [1, 2] -- <21>
+[S.4acf] died -- <21>
+[S.cfc2] died -- <21>
+[&. 2a0] cloned to [&.4acf] at [2, 5] -- <22>
+[^.b010] added [&.4acf] at [2, 5] -- <22>
+[D.f6a5] cloned to [D.cfc2] at [10, 2] -- <22>
+[<.7175] added [D.cfc2] at [10, 2] -- <22>
+[D.f6a5] cloned to [D.750f] at [7, 5] -- <22>
+[S.ec15] added [D.750f] at [7, 5] -- <22>
+[S.afdc] cloned to [S.6527] at [4, 2] -- <22>
+[>.63eb] added [S.6527] at [4, 2] -- <22>
+[S.afdc] cloned to [S. 6f3] at [1, 2] -- <22>
+[>.6476] added [S. 6f3] at [1, 2] -- <22>
+[S.71ae] died -- <22>
+[S.f329] died -- <22>
+[$.5a30] cloned to [$.71ae] at [13, 4] -- <22>
+[$.a5d1] transformed into [$.71ae] at [13, 4] -- <22>
+[$.a5d1] died -- <22>
+[$.5a30] cloned to [$.a5d1] at [2, 3] -- <22>
+[$.7d0c] transformed into [$.a5d1] at [2, 3] -- <22>
+[$.7d0c] died -- <22>
+[$.5a30] cloned to [$.7d0c] at [1, 2] -- <22>
+[$.c7b5] transformed into [$.7d0c] at [1, 2] -- <22>
+[$.c7b5] died -- <22>
+[$.5a30] cloned to [$.c7b5] at [9, 2] -- <22>
+[$.7239] transformed into [$.c7b5] at [9, 2] -- <22>
+[$.7239] died -- <22>
+[&. 2a0] cloned to [&.7239] at [2, 5] -- <23>
+[^.b010] added [&.7239] at [2, 5] -- <23>
+[D.f6a5] cloned to [D.f329] at [7, 5] -- <23>
+[S.ec15] added [D.f329] at [7, 5] -- <23>
+[S.afdc] cloned to [S.d46b] at [5, 3] -- <23>
+[>.63eb] added [S.d46b] at [5, 3] -- <23>
+[S.afdc] cloned to [S.e1d4] at [1, 2] -- <23>
+[>.6476] added [S.e1d4] at [1, 2] -- <23>
+[&.a06c] moved to [3, 5] goto [8, 5] -- <23>
+[S.23e5] died -- <23>
+[S. df8] died -- <23>
+[&. 2a0] cloned to [&.23e5] at [3, 4] -- <24>
+[^.b010] added [&.23e5] at [3, 4] -- <24>
+[D.f6a5] cloned to [D. df8] at [9, 3] -- <24>
+[<.7175] added [D. df8] at [9, 3] -- <24>
+[D.f6a5] cloned to [D.cb59] at [7, 5] -- <24>
+[S.ec15] added [D.cb59] at [7, 5] -- <24>
+[S.afdc] cloned to [S. eca] at [5, 3] -- <24>
+[>.63eb] added [S. eca] at [5, 3] -- <24>
+[D.f6a5] cloned to [D.35a0] at [3, 5] -- <24>
+[&.a06c] transformed into [D.35a0] at [3, 5] -- <24>
+[&.a06c] died -- <24>
+[&.4acf] moved to [3, 5] goto [8, 5] -- <24>
+[S.6527] died -- <24>
+[S. 6f3] died -- <24>
+[$.5a30] cloned to [$.a06c] at [13, 4] -- <24>
+[$.71ae] transformed into [$.a06c] at [13, 4] -- <24>
+[$.71ae] died -- <24>
+[$.5a30] cloned to [$.71ae] at [2, 3] -- <24>
+[$.a5d1] transformed into [$.71ae] at [2, 3] -- <24>
+[$.a5d1] died -- <24>
+[$.5a30] cloned to [$.a5d1] at [1, 2] -- <24>
+[$.7d0c] transformed into [$.a5d1] at [1, 2] -- <24>
+[$.7d0c] died -- <24>
+[$.5a30] cloned to [$.7d0c] at [9, 2] -- <24>
+[$.c7b5] transformed into [$.7d0c] at [9, 2] -- <24>
+[$.c7b5] died -- <24>
+[^.b010] pushed [D.10de] -- <25>
+[D.f6a5] cloned to [D.c7b5] at [9, 5] -- <25>
+[S.ec15] added [D.c7b5] at [9, 5] -- <25>
+[S.afdc] cloned to [S.6527] at [4, 2] -- <25>
+[>.63eb] added [S.6527] at [4, 2] -- <25>
+[S.afdc] cloned to [S. 6f3] at [1, 2] -- <25>
+[>.6476] added [S. 6f3] at [1, 2] -- <25>
+[D.f6a5] cloned to [D.4bc7] at [3, 5] -- <25>
+[&.4acf] transformed into [D.4bc7] at [3, 5] -- <25>
+[&.4acf] died -- <25>
+[&.7239] moved to [3, 5] goto [8, 5] -- <25>
+[S.d46b] died -- <25>
+[S.e1d4] died -- <25>
+[^.b010] moved to [3, 5] - (not able to push) -- <26>
+[D.f6a5] cloned to [D.4acf] at [9, 3] -- <26>
+[<.7175] added [D.4acf] at [9, 3] -- <26>
+[D.f6a5] cloned to [D.d46b] at [9, 5] -- <26>
+[S.ec15] added [D.d46b] at [9, 5] -- <26>
+[S.afdc] cloned to [S.e1d4] at [5, 3] -- <26>
+[>.63eb] added [S.e1d4] at [5, 3] -- <26>
+[S.afdc] cloned to [S.7b75] at [1, 2] -- <26>
+[>.6476] added [S.7b75] at [1, 2] -- <26>
+[&.7239] moved to [4, 5] goto [8, 5] -- <26>
+[&.23e5] moved to [4, 4] goto [8, 5] -- <26>
+[S. eca] died -- <26>
+[$.5a30] cloned to [$. eca] at [13, 4] -- <26>
+[$.a06c] transformed into [$. eca] at [13, 4] -- <26>
+[$.a06c] died -- <26>
+[$.5a30] cloned to [$.a06c] at [2, 3] -- <26>
+[$.71ae] transformed into [$.a06c] at [2, 3] -- <26>
+[$.71ae] died -- <26>
+[$.5a30] cloned to [$.71ae] at [1, 2] -- <26>
+[$.a5d1] transformed into [$.71ae] at [1, 2] -- <26>
+[$.a5d1] died -- <26>
+[$.5a30] cloned to [$.a5d1] at [9, 2] -- <26>
+[$.7d0c] transformed into [$.a5d1] at [9, 2] -- <26>
+[$.7d0c] died -- <26>
+[^.b010] moved to [2, 5] - (not able to push) -- <27>
+[D.f6a5] cloned to [D.7d0c] at [8, 6] -- <27>
+[S.ec15] added [D.7d0c] at [8, 6] -- <27>
+[S.afdc] cloned to [S.7a2a] at [6, 2] -- <27>
+[>.63eb] added [S.7a2a] at [6, 2] -- <27>
+[S.afdc] cloned to [S.a2a4] at [1, 2] -- <27>
+[>.6476] added [S.a2a4] at [1, 2] -- <27>
+[&.7239] moved to [5, 5] goto [8, 5] -- <27>
+[&.23e5] moved to [4, 5] goto [8, 5] -- <27>
+[S.6527] died -- <27>
+[S. 6f3] died -- <27>
+[^.b010] moved to [2, 4] - (not able to push) -- <28>
+[D.f6a5] cloned to [D.6527] at [9, 1] -- <28>
+[<.7175] added [D.6527] at [9, 1] -- <28>
+[D.f6a5] cloned to [D. 6f3] at [8, 6] -- <28>
+[S.ec15] added [D. 6f3] at [8, 6] -- <28>
+[S.afdc] cloned to [S.ff4f] at [5, 3] -- <28>
+[>.63eb] added [S.ff4f] at [5, 3] -- <28>
+[S.afdc] cloned to [S.19b2] at [1, 2] -- <28>
+[>.6476] added [S.19b2] at [1, 2] -- <28>
+[&. 2a0] cloned to [&.f383] at [2, 6] -- <28>
+[^.d761] added [&.f383] at [2, 6] -- <28>
+[&.7239] moved to [6, 5] goto [8, 5] -- <28>
+[&.23e5] moved to [5, 5] goto [8, 5] -- <28>
+[S.e1d4] died -- <28>
+[S.7b75] died -- <28>
+[$.5a30] cloned to [$.e1d4] at [13, 4] -- <28>
+[$. eca] transformed into [$.e1d4] at [13, 4] -- <28>
+[$. eca] died -- <28>
+[$.5a30] cloned to [$. eca] at [2, 3] -- <28>
+[$.a06c] transformed into [$. eca] at [2, 3] -- <28>
+[$.a06c] died -- <28>
+[$.5a30] cloned to [$.a06c] at [1, 2] -- <28>
+[$.71ae] transformed into [$.a06c] at [1, 2] -- <28>
+[$.71ae] died -- <28>
+[$.5a30] cloned to [$.71ae] at [9, 2] -- <28>
+[$.a5d1] transformed into [$.71ae] at [9, 2] -- <28>
+[$.a5d1] died -- <28>
+[D.f6a5] cloned to [D.a5d1] at [8, 6] -- <29>
+[S.ec15] added [D.a5d1] at [8, 6] -- <29>
+[S.afdc] cloned to [S.7b75] at [4, 2] -- <29>
+[>.63eb] added [S.7b75] at [4, 2] -- <29>
+[&. 2a0] cloned to [&.4db2] at [2, 6] -- <29>
+[^.f29c] added [&.4db2] at [2, 6] -- <29>
+[&.23e5] moved to [6, 5] goto [8, 5] -- <29>
+[S.7a2a] died -- <29>
+[S.a2a4] died -- <29>
+==== SIMULATION ENDED: Code Interruption ====
+
+

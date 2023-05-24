@@ -83,8 +83,8 @@ class Entity:
         #new_ent.pos = pos if pos else self.fortress.randomPos()
         new_ent.pos = pos if pos else self._randAdjPos()
 
-        # don't clone if the position is invalid
-        if new_ent.pos == None:
+        # don't clone if the position is invalid or if something is already there
+        if new_ent.pos == None  or self.fortress.entAtPos(new_ent.pos[0], new_ent.pos[1]):
             return None
         
         self.fortress.addEntity(new_ent)
@@ -195,8 +195,11 @@ class Entity:
     def addEnt(self, entityChar):
         new_ent_def = self.fortress.CHARACTER_DICT[entityChar]
         adj_pos = self._randAdjPos()
-        if not adj_pos:
+        
+        # check if the position is valid or if there is already an entity there
+        if not adj_pos or self.fortress.entAtPos(adj_pos[0], adj_pos[1]):
             return
+        
         new_ent = new_ent_def.clone(adj_pos)
         if new_ent:
             self.fortress.addEntity(new_ent)
@@ -325,14 +328,6 @@ class Entity:
             # add the condition
             self.edges[edge] = self.newEdge()
 
-        # minimum spanning tree algorithm to remove dead nodes not connected to 0 (idle)
-        # visited_nodes = []
-        # for e in self.edges.keys():
-        #     if e.split("-")[0] == "0":
-        #         visited_nodes.append(e.split("-")[1])
-        #     elif e.split("-")[0] in visited_nodes:
-        #         visited_nodes.append(e.split("-")[1])
-
         # add unconnected nodes
         right_nodes = list(set([e.split("-")[1] for e in self.edges.keys() if e.split("-")[0] == e.split("-")[1]]))
         for i in range(len(self.nodes)):
@@ -434,8 +429,8 @@ class Entity:
         else:
             func()
 
-        # if edges are avaible that fulfill the condition for crossing from the current node, then do it
-        # order of priority: every_step, touch, none
+        # if edges are available that fulfill the condition for crossing from the current node, then do it
+        # order of priority: touch, nextTo, step, within, none
 
         # get all the edges that start at the current node
         edges = [key for key in self.edges.keys() if key.split("-")[0] == str(self.cur_node)]

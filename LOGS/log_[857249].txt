@@ -1,0 +1,2648 @@
+============    FORTRESS SEED [857249]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+>>> TIME: 2023-05-23 18:52:45.210033 <<< -- <0>
+[L.9388] moved to [8, 3] -- <3>
+[L.9388] moved to [8, 2] -- <5>
+[L.9388] moved to [9, 2] -- <7>
+[L.9388] moved to [9, 1] -- <9>
+[L.9388] moved to [9, 2] -- <11>
+[$.f903] cloned to [$.f903] at [1, 2] -- <11>
+[X.3f8d] added [$.f903] at [1, 2] -- <11>
+[$.f903] cloned to [$.75d3] at [12, 6] -- <11>
+[X.c1b9] added [$.75d3] at [12, 6] -- <11>
+[L.9388] moved to [8, 2] -- <13>
+[X.3f8d] moved to [2, 1] -- <13>
+[X.3290] moved to [1, 5] -- <13>
+[L.9388] moved to [8, 1] -- <15>
+[L.9388] moved to [8, 2] -- <17>
+[X.e3b2] moved to [13, 2] -- <17>
+[X.3f8d] moved to [2, 2] -- <17>
+[X.3290] moved to [2, 5] -- <17>
+[L.9388] moved to [8, 1] -- <19>
+[L.9388] moved to [7, 1] -- <21>
+[$.f903] cloned to [$.9ac8] at [12, 2] -- <21>
+[X.e3b2] added [$.9ac8] at [12, 2] -- <21>
+[$.f903] cloned to [$.b587] at [3, 5] -- <21>
+[X.3290] added [$.b587] at [3, 5] -- <21>
+[L.9388] moved to [8, 1] -- <23>
+[L.9388] moved to [9, 1] -- <25>
+[X.e3b2] moved to [13, 1] -- <25>
+[X.3f8d] moved to [3, 2] -- <25>
+[X.3290] moved to [2, 4] -- <25>
+[L.9388] moved to [9, 2] -- <27>
+[L.9388] moved to [9, 3] -- <29>
+[X.3f8d] moved to [3, 3] -- <29>
+[X.3290] moved to [2, 3] -- <29>
+[X.c1b9] moved to [12, 6] -- <29>
+[L.9388] moved to [8, 3] -- <31>
+[$.f903] cloned to [$.b0d6] at [13, 2] -- <31>
+[X.e3b2] added [$.b0d6] at [13, 2] -- <31>
+[$.f903] cloned to [$.e325] at [13, 6] -- <31>
+[X.c1b9] added [$.e325] at [13, 6] -- <31>
+[L.9388] moved to [7, 3] -- <33>
+[X.3f8d] moved to [4, 3] -- <33>
+[X.3290] moved to [2, 2] -- <33>
+[X.c1b9] moved to [13, 6] -- <33>
+[L.9388] moved to [7, 2] -- <35>
+[L.9388] moved to [7, 3] -- <37>
+[X.e3b2] moved to [13, 2] -- <37>
+[X.3f8d] moved to [4, 4] -- <37>
+[X.3290] moved to [3, 2] -- <37>
+[L.9388] moved to [7, 2] -- <39>
+[L.9388] moved to [6, 2] -- <41>
+[$.f903] cloned to [$.7c23] at [4, 5] -- <41>
+[X.3f8d] added [$.7c23] at [4, 5] -- <41>
+[$.f903] cloned to [$.b652] at [4, 2] -- <41>
+[X.3290] added [$.b652] at [4, 2] -- <41>
+[L.9388] moved to [7, 2] -- <43>
+[L.9388] moved to [7, 1] -- <45>
+[X.3f8d] moved to [4, 3] -- <45>
+[X.3290] moved to [3, 3] -- <45>
+[L.9388] moved to [7, 2] -- <47>
+[L.9388] moved to [8, 2] -- <49>
+[X.e3b2] moved to [13, 3] -- <49>
+[X.3f8d] moved to [4, 2] -- <49>
+[X.3290] moved to [2, 3] -- <49>
+[X.c1b9] moved to [12, 6] -- <49>
+[L.9388] moved to [8, 3] -- <51>
+[$.f903] cloned to [$.5c21] at [4, 1] -- <51>
+[X.3f8d] added [$.5c21] at [4, 1] -- <51>
+[$.f903] cloned to [$.9408] at [3, 3] -- <51>
+[X.3290] added [$.9408] at [3, 3] -- <51>
+[L.9388] moved to [8, 2] -- <53>
+[X.3f8d] moved to [4, 1] -- <53>
+[X.3290] moved to [2, 4] -- <53>
+[L.9388] moved to [8, 3] -- <55>
+[L.9388] moved to [9, 3] -- <57>
+[X.e3b2] moved to [13, 4] -- <57>
+[X.3290] moved to [1, 4] -- <57>
+[X.c1b9] moved to [11, 6] -- <57>
+[L.9388] moved to [9, 4] -- <59>
+[L.9388] moved to [10, 4] -- <61>
+[$.f903] cloned to [$.8c4d] at [13, 3] -- <61>
+[X.e3b2] added [$.8c4d] at [13, 3] -- <61>
+[$.f903] cloned to [$.58c1] at [5, 1] -- <61>
+[X.3f8d] added [$.58c1] at [5, 1] -- <61>
+[$.f903] cloned to [$.3337] at [1, 3] -- <61>
+[X.3290] added [$.3337] at [1, 3] -- <61>
+[L.9388] moved to [10, 3] -- <63>
+[L.9388] moved to [10, 4] -- <65>
+[X.e3b2] moved to [13, 5] -- <65>
+[X.3f8d] moved to [4, 2] -- <65>
+[X.3290] moved to [2, 4] -- <65>
+[L.9388] moved to [10, 3] -- <67>
+[L.9388] moved to [9, 3] -- <69>
+[X.e3b2] moved to [12, 5] -- <69>
+[X.3f8d] moved to [4, 3] -- <69>
+[X.3290] moved to [3, 4] -- <69>
+[X.c1b9] moved to [11, 5] -- <69>
+[L.9388] moved to [9, 4] -- <71>
+[$.f903] cloned to [$.545d] at [5, 3] -- <71>
+[X.3f8d] added [$.545d] at [5, 3] -- <71>
+[$.f903] cloned to [$.39fb] at [11, 6] -- <71>
+[X.c1b9] added [$.39fb] at [11, 6] -- <71>
+[L.9388] moved to [9, 5] -- <73>
+[X.e3b2] moved to [12, 6] -- <73>
+[X.3f8d] moved to [4, 4] -- <73>
+[X.3290] moved to [4, 4] -- <73>
+[X.c1b9] moved to [11, 6] -- <73>
+[L.9388] moved to [9, 4] -- <75>
+[L.9388] moved to [8, 4] -- <77>
+[X.e3b2] moved to [11, 6] -- <77>
+[X.3f8d] moved to [4, 5] -- <77>
+[X.3290] moved to [5, 4] -- <77>
+[X.c1b9] moved to [11, 5] -- <77>
+[L.9388] moved to [8, 5] -- <79>
+[L.9388] moved to [7, 5] -- <81>
+[$.f903] cloned to [$.83db] at [4, 6] -- <81>
+[X.3f8d] added [$.83db] at [4, 6] -- <81>
+[$.f903] cloned to [$.e4c3] at [5, 5] -- <81>
+[X.3290] added [$.e4c3] at [5, 5] -- <81>
+[L.9388] moved to [7, 6] -- <83>
+[X.e3b2] moved to [12, 6] -- <85>
+[X.3f8d] moved to [4, 6] -- <85>
+[X.3290] moved to [5, 3] -- <85>
+[X.c1b9] moved to [10, 5] -- <85>
+[L.9388] moved to [6, 6] -- <87>
+[X.e3b2] moved to [13, 6] -- <89>
+[X.3f8d] moved to [4, 5] -- <89>
+[X.3290] moved to [5, 4] -- <89>
+[X.c1b9] moved to [9, 5] -- <89>
+[L.9388] moved to [7, 6] -- <91>
+[$.f903] cloned to [$. d31] at [4, 4] -- <91>
+[X.3f8d] added [$. d31] at [4, 4] -- <91>
+[$.f903] cloned to [$.b66f] at [9, 6] -- <91>
+[X.c1b9] added [$.b66f] at [9, 6] -- <91>
+[X.3f8d] moved to [5, 5] -- <93>
+[X.3290] moved to [5, 5] -- <93>
+[X.c1b9] moved to [9, 4] -- <93>
+[L.9388] moved to [6, 6] -- <95>
+[L.9388] moved to [5, 6] -- <97>
+[X.3f8d] moved to [6, 5] -- <97>
+[X.3290] moved to [5, 4] -- <97>
+[X.c1b9] moved to [9, 5] -- <97>
+[L.9388] moved to [4, 6] -- <99>
+[L.9388] took [$.83db] -- <101>
+[$.83db] died -- <101>
+[$.f903] cloned to [$.83db] at [6, 6] -- <101>
+[X.3f8d] added [$.83db] at [6, 6] -- <101>
+[L.9388] moved to [5, 6] -- <105>
+[X.3f8d] moved to [6, 4] -- <105>
+[X.3290] moved to [4, 4] -- <105>
+[X.c1b9] moved to [8, 5] -- <105>
+[L.9388] moved to [6, 6] -- <109>
+[X.e3b2] moved to [13, 5] -- <109>
+[X.3f8d] moved to [6, 5] -- <109>
+[X.3290] moved to [3, 4] -- <109>
+[X.c1b9] moved to [9, 5] -- <109>
+[L.9388] took [$.83db] -- <111>
+[$.83db] died -- <111>
+[$.f903] cloned to [$.83db] at [6, 4] -- <111>
+[X.3f8d] added [$.83db] at [6, 4] -- <111>
+[X.3f8d] moved to [6, 6] -- <113>
+[X.3290] moved to [3, 3] -- <113>
+[X.c1b9] moved to [8, 5] -- <113>
+[L.9388] moved to [5, 6] -- <115>
+[X.3f8d] moved to [6, 5] -- <117>
+[X.3290] moved to [3, 4] -- <117>
+[X.c1b9] moved to [7, 5] -- <117>
+[L.9388] moved to [6, 6] -- <119>
+[$.f903] cloned to [$.c3fc] at [13, 4] -- <121>
+[X.e3b2] added [$.c3fc] at [13, 4] -- <121>
+[$.f903] cloned to [$.af9d] at [8, 5] -- <121>
+[X.c1b9] added [$.af9d] at [8, 5] -- <121>
+[X.3f8d] moved to [6, 6] -- <125>
+[X.3290] moved to [3, 3] -- <125>
+[X.c1b9] moved to [6, 5] -- <125>
+[L.9388] moved to [5, 6] -- <127>
+[X.3f8d] moved to [6, 5] -- <129>
+[X.3290] moved to [3, 4] -- <129>
+[X.c1b9] moved to [5, 5] -- <129>
+[L.9388] moved to [6, 6] -- <131>
+[$.f903] cloned to [$.16be] at [2, 4] -- <131>
+[X.3290] added [$.16be] at [2, 4] -- <131>
+[$.f903] cloned to [$. db0] at [5, 6] -- <131>
+[X.c1b9] added [$. db0] at [5, 6] -- <131>
+[L.9388] moved to [7, 6] -- <133>
+[X.e3b2] moved to [13, 6] -- <133>
+[X.3f8d] moved to [6, 4] -- <133>
+[X.3290] moved to [2, 4] -- <133>
+[X.c1b9] moved to [4, 5] -- <133>
+[L.9388] moved to [8, 6] -- <137>
+[X.e3b2] moved to [13, 5] -- <137>
+[X.3f8d] moved to [6, 5] -- <137>
+[X.3290] moved to [1, 4] -- <137>
+[X.c1b9] moved to [5, 5] -- <137>
+[L.9388] moved to [8, 5] -- <141>
+[$.f903] cloned to [$.b087] at [12, 5] -- <141>
+[X.e3b2] added [$.b087] at [12, 5] -- <141>
+[$.f903] cloned to [$.97b9] at [7, 5] -- <141>
+[X.3f8d] added [$.97b9] at [7, 5] -- <141>
+[L.9388] took [$.af9d] -- <143>
+[$.af9d] died -- <143>
+[L.9388] moved to [8, 4] -- <145>
+[X.e3b2] moved to [12, 5] -- <145>
+[X.3f8d] moved to [5, 5] -- <145>
+[X.3290] moved to [1, 5] -- <145>
+[X.c1b9] moved to [6, 5] -- <145>
+[L.9388] moved to [8, 3] -- <147>
+[L.9388] moved to [8, 4] -- <149>
+[X.e3b2] moved to [11, 5] -- <149>
+[X.3f8d] moved to [6, 5] -- <149>
+[X.3290] moved to [1, 6] -- <149>
+[X.c1b9] moved to [6, 4] -- <149>
+[L.9388] moved to [7, 4] -- <151>
+[$.f903] cloned to [$.af9d] at [10, 5] -- <151>
+[X.e3b2] added [$.af9d] at [10, 5] -- <151>
+[$.f903] cloned to [$.5002] at [6, 6] -- <151>
+[X.3f8d] added [$.5002] at [6, 6] -- <151>
+[$.f903] cloned to [$.1428] at [6, 3] -- <151>
+[X.c1b9] added [$.1428] at [6, 3] -- <151>
+[L.9388] moved to [7, 3] -- <153>
+[X.e3b2] moved to [10, 5] -- <153>
+[X.3f8d] moved to [5, 5] -- <153>
+[X.c1b9] moved to [7, 4] -- <153>
+[L.9388] moved to [7, 2] -- <155>
+[L.9388] moved to [7, 3] -- <157>
+[X.e3b2] moved to [9, 5] -- <157>
+[X.3f8d] moved to [6, 5] -- <157>
+[X.c1b9] moved to [7, 3] -- <157>
+[L.9388] moved to [6, 3] -- <159>
+[L.9388] took [$.1428] -- <161>
+[$.1428] died -- <161>
+[$.f903] cloned to [$.1428] at [8, 5] -- <161>
+[X.e3b2] added [$.1428] at [8, 5] -- <161>
+[L.9388] moved to [6, 4] -- <163>
+[L.9388] took [$.83db] -- <165>
+[$.83db] died -- <165>
+[X.e3b2] moved to [10, 5] -- <165>
+[X.3f8d] moved to [6, 4] -- <165>
+[X.c1b9] moved to [6, 3] -- <165>
+[L.9388] moved to [7, 4] -- <167>
+[L.9388] moved to [7, 5] -- <169>
+[X.e3b2] moved to [10, 4] -- <169>
+[X.3f8d] moved to [5, 4] -- <169>
+[X.c1b9] moved to [6, 2] -- <169>
+[L.9388] took [$.97b9] -- <171>
+[$.97b9] died -- <171>
+[$.f903] cloned to [$.83db] at [2, 6] -- <171>
+[X.3290] added [$.83db] at [2, 6] -- <171>
+[$.f903] cloned to [$.97b9] at [6, 3] -- <171>
+[X.c1b9] added [$.97b9] at [6, 3] -- <171>
+[L.9388] moved to [8, 5] -- <173>
+[X.e3b2] moved to [10, 5] -- <173>
+[X.3f8d] moved to [5, 3] -- <173>
+[X.c1b9] moved to [5, 2] -- <173>
+[L.9388] took [$.1428] -- <175>
+[$.1428] died -- <175>
+[L.9388] moved to [8, 6] -- <177>
+[X.e3b2] moved to [11, 5] -- <177>
+[X.3f8d] moved to [5, 2] -- <177>
+[X.c1b9] moved to [4, 2] -- <177>
+[L.9388] moved to [9, 6] -- <179>
+[L.9388] took [$.b66f] -- <181>
+[$.b66f] died -- <181>
+[$.f903] cloned to [$.b66f] at [3, 2] -- <181>
+[X.c1b9] added [$.b66f] at [3, 2] -- <181>
+[X.e3b2] moved to [12, 5] -- <185>
+[X.3f8d] moved to [5, 3] -- <185>
+[X.3290] moved to [1, 5] -- <185>
+[X.c1b9] moved to [3, 2] -- <185>
+[L.9388] moved to [8, 6] -- <187>
+[X.e3b2] moved to [13, 5] -- <189>
+[X.3f8d] moved to [5, 2] -- <189>
+[X.3290] moved to [1, 6] -- <189>
+[X.c1b9] moved to [2, 2] -- <189>
+[L.9388] moved to [9, 6] -- <191>
+[L.9388] moved to [9, 5] -- <193>
+[X.e3b2] moved to [13, 6] -- <193>
+[X.3f8d] moved to [4, 2] -- <193>
+[X.3290] moved to [2, 6] -- <193>
+[X.c1b9] moved to [1, 2] -- <193>
+[L.9388] moved to [10, 5] -- <195>
+[L.9388] took [$.af9d] -- <197>
+[$.af9d] died -- <197>
+[X.3f8d] moved to [3, 2] -- <197>
+[X.3290] moved to [3, 6] -- <197>
+[X.c1b9] moved to [2, 2] -- <197>
+[L.9388] moved to [10, 4] -- <199>
+[L.9388] moved to [11, 4] -- <201>
+[$.f903] cloned to [$.af9d] at [3, 1] -- <201>
+[X.3f8d] added [$.af9d] at [3, 1] -- <201>
+[$.f903] cloned to [$.1428] at [2, 3] -- <201>
+[X.c1b9] added [$.1428] at [2, 3] -- <201>
+[L.9388] moved to [11, 3] -- <203>
+[L.9388] moved to [10, 3] -- <205>
+[X.e3b2] moved to [12, 6] -- <205>
+[X.3f8d] moved to [3, 3] -- <205>
+[X.3290] moved to [4, 6] -- <205>
+[X.c1b9] moved to [2, 1] -- <205>
+[L.9388] moved to [10, 4] -- <207>
+[L.9388] moved to [9, 4] -- <209>
+[X.e3b2] moved to [13, 6] -- <209>
+[X.3f8d] moved to [3, 4] -- <209>
+[X.3290] moved to [4, 5] -- <209>
+[X.c1b9] moved to [1, 1] -- <209>
+[L.9388] moved to [8, 4] -- <211>
+[$.f903] cloned to [$.c260] at [13, 5] -- <211>
+[X.e3b2] added [$.c260] at [13, 5] -- <211>
+[L.9388] moved to [8, 5] -- <213>
+[X.3f8d] moved to [3, 3] -- <213>
+[X.3290] moved to [4, 6] -- <213>
+[L.9388] moved to [9, 5] -- <215>
+[L.9388] moved to [9, 6] -- <217>
+[X.e3b2] moved to [13, 5] -- <217>
+[X.3f8d] moved to [2, 3] -- <217>
+[X.3290] moved to [3, 6] -- <217>
+[L.9388] moved to [8, 6] -- <221>
+[$.f903] cloned to [$.d07a] at [4, 6] -- <221>
+[X.3290] added [$.d07a] at [4, 6] -- <221>
+[L.9388] moved to [7, 6] -- <223>
+[L.9388] moved to [6, 6] -- <225>
+[X.e3b2] moved to [13, 6] -- <225>
+[X.3f8d] moved to [3, 3] -- <225>
+[X.3290] moved to [3, 5] -- <225>
+[X.c1b9] moved to [1, 2] -- <225>
+[L.9388] took [$.5002] -- <227>
+[$.5002] died -- <227>
+[L.9388] moved to [5, 6] -- <229>
+[X.3f8d] moved to [3, 4] -- <229>
+[X.3290] moved to [3, 4] -- <229>
+[L.9388] took [$. db0] -- <231>
+[$. db0] died -- <231>
+[L.9388] moved to [6, 6] -- <233>
+[X.e3b2] moved to [12, 6] -- <233>
+[X.3f8d] moved to [4, 4] -- <233>
+[X.3290] moved to [4, 4] -- <233>
+[L.9388] moved to [7, 6] -- <235>
+[L.9388] moved to [8, 6] -- <237>
+[X.e3b2] moved to [12, 5] -- <237>
+[X.3f8d] moved to [5, 4] -- <237>
+[X.3290] moved to [4, 5] -- <237>
+[X.c1b9] moved to [1, 1] -- <237>
+[L.9388] moved to [9, 6] -- <239>
+[L.9388] moved to [9, 5] -- <241>
+[$.f903] cloned to [$. db0] at [12, 4] -- <241>
+[X.e3b2] added [$. db0] at [12, 4] -- <241>
+[$.f903] cloned to [$.5002] at [6, 4] -- <241>
+[X.3f8d] added [$.5002] at [6, 4] -- <241>
+[L.9388] moved to [8, 5] -- <243>
+[L.9388] moved to [7, 5] -- <245>
+[X.e3b2] moved to [12, 6] -- <245>
+[X.3f8d] moved to [6, 4] -- <245>
+[X.3290] moved to [4, 4] -- <245>
+[X.c1b9] moved to [1, 2] -- <245>
+[L.9388] moved to [6, 5] -- <247>
+[L.9388] moved to [7, 5] -- <249>
+[X.3f8d] moved to [6, 3] -- <249>
+[X.3290] moved to [3, 4] -- <249>
+[L.9388] moved to [7, 4] -- <251>
+[L.9388] moved to [8, 4] -- <253>
+[X.e3b2] moved to [13, 6] -- <253>
+[X.3f8d] moved to [5, 3] -- <253>
+[X.3290] moved to [4, 4] -- <253>
+[X.c1b9] moved to [2, 2] -- <253>
+[L.9388] moved to [8, 3] -- <255>
+[L.9388] moved to [9, 3] -- <257>
+[X.3f8d] moved to [5, 2] -- <257>
+[X.3290] moved to [5, 4] -- <257>
+[X.c1b9] moved to [2, 1] -- <257>
+[L.9388] moved to [9, 2] -- <259>
+[L.9388] moved to [9, 1] -- <261>
+[L.9388] moved to [9, 2] -- <263>
+[L.9388] moved to [9, 1] -- <265>
+[X.e3b2] moved to [12, 6] -- <265>
+[X.3f8d] moved to [4, 2] -- <265>
+[X.3290] moved to [6, 4] -- <265>
+[X.c1b9] moved to [1, 1] -- <265>
+[L.9388] moved to [8, 1] -- <267>
+[X.e3b2] moved to [12, 5] -- <269>
+[X.3f8d] moved to [4, 3] -- <269>
+[X.3290] moved to [6, 5] -- <269>
+[X.c1b9] moved to [2, 1] -- <269>
+[L.9388] moved to [7, 1] -- <271>
+[$.f903] cloned to [$.9dc1] at [6, 6] -- <271>
+[X.3290] added [$.9dc1] at [6, 6] -- <271>
+[L.9388] moved to [6, 1] -- <273>
+[X.e3b2] moved to [11, 5] -- <273>
+[X.3f8d] moved to [4, 4] -- <273>
+[X.3290] moved to [7, 5] -- <273>
+[L.9388] moved to [6, 2] -- <275>
+[L.9388] moved to [5, 2] -- <277>
+[X.e3b2] moved to [12, 5] -- <277>
+[X.3f8d] moved to [4, 5] -- <277>
+[X.3290] moved to [7, 4] -- <277>
+[X.c1b9] moved to [1, 1] -- <277>
+[L.9388] moved to [4, 2] -- <279>
+[L.9388] took [$.b652] -- <281>
+[$.b652] died -- <281>
+[$.f903] cloned to [$.b652] at [2, 1] -- <281>
+[X.c1b9] added [$.b652] at [2, 1] -- <281>
+[L.9388] moved to [5, 2] -- <283>
+[L.9388] moved to [6, 2] -- <285>
+[X.e3b2] moved to [12, 4] -- <285>
+[X.3f8d] moved to [5, 5] -- <285>
+[X.3290] moved to [7, 3] -- <285>
+[X.c1b9] moved to [1, 2] -- <285>
+[L.9388] moved to [6, 3] -- <287>
+[L.9388] took [$.97b9] -- <289>
+[$.97b9] died -- <289>
+[X.e3b2] moved to [12, 5] -- <289>
+[X.3f8d] moved to [6, 5] -- <289>
+[X.3290] moved to [7, 4] -- <289>
+[X.c1b9] moved to [1, 1] -- <289>
+[L.9388] moved to [5, 3] -- <291>
+[$.f903] cloned to [$.97b9] at [11, 5] -- <291>
+[X.e3b2] added [$.97b9] at [11, 5] -- <291>
+[$.f903] cloned to [$.b411] at [7, 5] -- <291>
+[X.3f8d] added [$.b411] at [7, 5] -- <291>
+[$.f903] cloned to [$.bdfb] at [7, 3] -- <291>
+[X.3290] added [$.bdfb] at [7, 3] -- <291>
+[L.9388] took [$.545d] -- <293>
+[$.545d] died -- <293>
+[X.e3b2] moved to [11, 5] -- <293>
+[X.3f8d] moved to [5, 5] -- <293>
+[X.3290] moved to [7, 5] -- <293>
+[X.c1b9] moved to [2, 1] -- <293>
+[L.9388] moved to [5, 2] -- <295>
+[L.9388] moved to [5, 3] -- <297>
+[X.e3b2] moved to [10, 5] -- <297>
+[X.3f8d] moved to [6, 5] -- <297>
+[X.3290] moved to [7, 6] -- <297>
+[L.9388] moved to [4, 3] -- <299>
+[L.9388] moved to [3, 3] -- <301>
+[$.f903] cloned to [$.545d] at [10, 4] -- <301>
+[X.e3b2] added [$.545d] at [10, 4] -- <301>
+[$.f903] cloned to [$.ee3d] at [2, 2] -- <301>
+[X.c1b9] added [$.ee3d] at [2, 2] -- <301>
+[L.9388] took [$.9408] -- <303>
+[$.9408] died -- <303>
+[L.9388] moved to [3, 2] -- <305>
+[X.e3b2] moved to [9, 5] -- <305>
+[X.3f8d] moved to [5, 5] -- <305>
+[X.c1b9] moved to [3, 1] -- <305>
+[L.9388] took [$.b66f] -- <307>
+[$.b66f] died -- <307>
+[L.9388] moved to [3, 1] -- <309>
+[X.e3b2] moved to [9, 6] -- <309>
+[X.3f8d] moved to [4, 5] -- <309>
+[X.3290] moved to [8, 6] -- <309>
+[X.c1b9] moved to [3, 2] -- <309>
+[L.9388] took [$.af9d] -- <311>
+[$.af9d] died -- <311>
+[$.f903] cloned to [$.9408] at [9, 5] -- <311>
+[X.e3b2] added [$.9408] at [9, 5] -- <311>
+[$.f903] cloned to [$.b66f] at [8, 5] -- <311>
+[X.3290] added [$.b66f] at [8, 5] -- <311>
+[$.f903] cloned to [$.af9d] at [3, 3] -- <311>
+[X.c1b9] added [$.af9d] at [3, 3] -- <311>
+[L.9388] moved to [3, 2] -- <313>
+[X.3f8d] moved to [5, 5] -- <313>
+[X.c1b9] moved to [3, 1] -- <313>
+[L.9388] moved to [2, 2] -- <315>
+[L.9388] took [$.ee3d] -- <317>
+[$.ee3d] died -- <317>
+[X.e3b2] moved to [8, 6] -- <317>
+[X.3f8d] moved to [5, 6] -- <317>
+[X.3290] moved to [9, 6] -- <317>
+[L.9388] moved to [2, 3] -- <319>
+[L.9388] took [$.1428] -- <321>
+[$.1428] died -- <321>
+[$.f903] cloned to [$.1428] at [7, 6] -- <321>
+[X.e3b2] added [$.1428] at [7, 6] -- <321>
+[L.9388] moved to [2, 4] -- <323>
+[L.9388] took [$.16be] -- <325>
+[$.16be] died -- <325>
+[X.e3b2] moved to [9, 6] -- <325>
+[X.3f8d] moved to [5, 5] -- <325>
+[X.c1b9] moved to [2, 1] -- <325>
+[L.9388] moved to [3, 4] -- <327>
+[L.9388] moved to [3, 5] -- <329>
+[X.e3b2] moved to [9, 5] -- <329>
+[X.3f8d] moved to [4, 5] -- <329>
+[X.3290] moved to [8, 6] -- <329>
+[L.9388] took [$.b587] -- <331>
+[$.b587] died -- <331>
+[$.f903] cloned to [$.b587] at [9, 6] -- <331>
+[X.e3b2] added [$.b587] at [9, 6] -- <331>
+[$.f903] cloned to [$.16be] at [3, 1] -- <331>
+[X.c1b9] added [$.16be] at [3, 1] -- <331>
+[L.9388] moved to [3, 6] -- <333>
+[X.e3b2] moved to [10, 5] -- <333>
+[X.3f8d] moved to [4, 6] -- <333>
+[X.3290] moved to [8, 5] -- <333>
+[X.c1b9] moved to [1, 1] -- <333>
+[L.9388] moved to [2, 6] -- <335>
+[L.9388] took [$.83db] -- <337>
+[$.83db] died -- <337>
+[X.e3b2] moved to [10, 6] -- <337>
+[X.3f8d] moved to [5, 6] -- <337>
+[X.3290] moved to [8, 4] -- <337>
+[X.c1b9] moved to [1, 2] -- <337>
+[L.9388] moved to [1, 6] -- <339>
+[L.9388] moved to [2, 6] -- <341>
+[$.f903] cloned to [$.83db] at [7, 4] -- <341>
+[X.3290] added [$.83db] at [7, 4] -- <341>
+[X.e3b2] moved to [11, 6] -- <345>
+[X.3290] moved to [8, 3] -- <345>
+[L.9388] moved to [1, 6] -- <347>
+[X.e3b2] moved to [12, 6] -- <349>
+[X.3f8d] moved to [5, 5] -- <349>
+[X.3290] moved to [8, 4] -- <349>
+[L.9388] moved to [2, 6] -- <351>
+[$.f903] cloned to [$.ee3d] at [5, 4] -- <351>
+[X.3f8d] added [$.ee3d] at [5, 4] -- <351>
+[$.f903] cloned to [$.3859] at [8, 3] -- <351>
+[X.3290] added [$.3859] at [8, 3] -- <351>
+[L.9388] moved to [1, 6] -- <353>
+[X.3f8d] moved to [6, 5] -- <353>
+[X.3290] moved to [8, 3] -- <353>
+[X.c1b9] moved to [1, 3] -- <353>
+[L.9388] moved to [2, 6] -- <357>
+[X.3f8d] moved to [6, 4] -- <357>
+[X.3290] moved to [7, 3] -- <357>
+[L.9388] moved to [2, 5] -- <359>
+[L.9388] moved to [2, 6] -- <361>
+[$.f903] cloned to [$.6e76] at [6, 3] -- <361>
+[X.3290] added [$.6e76] at [6, 3] -- <361>
+[L.9388] moved to [3, 6] -- <365>
+[X.e3b2] moved to [12, 5] -- <365>
+[X.3f8d] moved to [6, 5] -- <365>
+[X.3290] moved to [6, 3] -- <365>
+[X.c1b9] moved to [2, 3] -- <365>
+[L.9388] moved to [3, 5] -- <369>
+[X.e3b2] moved to [11, 5] -- <369>
+[X.3f8d] moved to [5, 5] -- <369>
+[X.3290] moved to [6, 2] -- <369>
+[X.c1b9] moved to [2, 4] -- <369>
+[L.9388] moved to [2, 5] -- <371>
+[$.f903] cloned to [$.6023] at [7, 2] -- <371>
+[X.3290] added [$.6023] at [7, 2] -- <371>
+[L.9388] moved to [3, 5] -- <373>
+[X.e3b2] moved to [11, 4] -- <373>
+[X.3f8d] moved to [5, 6] -- <373>
+[X.3290] moved to [5, 2] -- <373>
+[X.c1b9] moved to [3, 4] -- <373>
+[L.9388] moved to [3, 6] -- <375>
+[L.9388] moved to [3, 5] -- <377>
+[X.e3b2] moved to [10, 4] -- <377>
+[X.3f8d] moved to [4, 6] -- <377>
+[X.3290] moved to [5, 1] -- <377>
+[X.c1b9] moved to [3, 5] -- <377>
+[L.9388] moved to [2, 5] -- <379>
+[L.9388] moved to [3, 5] -- <381>
+[$.f903] cloned to [$.c214] at [9, 4] -- <381>
+[X.e3b2] added [$.c214] at [9, 4] -- <381>
+[$.f903] cloned to [$. f0c] at [6, 1] -- <381>
+[X.3290] added [$. f0c] at [6, 1] -- <381>
+[L.9388] moved to [3, 4] -- <383>
+[L.9388] moved to [3, 5] -- <385>
+[X.e3b2] moved to [9, 4] -- <385>
+[X.3f8d] moved to [5, 6] -- <385>
+[X.3290] moved to [5, 2] -- <385>
+[X.c1b9] moved to [3, 4] -- <385>
+[L.9388] moved to [2, 5] -- <387>
+[L.9388] moved to [1, 5] -- <389>
+[X.e3b2] moved to [9, 3] -- <389>
+[X.3290] moved to [4, 2] -- <389>
+[X.c1b9] moved to [4, 4] -- <389>
+[$.f903] cloned to [$.d23e] at [10, 3] -- <391>
+[X.e3b2] added [$.d23e] at [10, 3] -- <391>
+[X.e3b2] moved to [10, 3] -- <393>
+[X.3290] moved to [4, 1] -- <393>
+[X.c1b9] moved to [3, 4] -- <393>
+[L.9388] moved to [1, 4] -- <397>
+[X.e3b2] moved to [10, 4] -- <397>
+[X.3f8d] moved to [4, 6] -- <397>
+[X.3290] moved to [5, 1] -- <397>
+[X.c1b9] moved to [2, 4] -- <397>
+[L.9388] moved to [2, 4] -- <399>
+[L.9388] moved to [3, 4] -- <401>
+[$.f903] cloned to [$.493c] at [5, 6] -- <401>
+[X.3f8d] added [$.493c] at [5, 6] -- <401>
+[$.f903] cloned to [$.8f6c] at [2, 5] -- <401>
+[X.c1b9] added [$.8f6c] at [2, 5] -- <401>
+[L.9388] moved to [3, 3] -- <403>
+[L.9388] took [$.af9d] -- <405>
+[$.af9d] died -- <405>
+[X.e3b2] moved to [10, 5] -- <405>
+[X.3f8d] moved to [3, 6] -- <405>
+[X.3290] moved to [6, 1] -- <405>
+[X.c1b9] moved to [2, 5] -- <405>
+[L.9388] moved to [3, 2] -- <407>
+[L.9388] moved to [2, 2] -- <409>
+[X.e3b2] moved to [9, 5] -- <409>
+[X.3f8d] moved to [3, 5] -- <409>
+[X.3290] moved to [6, 2] -- <409>
+[X.c1b9] moved to [1, 5] -- <409>
+[L.9388] moved to [3, 2] -- <411>
+[L.9388] moved to [4, 2] -- <413>
+[X.e3b2] moved to [10, 5] -- <413>
+[X.3f8d] moved to [3, 4] -- <413>
+[X.3290] moved to [7, 2] -- <413>
+[X.c1b9] moved to [1, 6] -- <413>
+[L.9388] moved to [4, 1] -- <415>
+[L.9388] took [$.5c21] -- <417>
+[$.5c21] died -- <417>
+[X.e3b2] moved to [11, 5] -- <417>
+[X.3f8d] moved to [3, 3] -- <417>
+[X.3290] moved to [7, 1] -- <417>
+[X.c1b9] moved to [1, 5] -- <417>
+[L.9388] moved to [5, 1] -- <419>
+[L.9388] took [$.58c1] -- <421>
+[$.58c1] died -- <421>
+[$.f903] cloned to [$.5c21] at [10, 5] -- <421>
+[X.e3b2] added [$.5c21] at [10, 5] -- <421>
+[$.f903] cloned to [$.58c1] at [4, 3] -- <421>
+[X.3f8d] added [$.58c1] at [4, 3] -- <421>
+[L.9388] moved to [5, 2] -- <425>
+[X.e3b2] moved to [11, 6] -- <425>
+[X.3f8d] moved to [3, 4] -- <425>
+[X.3290] moved to [8, 1] -- <425>
+[X.c1b9] moved to [1, 6] -- <425>
+[L.9388] moved to [5, 1] -- <427>
+[L.9388] moved to [4, 1] -- <429>
+[X.e3b2] moved to [10, 6] -- <429>
+[X.3f8d] moved to [3, 5] -- <429>
+[X.3290] moved to [9, 1] -- <429>
+[X.c1b9] moved to [1, 5] -- <429>
+[L.9388] moved to [4, 2] -- <431>
+[$.f903] cloned to [$.af9d] at [9, 2] -- <431>
+[X.3290] added [$.af9d] at [9, 2] -- <431>
+[$.f903] cloned to [$.ecc2] at [1, 6] -- <431>
+[X.c1b9] added [$.ecc2] at [1, 6] -- <431>
+[L.9388] moved to [4, 1] -- <433>
+[X.3f8d] moved to [2, 5] -- <433>
+[X.3290] moved to [10, 1] -- <433>
+[X.c1b9] moved to [1, 6] -- <433>
+[L.9388] moved to [3, 1] -- <437>
+[X.e3b2] moved to [9, 6] -- <437>
+[X.3f8d] moved to [2, 4] -- <437>
+[X.3290] moved to [10, 2] -- <437>
+[L.9388] took [$.16be] -- <439>
+[$.16be] died -- <439>
+[L.9388] moved to [4, 1] -- <441>
+[$.f903] cloned to [$.16be] at [8, 6] -- <441>
+[X.e3b2] added [$.16be] at [8, 6] -- <441>
+[$.f903] cloned to [$.3902] at [11, 2] -- <441>
+[X.3290] added [$.3902] at [11, 2] -- <441>
+[L.9388] moved to [3, 1] -- <443>
+[L.9388] moved to [4, 1] -- <445>
+[X.3f8d] moved to [2, 3] -- <445>
+[X.3290] moved to [9, 2] -- <445>
+[L.9388] moved to [4, 2] -- <449>
+[X.e3b2] moved to [8, 6] -- <449>
+[X.3f8d] moved to [3, 3] -- <449>
+[X.3290] moved to [8, 2] -- <449>
+[X.c1b9] moved to [2, 6] -- <449>
+[L.9388] moved to [5, 2] -- <451>
+[L.9388] moved to [6, 2] -- <453>
+[X.3f8d] moved to [3, 2] -- <453>
+[X.3290] moved to [9, 2] -- <453>
+[X.c1b9] moved to [2, 5] -- <453>
+[L.9388] moved to [6, 1] -- <455>
+[L.9388] took [$. f0c] -- <457>
+[$. f0c] died -- <457>
+[X.e3b2] moved to [8, 5] -- <457>
+[X.3f8d] moved to [4, 2] -- <457>
+[X.3290] moved to [8, 2] -- <457>
+[X.c1b9] moved to [2, 4] -- <457>
+[L.9388] moved to [6, 2] -- <461>
+[$.f903] cloned to [$. f0c] at [8, 4] -- <461>
+[X.e3b2] added [$. f0c] at [8, 4] -- <461>
+[$.f903] cloned to [$.eb9e] at [5, 2] -- <461>
+[X.3f8d] added [$.eb9e] at [5, 2] -- <461>
+[$.f903] cloned to [$.1da8] at [1, 4] -- <461>
+[X.c1b9] added [$.1da8] at [1, 4] -- <461>
+[L.9388] moved to [5, 2] -- <463>
+[L.9388] took [$.eb9e] -- <465>
+[$.eb9e] died -- <465>
+[X.e3b2] moved to [9, 5] -- <465>
+[X.3f8d] moved to [4, 3] -- <465>
+[X.3290] moved to [8, 1] -- <465>
+[X.c1b9] moved to [1, 4] -- <465>
+[L.9388] moved to [4, 2] -- <467>
+[L.9388] moved to [4, 1] -- <469>
+[X.e3b2] moved to [9, 6] -- <469>
+[X.3f8d] moved to [3, 3] -- <469>
+[X.3290] moved to [9, 1] -- <469>
+[L.9388] moved to [5, 1] -- <471>
+[$.f903] cloned to [$.eb9e] at [10, 6] -- <471>
+[X.e3b2] added [$.eb9e] at [10, 6] -- <471>
+[$.f903] cloned to [$.a4dd] at [3, 4] -- <471>
+[X.3f8d] added [$.a4dd] at [3, 4] -- <471>
+[$.f903] cloned to [$.71d1] at [8, 1] -- <471>
+[X.3290] added [$.71d1] at [8, 1] -- <471>
+[$.f903] cloned to [$.53b5] at [2, 4] -- <471>
+[X.c1b9] added [$.53b5] at [2, 4] -- <471>
+[L.9388] moved to [5, 2] -- <473>
+[X.e3b2] moved to [9, 5] -- <473>
+[X.3f8d] moved to [2, 3] -- <473>
+[X.3290] moved to [8, 1] -- <473>
+[X.c1b9] moved to [1, 3] -- <473>
+[L.9388] moved to [5, 3] -- <475>
+[L.9388] moved to [4, 3] -- <477>
+[X.e3b2] moved to [10, 5] -- <477>
+[X.3f8d] moved to [1, 3] -- <477>
+[X.3290] moved to [9, 1] -- <477>
+[X.c1b9] moved to [2, 3] -- <477>
+[L.9388] took [$.58c1] -- <479>
+[$.58c1] died -- <479>
+[L.9388] moved to [3, 3] -- <481>
+[L.9388] moved to [3, 4] -- <483>
+[L.9388] took [$.a4dd] -- <485>
+[$.a4dd] died -- <485>
+[X.e3b2] moved to [10, 4] -- <485>
+[X.3f8d] moved to [2, 3] -- <485>
+[X.c1b9] moved to [2, 2] -- <485>
+[L.9388] moved to [3, 3] -- <487>
+[L.9388] moved to [4, 3] -- <489>
+[X.e3b2] moved to [9, 4] -- <489>
+[X.3f8d] moved to [2, 2] -- <489>
+[X.c1b9] moved to [2, 3] -- <489>
+[L.9388] moved to [4, 2] -- <491>
+[$.f903] cloned to [$.58c1] at [10, 1] -- <491>
+[X.3290] added [$.58c1] at [10, 1] -- <491>
+[L.9388] moved to [5, 2] -- <493>
+[X.e3b2] moved to [9, 3] -- <493>
+[X.3f8d] moved to [2, 3] -- <493>
+[X.3290] moved to [9, 2] -- <493>
+[X.c1b9] moved to [2, 4] -- <493>
+[L.9388] moved to [6, 2] -- <495>
+[L.9388] moved to [6, 3] -- <497>
+[X.e3b2] moved to [9, 2] -- <497>
+[X.3f8d] moved to [1, 3] -- <497>
+[X.3290] moved to [8, 2] -- <497>
+[X.c1b9] moved to [2, 5] -- <497>
+[L.9388] took [$.6e76] -- <499>
+[$.6e76] died -- <499>
+[L.9388] moved to [7, 3] -- <501>
+[$.f903] cloned to [$.6e76] at [9, 1] -- <501>
+[X.e3b2] added [$.6e76] at [9, 1] -- <501>
+[$.f903] cloned to [$.a4dd] at [3, 5] -- <501>
+[X.c1b9] added [$.a4dd] at [3, 5] -- <501>
+[L.9388] took [$.bdfb] -- <503>
+[$.bdfb] died -- <503>
+[L.9388] moved to [6, 3] -- <505>
+[X.e3b2] moved to [10, 2] -- <505>
+[X.3f8d] moved to [1, 4] -- <505>
+[X.3290] moved to [8, 1] -- <505>
+[X.c1b9] moved to [1, 5] -- <505>
+[L.9388] moved to [5, 3] -- <507>
+[L.9388] moved to [5, 2] -- <509>
+[X.e3b2] moved to [10, 3] -- <509>
+[X.3290] moved to [9, 1] -- <509>
+[L.9388] moved to [6, 2] -- <511>
+[$.f903] cloned to [$.bdfb] at [11, 3] -- <511>
+[X.e3b2] added [$.bdfb] at [11, 3] -- <511>
+[L.9388] moved to [6, 3] -- <513>
+[X.e3b2] moved to [11, 3] -- <513>
+[X.3f8d] moved to [1, 3] -- <513>
+[X.3290] moved to [9, 2] -- <513>
+[L.9388] moved to [7, 3] -- <515>
+[L.9388] moved to [7, 4] -- <517>
+[X.e3b2] moved to [11, 2] -- <517>
+[X.3290] moved to [8, 2] -- <517>
+[X.c1b9] moved to [1, 4] -- <517>
+[L.9388] took [$.83db] -- <519>
+[$.83db] died -- <519>
+[L.9388] moved to [7, 5] -- <521>
+[$.f903] cloned to [$.83db] at [10, 2] -- <521>
+[X.e3b2] added [$.83db] at [10, 2] -- <521>
+[$.f903] cloned to [$.1129] at [1, 5] -- <521>
+[X.c1b9] added [$.1129] at [1, 5] -- <521>
+[L.9388] took [$.b411] -- <523>
+[$.b411] died -- <523>
+[L.9388] moved to [7, 4] -- <525>
+[X.e3b2] moved to [10, 2] -- <525>
+[X.3290] moved to [8, 1] -- <525>
+[X.c1b9] moved to [1, 5] -- <525>
+[L.9388] moved to [6, 4] -- <527>
+[L.9388] took [$.5002] -- <529>
+[$.5002] died -- <529>
+[X.e3b2] moved to [11, 2] -- <529>
+[X.3290] moved to [9, 1] -- <529>
+[X.c1b9] moved to [2, 5] -- <529>
+[L.9388] moved to [5, 4] -- <531>
+[$.f903] cloned to [$.5002] at [2, 3] -- <531>
+[X.3f8d] added [$.5002] at [2, 3] -- <531>
+[L.9388] took [$.ee3d] -- <533>
+[$.ee3d] died -- <533>
+[X.e3b2] moved to [10, 2] -- <533>
+[X.3290] moved to [9, 2] -- <533>
+[X.c1b9] moved to [3, 5] -- <533>
+[L.9388] moved to [5, 3] -- <535>
+[L.9388] moved to [5, 4] -- <537>
+[X.e3b2] moved to [9, 2] -- <537>
+[X.3f8d] moved to [2, 3] -- <537>
+[X.3290] moved to [9, 3] -- <537>
+[X.c1b9] moved to [3, 4] -- <537>
+[L.9388] moved to [4, 4] -- <539>
+[L.9388] took [$. d31] -- <541>
+[$. d31] died -- <541>
+[$.f903] cloned to [$. d31] at [8, 2] -- <541>
+[X.e3b2] added [$. d31] at [8, 2] -- <541>
+[L.9388] moved to [4, 5] -- <543>
+[L.9388] took [$.7c23] -- <545>
+[$.7c23] died -- <545>
+[X.e3b2] moved to [9, 1] -- <545>
+[X.3f8d] moved to [1, 3] -- <545>
+[X.3290] moved to [8, 3] -- <545>
+[X.c1b9] moved to [3, 5] -- <545>
+[L.9388] moved to [5, 5] -- <547>
+[L.9388] took [$.e4c3] -- <549>
+[$.e4c3] died -- <549>
+[X.3f8d] moved to [1, 4] -- <549>
+[X.3290] moved to [7, 3] -- <549>
+[X.c1b9] moved to [4, 5] -- <549>
+[L.9388] moved to [5, 6] -- <551>
+[$.f903] cloned to [$.7c23] at [6, 3] -- <551>
+[X.3290] added [$.7c23] at [6, 3] -- <551>
+[$.f903] cloned to [$.e4c3] at [5, 5] -- <551>
+[X.c1b9] added [$.e4c3] at [5, 5] -- <551>
+[L.9388] took [$.493c] -- <553>
+[$.493c] died -- <553>
+[X.e3b2] moved to [9, 2] -- <553>
+[X.3f8d] moved to [1, 5] -- <553>
+[X.3290] moved to [7, 4] -- <553>
+[X.c1b9] moved to [5, 5] -- <553>
+[L.9388] moved to [5, 5] -- <557>
+[X.e3b2] moved to [8, 2] -- <557>
+[X.3290] moved to [7, 5] -- <557>
+[X.c1b9] moved to [6, 5] -- <557>
+[L.9388] took [$.e4c3] -- <559>
+[$.e4c3] died -- <559>
+[L.9388] moved to [5, 4] -- <561>
+[L.9388] moved to [5, 3] -- <563>
+[L.9388] moved to [4, 3] -- <565>
+[X.e3b2] moved to [7, 2] -- <565>
+[X.3f8d] moved to [1, 4] -- <565>
+[X.3290] moved to [7, 6] -- <565>
+[X.c1b9] moved to [5, 5] -- <565>
+[L.9388] moved to [5, 3] -- <567>
+[L.9388] moved to [4, 3] -- <569>
+[X.e3b2] moved to [8, 2] -- <569>
+[X.3f8d] moved to [2, 4] -- <569>
+[X.3290] moved to [6, 6] -- <569>
+[X.c1b9] moved to [6, 5] -- <569>
+[L.9388] moved to [5, 3] -- <571>
+[$.f903] cloned to [$.e4c3] at [3, 4] -- <571>
+[X.3f8d] added [$.e4c3] at [3, 4] -- <571>
+[L.9388] moved to [5, 4] -- <573>
+[X.e3b2] moved to [9, 2] -- <573>
+[X.3f8d] moved to [2, 5] -- <573>
+[X.3290] moved to [6, 5] -- <573>
+[X.c1b9] moved to [5, 5] -- <573>
+[L.9388] moved to [4, 4] -- <575>
+[L.9388] moved to [4, 5] -- <577>
+[X.e3b2] moved to [10, 2] -- <577>
+[X.3f8d] moved to [2, 4] -- <577>
+[X.3290] moved to [6, 6] -- <577>
+[X.c1b9] moved to [4, 5] -- <577>
+[L.9388] moved to [5, 5] -- <579>
+[L.9388] moved to [5, 6] -- <581>
+[$.f903] cloned to [$.b411] at [4, 4] -- <581>
+[X.c1b9] added [$.b411] at [4, 4] -- <581>
+[L.9388] moved to [5, 5] -- <583>
+[L.9388] moved to [4, 5] -- <585>
+[X.e3b2] moved to [9, 2] -- <585>
+[X.3f8d] moved to [2, 5] -- <585>
+[X.3290] moved to [7, 6] -- <585>
+[X.c1b9] moved to [4, 4] -- <585>
+[L.9388] moved to [4, 6] -- <587>
+[L.9388] took [$.d07a] -- <589>
+[$.d07a] died -- <589>
+[X.e3b2] moved to [8, 2] -- <589>
+[X.3f8d] moved to [3, 5] -- <589>
+[X.c1b9] moved to [4, 3] -- <589>
+[L.9388] moved to [3, 6] -- <591>
+[$.f903] cloned to [$.d07a] at [3, 3] -- <591>
+[X.c1b9] added [$.d07a] at [3, 3] -- <591>
+[L.9388] moved to [3, 5] -- <593>
+[X.e3b2] moved to [7, 2] -- <593>
+[X.3f8d] moved to [2, 5] -- <593>
+[X.c1b9] moved to [5, 3] -- <593>
+[L.9388] took [$.a4dd] -- <595>
+[$.a4dd] died -- <595>
+[L.9388] moved to [3, 4] -- <597>
+[X.e3b2] moved to [7, 3] -- <597>
+[X.3f8d] moved to [1, 5] -- <597>
+[X.3290] moved to [8, 6] -- <597>
+[X.c1b9] moved to [5, 4] -- <597>
+[L.9388] took [$.e4c3] -- <599>
+[$.e4c3] died -- <599>
+[L.9388] moved to [3, 3] -- <601>
+[$.f903] cloned to [$.e4c3] at [5, 5] -- <601>
+[X.c1b9] added [$.e4c3] at [5, 5] -- <601>
+[L.9388] took [$.d07a] -- <603>
+[$.d07a] died -- <603>
+[L.9388] moved to [3, 4] -- <605>
+[X.e3b2] moved to [7, 4] -- <605>
+[X.3f8d] moved to [1, 6] -- <605>
+[X.3290] moved to [9, 6] -- <605>
+[X.c1b9] moved to [5, 5] -- <605>
+[L.9388] moved to [3, 3] -- <607>
+[L.9388] moved to [2, 3] -- <609>
+[X.e3b2] moved to [6, 4] -- <609>
+[X.3290] moved to [10, 6] -- <609>
+[X.c1b9] moved to [5, 4] -- <609>
+[L.9388] took [$.5002] -- <611>
+[$.5002] died -- <611>
+[$.f903] cloned to [$.5002] at [6, 5] -- <611>
+[X.e3b2] added [$.5002] at [6, 5] -- <611>
+[L.9388] moved to [1, 3] -- <613>
+[X.e3b2] moved to [6, 5] -- <613>
+[X.3f8d] moved to [2, 6] -- <613>
+[X.3290] moved to [10, 5] -- <613>
+[X.c1b9] moved to [5, 5] -- <613>
+[L.9388] took [$.3337] -- <615>
+[$.3337] died -- <615>
+[X.e3b2] moved to [7, 5] -- <617>
+[X.3290] moved to [10, 4] -- <617>
+[X.c1b9] moved to [4, 5] -- <617>
+[L.9388] moved to [1, 2] -- <621>
+[$.f903] cloned to [$.3337] at [11, 4] -- <621>
+[X.3290] added [$.3337] at [11, 4] -- <621>
+[L.9388] took [$.f903] -- <623>
+[$.f903] died -- <623>
+[L.9388] moved to [1, 1] -- <625>
+[X.e3b2] moved to [7, 6] -- <625>
+[X.3290] moved to [10, 5] -- <625>
+[X.c1b9] moved to [5, 5] -- <625>
+[L.9388] moved to [1, 2] -- <627>
+[L.9388] moved to [1, 1] -- <629>
+[X.e3b2] moved to [6, 6] -- <629>
+[X.3f8d] moved to [1, 6] -- <629>
+[X.3290] moved to [10, 6] -- <629>
+[X.c1b9] moved to [6, 5] -- <629>
+[X.e3b2] moved to [5, 6] -- <633>
+[X.3290] moved to [10, 5] -- <633>
+[X.c1b9] moved to [6, 6] -- <633>
+[L.9388] moved to [2, 1] -- <637>
+[X.e3b2] moved to [4, 6] -- <637>
+[X.3f8d] moved to [2, 6] -- <637>
+[X.3290] moved to [11, 5] -- <637>
+[X.c1b9] moved to [5, 6] -- <637>
+[L.9388] took [$.b652] -- <639>
+[$.b652] died -- <639>
+[L.9388] moved to [3, 1] -- <641>
+[L.9388] moved to [4, 1] -- <645>
+[X.e3b2] moved to [4, 5] -- <645>
+[X.3f8d] moved to [2, 5] -- <645>
+[X.3290] moved to [11, 4] -- <645>
+[X.c1b9] moved to [6, 6] -- <645>
+[L.9388] moved to [3, 1] -- <647>
+[X.e3b2] moved to [4, 4] -- <649>
+[X.3f8d] moved to [2, 6] -- <649>
+[X.3290] moved to [11, 3] -- <649>
+[X.c1b9] moved to [5, 6] -- <649>
+[L.9388] moved to [2, 1] -- <651>
+[$.f903] cloned to [$.f903] at [5, 4] -- <651>
+[X.e3b2] added [$.f903] at [5, 4] -- <651>
+[L.9388] moved to [3, 1] -- <653>
+[X.e3b2] moved to [4, 3] -- <653>
+[X.3f8d] moved to [3, 6] -- <653>
+[X.3290] moved to [11, 2] -- <653>
+[L.9388] moved to [3, 2] -- <655>
+[L.9388] moved to [3, 3] -- <657>
+[X.e3b2] moved to [5, 3] -- <657>
+[X.3290] moved to [11, 1] -- <657>
+[X.c1b9] moved to [4, 6] -- <657>
+[L.9388] moved to [2, 3] -- <659>
+[L.9388] moved to [2, 4] -- <661>
+[$.f903] cloned to [$.b652] at [3, 5] -- <661>
+[X.3f8d] added [$.b652] at [3, 5] -- <661>
+[$.f903] cloned to [$.d07a] at [12, 1] -- <661>
+[X.3290] added [$.d07a] at [12, 1] -- <661>
+[$.f903] cloned to [$.ee3d] at [4, 5] -- <661>
+[X.c1b9] added [$.ee3d] at [4, 5] -- <661>
+[L.9388] took [$.53b5] -- <663>
+[$.53b5] died -- <663>
+[L.9388] moved to [2, 3] -- <665>
+[X.e3b2] moved to [4, 3] -- <665>
+[X.3f8d] moved to [2, 6] -- <665>
+[X.3290] moved to [11, 2] -- <665>
+[X.c1b9] moved to [5, 6] -- <665>
+[L.9388] moved to [2, 2] -- <667>
+[L.9388] moved to [2, 3] -- <669>
+[X.e3b2] moved to [3, 3] -- <669>
+[X.3f8d] moved to [3, 6] -- <669>
+[X.3290] moved to [11, 3] -- <669>
+[X.c1b9] moved to [5, 5] -- <669>
+[L.9388] moved to [1, 3] -- <671>
+[$.f903] cloned to [$.493c] at [2, 3] -- <671>
+[X.e3b2] added [$.493c] at [2, 3] -- <671>
+[L.9388] moved to [2, 3] -- <673>
+[X.e3b2] moved to [3, 4] -- <673>
+[X.3f8d] moved to [3, 5] -- <673>
+[X.3290] moved to [10, 3] -- <673>
+[X.c1b9] moved to [4, 5] -- <673>
+[L.9388] took [$.493c] -- <675>
+[$.493c] died -- <675>
+[L.9388] moved to [2, 2] -- <677>
+[X.e3b2] moved to [3, 5] -- <677>
+[X.3f8d] moved to [2, 5] -- <677>
+[X.3290] moved to [11, 3] -- <677>
+[X.c1b9] moved to [3, 5] -- <677>
+[L.9388] moved to [3, 2] -- <679>
+[L.9388] moved to [4, 2] -- <681>
+[$.f903] cloned to [$.493c] at [12, 3] -- <681>
+[X.3290] added [$.493c] at [12, 3] -- <681>
+[$.f903] cloned to [$.a4dd] at [3, 4] -- <681>
+[X.c1b9] added [$.a4dd] at [3, 4] -- <681>
+[L.9388] moved to [3, 2] -- <683>
+[L.9388] moved to [4, 2] -- <685>
+[X.e3b2] moved to [3, 6] -- <685>
+[X.3f8d] moved to [2, 4] -- <685>
+[X.3290] moved to [10, 3] -- <685>
+[X.c1b9] moved to [2, 5] -- <685>
+[L.9388] moved to [4, 1] -- <687>
+[L.9388] moved to [4, 2] -- <689>
+[X.e3b2] moved to [2, 6] -- <689>
+[X.3f8d] moved to [3, 4] -- <689>
+[X.3290] moved to [9, 3] -- <689>
+[X.c1b9] moved to [3, 5] -- <689>
+[L.9388] moved to [5, 2] -- <691>
+[L.9388] moved to [6, 2] -- <693>
+[X.3f8d] moved to [3, 3] -- <693>
+[X.3290] moved to [10, 3] -- <693>
+[X.c1b9] moved to [3, 4] -- <693>
+[L.9388] moved to [6, 1] -- <695>
+[X.e3b2] moved to [3, 6] -- <697>
+[X.3f8d] moved to [2, 3] -- <697>
+[X.3290] moved to [10, 2] -- <697>
+[X.c1b9] moved to [3, 3] -- <697>
+[L.9388] moved to [6, 2] -- <699>
+[L.9388] moved to [6, 1] -- <701>
+[$.f903] cloned to [$.53b5] at [2, 6] -- <701>
+[X.e3b2] added [$.53b5] at [2, 6] -- <701>
+[$.f903] cloned to [$.9fc7] at [2, 4] -- <701>
+[X.3f8d] added [$.9fc7] at [2, 4] -- <701>
+[L.9388] moved to [5, 1] -- <703>
+[X.3f8d] moved to [1, 3] -- <705>
+[X.3290] moved to [11, 2] -- <705>
+[X.c1b9] moved to [2, 3] -- <705>
+[L.9388] moved to [6, 1] -- <707>
+[L.9388] moved to [7, 1] -- <709>
+[X.e3b2] moved to [2, 6] -- <709>
+[X.3f8d] moved to [2, 3] -- <709>
+[X.3290] moved to [12, 2] -- <709>
+[X.c1b9] moved to [2, 2] -- <709>
+[L.9388] moved to [8, 1] -- <711>
+[$.f903] cloned to [$.207b] at [2, 1] -- <711>
+[X.c1b9] added [$.207b] at [2, 1] -- <711>
+[L.9388] took [$.71d1] -- <713>
+[$.71d1] died -- <713>
+[X.e3b2] moved to [1, 6] -- <713>
+[X.3f8d] moved to [1, 3] -- <713>
+[X.3290] moved to [12, 1] -- <713>
+[X.c1b9] moved to [2, 3] -- <713>
+[L.9388] moved to [7, 1] -- <715>
+[L.9388] moved to [8, 1] -- <717>
+[X.3f8d] moved to [2, 3] -- <717>
+[X.3290] moved to [13, 1] -- <717>
+[X.c1b9] moved to [1, 3] -- <717>
+[L.9388] moved to [9, 1] -- <719>
+[L.9388] took [$.6e76] -- <721>
+[$.6e76] died -- <721>
+[$.f903] cloned to [$.6e76] at [2, 2] -- <721>
+[X.3f8d] added [$.6e76] at [2, 2] -- <721>
+[L.9388] moved to [10, 1] -- <723>
+[L.9388] took [$.58c1] -- <725>
+[$.58c1] died -- <725>
+[X.e3b2] moved to [1, 5] -- <725>
+[X.3f8d] moved to [2, 4] -- <725>
+[X.3290] moved to [12, 1] -- <725>
+[X.c1b9] moved to [2, 3] -- <725>
+[L.9388] moved to [10, 2] -- <727>
+[L.9388] took [$.83db] -- <729>
+[$.83db] died -- <729>
+[X.e3b2] moved to [1, 4] -- <729>
+[X.3f8d] moved to [1, 4] -- <729>
+[X.3290] moved to [11, 1] -- <729>
+[X.c1b9] moved to [2, 2] -- <729>
+[L.9388] moved to [10, 3] -- <731>
+[$.f903] cloned to [$.58c1] at [10, 1] -- <731>
+[X.3290] added [$.58c1] at [10, 1] -- <731>
+[L.9388] took [$.d23e] -- <733>
+[$.d23e] died -- <733>
+[X.e3b2] moved to [2, 4] -- <733>
+[X.3f8d] moved to [1, 3] -- <733>
+[X.3290] moved to [11, 2] -- <733>
+[X.c1b9] moved to [2, 3] -- <733>
+[L.9388] moved to [10, 4] -- <735>
+[L.9388] took [$.545d] -- <737>
+[$.545d] died -- <737>
+[X.e3b2] moved to [3, 4] -- <737>
+[X.3f8d] moved to [1, 4] -- <737>
+[X.3290] moved to [11, 1] -- <737>
+[X.c1b9] moved to [1, 3] -- <737>
+[L.9388] moved to [9, 4] -- <739>
+[L.9388] took [$.c214] -- <741>
+[$.c214] died -- <741>
+[L.9388] moved to [8, 4] -- <743>
+[L.9388] took [$. f0c] -- <745>
+[$. f0c] died -- <745>
+[X.e3b2] moved to [4, 4] -- <745>
+[X.3f8d] moved to [1, 5] -- <745>
+[L.9388] moved to [7, 4] -- <747>
+[L.9388] moved to [7, 3] -- <749>
+[X.e3b2] moved to [4, 5] -- <749>
+[X.3290] moved to [12, 1] -- <749>
+[L.9388] moved to [8, 3] -- <751>
+[$.f903] cloned to [$.545d] at [13, 1] -- <751>
+[X.3290] added [$.545d] at [13, 1] -- <751>
+[$.f903] cloned to [$.83db] at [1, 2] -- <751>
+[X.c1b9] added [$.83db] at [1, 2] -- <751>
+[L.9388] took [$.3859] -- <753>
+[$.3859] died -- <753>
+[X.e3b2] moved to [4, 6] -- <753>
+[X.3f8d] moved to [1, 6] -- <753>
+[X.3290] moved to [12, 2] -- <753>
+[X.c1b9] moved to [2, 3] -- <753>
+[L.9388] moved to [8, 4] -- <755>
+[L.9388] moved to [8, 3] -- <757>
+[X.e3b2] moved to [3, 6] -- <757>
+[X.3290] moved to [12, 3] -- <757>
+[X.c1b9] moved to [3, 3] -- <757>
+[L.9388] moved to [8, 2] -- <759>
+[L.9388] took [$. d31] -- <761>
+[$. d31] died -- <761>
+[L.9388] moved to [8, 1] -- <763>
+[L.9388] moved to [7, 1] -- <765>
+[X.e3b2] moved to [2, 6] -- <765>
+[X.3f8d] moved to [1, 5] -- <765>
+[X.3290] moved to [12, 4] -- <765>
+[X.c1b9] moved to [2, 3] -- <765>
+[L.9388] moved to [8, 1] -- <767>
+[L.9388] moved to [7, 1] -- <769>
+[X.e3b2] moved to [3, 6] -- <769>
+[X.3f8d] moved to [2, 5] -- <769>
+[X.3290] moved to [11, 4] -- <769>
+[X.c1b9] moved to [3, 3] -- <769>
+[L.9388] moved to [8, 1] -- <771>
+[$.f903] cloned to [$. d31] at [3, 2] -- <771>
+[X.c1b9] added [$. d31] at [3, 2] -- <771>
+[L.9388] moved to [8, 2] -- <773>
+[X.3f8d] moved to [3, 5] -- <773>
+[X.3290] moved to [11, 5] -- <773>
+[X.c1b9] moved to [3, 2] -- <773>
+[L.9388] moved to [7, 2] -- <775>
+[L.9388] took [$.6023] -- <777>
+[$.6023] died -- <777>
+[X.e3b2] moved to [2, 6] -- <777>
+[X.3f8d] moved to [3, 6] -- <777>
+[X.3290] moved to [12, 5] -- <777>
+[X.c1b9] moved to [3, 1] -- <777>
+[L.9388] moved to [7, 3] -- <779>
+[L.9388] moved to [6, 3] -- <781>
+[L.9388] took [$.7c23] -- <783>
+[$.7c23] died -- <783>
+[L.9388] moved to [5, 3] -- <785>
+[X.e3b2] moved to [2, 5] -- <785>
+[X.3290] moved to [11, 5] -- <785>
+[X.c1b9] moved to [4, 1] -- <785>
+[L.9388] moved to [4, 3] -- <787>
+[L.9388] moved to [5, 3] -- <789>
+[X.e3b2] moved to [3, 5] -- <789>
+[X.3f8d] moved to [2, 6] -- <789>
+[X.3290] moved to [12, 5] -- <789>
+[X.c1b9] moved to [5, 1] -- <789>
+[L.9388] moved to [5, 2] -- <791>
+[$.f903] cloned to [$.7c23] at [6, 1] -- <791>
+[X.c1b9] added [$.7c23] at [6, 1] -- <791>
+[L.9388] moved to [6, 2] -- <793>
+[X.e3b2] moved to [4, 5] -- <793>
+[X.3f8d] moved to [2, 5] -- <793>
+[X.3290] moved to [13, 5] -- <793>
+[L.9388] moved to [6, 3] -- <795>
+[L.9388] moved to [6, 4] -- <797>
+[X.e3b2] moved to [4, 6] -- <797>
+[X.3f8d] moved to [3, 5] -- <797>
+[X.3290] moved to [13, 6] -- <797>
+[L.9388] moved to [5, 4] -- <799>
+[L.9388] took [$.f903] -- <801>
+[$.f903] died -- <801>
+[$.f903] cloned to [$.f903] at [3, 6] -- <801>
+[X.e3b2] added [$.f903] at [3, 6] -- <801>
+[L.9388] moved to [6, 4] -- <803>
+[L.9388] moved to [6, 3] -- <805>
+[X.e3b2] moved to [5, 6] -- <805>
+[X.3f8d] moved to [3, 4] -- <805>
+[X.c1b9] moved to [5, 2] -- <805>
+[L.9388] moved to [6, 4] -- <807>
+[L.9388] moved to [7, 4] -- <809>
+[X.3f8d] moved to [3, 3] -- <809>
+[X.3290] moved to [12, 6] -- <809>
+[X.c1b9] moved to [4, 2] -- <809>
+[L.9388] moved to [7, 5] -- <811>
+[L.9388] moved to [8, 5] -- <813>
+[X.3f8d] moved to [3, 2] -- <813>
+[X.3290] moved to [11, 6] -- <813>
+[X.c1b9] moved to [3, 2] -- <813>
+[L.9388] took [$.b66f] -- <815>
+[$.b66f] died -- <815>
+[L.9388] moved to [8, 4] -- <817>
+[X.3f8d] moved to [2, 2] -- <817>
+[X.3290] moved to [12, 6] -- <817>
+[X.c1b9] moved to [2, 2] -- <817>
+[L.9388] moved to [9, 4] -- <819>
+[L.9388] moved to [10, 4] -- <821>
+[$.f903] cloned to [$.b66f] at [4, 6] -- <821>
+[X.e3b2] added [$.b66f] at [4, 6] -- <821>
+[$.f903] cloned to [$.3859] at [2, 3] -- <821>
+[X.3f8d] added [$.3859] at [2, 3] -- <821>
+[L.9388] moved to [10, 5] -- <823>
+[L.9388] took [$.5c21] -- <825>
+[$.5c21] died -- <825>
+[X.e3b2] moved to [6, 6] -- <825>
+[X.3f8d] moved to [2, 1] -- <825>
+[X.c1b9] moved to [1, 2] -- <825>
+[L.9388] moved to [11, 5] -- <827>
+[L.9388] took [$.97b9] -- <829>
+[$.97b9] died -- <829>
+[X.3290] moved to [11, 6] -- <829>
+[L.9388] moved to [11, 4] -- <831>
+[$.f903] cloned to [$.5c21] at [1, 1] -- <831>
+[X.3f8d] added [$.5c21] at [1, 1] -- <831>
+[L.9388] took [$.3337] -- <833>
+[$.3337] died -- <833>
+[X.e3b2] moved to [7, 6] -- <833>
+[X.c1b9] moved to [1, 3] -- <833>
+[L.9388] moved to [11, 5] -- <835>
+[L.9388] moved to [12, 5] -- <837>
+[X.3290] moved to [10, 6] -- <837>
+[L.9388] took [$.b087] -- <839>
+[$.b087] died -- <839>
+[L.9388] moved to [12, 6] -- <841>
+[L.9388] took [$.75d3] -- <843>
+[$.75d3] died -- <843>
+[L.9388] moved to [13, 6] -- <845>
+[X.3290] moved to [9, 6] -- <845>
+[L.9388] took [$.e325] -- <847>
+[$.e325] died -- <847>
+[L.9388] moved to [13, 5] -- <849>
+[X.3f8d] moved to [1, 1] -- <849>
+[X.3290] moved to [10, 6] -- <849>
+[L.9388] took [$.c260] -- <851>
+[$.c260] died -- <851>
+[X.e3b2] moved to [7, 5] -- <853>
+[X.3f8d] moved to [2, 1] -- <853>
+[X.c1b9] moved to [1, 2] -- <853>
+[L.9388] moved to [13, 4] -- <857>
+[X.e3b2] moved to [7, 4] -- <857>
+[X.3290] moved to [11, 6] -- <857>
+[L.9388] took [$.c3fc] -- <859>
+[$.c3fc] died -- <859>
+[L.9388] moved to [13, 3] -- <861>
+[$.f903] cloned to [$.75d3] at [7, 3] -- <861>
+[X.e3b2] added [$.75d3] at [7, 3] -- <861>
+[$.f903] cloned to [$.e325] at [12, 6] -- <861>
+[X.3290] added [$.e325] at [12, 6] -- <861>
+[L.9388] took [$.8c4d] -- <863>
+[$.8c4d] died -- <863>
+[X.e3b2] moved to [8, 4] -- <865>
+[X.3290] moved to [12, 6] -- <865>
+[X.c1b9] moved to [1, 1] -- <865>
+[L.9388] moved to [13, 4] -- <867>
+[L.9388] moved to [13, 5] -- <869>
+[X.e3b2] moved to [8, 5] -- <869>
+[X.3f8d] moved to [3, 1] -- <869>
+[L.9388] moved to [12, 5] -- <871>
+[$.f903] cloned to [$.8c4d] at [7, 5] -- <871>
+[X.e3b2] added [$.8c4d] at [7, 5] -- <871>
+[$.f903] cloned to [$.3337] at [4, 1] -- <871>
+[X.3f8d] added [$.3337] at [4, 1] -- <871>
+[$.f903] cloned to [$.c3fc] at [13, 6] -- <871>
+[X.3290] added [$.c3fc] at [13, 6] -- <871>
+[L.9388] moved to [12, 6] -- <873>
+[X.e3b2] moved to [9, 5] -- <873>
+[X.3f8d] moved to [3, 2] -- <873>
+[X.3290] moved to [12, 5] -- <873>
+[L.9388] took [$.e325] -- <875>
+[$.e325] died -- <875>
+[L.9388] moved to [11, 6] -- <877>
+[X.e3b2] moved to [9, 6] -- <877>
+[X.3f8d] moved to [4, 2] -- <877>
+[X.3290] moved to [12, 4] -- <877>
+[X.c1b9] moved to [1, 2] -- <877>
+[L.9388] took [$.39fb] -- <879>
+[$.39fb] died -- <879>
+[L.9388] moved to [10, 6] -- <881>
+[$.f903] cloned to [$.e325] at [4, 3] -- <881>
+[X.3f8d] added [$.e325] at [4, 3] -- <881>
+[$.f903] cloned to [$.39fb] at [11, 4] -- <881>
+[X.3290] added [$.39fb] at [11, 4] -- <881>
+[$.f903] cloned to [$.b087] at [1, 3] -- <881>
+[X.c1b9] added [$.b087] at [1, 3] -- <881>
+[L.9388] took [$.eb9e] -- <883>
+[$.eb9e] died -- <883>
+[L.9388] moved to [11, 6] -- <885>
+[X.3f8d] moved to [4, 1] -- <885>
+[X.3290] moved to [11, 4] -- <885>
+[L.9388] moved to [12, 6] -- <889>
+[X.e3b2] moved to [9, 5] -- <889>
+[X.3f8d] moved to [4, 2] -- <889>
+[X.3290] moved to [10, 4] -- <889>
+[X.c1b9] moved to [2, 2] -- <889>
+[$.f903] cloned to [$.97b9] at [9, 4] -- <891>
+[X.e3b2] added [$.97b9] at [9, 4] -- <891>
+[$.f903] cloned to [$.c260] at [5, 2] -- <891>
+[X.3f8d] added [$.c260] at [5, 2] -- <891>
+[$.f903] cloned to [$.6023] at [10, 3] -- <891>
+[X.3290] added [$.6023] at [10, 3] -- <891>
+[L.9388] moved to [13, 6] -- <893>
+[X.e3b2] moved to [9, 4] -- <893>
+[X.3f8d] moved to [4, 3] -- <893>
+[X.3290] moved to [9, 4] -- <893>
+[X.c1b9] moved to [3, 2] -- <893>
+[L.9388] took [$.c3fc] -- <895>
+[$.c3fc] died -- <895>
+[X.e3b2] moved to [9, 3] -- <897>
+[X.3f8d] moved to [3, 3] -- <897>
+[X.3290] moved to [8, 4] -- <897>
+[X.c1b9] moved to [3, 1] -- <897>
+[L.9388] moved to [12, 6] -- <901>
+[L.9388] moved to [11, 6] -- <903>
+[L.9388] moved to [12, 6] -- <905>
+[X.e3b2] moved to [10, 3] -- <905>
+[X.3f8d] moved to [3, 2] -- <905>
+[X.3290] moved to [9, 4] -- <905>
+[X.c1b9] moved to [3, 2] -- <905>
+[L.9388] moved to [12, 5] -- <907>
+[L.9388] moved to [13, 5] -- <909>
+[X.e3b2] moved to [10, 2] -- <909>
+[X.3f8d] moved to [3, 1] -- <909>
+[X.3290] moved to [9, 3] -- <909>
+[X.c1b9] moved to [4, 2] -- <909>
+[L.9388] moved to [12, 5] -- <911>
+[L.9388] moved to [11, 5] -- <913>
+[X.e3b2] moved to [9, 2] -- <913>
+[X.3f8d] moved to [4, 1] -- <913>
+[X.3290] moved to [8, 3] -- <913>
+[X.c1b9] moved to [3, 2] -- <913>
+[L.9388] moved to [11, 4] -- <915>
+[L.9388] took [$.39fb] -- <917>
+[$.39fb] died -- <917>
+[X.e3b2] moved to [9, 1] -- <917>
+[X.3f8d] moved to [4, 2] -- <917>
+[X.3290] moved to [8, 4] -- <917>
+[X.c1b9] moved to [4, 2] -- <917>
+[L.9388] moved to [10, 4] -- <919>
+[L.9388] moved to [10, 5] -- <921>
+[$.f903] cloned to [$.39fb] at [8, 5] -- <921>
+[X.3290] added [$.39fb] at [8, 5] -- <921>
+[L.9388] moved to [10, 6] -- <923>
+[X.e3b2] moved to [10, 1] -- <925>
+[X.3f8d] moved to [4, 3] -- <925>
+[X.3290] moved to [8, 3] -- <925>
+[X.c1b9] moved to [3, 2] -- <925>
+[L.9388] moved to [9, 6] -- <927>
+[L.9388] took [$.b587] -- <929>
+[$.b587] died -- <929>
+[X.e3b2] moved to [10, 2] -- <929>
+[X.3f8d] moved to [5, 3] -- <929>
+[X.3290] moved to [8, 2] -- <929>
+[X.c1b9] moved to [3, 3] -- <929>
+[L.9388] moved to [8, 6] -- <931>
+[$.f903] cloned to [$.b587] at [5, 4] -- <931>
+[X.3f8d] added [$.b587] at [5, 4] -- <931>
+[$.f903] cloned to [$.c3fc] at [7, 2] -- <931>
+[X.3290] added [$.c3fc] at [7, 2] -- <931>
+[L.9388] took [$.16be] -- <933>
+[$.16be] died -- <933>
+[X.e3b2] moved to [10, 3] -- <933>
+[X.3f8d] moved to [6, 3] -- <933>
+[X.3290] moved to [8, 3] -- <933>
+[X.c1b9] moved to [3, 2] -- <933>
+[L.9388] moved to [7, 6] -- <935>
+[L.9388] took [$.1428] -- <937>
+[$.1428] died -- <937>
+[X.e3b2] moved to [9, 3] -- <937>
+[X.3f8d] moved to [6, 4] -- <937>
+[X.3290] moved to [9, 3] -- <937>
+[X.c1b9] moved to [3, 1] -- <937>
+[L.9388] moved to [6, 6] -- <941>
+[L.9388] took [$.9dc1] -- <943>
+[$.9dc1] died -- <943>
+[L.9388] moved to [5, 6] -- <945>
+[X.e3b2] moved to [9, 2] -- <945>
+[X.3f8d] moved to [6, 5] -- <945>
+[X.3290] moved to [8, 3] -- <945>
+[X.c1b9] moved to [4, 1] -- <945>
+[L.9388] moved to [4, 6] -- <947>
+[L.9388] took [$.b66f] -- <949>
+[$.b66f] died -- <949>
+[X.e3b2] moved to [10, 2] -- <949>
+[X.3f8d] moved to [7, 5] -- <949>
+[X.3290] moved to [7, 3] -- <949>
+[X.c1b9] moved to [5, 1] -- <949>
+[L.9388] moved to [5, 6] -- <951>
+[$.f903] cloned to [$.b66f] at [7, 4] -- <951>
+[X.3290] added [$.b66f] at [7, 4] -- <951>
+[X.e3b2] moved to [11, 2] -- <953>
+[X.3f8d] moved to [7, 6] -- <953>
+[X.3290] moved to [7, 2] -- <953>
+[X.c1b9] moved to [4, 1] -- <953>
+[L.9388] moved to [4, 6] -- <955>
+[X.e3b2] moved to [12, 2] -- <957>
+[X.3f8d] moved to [7, 5] -- <957>
+[X.3290] moved to [7, 3] -- <957>
+[X.c1b9] moved to [3, 1] -- <957>
+[L.9388] moved to [5, 6] -- <959>
+[$.f903] cloned to [$.16be] at [6, 3] -- <961>
+[X.3290] added [$.16be] at [6, 3] -- <961>
+[L.9388] moved to [6, 6] -- <963>
+[X.e3b2] moved to [12, 1] -- <965>
+[X.3f8d] moved to [6, 5] -- <965>
+[X.3290] moved to [6, 3] -- <965>
+[X.c1b9] moved to [3, 2] -- <965>
+[L.9388] moved to [7, 6] -- <967>
+[L.9388] moved to [7, 5] -- <969>
+[X.e3b2] moved to [12, 2] -- <969>
+[X.3f8d] moved to [5, 5] -- <969>
+[X.3290] moved to [7, 3] -- <969>
+[X.c1b9] moved to [3, 3] -- <969>
+[L.9388] took [$.8c4d] -- <971>
+[$.8c4d] died -- <971>
+[L.9388] moved to [7, 6] -- <973>
+[X.e3b2] moved to [11, 2] -- <973>
+[X.3f8d] moved to [6, 5] -- <973>
+[X.3290] moved to [6, 3] -- <973>
+[X.c1b9] moved to [4, 3] -- <973>
+[L.9388] moved to [8, 6] -- <975>
+[L.9388] moved to [7, 6] -- <977>
+[X.e3b2] moved to [12, 2] -- <977>
+[X.3f8d] moved to [7, 5] -- <977>
+[X.3290] moved to [6, 2] -- <977>
+[X.c1b9] moved to [5, 3] -- <977>
+[L.9388] moved to [7, 5] -- <981>
+[L.9388] moved to [8, 5] -- <983>
+[L.9388] took [$.39fb] -- <985>
+[$.39fb] died -- <985>
+[X.e3b2] moved to [11, 2] -- <985>
+[X.3f8d] moved to [7, 4] -- <985>
+[X.3290] moved to [6, 1] -- <985>
+[X.c1b9] moved to [5, 4] -- <985>
+[L.9388] moved to [8, 4] -- <987>
+[L.9388] moved to [7, 4] -- <989>
+[X.e3b2] moved to [10, 2] -- <989>
+[X.3f8d] moved to [8, 4] -- <989>
+[X.3290] moved to [5, 1] -- <989>
+[X.c1b9] moved to [4, 4] -- <989>
+[L.9388] took [$.b66f] -- <991>
+[$.b66f] died -- <991>
+[$.f903] cloned to [$.8c4d] at [8, 3] -- <991>
+[X.3f8d] added [$.8c4d] at [8, 3] -- <991>
+[L.9388] moved to [8, 4] -- <993>
+[X.e3b2] moved to [10, 1] -- <993>
+[X.3f8d] moved to [8, 5] -- <993>
+[X.3290] moved to [5, 2] -- <993>
+[X.c1b9] moved to [4, 5] -- <993>
+[L.9388] moved to [9, 4] -- <995>
+[L.9388] took [$.97b9] -- <997>
+[$.97b9] died -- <997>
+[X.e3b2] moved to [10, 2] -- <997>
+[X.3f8d] moved to [8, 4] -- <997>
+[X.3290] moved to [4, 2] -- <997>
+[X.c1b9] moved to [3, 5] -- <997>
+[L.9388] moved to [9, 5] -- <999>
+[L.9388] took [$.9408] -- <1001>
+[$.9408] died -- <1001>
+[L.9388] moved to [10, 5] -- <1003>
+[L.9388] moved to [10, 6] -- <1005>
+[X.e3b2] moved to [10, 1] -- <1005>
+[X.3f8d] moved to [7, 4] -- <1005>
+[X.3290] moved to [3, 2] -- <1005>
+[X.c1b9] moved to [3, 4] -- <1005>
+[L.9388] moved to [9, 6] -- <1009>
+[X.e3b2] moved to [11, 1] -- <1009>
+[X.3f8d] moved to [6, 4] -- <1009>
+[X.3290] moved to [4, 2] -- <1009>
+[X.c1b9] moved to [4, 4] -- <1009>
+[L.9388] moved to [8, 6] -- <1011>
+[$.f903] cloned to [$.9408] at [7, 4] -- <1011>
+[X.3f8d] added [$.9408] at [7, 4] -- <1011>
+[L.9388] moved to [9, 6] -- <1013>
+[X.3f8d] moved to [6, 5] -- <1013>
+[X.3290] moved to [4, 3] -- <1013>
+[X.c1b9] moved to [4, 5] -- <1013>
+[L.9388] moved to [10, 6] -- <1015>
+[X.3f8d] moved to [5, 5] -- <1017>
+[X.3290] moved to [3, 3] -- <1017>
+[X.c1b9] moved to [4, 6] -- <1017>
+[L.9388] moved to [11, 6] -- <1019>
+[L.9388] moved to [11, 5] -- <1021>
+[L.9388] moved to [11, 4] -- <1023>
+[L.9388] moved to [10, 4] -- <1025>
+[X.e3b2] moved to [10, 1] -- <1025>
+[X.3f8d] moved to [5, 4] -- <1025>
+[X.3290] moved to [3, 4] -- <1025>
+[X.c1b9] moved to [3, 6] -- <1025>
+[L.9388] moved to [11, 4] -- <1027>
+[L.9388] moved to [10, 4] -- <1029>
+[X.e3b2] moved to [11, 1] -- <1029>
+[X.3f8d] moved to [6, 4] -- <1029>
+[X.3290] moved to [2, 4] -- <1029>
+[X.c1b9] moved to [4, 6] -- <1029>
+[L.9388] moved to [11, 4] -- <1031>
+[L.9388] moved to [12, 4] -- <1033>
+[X.3f8d] moved to [6, 3] -- <1033>
+[X.3290] moved to [2, 3] -- <1033>
+[X.c1b9] moved to [5, 6] -- <1033>
+[L.9388] took [$. db0] -- <1035>
+[$. db0] died -- <1035>
+[L.9388] moved to [11, 4] -- <1037>
+[X.3f8d] moved to [6, 2] -- <1037>
+[X.3290] moved to [2, 4] -- <1037>
+[X.c1b9] moved to [5, 5] -- <1037>
+[L.9388] moved to [10, 4] -- <1039>
+[L.9388] moved to [9, 4] -- <1041>
+[L.9388] moved to [9, 3] -- <1043>
+[L.9388] moved to [9, 4] -- <1045>
+[X.e3b2] moved to [11, 2] -- <1045>
+[X.3f8d] moved to [7, 2] -- <1045>
+[X.3290] moved to [1, 4] -- <1045>
+[X.c1b9] moved to [5, 6] -- <1045>
+[L.9388] moved to [9, 3] -- <1047>
+[L.9388] moved to [9, 4] -- <1049>
+[X.e3b2] moved to [11, 3] -- <1049>
+[X.3f8d] moved to [7, 3] -- <1049>
+[X.3290] moved to [1, 5] -- <1049>
+[X.c1b9] moved to [5, 5] -- <1049>
+[L.9388] moved to [9, 3] -- <1051>
+[$.f903] cloned to [$.39fb] at [5, 6] -- <1051>
+[X.c1b9] added [$.39fb] at [5, 6] -- <1051>
+[L.9388] moved to [9, 4] -- <1053>
+[X.e3b2] moved to [11, 4] -- <1053>
+[X.3f8d] moved to [7, 4] -- <1053>
+[X.3290] moved to [2, 5] -- <1053>
+[X.c1b9] moved to [5, 6] -- <1053>
+[L.9388] moved to [9, 3] -- <1055>
+[L.9388] moved to [8, 3] -- <1057>
+[X.e3b2] moved to [10, 4] -- <1057>
+[X.3f8d] moved to [7, 5] -- <1057>
+[X.3290] moved to [3, 5] -- <1057>
+[X.c1b9] moved to [5, 5] -- <1057>
+[L.9388] took [$.8c4d] -- <1059>
+[$.8c4d] died -- <1059>
+[L.9388] moved to [8, 4] -- <1061>
+[$.f903] cloned to [$.8c4d] at [9, 4] -- <1061>
+[X.e3b2] added [$.8c4d] at [9, 4] -- <1061>
+[$.f903] cloned to [$.b66f] at [8, 5] -- <1061>
+[X.3f8d] added [$.b66f] at [8, 5] -- <1061>
+[L.9388] moved to [9, 4] -- <1063>
+[L.9388] took [$.8c4d] -- <1065>
+[$.8c4d] died -- <1065>
+[X.e3b2] moved to [10, 5] -- <1065>
+[X.3f8d] moved to [7, 4] -- <1065>
+[X.3290] moved to [2, 5] -- <1065>
+[X.c1b9] moved to [4, 5] -- <1065>
+[L.9388] moved to [9, 5] -- <1067>
+[L.9388] moved to [10, 5] -- <1069>
+[X.e3b2] moved to [10, 4] -- <1069>
+[X.3f8d] moved to [7, 5] -- <1069>
+[X.3290] moved to [1, 5] -- <1069>
+[X.c1b9] moved to [5, 5] -- <1069>
+[L.9388] moved to [10, 6] -- <1071>
+[X.e3b2] moved to [9, 4] -- <1073>
+[X.3f8d] moved to [8, 5] -- <1073>
+[X.c1b9] moved to [6, 5] -- <1073>
+[L.9388] moved to [11, 6] -- <1075>
+[L.9388] moved to [10, 6] -- <1077>
+[X.e3b2] moved to [10, 4] -- <1077>
+[X.3f8d] moved to [9, 5] -- <1077>
+[X.3290] moved to [1, 4] -- <1077>
+[X.c1b9] moved to [7, 5] -- <1077>
+[L.9388] moved to [10, 5] -- <1081>
+[$.f903] cloned to [$.8c4d] at [11, 4] -- <1081>
+[X.e3b2] added [$.8c4d] at [11, 4] -- <1081>
+[L.9388] moved to [10, 4] -- <1083>
+[L.9388] moved to [10, 5] -- <1085>
+[X.e3b2] moved to [10, 5] -- <1085>
+[X.3f8d] moved to [9, 6] -- <1085>
+[X.3290] moved to [2, 4] -- <1085>
+[X.c1b9] moved to [7, 6] -- <1085>
+[L.9388] moved to [10, 4] -- <1087>
+[L.9388] moved to [9, 4] -- <1089>
+[X.e3b2] moved to [9, 5] -- <1089>
+[X.3290] moved to [3, 4] -- <1089>
+[X.c1b9] moved to [7, 5] -- <1089>
+[L.9388] moved to [9, 5] -- <1091>
+[$.f903] cloned to [$. db0] at [10, 6] -- <1091>
+[X.3f8d] added [$. db0] at [10, 6] -- <1091>
+[$.f903] cloned to [$.97b9] at [7, 6] -- <1091>
+[X.c1b9] added [$.97b9] at [7, 6] -- <1091>
+[L.9388] moved to [10, 5] -- <1093>
+[X.e3b2] moved to [9, 6] -- <1093>
+[X.3f8d] moved to [9, 5] -- <1093>
+[X.3290] moved to [2, 4] -- <1093>
+[X.c1b9] moved to [6, 5] -- <1093>
+[L.9388] moved to [10, 6] -- <1095>
+[L.9388] took [$. db0] -- <1097>
+[$. db0] died -- <1097>
+[X.e3b2] moved to [10, 6] -- <1097>
+[X.3f8d] moved to [9, 4] -- <1097>
+[X.3290] moved to [2, 5] -- <1097>
+[X.c1b9] moved to [5, 5] -- <1097>
+[L.9388] moved to [11, 6] -- <1099>
+[$.f903] cloned to [$. db0] at [10, 5] -- <1101>
+[X.e3b2] added [$. db0] at [10, 5] -- <1101>
+[$.f903] cloned to [$.1428] at [10, 4] -- <1101>
+[X.3f8d] added [$.1428] at [10, 4] -- <1101>
+[L.9388] moved to [10, 6] -- <1103>
+[X.e3b2] moved to [11, 6] -- <1105>
+[X.3f8d] moved to [9, 3] -- <1105>
+[X.3290] moved to [2, 6] -- <1105>
+[X.c1b9] moved to [4, 5] -- <1105>
+[L.9388] moved to [11, 6] -- <1107>
+[X.e3b2] moved to [11, 5] -- <1109>
+[X.3f8d] moved to [8, 3] -- <1109>
+[X.3290] moved to [1, 6] -- <1109>
+[X.c1b9] moved to [4, 4] -- <1109>
+[$.f903] cloned to [$.9dc1] at [9, 3] -- <1111>
+[X.3f8d] added [$.9dc1] at [9, 3] -- <1111>
+[L.9388] moved to [10, 6] -- <1113>
+[X.e3b2] moved to [11, 6] -- <1113>
+[X.3f8d] moved to [9, 3] -- <1113>
+[X.3290] moved to [1, 5] -- <1113>
+[X.c1b9] moved to [4, 5] -- <1113>
+[L.9388] moved to [9, 6] -- <1115>
+[L.9388] moved to [10, 6] -- <1117>
+[X.3f8d] moved to [9, 2] -- <1117>
+[X.c1b9] moved to [3, 5] -- <1117>
+[L.9388] moved to [10, 5] -- <1119>
+[L.9388] took [$. db0] -- <1121>
+[$. db0] died -- <1121>
+[$.f903] cloned to [$. db0] at [8, 2] -- <1121>
+[X.3f8d] added [$. db0] at [8, 2] -- <1121>
+[L.9388] moved to [10, 4] -- <1123>
+[L.9388] took [$.1428] -- <1125>
+[$.1428] died -- <1125>
+[X.e3b2] moved to [10, 6] -- <1125>
+[X.3f8d] moved to [8, 2] -- <1125>
+[X.3290] moved to [1, 6] -- <1125>
+[X.c1b9] moved to [4, 5] -- <1125>
+[L.9388] moved to [10, 3] -- <1127>
+[L.9388] took [$.6023] -- <1129>
+[$.6023] died -- <1129>
+[X.3f8d] moved to [7, 2] -- <1129>
+[X.3290] moved to [2, 6] -- <1129>
+[X.c1b9] moved to [4, 6] -- <1129>
+[L.9388] moved to [10, 2] -- <1131>
+[$.f903] cloned to [$.1428] at [9, 6] -- <1131>
+[X.e3b2] added [$.1428] at [9, 6] -- <1131>
+[$.f903] cloned to [$.6023] at [7, 1] -- <1131>
+[X.3f8d] added [$.6023] at [7, 1] -- <1131>
+[L.9388] moved to [10, 1] -- <1133>
+[X.3f8d] moved to [6, 2] -- <1133>
+[X.3290] moved to [3, 6] -- <1133>
+[L.9388] took [$.58c1] -- <1135>
+[$.58c1] died -- <1135>
+[X.e3b2] moved to [9, 6] -- <1137>
+[X.3f8d] moved to [5, 2] -- <1137>
+[X.3290] moved to [3, 5] -- <1137>
+[L.9388] moved to [9, 1] -- <1139>
+[L.9388] moved to [10, 1] -- <1141>
+[$.f903] cloned to [$.58c1] at [8, 6] -- <1141>
+[X.e3b2] added [$.58c1] at [8, 6] -- <1141>
+[$.f903] cloned to [$.c214] at [5, 1] -- <1141>
+[X.3f8d] added [$.c214] at [5, 1] -- <1141>
+[L.9388] moved to [10, 2] -- <1145>
+[X.e3b2] moved to [8, 6] -- <1145>
+[X.3f8d] moved to [6, 2] -- <1145>
+[X.3290] moved to [3, 6] -- <1145>
+[X.c1b9] moved to [4, 5] -- <1145>
+[L.9388] moved to [9, 2] -- <1147>
+[L.9388] took [$.af9d] -- <1149>
+[$.af9d] died -- <1149>
+[X.e3b2] moved to [7, 6] -- <1149>
+[X.3f8d] moved to [6, 1] -- <1149>
+[X.c1b9] moved to [3, 5] -- <1149>
+[L.9388] moved to [10, 2] -- <1151>
+[$.f903] cloned to [$.af9d] at [6, 6] -- <1151>
+[X.e3b2] added [$.af9d] at [6, 6] -- <1151>
+[$.f903] cloned to [$. f0c] at [6, 2] -- <1151>
+[X.3f8d] added [$. f0c] at [6, 2] -- <1151>
+[$.f903] cloned to [$.d23e] at [4, 6] -- <1151>
+[X.3290] added [$.d23e] at [4, 6] -- <1151>
+[L.9388] moved to [10, 1] -- <1153>
+[X.3f8d] moved to [5, 1] -- <1153>
+[X.3290] moved to [4, 6] -- <1153>
+[X.c1b9] moved to [3, 6] -- <1153>
+[L.9388] moved to [9, 1] -- <1157>
+[X.e3b2] moved to [6, 6] -- <1157>
+[X.c1b9] moved to [2, 6] -- <1157>
+[L.9388] moved to [10, 1] -- <1159>
+[L.9388] moved to [9, 1] -- <1161>
+[L.9388] moved to [10, 1] -- <1163>
+[X.e3b2] moved to [7, 6] -- <1165>
+[X.3f8d] moved to [5, 2] -- <1165>
+[X.3290] moved to [4, 5] -- <1165>
+[X.c1b9] moved to [3, 6] -- <1165>
+[X.e3b2] moved to [7, 5] -- <1169>
+[X.3f8d] moved to [6, 2] -- <1169>
+[X.3290] moved to [3, 5] -- <1169>
+[X.c1b9] moved to [3, 5] -- <1169>
+[L.9388] moved to [11, 1] -- <1173>
+[X.e3b2] moved to [6, 5] -- <1173>
+[X.3f8d] moved to [5, 2] -- <1173>
+[X.3290] moved to [3, 4] -- <1173>
+[X.c1b9] moved to [3, 4] -- <1173>
+[L.9388] moved to [11, 2] -- <1175>
+[L.9388] took [$.3902] -- <1177>
+[$.3902] died -- <1177>
+[X.e3b2] moved to [6, 6] -- <1177>
+[X.3f8d] moved to [6, 2] -- <1177>
+[X.3290] moved to [2, 4] -- <1177>
+[X.c1b9] moved to [3, 5] -- <1177>
+[L.9388] moved to [11, 1] -- <1179>
+[L.9388] moved to [11, 2] -- <1181>
+[L.9388] moved to [11, 1] -- <1183>
+[X.e3b2] moved to [7, 6] -- <1185>
+[X.3f8d] moved to [6, 1] -- <1185>
+[X.3290] moved to [2, 5] -- <1185>
+[X.c1b9] moved to [2, 5] -- <1185>
+[L.9388] moved to [11, 2] -- <1187>
+[L.9388] moved to [12, 2] -- <1189>
+[X.e3b2] moved to [7, 5] -- <1189>
+[X.3290] moved to [3, 5] -- <1189>
+[X.c1b9] moved to [3, 5] -- <1189>
+[L.9388] took [$.9ac8] -- <1191>
+[$.9ac8] died -- <1191>
+[L.9388] moved to [12, 1] -- <1193>
+[X.e3b2] moved to [6, 5] -- <1193>
+[X.3290] moved to [4, 5] -- <1193>
+[X.c1b9] moved to [3, 4] -- <1193>
+[L.9388] took [$.d07a] -- <1195>
+[$.d07a] died -- <1195>
+[L.9388] moved to [12, 2] -- <1197>
+[X.e3b2] moved to [6, 4] -- <1197>
+[X.3f8d] moved to [7, 1] -- <1197>
+[X.3290] moved to [3, 5] -- <1197>
+[X.c1b9] moved to [4, 4] -- <1197>
+[L.9388] moved to [13, 2] -- <1199>
+[L.9388] took [$.b0d6] -- <1201>
+[$.b0d6] died -- <1201>
+[L.9388] moved to [13, 3] -- <1203>
+[X.e3b2] moved to [5, 4] -- <1205>
+[X.3f8d] moved to [8, 1] -- <1205>
+[X.3290] moved to [3, 4] -- <1205>
+[X.c1b9] moved to [4, 5] -- <1205>
+[L.9388] moved to [12, 3] -- <1207>
+[L.9388] took [$.493c] -- <1209>
+[$.493c] died -- <1209>
+[X.e3b2] moved to [6, 4] -- <1209>
+[X.3f8d] moved to [7, 1] -- <1209>
+[X.3290] moved to [2, 4] -- <1209>
+[X.c1b9] moved to [4, 6] -- <1209>
+[L.9388] moved to [12, 2] -- <1211>
+[L.9388] moved to [11, 2] -- <1213>
+[X.e3b2] moved to [7, 4] -- <1213>
+[X.3f8d] moved to [6, 1] -- <1213>
+[X.3290] moved to [1, 4] -- <1213>
+[X.c1b9] moved to [3, 6] -- <1213>
+[L.9388] moved to [11, 3] -- <1215>
+[L.9388] took [$.bdfb] -- <1217>
+[$.bdfb] died -- <1217>
+[X.e3b2] moved to [6, 4] -- <1217>
+[X.3f8d] moved to [6, 2] -- <1217>
+[X.3290] moved to [1, 3] -- <1217>
+[L.9388] moved to [11, 2] -- <1219>
+[L.9388] moved to [11, 1] -- <1221>
+[L.9388] moved to [10, 1] -- <1223>
+[X.e3b2] moved to [7, 4] -- <1225>
+[X.3f8d] moved to [5, 2] -- <1225>
+[X.3290] moved to [1, 2] -- <1225>
+[X.c1b9] moved to [3, 5] -- <1225>
+[L.9388] moved to [11, 1] -- <1227>
+[L.9388] moved to [12, 1] -- <1229>
+[X.e3b2] moved to [7, 3] -- <1229>
+[X.3f8d] moved to [6, 2] -- <1229>
+[X.3290] moved to [2, 2] -- <1229>
+[X.c1b9] moved to [3, 6] -- <1229>
+[L.9388] moved to [11, 1] -- <1231>
+[L.9388] moved to [10, 1] -- <1233>
+[X.e3b2] moved to [7, 2] -- <1233>
+[X.3f8d] moved to [7, 2] -- <1233>
+[X.3290] moved to [2, 1] -- <1233>
+[X.c1b9] moved to [2, 6] -- <1233>
+[L.9388] moved to [10, 2] -- <1235>
+[L.9388] moved to [9, 2] -- <1237>
+[X.e3b2] moved to [8, 2] -- <1237>
+[X.3f8d] moved to [6, 2] -- <1237>
+[X.c1b9] moved to [1, 6] -- <1237>
+[L.9388] moved to [9, 1] -- <1239>
+[$.f903] cloned to [$.9ac8] at [8, 1] -- <1241>
+[X.e3b2] added [$.9ac8] at [8, 1] -- <1241>
+[$.f903] cloned to [$.b0d6] at [3, 1] -- <1241>
+[X.3290] added [$.b0d6] at [3, 1] -- <1241>
+[L.9388] moved to [10, 1] -- <1243>
+[L.9388] moved to [11, 1] -- <1245>
+[X.e3b2] moved to [8, 1] -- <1245>
+[X.3f8d] moved to [7, 2] -- <1245>
+[L.9388] moved to [11, 2] -- <1247>
+[L.9388] moved to [11, 3] -- <1249>
+[X.e3b2] moved to [9, 1] -- <1249>
+[X.3f8d] moved to [7, 3] -- <1249>
+[L.9388] moved to [10, 3] -- <1251>
+[$.f903] cloned to [$.d07a] at [9, 2] -- <1251>
+[X.e3b2] added [$.d07a] at [9, 2] -- <1251>
+[L.9388] moved to [10, 4] -- <1253>
+[X.e3b2] moved to [10, 1] -- <1253>
+[X.3f8d] moved to [7, 2] -- <1253>
+[X.3290] moved to [2, 2] -- <1253>
+[L.9388] moved to [11, 4] -- <1255>
+[L.9388] took [$.8c4d] -- <1257>
+[$.8c4d] died -- <1257>
+[X.e3b2] moved to [10, 2] -- <1257>
+[X.3f8d] moved to [7, 1] -- <1257>
+[X.3290] moved to [1, 2] -- <1257>
+[L.9388] moved to [11, 3] -- <1259>
+[L.9388] moved to [11, 4] -- <1261>
+[L.9388] moved to [12, 4] -- <1263>
+[L.9388] moved to [11, 4] -- <1265>
+[X.e3b2] moved to [11, 2] -- <1265>
+[X.3f8d] moved to [8, 1] -- <1265>
+[X.3290] moved to [1, 1] -- <1265>
+[X.c1b9] moved to [2, 6] -- <1265>
+[L.9388] moved to [11, 5] -- <1267>
+[L.9388] moved to [11, 4] -- <1269>
+[X.e3b2] moved to [12, 2] -- <1269>
+[X.c1b9] moved to [2, 5] -- <1269>
+[L.9388] moved to [12, 4] -- <1271>
+[$.f903] cloned to [$.8c4d] at [11, 2] -- <1271>
+[X.e3b2] added [$.8c4d] at [11, 2] -- <1271>
+[$.f903] cloned to [$.bdfb] at [9, 1] -- <1271>
+[X.3f8d] added [$.bdfb] at [9, 1] -- <1271>
+[L.9388] moved to [11, 4] -- <1273>
+[X.e3b2] moved to [12, 3] -- <1273>
+[X.3f8d] moved to [9, 1] -- <1273>
+[X.c1b9] moved to [2, 6] -- <1273>
+[L.9388] moved to [10, 4] -- <1275>
+[L.9388] moved to [11, 4] -- <1277>
+[X.e3b2] moved to [12, 4] -- <1277>
+[X.c1b9] moved to [1, 6] -- <1277>
+[L.9388] moved to [11, 3] -- <1279>
+[L.9388] moved to [11, 4] -- <1281>
+[$.f903] cloned to [$.493c] at [10, 1] -- <1281>
+[X.3f8d] added [$.493c] at [10, 1] -- <1281>
+[L.9388] moved to [10, 4] -- <1283>
+[L.9388] moved to [11, 4] -- <1285>
+[X.e3b2] moved to [12, 5] -- <1285>
+[L.9388] moved to [11, 3] -- <1287>
+[L.9388] moved to [11, 4] -- <1289>
+[X.e3b2] moved to [11, 5] -- <1289>
+[X.3f8d] moved to [10, 1] -- <1289>
+[X.c1b9] moved to [2, 6] -- <1289>
+[L.9388] moved to [12, 4] -- <1291>
+[$.f903] cloned to [$.3902] at [10, 5] -- <1291>
+[X.e3b2] added [$.3902] at [10, 5] -- <1291>
+[$.f903] cloned to [$.eb9e] at [10, 2] -- <1291>
+[X.3f8d] added [$.eb9e] at [10, 2] -- <1291>
+[L.9388] moved to [13, 4] -- <1293>
+[X.e3b2] moved to [11, 6] -- <1293>
+[X.c1b9] moved to [1, 6] -- <1293>
+[L.9388] moved to [13, 3] -- <1295>
+[L.9388] moved to [13, 4] -- <1297>
+[X.e3b2] moved to [10, 6] -- <1297>
+[X.3f8d] moved to [11, 1] -- <1297>
+[X.c1b9] moved to [2, 6] -- <1297>
+[L.9388] moved to [12, 4] -- <1301>
+[$.f903] cloned to [$.71d1] at [11, 6] -- <1301>
+[X.e3b2] added [$.71d1] at [11, 6] -- <1301>
+[$.f903] cloned to [$.7b5a] at [12, 1] -- <1301>
+[X.3f8d] added [$.7b5a] at [12, 1] -- <1301>
+[L.9388] moved to [12, 5] -- <1303>
+[L.9388] moved to [11, 5] -- <1305>
+[X.e3b2] moved to [11, 6] -- <1305>
+[X.3f8d] moved to [10, 1] -- <1305>
+[X.3290] moved to [2, 1] -- <1305>
+[X.c1b9] moved to [3, 6] -- <1305>
+[L.9388] moved to [10, 5] -- <1307>
+[L.9388] took [$.3902] -- <1309>
+[$.3902] died -- <1309>
+[X.e3b2] moved to [12, 6] -- <1309>
+[X.3f8d] moved to [11, 1] -- <1309>
+[X.c1b9] moved to [4, 6] -- <1309>
+[L.9388] moved to [10, 6] -- <1311>
+[$.f903] cloned to [$.3902] at [12, 5] -- <1311>
+[X.e3b2] added [$.3902] at [12, 5] -- <1311>
+[X.e3b2] moved to [12, 5] -- <1313>
+[X.3f8d] moved to [10, 1] -- <1313>
+[X.3290] moved to [1, 1] -- <1313>
+[X.c1b9] moved to [4, 5] -- <1313>
+[L.9388] moved to [9, 6] -- <1317>
+[X.e3b2] moved to [13, 5] -- <1317>
+[X.3f8d] moved to [9, 1] -- <1317>
+[X.3290] moved to [2, 1] -- <1317>
+[X.c1b9] moved to [5, 5] -- <1317>
+[L.9388] took [$.1428] -- <1319>
+[$.1428] died -- <1319>
+[L.9388] moved to [8, 6] -- <1321>
+[L.9388] took [$.58c1] -- <1323>
+[$.58c1] died -- <1323>
+[X.e3b2] moved to [13, 4] -- <1325>
+[X.3f8d] moved to [10, 1] -- <1325>
+[X.c1b9] moved to [5, 4] -- <1325>
+[L.9388] moved to [8, 5] -- <1327>
+[L.9388] took [$.b66f] -- <1329>
+[$.b66f] died -- <1329>
+[X.3f8d] moved to [9, 1] -- <1329>
+[X.c1b9] moved to [5, 3] -- <1329>
+[L.9388] moved to [8, 6] -- <1331>
+[$.f903] cloned to [$.58c1] at [13, 3] -- <1331>
+[X.e3b2] added [$.58c1] at [13, 3] -- <1331>
+[X.e3b2] moved to [13, 5] -- <1333>
+[X.3f8d] moved to [9, 2] -- <1333>
+[X.3290] moved to [3, 1] -- <1333>
+[X.c1b9] moved to [5, 4] -- <1333>
+[L.9388] moved to [8, 5] -- <1335>
+[L.9388] moved to [7, 5] -- <1337>
+[X.e3b2] moved to [12, 5] -- <1337>
+[X.3f8d] moved to [9, 3] -- <1337>
+[X.3290] moved to [4, 1] -- <1337>
+[X.c1b9] moved to [5, 3] -- <1337>
+[L.9388] moved to [7, 6] -- <1339>
+[L.9388] took [$.97b9] -- <1341>
+[$.97b9] died -- <1341>
+[$.f903] cloned to [$.b66f] at [11, 5] -- <1341>
+[X.e3b2] added [$.b66f] at [11, 5] -- <1341>
+[$.f903] cloned to [$.97b9] at [9, 4] -- <1341>
+[X.3f8d] added [$.97b9] at [9, 4] -- <1341>
+[L.9388] moved to [7, 5] -- <1343>
+[L.9388] moved to [6, 5] -- <1345>
+[X.e3b2] moved to [11, 5] -- <1345>
+[X.3f8d] moved to [9, 4] -- <1345>
+[X.3290] moved to [5, 1] -- <1345>
+[X.c1b9] moved to [5, 2] -- <1345>
+[L.9388] took [$.5002] -- <1347>
+[$.5002] died -- <1347>
+[L.9388] moved to [6, 6] -- <1349>
+[X.e3b2] moved to [10, 5] -- <1349>
+[X.3f8d] moved to [10, 4] -- <1349>
+[X.3290] moved to [5, 2] -- <1349>
+[X.c1b9] moved to [5, 1] -- <1349>
+[L.9388] took [$.af9d] -- <1351>
+[$.af9d] died -- <1351>
+[$.f903] cloned to [$.af9d] at [9, 5] -- <1351>
+[X.e3b2] added [$.af9d] at [9, 5] -- <1351>
+[$.f903] cloned to [$.5002] at [5, 3] -- <1351>
+[X.3290] added [$.5002] at [5, 3] -- <1351>
+[L.9388] moved to [6, 5] -- <1353>
+[X.e3b2] moved to [9, 5] -- <1353>
+[X.3f8d] moved to [9, 4] -- <1353>
+[X.3290] moved to [5, 3] -- <1353>
+[X.c1b9] moved to [6, 1] -- <1353>
+[L.9388] moved to [6, 4] -- <1355>
+[L.9388] moved to [6, 5] -- <1357>
+[X.e3b2] moved to [8, 5] -- <1357>
+[X.3f8d] moved to [10, 4] -- <1357>
+[X.3290] moved to [5, 4] -- <1357>
+[L.9388] moved to [5, 5] -- <1359>
+[L.9388] took [$.e4c3] -- <1361>
+[$.e4c3] died -- <1361>
+[$.f903] cloned to [$.e4c3] at [7, 5] -- <1361>
+[X.e3b2] added [$.e4c3] at [7, 5] -- <1361>
+[$.f903] cloned to [$.1428] at [10, 5] -- <1361>
+[X.3f8d] added [$.1428] at [10, 5] -- <1361>
+[L.9388] moved to [4, 5] -- <1363>
+[L.9388] took [$.ee3d] -- <1365>
+[$.ee3d] died -- <1365>
+[X.e3b2] moved to [8, 6] -- <1365>
+[X.3f8d] moved to [11, 4] -- <1365>
+[X.3290] moved to [5, 3] -- <1365>
+[X.c1b9] moved to [6, 2] -- <1365>
+[L.9388] moved to [3, 5] -- <1367>
+[L.9388] took [$.b652] -- <1369>
+[$.b652] died -- <1369>
+[X.e3b2] moved to [9, 6] -- <1369>
+[X.3f8d] moved to [11, 5] -- <1369>
+[X.3290] moved to [5, 2] -- <1369>
+[X.c1b9] moved to [5, 2] -- <1369>
+[L.9388] moved to [2, 5] -- <1371>
+[$.f903] cloned to [$.b652] at [4, 2] -- <1371>
+[X.3290] added [$.b652] at [4, 2] -- <1371>
+[L.9388] took [$.8f6c] -- <1373>
+[$.8f6c] died -- <1373>
+[X.e3b2] moved to [10, 6] -- <1373>
+[X.3f8d] moved to [11, 4] -- <1373>
+[X.3290] moved to [6, 2] -- <1373>
+[X.c1b9] moved to [5, 1] -- <1373>
+[L.9388] moved to [2, 6] -- <1375>
+[L.9388] took [$.53b5] -- <1377>
+[$.53b5] died -- <1377>
+[X.3f8d] moved to [11, 5] -- <1377>
+[X.3290] moved to [7, 2] -- <1377>
+[X.c1b9] moved to [5, 2] -- <1377>
+[L.9388] moved to [2, 5] -- <1379>
+[L.9388] moved to [1, 5] -- <1381>
+[$.f903] cloned to [$.ee3d] at [9, 6] -- <1381>
+[X.e3b2] added [$.ee3d] at [9, 6] -- <1381>
+[$.f903] cloned to [$.8f6c] at [11, 4] -- <1381>
+[X.3f8d] added [$.8f6c] at [11, 4] -- <1381>
+[L.9388] took [$.1129] -- <1383>
+[$.1129] died -- <1383>
+[X.e3b2] moved to [11, 6] -- <1385>
+[X.3f8d] moved to [11, 6] -- <1385>
+[X.3290] moved to [7, 1] -- <1385>
+[X.c1b9] moved to [4, 2] -- <1385>
+[L.9388] moved to [1, 4] -- <1389>
+[X.3f8d] moved to [10, 6] -- <1389>
+[X.3290] moved to [8, 1] -- <1389>
+[X.c1b9] moved to [3, 2] -- <1389>
+[L.9388] took [$.1da8] -- <1391>
+[$.1da8] died -- <1391>
+[$.f903] cloned to [$.1da8] at [12, 6] -- <1391>
+[X.e3b2] added [$.1da8] at [12, 6] -- <1391>
+[$.f903] cloned to [$.53b5] at [3, 3] -- <1391>
+[X.c1b9] added [$.53b5] at [3, 3] -- <1391>
+[L.9388] moved to [1, 5] -- <1393>
+[X.e3b2] moved to [11, 5] -- <1393>
+[X.3f8d] moved to [9, 6] -- <1393>
+[X.3290] moved to [7, 1] -- <1393>
+[X.c1b9] moved to [3, 1] -- <1393>
+[L.9388] moved to [1, 6] -- <1395>
+[L.9388] took [$.ecc2] -- <1397>
+[$.ecc2] died -- <1397>
+[X.e3b2] moved to [10, 5] -- <1397>
+[X.3f8d] moved to [10, 6] -- <1397>
+[X.3290] moved to [6, 1] -- <1397>
+[X.c1b9] moved to [4, 1] -- <1397>
+[L.9388] moved to [2, 6] -- <1399>
+[L.9388] moved to [1, 6] -- <1401>
+[L.9388] moved to [1, 5] -- <1405>
+[X.e3b2] moved to [11, 5] -- <1405>
+[X.3f8d] moved to [10, 5] -- <1405>
+[L.9388] moved to [2, 5] -- <1407>
+[L.9388] moved to [1, 5] -- <1409>
+[X.e3b2] moved to [11, 4] -- <1409>
+[X.3f8d] moved to [10, 4] -- <1409>
+[X.3290] moved to [6, 2] -- <1409>
+[L.9388] moved to [1, 4] -- <1413>
+[X.e3b2] moved to [11, 3] -- <1413>
+[X.3f8d] moved to [10, 5] -- <1413>
+[X.3290] moved to [6, 3] -- <1413>
+[X.c1b9] moved to [5, 1] -- <1413>
+[L.9388] moved to [1, 5] -- <1417>
+[X.e3b2] moved to [11, 2] -- <1417>
+[X.3f8d] moved to [10, 6] -- <1417>
+[X.3290] moved to [6, 4] -- <1417>
+[X.c1b9] moved to [5, 2] -- <1417>
+[L.9388] moved to [1, 6] -- <1419>
+[L.9388] moved to [1, 5] -- <1421>
+[$.f903] cloned to [$.ecc2] at [11, 1] -- <1421>
+[X.e3b2] added [$.ecc2] at [11, 1] -- <1421>
+[$.f903] cloned to [$.1129] at [6, 5] -- <1421>
+[X.3290] added [$.1129] at [6, 5] -- <1421>
+[X.e3b2] moved to [11, 1] -- <1425>
+[X.3290] moved to [5, 4] -- <1425>
+[X.c1b9] moved to [6, 2] -- <1425>
+[L.9388] moved to [2, 5] -- <1429>
+[X.e3b2] moved to [12, 1] -- <1429>
+[X.3f8d] moved to [9, 6] -- <1429>
+[X.3290] moved to [6, 4] -- <1429>
+[X.c1b9] moved to [7, 2] -- <1429>
+[L.9388] moved to [2, 4] -- <1431>
+[L.9388] took [$.9fc7] -- <1433>
+[$.9fc7] died -- <1433>
+[X.3f8d] moved to [9, 5] -- <1433>
+[X.3290] moved to [6, 3] -- <1433>
+[X.c1b9] moved to [8, 2] -- <1433>
+[L.9388] moved to [1, 4] -- <1435>
+[L.9388] moved to [1, 3] -- <1437>
+[X.3f8d] moved to [9, 6] -- <1437>
+[X.3290] moved to [6, 2] -- <1437>
+[X.c1b9] moved to [7, 2] -- <1437>
+[L.9388] took [$.b087] -- <1439>
+[$.b087] died -- <1439>
+[$.f903] cloned to [$.b087] at [8, 6] -- <1441>
+[X.3f8d] added [$.b087] at [8, 6] -- <1441>
+[L.9388] moved to [1, 2] -- <1443>
+[L.9388] took [$.83db] -- <1445>
+[$.83db] died -- <1445>
+[X.e3b2] moved to [11, 1] -- <1445>
+[X.3f8d] moved to [8, 6] -- <1445>
+[X.3290] moved to [6, 3] -- <1445>
+[X.c1b9] moved to [8, 2] -- <1445>
+[L.9388] moved to [1, 1] -- <1447>
+[L.9388] took [$.5c21] -- <1449>
+[$.5c21] died -- <1449>
+[X.e3b2] moved to [11, 2] -- <1449>
+[X.3f8d] moved to [7, 6] -- <1449>
+[X.3290] moved to [7, 3] -- <1449>
+[X.c1b9] moved to [8, 3] -- <1449>
+[$.f903] cloned to [$.5c21] at [6, 6] -- <1451>
+[X.3f8d] added [$.5c21] at [6, 6] -- <1451>
+[L.9388] moved to [2, 1] -- <1453>
+[X.e3b2] moved to [11, 1] -- <1453>
+[X.3290] moved to [7, 4] -- <1453>
+[X.c1b9] moved to [8, 4] -- <1453>
+[L.9388] took [$.207b] -- <1455>
+[$.207b] died -- <1455>
+[L.9388] moved to [3, 1] -- <1457>
+[X.e3b2] moved to [11, 2] -- <1457>
+[X.3f8d] moved to [7, 5] -- <1457>
+[X.3290] moved to [6, 4] -- <1457>
+[X.c1b9] moved to [7, 4] -- <1457>
+[L.9388] took [$.b0d6] -- <1459>
+[$.b0d6] died -- <1459>
+[L.9388] moved to [3, 2] -- <1461>
+[$.f903] cloned to [$.b0d6] at [12, 2] -- <1461>
+[X.e3b2] added [$.b0d6] at [12, 2] -- <1461>
+[$.f903] cloned to [$.83db] at [8, 4] -- <1461>
+[X.c1b9] added [$.83db] at [8, 4] -- <1461>
+[L.9388] took [$. d31] -- <1463>
+[$. d31] died -- <1463>
+[L.9388] moved to [3, 3] -- <1465>
+[X.e3b2] moved to [11, 3] -- <1465>
+[X.3f8d] moved to [7, 6] -- <1465>
+[X.3290] moved to [7, 4] -- <1465>
+[X.c1b9] moved to [7, 5] -- <1465>
+[L.9388] took [$.53b5] -- <1467>
+[$.53b5] died -- <1467>
+[L.9388] moved to [3, 2] -- <1469>
+[X.e3b2] moved to [10, 3] -- <1469>
+[X.3f8d] moved to [6, 6] -- <1469>
+[X.3290] moved to [7, 5] -- <1469>
+[X.c1b9] moved to [8, 5] -- <1469>
+[L.9388] moved to [3, 1] -- <1471>
+[$.f903] cloned to [$. d31] at [10, 4] -- <1471>
+[X.e3b2] added [$. d31] at [10, 4] -- <1471>
+[$.f903] cloned to [$.53b5] at [7, 6] -- <1471>
+[X.3290] added [$.53b5] at [7, 6] -- <1471>
+[X.e3b2] moved to [9, 3] -- <1473>
+[X.3f8d] moved to [5, 6] -- <1473>
+[X.3290] moved to [7, 4] -- <1473>
+[X.c1b9] moved to [8, 6] -- <1473>
+[L.9388] moved to [2, 1] -- <1475>
+[L.9388] moved to [3, 1] -- <1477>
+[X.e3b2] moved to [8, 3] -- <1477>
+[X.3f8d] moved to [6, 6] -- <1477>
+[X.3290] moved to [8, 4] -- <1477>
+[X.c1b9] moved to [7, 6] -- <1477>
+[L.9388] moved to [4, 1] -- <1479>
+[L.9388] took [$.3337] -- <1481>
+[$.3337] died -- <1481>
+[L.9388] moved to [5, 1] -- <1485>
+[X.e3b2] moved to [8, 2] -- <1485>
+[X.3f8d] moved to [6, 5] -- <1485>
+[X.3290] moved to [8, 3] -- <1485>
+[X.c1b9] moved to [8, 6] -- <1485>
+[L.9388] took [$.c214] -- <1487>
+[$.c214] died -- <1487>
+[L.9388] moved to [4, 1] -- <1489>
+[X.e3b2] moved to [8, 1] -- <1489>
+[X.3f8d] moved to [6, 4] -- <1489>
+[X.3290] moved to [8, 4] -- <1489>
+[X.c1b9] moved to [8, 5] -- <1489>
+[L.9388] moved to [3, 1] -- <1491>
+[X.3f8d] moved to [6, 5] -- <1493>
+[X.3290] moved to [8, 5] -- <1493>
+[X.c1b9] moved to [9, 5] -- <1493>
+[L.9388] moved to [2, 1] -- <1495>
+[L.9388] moved to [2, 2] -- <1497>
+[X.3f8d] moved to [6, 6] -- <1497>
+[X.3290] moved to [8, 6] -- <1497>
+[X.c1b9] moved to [9, 6] -- <1497>
+[L.9388] took [$.6e76] -- <1499>
+[$.6e76] died -- <1499>
+[L.9388] moved to [2, 3] -- <1501>
+[$.f903] cloned to [$.3337] at [8, 5] -- <1501>
+[X.3290] added [$.3337] at [8, 5] -- <1501>
+[$.f903] cloned to [$.6e76] at [10, 6] -- <1501>
+[X.c1b9] added [$.6e76] at [10, 6] -- <1501>
+[L.9388] took [$.3859] -- <1503>
+[$.3859] died -- <1503>
+[L.9388] moved to [1, 3] -- <1505>
+[X.e3b2] moved to [8, 2] -- <1505>
+[X.3f8d] moved to [7, 6] -- <1505>
+[X.3290] moved to [8, 5] -- <1505>
+[L.9388] moved to [2, 3] -- <1509>
+[X.e3b2] moved to [8, 3] -- <1509>
+[X.3f8d] moved to [7, 5] -- <1509>
+[X.3290] moved to [7, 5] -- <1509>
+[X.c1b9] moved to [8, 6] -- <1509>
+[L.9388] moved to [2, 2] -- <1511>
+[L.9388] moved to [3, 2] -- <1513>
+[X.e3b2] moved to [9, 3] -- <1513>
+[X.3f8d] moved to [6, 5] -- <1513>
+[X.3290] moved to [8, 5] -- <1513>
+[X.c1b9] moved to [9, 6] -- <1513>
+[L.9388] moved to [3, 1] -- <1515>
+[L.9388] moved to [4, 1] -- <1517>
+[X.e3b2] moved to [9, 4] -- <1517>
+[X.3f8d] moved to [6, 4] -- <1517>
+[X.3290] moved to [9, 5] -- <1517>
+[X.c1b9] moved to [9, 5] -- <1517>
+[L.9388] moved to [4, 2] -- <1523>
+[L.9388] took [$.b652] -- <1525>
+[$.b652] died -- <1525>
+[X.e3b2] moved to [9, 3] -- <1525>
+[X.3f8d] moved to [5, 4] -- <1525>
+[X.3290] moved to [8, 5] -- <1525>
+[X.c1b9] moved to [10, 5] -- <1525>
+[L.9388] moved to [3, 2] -- <1527>
+[L.9388] moved to [2, 2] -- <1529>
+[X.e3b2] moved to [9, 2] -- <1529>
+[X.3f8d] moved to [5, 3] -- <1529>
+[X.3290] moved to [8, 6] -- <1529>
+[X.c1b9] moved to [10, 6] -- <1529>
+[L.9388] moved to [3, 2] -- <1531>
+[L.9388] moved to [3, 3] -- <1533>
+[X.e3b2] moved to [9, 3] -- <1533>
+[X.3f8d] moved to [5, 4] -- <1533>
+[X.3290] moved to [8, 5] -- <1533>
+[X.c1b9] moved to [10, 5] -- <1533>
+[L.9388] moved to [3, 2] -- <1535>
+[L.9388] moved to [4, 2] -- <1537>
+[X.e3b2] moved to [9, 2] -- <1537>
+[X.3f8d] moved to [5, 5] -- <1537>
+[X.3290] moved to [7, 5] -- <1537>
+[X.c1b9] moved to [10, 6] -- <1537>
+[L.9388] moved to [5, 2] -- <1539>
+[L.9388] took [$.c260] -- <1541>
+[$.c260] died -- <1541>
+[L.9388] moved to [5, 1] -- <1543>
+[X.e3b2] moved to [8, 2] -- <1545>
+[X.3f8d] moved to [6, 5] -- <1545>
+[X.3290] moved to [7, 4] -- <1545>
+[X.c1b9] moved to [9, 6] -- <1545>
+[L.9388] moved to [6, 1] -- <1549>
+[X.e3b2] moved to [8, 1] -- <1549>
+[X.3f8d] moved to [6, 6] -- <1549>
+[X.3290] moved to [7, 3] -- <1549>
+[X.c1b9] moved to [10, 6] -- <1549>
+[L.9388] took [$.7c23] -- <1551>
+[$.7c23] died -- <1551>
+[$.f903] cloned to [$.7c23] at [8, 3] -- <1551>
+[X.3290] added [$.7c23] at [8, 3] -- <1551>
+[L.9388] moved to [7, 1] -- <1553>
+[X.3f8d] moved to [7, 6] -- <1553>
+[X.3290] moved to [7, 2] -- <1553>
+[L.9388] took [$.6023] -- <1555>
+[$.6023] died -- <1555>
+[L.9388] moved to [7, 2] -- <1557>
+[X.e3b2] moved to [8, 2] -- <1557>
+[X.3f8d] moved to [8, 6] -- <1557>
+[X.3290] moved to [7, 3] -- <1557>
+[X.c1b9] moved to [10, 5] -- <1557>
+[L.9388] took [$.c3fc] -- <1559>
+[$.c3fc] died -- <1559>
+[L.9388] moved to [6, 2] -- <1561>
+[$.f903] cloned to [$.b652] at [7, 2] -- <1561>
+[X.e3b2] added [$.b652] at [7, 2] -- <1561>
+[L.9388] took [$. f0c] -- <1563>
+[$. f0c] died -- <1563>
+[L.9388] moved to [7, 2] -- <1565>
+[X.e3b2] moved to [8, 1] -- <1565>
+[X.3290] moved to [7, 4] -- <1565>
+[X.c1b9] moved to [10, 6] -- <1565>
+[L.9388] took [$.b652] -- <1567>
+[$.b652] died -- <1567>
+[L.9388] moved to [8, 2] -- <1569>
+[X.e3b2] moved to [8, 2] -- <1569>
+[X.3f8d] moved to [8, 5] -- <1569>
+[X.3290] moved to [6, 4] -- <1569>
+[X.c1b9] moved to [9, 6] -- <1569>
+[L.9388] took [$. db0] -- <1571>
+[$. db0] died -- <1571>
+[L.9388] moved to [7, 2] -- <1573>
+[X.e3b2] moved to [9, 2] -- <1573>
+[X.3f8d] moved to [8, 6] -- <1573>
+[X.3290] moved to [6, 3] -- <1573>
+[X.c1b9] moved to [8, 6] -- <1573>
+[L.9388] moved to [6, 2] -- <1575>
+[L.9388] moved to [6, 1] -- <1577>
+[X.e3b2] moved to [9, 3] -- <1577>
+[X.3f8d] moved to [7, 6] -- <1577>
+[X.3290] moved to [7, 3] -- <1577>
+[X.c1b9] moved to [7, 6] -- <1577>
+[L.9388] moved to [7, 1] -- <1579>
+[L.9388] moved to [8, 1] -- <1581>
+[L.9388] took [$.9ac8] -- <1583>
+[$.9ac8] died -- <1583>
+[L.9388] moved to [9, 1] -- <1585>
+[X.e3b2] moved to [9, 4] -- <1585>
+[X.3f8d] moved to [7, 5] -- <1585>
+[X.3290] moved to [8, 3] -- <1585>
+[X.c1b9] moved to [7, 5] -- <1585>
+[L.9388] took [$.bdfb] -- <1587>
+[$.bdfb] died -- <1587>
+[X.e3b2] moved to [9, 3] -- <1589>
+[X.3f8d] moved to [8, 5] -- <1589>
+[X.3290] moved to [7, 3] -- <1589>
+[X.c1b9] moved to [7, 4] -- <1589>
+[$.f903] cloned to [$.9ac8] at [6, 4] -- <1591>
+[X.c1b9] added [$.9ac8] at [6, 4] -- <1591>
+[L.9388] moved to [8, 1] -- <1593>
+[X.e3b2] moved to [10, 3] -- <1593>
+[X.3f8d] moved to [9, 5] -- <1593>
+[X.3290] moved to [7, 2] -- <1593>
+[X.c1b9] moved to [8, 4] -- <1593>
+[L.9388] moved to [8, 2] -- <1597>
+[X.e3b2] moved to [10, 4] -- <1597>
+[X.3f8d] moved to [9, 6] -- <1597>
+[X.3290] moved to [8, 2] -- <1597>
+[X.c1b9] moved to [8, 5] -- <1597>
+[L.9388] moved to [8, 1] -- <1599>
+[L.9388] moved to [7, 1] -- <1601>
+[L.9388] moved to [7, 2] -- <1603>
+[L.9388] moved to [6, 2] -- <1605>
+[X.e3b2] moved to [11, 4] -- <1605>
+[X.3290] moved to [8, 1] -- <1605>
+[X.c1b9] moved to [7, 5] -- <1605>
+[L.9388] moved to [5, 2] -- <1607>
+[L.9388] moved to [5, 1] -- <1609>
+[X.e3b2] moved to [11, 5] -- <1609>
+[X.3f8d] moved to [8, 6] -- <1609>
+[X.3290] moved to [9, 1] -- <1609>
+[X.c1b9] moved to [6, 5] -- <1609>
+[L.9388] moved to [6, 1] -- <1611>
+[X.e3b2] moved to [12, 5] -- <1613>
+[X.c1b9] moved to [7, 5] -- <1613>
+[X.e3b2] moved to [12, 4] -- <1617>
+[X.3f8d] moved to [9, 6] -- <1617>
+[X.3290] moved to [8, 1] -- <1617>
+[X.c1b9] moved to [7, 4] -- <1617>
+[L.9388] moved to [6, 2] -- <1621>
+[$.f903] cloned to [$.b652] at [12, 3] -- <1621>
+[X.e3b2] added [$.b652] at [12, 3] -- <1621>
+[$.f903] cloned to [$.c3fc] at [9, 1] -- <1621>
+[X.3290] added [$.c3fc] at [9, 1] -- <1621>
+[L.9388] moved to [6, 3] -- <1623>
+[L.9388] took [$.16be] -- <1625>
+[$.16be] died -- <1625>
+[X.e3b2] moved to [13, 4] -- <1625>
+[X.c1b9] moved to [6, 4] -- <1625>
+[L.9388] moved to [5, 3] -- <1627>
+[L.9388] took [$.5002] -- <1629>
+[$.5002] died -- <1629>
+[X.e3b2] moved to [13, 5] -- <1629>
+[X.3f8d] moved to [10, 6] -- <1629>
+[X.c1b9] moved to [6, 5] -- <1629>
+[L.9388] moved to [4, 3] -- <1631>
+[$.f903] cloned to [$.16be] at [5, 5] -- <1631>
+[X.c1b9] added [$.16be] at [5, 5] -- <1631>
+[L.9388] took [$.e325] -- <1633>
+[$.e325] died -- <1633>
+[X.e3b2] moved to [13, 6] -- <1633>
+[X.3f8d] moved to [11, 6] -- <1633>
+[X.3290] moved to [8, 2] -- <1633>
+[X.c1b9] moved to [6, 4] -- <1633>
+[L.9388] moved to [3, 3] -- <1635>
+[L.9388] moved to [2, 3] -- <1637>
+[X.3f8d] moved to [12, 6] -- <1637>
+[X.3290] moved to [8, 1] -- <1637>
+[X.c1b9] moved to [6, 5] -- <1637>
+[L.9388] moved to [1, 3] -- <1639>
+[L.9388] moved to [2, 3] -- <1641>
+[$.f903] cloned to [$.e325] at [7, 1] -- <1641>
+[X.3290] added [$.e325] at [7, 1] -- <1641>
+[L.9388] moved to [3, 3] -- <1643>
+[L.9388] moved to [4, 3] -- <1645>
+[X.e3b2] moved to [13, 5] -- <1645>
+[X.3f8d] moved to [13, 6] -- <1645>
+[X.c1b9] moved to [6, 6] -- <1645>
+[L.9388] moved to [4, 4] -- <1647>
+[L.9388] took [$.b411] -- <1649>
+[$.b411] died -- <1649>
+[X.e3b2] moved to [13, 6] -- <1649>
+[X.3290] moved to [8, 2] -- <1649>
+[X.c1b9] moved to [6, 5] -- <1649>
+[L.9388] moved to [3, 4] -- <1651>
+[L.9388] took [$.a4dd] -- <1653>
+[$.a4dd] died -- <1653>
+[X.3f8d] moved to [12, 6] -- <1653>
+[X.3290] moved to [9, 2] -- <1653>
+[X.c1b9] moved to [6, 6] -- <1653>
+[L.9388] moved to [3, 3] -- <1655>
+[L.9388] moved to [2, 3] -- <1657>
+[X.e3b2] moved to [12, 6] -- <1657>
+[X.3f8d] moved to [12, 5] -- <1657>
+[X.3290] moved to [9, 3] -- <1657>
+[X.c1b9] moved to [5, 6] -- <1657>
+[L.9388] moved to [3, 3] -- <1659>
+[L.9388] moved to [2, 3] -- <1661>
+[$.f903] cloned to [$. db0] at [13, 6] -- <1661>
+[X.e3b2] added [$. db0] at [13, 6] -- <1661>
+[$.f903] cloned to [$.5002] at [13, 5] -- <1661>
+[X.3f8d] added [$.5002] at [13, 5] -- <1661>
+[L.9388] moved to [1, 3] -- <1663>
+[X.3f8d] moved to [13, 5] -- <1665>
+[X.3290] moved to [9, 2] -- <1665>
+[L.9388] moved to [2, 3] -- <1669>
+[X.3f8d] moved to [13, 4] -- <1669>
+[X.3290] moved to [8, 2] -- <1669>
+[X.c1b9] moved to [4, 6] -- <1669>
+[L.9388] moved to [2, 2] -- <1671>
+[$.f903] cloned to [$.c260] at [12, 4] -- <1671>
+[X.3f8d] added [$.c260] at [12, 4] -- <1671>
+[$.f903] cloned to [$.b411] at [8, 1] -- <1671>
+[X.3290] added [$.b411] at [8, 1] -- <1671>
+[$.f903] cloned to [$.bdfb] at [4, 5] -- <1671>
+[X.c1b9] added [$.bdfb] at [4, 5] -- <1671>
+[L.9388] moved to [2, 1] -- <1673>
+[X.e3b2] moved to [11, 6] -- <1673>
+[X.3f8d] moved to [12, 4] -- <1673>
+[X.3290] moved to [8, 3] -- <1673>
+[X.c1b9] moved to [5, 6] -- <1673>
+[L.9388] moved to [2, 2] -- <1677>
+[X.e3b2] moved to [10, 6] -- <1677>
+[X.3f8d] moved to [13, 4] -- <1677>
+[X.3290] moved to [8, 4] -- <1677>
+[X.c1b9] moved to [5, 5] -- <1677>
+[L.9388] moved to [1, 2] -- <1679>
+[L.9388] moved to [2, 2] -- <1685>
+[X.e3b2] moved to [11, 6] -- <1685>
+[X.3f8d] moved to [12, 4] -- <1685>
+[X.3290] moved to [9, 4] -- <1685>
+[X.c1b9] moved to [6, 5] -- <1685>
+[L.9388] moved to [2, 1] -- <1687>
+[L.9388] moved to [3, 1] -- <1689>
+[X.3f8d] moved to [12, 3] -- <1689>
+[X.3290] moved to [10, 4] -- <1689>
+[X.c1b9] moved to [6, 4] -- <1689>
+[$.f903] cloned to [$.3859] at [6, 3] -- <1691>
+[X.c1b9] added [$.3859] at [6, 3] -- <1691>
+[L.9388] moved to [2, 1] -- <1693>
+[X.e3b2] moved to [10, 6] -- <1693>
+[X.3f8d] moved to [12, 4] -- <1693>
+[X.3290] moved to [11, 4] -- <1693>
+[X.c1b9] moved to [6, 3] -- <1693>
+[L.9388] moved to [2, 2] -- <1695>
+[L.9388] moved to [1, 2] -- <1697>
+[X.e3b2] moved to [11, 6] -- <1697>
+[X.3f8d] moved to [12, 5] -- <1697>
+[X.3290] moved to [11, 3] -- <1697>
+[X.c1b9] moved to [5, 3] -- <1697>
+[L.9388] moved to [1, 1] -- <1701>
+[$.f903] cloned to [$.6023] at [4, 3] -- <1701>
+[X.c1b9] added [$.6023] at [4, 3] -- <1701>
+[L.9388] moved to [1, 2] -- <1703>
+[L.9388] moved to [2, 2] -- <1705>
+[X.e3b2] moved to [11, 5] -- <1705>
+[X.3f8d] moved to [12, 6] -- <1705>
+[X.3290] moved to [10, 3] -- <1705>
+[X.c1b9] moved to [6, 3] -- <1705>
+[L.9388] moved to [2, 3] -- <1707>
+[L.9388] moved to [2, 2] -- <1709>
+[X.e3b2] moved to [10, 5] -- <1709>
+[X.3f8d] moved to [11, 6] -- <1709>
+[X.3290] moved to [10, 2] -- <1709>
+[X.c1b9] moved to [6, 4] -- <1709>
+[L.9388] moved to [1, 2] -- <1711>
+[X.e3b2] moved to [11, 5] -- <1713>
+[X.3f8d] moved to [12, 6] -- <1713>
+[X.3290] moved to [10, 1] -- <1713>
+[X.c1b9] moved to [7, 4] -- <1713>
+[L.9388] moved to [1, 3] -- <1715>
+[L.9388] moved to [1, 2] -- <1717>
+[X.e3b2] moved to [12, 5] -- <1717>
+[X.3f8d] moved to [12, 5] -- <1717>
+[X.c1b9] moved to [7, 3] -- <1717>
+[L.9388] moved to [2, 2] -- <1719>
+[L.9388] moved to [1, 2] -- <1721>
+[$.f903] cloned to [$.c214] at [7, 2] -- <1721>
+[X.c1b9] added [$.c214] at [7, 2] -- <1721>
+[L.9388] moved to [1, 3] -- <1723>
+[L.9388] moved to [2, 3] -- <1725>
+[X.e3b2] moved to [12, 4] -- <1725>
+[X.3f8d] moved to [12, 6] -- <1725>
+[X.3290] moved to [9, 1] -- <1725>
+[X.c1b9] moved to [8, 3] -- <1725>
+[L.9388] moved to [2, 4] -- <1727>
+[L.9388] moved to [2, 3] -- <1729>
+[X.e3b2] moved to [11, 4] -- <1729>
+[X.3f8d] moved to [11, 6] -- <1729>
+[X.c1b9] moved to [8, 4] -- <1729>
+[L.9388] moved to [1, 3] -- <1731>
+[X.e3b2] moved to [12, 4] -- <1733>
+[X.3f8d] moved to [12, 6] -- <1733>
+[X.c1b9] moved to [9, 4] -- <1733>
+[L.9388] moved to [1, 4] -- <1735>
+[L.9388] moved to [1, 3] -- <1737>
+[X.e3b2] moved to [13, 4] -- <1737>
+[X.3f8d] moved to [12, 5] -- <1737>
+[X.c1b9] moved to [9, 3] -- <1737>
+[L.9388] moved to [2, 3] -- <1739>
+[L.9388] moved to [1, 3] -- <1741>
+[X.3f8d] moved to [11, 5] -- <1745>
+[X.3290] moved to [8, 1] -- <1745>
+[X.c1b9] moved to [9, 2] -- <1745>
+[L.9388] moved to [1, 2] -- <1747>
+[L.9388] moved to [1, 3] -- <1749>
+[X.e3b2] moved to [13, 5] -- <1749>
+[X.3f8d] moved to [12, 5] -- <1749>
+[X.3290] moved to [7, 1] -- <1749>
+[X.c1b9] moved to [9, 3] -- <1749>
+[L.9388] moved to [1, 2] -- <1751>
+[L.9388] moved to [1, 1] -- <1753>
+[X.e3b2] moved to [13, 4] -- <1753>
+[X.3f8d] moved to [12, 4] -- <1753>
+[X.3290] moved to [8, 1] -- <1753>
+[X.c1b9] moved to [9, 2] -- <1753>
+[L.9388] moved to [1, 2] -- <1755>
+[X.e3b2] moved to [13, 5] -- <1757>
+[X.3f8d] moved to [13, 4] -- <1757>
+[X.c1b9] moved to [9, 1] -- <1757>
+[L.9388] moved to [2, 2] -- <1759>
+[L.9388] moved to [3, 2] -- <1761>
+[L.9388] moved to [3, 1] -- <1763>
+[L.9388] moved to [2, 1] -- <1765>
+[X.e3b2] moved to [13, 4] -- <1765>
+[X.c1b9] moved to [9, 2] -- <1765>
+[L.9388] moved to [3, 1] -- <1769>
+[X.e3b2] moved to [12, 4] -- <1769>
+[X.3290] moved to [9, 1] -- <1769>
+[X.c1b9] moved to [9, 3] -- <1769>
+[L.9388] moved to [3, 2] -- <1771>
+[$.f903] cloned to [$. f0c] at [10, 3] -- <1771>
+[X.c1b9] added [$. f0c] at [10, 3] -- <1771>
+[L.9388] moved to [4, 2] -- <1773>
+[X.e3b2] moved to [12, 3] -- <1773>
+[X.3f8d] moved to [13, 5] -- <1773>
+[X.3290] moved to [8, 1] -- <1773>
+[X.c1b9] moved to [10, 3] -- <1773>
+[L.9388] moved to [4, 3] -- <1775>
+[L.9388] took [$.6023] -- <1777>
+[$.6023] died -- <1777>
+[X.e3b2] moved to [12, 2] -- <1777>
+[X.3f8d] moved to [12, 5] -- <1777>
+[X.3290] moved to [7, 1] -- <1777>
+[X.c1b9] moved to [10, 2] -- <1777>
+[L.9388] moved to [4, 4] -- <1779>
+[L.9388] moved to [3, 4] -- <1781>
+[$.f903] cloned to [$.6023] at [13, 2] -- <1781>
+[X.e3b2] added [$.6023] at [13, 2] -- <1781>
+[L.9388] moved to [3, 5] -- <1783>
+[L.9388] moved to [2, 5] -- <1785>
+[X.e3b2] moved to [13, 2] -- <1785>
+[X.3f8d] moved to [12, 6] -- <1785>
+[X.c1b9] moved to [9, 2] -- <1785>
+[L.9388] moved to [1, 5] -- <1787>
+[L.9388] moved to [1, 4] -- <1789>
+[X.e3b2] moved to [13, 3] -- <1789>
+[X.3f8d] moved to [11, 6] -- <1789>
+[X.3290] moved to [8, 1] -- <1789>
+[X.c1b9] moved to [8, 2] -- <1789>
+[L.9388] moved to [2, 4] -- <1791>
+[L.9388] moved to [2, 3] -- <1793>
+[X.c1b9] moved to [9, 2] -- <1793>
+[L.9388] moved to [2, 2] -- <1795>
+[L.9388] moved to [2, 1] -- <1797>
+[X.e3b2] moved to [13, 2] -- <1797>
+[X.3f8d] moved to [12, 6] -- <1797>
+[X.3290] moved to [7, 1] -- <1797>
+[X.c1b9] moved to [9, 1] -- <1797>
+[L.9388] moved to [2, 2] -- <1801>
+[$.f903] cloned to [$.a4dd] at [6, 1] -- <1801>
+[X.3290] added [$.a4dd] at [6, 1] -- <1801>
+[L.9388] moved to [3, 2] -- <1803>
+[L.9388] moved to [3, 3] -- <1805>
+[X.e3b2] moved to [13, 1] -- <1805>
+[X.3f8d] moved to [11, 6] -- <1805>
+[X.3290] moved to [6, 1] -- <1805>
+[L.9388] moved to [3, 4] -- <1807>
+[L.9388] moved to [2, 4] -- <1809>
+[X.3f8d] moved to [10, 6] -- <1809>
+[X.3290] moved to [7, 1] -- <1809>
+[X.c1b9] moved to [10, 1] -- <1809>
+[L.9388] moved to [1, 4] -- <1811>
+[L.9388] moved to [1, 5] -- <1813>
+[X.3f8d] moved to [11, 6] -- <1813>
+[L.9388] moved to [1, 4] -- <1815>
+[L.9388] moved to [2, 4] -- <1817>
+[X.e3b2] moved to [12, 1] -- <1817>
+[X.3f8d] moved to [11, 5] -- <1817>
+[X.c1b9] moved to [10, 2] -- <1817>
+[L.9388] moved to [2, 3] -- <1819>
+[L.9388] moved to [1, 3] -- <1821>
+[L.9388] moved to [1, 2] -- <1823>
+[L.9388] moved to [1, 1] -- <1825>
+[X.e3b2] moved to [12, 2] -- <1825>
+[X.3f8d] moved to [11, 6] -- <1825>
+[X.3290] moved to [8, 1] -- <1825>
+[X.c1b9] moved to [9, 2] -- <1825>
+[L.9388] moved to [1, 2] -- <1827>
+[L.9388] moved to [1, 1] -- <1829>
+[X.e3b2] moved to [12, 3] -- <1829>
+[X.3290] moved to [8, 2] -- <1829>
+[X.c1b9] moved to [9, 3] -- <1829>
+[L.9388] moved to [1, 2] -- <1833>
+[X.e3b2] moved to [11, 3] -- <1833>
+[X.3290] moved to [9, 2] -- <1833>
+[X.c1b9] moved to [9, 2] -- <1833>
+[L.9388] moved to [1, 1] -- <1835>
+[L.9388] moved to [2, 1] -- <1837>
+[X.e3b2] moved to [12, 3] -- <1837>
+[X.3f8d] moved to [11, 5] -- <1837>
+[X.3290] moved to [9, 1] -- <1837>
+[X.c1b9] moved to [8, 2] -- <1837>
+[L.9388] moved to [3, 1] -- <1839>
+[$.f903] cloned to [$.9fc7] at [11, 3] -- <1841>
+[X.e3b2] added [$.9fc7] at [11, 3] -- <1841>
+[L.9388] moved to [3, 2] -- <1845>
+[X.e3b2] moved to [11, 3] -- <1845>
+[X.3f8d] moved to [12, 5] -- <1845>
+[X.3290] moved to [8, 1] -- <1845>
+[X.c1b9] moved to [9, 2] -- <1845>
+[L.9388] moved to [4, 2] -- <1847>
+[L.9388] moved to [3, 2] -- <1849>
+[X.e3b2] moved to [12, 3] -- <1849>
+[X.3f8d] moved to [13, 5] -- <1849>
+[X.c1b9] moved to [10, 2] -- <1849>
+[L.9388] moved to [3, 3] -- <1851>
+[L.9388] moved to [3, 2] -- <1853>
+[X.e3b2] moved to [13, 3] -- <1853>
+[X.3f8d] moved to [12, 5] -- <1853>
+[X.c1b9] moved to [10, 1] -- <1853>
+[L.9388] moved to [3, 3] -- <1855>
+[L.9388] moved to [3, 2] -- <1857>
+[X.e3b2] moved to [12, 3] -- <1857>
+[X.3f8d] moved to [11, 5] -- <1857>
+[X.3290] moved to [9, 1] -- <1857>
+[X.c1b9] moved to [9, 1] -- <1857>
+[L.9388] moved to [2, 2] -- <1859>
+[L.9388] moved to [2, 1] -- <1861>
+[L.9388] moved to [1, 1] -- <1863>
+[L.9388] moved to [1, 2] -- <1865>
+[X.e3b2] moved to [12, 2] -- <1865>
+[X.3f8d] moved to [11, 6] -- <1865>
+[X.3290] moved to [9, 2] -- <1865>
+[X.c1b9] moved to [9, 2] -- <1865>
+[L.9388] moved to [1, 3] -- <1867>
+[L.9388] moved to [1, 2] -- <1869>
+[X.e3b2] moved to [12, 1] -- <1869>
+[X.3f8d] moved to [11, 5] -- <1869>
+[X.3290] moved to [10, 2] -- <1869>
+[X.c1b9] moved to [9, 1] -- <1869>
+[L.9388] moved to [1, 3] -- <1871>
+[L.9388] moved to [1, 2] -- <1873>
+[X.e3b2] moved to [13, 1] -- <1873>
+[X.3f8d] moved to [12, 5] -- <1873>
+[X.3290] moved to [10, 1] -- <1873>
+==== SIMULATION ENDED: Code Interruption ====
+
+

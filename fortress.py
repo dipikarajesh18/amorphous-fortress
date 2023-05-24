@@ -10,6 +10,7 @@ class Fortress():
         self.border = borderChar
         self.width = width
         self.height = height
+        self.max_entities = (width-2) * (height-2) * 2
         self.fortmap = []
 
         self.entities = {}   # dictionary of entities
@@ -46,7 +47,8 @@ class Fortress():
 
     # remove from the entity list and ID list based on the entity ID
     def removeFromMap(self, ent):
-        del self.entities[ent.id]
+        if ent.id in self.entities:
+            del self.entities[ent.id]
 
 
     # render the entities on the map
@@ -69,11 +71,6 @@ class Fortress():
     def validPos(self, x, y):
         if x < 0 or x >= self.width or y < 0 or y >= self.height:
             return False
-        
-        # DEBUG
-        # self.addLog(f"\tValid position: {x},{y}?")
-        # self.addLog(f"\tFortress: {self.width}x{self.height}")
-        # self.addLog(f"\tFortress: {self.fortmap.shape}")
 
         if self.fortmap[y,x] == self.floor:
             return True
@@ -103,8 +100,8 @@ class Fortress():
     # create new trees for every character in the config file
     def makeCharacters(self):
         self.CHARACTER_DICT = {}
-        for c in self.config['character']:
-            ent = Entity(self.fortress,char=c)
+        for c in self.CONFIG['character']:
+            ent = Entity(self,char=c)
             ent.pos = [-1,-1]
             self.CHARACTER_DICT[c] = ent
 
@@ -134,6 +131,14 @@ class Fortress():
             return True
         
         return False
+    
+    # check if too many entities in the simulation
+    def overpop(self):
+        if len(self.entities) > self.max_entities:
+            self.end_cause = "Overpopulation"
+            return True
+        return False
+
         
     # adds a message to the log
     def addLog(self, txt):

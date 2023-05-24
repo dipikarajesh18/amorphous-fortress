@@ -10,7 +10,7 @@ from entities import Entity
 
 DEBUG = False   # shows in curses
 ENGINE = None   # the engine
-TEST = "KOROK"       # test a specific setup
+TEST = ""       # test a specific setup
 
 # Initialize the screen
 if not DEBUG:
@@ -77,7 +77,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
     title_text = f"====== DUCK FORTRESS [{engine.seed}] ======"
     sim.addstr(0, sim_width//2-len(title_text)//2, title_text)
 
-    time_text = f"Timestep: {engine.sim_tick}"
+    time_text = f"Timestep: {engine.sim_tick} --- # entities: {engine.fortress.max_entities} / {(engine.fortress.max_entities)}"
     sim.addstr(2, sim_width//2-len(time_text)//2, time_text)
 
 
@@ -296,7 +296,7 @@ def main(config_file):
     # run the update loop
     if not DEBUG:
         loops = 0
-        while not ENGINE.fortress.terminate() and not ENGINE.fortress.inactive():
+        while not (ENGINE.fortress.terminate() or ENGINE.fortress.inactive() or ENGINE.fortress.overpop()) :
             ENGINE.update()
             curses_render_loop(screen_set, screen_dims, ENGINE)
             time.sleep(ENGINE.config['sim_speed'])
@@ -309,6 +309,7 @@ def main(config_file):
     # show cause of termination
     END_CAUSE = ENGINE.fortress.end_cause
     ENGINE.fortress.log.append(f"==== SIMULATION ENDED: {END_CAUSE} ====")
+    ENGINE.fortress.log.append(f"\n{ENGINE.init_ent_str}")
 
     # End the simulation
     if not DEBUG:
@@ -320,7 +321,8 @@ def main(config_file):
 if __name__ == "__main__":
 
     try:
-        conf_file = sys.argv[1] if len(sys.argv) > 1 else "alpha_config.yaml"
+        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/alpha_config.yaml"
+        TEST = sys.argv[2] if len(sys.argv) > 2 else ""
         main(conf_file)
 
     # handle crashes

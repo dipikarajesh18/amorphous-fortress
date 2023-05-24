@@ -3,6 +3,7 @@ import yaml
 from fortress import Fortress
 from entities import Entity
 import numpy as np
+import datetime
 
 class Engine():
     def __init__(self,config_file):
@@ -21,6 +22,7 @@ class Engine():
         self.fortress = Fortress(self.config,15,8,seed=self.seed)
         self.fortress.blankFortress()
         self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
+        self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
         # self.fortress.printFortress()
 
         self.sim_tick = 0    # simulation tick
@@ -53,8 +55,10 @@ class Engine():
 
     # populate the fortress with entities
     def populateFortress(self):
-
+        # make every character
         self.fortress.makeCharacters()
+        for c,e in self.fortress.CHARACTER_DICT.items():
+            self.init_ent_str += f"{e.printTree()}\n"
 
         # populate the fortress with entities randomly
         map_size = self.fortress.width * self.fortress.height
@@ -65,44 +69,19 @@ class Engine():
 
         for e in range(num_entities):
             c = random.choice(list(self.fortress.CHARACTER_DICT.keys()))
-            ent = self.CHARACTER_DICT[c].clone([rposx[e], rposy[e]])
-            self.fortress.addEntity(ent)
+            ent = self.fortress.CHARACTER_DICT[c].clone([rposx[e], rposy[e]])
+            if ent:
+                self.fortress.addEntity(ent)
 
         self.fortress.addLog(f"Fortress randomly populated with {num_entities}")    # add a log message
 
-        # num_classes = random.randint(1,len(self.config['character']))  #only use a subset of the characters (1-all)
-        # rposx = np.random.randint(1,self.fortress.width-1,num_classes)
-        # rposy = np.random.randint(1,self.fortress.height-1,num_classes)
 
-        # char_left = self.config['character'].copy()
-
-        # for i in range(num_classes):
-
-        #     c = random.choice(char_left)  # pick a random character
-        #     ent = Entity(self.fortress, char=c)
-        #     ent.pos = [rposx[i], rposy[i]]
-        #     self.fortress.addEntity(ent)
-
-        #     # have a chance to make copies of the same entity
-        #     if random.random() < self.config['pop_chance']:
-        #         ent.clone()
-
-        #     char_left.remove(c) # remove the character from the list
-
-        # self.fortress.addLog("Fortress randomly populated") # add a log message
-
-        # # save the trees of all of the entities at the start
-        # self.init_ent_str = ""
-        # for e in self.fortress.entities:
-        #     self.init_ent_str += self.fortress.entities[e].printTree() + "\n"
-
-    
 
 # test out the entity class
 if __name__ == "__main__":
     # create test engine, fortress, and entity
-    testEngine = Engine("alpha_config.yaml")
+    testEngine = Engine("CONFIGS/alpha_config.yaml")
     # entTest = Entity(testEngine.fortress,"@")
-    entTest = Entity(testEngine.fortress,filename="sample_entities/duck.txt")
+    entTest = Entity(testEngine.fortress,filename="ENT/duck.txt")
     print(f"SEED: {testEngine.fortress.seed}")
     print(entTest.printTree())

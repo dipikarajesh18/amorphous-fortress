@@ -1,0 +1,13 @@
+============    FORTRESS SEED [723501]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+15 Unique character trees created -- <0>
+[^.9b04] cloned to [^.a52a] at [2, 2] -- <0>
+Fortress randomly populated with 1 -- <0>
+[^.a52a] moved to [2, 1] -- <11>
+[^.a52a] moved to [3, 1] -- <12>
+[^.a52a] moved to [3, 2] -- <13>
+[^.a52a] moved to [3, 1] -- <14>
+==== SIMULATION ENDED: Code Interruption ====
+
+

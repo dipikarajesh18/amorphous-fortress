@@ -1,0 +1,42 @@
+============    FORTRESS SEED [24622]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: beta_config.yaml <<< -- <0>
+15 Unique character trees created -- <0>
+[+.6c7c] cloned to [+.a554] at [4, 4] -- <0>
+[$.baf2] cloned to [$.145d] at [6, 1] -- <0>
+[*.828c] cloned to [*.ab03] at [9, 4] -- <0>
+[@.a554] cloned to [@.fcf3] at [4, 2] -- <0>
+[@.a554] cloned to [@.   3] at [4, 4] -- <0>
+[X.192a] cloned to [X.88ac] at [1, 6] -- <0>
+[O.79e9] cloned to [O.9348] at [10, 4] -- <0>
+[+.6c7c] cloned to [+.3fdf] at [8, 2] -- <0>
+[X.192a] cloned to [X.86df] at [6, 4] -- <0>
+[S.6b1d] cloned to [S.e933] at [3, 3] -- <0>
+[S.6b1d] cloned to [S.effa] at [12, 5] -- <0>
+[!.6784] cloned to [!.54ab] at [5, 2] -- <0>
+[<.4bd8] cloned to [<.723d] at [4, 2] -- <0>
+[S.6b1d] cloned to [S.e222] at [11, 5] -- <0>
+[O.79e9] cloned to [O.9f13] at [6, 3] -- <0>
+[M.f96f] cloned to [M.c262] at [3, 1] -- <0>
+[M.f96f] cloned to [M.c037] at [2, 6] -- <0>
+[D. 2c6] cloned to [D.d0fe] at [4, 2] -- <0>
+[X.192a] cloned to [X.8e27] at [13, 3] -- <0>
+[>.3fa4] cloned to [>.63fe] at [10, 2] -- <0>
+[>.3fa4] cloned to [>.66db] at [4, 1] -- <0>
+[S.6b1d] cloned to [S.f1cf] at [11, 4] -- <0>
+Fortress randomly populated with 22 -- <0>
+[+.a554] moved to [5, 4] -- <2>
+[;.cd3d] cloned to [;.ed76] at [5, 1] -- <2>
+[$.145d] added [;.ed76] at [5, 1] -- <2>
+[*.ab03] cloned to [*.8cba] at [10, 4] -- <2>
+[@.fcf3] moved to [3, 2] -- <2>
+[&.afd1] cloned to [&.af57] at [4, 5] -- <2>
+[@.   3] added [&.af57] at [4, 5] -- <2>
+[X.88ac] took [<.723d] -- <2>
+[<.723d] died -- <2>
+[X.86df] took [<.723d] -- <2>
+[<.723d] died -- <2>
+[!.54ab] moved to [6, 2] -- <2>
+==== SIMULATION ENDED: Code Interruption ====
+
+

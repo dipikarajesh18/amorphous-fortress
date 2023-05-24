@@ -1,2 +1,3 @@
 curses_tests_chatgpt/
 *.pyc
+__pycache__/
