@@ -2,10 +2,11 @@ action_space : ['take', 'move', 'die']
 character : ['@', '$', '&', '+']
 edge_conditions : ['none','touch', 'step']
 step_range : [1,10]
-seed : any                  # 'any' or a number
+prox_range : [1,10]
+seed : 'any'                  # 'any' or a number
 sim_speed : 1                 # in seconds, speed of simulation
 save_log : true
 log_file : 'LOGS/log_[<SEED>].txt' # <SEED> will be replaced by the seed value
 min_log : 5                  # minimum number of steps to log
 inactive_limit : 20           # how long to let the simulation run before stopping due to inactivity
-pop_chance : 0.5              # chance for a copy of the entity's class to be added to the population
+pop_perc : 0.5              # chance for a copy of the entity's class to be added to the population

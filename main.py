@@ -188,6 +188,7 @@ def main(config_file):
         ent = Entity(ENGINE.fortress, filename="ENT/duck.txt")
         ent.pos = [3,3]
         ENGINE.fortress.addEntity(ent)
+        ENGINE.fortress.addLog(">>> Running [DUCK] test <<<")
 
     # test take
     elif TEST == "AMOEBA":
@@ -203,6 +204,8 @@ def main(config_file):
         a3.pos = [4,3]
         ENGINE.fortress.addEntity(a3)
 
+        ENGINE.fortress.addLog(">>> Running [AMOEBA] test <<<")
+
     # test die
     elif TEST == "GRASS":
         # get 10 random positions
@@ -215,15 +218,19 @@ def main(config_file):
             ent.pos = [rposx[i], rposy[i]]
             ENGINE.fortress.addEntity(ent)
 
+        ENGINE.fortress.addLog(">>> Running [GRASS] test <<<")
+
     # test chase
     elif TEST == "BOKO":
         b = Entity(ENGINE.fortress, filename="ENT/boko.txt")
-        b.pos = [5,5]
+        b.pos = [7,5]
         ENGINE.fortress.addEntity(b)
 
-        r = Entity(ENGINE.fortress, filename="ENT/rock.txt")
-        r.pos = [2,2]
-        ENGINE.fortress.addEntity(r)
+        l = Entity(ENGINE.fortress, filename="ENT/link.txt")
+        l.pos = [2,3]
+        ENGINE.fortress.addEntity(l)
+
+        ENGINE.fortress.addLog(">>> Running [BOKO] test <<<")
 
     # test push
     elif TEST == "GORON":
@@ -251,6 +258,8 @@ def main(config_file):
         r4.pos = [11,4]
         ENGINE.fortress.addEntity(r4)
 
+        ENGINE.fortress.addLog(">>> Running [GORON] test <<<")
+
     # test add
     # TODO: do something about too many entities being stacked on top of each other
     elif TEST == "BLUPEE":
@@ -277,6 +286,8 @@ def main(config_file):
         # add to the list to spawn later
         ENGINE.fortress.CHARACTER_DICT['$'] = Entity(ENGINE.fortress, char='$', nodes=["idle"], edges={'0-0':'none'})
 
+        ENGINE.fortress.addLog(">>> Running [BLUPEE] test <<<")
+
     # test transform
     elif TEST == "KOROK":
         l = Entity(ENGINE.fortress, filename="ENT/link.txt")
@@ -289,6 +300,8 @@ def main(config_file):
 
         # add to the list to spawn later
         ENGINE.fortress.CHARACTER_DICT['$'] = Entity(ENGINE.fortress, char='$', nodes=["idle"], edges={'0-0':'none'})
+
+        ENGINE.fortress.addLog(">>> Running [KOROK] test <<<")
 
     else:
         ENGINE.populateFortress()
@@ -321,7 +334,7 @@ def main(config_file):
 if __name__ == "__main__":
 
     try:
-        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/alpha_config.yaml"
+        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/beta_config.yaml"
         TEST = sys.argv[2] if len(sys.argv) > 2 else ""
         main(conf_file)
 
