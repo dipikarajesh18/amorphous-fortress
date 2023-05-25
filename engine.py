@@ -14,8 +14,8 @@ class Engine():
 
         # set the random seed
         self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
-        random.seed(self.seed)
-        np.random.seed(self.seed)
+        # random.seed(self.seed)
+        # np.random.seed(self.seed)
         # print(f"Seed: {self.seed}")
 
         # define the fortress
@@ -73,7 +73,28 @@ class Engine():
             if ent:
                 self.fortress.addEntity(ent)
 
+        self.recordState()   # record the initial state of the fortress
         self.fortress.addLog(f"Fortress randomly populated with {num_entities}")    # add a log message
+
+    # Store the essential initial info in case we need to replicate/mutate the fortress later.
+    def recordState(self):
+        # These are backup/reference entities. They should never be added to the fortress lest they be modified in place.
+        self.ref_ents = {}
+        for e_id, e in self.fortress.entities.items():
+            new_ent = Entity(fortress=self.fortress,char=e.char, nodes=e.nodes.copy(), edges=e.edges.copy())
+            new_ent.pos = e.pos
+            self.ref_ents[e_id] = new_ent
+
+    # reset the fortress to the initial state
+    def resetFortress(self):
+        # Remove all current entities
+        self.fortress.entities = {}
+        # Add the entities back in
+        for e_id, e in self.ref_ents.items():
+            new_ent = e.clone(e.pos)
+            if new_ent:
+                self.fortress.addEntity(new_ent)
+
 
 
 

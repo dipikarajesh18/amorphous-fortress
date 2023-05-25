@@ -22,8 +22,8 @@ class Entity:
         self.possible_actions = self.fortress.CONFIG['action_space'].copy()
 
         # get the random seed from the fortress and set it
-        seed = self.fortress.seed
-        random.seed(seed)
+        # seed = self.fortress.seed
+        # random.seed(seed)
 
         # associates names to the functions for the node actions the agent will perform
         self.NODE_DICT = {
@@ -308,7 +308,7 @@ class Entity:
     # create a new FSM tree
     def makeTree(self):
 
-        random.seed(self.fortress.seed+int(self.id,16))  # set the seed for the entity
+        # random.seed(self.fortress.seed+int(self.id,16))  # set the seed for the entity
 
         # add base idle node
         self.nodes.append("idle")

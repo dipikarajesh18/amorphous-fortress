@@ -19,8 +19,8 @@ class Fortress():
         self.CONFIG = config  # a dictionary of values for configuration
         self.seed = random.randint(0,1000000) if seed == None else seed
 
-        random.seed(self.seed)
-        np.random.seed(self.seed)
+        # random.seed(self.seed)
+        # np.random.seed(self.seed)
 
         self.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
         self.steps = 0
