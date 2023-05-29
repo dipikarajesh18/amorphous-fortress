@@ -257,6 +257,8 @@ def evolve(config_file: str):
         print(f"[ GENERATION {generation}]")
         print(f'Current fortress score: {ind.score}')
         print(f'Best fortress score: {best_score}')
+        print(f"Total entities: {len(ind.engine.fortress.entities)}")
+        print("")
 
         ind = best_ind.clone()
         generation+=1
