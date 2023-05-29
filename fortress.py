@@ -126,7 +126,7 @@ class Fortress():
 
         # check if over time from last log
         last_log_time = re.match(r' -- <(\d+)>', self.log[-1])
-        if (last_log_time) and (self.steps - int(last_log_time.group(1))) > limit:
+        if (last_log_time) and (self.steps - int(last_log_time.groups()[0])) > limit:
             self.end_cause = "Inactivity"
             return True
         

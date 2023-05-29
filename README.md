@@ -5,12 +5,12 @@
 
 ### Main Parameters
 
-CONFIG
+CONFIG (found in CONFIGS/)
 - alpha_config => basic interactions 
 - beta_config => all interaction spaces
 
 
-TESTS
+TESTS (populated by premade entities in ENT/)
 - DUCK => test movement nodes
 - AMOEBA => test take nodes
 - GRASS => test die nodes

@@ -1,0 +1,24 @@
+============    FORTRESS SEED [29845]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: CONFIGS/beta_config.yaml <<< -- <0>
+>>> TIME: 2023-05-24 17:39:04.457984 <<< -- <0>
+>>> Running [BOKO] test <<< -- <0>
+[B.3a06] moved to [6, 5] goto [2, 3] -- <2>
+[B.3a06] moved to [6, 4] goto [2, 3] -- <3>
+[L.d549] moved to [3, 3] -- <3>
+[B.3a06] moved to [6, 3] goto [3, 3] -- <4>
+[B.3a06] moved to [5, 3] goto [3, 3] -- <5>
+[L.d549] moved to [3, 4] -- <5>
+[B.3a06] moved to [5, 4] goto [3, 4] -- <6>
+[B.3a06] moved to [4, 4] goto [3, 4] -- <7>
+[L.d549] moved to [3, 5] -- <7>
+[B.3a06] moved to [4, 5] goto [3, 5] -- <8>
+[B.3a06] moved to [3, 5] goto [3, 5] -- <9>
+[L.d549] moved to [3, 6] -- <9>
+[B.3a06] took [L.d549] -- <10>
+[L.d549] died -- <10>
+[B.3a06] moved to [2, 5] -- <16>
+[B.3a06] moved to [1, 5] -- <21>
+==== SIMULATION ENDED: Code Interruption ====
+
+
