@@ -328,8 +328,14 @@ class Entity:
             # add the condition
             self.edges[edge] = self.newEdge()
 
+        # validate the tree
+        self.connectOrphanNodes()
+
+
+    # validate the tree
+    def connectOrphanNodes(self):
         # add unconnected nodes
-        right_nodes = list(set([e.split("-")[1] for e in self.edges.keys() if e.split("-")[0] == e.split("-")[1]]))
+        right_nodes = list(set([e.split("-")[1] for e in self.edges.keys() if e.split("-")[0] != e.split("-")[1]]))
         for i in range(len(self.nodes)):
             if i not in right_nodes:
                 other_nodes = list(range(len(self.nodes)))
@@ -342,7 +348,40 @@ class Entity:
         # sort the edges by key
         self.edges = dict(sorted(self.edges.items()))
 
+    # connect a single orphan node
+    def connectAnnieNode(self, node_index):
+        other_nodes = list(range(len(self.nodes)))
+        other_nodes.remove(node_index)
+        new_edge_left = random.choice(other_nodes)
+        daddy_warbucks = f"{new_edge_left}-{node_index}" #>:)
+        self.edges[daddy_warbucks] = self.newEdge()
 
+        # sort the edges by key
+        # print(self.edges.keys())
+        self.edges = dict(sorted(self.edges.items()))
+
+
+    # kill the orphan edges
+    def killOrphanEdges(self, node_index):
+        new_edges = {}
+
+        # find the edges that are connected to the node
+        for e in self.edges.keys():
+            ls = int(e.split("-")[0])
+            rs = int(e.split("-")[1])
+            # if the edge is connected to the node, delete it
+            if ls == node_index or rs == node_index:
+                continue
+            # if the edge has a value greater than the index, reduce it by 1
+            else:
+                if ls > node_index:
+                    ls -= 1
+                if rs > node_index:
+                    rs -= 1
+                new_edges[f"{ls}-{rs}"] = self.edges[e]
+
+        # update the edges
+        self.edges = new_edges
 
 
     # print the tree out in a nice format

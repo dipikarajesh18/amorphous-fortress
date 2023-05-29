@@ -8,7 +8,7 @@ from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
-DEBUG = False   # shows in curses
+DEBUG = True   # shows in curses if FALSE
 ENGINE = None   # the engine
 TEST = ""       # test a specific setup
 
@@ -336,6 +336,7 @@ if __name__ == "__main__":
     try:
         conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/beta_config.yaml"
         TEST = sys.argv[2] if len(sys.argv) > 2 else ""
+        DEBUG = True if len(sys.argv) > 3 else False
         main(conf_file)
 
     # handle crashes

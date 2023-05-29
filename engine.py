@@ -79,19 +79,17 @@ class Engine():
     # Store the essential initial info in case we need to replicate/mutate the fortress later.
     def recordState(self):
         # These are backup/reference entities. They should never be added to the fortress lest they be modified in place.
-        self.ref_ents = {}
-        for e_id, e in self.fortress.entities.items():
-            new_ent = Entity(fortress=self.fortress,char=e.char, nodes=e.nodes.copy(), edges=e.edges.copy())
-            new_ent.pos = e.pos
-            self.ref_ents[e_id] = new_ent
+        self.init_ents = []
+        for e in self.fortress.entities.values():
+            self.init_ents.append({'char':e.char, 'pos':e.pos})
 
     # reset the fortress to the initial state
     def resetFortress(self):
         # Remove all current entities
         self.fortress.entities = {}
         # Add the entities back in
-        for e_id, e in self.ref_ents.items():
-            new_ent = e.clone(e.pos)
+        for e in self.init_ents:
+            new_ent = self.fortress.CHARACTER_DICT[e['char']].clone(e['pos'])
             if new_ent:
                 self.fortress.addEntity(new_ent)
 
