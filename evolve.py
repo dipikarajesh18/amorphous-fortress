@@ -173,7 +173,7 @@ class EvoIndividual():
         while not (self.engine.fortress.terminate() or self.engine.fortress.inactive() or \
                    self.engine.fortress.overpop() or loops >= self.n_sim_steps):
             # print(self.engine.fortress.renderEntities())
-            self.engine.update()
+            self.engine.update(True)
             # if self.render:
             #     curses_render_loop(screen_set, screen_dims, self.engine)
             # print(loops)

@@ -30,7 +30,7 @@ class Engine():
         self.init_ent_str = ""    # string of all entities at the start of the simulation
 
     # update the simulation entirely 
-    def update(self):
+    def update(self, tree_visits=False):
         self.sim_tick += 1
         self.fortress.steps = self.sim_tick
 
@@ -43,7 +43,8 @@ class Engine():
             if k in self.fortress.entities:
                 ent = self.fortress.entities[k]
                 ent.update()
-                self.fortress.addTreeVisit(ent)
+                if tree_visits:
+                    self.fortress.addTreeVisit(ent)
 
     # export the log to a file
     def exportLog(self,filename):
