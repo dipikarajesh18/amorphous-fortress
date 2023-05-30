@@ -43,8 +43,8 @@ class Entity:
         self.EDGE_DICT = {
 
             "none": {'func':self.noneCond, 'args':[], 'priority':0},
-            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':1},
-            "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
+            "step": {'func':self.every_step, 'args':['steps'], 'priority':1},
+            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':2},
             "nextTo": {'func':self.nextTo, 'args':['entityChar'], 'priority':3},
             "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4}
         }
@@ -77,7 +77,7 @@ class Entity:
     #######     NODE ACTIONS     #######
 
     # create another instance of the entity but with different id and position
-    def clone(self,pos=None):
+    def clone(self,pos=None,transform=False):
         new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
         new_ent.id = self.newID()
 
@@ -85,7 +85,8 @@ class Entity:
         new_ent.pos = pos if pos else self._randAdjPos()
 
         # don't clone if the position is invalid or if something is already there
-        if new_ent.pos == None  or self.fortress.entAtPos(new_ent.pos[0], new_ent.pos[1]):
+        if new_ent.pos == None or (not transform and self.fortress.entAtPos(new_ent.pos[0], new_ent.pos[1])):
+            self.fortress.addLog("Clone failed")
             return None
         
         self.fortress.addEntity(new_ent)
@@ -209,7 +210,7 @@ class Entity:
     # transform this entity into another entity
     def transform(self, entityChar):
         new_ent_def = self.fortress.CHARACTER_DICT[entityChar]
-        new_ent = new_ent_def.clone(self.pos)
+        new_ent = new_ent_def.clone(self.pos,True)
         if new_ent:
             self.fortress.addEntity(new_ent)
             self.fortress.addLog(f"[{self.char}.{self.id}] transformed into [{new_ent.char}.{new_ent.id}] at {str(new_ent.pos)}")

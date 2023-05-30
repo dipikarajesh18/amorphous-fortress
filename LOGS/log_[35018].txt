@@ -1,0 +1,19 @@
+============    FORTRESS SEED [35018]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: CONFIGS/beta_config.yaml <<< -- <0>
+>>> TIME: 2023-05-30 17:14:44.796272 <<< -- <0>
+>>> Running [KOROK] test <<< -- <0>
+[L.c1cc] moved to [7, 2] -- <3>
+[L.c1cc] moved to [8, 2] -- <5>
+[L.c1cc] moved to [8, 3] -- <7>
+[L.c1cc] moved to [8, 4] -- <9>
+[$.2617] cloned to [$.c4f2] at [9, 5] -- <10>
+[k.5bad] transformed into [$.c4f2] at [9, 5] -- <10>
+[k.5bad] died -- <10>
+[L.c1cc] moved to [7, 4] -- <11>
+[L.c1cc] moved to [7, 5] goto [9, 5] -- <13>
+[L.c1cc] moved to [8, 5] goto [9, 5] -- <14>
+[L.c1cc] moved to [9, 5] goto [9, 5] -- <15>
+==== SIMULATION ENDED: Code Interruption ====
+
+
