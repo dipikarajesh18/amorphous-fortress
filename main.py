@@ -8,7 +8,7 @@ from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
-DEBUG = True   # shows in curses if FALSE
+DEBUG = False   # shows in curses if FALSE
 ENGINE = None   # the engine
 TEST = ""       # test a specific setup
 

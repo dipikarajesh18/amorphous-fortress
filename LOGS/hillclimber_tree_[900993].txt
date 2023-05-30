@@ -1,0 +1,20 @@
+============    FORTRESS SEED [900993]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.5, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-05-29 21:22:15.491275 <<< -- <0>
+Fortress randomly populated with 11 entities -- <0>
+[^.de2c] cloned to [^.db2d] at [1, 1] -- <2>
+[M.dc50] added [^.db2d] at [1, 1] -- <2>
+[$.4cbe] cloned to [$.97a3] at [9, 5] -- <2>
+[@.19eb] added [$.97a3] at [9, 5] -- <2>
+[^.8047] died -- <2>
+[^.db2d] died -- <4>
+[M.dc50] moved to [2, 2] -- <5>
+[M.dc50] moved to [2, 1] -- <6>
+[M.dc50] moved to [2, 2] -- <7>
+[M.dc50] moved to [3, 2] -- <8>
+[$.4cbe] cloned to [$.6ec6] at [10, 4] -- <8>
+[@.19eb] added [$.6ec6] at [10, 4] -- <8>
+[M.dc50] died -- <9>
+[$.4cbe] cloned to [$.2f82] at [9, 3] -- <9>
+[@.19eb] added [$.2f82] at [9, 3] -- <9>

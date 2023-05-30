@@ -41,11 +41,12 @@ class Entity:
         # associates names to functions for the edge conditions that will activate the node actions
         # lower number means it will happen last
         self.EDGE_DICT = {
-            "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
-            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4},
+
+            "none": {'func':self.noneCond, 'args':[], 'priority':0},
             "within": {'func':self.within, 'args':['entityChar','range'], 'priority':1},
+            "step": {'func':self.every_step, 'args':['steps'], 'priority':2},
             "nextTo": {'func':self.nextTo, 'args':['entityChar'], 'priority':3},
-            "none": {'func':self.noneCond, 'args':[], 'priority':0}
+            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4}
         }
 
         # define the AI state graph

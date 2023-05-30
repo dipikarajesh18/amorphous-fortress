@@ -43,6 +43,7 @@ class Engine():
             if k in self.fortress.entities:
                 ent = self.fortress.entities[k]
                 ent.update()
+                self.fortress.addTreeVisit(ent)
 
     # export the log to a file
     def exportLog(self,filename):
@@ -87,11 +88,24 @@ class Engine():
     def resetFortress(self):
         # Remove all current entities
         self.fortress.entities = {}
+
+        # reset the visits
+        self.fortress.resetCharVisit()
+
         # Add the entities back in
         for e in self.init_ents:
             new_ent = self.fortress.CHARACTER_DICT[e['char']].clone(e['pos'])
             if new_ent:
                 self.fortress.addEntity(new_ent)
+
+        # reset the log
+        self.fortress.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
+        self.fortress.addLog(f">>> CONFIG FILE: {self.config} <<<")
+        self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
+        self.fortress.addLog(f"Fortress randomly populated with {len(self.init_ents)} entities")    # add a log message
+
+
+        self.fortress.steps = 0
 
 
 

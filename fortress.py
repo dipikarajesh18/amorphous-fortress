@@ -15,6 +15,7 @@ class Fortress():
 
         self.entities = {}   # dictionary of entities
         self.CHARACTER_DICT = {}    # definition of all of the characters classes in the simulation 
+        self.CHAR_VISIT_TREE = {}   # stores the tree node visits of each entity instance per class
 
         self.CONFIG = config  # a dictionary of values for configuration
         self.seed = random.randint(0,1000000) if seed == None else seed
@@ -100,10 +101,12 @@ class Fortress():
     # create new trees for every character in the config file
     def makeCharacters(self):
         self.CHARACTER_DICT = {}
+        self.CHAR_VISIT_TREE = {}
         for c in self.CONFIG['character']:
             ent = Entity(self,char=c)
             ent.pos = [-1,-1]
             self.CHARACTER_DICT[c] = ent
+            self.CHAR_VISIT_TREE[c] = {'nodes':set(),'edges':set()}
 
         self.addLog(f"{len(self.CHARACTER_DICT)} Unique character trees created")
 
@@ -144,3 +147,13 @@ class Fortress():
     def addLog(self, txt):
         self.log.append(f"{txt} -- <{self.steps}>")
 
+    # record the tree visits per entity and save it
+    def addTreeVisit(self, ent):
+        self.CHAR_VISIT_TREE[ent.char]['nodes'].add(ent.cur_node)
+        self.CHAR_VISIT_TREE[ent.char]['edges'].add(ent.moved_edge)
+
+    # reset the tree visits per entity
+    def resetCharVisit(self):
+        for c in self.CHAR_VISIT_TREE:
+            self.CHAR_VISIT_TREE[c]['nodes'] = set()
+            self.CHAR_VISIT_TREE[c]['edges'] = set()
