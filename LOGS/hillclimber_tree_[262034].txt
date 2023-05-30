@@ -1,0 +1,478 @@
+============    FORTRESS SEED [262034]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.5, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <1400>
+>>> TIME: 2023-05-30 09:37:32.483291 <<< -- <1400>
+Fortress randomly populated with 6 entities -- <1400>
+[!. b10] died -- <1401>
+[!.6797] died -- <1401>
+[*.eb5b] cloned to [*.8922] at [12, 4] -- <1401>
+[M.4618] added [*.8922] at [12, 4] -- <1401>
+[@.cd09] cloned to [@.e97e] at [6, 2] -- <1402>
+[+.2b24] added [@.e97e] at [6, 2] -- <1402>
+[*.eb5b] cloned to [*.77c2] at [13, 3] -- <1402>
+[M.4618] added [*.77c2] at [13, 3] -- <1402>
+[@.cd09] cloned to [@.6d83] at [5, 1] -- <1403>
+[+.2b24] added [@.6d83] at [5, 1] -- <1403>
+[*.eb5b] cloned to [*.99aa] at [13, 5] -- <1404>
+[M.4618] added [*.99aa] at [13, 5] -- <1404>
+[O.421f] cloned to [O.2976] at [6, 1] -- <1404>
+[@.6d83] added [O.2976] at [6, 1] -- <1404>
+[+.2b24] cloned to [+.e054] at [5, 3] -- <1405>
+[O.421f] cloned to [O.b92a] at [7, 2] -- <1405>
+[@.e97e] added [O.b92a] at [7, 2] -- <1405>
+[O.2976] cloned to [O.12b8] at [7, 1] -- <1406>
+[+.2b24] moved to [5, 3] -- <1407>
+[O.421f] cloned to [O.fc8a] at [6, 3] -- <1407>
+[@.e97e] added [O.fc8a] at [6, 3] -- <1407>
+[O.b92a] cloned to [O.45c0] at [8, 2] -- <1407>
+[O.421f] cloned to [O.cb83] at [5, 2] -- <1408>
+[@.e97e] added [O.cb83] at [5, 2] -- <1408>
+[O.b92a] cloned to [O.122d] at [7, 3] -- <1408>
+[;.a2e1] cloned to [;.5f27] at [4, 2] -- <1409>
+[+.2b24] moved to [6, 3] -- <1409>
+[O.12b8] cloned to [O.d14d] at [8, 1] -- <1409>
+[;.a2e1] cloned to [;.101b] at [3, 1] -- <1410>
+[O.122d] cloned to [O.23b3] at [8, 3] -- <1410>
+[S. abc] moved to [6, 3] -- <1411>
+[;.5f27] died -- <1411>
+[>. f38] cloned to [>.928b] at [4, 2] -- <1412>
+[;.a2e1] added [>.928b] at [4, 2] -- <1412>
+[S. abc] moved to [5, 3] -- <1412>
+[O.122d] cloned to [O.e779] at [7, 4] -- <1412>
+[;.101b] died -- <1412>
+[;.a2e1] died -- <1413>
+[S. abc] moved to [6, 3] -- <1413>
+[@.cd09] cloned to [@.f824] at [12, 3] -- <1413>
+[*.8922] added [@.f824] at [12, 3] -- <1413>
+[O.fc8a] cloned to [O.f196] at [6, 4] -- <1413>
+[O.45c0] moved to [8, 3] - (not able to push) -- <1413>
+[>.928b] cloned to [>.f0d1] at [3, 2] -- <1413>
+[S. abc] moved to [7, 3] -- <1414>
+[O.2976] moved to [5, 1] - (not able to push) -- <1414>
+[>.f0d1] cloned to [>. 256] at [2, 2] -- <1414>
+[S. abc] moved to [7, 4] -- <1415>
+[@.cd09] cloned to [@.fac5] at [12, 5] -- <1415>
+[*.8922] added [@.fac5] at [12, 5] -- <1415>
+[^.21bc] cloned to [^.1fa1] at [4, 1] -- <1415>
+[@.6d83] added [^.1fa1] at [4, 1] -- <1415>
+[O.b92a] moved to [7, 1] - (not able to push) -- <1415>
+[O.122d] cloned to [O.1d90] at [7, 2] -- <1415>
+[O.d14d] moved to [9, 1] - (not able to push) -- <1415>
+[>.f0d1] cloned to [>.a9af] at [3, 3] -- <1415>
+[>. 256] cloned to [>.fad5] at [2, 3] -- <1415>
+[M.4618] took [*.8922] -- <1416>
+[*.8922] died -- <1416>
+[S. abc] moved to [7, 3] -- <1416>
+[@.cd09] cloned to [@. 20d] at [13, 2] -- <1416>
+[*.77c2] added [@. 20d] at [13, 2] -- <1416>
+[O.12b8] moved to [8, 1] - (not able to push) -- <1416>
+[O.23b3] moved to [9, 3] - (not able to push) -- <1416>
+[O.421f] cloned to [O.9e11] at [12, 4] -- <1416>
+[@.f824] added [O.9e11] at [12, 4] -- <1416>
+[O.421f] cloned to [O.5d4a] at [11, 5] -- <1416>
+[@.fac5] added [O.5d4a] at [11, 5] -- <1416>
+[S. abc] moved to [7, 2] -- <1417>
+[^.21bc] cloned to [^.47e3] at [6, 1] -- <1417>
+[@.e97e] added [^.47e3] at [6, 1] -- <1417>
+[O.fc8a] moved to [6, 4] - (not able to push) -- <1417>
+[>.928b] cloned to [>.e850] at [4, 3] -- <1417>
+[O.421f] cloned to [O.d847] at [12, 2] -- <1417>
+[@.f824] added [O.d847] at [12, 2] -- <1417>
+[S. abc] moved to [6, 2] -- <1418>
+[@.cd09] cloned to [@.342c] at [13, 6] -- <1418>
+[*.99aa] added [@.342c] at [13, 6] -- <1418>
+[O.45c0] moved to [8, 4] - (not able to push) -- <1418>
+[O.cb83] pushed [@.e97e] -- <1418>
+[O.122d] moved to [8, 3] - (not able to push) -- <1418>
+[O.e779] moved to [7, 5] - (not able to push) -- <1418>
+[>.f0d1] cloned to [>.3ed0] at [3, 1] -- <1418>
+[@.fac5] moved to [12, 4] -- <1418>
+[O.9e11] cloned to [O.138a] at [11, 4] -- <1418>
+[O.5d4a] cloned to [O.aa59] at [12, 5] -- <1418>
+[>.e850] cloned to [>. 55b] at [4, 4] -- <1418>
+[+.2b24] moved to [5, 3] -- <1419>
+[S. abc] moved to [6, 1] -- <1419>
+[^.21bc] cloned to [^. 842] at [8, 2] -- <1419>
+[@.e97e] added [^. 842] at [8, 2] -- <1419>
+[^.21bc] cloned to [^.3785] at [5, 2] -- <1419>
+[@.6d83] added [^.3785] at [5, 2] -- <1419>
+[O.12b8] took [@.e97e] -- <1419>
+[@.e97e] died -- <1419>
+[@.f824] moved to [12, 4] -- <1419>
+[O.f196] moved to [6, 5] - (not able to push) -- <1419>
+[@.fac5] moved to [13, 4] -- <1419>
+[O.d847] cloned to [O. 5e9] at [12, 3] -- <1419>
+[>. 55b] cloned to [>.c253] at [5, 4] -- <1419>
+[S. abc] moved to [7, 1] -- <1420>
+[O.fc8a] took [@.e97e] -- <1420>
+[@.e97e] died -- <1420>
+[O.45c0] took [O.fc8a] -- <1420>
+[O.fc8a] died -- <1420>
+[@.f824] moved to [11, 4] -- <1420>
+[>.fad5] cloned to [>.8ee0] at [2, 4] -- <1420>
+[O.138a] cloned to [O.e6dc] at [11, 3] -- <1420>
+[>.c253] cloned to [>.4f41] at [5, 5] -- <1420>
+========================        EXPERIMENT COMPLETE [ GENERATIONS:1000 - FINAL SCORE 164.47826086956522 ]     ========================
+
+
+++++  CHARACTER DEFINITIONS  ++++
+
+
+@:
+-- NODES --
+0: add O
+1: move
+2: take
+3: push
+4: add ^
+-- EDGES --
+0-0: step 4
+0-1: within ^ 6
+0-3: step 9
+1-0: touch $
+1-1: touch @
+2-2: touch D
+2-3: touch M
+2-4: none
+3-0: within X 10
+3-1: touch D
+3-2: none
+
+$:
+-- NODES --
+0: idle
+1: take
+2: push
+3: add M
+4: clone
+5: move
+6: die
+-- EDGES --
+0-0: step 2
+0-2: nextTo >
+1-0: step 8
+1-2: within S 9
+1-5: within < 6
+2-0: none
+2-3: within * 10
+3-4: none
+4-0: nextTo &
+4-3: step 5
+5-3: nextTo >
+5-6: nextTo @
+6-0: within ^ 4
+6-1: nextTo O
+6-4: step 1
+
+&:
+-- NODES --
+0: add $
+1: transform X
+2: chase
+-- EDGES --
+0-2: nextTo S
+1-0: none
+1-1: step 9
+1-2: touch >
+2-0: none
+2-1: touch +
+
++:
+-- NODES --
+0: idle
+1: add @
+2: clone
+3: push
+4: move
+5: transform X
+6: take
+7: chase
+-- EDGES --
+0-0: within + 6
+0-1: none
+0-6: within > 7
+1-5: within + 4
+1-6: step 3
+2-0: step 6
+2-2: step 3
+2-3: step 2
+2-5: none
+2-7: none
+3-1: step 7
+3-2: nextTo ^
+3-6: nextTo <
+4-0: touch @
+4-2: step 9
+4-5: none
+5-3: touch !
+5-4: none
+5-6: nextTo D
+6-2: none
+6-4: none
+
+;:
+-- NODES --
+0: idle
+1: transform >
+2: move
+3: chase
+4: take
+5: add >
+6: die
+7: transform X
+8: clone
+9: push
+10: add ;
+-- EDGES --
+0-2: nextTo &
+0-4: nextTo S
+0-5: within > 2
+0-6: within ; 4
+0-7: step 6
+1-4: touch ^
+1-7: none
+2-0: none
+2-1: nextTo ;
+2-10: none
+2-3: none
+2-4: touch <
+2-5: step 2
+2-6: within ^ 8
+2-7: touch <
+3-0: none
+3-2: nextTo $
+3-4: none
+3-5: within O 7
+3-6: none
+4-1: within & 1
+4-2: touch M
+4-3: touch ;
+4-8: within > 10
+5-0: nextTo ^
+5-1: within D 5
+5-2: none
+5-4: none
+5-6: within @ 4
+5-9: step 5
+6-1: nextTo M
+6-5: within > 10
+7-8: none
+8-3: step 5
+8-7: nextTo M
+
+!:
+-- NODES --
+0: die
+1: move
+-- EDGES --
+0-0: step 7
+0-1: nextTo S
+1-0: within ! 4
+
+>:
+-- NODES --
+0: clone
+1: take
+2: add ^
+-- EDGES --
+1-0: none
+
+<:
+-- NODES --
+0: die
+1: push
+2: chase
+3: clone
+4: transform $
+5: add S
+-- EDGES --
+0-4: none
+1-2: step 2
+1-3: nextTo ^
+2-1: within ; 6
+2-2: none
+2-3: touch @
+2-4: nextTo +
+2-5: step 3
+4-0: touch X
+4-1: none
+
+X:
+-- NODES --
+0: move
+1: take
+2: clone
+3: add X
+4: chase
+-- EDGES --
+0-1: touch +
+0-2: within M 4
+0-3: none
+1-3: none
+3-0: none
+3-1: touch O
+3-2: touch X
+3-4: step 3
+1-2: none
+
+O:
+-- NODES --
+0: idle
+1: push
+2: clone
+3: transform +
+4: take
+5: transform &
+-- EDGES --
+0-0: within @ 4
+0-1: step 5
+0-2: nextTo @
+0-3: nextTo ^
+0-4: step 6
+1-0: within O 2
+1-1: within < 3
+1-2: step 9
+1-4: nextTo ;
+1-5: none
+2-1: step 9
+2-2: none
+3-1: touch ;
+3-2: within > 8
+3-3: none
+3-4: step 2
+4-3: within O 8
+5-5: step 10
+
+*:
+-- NODES --
+0: idle
+1: push
+2: transform O
+3: add @
+-- EDGES --
+0-2: step 3
+1-0: touch O
+1-1: touch +
+1-3: none
+2-0: touch ;
+2-1: step 10
+2-3: touch ;
+3-1: step 3
+3-2: within ^ 8
+
+^:
+-- NODES --
+0: idle
+1: take
+-- EDGES --
+0-1: step 6
+1-0: none
+
+M:
+-- NODES --
+0: add *
+1: take
+2: push
+3: clone
+-- EDGES --
+0-2: step 8
+1-0: within @ 5
+1-2: touch *
+1-3: within * 4
+2-0: step 5
+2-1: none
+2-3: step 1
+3-0: nextTo M
+3-1: step 5
+3-2: nextTo !
+3-3: step 3
+
+D:
+-- NODES --
+0: transform S
+1: add D
+-- EDGES --
+0-0: nextTo $
+0-1: touch $
+1-0: touch *
+
+S:
+-- NODES --
+0: idle
+1: clone
+2: transform !
+3: move
+-- EDGES --
+0-0: step 7
+0-1: nextTo $
+0-2: step 8
+0-3: step 10
+1-0: within $ 9
+1-2: touch &
+2-0: none
+2-1: none
+
+
+
+++++  TREE COVERAGE  ++++
+
+
+@
+Nodes: 5 / 5 = 1.00
+Edges: 7 / 11 = 0.64
+
+$
+Nodes: 0 / 7 = 0.00
+Edges: 0 / 15 = 0.00
+
+&
+Nodes: 0 / 3 = 0.00
+Edges: 0 / 6 = 0.00
+
++
+Nodes: 7 / 8 = 0.88
+Edges: 11 / 21 = 0.52
+
+;
+Nodes: 6 / 11 = 0.55
+Edges: 8 / 35 = 0.23
+
+!
+Nodes: 2 / 2 = 1.00
+Edges: 2 / 3 = 0.67
+
+>
+Nodes: 1 / 3 = 0.33
+Edges: 1 / 1 = 1.00
+
+<
+Nodes: 0 / 6 = 0.00
+Edges: 0 / 10 = 0.00
+
+X
+Nodes: 0 / 5 = 0.00
+Edges: 0 / 9 = 0.00
+
+O
+Nodes: 5 / 6 = 0.83
+Edges: 11 / 18 = 0.61
+
+*
+Nodes: 4 / 4 = 1.00
+Edges: 6 / 9 = 0.67
+
+^
+Nodes: 1 / 2 = 0.50
+Edges: 1 / 2 = 0.50
+
+M
+Nodes: 4 / 4 = 1.00
+Edges: 7 / 11 = 0.64
+
+D
+Nodes: 0 / 2 = 0.00
+Edges: 0 / 3 = 0.00
+
+S
+Nodes: 3 / 4 = 0.75
+Edges: 5 / 8 = 0.62

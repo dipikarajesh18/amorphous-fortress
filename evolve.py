@@ -5,6 +5,7 @@ import random
 import math
 import pickle
 import cProfile
+import matplotlib.pyplot as plt
 
 import argparse
 import numpy as np
@@ -29,6 +30,8 @@ class EvoIndividual():
 
         self.n_sim_steps = 20
         self.fitness_type = "tree"
+
+        self.init_fortress_str = ""
 
     def clone(self):
         """Clone the individual."""
@@ -161,6 +164,8 @@ class EvoIndividual():
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
+        self.init_fortress_str = self.engine.fortress.renderEntities()
+
         # if self.render:
         #     screen_set, screen_dims = init_screens()
 
@@ -247,6 +252,7 @@ def evolve(config_file: str):
     parser.add_argument("-g", "--generations", type=int, default=1000, help='Number of generations to evolve for')
     parser.add_argument("-e", "--edge_coin", type=float, default=0.5, help='Probability of mutating an edge')
     parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probability of mutating an node')
+    parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
     args = parser.parse_args()
 
     best_ind = None
@@ -257,15 +263,17 @@ def evolve(config_file: str):
 
     generation = 0
 
+    best_score_history = []
+    cur_score_history = []
+    entity_num_history = []
+
     # while best_score < ind.max_score:
     while generation < args.generations:
-
-        # for _ in range(3):
-            # ind.mutate()
 
         # mutate randomly
         edge_rando = random.random()
         node_rando = random.random()
+        instance_rando = random.random()
 
         while edge_rando < args.edge_coin:
             ind.mutateFSMEdges()
@@ -274,6 +282,10 @@ def evolve(config_file: str):
         while node_rando < args.node_coin:
             ind.mutateFSMNodes()
             node_rando = random.random()
+
+        while instance_rando < args.instance_coin:
+            ind.mutateEnt()
+            instance_rando = random.random()
 
         ind.simulate_fortress(generation)
 
@@ -288,15 +300,24 @@ def evolve(config_file: str):
             best_score = ind.score
             best_ind = ind.clone()
         
-        print(f"[ GENERATION {generation}]")
-        print(f'Current fortress score: {ind.score}')
-        print(f'Best fortress score: {best_score}')
-        print(f"Total entities: {len(ind.engine.fortress.entities)}")
+        # print the stats of the generation
+        print(f"[ GENERATION {generation} ]")
+        print(f'> Current fortress score: {ind.score}')
+        print(f'> Best fortress score: {best_score}')
+        print(f"> Total entities: {len(ind.engine.fortress.entities)}")
         print("")
+
+        # add to the histories
+        best_score_history.append(best_score)
+        cur_score_history.append(ind.score)
+        entity_num_history.append(len(ind.engine.fortress.entities))
+
 
         ind = best_ind.clone()
         generation+=1
 
+
+    print("=================    SIMULATION COMPLETE   ==================")
 
     # when the experiment is finished export the log witht the trees
     best_ind.engine.init_ent_str = ""
@@ -305,21 +326,47 @@ def evolve(config_file: str):
     
     best_ind.engine.fortress.log.append(f"========================        EXPERIMENT COMPLETE [ GENERATIONS:{generation} - FINAL SCORE {best_score} ]     ========================\n")
     
+    # add the coin flip probabilities
+    best_ind.engine.fortress.log.append(f"\n++++  COIN FLIP PROBABILITIES  ++++\n")
+    best_ind.engine.fortress.log.append(f"\nEdge: {args.edge_coin}\nNode: {args.node_coin}\nInstance: {args.instance_coin}\n")
+
+    # add the initial map output
+    best_ind.engine.fortress.log.append(f"\n++++  INITIAL MAP  ++++\n")
+    best_ind.engine.fortress.log.append(f"\n{best_ind.init_fortress_str}")
+
+    # add the final map output
+    best_ind.engine.fortress.log.append(f"\n++++  FINAL MAP  ++++\n")
+    best_ind.engine.fortress.log.append(f"\n{best_ind.engine.fortress.renderEntities()}")
+
+    # add the character tree definitions
     best_ind.engine.fortress.log.append(f"\n++++  CHARACTER DEFINITIONS  ++++\n")
     best_ind.engine.fortress.log.append(f"\n{best_ind.engine.init_ent_str}")
 
+    # add the tree coverage
     best_ind.engine.fortress.log.append(f"\n++++  TREE COVERAGE  ++++\n")
     for c, k in best_ind.engine.fortress.CHAR_VISIT_TREE.items():
         best_ind.engine.fortress.log.append(f"\n{c}")
         ent = best_ind.engine.fortress.CHARACTER_DICT[c]
-        best_ind.engine.fortress.log.append(f"Nodes: {len(k['nodes'])} / {len(ent.nodes)} = {len(k['nodes'])/len(ent.nodes):.2f}")
-        best_ind.engine.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {len(k['edges'])/len(ent.edges):.2f}")
 
+        prob_n = len(k['nodes'])/len(ent.nodes) if len(ent.nodes) > 0 else 0
+        prob_e = len(k['edges'])/len(ent.edges) if len(ent.edges) > 0 else 0
 
+        best_ind.engine.fortress.log.append(f"Nodes: {len(k['nodes'])} / {len(ent.nodes)} = {prob_n:.2f}")
+        best_ind.engine.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {prob_e:.2f}")
 
-
+    # export the log
     best_ind.engine.exportLog(f"LOGS/hillclimber_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
 
+    # export the evo individual as a pickle
+    best_ind.expEvoInd(f"EVO_IND/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+
+    # export the histories to a matplotlib graph
+    plt.figure(figsize=(15,10))
+    plt.plot(best_score_history, label="Best Score", color="red")
+    plt.plot(cur_score_history, label="Current Score", color="orange")
+    plt.plot(entity_num_history, label="Entity Count", color="green")
+    plt.legend()
+    plt.savefig(f"EVO_FIT/hillclimber_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
 
 
 
