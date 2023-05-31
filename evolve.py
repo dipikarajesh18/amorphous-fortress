@@ -17,7 +17,15 @@ from utils import newID
 
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
 
-
+# Create argparser with boolean flag for rendering
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--config", type=str, default="CONFIGS/beta_config.yaml", help='Path to config file')
+parser.add_argument("-r", "--render", action="store_true", help="Render the simulation")
+parser.add_argument("-g", "--generations", type=int, default=1000, help='Number of generations to evolve for')
+parser.add_argument("-e", "--edge_coin", type=float, default=0.5, help='Probability of mutating an edge')
+parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probability of mutating an node')
+parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
+parser.add_argument("-a", "--alife_exp", action="store_true", help="Running the alife experiment")
 
 class EvoIndividual():
 
@@ -246,13 +254,7 @@ def compute_fortress_score(engine: Engine, print_debug=False):
 
 
 def evolve(config_file: str):
-    # Create argparser with boolean flag for rendering
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-r", "--render", action="store_true", help="Render the simulation")
-    parser.add_argument("-g", "--generations", type=int, default=1000, help='Number of generations to evolve for')
-    parser.add_argument("-e", "--edge_coin", type=float, default=0.5, help='Probability of mutating an edge')
-    parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probability of mutating an node')
-    parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
+    global parser
     args = parser.parse_args()
 
     best_ind = None
@@ -354,24 +356,41 @@ def evolve(config_file: str):
         best_ind.engine.fortress.log.append(f"Nodes: {len(k['nodes'])} / {len(ent.nodes)} = {prob_n:.2f}")
         best_ind.engine.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {prob_e:.2f}")
 
-    # export the log
-    best_ind.engine.exportLog(f"LOGS/hillclimber_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
+    
+    #####      NON ALIFE EXPERIMENT      #####
 
-    # export the evo individual as a pickle
-    best_ind.expEvoInd(f"EVO_IND/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+    if not args.alife_exp:
+        # export the log
+        best_ind.engine.exportLog(f"LOGS/hillclimber_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
 
-    # export the histories to a matplotlib graph
-    plt.figure(figsize=(15,10))
-    plt.plot(best_score_history, label="Best Score", color="red")
-    plt.plot(cur_score_history, label="Current Score", color="orange")
-    plt.plot(entity_num_history, label="Entity Count", color="green")
-    plt.legend()
-    plt.savefig(f"EVO_FIT/hillclimber_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
+        # export the evo individual as a pickle
+        best_ind.expEvoInd(f"EVO_IND/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+
+        # export the histories to a matplotlib graph
+        plt.figure(figsize=(15,10))
+        plt.plot(best_score_history, label="Best Score", color="red")
+        plt.plot(cur_score_history, label="Current Score", color="orange")
+        plt.plot(entity_num_history, label="Entity Count", color="green")
+        plt.legend()
+        plt.savefig(f"EVO_FIT/hillclimber_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
 
 
+    #####      ALIFE EXPERIMENT      #####
+
+    else:
+        # export the log
+        best_ind.engine.exportLog(best_ind.engine.config['log_file'])
+
+        # export the evo individual as a pickle
+        best_ind.expEvoInd(f"ALIFE_EXP/_pickle/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+
+        # export the histories to numpy array file
+        np.save(f"ALIFE_EXP/_history/history_s[{best_ind.engine.seed}].npy", np.array([best_score_history, cur_score_history, entity_num_history]))
+
+        
 
 if __name__ == '__main__':
     # Create argparser with boolean flag for rendering
-    conf_file = "CONFIGS/beta_config.yaml"
-    evolve(conf_file)
+    sub_args = parser.parse_args()
+    evolve(sub_args.config)
     # cProfile.run("evolve(conf_file)")

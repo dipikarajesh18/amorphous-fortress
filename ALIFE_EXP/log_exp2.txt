@@ -1,0 +1,1283 @@
+============    FORTRESS SEED [797894]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 797894, 'sim_speed': 0.5, 'save_log': True, 'log_file': 'ALIFE_EXP/log_exp2.txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <580>
+>>> TIME: 2023-05-30 19:36:33.002648 <<< -- <580>
+Fortress randomly populated with 29 entities -- <580>
+[+.150c] cloned to [+.b6ab] at [9, 5] -- <581>
+[;.b601] moved to [1, 5] -- <581>
+Clone failed -- <581>
+[+.dda5] cloned to [+.e306] at [1, 4] -- <581>
+[>.6c93] moved to [4, 4] -- <582>
+[>.ffce] moved to [5, 6] -- <582>
+[&.fdf1] moved to [5, 1] -- <582>
+[+.150c] cloned to [+.dd06] at [10, 6] -- <582>
+[>.548a] moved to [12, 3] -- <582>
+[>.9510] moved to [7, 5] -- <582>
+[>.ec28] moved to [13, 3] -- <582>
+[>.aa5c] moved to [8, 4] -- <582>
+[;.b601] moved to [1, 6] - (not able to push) -- <582>
+[$.bbfb] cloned to [$.bc5d] at [7, 4] -- <582>
+[X.d143] cloned to [X.d0ef] at [10, 3] -- <582>
+[@. 13a] died -- <582>
+[*. fa4] cloned to [*.38fb] at [3, 5] -- <582>
+[M.9d7f] added [*.38fb] at [3, 5] -- <582>
+Clone failed -- <582>
+[<.50ff] moved to [4, 3] -- <582>
+[O.36cc] moved to [1, 3] goto [1, 6] -- <582>
+Clone failed -- <582>
+[>.8f03] moved to [10, 4] -- <582>
+Clone failed -- <582>
+[*. fa4] cloned to [*.1317] at [12, 5] -- <582>
+[M.9e58] added [*.1317] at [12, 5] -- <582>
+[+.b6ab] cloned to [+.e5f2] at [9, 4] -- <582>
+Clone failed -- <582>
+[>.6c93] moved to [3, 4] -- <583>
+[&.fdf1] died -- <583>
+Clone failed -- <583>
+[D.aaf2] cloned to [D.c0c7] at [11, 6] -- <583>
+[O.a549] cloned to [O. 10d] at [12, 3] -- <583>
+[>.548a] transformed into [O. 10d] at [12, 3] -- <583>
+[>.548a] died -- <583>
+[>.9510] moved to [8, 5] -- <583>
+[O.a549] cloned to [O.ba03] at [13, 3] -- <583>
+[>.ec28] transformed into [O.ba03] at [13, 3] -- <583>
+[>.ec28] died -- <583>
+[>.aa5c] moved to [8, 3] - (not able to push) -- <583>
+Clone failed -- <583>
+Clone failed -- <583>
+[*.ce01] died -- <583>
+[<.50ff] moved to [4, 4] -- <583>
+[^.865a] cloned to [^.f93d] at [2, 3] -- <583>
+[O.36cc] added [^.f93d] at [2, 3] -- <583>
+Clone failed -- <583>
+[O.a549] cloned to [O.f861] at [10, 4] -- <583>
+[>.8f03] transformed into [O.f861] at [10, 4] -- <583>
+[>.8f03] died -- <583>
+Clone failed -- <583>
+Clone failed -- <583>
+Clone failed -- <583>
+[+.dd06] cloned to [+.3ed6] at [10, 5] -- <583>
+[+.e5f2] cloned to [+.3703] at [9, 3] -- <583>
+[>.6c93] moved to [3, 5] -- <584>
+[>.ffce] moved to [5, 5] -- <584>
+[+.150c] cloned to [+.5c9b] at [8, 6] -- <584>
+Clone failed -- <584>
+[>.9510] moved to [8, 4] -- <584>
+[>.aa5c] moved to [9, 3] - (not able to push) -- <584>
+[$.1fd8] cloned to [$.d9dc] at [8, 3] -- <584>
+[$.bbfb] added [$.d9dc] at [8, 3] -- <584>
+Clone failed -- <584>
+[<.50ff] moved to [4, 5] -- <584>
+[O.a549] cloned to [O.d8c3] at [11, 4] -- <584>
+[!.1a2d] transformed into [O.d8c3] at [11, 4] -- <584>
+[!.1a2d] died -- <584>
+Clone failed -- <584>
+[+.dda5] cloned to [+.e219] at [1, 2] -- <584>
+Clone failed -- <584>
+Clone failed -- <584>
+[+.dd06] died -- <584>
+[$.bc5d] cloned to [$.5156] at [7, 3] -- <584>
+Clone failed -- <584>
+Clone failed -- <584>
+[^.f93d] moved to [2, 4] -- <584>
+Clone failed -- <584>
+[+.3703] cloned to [+.ef39] at [9, 2] -- <584>
+[>.6c93] moved to [3, 4] -- <585>
+[>.ffce] moved to [6, 5] -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+[>.9510] moved to [7, 4] - (not able to push) -- <585>
+[O.a549] cloned to [O.7b86] at [9, 3] -- <585>
+[>.aa5c] transformed into [O.7b86] at [9, 3] -- <585>
+[>.aa5c] died -- <585>
+[;.b601] moved to [1, 5] - (not able to push) -- <585>
+Clone failed -- <585>
+[*. fa4] cloned to [*.a9f0] at [4, 6] -- <585>
+[M.9d7f] added [*.a9f0] at [4, 6] -- <585>
+[M.286f] moved to [9, 1] - (not able to push) -- <585>
+[<.50ff] moved to [3, 5] -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+[O.ba03] cloned to [O.1590] at [13, 2] -- <585>
+[^.f93d] died -- <585>
+[O.f861] moved to [10, 5] goto [1, 5] -- <585>
+[+.3ed6] died -- <585>
+Clone failed -- <585>
+Clone failed -- <585>
+[+.e219] cloned to [+.598f] at [1, 1] -- <585>
+Clone failed -- <585>
+[>.6c93] moved to [3, 3] -- <586>
+[>.ffce] moved to [6, 4] -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+[$.1fd8] cloned to [$.66e3] at [8, 5] -- <586>
+[$.bbfb] added [$.66e3] at [8, 5] -- <586>
+Clone failed -- <586>
+[<.50ff] moved to [3, 4] -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+[*.38fb] moved to [4, 5] goto [4, 5] -- <586>
+[*.1317] moved to [12, 4] goto [12, 4] -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+[@.16ec] cloned to [@.31be] at [13, 4] -- <586>
+[O.ba03] added [@.31be] at [13, 4] -- <586>
+Clone failed -- <586>
+Clone failed -- <586>
+[+.5c9b] cloned to [+.29f3] at [7, 6] -- <586>
+Clone failed -- <586>
+[O.d8c3] cloned to [O.f572] at [10, 4] -- <586>
+Clone failed -- <586>
+[$.5156] cloned to [$.dc62] at [7, 2] -- <586>
+Clone failed -- <586>
+[+.598f] cloned to [+.238a] at [2, 1] -- <586>
+[>.6c93] moved to [4, 3] -- <587>
+[>.ffce] moved to [7, 4] -- <587>
+Clone failed -- <587>
+[D.aaf2] cloned to [D.793f] at [12, 5] -- <587>
+[>.9510] moved to [7, 5] -- <587>
+[X.d143] cloned to [X.252b] at [11, 2] -- <587>
+[M.286f] moved to [8, 1] - (not able to push) -- <587>
+[<.50ff] moved to [2, 4] -- <587>
+[+. d1e] cloned to [+.fb71] at [2, 3] -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+[D.c0c7] cloned to [D.1220] at [12, 6] -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+[$.d9dc] moved to [8, 4] goto [13, 4] -- <587>
+Clone failed -- <587>
+[$.5156] moved to [8, 3] goto [13, 4] -- <587>
+Clone failed -- <587>
+[O.7b86] moved to [8, 3] goto [1, 5] -- <587>
+[O.1590] cloned to [O.5665] at [13, 1] -- <587>
+Clone failed -- <587>
+Clone failed -- <587>
+[+.238a] cloned to [+.36e7] at [3, 1] -- <587>
+[>.6c93] moved to [3, 3] -- <588>
+[>.ffce] moved to [7, 3] - (not able to push) -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+[>.9510] moved to [7, 4] -- <588>
+[;.b601] moved to [1, 6] - (not able to push) -- <588>
+[*. fa4] cloned to [*.a086] at [3, 5] -- <588>
+[M.9d7f] added [*.a086] at [3, 5] -- <588>
+[M.286f] moved to [7, 1] - (not able to push) -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+[X.d0ef] cloned to [X.6fd3] at [11, 3] -- <588>
+Clone failed -- <588>
+[D.c0c7] cloned to [D.211c] at [10, 6] -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+Clone failed -- <588>
+[$.5156] cloned to [$.fdc2] at [8, 2] -- <588>
+Clone failed -- <588>
+[O.7b86] took [$.bbfb] -- <588>
+[$.bbfb] died -- <588>
+Clone failed -- <588>
+[$.66e3] cloned to [$.8c97] at [7, 5] -- <588>
+Clone failed -- <588>
+[O.f572] moved to [9, 4] goto [1, 6] -- <588>
+Clone failed -- <588>
+[+.238a] cloned to [+.c867] at [2, 2] -- <588>
+Clone failed -- <588>
+[+.36e7] cloned to [+.dea4] at [4, 1] -- <588>
+[>.6c93] moved to [2, 3] -- <589>
+[O.a549] cloned to [O.b5df] at [7, 3] -- <589>
+[>.ffce] transformed into [O.b5df] at [7, 3] -- <589>
+[>.ffce] died -- <589>
+[^.865a] cloned to [^.5dab] at [11, 5] -- <589>
+[D.aaf2] transformed into [^.5dab] at [11, 5] -- <589>
+[D.aaf2] died -- <589>
+[>.9510] moved to [8, 4] - (not able to push) -- <589>
+Clone failed -- <589>
+[$.1fd8] cloned to [$.9609] at [9, 1] -- <589>
+[S.ae66] transformed into [$.9609] at [9, 1] -- <589>
+[S.ae66] died -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+[+. d1e] moved to [2, 5] -- <589>
+[+.dda5] moved to [1, 4] -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+[$.d9dc] moved to [9, 4] goto [13, 4] -- <589>
+Clone failed -- <589>
+[$.5156] moved to [8, 4] goto [13, 4] -- <589>
+Clone failed -- <589>
+[*.a9f0] moved to [4, 5] goto [4, 5] -- <589>
+[@.16ec] cloned to [@.eba1] at [12, 2] -- <589>
+[O.1590] added [@.eba1] at [12, 2] -- <589>
+Clone failed -- <589>
+[$.66e3] moved to [8, 4] goto [13, 4] -- <589>
+[@.31be] moved to [13, 3] -- <589>
+Clone failed -- <589>
+[O.f572] took [$.d9dc] -- <589>
+[$.d9dc] died -- <589>
+[$.dc62] moved to [8, 2] goto [13, 3] -- <589>
+Clone failed -- <589>
+[X.252b] cloned to [X.c03c] at [11, 1] -- <589>
+[+.fb71] cloned to [+.2dd6] at [3, 3] -- <589>
+Clone failed -- <589>
+[+.36e7] cloned to [+.da56] at [3, 2] -- <589>
+Clone failed -- <589>
+Clone failed -- <589>
+[>.6c93] moved to [2, 4] -- <590>
+[+.150c] moved to [9, 5] goto [10, 2] -- <590>
+[>.9510] moved to [9, 4] - (not able to push) -- <590>
+[;.b601] moved to [1, 5] -- <590>
+[^.865a] cloned to [^.cd5c] at [13, 3] -- <590>
+[D.add0] transformed into [^.cd5c] at [13, 3] -- <590>
+[D.add0] died -- <590>
+Clone failed -- <590>
+[M.286f] moved to [6, 1] - (not able to push) -- <590>
+[<.50ff] moved to [1, 4] -- <590>
+[+. d1e] moved to [2, 4] -- <590>
+[+.dda5] moved to [2, 4] -- <590>
+[!.39dd] cloned to [!.c48c] at [12, 4] -- <590>
+[M.9e58] transformed into [!.c48c] at [12, 4] -- <590>
+[M.9e58] died -- <590>
+[+.b6ab] died -- <590>
+[+.e306] moved to [2, 4] -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+[@.16ec] cloned to [@.3652] at [10, 4] -- <590>
+[O.f861] added [@.3652] at [10, 4] -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+[^.865a] cloned to [^.418b] at [12, 5] -- <590>
+[D.793f] transformed into [^.418b] at [12, 5] -- <590>
+[D.793f] died -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+[^.865a] cloned to [^.d5ab] at [12, 6] -- <590>
+[D.1220] transformed into [^.d5ab] at [12, 6] -- <590>
+[D.1220] died -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+[$.fdc2] cloned to [$.9dac] at [8, 1] -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+Clone failed -- <590>
+[^.5dab] moved to [12, 5] -- <590>
+[+.2dd6] cloned to [+.d531] at [4, 3] -- <590>
+Clone failed -- <590>
+[>.6c93] moved to [1, 4] -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[*. fa4] cloned to [*.9099] at [4, 6] -- <591>
+[M.9d7f] added [*.9099] at [4, 6] -- <591>
+[M.286f] moved to [7, 1] - (not able to push) -- <591>
+[<.50ff] moved to [1, 5] -- <591>
+[+. d1e] moved to [2, 3] -- <591>
+[+.dda5] moved to [2, 3] -- <591>
+[+.e306] moved to [3, 4] -- <591>
+Clone failed -- <591>
+[*.1317] died -- <591>
+[+.e5f2] moved to [8, 4] -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[$.5156] moved to [8, 3] goto [13, 3] -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[$.66e3] moved to [9, 4] goto [13, 3] -- <591>
+[@.31be] took [^.5dab] -- <591>
+[^.5dab] died -- <591>
+[+.29f3] cloned to [+.4eea] at [6, 6] -- <591>
+[O.f572] took [$.5156] -- <591>
+[$.5156] died -- <591>
+[$.dc62] moved to [9, 2] goto [13, 3] -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[D.211c] cloned to [D. 819] at [9, 6] -- <591>
+[$.fdc2] moved to [8, 3] goto [13, 3] -- <591>
+[$.8c97] moved to [8, 5] goto [13, 3] -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[O.b5df] moved to [7, 4] goto [1, 5] -- <591>
+Clone failed -- <591>
+[S.c9b5] cloned to [S.942f] at [12, 2] -- <591>
+[@.eba1] transformed into [S.942f] at [12, 2] -- <591>
+[@.eba1] died -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+Clone failed -- <591>
+[^.418b] moved to [12, 4] -- <591>
+[^.d5ab] moved to [13, 6] -- <591>
+[+.d531] cloned to [+.858c] at [4, 4] -- <591>
+[>.6c93] moved to [1, 3] -- <592>
+[+.150c] died -- <592>
+[O.a549] cloned to [O.df57] at [9, 4] -- <592>
+[>.9510] transformed into [O.df57] at [9, 4] -- <592>
+[>.9510] died -- <592>
+[;.b601] cloned to [;.65d1] at [1, 4] -- <592>
+Clone failed -- <592>
+[M.286f] moved to [7, 2] - (not able to push) -- <592>
+[<.50ff] moved to [1, 6] -- <592>
+[+. d1e] moved to [3, 3] -- <592>
+[+.dda5] moved to [2, 2] -- <592>
+[+.e306] moved to [4, 4] -- <592>
+Clone failed -- <592>
+[+.e5f2] moved to [8, 3] goto [10, 2] -- <592>
+[^.865a] cloned to [^.e39f] at [11, 6] -- <592>
+[D.c0c7] transformed into [^.e39f] at [11, 6] -- <592>
+[D.c0c7] died -- <592>
+[+.3703] moved to [10, 3] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[$.66e3] cloned to [$.308d] at [9, 5] -- <592>
+[@.31be] died -- <592>
+Clone failed -- <592>
+[$.dc62] cloned to [$.6720] at [8, 2] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[+.fb71] cloned to [+.48ae] at [2, 4] -- <592>
+[@.16ec] cloned to [@.2c09] at [12, 1] -- <592>
+[O.5665] added [@.2c09] at [12, 1] -- <592>
+Clone failed -- <592>
+[*.a086] moved to [4, 5] goto [4, 5] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[$.fdc2] cloned to [$.2f42] at [8, 4] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[O.b5df] took [$.bc5d] -- <592>
+[$.bc5d] died -- <592>
+[$.9609] moved to [9, 2] goto [13, 3] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[<.5c5c] cloned to [<.a542] at [13, 3] -- <592>
+[^.cd5c] transformed into [<.a542] at [13, 3] -- <592>
+[^.cd5c] died -- <592>
+[O.a549] cloned to [O. 4f7] at [12, 4] -- <592>
+[!.c48c] transformed into [O. 4f7] at [12, 4] -- <592>
+[!.c48c] died -- <592>
+[S.c9b5] cloned to [S.72bc] at [10, 4] -- <592>
+[@.3652] transformed into [S.72bc] at [10, 4] -- <592>
+[@.3652] died -- <592>
+[^.418b] cloned to [^.c6bc] at [12, 5] -- <592>
+Clone failed -- <592>
+Clone failed -- <592>
+[+.d531] cloned to [+.7781] at [5, 3] -- <592>
+Clone failed -- <592>
+[+.858c] cloned to [+. 112] at [3, 4] -- <592>
+Clone failed -- <593>
+[M.286f] moved to [7, 1] - (not able to push) -- <593>
+[<.50ff] moved to [2, 6] -- <593>
+[+. d1e] died -- <593>
+[+.dda5] died -- <593>
+[+.e306] moved to [5, 4] -- <593>
+Clone failed -- <593>
+[*. fa4] cloned to [*.a7c3] at [8, 3] -- <593>
+[+.e5f2] transformed into [*.a7c3] at [8, 3] -- <593>
+[+.e5f2] died -- <593>
+[O.f861] took [$.66e3] -- <593>
+[$.66e3] died -- <593>
+[*. fa4] cloned to [*.362c] at [10, 3] -- <593>
+[+.3703] transformed into [*.362c] at [10, 3] -- <593>
+[+.3703] died -- <593>
+[+.5c9b] died -- <593>
+[+.ef39] moved to [8, 2] -- <593>
+Clone failed -- <593>
+[+.29f3] cloned to [+.4835] at [7, 5] -- <593>
+[O.f572] took [$.66e3] -- <593>
+[$.66e3] died -- <593>
+[$.dc62] moved to [9, 3] goto [10, 4] -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+[$.fdc2] moved to [9, 3] goto [10, 4] -- <593>
+[$.8c97] moved to [9, 5] goto [10, 4] -- <593>
+Clone failed -- <593>
+[+.dea4] cloned to [+.5322] at [4, 2] -- <593>
+[$.9609] cloned to [$.aa0a] at [9, 1] -- <593>
+[X.c03c] cloned to [X.e3e2] at [10, 1] -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+[^.418b] moved to [11, 4] -- <593>
+[$.9dac] moved to [9, 1] goto [12, 1] -- <593>
+Clone failed -- <593>
+[+.4eea] cloned to [+.99d9] at [6, 5] -- <593>
+[D. 819] cloned to [D.d48f] at [8, 6] -- <593>
+Clone failed -- <593>
+[^.e39f] moved to [12, 6] -- <593>
+Clone failed -- <593>
+[^.c6bc] moved to [11, 5] -- <593>
+Clone failed -- <593>
+Clone failed -- <593>
+Clone failed -- <594>
+[*. fa4] cloned to [*.4bed] at [3, 5] -- <594>
+[M.9d7f] added [*.4bed] at [3, 5] -- <594>
+[M.286f] moved to [8, 1] - (not able to push) -- <594>
+[+.e306] moved to [5, 3] goto [10, 2] -- <594>
+Clone failed -- <594>
+[@.16ec] cloned to [@.482b] at [13, 4] -- <594>
+[O.ba03] added [@.482b] at [13, 4] -- <594>
+[+.e219] moved to [1, 3] -- <594>
+[+.ef39] moved to [9, 2] goto [10, 2] -- <594>
+[+.598f] moved to [2, 1] -- <594>
+Clone failed -- <594>
+[$.dc62] took [*.a7c3] -- <594>
+[*.a7c3] died -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[$.fdc2] took [*.a7c3] -- <594>
+[*.a7c3] died -- <594>
+[$.8c97] cloned to [$.a343] at [8, 5] -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[$.9609] moved to [9, 1] goto [12, 1] -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[<.5c5c] cloned to [<.5fee] at [11, 4] -- <594>
+[^.418b] transformed into [<.5fee] at [11, 4] -- <594>
+[^.418b] died -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[+.4eea] cloned to [+.f745] at [5, 6] -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[$.6720] took [*.a7c3] -- <594>
+[*.a7c3] died -- <594>
+Clone failed -- <594>
+[$.2f42] took [*.a7c3] -- <594>
+[*.a7c3] died -- <594>
+Clone failed -- <594>
+[O. 4f7] cloned to [O.838b] at [12, 5] -- <594>
+[<.5c5c] cloned to [<.ecc0] at [11, 5] -- <594>
+[^.c6bc] transformed into [<.ecc0] at [11, 5] -- <594>
+[^.c6bc] died -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+Clone failed -- <594>
+[+.99d9] cloned to [+.b723] at [6, 4] -- <594>
+[>.6c93] moved to [2, 3] -- <595>
+Clone failed -- <595>
+[^.865a] cloned to [^.2e15] at [1, 2] -- <595>
+[O.36cc] added [^.2e15] at [1, 2] -- <595>
+[*. fa4] cloned to [*.dfd8] at [5, 3] -- <595>
+[+.e306] transformed into [*.dfd8] at [5, 3] -- <595>
+[+.e306] died -- <595>
+Clone failed -- <595>
+[+.e219] moved to [1, 2] -- <595>
+[*. fa4] cloned to [*.3df8] at [9, 2] -- <595>
+[+.ef39] transformed into [*.3df8] at [9, 2] -- <595>
+[+.ef39] died -- <595>
+[+.598f] moved to [2, 2] -- <595>
+[+.29f3] died -- <595>
+[O.f572] took [$.dc62] -- <595>
+[$.dc62] died -- <595>
+[+.238a] moved to [1, 1] -- <595>
+Clone failed -- <595>
+[+.36e7] cloned to [+.1663] at [2, 1] -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+[$.fdc2] moved to [9, 2] -- <595>
+[$.8c97] moved to [9, 4] goto [12, 1] -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+[$.9dac] moved to [10, 1] goto [12, 1] -- <595>
+Clone failed -- <595>
+[*.9099] moved to [4, 5] goto [4, 5] -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+[^.865a] cloned to [^.c82b] at [9, 3] -- <595>
+[O.df57] added [^.c82b] at [9, 3] -- <595>
+[;.65d1] moved to [1, 5] goto [1, 5] -- <595>
+[^.e39f] moved to [13, 6] -- <595>
+[$.308d] moved to [10, 5] goto [12, 1] -- <595>
+[$.6720] moved to [9, 2] -- <595>
+Clone failed -- <595>
+[S.c9b5] cloned to [S.8875] at [12, 1] -- <595>
+[@.2c09] transformed into [S.8875] at [12, 1] -- <595>
+[@.2c09] died -- <595>
+[$.2f42] moved to [9, 4] -- <595>
+[<.a542] moved to [12, 3] goto [12, 3] -- <595>
+[+.7781] cloned to [+.4543] at [6, 3] -- <595>
+Clone failed -- <595>
+[+.4835] died -- <595>
+[+.5322] cloned to [+.ebd4] at [5, 2] -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+[D.d48f] cloned to [D.6e50] at [7, 6] -- <595>
+Clone failed -- <595>
+Clone failed -- <595>
+[>.6c93] moved to [1, 3] -- <596>
+[;.b601] moved to [2, 5] -- <596>
+Clone failed -- <596>
+[M.286f] moved to [9, 1] - (not able to push) -- <596>
+[<.50ff] moved to [1, 6] goto [1, 3] -- <596>
+Clone failed -- <596>
+[+.e219] moved to [2, 2] -- <596>
+[+.598f] moved to [1, 2] -- <596>
+Clone failed -- <596>
+[+.fb71] moved to [2, 4] -- <596>
+[+.36e7] moved to [3, 2] -- <596>
+Clone failed -- <596>
+[$.fdc2] moved to [8, 2] -- <596>
+[$.8c97] took [*.362c] -- <596>
+[*.362c] died -- <596>
+Clone failed -- <596>
+[+.dea4] cloned to [+.5083] at [3, 1] -- <596>
+[$.9609] moved to [10, 1] goto [12, 1] -- <596>
+Clone failed -- <596>
+[+.2dd6] cloned to [+.f602] at [2, 3] -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[$.9dac] took [*.3df8] -- <596>
+[*.3df8] died -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[+.858c] cloned to [+.ff95] at [5, 4] -- <596>
+[^.865a] cloned to [^.6216] at [9, 5] -- <596>
+[O.df57] added [^.6216] at [9, 5] -- <596>
+[;.65d1] moved to [2, 5] goto [2, 5] -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[$.6720] moved to [9, 1] -- <596>
+[+.48ae] cloned to [+. 8b5] at [1, 4] -- <596>
+[$.2f42] moved to [9, 3] -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[$.aa0a] moved to [10, 1] goto [13, 4] -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[$.a343] cloned to [$.2615] at [8, 4] -- <596>
+Clone failed -- <596>
+[+.f745] cloned to [+.5dbf] at [5, 5] -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+Clone failed -- <596>
+[^.2e15] moved to [1, 3] -- <596>
+Clone failed -- <596>
+[^.c82b] moved to [8, 3] -- <596>
+[+.4543] cloned to [+.9555] at [6, 2] -- <596>
+Clone failed -- <596>
+[>.6c93] moved to [1, 4] -- <597>
+[;.b601] moved to [2, 4] - (not able to push) -- <597>
+Clone failed -- <597>
+[M.286f] moved to [10, 1] - (not able to push) -- <597>
+[<.50ff] moved to [1, 5] goto [1, 3] -- <597>
+[O.d8c3] took [$.308d] -- <597>
+[$.308d] died -- <597>
+[+.e219] died -- <597>
+[+.598f] moved to [1, 1] -- <597>
+[O.f572] took [$.8c97] -- <597>
+[$.8c97] died -- <597>
+[+.238a] moved to [1, 2] -- <597>
+Clone failed -- <597>
+[+.fb71] moved to [3, 4] -- <597>
+[+.36e7] moved to [2, 2] -- <597>
+Clone failed -- <597>
+[^.865a] cloned to [^.6119] at [10, 6] -- <597>
+[D.211c] transformed into [^.6119] at [10, 6] -- <597>
+[D.211c] died -- <597>
+[$.fdc2] moved to [9, 2] -- <597>
+[+.c867] moved to [1, 2] -- <597>
+[$.9609] took [*.3df8] -- <597>
+[*.3df8] died -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+[^.d5ab] moved to [12, 6] -- <597>
+[$.9dac] moved to [11, 1] -- <597>
+Clone failed -- <597>
+[+.4eea] died -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+[$.6720] moved to [10, 1] -- <597>
+Clone failed -- <597>
+[$.2f42] moved to [8, 3] -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+[+.99d9] died -- <597>
+Clone failed -- <597>
+[$.a343] moved to [9, 5] goto [13, 4] -- <597>
+[<.5fee] moved to [11, 3] goto [12, 3] -- <597>
+[+.f745] cloned to [+.2b08] at [6, 6] -- <597>
+[<.ecc0] moved to [10, 5] goto [10, 5] -- <597>
+Clone failed -- <597>
+[^.2e15] died -- <597>
+Clone failed -- <597>
+[^.c82b] cloned to [^.df1c] at [9, 3] -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+[D.6e50] cloned to [D.6418] at [7, 5] -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+Clone failed -- <597>
+[^.6216] moved to [9, 6] -- <597>
+Clone failed -- <597>
+[+.5dbf] cloned to [+.daa8] at [6, 5] -- <597>
+Clone failed -- <597>
+[>.6c93] moved to [1, 5] -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+[M.286f] pushed [X.d143] -- <598>
+[<.50ff] moved to [1, 4] goto [1, 3] -- <598>
+Clone failed -- <598>
+[+.598f] died -- <598>
+Clone failed -- <598>
+[+.fb71] moved to [3, 3] -- <598>
+[+.36e7] moved to [2, 1] -- <598>
+Clone failed -- <598>
+[$.fdc2] moved to [8, 2] -- <598>
+[+.c867] moved to [2, 2] -- <598>
+[+.dea4] moved to [5, 1] -- <598>
+[$.9609] moved to [10, 2] -- <598>
+Clone failed -- <598>
+[+.2dd6] moved to [3, 4] -- <598>
+[+.da56] moved to [3, 3] -- <598>
+[^.d5ab] cloned to [^.c7aa] at [11, 6] -- <598>
+[$.9dac] moved to [11, 2] -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+[;.65d1] moved to [3, 5] -- <598>
+Clone failed -- <598>
+[$.6720] moved to [10, 2] -- <598>
+Clone failed -- <598>
+[$.2f42] moved to [7, 3] -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+[+.5322] cloned to [+.a241] at [3, 2] -- <598>
+[$.aa0a] moved to [10, 2] goto [13, 4] -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+[*.4bed] moved to [4, 5] goto [4, 5] -- <598>
+[@.482b] moved to [12, 4] -- <598>
+[$.a343] cloned to [$.3f32] at [8, 5] -- <598>
+Clone failed -- <598>
+[<.ecc0] cloned to [<.c650] at [11, 5] -- <598>
+Clone failed -- <598>
+[*.dfd8] died -- <598>
+Clone failed -- <598>
+[^.c82b] moved to [8, 2] -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+Clone failed -- <598>
+[^.6119] moved to [11, 6] -- <598>
+Clone failed -- <598>
+[^.df1c] moved to [9, 4] -- <598>
+Clone failed -- <598>
+[;.b601] moved to [2, 5] -- <599>
+Clone failed -- <599>
+[M.286f] pushed [X.d143] -- <599>
+[<.50ff] moved to [1, 3] goto [1, 3] -- <599>
+[O.36cc] moved to [1, 4] goto [2, 5] -- <599>
+Clone failed -- <599>
+[O.f572] took [$.2f42] -- <599>
+[$.2f42] died -- <599>
+[+.238a] died -- <599>
+Clone failed -- <599>
+[+.fb71] moved to [2, 3] -- <599>
+[+.36e7] moved to [3, 1] -- <599>
+Clone failed -- <599>
+[$.fdc2] moved to [8, 1] -- <599>
+[+.c867] moved to [2, 1] -- <599>
+[+.dea4] moved to [5, 2] goto [10, 4] -- <599>
+[$.9609] moved to [11, 2] -- <599>
+Clone failed -- <599>
+[+.2dd6] moved to [2, 4] -- <599>
+[+.da56] moved to [3, 4] -- <599>
+[^.d5ab] moved to [12, 5] -- <599>
+[$.9dac] moved to [11, 3] -- <599>
+[+.d531] moved to [5, 3] -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[;.65d1] moved to [4, 5] - (not able to push) -- <599>
+[^.e39f] moved to [13, 5] -- <599>
+[$.6720] moved to [9, 2] -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[+. 112] cloned to [+.f779] at [3, 5] -- <599>
+[+.5322] cloned to [+.1122] at [4, 1] -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[@.482b] moved to [13, 4] -- <599>
+[$.a343] moved to [10, 5] goto [13, 4] -- <599>
+Clone failed -- <599>
+[+.f745] cloned to [+.2ffc] at [4, 6] -- <599>
+[<.ecc0] moved to [10, 4] goto [10, 4] -- <599>
+[+.b723] died -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[+.4543] cloned to [+.dcc6] at [6, 4] -- <599>
+[+.ebd4] cloned to [+.e0a8] at [5, 1] -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[+.f602] cloned to [+.18cd] at [2, 2] -- <599>
+Clone failed -- <599>
+Clone failed -- <599>
+[$.2615] moved to [9, 4] goto [13, 4] -- <599>
+Clone failed -- <599>
+[+.9555] cloned to [+.2ee3] at [6, 1] -- <599>
+Clone failed -- <599>
+[+.2b08] died -- <599>
+[<.5c5c] cloned to [<.a7c9] at [9, 4] -- <599>
+[^.df1c] transformed into [<.a7c9] at [9, 4] -- <599>
+[^.df1c] died -- <599>
+Clone failed -- <599>
+[+.daa8] died -- <599>
+[^.c7aa] moved to [10, 6] -- <599>
+Clone failed -- <599>
+[;.b601] moved to [1, 5] - (not able to push) -- <600>
+Clone failed -- <600>
+[M.286f] pushed [X.d143] -- <600>
+[<.50ff] moved to [1, 4] goto [1, 4] -- <600>
+[^.865a] cloned to [^.be85] at [1, 3] -- <600>
+[O.36cc] added [^.be85] at [1, 3] -- <600>
+[X.d0ef] cloned to [X.c98e] at [9, 3] -- <600>
+[O. 10d] took [$.9dac] -- <600>
+[$.9dac] died -- <600>
+[@.16ec] cloned to [@.252d] at [9, 5] -- <600>
+[O.f572] added [@.252d] at [9, 5] -- <600>
+Clone failed -- <600>
+[+.fb71] died -- <600>
+[+.36e7] died -- <600>
+Clone failed -- <600>
+[$.fdc2] moved to [9, 1] -- <600>
+[+.c867] moved to [1, 1] -- <600>
+[*. fa4] cloned to [*.1850] at [5, 2] -- <600>
+[+.dea4] transformed into [*.1850] at [5, 2] -- <600>
+[+.dea4] died -- <600>
+[$.9609] moved to [10, 2] -- <600>
+Clone failed -- <600>
+[+.2dd6] moved to [1, 4] -- <600>
+[+.da56] moved to [3, 3] -- <600>
+Clone failed -- <600>
+[+.d531] moved to [5, 4] goto [10, 5] -- <600>
+[^.865a] cloned to [^.e16d] at [9, 6] -- <600>
+[D. 819] transformed into [^.e16d] at [9, 6] -- <600>
+[D. 819] died -- <600>
+[+.858c] moved to [5, 4] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[$.6720] moved to [9, 3] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[O. 4f7] took [$.9dac] -- <600>
+[$.9dac] died -- <600>
+[+.7781] cloned to [+.7563] at [4, 3] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[$.aa0a] moved to [10, 3] goto [13, 4] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[@.482b] moved to [13, 5] -- <600>
+Clone failed -- <600>
+[<.5fee] moved to [12, 3] goto [12, 3] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[^.c82b] moved to [8, 1] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[+.5dbf] cloned to [+.d146] at [6, 5] -- <600>
+[+.9555] cloned to [+.ac6e] at [7, 2] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[$.3f32] cloned to [$. dcc] at [8, 4] -- <600>
+Clone failed -- <600>
+[+.f779] cloned to [+.1d39] at [3, 6] -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+Clone failed -- <600>
+[+.18cd] cloned to [+.8f40] at [1, 2] -- <600>
+[+.2ee3] cloned to [+.2760] at [7, 1] -- <600>
+========================        EXPERIMENT COMPLETE [ GENERATIONS:1000 - FINAL SCORE 467.77272727272725 ]     ========================
+
+
+++++  COIN FLIP PROBABILITIES  ++++
+
+
+Edge: 0.5
+Node: 0.5
+Instance: 0.5
+
+
+++++  INITIAL MAP  ++++
+
+
+###############
+#*...@&..SM...#
+#O..<.....X...#
+#+.........>>D#
+#.+>....$>.!M.#
+#.M.M.....>D..#
+#;$...>>.+....#
+###############
+
+++++  FINAL MAP  ++++
+
+
+###############
+#+++++++^$XXSO#
+#+++++++..$XSO#
+#^+++++.O$XXOO#
+#<++.++O$OMOO.#
+#>M+M++D$@X<^^#
+#.$+++.DD^^^..#
+###############
+
+++++  CHARACTER DEFINITIONS  ++++
+
+
+@:
+-- NODES --
+0: idle
+1: move
+2: die
+3: clone
+4: transform S
+5: take
+6: chase
+-- EDGES --
+0-1: step 2
+0-2: within & 6
+0-4: within @ 5
+1-1: step 3
+1-3: nextTo *
+2-1: within * 1
+2-5: within + 7
+3-4: touch X
+3-5: within ^ 3
+4-0: none
+4-3: within ! 8
+5-2: step 5
+5-3: step 9
+
+$:
+-- NODES --
+0: chase
+1: take
+2: clone
+3: add $
+4: move
+5: push
+-- EDGES --
+0-1: nextTo *
+0-2: step 1
+1-4: step 1
+2-0: within @ 6
+2-3: touch >
+2-5: none
+3-2: within M 2
+3-3: step 2
+
+&:
+-- NODES --
+0: idle
+1: die
+2: move
+-- EDGES --
+0-1: nextTo D
+0-2: none
+1-0: step 7
+1-2: touch D
+2-1: none
+
++:
+-- NODES --
+0: clone
+1: move
+2: die
+3: transform *
+4: add $
+5: chase
+6: push
+-- EDGES --
+0-1: step 8
+0-2: nextTo D
+0-5: touch &
+1-1: none
+1-2: step 4
+1-3: nextTo X
+1-5: within X 5
+2-0: within < 9
+2-1: touch &
+2-3: nextTo *
+2-4: step 10
+2-6: touch *
+3-0: within < 4
+3-4: within + 2
+3-6: none
+4-1: nextTo !
+4-6: step 10
+5-0: nextTo D
+5-2: within & 1
+5-3: within X 5
+5-4: nextTo @
+6-0: step 9
+6-2: nextTo <
+6-5: none
+
+;:
+-- NODES --
+0: move
+1: chase
+2: clone
+3: push
+4: take
+-- EDGES --
+0-1: none
+0-3: nextTo $
+1-0: step 3
+1-1: nextTo ;
+1-2: touch M
+2-0: none
+3-2: within M 2
+4-2: touch <
+4-4: none
+
+!:
+-- NODES --
+0: idle
+1: transform O
+2: transform $
+-- EDGES --
+0-1: nextTo O
+1-0: touch $
+1-2: step 4
+
+>:
+-- NODES --
+0: idle
+1: push
+2: transform O
+3: move
+4: chase
+5: clone
+6: die
+-- EDGES --
+0-3: none
+0-5: none
+1-0: step 5
+1-2: step 2
+1-4: touch ^
+1-5: touch O
+2-1: within X 10
+2-2: none
+3-1: touch $
+3-2: nextTo D
+3-3: step 2
+3-5: nextTo S
+4-1: touch &
+4-5: step 1
+4-6: none
+5-2: within $ 6
+5-6: step 5
+6-0: none
+6-1: touch ^
+6-3: nextTo O
+6-4: touch *
+
+<:
+-- NODES --
+0: idle
+1: clone
+2: chase
+3: move
+4: transform +
+-- EDGES --
+0-1: nextTo O
+0-2: within O 7
+0-3: nextTo @
+0-4: none
+1-1: touch D
+1-2: step 1
+1-3: nextTo >
+2-0: nextTo <
+2-1: within S 2
+3-0: step 7
+
+X:
+-- NODES --
+0: idle
+1: clone
+-- EDGES --
+0-1: within + 7
+1-0: step 7
+1-1: none
+
+O:
+-- NODES --
+0: idle
+1: die
+2: add @
+3: take
+4: add ^
+5: chase
+6: clone
+-- EDGES --
+0-4: nextTo S
+0-5: within ; 9
+0-6: within M 8
+1-3: within M 9
+1-4: within $ 8
+2-2: step 4
+2-3: nextTo $
+3-2: nextTo X
+4-0: touch ^
+5-0: touch ^
+5-3: nextTo $
+5-4: within M 7
+5-6: nextTo O
+6-0: step 2
+6-1: within ! 8
+6-2: nextTo O
+6-6: within M 6
+
+*:
+-- NODES --
+0: idle
+1: chase
+2: die
+-- EDGES --
+0-1: none
+1-0: within M 1
+1-2: none
+
+^:
+-- NODES --
+0: move
+1: die
+2: clone
+3: transform <
+-- EDGES --
+0-1: within > 2
+0-2: none
+0-3: nextTo S
+1-0: step 4
+2-0: within X 6
+2-3: none
+3-0: nextTo @
+3-1: within D 4
+3-3: touch S
+
+M:
+-- NODES --
+0: idle
+1: chase
+2: push
+3: clone
+4: transform !
+5: take
+6: add *
+7: move
+-- EDGES --
+0-0: step 3
+0-4: nextTo ^
+0-6: none
+1-0: nextTo ;
+1-3: within & 7
+1-4: within O 6
+1-7: none
+3-2: within > 4
+3-6: step 8
+4-1: within ^ 7
+4-2: none
+4-4: none
+4-6: within * 6
+4-7: nextTo &
+5-6: touch <
+5-7: touch ^
+6-0: within + 7
+6-2: step 6
+6-5: touch &
+7-0: step 2
+7-2: step 6
+0-2: within X 1
+
+D:
+-- NODES --
+0: take
+1: transform ^
+2: clone
+-- EDGES --
+0-1: within ^ 7
+0-2: nextTo +
+1-0: step 10
+1-2: nextTo M
+2-1: step 8
+
+S:
+-- NODES --
+0: idle
+1: die
+2: transform $
+3: clone
+4: push
+5: move
+6: take
+7: add $
+-- EDGES --
+0-2: step 8
+0-7: nextTo $
+1-0: nextTo ^
+1-2: within S 8
+1-6: none
+2-0: touch X
+2-1: none
+2-3: step 10
+2-4: touch M
+3-0: touch O
+3-3: within > 6
+3-5: within ; 10
+4-0: step 5
+4-5: nextTo ^
+5-1: nextTo @
+5-2: touch @
+5-3: within ! 1
+6-4: nextTo O
+6-5: within D 3
+6-7: step 5
+7-7: nextTo ;
+
+
+
+++++  TREE COVERAGE  ++++
+
+
+@
+Nodes: 6 / 7 = 0.86
+Edges: 11 / 13 = 0.85
+
+$
+Nodes: 6 / 6 = 1.00
+Edges: 8 / 8 = 1.00
+
+&
+Nodes: 2 / 3 = 0.67
+Edges: 3 / 5 = 0.60
+
++
+Nodes: 6 / 7 = 0.86
+Edges: 12 / 24 = 0.50
+
+;
+Nodes: 4 / 5 = 0.80
+Edges: 6 / 9 = 0.67
+
+!
+Nodes: 3 / 3 = 1.00
+Edges: 3 / 3 = 1.00
+
+>
+Nodes: 5 / 7 = 0.71
+Edges: 10 / 21 = 0.48
+
+<
+Nodes: 4 / 5 = 0.80
+Edges: 9 / 10 = 0.90
+
+X
+Nodes: 2 / 2 = 1.00
+Edges: 3 / 3 = 1.00
+
+O
+Nodes: 6 / 7 = 0.86
+Edges: 12 / 17 = 0.71
+
+*
+Nodes: 3 / 3 = 1.00
+Edges: 3 / 3 = 1.00
+
+^
+Nodes: 4 / 4 = 1.00
+Edges: 6 / 9 = 0.67
+
+M
+Nodes: 5 / 8 = 0.62
+Edges: 6 / 22 = 0.27
+
+D
+Nodes: 3 / 3 = 1.00
+Edges: 5 / 5 = 1.00
+
+S
+Nodes: 4 / 8 = 0.50
+Edges: 4 / 21 = 0.19
