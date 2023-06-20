@@ -1,0 +1,12 @@
+action_space : ['take', 'move', 'die', 'chase', 'clone','add','transform','push']
+character : ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S']
+edge_conditions : ['none','touch', 'step', 'within', 'nextTo']
+step_range : [1,10]
+prox_range : [1,10]
+seed : 797894                  # 'any' or a number
+sim_speed : 0.5                 # in seconds, speed of simulation
+save_log : true
+log_file : 'ALIFE_EXP/log_exp2.txt' # <SEED> will be replaced by the seed value
+min_log : 10                  # minimum number of steps to log
+inactive_limit : 20           # how long to let the simulation run before stopping due to inactivity
+pop_perc : 0.25              # maximum percentage of the map for entities to spawn on
