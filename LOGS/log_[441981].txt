@@ -1,0 +1,332 @@
+============    FORTRESS SEED [441981]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: CONFIGS/beta_config.yaml <<< -- <0>
+>>> TIME: 2023-05-30 13:16:10.311885 <<< -- <0>
+15 Unique character trees created -- <0>
+[@.7fee] cloned to [@.d3bf] at [2, 2] -- <0>
+[O.95f4] cloned to [O.6bc4] at [13, 2] -- <0>
+[D.c24d] cloned to [D.a797] at [12, 4] -- <0>
+[@.7fee] cloned to [@.80f4] at [3, 5] -- <0>
+[X.54d2] cloned to [X.1b7a] at [9, 1] -- <0>
+[<.a65d] cloned to [<.106d] at [4, 5] -- <0>
+[X.54d2] cloned to [X.e30b] at [10, 4] -- <0>
+[D.c24d] cloned to [D.a9df] at [3, 6] -- <0>
+Fortress randomly populated with 9 -- <0>
+[O.6bc4] moved to [13, 1] -- <2>
+[X.1b7a] cloned to [X.7594] at [10, 1] -- <2>
+[<.106d] moved to [3, 5] -- <2>
+[X.e30b] cloned to [X.abf5] at [9, 4] -- <2>
+[<.106d] moved to [3, 4] -- <3>
+[@.80f4] pushed [<.106d] -- <4>
+[X.1b7a] cloned to [X.2eb1] at [8, 1] -- <4>
+[<.106d] moved to [3, 2] -- <4>
+[X.e30b] cloned to [X.5f34] at [10, 3] -- <4>
+[X.7594] cloned to [X.2d8f] at [10, 2] -- <4>
+[X.abf5] cloned to [X.2485] at [9, 3] -- <4>
+[@.80f4] moved to [2, 4] - (not able to push) -- <5>
+[<.106d] moved to [2, 2] -- <5>
+[@.80f4] moved to [3, 4] - (not able to push) -- <6>
+[X.1b7a] cloned to [X.4d5e] at [9, 2] -- <6>
+[<.106d] moved to [2, 1] -- <6>
+[X.7594] cloned to [X.cd51] at [11, 1] -- <6>
+[X.abf5] cloned to [X.d8c4] at [8, 4] -- <6>
+[@.d3bf] moved to [1, 2] - (not able to push) -- <7>
+[@.80f4] moved to [4, 4] - (not able to push) -- <7>
+[<.106d] cloned to [<.29de] at [1, 1] -- <7>
+[@.80f4] moved to [5, 4] - (not able to push) -- <8>
+[<.106d] cloned to [<.1157] at [2, 2] -- <8>
+[X.e30b] cloned to [X.5562] at [11, 4] -- <8>
+[X.2485] cloned to [X.8ce6] at [8, 3] -- <8>
+[X.d8c4] cloned to [X.c4a1] at [8, 5] -- <8>
+[@.80f4] moved to [5, 5] - (not able to push) -- <9>
+[<.106d] cloned to [<.c3ce] at [3, 1] -- <9>
+[<.29de] moved to [1, 2] -- <9>
+[@.d3bf] moved to [1, 1] - (not able to push) -- <10>
+[@.80f4] moved to [5, 6] - (not able to push) -- <10>
+[X.5f34] cloned to [X.40e8] at [11, 3] -- <10>
+[X.2d8f] cloned to [X.2dc2] at [11, 2] -- <10>
+[X.cd51] cloned to [X.2bdb] at [12, 1] -- <10>
+[X.d8c4] cloned to [X.4686] at [7, 4] -- <10>
+[<.1157] moved to [1, 2] -- <10>
+[X.8ce6] cloned to [X.a482] at [7, 3] -- <10>
+[X.c4a1] cloned to [X.161f] at [8, 6] -- <10>
+[@.80f4] moved to [5, 5] - (not able to push) -- <11>
+[<.c3ce] moved to [2, 1] -- <11>
+[@.80f4] moved to [5, 4] - (not able to push) -- <12>
+[<.106d] cloned to [<.c0a9] at [2, 2] -- <12>
+[X.abf5] cloned to [X.13bf] at [9, 5] -- <12>
+[X.2eb1] cloned to [X.53f3] at [8, 2] -- <12>
+[<.29de] moved to [1, 1] -- <12>
+[<.1157] moved to [1, 1] -- <12>
+[X.5562] cloned to [X.8a83] at [11, 5] -- <12>
+[<.c3ce] moved to [3, 1] -- <12>
+[X.a482] cloned to [X.bcd3] at [6, 3] -- <12>
+[X.161f] cloned to [X.8f6b] at [7, 6] -- <12>
+[@.80f4] moved to [5, 3] - (not able to push) -- <13>
+[<.c3ce] moved to [2, 1] -- <13>
+[@.d3bf] moved to [1, 2] - (not able to push) -- <14>
+[@.80f4] moved to [5, 4] - (not able to push) -- <14>
+[<.1157] moved to [1, 2] -- <14>
+[<.c3ce] moved to [2, 2] -- <14>
+[X.2dc2] cloned to [X.b91a] at [12, 2] -- <14>
+[X.4686] cloned to [X.56d7] at [7, 5] -- <14>
+[<.c0a9] moved to [3, 2] -- <14>
+[X.53f3] cloned to [X.b01f] at [7, 2] -- <14>
+[X.8a83] cloned to [X.9122] at [10, 5] -- <14>
+[X.bcd3] cloned to [X.7563] at [6, 4] -- <14>
+[X.8f6b] cloned to [X.5be3] at [6, 6] -- <14>
+==== SIMULATION ENDED: Code Interruption ====
+
+@:
+-- NODES --
+0: idle
+1: push
+2: die
+-- EDGES --
+0-0: step 4
+0-1: touch <
+0-2: within * 1
+1-1: within M 9
+2-0: step 4
+2-1: within M 10
+
+$:
+-- NODES --
+0: idle
+1: chase
+2: die
+3: move
+4: clone
+5: take
+-- EDGES --
+0-2: nextTo S
+0-3: step 3
+0-5: step 8
+2-0: nextTo *
+2-3: nextTo !
+2-4: touch @
+3-4: within @ 3
+4-2: touch ^
+4-5: nextTo O
+5-1: step 5
+5-4: touch M
+
+&:
+-- NODES --
+0: idle
+1: move
+2: add &
+-- EDGES --
+0-1: none
+0-2: within > 6
+1-0: nextTo !
+1-2: nextTo D
+2-0: step 4
+
++:
+-- NODES --
+0: idle
+1: transform !
+2: clone
+3: push
+4: add M
+5: move
+-- EDGES --
+0-1: within D 7
+1-0: within @ 8
+1-3: step 1
+1-5: nextTo D
+2-3: within X 1
+2-4: none
+2-5: nextTo $
+3-5: touch ^
+4-1: touch ^
+4-2: touch !
+4-3: step 2
+5-2: step 2
+
+;:
+-- NODES --
+0: idle
+1: chase
+-- EDGES --
+0-1: step 4
+1-0: none
+1-1: none
+
+!:
+-- NODES --
+0: idle
+1: transform +
+2: chase
+3: die
+-- EDGES --
+0-0: nextTo O
+0-2: touch *
+1-0: nextTo X
+2-1: nextTo +
+2-3: within S 4
+3-0: within < 6
+3-1: touch !
+
+>:
+-- NODES --
+0: idle
+1: take
+2: transform >
+3: clone
+4: push
+5: die
+6: move
+-- EDGES --
+0-1: step 5
+0-3: nextTo &
+0-4: step 9
+1-5: none
+2-0: touch &
+2-2: within S 7
+2-3: touch X
+2-4: none
+2-5: nextTo ^
+2-6: touch &
+4-0: within + 9
+5-0: step 2
+5-4: nextTo *
+6-2: none
+6-4: within ! 3
+
+<:
+-- NODES --
+0: idle
+1: clone
+2: move
+3: push
+4: transform ^
+-- EDGES --
+0-2: none
+0-3: touch D
+0-4: none
+1-0: touch ^
+1-1: nextTo O
+1-2: within & 4
+2-1: step 6
+2-2: nextTo !
+2-4: nextTo $
+3-1: none
+3-4: within M 2
+4-1: touch O
+
+X:
+-- NODES --
+0: idle
+1: clone
+-- EDGES --
+0-1: within O 7
+1-0: none
+1-1: within $ 2
+
+O:
+-- NODES --
+0: idle
+1: clone
+2: chase
+3: move
+4: transform *
+5: die
+6: take
+-- EDGES --
+0-3: none
+0-5: touch @
+1-3: touch M
+1-4: step 3
+2-0: none
+2-1: none
+3-2: none
+3-6: step 4
+4-0: none
+5-1: touch ^
+5-2: touch +
+5-3: none
+5-5: step 4
+6-0: within @ 3
+6-1: touch !
+6-3: within @ 4
+6-4: touch +
+
+*:
+-- NODES --
+0: idle
+1: chase
+2: die
+3: push
+-- EDGES --
+0-0: touch !
+0-2: none
+0-3: touch *
+1-0: none
+1-1: nextTo &
+2-0: touch &
+2-1: touch M
+3-0: within > 7
+3-1: nextTo M
+
+^:
+-- NODES --
+0: idle
+1: transform !
+-- EDGES --
+0-1: none
+1-0: step 5
+
+M:
+-- NODES --
+0: idle
+1: clone
+2: take
+3: transform M
+4: die
+5: push
+6: add >
+-- EDGES --
+0-1: step 10
+1-1: nextTo ^
+1-6: nextTo +
+3-1: within ; 9
+3-5: touch ;
+4-2: touch ^
+4-3: within D 3
+5-1: step 1
+5-3: touch !
+5-4: nextTo <
+6-0: step 7
+6-3: none
+
+D:
+-- NODES --
+0: idle
+1: clone
+-- EDGES --
+0-0: within & 10
+0-1: touch >
+1-0: step 3
+
+S:
+-- NODES --
+0: idle
+1: move
+2: push
+3: take
+4: chase
+-- EDGES --
+0-3: step 9
+1-3: nextTo &
+1-4: touch D
+2-0: touch O
+2-1: none
+3-0: none
+3-2: within ! 8
+3-3: within * 3
+3-4: within @ 2
+4-3: none
+
+

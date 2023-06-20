@@ -74,7 +74,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
     tree.erase()
 
     # add the title screen and timestep
-    title_text = f"====== DUCK FORTRESS [{engine.seed}] ======"
+    title_text = f"====== AMORPHOUS FORTRESS [{engine.seed}] ======"
     sim.addstr(0, sim_width//2-len(title_text)//2, title_text)
 
     time_text = f"Timestep: {engine.sim_tick} --- # entities: {engine.fortress.max_entities} / {(engine.fortress.max_entities)}"

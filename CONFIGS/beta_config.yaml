@@ -3,8 +3,8 @@ character : ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D
 edge_conditions : ['none','touch', 'step', 'within', 'nextTo']
 step_range : [1,10]
 prox_range : [1,10]
-seed : 'any'                  # 'any' or a number
-sim_speed : 0.5                 # in seconds, speed of simulation
+seed : 'any'              # 'any' or a number
+sim_speed : 0.5                # in seconds, speed of simulation
 save_log : true
 log_file : 'LOGS/log_[<SEED>].txt' # <SEED> will be replaced by the seed value
 min_log : 10                  # minimum number of steps to log
