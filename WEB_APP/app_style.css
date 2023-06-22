@@ -1,11 +1,11 @@
 /* import fonts */
 @font-face {
     font-family: DwarfFortress;
-    src: url(ibm_vga_9x8.ttf);
+    src: url(fonts/ibm_vga_9x8.ttf);
 }
 @font-face {
     font-family: Proggy;
-    src: url(ProggySquare.ttf);
+    src: url(fonts/ProggySquare.ttf);
 }
 
 body{
@@ -31,10 +31,51 @@ body{
 /*******  MENU STYLING  ******/
 
 #menu{
-    height: 35px;
+    height: 30px;
     background-color: #d1d1d1;
     border-bottom:#ababab 2px solid;
+    display:block;
 }
+
+.menu-item{
+    float:left;
+    height: 100%;
+    width: 80px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-family: monospace;
+    color: #171717;
+    cursor: pointer;
+    border-right: #ababab 2px solid;
+}
+.menu-item:hover{
+    background-color: #bcbcbc;
+}
+.menu-dropdown{
+    z-index: 10;
+    position:absolute;
+    border:2px solid #bcbcbc;
+    background-color: #dddddd;
+    display: none;
+}
+.menudrop-item{
+    height: 24px;
+    min-width: 100px;
+    text-align: left;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: monospace;
+    color: #171717;
+    cursor: pointer;
+    padding-left:5px;
+    padding-right:5px;
+    /* display:none; */
+}
+.menudrop-item:hover{
+    background-color: #bcbcbc;
+}
+
 
 /*******  EDITOR STYLING  ******/
 
@@ -130,7 +171,7 @@ body{
 }
 
 
-/*******  NODES + EDGES STYLING  ******/
+/*******  NODES STYLING  ******/
 
 #entity-nodes{
     height: 285px;
@@ -138,9 +179,62 @@ body{
     float:left;
 }
 
+#node-list{
+    overflow-y: auto;
+    height:260px;
+    width:100%
+}
+.node-item:hover{
+    background-color: #d1d1d1;
+}
+
+.node-item{
+    width:100%;
+    height:25px;
+    font-size:18px;
+    font-family: monospace;
+    line-height: 25px;
+    /* border-bottom:1px solid #ababab; */
+}
+
+.node-index{
+    width:40px;
+    height:100%;
+    text-align: center;
+    float:left;
+    border-right:1px solid #ababab;
+}
+
+.node-label{
+    width:210px;
+    height:100%;
+    text-align: center;
+    float:left;
+    /* border:1px solid black; */
+}
+
+
+#debug{
+    color:red;
+    font-size: 12px;
+    font-family: monospace;
+    width:400px;
+    text-align: center;
+    margin:auto;
+}
+
+/*******  EDGES STYLING  ******/
+
 #entity-edges{
     height: 285px;
     width: 270px;
     float:left;
     /* border-top:10px double #ababab; */
+    
+}
+
+#edge-list{
+    width:100%;
+    height:260px;
+    overflow-y: auto;
 }

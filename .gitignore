@@ -1,3 +1,4 @@
 curses_tests_chatgpt/
 *.pyc
 __pycache__/*
+copy2v2.sh
