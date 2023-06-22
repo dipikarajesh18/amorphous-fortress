@@ -1,0 +1,186 @@
+<html>
+    <head>
+        <title>Amorphous Fortress - Entity Editor</title> 
+        <link rel="stylesheet" href="app_style.css">
+        <!-- ADD STYLES TO SHEET WHEN FINISHED -->
+        <style>
+
+            /* 
+            <div class="edge-item">
+                <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">1</div></div>
+                <div class='edge-label'>touch $</div>
+            </div>
+             */
+            
+            .edge-item{
+                width:100%;
+                height:22px;
+                font-size:16px;
+                font-family: monospace;
+                line-height: 22px;
+                display:block;
+            }
+            .edge-item:hover{
+                background-color: #d2d2d2;
+            }
+
+            .edge-conn{
+                float:left;
+                width:90px;
+                height:22px;
+                text-align:center;
+                border-right:1px solid #ababab;
+                display: block;
+                padding-left:4px;
+
+            }
+            .edge-s,.edge-a,.edge-e{
+                float:left;
+                height:22px;
+                text-align:center;
+                vertical-align:middle;
+                /* border:1px solid blue; */
+            }
+            .edge-a{
+                width:24px;
+            }
+            .edge-s,.edge-e{
+                width:30px;
+            }
+
+            .edge-label{
+                float:left;
+                width:calc(100% - 110px);
+                height:22px;
+                text-align:center;
+            }
+            
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="title">
+            Amorphous Fortress - Entity Editor
+        </div>
+        <div id="container">
+            <!-- TOP BAR MENU w/ DROPDOWN -->
+            <div id="menu">
+                <div class="menu-item">File
+                    <div id='file_menu' class="menu-dropdown">
+                        <div class="menudrop-item">New</div>
+                        <div class="menudrop-item">Open</div>
+                        <div class="menudrop-item">Save</div>
+                        <div class="menudrop-item">Save As</div>
+                    </div>
+                </div>
+                
+
+
+                <div class="menu-item">Edit
+                    <div id='edit_menu' class="menu-dropdown">
+                        <div class="menudrop-item">New Node</div>
+                        <div class="menudrop-item">New Edge</div>
+                        <div class="menudrop-item">Delete Node</div>
+                        <div class="menudrop-item">Delete Edge</div>
+                    </div>
+                </div>
+
+
+                <div class="menu-item">View
+                    <div id='view_menu' class="menu-dropdown">
+                        <div class="menudrop-item">Zoom In</div>
+                        <div class="menudrop-item">Zoom Out</div>
+                        <div class="menudrop-item">Zoom Reset</div>
+                        <div class="menudrop-item">Toggle Grid Snap</div>
+                        <div class="menudrop-item">Clean Up Graph</div>
+                    </div>
+                </div>
+
+
+                <div class="menu-item">Help
+                    <div id='help_menu' class="menu-dropdown">
+                        <div class="menudrop-item">About</div>
+                        <div class="menudrop-item">Quick Start</div>
+                        <div class="menudrop-item">Documentation</div>
+                        <div class="menudrop-item">Report Bug</div>
+                    </div>
+                </div>
+            </div>
+            <!-- GRAPH NODE EDITOR CANVAS -->
+            <div id="gfx-editor">
+                
+            </div>
+            <!-- SIDE BAR TEXT EDITOR -->
+            <div id="txt-editor">
+                <!-- name -->
+                <div id="entity-name">
+                    <div id="char_div">
+                        <input type="text" id="char_in" maxlength="1" placeholder="?" value="@"/>
+                        <div id="char_txt">@</div>
+                    </div>
+                    <div id="name_div">
+                        <input type="text" id="name_in" placeholder="entity_name" value="Link"/>
+                        <div id="name_txt">Link</div>
+                    </div>
+                </div>
+
+                <!-- nodes -->
+                <div id="entity-nodes">
+                    <div class="txt-title">NODES</div>
+                    <div id="node-list">
+                        <div class="node-item"><div class='node-index'>0</div><div class='node-label'>idle</div></div>
+                        <div class="node-item"><div class='node-index'>1</div><div class='node-label'>take</div></div>
+                        <div class="node-item"><div class='node-index'>2</div><div class='node-label'>move</div></div>
+                        <div class="node-item"><div class='node-index'>3</div><div class='node-label'>chase</div></div>
+                    </div>
+                </div>
+
+                <!-- edges -->
+                <div id="entity-edges">
+                    <div class="txt-title">EDGES</div>
+                    <div id="edge-list">
+                        <div class="edge-item">
+                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">1</div></div>
+                            <div class='edge-label'>touch $</div>
+                        </div>
+                        <div class="edge-item">
+                            <div class='edge-conn'><div class="edge-s">1</div><div class="edge-a">-></div><div class="edge-e">0</div></div>
+                            <div class='edge-label'>none</div>
+                        </div>
+                        <div class="edge-item">
+                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">2</div></div>
+                            <div class='edge-label'>step 2</div>
+                        </div>
+                        <div class="edge-item">
+                            <div class='edge-conn'><div class="edge-s">2</div><div class="edge-a">-></div><div class="edge-e">0</div></div>
+                            <div class='edge-label'>none</div>
+                        </div>
+                        <div class="edge-item">
+                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">3</div></div>
+                            <div class='edge-label'>within $ 5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="debug"><< DEBUG HERE >></div>
+
+        <!-- MOVE THIS TO SCRIPTS LATER WHEN IT'S FUNCTIONAL -->
+        <script>
+            let debug = document.getElementById("debug");
+
+
+            // graph setup
+
+
+
+
+            
+        </script>
+        <script src="js/ui.js"></script>
+        <script src="js/graph.js"></script>
+    </body>
+</html>
