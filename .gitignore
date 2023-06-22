@@ -7,7 +7,7 @@ outputs
 saves*
 cross_evals*
 curses_tests_chatgpt/
-*.pyc
+*.pyc 
 __pycache__/*
 ind-character-def/
 .DS_Store
@@ -17,3 +17,4 @@ ELITE_FORT_SIM/*_arx_*
 ELITE_CHAR_DEF*
 copy2v2.sh
 *.egg-info
+copy2v2.sh
