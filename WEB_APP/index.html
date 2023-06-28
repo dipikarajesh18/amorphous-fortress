@@ -60,7 +60,7 @@
 
         </style>
     </head>
-    <body>
+    <body onload="init()">
         <div id="title">
             Amorphous Fortress - Entity Editor
         </div>
@@ -70,9 +70,10 @@
                 <div class="menu-item">File
                     <div id='file_menu' class="menu-dropdown">
                         <div class="menudrop-item">New</div>
-                        <div class="menudrop-item">Open</div>
+                        <div class="menudrop-item" onclick="document.getElementById('entFileIn').click();">Open</div>
+                            <input type="file" id="entFileIn" style="display: none;" accept=".txt" onchange="readEntFile()"/>
                         <div class="menudrop-item">Save</div>
-                        <div class="menudrop-item">Save As</div>
+                        <div class="menudrop-item" onclick="exportEntGraph()">Save As</div>
                     </div>
                 </div>
                 
@@ -118,11 +119,11 @@
                 <div id="entity-name">
                     <div id="char_div">
                         <input type="text" id="char_in" maxlength="1" placeholder="?" value="@"/>
-                        <div id="char_txt">@</div>
+                        <div id="char_txt"></div>
                     </div>
                     <div id="name_div">
                         <input type="text" id="name_in" placeholder="entity_name" value="Link"/>
-                        <div id="name_txt">Link</div>
+                        <div id="name_txt"></div>
                     </div>
                 </div>
 
@@ -130,10 +131,7 @@
                 <div id="entity-nodes">
                     <div class="txt-title">NODES</div>
                     <div id="node-list">
-                        <div class="node-item"><div class='node-index'>0</div><div class='node-label'>idle</div></div>
-                        <div class="node-item"><div class='node-index'>1</div><div class='node-label'>take</div></div>
-                        <div class="node-item"><div class='node-index'>2</div><div class='node-label'>move</div></div>
-                        <div class="node-item"><div class='node-index'>3</div><div class='node-label'>chase</div></div>
+                        
                     </div>
                 </div>
 
@@ -141,26 +139,7 @@
                 <div id="entity-edges">
                     <div class="txt-title">EDGES</div>
                     <div id="edge-list">
-                        <div class="edge-item">
-                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">1</div></div>
-                            <div class='edge-label'>touch $</div>
-                        </div>
-                        <div class="edge-item">
-                            <div class='edge-conn'><div class="edge-s">1</div><div class="edge-a">-></div><div class="edge-e">0</div></div>
-                            <div class='edge-label'>none</div>
-                        </div>
-                        <div class="edge-item">
-                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">2</div></div>
-                            <div class='edge-label'>step 2</div>
-                        </div>
-                        <div class="edge-item">
-                            <div class='edge-conn'><div class="edge-s">2</div><div class="edge-a">-></div><div class="edge-e">0</div></div>
-                            <div class='edge-label'>none</div>
-                        </div>
-                        <div class="edge-item">
-                            <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">3</div></div>
-                            <div class='edge-label'>within $ 5</div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -171,6 +150,9 @@
         <!-- MOVE THIS TO SCRIPTS LATER WHEN IT'S FUNCTIONAL -->
         <script>
             let debug = document.getElementById("debug");
+            function DEBUG(txt){
+                debug.innerHTML = txt;
+            }
 
 
             // graph setup
@@ -182,5 +164,26 @@
         </script>
         <script src="js/ui.js"></script>
         <script src="js/graph.js"></script>
+
+        <!-- REMOVE THESE SCRIPTS - PURELY FOR TEST PURPOSES -->
+        <script>
+            function fakeGraph(){
+                CUR_NAME = "phd"
+                CUR_CHAR = "@"
+                CUR_NODES = ["idle","meme","code"]
+                CUR_EDGES = {
+                    "0-1":"step 10",
+                    "1-0":"none",
+                    "0-2":"nextTo c",
+                    "2-2":"none"
+                }
+                
+            }
+
+            function init(){
+                fakeGraph();
+                addCurGraphDivs();
+            }
+        </script>
     </body>
 </html>
