@@ -1,0 +1,4677 @@
+============    FORTRESS SEED [739739]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: CONFIGS/demo_config.yaml <<< -- <0>
+>>> TIME: 2023-06-25 19:22:18.172564 <<< -- <0>
+15 Unique character trees created -- <0>
+[O.911e] cloned to [O.8f78] at [20, 5] -- <0>
+[>.9f6a] cloned to [>.a2ed] at [16, 2] -- <0>
+[@. c2c] cloned to [@.688b] at [17, 5] -- <0>
+[$.fa6b] cloned to [$.894b] at [11, 5] -- <0>
+[;.4a35] cloned to [;.db13] at [2, 4] -- <0>
+[*.3d4a] cloned to [*.6a15] at [5, 7] -- <0>
+[>.9f6a] cloned to [>.8e80] at [2, 2] -- <0>
+[O.911e] cloned to [O.2300] at [10, 11] -- <0>
+[O.911e] cloned to [O. 49c] at [9, 11] -- <0>
+[>.9f6a] cloned to [>.8b8f] at [15, 1] -- <0>
+[>.9f6a] cloned to [>.c97f] at [16, 7] -- <0>
+[M.c3aa] cloned to [M.f1b4] at [3, 9] -- <0>
+[>.9f6a] cloned to [>.ade9] at [18, 5] -- <0>
+[S.dbf4] cloned to [S.c0ff] at [8, 8] -- <0>
+[^.a581] cloned to [^.fdc7] at [13, 8] -- <0>
+[S.dbf4] cloned to [S.15c2] at [27, 7] -- <0>
+[&.a79a] cloned to [&.a16a] at [8, 12] -- <0>
+[O.911e] cloned to [O.9e29] at [5, 12] -- <0>
+[$.fa6b] cloned to [$.e2ce] at [20, 4] -- <0>
+[@. c2c] cloned to [@.e36a] at [8, 10] -- <0>
+[>.9f6a] cloned to [>.b6ed] at [21, 12] -- <0>
+[>.9f6a] cloned to [>.72b6] at [11, 6] -- <0>
+[;.4a35] cloned to [;.2654] at [17, 9] -- <0>
+[D.39f4] cloned to [D.1ae7] at [4, 9] -- <0>
+[@. c2c] cloned to [@.5248] at [6, 3] -- <0>
+[X.b015] cloned to [X.24b0] at [5, 1] -- <0>
+Clone failed -- <0>
+[<.aa98] cloned to [<.6632] at [1, 13] -- <0>
+[!. 60d] cloned to [!.937a] at [12, 9] -- <0>
+[;.4a35] cloned to [;.4e5d] at [26, 10] -- <0>
+[&.a79a] cloned to [&.9013] at [14, 8] -- <0>
+[!. 60d] cloned to [!.1685] at [22, 6] -- <0>
+[M.c3aa] cloned to [M.baa4] at [8, 6] -- <0>
+[;.4a35] cloned to [;.c3b1] at [18, 7] -- <0>
+[*.3d4a] cloned to [*.5f9e] at [2, 10] -- <0>
+[&.a79a] cloned to [&.4304] at [20, 1] -- <0>
+[@. c2c] cloned to [@.d96c] at [17, 8] -- <0>
+[<.aa98] cloned to [<.d3e4] at [12, 5] -- <0>
+[^.a581] cloned to [^.c0d2] at [22, 7] -- <0>
+[^.a581] cloned to [^.6f87] at [3, 3] -- <0>
+[*.3d4a] cloned to [*.3ec2] at [5, 6] -- <0>
+[<.aa98] cloned to [<.4248] at [3, 11] -- <0>
+[^.a581] cloned to [^. c38] at [16, 8] -- <0>
+[D.39f4] cloned to [D.6b32] at [27, 10] -- <0>
+[O.911e] cloned to [O.a500] at [14, 11] -- <0>
+[+.6620] cloned to [+.e0f7] at [20, 11] -- <0>
+[X.b015] cloned to [X.38f3] at [13, 2] -- <0>
+[&.a79a] cloned to [&.cc77] at [22, 9] -- <0>
+[>.9f6a] cloned to [>.e30a] at [10, 10] -- <0>
+[M.c3aa] cloned to [M.c4ce] at [18, 13] -- <0>
+[@. c2c] cloned to [@.ce76] at [6, 7] -- <0>
+[$.fa6b] cloned to [$.e9ee] at [7, 4] -- <0>
+[!. 60d] cloned to [!.13c7] at [16, 10] -- <0>
+[^.a581] cloned to [^.6b76] at [16, 11] -- <0>
+[S.dbf4] cloned to [S.a8d6] at [27, 8] -- <0>
+[M.c3aa] cloned to [M.6dd3] at [15, 2] -- <0>
+[O.911e] cloned to [O.683a] at [8, 3] -- <0>
+[;.4a35] cloned to [;.5a4c] at [17, 3] -- <0>
+[*.3d4a] cloned to [*.aa7f] at [1, 12] -- <0>
+[&.a79a] cloned to [&.30a7] at [8, 4] -- <0>
+[>.9f6a] cloned to [>.e000] at [23, 1] -- <0>
+[&.a79a] cloned to [&.9f10] at [11, 10] -- <0>
+[X.b015] cloned to [X.f0c1] at [18, 2] -- <0>
+[&.a79a] cloned to [&.4fc9] at [23, 13] -- <0>
+[^.a581] cloned to [^.59a8] at [10, 1] -- <0>
+[&.a79a] cloned to [&.90e7] at [19, 9] -- <0>
+[>.9f6a] cloned to [>. 87b] at [6, 4] -- <0>
+Clone failed -- <0>
+Clone failed -- <0>
+Clone failed -- <0>
+[>.9f6a] cloned to [>.8aab] at [8, 13] -- <0>
+[X.b015] cloned to [X.845e] at [26, 11] -- <0>
+[O.911e] cloned to [O.f9f9] at [6, 13] -- <0>
+[D.39f4] cloned to [D.e3b3] at [6, 8] -- <0>
+[X.b015] cloned to [X.4367] at [28, 12] -- <0>
+[<.aa98] cloned to [<.858a] at [9, 12] -- <0>
+Clone failed -- <0>
+[^.a581] cloned to [^.b39f] at [26, 6] -- <0>
+[+.6620] cloned to [+. 95b] at [10, 3] -- <0>
+[>.9f6a] cloned to [>.b9ce] at [11, 12] -- <0>
+[@. c2c] cloned to [@.30b2] at [11, 7] -- <0>
+[D.39f4] cloned to [D.97c1] at [20, 13] -- <0>
+[$.fa6b] cloned to [$.5a9b] at [25, 13] -- <0>
+[O.911e] cloned to [O.a7bd] at [7, 9] -- <0>
+[M.c3aa] cloned to [M.1c43] at [18, 1] -- <0>
+[>.9f6a] cloned to [>. 664] at [4, 4] -- <0>
+Clone failed -- <0>
+[X.b015] cloned to [X.aa83] at [24, 9] -- <0>
+Clone failed -- <0>
+[$.fa6b] cloned to [$.afa1] at [15, 12] -- <0>
+[<.aa98] cloned to [<.a176] at [26, 13] -- <0>
+Fortress randomly populated with 91 -- <0>
+[$.fa6b] cloned to [$.37df] at [16, 3] -- <2>
+[>.a2ed] added [$.37df] at [16, 3] -- <2>
+[X.b015] cloned to [X.e86e] at [11, 5] -- <2>
+[$.894b] transformed into [X.e86e] at [11, 5] -- <2>
+[$.894b] died -- <2>
+[$.fa6b] cloned to [$.90f1] at [5, 7] -- <2>
+[*.6a15] transformed into [$.90f1] at [5, 7] -- <2>
+[*.6a15] died -- <2>
+[$.fa6b] cloned to [$.d7ca] at [1, 2] -- <2>
+[>.8e80] added [$.d7ca] at [1, 2] -- <2>
+[$.fa6b] cloned to [$.8ce7] at [16, 1] -- <2>
+[>.8b8f] added [$.8ce7] at [16, 1] -- <2>
+[$.fa6b] cloned to [$.3ca9] at [15, 7] -- <2>
+[>.c97f] added [$.3ca9] at [15, 7] -- <2>
+[$.fa6b] cloned to [$.99f6] at [19, 5] -- <2>
+[>.ade9] added [$.99f6] at [19, 5] -- <2>
+[S.c0ff] died -- <2>
+[S.15c2] died -- <2>
+[X.b015] cloned to [X.7661] at [20, 4] -- <2>
+[$.e2ce] transformed into [X.7661] at [20, 4] -- <2>
+[$.e2ce] died -- <2>
+[$.fa6b] cloned to [$.d66c] at [20, 12] -- <2>
+[>.b6ed] added [$.d66c] at [20, 12] -- <2>
+[!. 60d] cloned to [!.f67f] at [4, 9] -- <2>
+[D.1ae7] transformed into [!.f67f] at [4, 9] -- <2>
+[D.1ae7] died -- <2>
+[!.937a] moved to [12, 8] - (not able to push) -- <2>
+[!.1685] moved to [22, 7] - (not able to push) -- <2>
+[$.fa6b] cloned to [$.e16b] at [2, 10] -- <2>
+[*.5f9e] transformed into [$.e16b] at [2, 10] -- <2>
+[*.5f9e] died -- <2>
+[<.d3e4] took [>.72b6] -- <2>
+[>.72b6] died -- <2>
+[$.fa6b] cloned to [$.ade3] at [5, 6] -- <2>
+[*.3ec2] transformed into [$.ade3] at [5, 6] -- <2>
+[*.3ec2] died -- <2>
+[!. 60d] cloned to [!.44c1] at [27, 10] -- <2>
+[D.6b32] transformed into [!.44c1] at [27, 10] -- <2>
+[D.6b32] died -- <2>
+[+.e0f7] moved to [20, 12] -- <2>
+[$.fa6b] cloned to [$.d178] at [10, 9] -- <2>
+[>.e30a] added [$.d178] at [10, 9] -- <2>
+[X.b015] cloned to [X.dfe5] at [7, 4] -- <2>
+[$.e9ee] transformed into [X.dfe5] at [7, 4] -- <2>
+[$.e9ee] died -- <2>
+[^.6b76] moved to [16, 12] - (not able to push) -- <2>
+[S.a8d6] died -- <2>
+[$.fa6b] cloned to [$.e881] at [1, 12] -- <2>
+[*.aa7f] transformed into [$.e881] at [1, 12] -- <2>
+[*.aa7f] died -- <2>
+[$.fa6b] cloned to [$.2f5b] at [22, 1] -- <2>
+[>.e000] added [$.2f5b] at [22, 1] -- <2>
+[$.fa6b] cloned to [$.9704] at [5, 4] -- <2>
+[>. 87b] added [$.9704] at [5, 4] -- <2>
+[$.fa6b] cloned to [$.7d46] at [7, 13] -- <2>
+[>.8aab] added [$.7d46] at [7, 13] -- <2>
+[!. 60d] cloned to [!.e83d] at [6, 8] -- <2>
+[D.e3b3] transformed into [!.e83d] at [6, 8] -- <2>
+[D.e3b3] died -- <2>
+[<.858a] took [>.8aab] -- <2>
+[>.8aab] died -- <2>
+[O.911e] cloned to [O.c587] at [26, 5] -- <2>
+[^.b39f] added [O.c587] at [26, 5] -- <2>
+[+. 95b] moved to [11, 3] - (not able to push) -- <2>
+[$.fa6b] cloned to [$.f473] at [11, 13] -- <2>
+[>.b9ce] added [$.f473] at [11, 13] -- <2>
+[!. 60d] cloned to [!.f101] at [20, 13] -- <2>
+[D.97c1] transformed into [!.f101] at [20, 13] -- <2>
+[D.97c1] died -- <2>
+[X.b015] cloned to [X.6437] at [25, 13] -- <2>
+[$.5a9b] transformed into [X.6437] at [25, 13] -- <2>
+[$.5a9b] died -- <2>
+[$.fa6b] cloned to [$.8628] at [3, 4] -- <2>
+[>. 664] added [$.8628] at [3, 4] -- <2>
+[X.b015] cloned to [X.991f] at [15, 12] -- <2>
+[$.afa1] transformed into [X.991f] at [15, 12] -- <2>
+[$.afa1] died -- <2>
+[!.937a] moved to [12, 9] - (not able to push) -- <3>
+[!.1685] moved to [22, 6] - (not able to push) -- <3>
+[+.e0f7] moved to [20, 13] -- <3>
+Clone failed -- <3>
+[O.911e] cloned to [O.ff19] at [26, 7] -- <3>
+[^.b39f] added [O.ff19] at [26, 7] -- <3>
+[+. 95b] took [O.683a] -- <3>
+[O.683a] died -- <3>
+[$.fa6b] cloned to [$.d05f] at [12, 12] -- <3>
+[>.b9ce] added [$.d05f] at [12, 12] -- <3>
+[@.688b] moved to [18, 5] - (not able to push) -- <4>
+Clone failed -- <4>
+[$.fa6b] cloned to [$.9f86] at [18, 4] -- <4>
+[>.ade9] added [$.9f86] at [18, 4] -- <4>
+[@.e36a] moved to [8, 11] - (not able to push) -- <4>
+[@.5248] moved to [6, 4] - (not able to push) -- <4>
+[!.937a] moved to [11, 9] - (not able to push) -- <4>
+[!.1685] moved to [23, 6] - (not able to push) -- <4>
+[@.d96c] moved to [17, 9] - (not able to push) -- <4>
+[+.e0f7] moved to [19, 13] -- <4>
+[@.ce76] moved to [6, 6] - (not able to push) -- <4>
+[^.6b76] moved to [15, 12] - (not able to push) -- <4>
+Clone failed -- <4>
+[O.911e] cloned to [O.79b6] at [25, 6] -- <4>
+[^.b39f] added [O.79b6] at [25, 6] -- <4>
+[+. 95b] cloned to [+.f4d2] at [10, 3] -- <4>
+[@.30b2] moved to [12, 7] - (not able to push) -- <4>
+[$.fa6b] cloned to [$.9f2a] at [4, 5] -- <4>
+[>. 664] added [$.9f2a] at [4, 5] -- <4>
+[X.b015] cloned to [X.5394] at [5, 7] -- <4>
+[$.90f1] transformed into [X.5394] at [5, 7] -- <4>
+[$.90f1] died -- <4>
+[X.b015] cloned to [X.4580] at [1, 2] -- <4>
+[$.d7ca] transformed into [X.4580] at [1, 2] -- <4>
+[$.d7ca] died -- <4>
+[X.b015] cloned to [X.bf4b] at [16, 1] -- <4>
+[$.8ce7] transformed into [X.bf4b] at [16, 1] -- <4>
+[$.8ce7] died -- <4>
+[X.b015] cloned to [X.fd1f] at [15, 7] -- <4>
+[$.3ca9] transformed into [X.fd1f] at [15, 7] -- <4>
+[$.3ca9] died -- <4>
+[X.b015] cloned to [X.fad0] at [19, 5] -- <4>
+[$.99f6] transformed into [X.fad0] at [19, 5] -- <4>
+[$.99f6] died -- <4>
+[X.b015] cloned to [X.5893] at [20, 12] -- <4>
+[$.d66c] transformed into [X.5893] at [20, 12] -- <4>
+[$.d66c] died -- <4>
+[X.b015] cloned to [X.9ed2] at [2, 10] -- <4>
+[$.e16b] transformed into [X.9ed2] at [2, 10] -- <4>
+[$.e16b] died -- <4>
+[X.b015] cloned to [X.9238] at [5, 6] -- <4>
+[$.ade3] transformed into [X.9238] at [5, 6] -- <4>
+[$.ade3] died -- <4>
+[X.b015] cloned to [X.1945] at [10, 9] -- <4>
+[$.d178] transformed into [X.1945] at [10, 9] -- <4>
+[$.d178] died -- <4>
+[X.b015] cloned to [X.e011] at [1, 12] -- <4>
+[$.e881] transformed into [X.e011] at [1, 12] -- <4>
+[$.e881] died -- <4>
+[X.b015] cloned to [X.44d6] at [22, 1] -- <4>
+[$.2f5b] transformed into [X.44d6] at [22, 1] -- <4>
+[$.2f5b] died -- <4>
+[X.b015] cloned to [X.8545] at [5, 4] -- <4>
+[$.9704] transformed into [X.8545] at [5, 4] -- <4>
+[$.9704] died -- <4>
+[X.b015] cloned to [X. 41b] at [7, 13] -- <4>
+[$.7d46] transformed into [X. 41b] at [7, 13] -- <4>
+[$.7d46] died -- <4>
+[!. 60d] cloned to [!.1f6d] at [5, 8] -- <4>
+[!.e83d] added [!.1f6d] at [5, 8] -- <4>
+[X.b015] cloned to [X.2782] at [11, 13] -- <4>
+[$.f473] transformed into [X.2782] at [11, 13] -- <4>
+[$.f473] died -- <4>
+[M.f1b4] cloned to [M.94aa] at [3, 10] -- <5>
+[!.937a] died -- <5>
+[!.1685] died -- <5>
+[+.e0f7] moved to [18, 13] -- <5>
+[!. 60d] cloned to [!.63e3] at [15, 10] -- <5>
+[!.13c7] added [!.63e3] at [15, 10] -- <5>
+Clone failed -- <5>
+[+. 95b] cloned to [+.e1bb] at [12, 3] -- <5>
+[>.b9ce] died -- <5>
+[!.e83d] cloned to [!.a096] at [6, 9] -- <5>
+[X.b015] cloned to [X.a247] at [12, 12] -- <5>
+[$.d05f] transformed into [X.a247] at [12, 12] -- <5>
+[$.d05f] died -- <5>
+[@.688b] moved to [17, 5] - (not able to push) -- <6>
+[M.f1b4] cloned to [M.8f72] at [2, 9] -- <6>
+[@.e36a] moved to [8, 12] goto [8, 12] -- <6>
+[@.5248] moved to [5, 4] - (not able to push) -- <6>
+[@.d96c] moved to [18, 9] - (not able to push) -- <6>
+[+.e0f7] moved to [17, 13] -- <6>
+[M.c4ce] moved to [17, 13] goto [17, 13] -- <6>
+[@.ce76] moved to [6, 5] - (not able to push) -- <6>
+[!.13c7] cloned to [!.b004] at [16, 9] -- <6>
+[^.6b76] moved to [16, 12] - (not able to push) -- <6>
+Clone failed -- <6>
+Clone failed -- <6>
+[@.30b2] moved to [11, 7] - (not able to push) -- <6>
+[!.e83d] moved to [5, 8] goto [2, 4] -- <6>
+[+.f4d2] moved to [10, 2] -- <6>
+[X.b015] cloned to [X.278e] at [4, 5] -- <6>
+[$.9f2a] transformed into [X.278e] at [4, 5] -- <6>
+[$.9f2a] died -- <6>
+Clone failed -- <7>
+[+.e0f7] moved to [17, 12] -- <7>
+[M.c4ce] moved to [17, 12] goto [17, 12] -- <7>
+[!.13c7] moved to [16, 9] goto [17, 9] -- <7>
+[M.6dd3] cloned to [M.c0d4] at [14, 2] -- <7>
+[X.845e] cloned to [X.ea47] at [25, 11] -- <7>
+Clone failed -- <7>
+Clone failed -- <7>
+[!.e83d] moved to [5, 7] goto [2, 4] -- <7>
+[+.f4d2] moved to [11, 2] -- <7>
+[+.e1bb] moved to [12, 4] -- <7>
+[@.688b] moved to [17, 4] - (not able to push) -- <8>
+Clone failed -- <8>
+[&.a16a] took [@.e36a] -- <8>
+[@.e36a] died -- <8>
+[@.5248] moved to [5, 5] - (not able to push) -- <8>
+[@.d96c] moved to [19, 9] - (not able to push) -- <8>
+[+.e0f7] moved to [18, 12] -- <8>
+[M.c4ce] moved to [18, 12] goto [18, 12] -- <8>
+[@.ce76] moved to [6, 6] - (not able to push) -- <8>
+[!.13c7] moved to [17, 9] goto [17, 9] -- <8>
+[^.6b76] moved to [17, 12] - (not able to push) -- <8>
+Clone failed -- <8>
+[X.845e] cloned to [X.58e4] at [27, 11] -- <8>
+[X.4367] cloned to [X.2524] at [27, 12] -- <8>
+[+. 95b] cloned to [+.121a] at [12, 3] -- <8>
+[@.30b2] moved to [11, 6] - (not able to push) -- <8>
+[!.e83d] moved to [4, 7] goto [2, 4] -- <8>
+[+.f4d2] moved to [11, 1] -- <8>
+[+.e1bb] died -- <8>
+Clone failed -- <9>
+[+.e0f7] moved to [19, 12] -- <9>
+[M.c4ce] moved to [19, 12] goto [19, 12] -- <9>
+[M.6dd3] cloned to [M.4810] at [15, 3] -- <9>
+[&.90e7] took [@.d96c] -- <9>
+[@.d96c] died -- <9>
+Clone failed -- <9>
+Clone failed -- <9>
+[O.911e] cloned to [O.9b76] at [27, 6] -- <9>
+[^.b39f] added [O.9b76] at [27, 6] -- <9>
+[+. 95b] cloned to [+.c313] at [11, 4] -- <9>
+[;.4a35] cloned to [;.e017] at [10, 6] -- <9>
+[@.30b2] added [;.e017] at [10, 6] -- <9>
+[X.7661] cloned to [X.afb6] at [21, 4] -- <9>
+[!.e83d] moved to [4, 6] goto [2, 4] -- <9>
+[@.688b] moved to [18, 4] - (not able to push) -- <10>
+Clone failed -- <10>
+[@.5248] moved to [4, 5] - (not able to push) -- <10>
+[+.e0f7] died -- <10>
+[@.ce76] moved to [7, 6] - (not able to push) -- <10>
+[^.6b76] moved to [16, 12] - (not able to push) -- <10>
+Clone failed -- <10>
+[+.6620] cloned to [+.177e] at [18, 9] -- <10>
+[&.90e7] added [+.177e] at [18, 9] -- <10>
+Clone failed -- <10>
+Clone failed -- <10>
+Clone failed -- <10>
+Clone failed -- <10>
+Clone failed -- <10>
+[!.e83d] moved to [4, 5] goto [2, 4] -- <10>
+[+.121a] moved to [13, 3] -- <10>
+Clone failed -- <11>
+Clone failed -- <11>
+[&.90e7] took [!.13c7] -- <11>
+[!.13c7] died -- <11>
+[X.845e] cloned to [X.8bbd] at [26, 12] -- <11>
+Clone failed -- <11>
+[+. 95b] cloned to [+.6ad7] at [12, 3] -- <11>
+[X.b015] cloned to [X.7720] at [11, 6] -- <11>
+[@.30b2] transformed into [X.7720] at [11, 6] -- <11>
+[@.30b2] died -- <11>
+[X.7661] cloned to [X.6417] at [20, 3] -- <11>
+[!.e83d] moved to [4, 4] goto [3, 4] -- <11>
+[X.4580] cloned to [X.2884] at [1, 1] -- <11>
+[X.9ed2] cloned to [X.aa64] at [1, 10] -- <11>
+Clone failed -- <11>
+Clone failed -- <11>
+[X. 41b] cloned to [X.38b9] at [7, 12] -- <11>
+[+.121a] died -- <11>
+Clone failed -- <11>
+[+.c313] moved to [12, 4] - (not able to push) -- <11>
+[@.688b] moved to [17, 4] - (not able to push) -- <12>
+Clone failed -- <12>
+[@.5248] moved to [3, 5] - (not able to push) -- <12>
+[@.ce76] moved to [7, 5] - (not able to push) -- <12>
+[^.6b76] moved to [16, 13] - (not able to push) -- <12>
+Clone failed -- <12>
+Clone failed -- <12>
+Clone failed -- <12>
+Clone failed -- <12>
+Clone failed -- <12>
+[!.e83d] moved to [3, 4] goto [3, 4] -- <12>
+[+.f4d2] moved to [12, 1] -- <12>
+[X.4580] cloned to [X.a413] at [1, 3] -- <12>
+[X.9ed2] cloned to [X.4714] at [2, 11] -- <12>
+[X.e011] cloned to [X.701e] at [2, 12] -- <12>
+[X.44d6] cloned to [X.4428] at [22, 2] -- <12>
+[X. 41b] cloned to [X.d507] at [8, 13] -- <12>
+[M.4810] cloned to [M.e6a1] at [15, 4] -- <12>
+[+.c313] took [O.a7bd] -- <12>
+[O.a7bd] died -- <12>
+[+.177e] moved to [18, 10] - (not able to push) -- <12>
+[M.f1b4] cloned to [M.125a] at [3, 8] -- <13>
+Clone failed -- <13>
+[&.90e7] took [!.f101] -- <13>
+[!.f101] died -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+[+.f4d2] died -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+Clone failed -- <13>
+[+.177e] took [O.8f78] -- <13>
+[O.8f78] died -- <13>
+[+.6ad7] moved to [12, 4] -- <13>
+[@.688b] moved to [18, 4] - (not able to push) -- <14>
+Clone failed -- <14>
+[@.5248] moved to [3, 6] - (not able to push) -- <14>
+[@.ce76] moved to [6, 5] - (not able to push) -- <14>
+[^.6b76] moved to [15, 13] - (not able to push) -- <14>
+Clone failed -- <14>
+[+.6620] cloned to [+. 3dc] at [19, 10] -- <14>
+[&.90e7] added [+. 3dc] at [19, 10] -- <14>
+Clone failed -- <14>
+[X.4367] cloned to [X.f4c7] at [28, 13] -- <14>
+[+. 95b] cloned to [+.f29d] at [12, 3] -- <14>
+[X.7661] cloned to [X.60f0] at [20, 5] -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+Clone failed -- <14>
+[+.6ad7] died -- <14>
+[M.e6a1] cloned to [M.d0bf] at [16, 4] -- <14>
+Clone failed -- <15>
+Clone failed -- <15>
+[&.90e7] took [!.63e3] -- <15>
+[!.63e3] died -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+[+. 95b] cloned to [+.92c2] at [11, 4] -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+Clone failed -- <15>
+[@.688b] moved to [17, 4] - (not able to push) -- <16>
+Clone failed -- <16>
+[@.5248] moved to [3, 7] - (not able to push) -- <16>
+[@.ce76] moved to [7, 5] - (not able to push) -- <16>
+Clone failed -- <16>
+[;.5a4c] moved to [17, 4] -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+[X.7661] cloned to [X.f439] at [19, 4] -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+Clone failed -- <16>
+[X.58e4] cloned to [X. 585] at [28, 11] -- <16>
+[X.2524] cloned to [X.7de1] at [27, 13] -- <16>
+Clone failed -- <16>
+[+.c313] cloned to [+.77f3] at [13, 4] -- <16>
+Clone failed -- <16>
+[M.e6a1] cloned to [M.f91e] at [15, 5] -- <16>
+[+. 3dc] moved to [18, 10] - (not able to push) -- <16>
+[+.f29d] moved to [13, 3] -- <16>
+Clone failed -- <16>
+Clone failed -- <17>
+Clone failed -- <17>
+[;.5a4c] moved to [17, 5] -- <17>
+[&.90e7] took [!.b004] -- <17>
+[!.b004] died -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+Clone failed -- <17>
+[+.c313] cloned to [+.fbad] at [12, 3] -- <17>
+[+.177e] cloned to [+.1134] at [18, 9] -- <17>
+[M.e6a1] cloned to [M.19cd] at [14, 4] -- <17>
+[+. 3dc] took [O.a500] -- <17>
+[O.a500] died -- <17>
+[+.f29d] died -- <17>
+Clone failed -- <17>
+[+.92c2] moved to [11, 5] -- <17>
+[@.688b] moved to [17, 5] - (not able to push) -- <18>
+Clone failed -- <18>
+[^.fdc7] moved to [12, 8] - (not able to push) -- <18>
+[@.5248] moved to [2, 7] - (not able to push) -- <18>
+[^. c38] moved to [16, 7] - (not able to push) -- <18>
+[@.ce76] moved to [7, 6] - (not able to push) -- <18>
+Clone failed -- <18>
+[;.5a4c] moved to [18, 5] -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+[+. 95b] cloned to [+.fad2] at [11, 2] -- <18>
+[X.b015] cloned to [X.801a] at [16, 3] -- <18>
+[$.37df] transformed into [X.801a] at [16, 3] -- <18>
+[$.37df] died -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+[M.4810] cloned to [M.abfc] at [14, 3] -- <18>
+[+.c313] cloned to [+.e928] at [11, 4] -- <18>
+Clone failed -- <18>
+[X.8bbd] cloned to [X.339d] at [25, 12] -- <18>
+[X.2884] cloned to [X.388f] at [2, 1] -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+Clone failed -- <18>
+[+. 3dc] cloned to [+.de18] at [17, 10] -- <18>
+[M.d0bf] cloned to [M.1558] at [16, 5] -- <18>
+[+.92c2] died -- <18>
+[+.77f3] moved to [12, 4] -- <18>
+Clone failed -- <19>
+Clone failed -- <19>
+[;.5a4c] moved to [17, 5] -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+[X.44d6] cloned to [X.c1dc] at [21, 1] -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+[+.177e] cloned to [+.eef0] at [18, 11] -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+[X.38b9] cloned to [X.5b89] at [6, 12] -- <19>
+[X.a413] cloned to [X.1c93] at [2, 3] -- <19>
+[X.4714] cloned to [X.de57] at [1, 11] -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+Clone failed -- <19>
+[+.77f3] died -- <19>
+[+.fbad] moved to [13, 3] -- <19>
+[+.1134] moved to [19, 9] -- <19>
+[@.688b] moved to [17, 6] - (not able to push) -- <20>
+Clone failed -- <20>
+[^.fdc7] moved to [12, 9] - (not able to push) -- <20>
+[@.5248] moved to [3, 7] - (not able to push) -- <20>
+[^. c38] moved to [15, 7] - (not able to push) -- <20>
+[@.ce76] moved to [7, 5] - (not able to push) -- <20>
+Clone failed -- <20>
+[;.5a4c] moved to [16, 5] -- <20>
+[&.90e7] cloned to [&.f5ee] at [19, 8] -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+[+. 95b] cloned to [+.5811] at [10, 3] -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+[+.c313] cloned to [+.9bdd] at [13, 4] -- <20>
+[+.177e] cloned to [+.d29e] at [18, 9] -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+[X.701e] cloned to [X.1d64] at [2, 13] -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+Clone failed -- <20>
+[M.d0bf] cloned to [M.6806] at [17, 4] -- <20>
+[+.fbad] died -- <20>
+[+.1134] moved to [19, 8] -- <20>
+[+.fad2] moved to [11, 1] -- <20>
+[+.e928] moved to [10, 4] -- <20>
+[+.de18] moved to [17, 9] -- <20>
+Clone failed -- <21>
+Clone failed -- <21>
+[&.90e7] cloned to [&.e970] at [19, 10] -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+[X.b015] cloned to [X.8803] at [18, 4] -- <21>
+[$.9f86] transformed into [X.8803] at [18, 4] -- <21>
+[$.9f86] died -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+[X.701e] cloned to [X.c2a0] at [3, 12] -- <21>
+[X.d507] cloned to [X. 7ba] at [9, 13] -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+Clone failed -- <21>
+[+.1134] moved to [18, 8] -- <21>
+[+.e928] died -- <21>
+[+.de18] moved to [17, 8] -- <21>
+[+.eef0] moved to [19, 11] -- <21>
+[@.688b] moved to [17, 5] - (not able to push) -- <22>
+Clone failed -- <22>
+[@.5248] moved to [4, 7] - (not able to push) -- <22>
+[^. c38] moved to [16, 7] - (not able to push) -- <22>
+[@.ce76] moved to [7, 4] - (not able to push) -- <22>
+Clone failed -- <22>
+[;.5a4c] moved to [16, 6] -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+[+.177e] cloned to [+.d4ce] at [17, 10] -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+[X.38b9] cloned to [X.f1cb] at [7, 11] -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+Clone failed -- <22>
+[+.1134] moved to [17, 8] -- <22>
+[+.fad2] moved to [11, 2] -- <22>
+[+.de18] moved to [17, 9] -- <22>
+[+.eef0] died -- <22>
+[+.5811] moved to [10, 4] -- <22>
+[+.9bdd] moved to [12, 4] -- <22>
+[+.d29e] moved to [18, 10] -- <22>
+Clone failed -- <23>
+Clone failed -- <23>
+[;.5a4c] moved to [16, 7] -- <23>
+[&.90e7] cloned to [&.f242] at [18, 9] -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+[!. 60d] cloned to [!.f3d5] at [6, 8] -- <23>
+[!.1f6d] added [!.f3d5] at [6, 8] -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+[+.c313] cloned to [+.e7b3] at [12, 3] -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+Clone failed -- <23>
+[+.1134] moved to [17, 7] -- <23>
+[+.fad2] moved to [12, 2] -- <23>
+[+.de18] moved to [17, 8] -- <23>
+[+.5811] died -- <23>
+[+.9bdd] died -- <23>
+[+.d29e] moved to [18, 9] -- <23>
+[@.688b] moved to [17, 6] - (not able to push) -- <24>
+Clone failed -- <24>
+[@.5248] moved to [4, 8] - (not able to push) -- <24>
+[^. c38] moved to [15, 7] - (not able to push) -- <24>
+[@.ce76] moved to [7, 5] - (not able to push) -- <24>
+Clone failed -- <24>
+[;.5a4c] moved to [16, 8] -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+[+. 95b] cloned to [+.3f46] at [11, 4] -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+[!.1f6d] cloned to [!.2c77] at [5, 9] -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+[+. 3dc] cloned to [+.d730] at [18, 11] -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+Clone failed -- <24>
+[+.1134] moved to [16, 7] -- <24>
+[+.fad2] died -- <24>
+[+.de18] moved to [16, 8] -- <24>
+[+.d29e] moved to [18, 10] -- <24>
+[+.d4ce] moved to [18, 10] -- <24>
+Clone failed -- <25>
+Clone failed -- <25>
+[;.5a4c] moved to [15, 8] -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+[!.1f6d] moved to [5, 7] goto [2, 4] -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+Clone failed -- <25>
+[+.1134] died -- <25>
+Clone failed -- <25>
+[+.de18] died -- <25>
+[+.d29e] moved to [19, 10] -- <25>
+[+.d4ce] moved to [17, 10] -- <25>
+[+.e7b3] moved to [13, 3] -- <25>
+[@.688b] moved to [18, 6] - (not able to push) -- <26>
+Clone failed -- <26>
+[@.5248] moved to [5, 8] - (not able to push) -- <26>
+[^. c38] moved to [15, 8] - (not able to push) -- <26>
+[@.ce76] moved to [7, 4] - (not able to push) -- <26>
+Clone failed -- <26>
+[;.5a4c] moved to [14, 8] -- <26>
+[&.90e7] cloned to [&.b9e2] at [20, 9] -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+[+. 95b] cloned to [+. ca3] at [12, 3] -- <26>
+Clone failed -- <26>
+[!.f67f] cloned to [!.8954] at [4, 8] -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+[!.1f6d] moved to [5, 6] goto [2, 4] -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+[X.aa64] cloned to [X.7146] at [1, 9] -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+Clone failed -- <26>
+[+.d29e] moved to [19, 11] -- <26>
+[+.d4ce] moved to [16, 10] -- <26>
+[+.e7b3] died -- <26>
+[+.3f46] moved to [10, 4] -- <26>
+[+.d730] moved to [17, 11] -- <26>
+Clone failed -- <27>
+Clone failed -- <27>
+[;.5a4c] moved to [14, 7] -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+[+. 95b] cloned to [+.eb68] at [10, 3] -- <27>
+Clone failed -- <27>
+[!.f67f] moved to [4, 8] goto [2, 4] -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+[!.1f6d] moved to [5, 5] goto [2, 4] -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+[+.c313] cloned to [+.2f86] at [11, 4] -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+[+. 3dc] cloned to [+.1078] at [17, 10] -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+Clone failed -- <27>
+[+.d29e] died -- <27>
+Clone failed -- <27>
+[+.d4ce] moved to [15, 10] -- <27>
+[+.3f46] died -- <27>
+[!.2c77] cloned to [!.8104] at [5, 10] -- <27>
+[+.d730] moved to [18, 11] -- <27>
+[@.688b] moved to [19, 6] - (not able to push) -- <28>
+Clone failed -- <28>
+[@.5248] moved to [6, 8] - (not able to push) -- <28>
+[^. c38] moved to [15, 7] - (not able to push) -- <28>
+[@.ce76] moved to [7, 3] - (not able to push) -- <28>
+Clone failed -- <28>
+[;.5a4c] moved to [14, 8] -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+[!.f67f] moved to [4, 7] goto [2, 4] -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+[!.1f6d] moved to [5, 4] goto [2, 4] -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+[+.c313] cloned to [+.b62c] at [13, 4] -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+[X.a413] cloned to [X.2ea1] at [1, 4] -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+Clone failed -- <28>
+[X.c2a0] cloned to [X.77d2] at [4, 12] -- <28>
+[+.d4ce] moved to [16, 10] -- <28>
+[!.f3d5] cloned to [!.7805] at [6, 7] -- <28>
+[!.2c77] moved to [4, 9] goto [2, 4] -- <28>
+[+.d730] moved to [18, 10] -- <28>
+[+. ca3] moved to [12, 4] -- <28>
+Clone failed -- <29>
+Clone failed -- <29>
+[;.5a4c] moved to [15, 8] -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+[+. 95b] cloned to [+.dae8] at [11, 2] -- <29>
+Clone failed -- <29>
+[!.f67f] moved to [4, 6] goto [2, 4] -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+[!.1f6d] moved to [4, 4] goto [2, 4] -- <29>
+[!.a096] moved to [6, 8] goto [2, 4] -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+[X. 585] cloned to [X.85a4] at [28, 10] -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+[X.5b89] cloned to [X.a575] at [6, 11] -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+Clone failed -- <29>
+[+.d4ce] moved to [16, 9] -- <29>
+[!.f3d5] moved to [5, 8] goto [2, 4] -- <29>
+[!.2c77] moved to [4, 8] goto [2, 4] -- <29>
+[+.d730] moved to [19, 10] -- <29>
+[+. ca3] died -- <29>
+Clone failed -- <29>
+[+.eb68] moved to [11, 3] -- <29>
+[+.2f86] moved to [11, 5] -- <29>
+[+.1078] moved to [17, 11] -- <29>
+[@.688b] moved to [19, 5] - (not able to push) -- <30>
+Clone failed -- <30>
+[@.5248] moved to [6, 7] - (not able to push) -- <30>
+[^. c38] moved to [14, 7] - (not able to push) -- <30>
+[@.ce76] moved to [7, 4] - (not able to push) -- <30>
+Clone failed -- <30>
+[;.5a4c] moved to [15, 9] -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+[+. 95b] cloned to [+.5140] at [11, 4] -- <30>
+Clone failed -- <30>
+[!.f67f] moved to [4, 5] goto [2, 4] -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+[!.1f6d] moved to [3, 4] goto [3, 4] -- <30>
+[!.a096] moved to [5, 8] goto [2, 4] -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+Clone failed -- <30>
+[X.1d64] cloned to [X.c3a4] at [3, 13] -- <30>
+Clone failed -- <30>
+[+.d4ce] moved to [16, 8] -- <30>
+[!.f3d5] moved to [5, 7] goto [2, 4] -- <30>
+[!.2c77] moved to [4, 7] goto [2, 4] -- <30>
+[+.d730] moved to [20, 10] -- <30>
+[!.8954] moved to [4, 7] goto [2, 4] -- <30>
+[+.eb68] moved to [11, 4] -- <30>
+[+.2f86] died -- <30>
+[+.1078] moved to [17, 10] -- <30>
+[+.b62c] moved to [13, 3] -- <30>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+[+. 95b] cloned to [+.bad3] at [12, 3] -- <31>
+Clone failed -- <31>
+[!.f67f] moved to [3, 5] goto [3, 4] -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+[!.a096] moved to [4, 8] goto [2, 4] -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+[+.177e] cloned to [+.27cd] at [18, 11] -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+Clone failed -- <31>
+[+.d4ce] died -- <31>
+[!.f3d5] moved to [4, 7] goto [2, 4] -- <31>
+[!.2c77] moved to [3, 7] goto [2, 4] -- <31>
+[+.d730] moved to [21, 10] -- <31>
+[!.8954] moved to [4, 6] goto [2, 4] -- <31>
+[+.eb68] died -- <31>
+[+.1078] moved to [18, 10] -- <31>
+[+.b62c] died -- <31>
+[!.7805] cloned to [!.d5ca] at [7, 7] -- <31>
+[+.dae8] moved to [11, 3] -- <31>
+[@.688b] moved to [19, 6] - (not able to push) -- <32>
+Clone failed -- <32>
+[@.5248] moved to [6, 8] - (not able to push) -- <32>
+[^. c38] moved to [15, 7] - (not able to push) -- <32>
+[@.ce76] moved to [7, 5] - (not able to push) -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+[+. 95b] cloned to [+.c52d] at [11, 2] -- <32>
+Clone failed -- <32>
+[!.f67f] moved to [3, 4] goto [3, 4] -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+[!.a096] moved to [3, 8] goto [2, 4] -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+Clone failed -- <32>
+[!.f3d5] moved to [3, 7] goto [2, 4] -- <32>
+[!.2c77] moved to [3, 6] goto [2, 4] -- <32>
+[+.d730] moved to [20, 10] -- <32>
+[!.8954] moved to [4, 5] goto [2, 4] -- <32>
+[+.1078] moved to [17, 10] -- <32>
+[!.7805] moved to [6, 6] goto [2, 4] -- <32>
+[+.dae8] moved to [12, 3] -- <32>
+[+.5140] moved to [10, 4] -- <32>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+[+. 95b] cloned to [+.6ddf] at [10, 3] -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+[!.a096] moved to [3, 7] goto [2, 4] -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+Clone failed -- <33>
+[!.f3d5] moved to [2, 7] goto [2, 4] -- <33>
+[!.2c77] moved to [3, 5] goto [2, 4] -- <33>
+[+.d730] moved to [20, 9] -- <33>
+[!.8954] moved to [4, 4] goto [3, 4] -- <33>
+Clone failed -- <33>
+[+.1078] moved to [17, 11] -- <33>
+[!.7805] moved to [6, 5] goto [2, 4] -- <33>
+[+.dae8] died -- <33>
+[+.5140] died -- <33>
+[+.bad3] moved to [12, 4] -- <33>
+[+.27cd] moved to [18, 12] -- <33>
+[!. 60d] cloned to [!. 453] at [8, 7] -- <33>
+[!.d5ca] added [!. 453] at [8, 7] -- <33>
+[@.688b] moved to [19, 5] - (not able to push) -- <34>
+Clone failed -- <34>
+[@.5248] moved to [6, 7] - (not able to push) -- <34>
+[^. c38] moved to [15, 6] - (not able to push) -- <34>
+[@.ce76] moved to [7, 4] - (not able to push) -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+[+. 95b] cloned to [+.d42e] at [11, 4] -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+[!.a096] moved to [3, 6] goto [2, 4] -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+[+.c313] cloned to [+.5ee1] at [12, 3] -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+Clone failed -- <34>
+[X. 7ba] cloned to [X.7f6a] at [10, 13] -- <34>
+[!.f3d5] moved to [2, 6] goto [2, 4] -- <34>
+[!.2c77] moved to [3, 4] goto [3, 4] -- <34>
+[+.d730] moved to [19, 9] -- <34>
+[!.8954] moved to [3, 4] goto [3, 4] -- <34>
+Clone failed -- <34>
+[+.1078] moved to [18, 11] -- <34>
+[!.7805] moved to [5, 5] goto [2, 4] -- <34>
+[+.bad3] died -- <34>
+[+.27cd] moved to [18, 13] -- <34>
+[!.d5ca] cloned to [!.768d] at [7, 8] -- <34>
+[+.c52d] moved to [10, 2] -- <34>
+[M.f1b4] cloned to [M.f785] at [4, 9] -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+[!.a096] moved to [3, 5] goto [2, 4] -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+[+. 3dc] cloned to [+.74b7] at [17, 10] -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+Clone failed -- <35>
+[!.f3d5] moved to [2, 5] goto [2, 4] -- <35>
+[+.d730] moved to [19, 8] -- <35>
+[X.7146] cloned to [X. 89f] at [1, 8] -- <35>
+[+.1078] moved to [18, 12] -- <35>
+Clone failed -- <35>
+[X.77d2] cloned to [X.4ed0] at [4, 11] -- <35>
+[!.7805] moved to [5, 4] goto [2, 4] -- <35>
+[!.d5ca] moved to [7, 6] goto [2, 4] -- <35>
+[+.c52d] moved to [9, 2] -- <35>
+[+.6ddf] moved to [9, 3] -- <35>
+[@.688b] moved to [19, 6] - (not able to push) -- <36>
+Clone failed -- <36>
+[@.5248] moved to [5, 7] - (not able to push) -- <36>
+[^. c38] moved to [15, 5] - (not able to push) -- <36>
+[@.ce76] moved to [7, 5] - (not able to push) -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+[!.a096] moved to [3, 4] goto [3, 4] -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+[+.c313] cloned to [+.f20c] at [13, 4] -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+Clone failed -- <36>
+[!.f3d5] moved to [2, 4] goto [3, 4] -- <36>
+[+.d730] moved to [20, 8] -- <36>
+Clone failed -- <36>
+[+.1078] moved to [17, 12] -- <36>
+Clone failed -- <36>
+[X.77d2] cloned to [X.1e29] at [4, 13] -- <36>
+[!.7805] moved to [4, 4] goto [2, 4] -- <36>
+Clone failed -- <36>
+[+.27cd] moved to [18, 12] -- <36>
+[!.d5ca] moved to [7, 5] goto [2, 4] -- <36>
+[+.c52d] moved to [8, 2] -- <36>
+[+.6ddf] moved to [8, 3] -- <36>
+[+.d42e] moved to [11, 5] -- <36>
+[+.5ee1] moved to [13, 3] -- <36>
+[!. 60d] cloned to [!.2d5a] at [6, 8] -- <36>
+[!.768d] added [!.2d5a] at [6, 8] -- <36>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[+. 95b] cloned to [+. f64] at [11, 2] -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[+.c313] cloned to [+.3828] at [11, 4] -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[X.388f] cloned to [X.2335] at [3, 1] -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[!.f3d5] moved to [3, 4] goto [3, 4] -- <37>
+[+.d730] moved to [21, 8] -- <37>
+Clone failed -- <37>
+[+.1078] moved to [18, 12] -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[!.7805] moved to [3, 4] goto [3, 4] -- <37>
+Clone failed -- <37>
+Clone failed -- <37>
+[+.27cd] moved to [17, 12] -- <37>
+[!.d5ca] moved to [7, 4] goto [2, 4] -- <37>
+[+.c52d] moved to [8, 3] -- <37>
+[+.6ddf] died -- <37>
+[+.d42e] died -- <37>
+[+.5ee1] died -- <37>
+[!.768d] cloned to [!.a5b4] at [7, 7] -- <37>
+[+.74b7] moved to [16, 10] -- <37>
+[@.688b] moved to [19, 5] - (not able to push) -- <38>
+Clone failed -- <38>
+[@.5248] moved to [4, 7] - (not able to push) -- <38>
+[^. c38] moved to [15, 4] - (not able to push) -- <38>
+[@.ce76] moved to [7, 4] - (not able to push) -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+[+. 3dc] cloned to [+.4de0] at [18, 11] -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+[+.d730] moved to [21, 9] -- <38>
+Clone failed -- <38>
+[+.1078] moved to [18, 11] -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+Clone failed -- <38>
+[+.27cd] moved to [18, 12] -- <38>
+Clone failed -- <38>
+[+.c52d] died -- <38>
+[!.768d] moved to [7, 7] goto [2, 4] -- <38>
+[+.74b7] moved to [17, 10] -- <38>
+[+.f20c] moved to [13, 3] -- <38>
+[!. 60d] cloned to [!.f326] at [6, 7] -- <38>
+[!.2d5a] added [!.f326] at [6, 7] -- <38>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+[+. 95b] cloned to [+.26e1] at [12, 3] -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+[+.d730] moved to [20, 9] -- <39>
+Clone failed -- <39>
+[+.1078] moved to [18, 12] -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+Clone failed -- <39>
+[+.27cd] moved to [19, 12] -- <39>
+[!.768d] moved to [7, 6] goto [2, 4] -- <39>
+[+.74b7] moved to [16, 10] -- <39>
+[+.f20c] died -- <39>
+[!.2d5a] cloned to [!.bd7a] at [6, 9] -- <39>
+[+. f64] moved to [11, 1] -- <39>
+[+.3828] moved to [10, 4] -- <39>
+[@.688b] moved to [18, 5] - (not able to push) -- <40>
+Clone failed -- <40>
+[@.5248] moved to [3, 7] - (not able to push) -- <40>
+[^. c38] moved to [15, 3] - (not able to push) -- <40>
+[@.ce76] moved to [7, 5] - (not able to push) -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+[+.d730] moved to [19, 9] -- <40>
+Clone failed -- <40>
+[+.1078] moved to [18, 11] -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+Clone failed -- <40>
+[+.27cd] died -- <40>
+[!. 60d] cloned to [!.63a6] at [7, 3] -- <40>
+[!.d5ca] added [!.63a6] at [7, 3] -- <40>
+[!.768d] moved to [6, 6] goto [2, 4] -- <40>
+[+.74b7] moved to [16, 11] -- <40>
+[!.2d5a] moved to [5, 8] goto [2, 4] -- <40>
+[+. f64] moved to [10, 1] -- <40>
+[+.3828] died -- <40>
+[+.4de0] moved to [19, 11] -- <40>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+[+.d730] moved to [18, 9] -- <41>
+Clone failed -- <41>
+[+.1078] moved to [19, 11] -- <41>
+[X.2ea1] cloned to [X.c646] at [1, 5] -- <41>
+Clone failed -- <41>
+[X.85a4] cloned to [X.21c8] at [28, 9] -- <41>
+Clone failed -- <41>
+Clone failed -- <41>
+[!.768d] moved to [5, 6] goto [2, 4] -- <41>
+[+.74b7] died -- <41>
+[!.2d5a] moved to [4, 8] goto [2, 4] -- <41>
+[+. f64] moved to [11, 1] -- <41>
+[+.4de0] died -- <41>
+[+.26e1] moved to [13, 3] -- <41>
+[@.688b] moved to [18, 6] - (not able to push) -- <42>
+Clone failed -- <42>
+[@.5248] moved to [3, 8] - (not able to push) -- <42>
+[^. c38] moved to [16, 3] - (not able to push) -- <42>
+[@.ce76] moved to [7, 4] - (not able to push) -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+[+. 95b] cloned to [+.9439] at [11, 4] -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+[+.c313] cloned to [+.7afe] at [12, 3] -- <42>
+[+.177e] cloned to [+.1d35] at [18, 11] -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+[+.d730] moved to [19, 9] -- <42>
+Clone failed -- <42>
+[+.1078] died -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+Clone failed -- <42>
+[!.768d] moved to [5, 5] goto [2, 4] -- <42>
+[X. 89f] cloned to [X.26e3] at [2, 8] -- <42>
+[X.4ed0] cloned to [X.ce49] at [4, 10] -- <42>
+[!.2d5a] moved to [4, 7] goto [2, 4] -- <42>
+[+. f64] moved to [10, 1] -- <42>
+[+.26e1] died -- <42>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+[+. 3dc] cloned to [+.7981] at [17, 10] -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+[+.d730] moved to [19, 8] -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+[!.768d] moved to [4, 5] goto [2, 4] -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+Clone failed -- <43>
+[!.2d5a] moved to [3, 7] goto [2, 4] -- <43>
+[!. 60d] cloned to [!.cfca] at [8, 3] -- <43>
+[!.63a6] added [!.cfca] at [8, 3] -- <43>
+[@.688b] moved to [18, 7] - (not able to push) -- <44>
+Clone failed -- <44>
+[@.5248] moved to [4, 8] - (not able to push) -- <44>
+[^. c38] moved to [16, 2] - (not able to push) -- <44>
+[@.ce76] moved to [8, 4] - (not able to push) -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[+. 95b] cloned to [+.f15d] at [11, 2] -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[+.c313] cloned to [+.c28b] at [13, 4] -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[X.c1dc] cloned to [X.f542] at [21, 2] -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[+.d730] moved to [20, 8] -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[!.d5ca] cloned to [!.d1f8] at [7, 5] -- <44>
+[!.768d] moved to [3, 5] goto [3, 4] -- <44>
+Clone failed -- <44>
+Clone failed -- <44>
+[X.1e29] cloned to [X.bb67] at [5, 13] -- <44>
+[!.2d5a] moved to [3, 6] goto [2, 4] -- <44>
+[+. f64] moved to [9, 1] -- <44>
+[!.63a6] cloned to [!.3939] at [6, 3] -- <44>
+[+.9439] moved to [10, 4] -- <44>
+[+.7afe] moved to [12, 4] -- <44>
+[+.1d35] moved to [19, 11] -- <44>
+Clone failed -- <45>
+Clone failed -- <45>
+[&.30a7] took [@.ce76] -- <45>
+[@.ce76] died -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+[+.d730] moved to [19, 8] -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+Clone failed -- <45>
+[!.768d] moved to [3, 4] goto [3, 4] -- <45>
+Clone failed -- <45>
+[X.4ed0] cloned to [X.a30e] at [5, 11] -- <45>
+Clone failed -- <45>
+[!.2d5a] moved to [2, 6] goto [2, 4] -- <45>
+[+.9439] died -- <45>
+[+.7afe] died -- <45>
+[+.1d35] died -- <45>
+[+.7981] moved to [17, 11] -- <45>
+[!. 60d] cloned to [!.f086] at [8, 2] -- <45>
+[!.cfca] added [!.f086] at [8, 2] -- <45>
+[@.688b] moved to [18, 6] - (not able to push) -- <46>
+Clone failed -- <46>
+[@.5248] moved to [4, 9] - (not able to push) -- <46>
+[^. c38] moved to [17, 2] - (not able to push) -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+[+. 95b] cloned to [+.7feb] at [12, 3] -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+[+.177e] cloned to [+.91cb] at [18, 11] -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+[+.d730] moved to [19, 9] -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+Clone failed -- <46>
+[!.2d5a] moved to [2, 5] goto [2, 4] -- <46>
+[+.7981] moved to [16, 11] -- <46>
+Clone failed -- <46>
+[+.f15d] moved to [10, 2] -- <46>
+[+.c28b] moved to [13, 3] -- <46>
+Clone failed -- <47>
+Clone failed -- <47>
+[&.30a7] took [!.f67f] -- <47>
+[!.f67f] died -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+[+. 95b] cloned to [+.5f31] at [11, 4] -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+[+.d730] moved to [18, 9] -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+[X. 89f] cloned to [X.351c] at [1, 7] -- <47>
+Clone failed -- <47>
+Clone failed -- <47>
+[!.2d5a] moved to [3, 5] goto [3, 4] -- <47>
+[+. f64] moved to [9, 2] -- <47>
+[+.7981] died -- <47>
+[+.f15d] moved to [11, 2] -- <47>
+[+.c28b] died -- <47>
+[@.688b] moved to [18, 5] - (not able to push) -- <48>
+Clone failed -- <48>
+[@.5248] moved to [4, 8] - (not able to push) -- <48>
+[^. c38] moved to [17, 3] - (not able to push) -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+[+. 95b] cloned to [+.844b] at [10, 3] -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+[+. 3dc] cloned to [+.86c6] at [17, 10] -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+[+.d730] moved to [19, 9] -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+[!.2d5a] moved to [3, 4] goto [3, 4] -- <48>
+[+. f64] moved to [10, 2] -- <48>
+Clone failed -- <48>
+Clone failed -- <48>
+[+.f15d] moved to [11, 1] -- <48>
+[+.7feb] moved to [12, 2] -- <48>
+[+.91cb] moved to [18, 10] -- <48>
+Clone failed -- <49>
+Clone failed -- <49>
+[&.30a7] took [!.e83d] -- <49>
+[!.e83d] died -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+[+. 95b] cloned to [+.3b7c] at [11, 2] -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+[+.177e] cloned to [+.eee7] at [18, 11] -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+[+.d730] moved to [18, 9] -- <49>
+Clone failed -- <49>
+[!.8104] moved to [4, 10] goto [2, 4] -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+[+. f64] moved to [9, 2] -- <49>
+Clone failed -- <49>
+Clone failed -- <49>
+[X.26e3] cloned to [X.c782] at [2, 7] -- <49>
+[+.f15d] moved to [12, 1] -- <49>
+[+.7feb] died -- <49>
+[+.91cb] moved to [19, 10] -- <49>
+[+.5f31] moved to [12, 4] -- <49>
+[@.688b] moved to [18, 4] - (not able to push) -- <50>
+Clone failed -- <50>
+[@.5248] moved to [4, 9] - (not able to push) -- <50>
+[^. c38] moved to [17, 2] - (not able to push) -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+[+. 95b] cloned to [+.1681] at [11, 4] -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+[+.d730] moved to [18, 8] -- <50>
+Clone failed -- <50>
+[!.8104] moved to [3, 10] goto [2, 4] -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+[+. f64] moved to [9, 1] -- <50>
+[X.c646] cloned to [X.3b87] at [2, 5] -- <50>
+Clone failed -- <50>
+Clone failed -- <50>
+[+.f15d] died -- <50>
+[+.91cb] moved to [19, 9] -- <50>
+[+.5f31] died -- <50>
+[+.844b] moved to [10, 2] -- <50>
+[+.86c6] moved to [16, 10] -- <50>
+Clone failed -- <51>
+Clone failed -- <51>
+[&.30a7] took [!.1f6d] -- <51>
+[!.1f6d] died -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+[+.c313] cloned to [+.7513] at [12, 3] -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+[+. 3dc] cloned to [+.d65e] at [17, 10] -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+[+.d730] moved to [19, 8] -- <51>
+Clone failed -- <51>
+[!.8104] moved to [3, 9] goto [2, 4] -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+[+. f64] moved to [8, 1] -- <51>
+Clone failed -- <51>
+[X.21c8] cloned to [X.5ad1] at [27, 9] -- <51>
+Clone failed -- <51>
+Clone failed -- <51>
+[+.91cb] moved to [18, 9] -- <51>
+[+.844b] moved to [10, 3] -- <51>
+[+.86c6] moved to [17, 10] -- <51>
+[+.3b7c] moved to [12, 2] -- <51>
+[+.eee7] moved to [18, 12] -- <51>
+[@.688b] moved to [18, 5] - (not able to push) -- <52>
+Clone failed -- <52>
+[@.5248] moved to [4, 8] - (not able to push) -- <52>
+[^. c38] moved to [18, 2] - (not able to push) -- <52>
+Clone failed -- <52>
+[+.6620] cloned to [+.82d1] at [8, 5] -- <52>
+[&.30a7] added [+.82d1] at [8, 5] -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+[+.d730] moved to [19, 7] -- <52>
+Clone failed -- <52>
+[!.8104] moved to [2, 9] goto [2, 4] -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+[X.c646] cloned to [X.a4e9] at [1, 6] -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+Clone failed -- <52>
+[+.91cb] moved to [18, 8] -- <52>
+[+.844b] moved to [10, 4] -- <52>
+[+.86c6] moved to [16, 10] -- <52>
+[+.3b7c] died -- <52>
+[+.eee7] moved to [17, 12] -- <52>
+[+.1681] moved to [11, 5] -- <52>
+Clone failed -- <53>
+Clone failed -- <53>
+[&.30a7] took [!.a096] -- <53>
+[!.a096] died -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+[+. 95b] cloned to [+.975a] at [11, 4] -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+[+. 3dc] cloned to [+.c8bc] at [18, 11] -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+[+.d730] moved to [18, 7] -- <53>
+Clone failed -- <53>
+[!.8104] moved to [2, 8] goto [2, 4] -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+[+. f64] moved to [8, 2] -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+Clone failed -- <53>
+[+.91cb] moved to [17, 8] -- <53>
+[+.844b] died -- <53>
+[+.86c6] moved to [17, 10] -- <53>
+[+.eee7] moved to [17, 11] -- <53>
+[+.1681] died -- <53>
+[+.7513] moved to [12, 2] -- <53>
+[+.d65e] moved to [17, 9] -- <53>
+[@.688b] moved to [18, 4] - (not able to push) -- <54>
+Clone failed -- <54>
+[@.5248] moved to [3, 8] - (not able to push) -- <54>
+[^. c38] moved to [18, 1] - (not able to push) -- <54>
+Clone failed -- <54>
+[+.6620] cloned to [+.5661] at [9, 4] -- <54>
+[&.30a7] added [+.5661] at [9, 4] -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+[+. 95b] cloned to [+.1ac9] at [10, 3] -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+[+.c313] cloned to [+.4c87] at [12, 3] -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+[+.d730] moved to [17, 7] -- <54>
+Clone failed -- <54>
+[!.8104] moved to [2, 7] goto [2, 4] -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+[+. f64] moved to [7, 2] -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+Clone failed -- <54>
+[+.91cb] moved to [17, 7] -- <54>
+[+.86c6] moved to [17, 11] -- <54>
+[+.eee7] moved to [16, 11] -- <54>
+[+.7513] died -- <54>
+[+.d65e] moved to [17, 8] -- <54>
+[+.82d1] moved to [9, 5] -- <54>
+Clone failed -- <55>
+Clone failed -- <55>
+[&.30a7] took [!.f3d5] -- <55>
+[!.f3d5] died -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+[+.c313] cloned to [+.5289] at [13, 4] -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+[+.d730] moved to [17, 6] -- <55>
+Clone failed -- <55>
+[!.8104] moved to [2, 6] goto [2, 4] -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+[+. f64] moved to [7, 1] -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+Clone failed -- <55>
+[+.91cb] moved to [16, 7] -- <55>
+[+.86c6] moved to [16, 11] -- <55>
+[+.eee7] died -- <55>
+[+.d65e] moved to [16, 8] -- <55>
+[+.82d1] moved to [9, 4] -- <55>
+[+.975a] moved to [11, 3] -- <55>
+[+.c8bc] moved to [18, 10] -- <55>
+[@.688b] moved to [18, 3] - (not able to push) -- <56>
+Clone failed -- <56>
+[@.5248] moved to [2, 8] - (not able to push) -- <56>
+[^. c38] moved to [19, 1] - (not able to push) -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+[+. 95b] cloned to [+.7131] at [11, 4] -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+[+.d730] moved to [18, 6] -- <56>
+Clone failed -- <56>
+[!.8104] moved to [2, 5] goto [2, 4] -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+[+. f64] moved to [8, 1] -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+Clone failed -- <56>
+[+.91cb] died -- <56>
+[+.86c6] died -- <56>
+[+.d65e] died -- <56>
+[+.82d1] moved to [9, 3] -- <56>
+[+.975a] moved to [11, 2] -- <56>
+[+.c8bc] moved to [19, 10] -- <56>
+[+.5661] moved to [8, 4] -- <56>
+[+.1ac9] moved to [10, 2] -- <56>
+[+.4c87] moved to [13, 3] -- <56>
+Clone failed -- <57>
+Clone failed -- <57>
+[&.30a7] took [!.2c77] -- <57>
+[!.2c77] died -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+[+. 95b] cloned to [+.3dbe] at [10, 3] -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+[+.d730] died -- <57>
+Clone failed -- <57>
+[!.8104] moved to [3, 5] goto [3, 4] -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+[+. f64] moved to [8, 2] -- <57>
+Clone failed -- <57>
+[X.21c8] cloned to [X.9172] at [28, 8] -- <57>
+Clone failed -- <57>
+Clone failed -- <57>
+[+.82d1] moved to [10, 3] -- <57>
+[+.975a] moved to [11, 1] -- <57>
+[+.c8bc] moved to [18, 10] -- <57>
+[+.5661] died -- <57>
+[+.1ac9] moved to [11, 2] -- <57>
+[+.4c87] died -- <57>
+[+.5289] moved to [13, 5] -- <57>
+[@.688b] moved to [18, 2] - (not able to push) -- <58>
+Clone failed -- <58>
+[@.5248] moved to [2, 9] - (not able to push) -- <58>
+[^. c38] moved to [20, 1] - (not able to push) -- <58>
+Clone failed -- <58>
+[+.6620] cloned to [+. 93d] at [8, 5] -- <58>
+[&.30a7] added [+. 93d] at [8, 5] -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+[+.c313] cloned to [+.3603] at [13, 4] -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+[!.8104] moved to [3, 4] goto [3, 4] -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+[+. f64] moved to [8, 1] -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+Clone failed -- <58>
+[+.82d1] moved to [9, 3] -- <58>
+[+.c8bc] moved to [18, 11] -- <58>
+[+.1ac9] moved to [12, 2] -- <58>
+[+.5289] moved to [13, 4] -- <58>
+[+.7131] moved to [11, 5] -- <58>
+Clone failed -- <59>
+Clone failed -- <59>
+[&.30a7] took [!.8954] -- <59>
+[!.8954] died -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+[+.c313] cloned to [+.2840] at [12, 3] -- <59>
+[+.177e] cloned to [+.7ce5] at [17, 10] -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+[X.7f6a] cloned to [X.4dbd] at [10, 12] -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+[+. f64] moved to [9, 1] -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+Clone failed -- <59>
+[X.5ad1] cloned to [X.ff1c] at [26, 9] -- <59>
+[+.82d1] moved to [9, 2] -- <59>
+[+.975a] moved to [10, 1] -- <59>
+[+.c8bc] moved to [18, 10] -- <59>
+[+.1ac9] died -- <59>
+[+.5289] moved to [13, 5] -- <59>
+[+.7131] died -- <59>
+[+.3dbe] moved to [10, 2] -- <59>
+[@.688b] moved to [18, 3] - (not able to push) -- <60>
+Clone failed -- <60>
+[@.5248] moved to [1, 9] - (not able to push) -- <60>
+[^. c38] moved to [20, 2] - (not able to push) -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+[+. 95b] cloned to [+.f104] at [11, 2] -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+[+. f64] moved to [9, 2] -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+Clone failed -- <60>
+[+.82d1] moved to [9, 3] -- <60>
+[+.975a] moved to [9, 1] -- <60>
+[+.c8bc] moved to [18, 11] -- <60>
+[+.5289] moved to [13, 4] -- <60>
+[+.3dbe] moved to [9, 2] -- <60>
+[+. 93d] moved to [7, 5] -- <60>
+[+.3603] moved to [14, 4] -- <60>
+Clone failed -- <61>
+Clone failed -- <61>
+[&.30a7] took [!.8104] -- <61>
+[!.8104] died -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+[+. f64] moved to [9, 3] -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+Clone failed -- <61>
+[+.82d1] moved to [10, 3] -- <61>
+[+.975a] moved to [9, 2] -- <61>
+[+.c8bc] moved to [19, 11] -- <61>
+[+.5289] moved to [13, 3] -- <61>
+[+.3dbe] moved to [9, 3] -- <61>
+[+. 93d] died -- <61>
+[+.3603] moved to [15, 4] -- <61>
+[+.2840] moved to [12, 2] -- <61>
+[+.7ce5] moved to [18, 10] -- <61>
+[@.688b] moved to [18, 2] - (not able to push) -- <62>
+Clone failed -- <62>
+[@.5248] moved to [1, 10] - (not able to push) -- <62>
+[^. c38] moved to [20, 1] - (not able to push) -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[+. 95b] cloned to [+.f4ad] at [12, 3] -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[+.c313] cloned to [+.7039] at [11, 4] -- <62>
+[+.177e] cloned to [+.678c] at [17, 10] -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[+. 3dc] cloned to [+.a8cf] at [18, 11] -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[M.19cd] moved to [15, 4] goto [15, 4] -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[+. f64] moved to [9, 2] -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+Clone failed -- <62>
+[+.82d1] moved to [10, 2] -- <62>
+[+.975a] moved to [10, 2] -- <62>
+[+.c8bc] died -- <62>
+[+.5289] died -- <62>
+[+.3dbe] moved to [9, 2] -- <62>
+[+.3603] died -- <62>
+[+.2840] died -- <62>
+[+.7ce5] moved to [17, 10] -- <62>
+[+.f104] moved to [12, 2] -- <62>
+Clone failed -- <63>
+Clone failed -- <63>
+[&.30a7] took [!.7805] -- <63>
+[!.7805] died -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+[+. f64] moved to [10, 2] -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+Clone failed -- <63>
+[+.82d1] moved to [11, 2] -- <63>
+[+.975a] moved to [9, 2] -- <63>
+[+.3dbe] moved to [9, 1] -- <63>
+[+.7ce5] moved to [16, 10] -- <63>
+[+.f104] died -- <63>
+[@.688b] moved to [18, 1] - (not able to push) -- <64>
+Clone failed -- <64>
+[@.5248] moved to [1, 11] - (not able to push) -- <64>
+[^. c38] moved to [21, 1] - (not able to push) -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+[+. 95b] cloned to [+.ec71] at [10, 3] -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+[M.e6a1] cloned to [M.70d6] at [14, 4] -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+[+. f64] moved to [9, 2] -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+Clone failed -- <64>
+[+.82d1] moved to [11, 1] -- <64>
+[+.975a] moved to [9, 1] -- <64>
+[X.9172] cloned to [X.70bb] at [28, 7] -- <64>
+[+.7ce5] moved to [15, 10] -- <64>
+[+.f4ad] moved to [12, 2] -- <64>
+[+.7039] moved to [12, 4] -- <64>
+[+.678c] moved to [18, 10] -- <64>
+[+.a8cf] moved to [18, 10] -- <64>
+Clone failed -- <65>
+Clone failed -- <65>
+[&.30a7] took [!.d5ca] -- <65>
+[!.d5ca] died -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+[+. 95b] cloned to [+.f936] at [12, 3] -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+[+. f64] moved to [10, 2] -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+Clone failed -- <65>
+[+.82d1] moved to [12, 1] -- <65>
+[X.a4e9] cloned to [X.f9ab] at [2, 6] -- <65>
+[+.975a] moved to [10, 1] -- <65>
+[+.3dbe] moved to [10, 1] -- <65>
+Clone failed -- <65>
+[+.7ce5] moved to [16, 10] -- <65>
+[+.f4ad] died -- <65>
+[+.7039] died -- <65>
+[+.678c] moved to [18, 9] -- <65>
+[+.a8cf] moved to [18, 11] -- <65>
+[@.688b] moved to [19, 1] - (not able to push) -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+[+. 95b] cloned to [+.50bf] at [11, 2] -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+[+. f64] moved to [11, 2] -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+Clone failed -- <66>
+[+.82d1] died -- <66>
+Clone failed -- <66>
+[+.975a] moved to [9, 1] -- <66>
+[+.3dbe] moved to [9, 1] -- <66>
+[X.9172] cloned to [X.c677] at [27, 8] -- <66>
+[+.7ce5] moved to [15, 10] -- <66>
+[X.ff1c] cloned to [X.8fd4] at [26, 8] -- <66>
+[+.678c] moved to [18, 8] -- <66>
+[+.a8cf] moved to [18, 12] -- <66>
+[+.ec71] moved to [10, 2] -- <66>
+Clone failed -- <67>
+Clone failed -- <67>
+[&.30a7] took [!. 453] -- <67>
+[!. 453] died -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+[+. 95b] cloned to [+.77d3] at [11, 4] -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+[X.4428] cloned to [X.bdea] at [22, 3] -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+[+. f64] moved to [11, 3] -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+Clone failed -- <67>
+[+.975a] moved to [9, 2] -- <67>
+Clone failed -- <67>
+[+.7ce5] moved to [16, 10] -- <67>
+[X.ff1c] cloned to [X.15b7] at [25, 9] -- <67>
+[+.678c] moved to [19, 8] -- <67>
+[+.a8cf] moved to [17, 12] -- <67>
+[+.ec71] moved to [9, 2] -- <67>
+[+.f936] moved to [12, 2] -- <67>
+[@.688b] moved to [18, 1] - (not able to push) -- <68>
+Clone failed -- <68>
+[@.5248] moved to [1, 12] - (not able to push) -- <68>
+[^. c38] moved to [21, 2] - (not able to push) -- <68>
+Clone failed -- <68>
+[+.6620] cloned to [+. c69] at [9, 4] -- <68>
+[&.30a7] added [+. c69] at [9, 4] -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+[+.c313] cloned to [+.2896] at [13, 4] -- <68>
+[+.177e] cloned to [+.4f87] at [17, 10] -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+[X.4428] cloned to [X.9d9f] at [23, 2] -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+[+. f64] moved to [11, 4] -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+Clone failed -- <68>
+[+.975a] moved to [9, 3] -- <68>
+[+.3dbe] moved to [8, 1] -- <68>
+Clone failed -- <68>
+[+.7ce5] moved to [16, 9] -- <68>
+Clone failed -- <68>
+[+.678c] moved to [20, 8] -- <68>
+[+.a8cf] moved to [16, 12] -- <68>
+[+.ec71] moved to [9, 1] -- <68>
+[+.f936] died -- <68>
+[+.50bf] moved to [11, 1] -- <68>
+Clone failed -- <69>
+Clone failed -- <69>
+[&.30a7] took [!.768d] -- <69>
+[!.768d] died -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+[+.177e] cloned to [+.42c4] at [18, 11] -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+[+. f64] died -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+Clone failed -- <69>
+[+.975a] moved to [8, 3] -- <69>
+Clone failed -- <69>
+[+.7ce5] moved to [15, 9] -- <69>
+Clone failed -- <69>
+[+.678c] moved to [21, 8] -- <69>
+[+.a8cf] died -- <69>
+[+.ec71] moved to [10, 1] -- <69>
+[+.50bf] moved to [12, 1] -- <69>
+[+.77d3] moved to [11, 3] -- <69>
+[@.688b] moved to [17, 1] - (not able to push) -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+[^. c38] moved to [21, 3] - (not able to push) -- <70>
+Clone failed -- <70>
+[+.6620] cloned to [+.155a] at [8, 5] -- <70>
+[&.30a7] added [+.155a] at [8, 5] -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+[+. 95b] cloned to [+. f34] at [11, 2] -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+Clone failed -- <70>
+[+.975a] died -- <70>
+[+.3dbe] moved to [7, 1] -- <70>
+Clone failed -- <70>
+[+.7ce5] moved to [15, 8] -- <70>
+Clone failed -- <70>
+[+.678c] moved to [22, 8] -- <70>
+[+.ec71] moved to [11, 1] -- <70>
+[+.50bf] died -- <70>
+[+.77d3] moved to [11, 2] -- <70>
+[+. c69] moved to [9, 5] -- <70>
+[+.2896] moved to [13, 5] -- <70>
+[+.4f87] moved to [17, 11] -- <70>
+Clone failed -- <71>
+[X.b015] cloned to [X.de87] at [1, 12] -- <71>
+[@.5248] transformed into [X.de87] at [1, 12] -- <71>
+[@.5248] died -- <71>
+Clone failed -- <71>
+[&.30a7] took [!.2d5a] -- <71>
+[!.2d5a] died -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+[+. 95b] cloned to [+.402f] at [10, 3] -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+[+.c313] cloned to [+.bc1e] at [11, 4] -- <71>
+[+.177e] cloned to [+.6465] at [17, 10] -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+Clone failed -- <71>
+[+.3dbe] moved to [8, 1] -- <71>
+Clone failed -- <71>
+[+.7ce5] died -- <71>
+Clone failed -- <71>
+[+.678c] moved to [22, 7] -- <71>
+[+.ec71] moved to [11, 2] -- <71>
+[+.77d3] moved to [12, 2] -- <71>
+[+. c69] moved to [9, 6] -- <71>
+[+.2896] moved to [13, 4] -- <71>
+[+.4f87] moved to [16, 11] -- <71>
+[+.42c4] moved to [17, 11] -- <71>
+[@.688b] moved to [16, 1] - (not able to push) -- <72>
+Clone failed -- <72>
+[^. c38] moved to [21, 2] - (not able to push) -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+[+.3dbe] moved to [9, 1] -- <72>
+Clone failed -- <72>
+Clone failed -- <72>
+[+.678c] moved to [22, 8] -- <72>
+[+.ec71] moved to [12, 2] -- <72>
+[+.77d3] died -- <72>
+[+. c69] moved to [9, 7] -- <72>
+[+.2896] moved to [13, 5] -- <72>
+[+.4f87] died -- <72>
+[+.42c4] moved to [17, 12] -- <72>
+[+.155a] moved to [9, 5] -- <72>
+[+. f34] moved to [10, 2] -- <72>
+Clone failed -- <73>
+Clone failed -- <73>
+[&.30a7] took [!.a5b4] -- <73>
+[!.a5b4] died -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+[+.c313] cloned to [+.9f7e] at [12, 3] -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+[+. 3dc] cloned to [+.47e1] at [18, 11] -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+[+.3dbe] moved to [8, 1] -- <73>
+Clone failed -- <73>
+Clone failed -- <73>
+[+.678c] moved to [21, 8] -- <73>
+[+.ec71] died -- <73>
+[+. c69] moved to [9, 6] -- <73>
+[+.2896] moved to [13, 4] -- <73>
+[+.42c4] moved to [17, 11] -- <73>
+[+.155a] moved to [9, 6] -- <73>
+[+. f34] moved to [9, 2] -- <73>
+[+.402f] moved to [10, 2] -- <73>
+[+.bc1e] moved to [10, 4] -- <73>
+[+.6465] moved to [17, 9] -- <73>
+[@.688b] moved to [17, 1] - (not able to push) -- <74>
+Clone failed -- <74>
+[^. c38] moved to [21, 3] - (not able to push) -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+[+. 95b] cloned to [+. 58d] at [11, 4] -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+[+. 3dc] cloned to [+.1426] at [17, 10] -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+[+.3dbe] moved to [7, 1] -- <74>
+Clone failed -- <74>
+Clone failed -- <74>
+[+.678c] moved to [20, 8] -- <74>
+[+. c69] moved to [8, 6] -- <74>
+[+.2896] moved to [13, 5] -- <74>
+[+.42c4] moved to [16, 11] -- <74>
+[+.155a] moved to [9, 7] -- <74>
+[+. f34] moved to [10, 2] -- <74>
+[+.402f] moved to [11, 2] -- <74>
+[+.bc1e] died -- <74>
+[+.6465] moved to [17, 10] -- <74>
+Clone failed -- <75>
+Clone failed -- <75>
+[&.30a7] took [!.f326] -- <75>
+[!.f326] died -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+Clone failed -- <75>
+[+.678c] moved to [20, 9] -- <75>
+[+. c69] moved to [7, 6] -- <75>
+[+.2896] moved to [12, 5] -- <75>
+[+.42c4] died -- <75>
+[+.155a] moved to [8, 7] -- <75>
+[+. f34] moved to [10, 3] -- <75>
+[+.402f] moved to [11, 3] -- <75>
+[+.6465] moved to [17, 11] -- <75>
+[+.9f7e] moved to [11, 3] -- <75>
+[+.47e1] moved to [17, 11] -- <75>
+Clone failed -- <76>
+[M.baa4] moved to [7, 6] goto [7, 6] -- <76>
+[^. c38] moved to [21, 2] - (not able to push) -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+[+. 95b] cloned to [+.7af6] at [12, 3] -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+[+.177e] cloned to [+.4c83] at [18, 11] -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+Clone failed -- <76>
+[+.678c] moved to [19, 9] -- <76>
+[+. c69] moved to [7, 7] -- <76>
+[+.2896] died -- <76>
+[+.155a] moved to [7, 7] -- <76>
+[+. f34] moved to [11, 3] -- <76>
+[+.402f] moved to [11, 2] -- <76>
+[+.6465] moved to [17, 12] -- <76>
+[+.9f7e] moved to [11, 4] -- <76>
+[+.47e1] moved to [17, 10] -- <76>
+[+. 58d] moved to [10, 4] -- <76>
+[+.1426] moved to [17, 9] -- <76>
+Clone failed -- <77>
+[M.baa4] moved to [7, 7] goto [7, 7] -- <77>
+Clone failed -- <77>
+[&.30a7] took [!.bd7a] -- <77>
+[!.bd7a] died -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+[+.c313] cloned to [+.610b] at [13, 4] -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+[+.3dbe] moved to [8, 1] -- <77>
+Clone failed -- <77>
+Clone failed -- <77>
+[+.678c] moved to [18, 9] -- <77>
+Clone failed -- <77>
+[+. c69] moved to [7, 8] -- <77>
+[+.155a] moved to [6, 7] -- <77>
+[+. f34] moved to [11, 2] -- <77>
+[+.402f] moved to [11, 3] -- <77>
+[+.6465] moved to [18, 12] -- <77>
+[+.9f7e] died -- <77>
+[+.47e1] moved to [17, 9] -- <77>
+[+. 58d] died -- <77>
+[+.1426] moved to [17, 10] -- <77>
+[@.688b] moved to [17, 2] - (not able to push) -- <78>
+Clone failed -- <78>
+[M.baa4] moved to [7, 8] goto [7, 8] -- <78>
+[^. c38] moved to [21, 1] - (not able to push) -- <78>
+Clone failed -- <78>
+[+.6620] cloned to [+.bb99] at [9, 4] -- <78>
+[&.30a7] added [+.bb99] at [9, 4] -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+[+. 95b] cloned to [+.11fa] at [11, 4] -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+[+.3dbe] moved to [7, 1] -- <78>
+Clone failed -- <78>
+Clone failed -- <78>
+[+.678c] moved to [17, 9] -- <78>
+Clone failed -- <78>
+[+. c69] moved to [8, 8] -- <78>
+[+.155a] died -- <78>
+[+. f34] moved to [10, 2] -- <78>
+[+.402f] moved to [11, 4] -- <78>
+[+.6465] moved to [18, 13] -- <78>
+[+.47e1] moved to [17, 10] -- <78>
+[+.1426] moved to [18, 10] -- <78>
+[+.7af6] moved to [12, 2] -- <78>
+[+.4c83] moved to [18, 12] -- <78>
+Clone failed -- <79>
+[M.baa4] moved to [8, 8] goto [8, 8] -- <79>
+Clone failed -- <79>
+[&.30a7] took [!.63a6] -- <79>
+[!.63a6] died -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+[+. 95b] cloned to [+.ad5f] at [12, 3] -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+[+. 3dc] cloned to [+.57b3] at [18, 11] -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+[+.3dbe] moved to [8, 1] -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+[+.678c] moved to [17, 10] -- <79>
+[X.70bb] cloned to [X.615b] at [28, 6] -- <79>
+Clone failed -- <79>
+Clone failed -- <79>
+[+. c69] moved to [8, 7] -- <79>
+[+. f34] moved to [10, 3] -- <79>
+[+.402f] died -- <79>
+[+.6465] moved to [17, 13] -- <79>
+[+.47e1] moved to [16, 10] -- <79>
+[+.1426] moved to [17, 10] -- <79>
+[+.7af6] died -- <79>
+[+.4c83] moved to [18, 13] -- <79>
+[+.610b] moved to [13, 3] -- <79>
+[@.688b] moved to [16, 2] - (not able to push) -- <80>
+Clone failed -- <80>
+[M.baa4] moved to [8, 7] goto [8, 7] -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+[+.3dbe] moved to [7, 1] -- <80>
+Clone failed -- <80>
+Clone failed -- <80>
+[+.678c] moved to [17, 9] -- <80>
+[X.70bb] cloned to [X.1a3a] at [27, 7] -- <80>
+Clone failed -- <80>
+[X.8fd4] cloned to [X.e103] at [25, 8] -- <80>
+[+. c69] moved to [7, 7] -- <80>
+[+. f34] moved to [10, 4] -- <80>
+[+.6465] moved to [16, 13] -- <80>
+[+.47e1] moved to [16, 9] -- <80>
+[+.1426] moved to [17, 9] -- <80>
+[+.4c83] moved to [19, 13] -- <80>
+[+.610b] died -- <80>
+[+.bb99] moved to [9, 3] -- <80>
+[+.11fa] moved to [11, 3] -- <80>
+Clone failed -- <81>
+[M.baa4] moved to [7, 7] goto [7, 7] -- <81>
+Clone failed -- <81>
+[&.30a7] took [!.cfca] -- <81>
+[!.cfca] died -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+[+. 95b] cloned to [+.b29f] at [11, 2] -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+[+.678c] moved to [17, 8] -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+Clone failed -- <81>
+[+. c69] moved to [6, 7] -- <81>
+[+. f34] died -- <81>
+[+.6465] died -- <81>
+[+.47e1] moved to [15, 9] -- <81>
+[+.1426] moved to [18, 9] -- <81>
+[+.4c83] died -- <81>
+[+.bb99] moved to [9, 2] -- <81>
+[+.11fa] moved to [10, 3] -- <81>
+[+.ad5f] moved to [12, 2] -- <81>
+[+.57b3] moved to [19, 11] -- <81>
+[@.688b] moved to [15, 2] - (not able to push) -- <82>
+Clone failed -- <82>
+[M.baa4] moved to [6, 7] goto [6, 7] -- <82>
+[^. c38] moved to [22, 1] - (not able to push) -- <82>
+Clone failed -- <82>
+[+.6620] cloned to [+.b1d1] at [8, 3] -- <82>
+[&.30a7] added [+.b1d1] at [8, 3] -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+[+.177e] cloned to [+.c09c] at [18, 11] -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+Clone failed -- <82>
+==== SIMULATION ENDED: Code Interruption ====
+
+@:
+-- NODES --
+0: idle
+1: chase
+2: transform X
+3: clone
+4: push
+5: die
+6: take
+7: add ;
+-- EDGES --
+0-4: none
+1-1: touch *
+1-3: touch !
+2-2: none
+2-4: step 3
+2-5: none
+3-2: step 5
+3-6: none
+4-0: within X 9
+4-5: step 8
+4-7: nextTo <
+5-4: nextTo D
+6-1: touch @
+6-5: touch X
+6-7: within + 5
+7-1: nextTo &
+7-2: nextTo >
+7-3: within M 6
+
+$:
+-- NODES --
+0: idle
+1: transform X
+2: move
+3: push
+4: chase
+5: die
+6: add ;
+-- EDGES --
+0-0: nextTo ;
+0-1: within @ 9
+1-2: touch !
+1-3: nextTo ;
+1-4: none
+1-5: within + 10
+2-0: none
+2-5: step 6
+3-1: nextTo ^
+4-0: within ^ 7
+4-4: none
+4-6: step 8
+5-3: nextTo M
+5-6: none
+6-1: nextTo O
+6-2: step 9
+6-5: step 2
+
+&:
+-- NODES --
+0: idle
+1: add +
+2: take
+3: push
+4: clone
+-- EDGES --
+0-2: touch @
+1-1: within S 5
+1-2: none
+2-0: nextTo O
+2-1: within ! 7
+2-3: step 9
+2-4: touch !
+3-4: none
+4-0: nextTo X
+4-4: nextTo S
+
++:
+-- NODES --
+0: idle
+1: clone
+2: push
+3: move
+4: chase
+5: take
+6: die
+7: add X
+-- EDGES --
+0-2: within O 5
+0-3: none
+0-5: none
+0-6: step 8
+1-3: within S 5
+2-4: touch >
+2-5: none
+3-6: nextTo X
+4-1: within & 1
+4-6: within S 3
+5-1: step 1
+5-2: step 7
+6-0: step 3
+6-3: nextTo ;
+6-7: within & 5
+7-0: nextTo D
+7-1: touch !
+7-2: nextTo <
+7-6: nextTo ;
+
+;:
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-1: nextTo M
+1-0: step 10
+1-1: touch @
+
+!:
+-- NODES --
+0: idle
+1: push
+2: add !
+3: chase
+4: die
+5: transform @
+6: clone
+-- EDGES --
+0-1: within S 7
+0-2: within @ 1
+1-4: step 4
+2-0: nextTo S
+2-6: within ; 6
+3-3: nextTo $
+3-5: touch D
+3-6: nextTo +
+4-1: touch &
+4-4: none
+4-5: step 2
+5-3: within M 1
+5-4: touch $
+5-6: step 7
+6-0: nextTo &
+6-3: none
+
+>:
+-- NODES --
+0: idle
+1: die
+2: add $
+-- EDGES --
+0-0: nextTo X
+0-1: step 2
+0-2: none
+1-1: touch >
+2-0: within X 6
+
+<:
+-- NODES --
+0: idle
+1: move
+2: transform @
+3: clone
+4: take
+5: chase
+6: die
+7: add S
+-- EDGES --
+0-4: nextTo >
+1-0: step 3
+1-3: step 10
+1-5: step 5
+2-1: within ^ 4
+2-6: step 8
+2-7: touch O
+3-3: none
+3-4: none
+3-5: within @ 8
+4-0: nextTo *
+5-3: none
+5-4: within @ 4
+5-7: touch $
+6-1: within * 8
+7-2: touch O
+
+X:
+-- NODES --
+0: idle
+1: push
+2: die
+3: clone
+4: chase
+5: add >
+6: take
+-- EDGES --
+0-0: within + 7
+0-3: step 6
+1-2: none
+1-4: touch S
+1-6: none
+2-1: none
+2-2: none
+2-4: step 7
+2-5: step 9
+3-0: nextTo *
+4-3: none
+4-4: touch *
+4-6: within ! 5
+5-0: nextTo O
+5-6: nextTo M
+6-0: within S 10
+6-2: none
+
+O:
+-- NODES --
+0: idle
+1: push
+2: add >
+3: chase
+4: transform >
+-- EDGES --
+0-2: nextTo +
+1-4: step 7
+2-1: none
+2-3: step 8
+3-0: none
+3-1: touch X
+3-2: within + 1
+4-0: none
+4-1: within O 3
+4-2: nextTo $
+4-3: step 4
+4-4: within @ 5
+
+*:
+-- NODES --
+0: idle
+1: take
+2: clone
+3: transform $
+4: move
+5: chase
+-- EDGES --
+0-1: touch !
+0-3: none
+0-4: within X 1
+1-0: nextTo *
+1-4: within ! 5
+2-1: nextTo ;
+2-5: touch ;
+3-5: within < 10
+4-0: touch !
+5-2: nextTo D
+
+^:
+-- NODES --
+0: idle
+1: move
+2: push
+3: add O
+4: die
+5: clone
+6: transform &
+7: chase
+-- EDGES --
+0-2: within M 3
+0-3: within S 2
+1-3: step 4
+1-6: step 8
+2-0: within > 5
+2-4: within O 10
+2-6: nextTo !
+3-5: touch @
+3-7: within & 3
+5-6: none
+5-7: touch +
+6-1: none
+6-2: none
+6-4: within < 2
+6-5: none
+7-0: nextTo @
+7-1: within O 8
+
+M:
+-- NODES --
+0: idle
+1: chase
+2: clone
+3: push
+4: move
+5: die
+6: take
+-- EDGES --
+0-0: nextTo &
+0-1: touch +
+0-2: nextTo $
+0-6: touch D
+1-4: touch X
+2-3: within * 5
+3-1: within > 8
+4-3: within ; 6
+4-4: step 9
+4-5: touch !
+5-1: nextTo ;
+5-3: nextTo @
+5-4: touch ^
+6-0: within D 7
+6-1: within O 3
+6-5: step 6
+6-6: none
+
+D:
+-- NODES --
+0: idle
+1: take
+2: transform !
+3: clone
+4: move
+5: chase
+6: push
+-- EDGES --
+0-1: nextTo ^
+0-2: none
+0-3: none
+0-4: nextTo +
+1-2: none
+1-3: nextTo &
+1-6: touch ;
+2-6: step 5
+3-1: none
+3-5: none
+3-6: touch D
+4-1: within M 4
+4-5: nextTo >
+5-4: none
+5-5: step 9
+6-0: nextTo ^
+6-2: within S 2
+6-5: step 10
+
+S:
+-- NODES --
+0: idle
+1: take
+2: transform M
+3: die
+4: clone
+5: push
+-- EDGES --
+0-0: step 3
+0-1: step 6
+0-2: none
+0-3: within X 10
+0-4: nextTo !
+1-1: none
+2-3: step 9
+2-4: nextTo *
+2-5: within $ 9
+3-2: step 5
+4-0: within + 5
+5-0: nextTo +
+5-1: within @ 2
+5-3: touch !
+5-5: touch D
+
+

@@ -56,5 +56,5 @@ for(let i = 0; i < all_menus.length; i++){
 
     menu.addEventListener("click", function(){showMenu(submenus[0])});
     menu.addEventListener("mouseleave", function(){hideMenu(submenus[0])});
-    menu.addEventListener("mouseleave", function(){debug.innerHTML = `mouseout (${submenus[0].id})`;});
+    // menu.addEventListener("mouseleave", function(){debug.innerHTML = `mouseout (${submenus[0].id})`;});
 }
