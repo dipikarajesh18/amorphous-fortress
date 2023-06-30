@@ -1,15 +1,90 @@
 ///////////////////////////////     GLOBAL VARIABLE DECLARATIONS     ///////////////////////////////
 
+/// graph definitions ///
 var CUR_CHAR = "";     // the current character's ASCII
 var CUR_NAME = "";     // the current character's name
 var CUR_NODES = [];    // order in the array corresponds to node index
 var CUR_EDGES = {};    // key is the node-to-node pairing (e.g. "0-1" for node 0 to node 1) and value is the edge label
 
+// renderer definitions ///
+var graph_canvas = document.getElementById("graph-canvas");
+graph_canvas.width = 615;
+graph_canvas.height = 625;
+var gctx = graph_canvas.getContext("2d");
 
 
+/////////////////////////////   GENERIC FUNCTIONS     /////////////////////////////
 
+// draws a debug point
+function debugPoint(p, c='blue', s=5){
+    gctx.fillStyle = c;
+    gctx.fillRect(p.x-Math.floor(s/2), p.y-Math.floor(s/2), s, s);
+    gctx.fillStyle = "black";
+}
 
-/////////////////////////////    FILE I/O FUNCTION DEFINITIONS     /////////////////////////////
+// get the opposite edge
+function oppEdge(edge){
+    let es = edge.split("-");
+    return `${es[1]}-${es[0]}`;
+}
+//////////////////////////   MATH BULLSHIT FUNCTIONS     /////////////////////////
+
+// radians to degrees converter
+function rad2deg(rad){
+    return rad * (180/Math.PI);
+}
+
+// degrees to radians converter
+function deg2rad(deg){
+    return deg * (Math.PI/180);
+}
+
+// returns the slope of the line between two points
+function getSlope(a,b){
+    return (b.y - a.y) / (b.x - a.x);
+}
+
+// returns the distance between two points
+function dist(a,b){
+    return Math.sqrt(Math.pow(b.x-a.x,2) + Math.pow(b.y-a.y,2));
+}
+
+// calculates the perpendicular bisectors of two points
+// for use with the edge quadratic curve
+function getPerpBisectors(a,b,d=null){
+    // 1. get the slope of ab
+    let slope = getSlope(a,b);
+
+    // 2. get the midpoint of ab
+    let mid = {
+        x: (a.x + b.x) / 2,
+        y: (a.y + b.y) / 2
+    }
+
+    // 3. get the perpendicular slope
+    let perp_slope = null;
+    if(slope == 0){
+        perp_slope = Infinity;
+    }else if(slope == Infinity){
+        perp_slope = 0;
+    }else{
+        perp_slope = -1/slope;
+    }
+
+    // 4. find the alternative points based on the cos/sin right angle triangle
+    d = d == null ? dist(a,mid)/2 : d;  //distance between a and mid
+    let ang = Math.atan(perp_slope);  // angle between the perpendicular bisector slope and the x-axis
+    let dx = d*Math.cos(ang);   
+    let dy = d*Math.sin(ang);
+
+    let alt_points = [
+        {x:mid.x+dx, y:mid.y+dy},
+        {x:mid.x-dx, y:mid.y-dy}
+    ]
+    return alt_points;
+}
+
+/////////////////////////////    FILE I/O FUNCTIONS     /////////////////////////////
 
 
 
@@ -31,6 +106,10 @@ function readEntFile(){
 
             // add the nodes and edges to the sidebar
             addCurGraphDivs();
+
+            // redraw the graph
+            makeNodes();
+            makeEdges();
 
         }catch(e){
             alert("Error parsing entity file! \nMake sure the file is a .txt file.");
@@ -142,6 +221,7 @@ function exportEntGraph(){
 
 }
 
+
 // saves the blob as a file
 function saveAs(blob, filename) {
     //make it a downloadable text
@@ -164,104 +244,190 @@ function saveAs(blob, filename) {
 }
 
 
-/////////////////////////////     HTML FUNCTION DEFINITIONS     /////////////////////////////
+// clear the current graph
+function newGraph(){
+    if(confirm("Are you sure you want to create a new graph? Any unsaved changes to the current one will be lost.") == false)
+        return;
+
+    CUR_NAME = "";
+    CUR_CHAR = "";
+    CUR_NODES = [];
+    CUR_EDGES = {};
+    addCurGraphDivs();
+}
+
+
+/////////////////////////////    GRAPH CANVAS FUNCTIONS AND DEFINITIONS    /////////////////////////////
 
 
 
-// adds the current nodes and edges to the sidebar
-function addCurGraphDivs(){
-    // clear the list
-    let node_list = document.getElementById("node-list");
-    let edge_list = document.getElementById("edge-list");
-    node_list.innerHTML = "";
-    edge_list.innerHTML = "";
+// define the node class for rendering
+class CANV_NODE {
+    constructor(x, y, label, idx) {
+        this.x = x;          // x position
+        this.y = y;          // y position
+        this.r = 40;         //radius of the circle
+        this.fs = 24;        //font size
+        this.label = label;  //label of the node inside the circle
+        this.idx = idx;      //index of the node in the graph
+    }
+}
 
-    // set the entity name and ascii character
-    document.getElementById("name_in").value = CUR_NAME;
-    document.getElementById("name_txt").innerHTML = CUR_NAME;
-    document.getElementById("char_in").value = CUR_CHAR;
-    document.getElementById("char_txt").innerHTML = CUR_CHAR;
+class CANV_EDGE{
+    constructor(n1,n2, angle, double, label){
+        this.n1 = n1;       // node 1
+        this.n2 = n2;       // node 2
+        this.angle = angle; // angle between nodes 1 and 2
+        this.label = label; // label of the edge
+        this.double_edge = double; // whether or not this edge is a double edge
+        this.edge_key = `${n1.idx}-${n2.idx}`; // key for the edge
+    }
+}
 
-    // add the nodes
-    for(let i = 0; i < CUR_NODES.length; i++){
+
+
+let G_NODES = [];   // list of graph visualizer nodes
+let G_EDGES = [];   // list of graph visualizer edges
+
+// arranges the current nodes in a clockwise circle
+function makeNodes(){
+    // define graph properties
+    let num_nodes = CUR_NODES.length;
+    let r = Math.min(250,120 + (Math.max(num_nodes,4) * 10));
+    let cx = graph_canvas.width/2;
+    let cy = graph_canvas.height/2;
+    
+    // arrange the nodes in a circle
+    G_NODES = [];
+    for(let i = 0; i < num_nodes; i++){
+        let angle = (i/num_nodes) * 2 * Math.PI;
+        let x = cx;
+        let y = cy;
+        if(num_nodes > 1){
+            x = cx + r * Math.cos(angle);
+            y = cy + r * Math.sin(angle);
+        }
         let label = CUR_NODES[i];
-        addNodeItem(i, label);
+        G_NODES.push(new CANV_NODE(x, y, label, i));
     }
+}
 
-    // add the edges
+// connects the edges between the nodes
+function makeEdges(){
+    // clear the edges
+    G_EDGES = [];
+
+    // connect the edges
+    let e = []
+    let all_pairs = Object.keys(CUR_EDGES);
     for(let pair in CUR_EDGES){
+
         let label = CUR_EDGES[pair];
-        addEdgeItem(pair, label);
+
+        let nodes = pair.split("-");
+        let n1 = G_NODES[parseInt(nodes[0])];
+        let n2 = G_NODES[parseInt(nodes[1])];
+        let angle = Math.atan2(n2.y - n1.y, n2.x - n1.x);
+
+        let alt_edge = oppEdge(pair);
+        let double_edged = (all_pairs.indexOf(alt_edge) != -1);
+
+        G_EDGES.push(new CANV_EDGE(n1,n2,angle,double_edged,label));
+        // e.push(`(${pair})[${label}] -> ${angle.toFixed(2)}(r)==${Math.round(rad2deg(angle))}(d)`)
+        // e.push(`(${pair})[${label}] -> ${double_edged} => ${alt_edge}`)
+    }
+    // DEBUG(e);
+
+}
+
+
+// draw each node in the graph
+function drawNodes(){
+    // draw the nodes
+    for(let i = 0; i < G_NODES.length; i++){
+        let node = G_NODES[i];
+
+        //fill the circle
+        gctx.fillStyle = "aliceblue"
+        gctx.beginPath();
+        gctx.arc(node.x, node.y, node.r, 0, 2 * Math.PI);
+        gctx.fill();
+
+        //draw the circle
+        gctx.strokeStyle = "#000000";
+        gctx.fillStyle = "#000";
+        gctx.beginPath();
+        gctx.arc(node.x, node.y, node.r, 0, 2 * Math.PI);
+        gctx.stroke();
+
+        //add the label
+        gctx.font = node.fs + "px Proggy";
+        gctx.textAlign = "center";
+        gctx.fillText(node.label, node.x, node.y+(node.fs/4));
+
+        //add the index (outside)
+        gctx.font = "20px monospace";
+        gctx.textAlign = "center";
+        gctx.fillText(i, node.x-node.r, node.y-node.r);
     }
 }
 
 
-// adds a node entry to the sidebar (try to add these in order)
-function addNodeItem(node_id, label){
-    // create the container div
-    let node_div = document.createElement("div");
-    node_div.className = "node-item";
-    node_div.id = `node_${node_id}`;
+// draw each edge in the graph
+function drawEdges(){
+    //draw the edges
+    let ang = [];
+    let de = [];
+    for(let i = 0; i < G_EDGES.length; i++){
+        let edge = G_EDGES[i];
 
-    // create the node index
-    let node_idx = document.createElement("div");
-    node_idx.className = "node-index";
-    node_idx.innerHTML = node_id;
-    node_div.appendChild(node_idx);
+        //get the line points between the two nodes
+        let x1 = edge.n1.x;
+        let y1 = edge.n1.y;
+        let x2 = edge.n2.x;
+        let y2 = edge.n2.y;
 
-    // create the node label
-    let node_label = document.createElement("div");
-    node_label.className = "node-label";
-    node_label.innerHTML = label;
-    node_div.appendChild(node_label);
+        let estr = edge.edge_key;
 
-    // add the div to the node list sidebar
-    let node_list = document.getElementById("node-list");
-    node_list.appendChild(node_div);
+        //draw the line
+        gctx.beginPath();
+        gctx.moveTo(x1,y1);
+        if(edge.double_edge){
+            let alt_pts = getPerpBisectors(edge.n1,edge.n2);
+            let ei = (de.indexOf(oppEdge(estr)) == -1) ? 0 : 1;
+            gctx.quadraticCurveTo(alt_pts[ei].x, alt_pts[ei].y, x2, y2)   //need to get perpendicular line to pull the quadratic curve to
+            de.push(estr);
+        }else
+            gctx.lineTo(x2,y2);
+        gctx.stroke();
+
+        //add the label (with rotation if needed)å
+        let mid_x = (x1+x2)/2;
+        let mid_y = (y1+y2)/2;
+        gctx.font = "20px monospace";
+        gctx.textAlign = "center";
+        gctx.save();
+        gctx.translate(mid_x, mid_y);
+        let abs_angle = Math.abs(edge.angle)
+        if(abs_angle < 2){
+            gctx.rotate(edge.angle);
+        }else{
+            gctx.rotate(edge.angle + Math.PI);
+        }
+        gctx.fillText(edge.label, 0, (edge.double_edge ? -14 : -7));
+        gctx.restore();
+
+    }
 }
 
 
-// adds an edge entry to the sidebar
-function addEdgeItem(pair, label){
-    // get the elements of the pair
-    let pair_arr = pair.split("-");
-    let node1 = pair_arr[0];
-    let node2 = pair_arr[1];
+// render the graph canvas
+function renderGraph(){
+    // clear the canvas
+    gctx.clearRect(0, 0, graph_canvas.width, graph_canvas.height);
 
-    // create the container div
-    let edge_div = document.createElement("div");
-    edge_div.className = "edge-item";
-    edge_div.id = `edge_${pair}`;
-
-    // create the edge pair
-    let edge_conn = document.createElement("div");
-    edge_conn.className = "edge-conn";
-
-    let edge_cs = document.createElement("div");
-    edge_cs.className = "edge-s";
-    edge_cs.innerHTML = node1;
-    edge_conn.appendChild(edge_cs);
-
-    let edge_ca = document.createElement("div");
-    edge_ca.className = "edge-a";
-    edge_ca.innerHTML = "->";
-    edge_conn.appendChild(edge_ca);
-
-    let edge_ce = document.createElement("div");
-    edge_ce.className = "edge-e";
-    edge_ce.innerHTML = node2;
-    edge_conn.appendChild(edge_ce);
-
-    edge_div.appendChild(edge_conn);
-
-    // create the edge label
-    let edge_label = document.createElement("div");
-    edge_label.className = "edge-label";
-    edge_label.innerHTML = label;
-    edge_div.appendChild(edge_label);
-
-    // add the div to the edge list sidebar
-    let edge_list = document.getElementById("edge-list");
-    edge_list.appendChild(edge_div);
-
+    //draw the graph
+    drawEdges();
+    drawNodes();
+   
 }

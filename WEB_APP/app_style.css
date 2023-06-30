@@ -213,6 +213,48 @@ body{
     /* border:1px solid black; */
 }
 
+.edge-item{
+    width:100%;
+    height:22px;
+    font-size:16px;
+    font-family: monospace;
+    line-height: 22px;
+    display:block;
+}
+.edge-item:hover{
+    background-color: #d2d2d2;
+}
+
+.edge-conn{
+    float:left;
+    width:90px;
+    height:22px;
+    text-align:center;
+    border-right:1px solid #ababab;
+    display: block;
+    padding-left:4px;
+
+}
+.edge-s,.edge-a,.edge-e{
+    float:left;
+    height:22px;
+    text-align:center;
+    vertical-align:middle;
+    /* border:1px solid blue; */
+}
+.edge-a{
+    width:24px;
+}
+.edge-s,.edge-e{
+    width:30px;
+}
+
+.edge-label{
+    float:left;
+    width:calc(100% - 110px);
+    height:22px;
+    text-align:center;
+}
 
 #debug{
     color:red;
