@@ -6,11 +6,15 @@ var CUR_NAME = "";     // the current character's name
 var CUR_NODES = [];    // order in the array corresponds to node index
 var CUR_EDGES = {};    // key is the node-to-node pairing (e.g. "0-1" for node 0 to node 1) and value is the edge label
 
-// renderer definitions ///
+// canvas definitions ///
 var graph_canvas = document.getElementById("graph-canvas");
 graph_canvas.width = 615;
 graph_canvas.height = 625;
 var gctx = graph_canvas.getContext("2d");
+
+var graph_bound = graph_canvas.getBoundingClientRect();
+let cur_drag_node  = null;
+let mouse_pos = {x:0, y:0};
 
 
 /////////////////////////////   GENERIC FUNCTIONS     /////////////////////////////
@@ -27,6 +31,8 @@ function oppEdge(edge){
     let es = edge.split("-");
     return `${es[1]}-${es[0]}`;
 }
+
+
 //////////////////////////   MATH BULLSHIT FUNCTIONS     /////////////////////////
 
 // radians to degrees converter
@@ -83,6 +89,8 @@ function getPerpBisectors(a,b,d=null){
     ]
     return alt_points;
 }
+
+
 
 /////////////////////////////    FILE I/O FUNCTIONS     /////////////////////////////
 
@@ -267,12 +275,17 @@ class CANV_NODE {
         this.x = x;          // x position
         this.y = y;          // y position
         this.r = 40;         //radius of the circle
+        this.canv_angle = 0; //angle of the node on the canvas relative to the central circle
         this.fs = 24;        //font size
         this.label = label;  //label of the node inside the circle
         this.idx = idx;      //index of the node in the graph
+
+        // this.isDragging = false; //whether or not the node is being dragged
     }
+
 }
 
+// define the edge class for rendering
 class CANV_EDGE{
     constructor(n1,n2, angle, double, label){
         this.n1 = n1;       // node 1
@@ -282,9 +295,8 @@ class CANV_EDGE{
         this.double_edge = double; // whether or not this edge is a double edge
         this.edge_key = `${n1.idx}-${n2.idx}`; // key for the edge
     }
+
 }
-
-
 
 let G_NODES = [];   // list of graph visualizer nodes
 let G_EDGES = [];   // list of graph visualizer edges
@@ -330,7 +342,7 @@ function makeEdges(){
         let angle = Math.atan2(n2.y - n1.y, n2.x - n1.x);
 
         let alt_edge = oppEdge(pair);
-        let double_edged = (all_pairs.indexOf(alt_edge) != -1);
+        let double_edged = (all_pairs.indexOf(alt_edge) != -1 && alt_edge != pair);
 
         G_EDGES.push(new CANV_EDGE(n1,n2,angle,double_edged,label));
         // e.push(`(${pair})[${label}] -> ${angle.toFixed(2)}(r)==${Math.round(rad2deg(angle))}(d)`)
@@ -339,6 +351,8 @@ function makeEdges(){
     // DEBUG(e);
 
 }
+
+/////////////////////////////    RENDER FUNCTIONS    /////////////////////////////
 
 
 // draw each node in the graph
@@ -378,6 +392,7 @@ function drawEdges(){
     //draw the edges
     let ang = [];
     let de = [];
+    let et = [];
     for(let i = 0; i < G_EDGES.length; i++){
         let edge = G_EDGES[i];
 
@@ -392,13 +407,32 @@ function drawEdges(){
         //draw the line
         gctx.beginPath();
         gctx.moveTo(x1,y1);
+
+        // double line
         if(edge.double_edge){
             let alt_pts = getPerpBisectors(edge.n1,edge.n2);
             let ei = (de.indexOf(oppEdge(estr)) == -1) ? 0 : 1;
             gctx.quadraticCurveTo(alt_pts[ei].x, alt_pts[ei].y, x2, y2)   //need to get perpendicular line to pull the quadratic curve to
             de.push(estr);
-        }else
+            et.push("double");
+        }
+
+        // straight line
+        else if(edge.n1 != edge.n2){
             gctx.lineTo(x2,y2);
+            et.push("single");
+        }
+
+        // loop
+        else if(edge.n1 == edge.n2){
+            // make an arc to loop around
+            let r = edge.n1.r;
+            // gctx.moveTo(x1, y1-edge.n1.r);
+            gctx.beginPath();
+            gctx.arc(x1, y1-edge.n1.r, 25, 0, 2*Math.PI);
+            et.push("loop");
+        }
+
         gctx.stroke();
 
         //add the label (with rotation if needed)å
@@ -418,6 +452,7 @@ function drawEdges(){
         gctx.restore();
 
     }
+    DEBUG(et);
 }
 
 
@@ -431,3 +466,87 @@ function renderGraph(){
     drawNodes();
    
 }
+
+
+
+/////////////////////////////    INTERACTION FUNCTIONS    /////////////////////////////
+
+
+// from https://stackoverflow.com/questions/28284754/dragging-shapes-using-mouse-after-creating-them-with-html5-canvas
+
+// listen for mouse events on the canvas
+graph_canvas.onmousedown = mouseDown;
+graph_canvas.onmouseup = mouseUp;
+graph_canvas.onmouseleave = mouseUp;
+graph_canvas.onmousemove = mouseMove;
+
+
+// get the position of the mouse relative to the bounding box of the canvas
+function getMousePos(e, int_form=true){
+    let mp = {
+        x: e.clientX - graph_bound.left,
+        y: e.clientY - graph_bound.top
+    };
+
+    if(int_form){
+        mp.x = parseInt(mp.x);
+        mp.y = parseInt(mp.y);
+    }
+    return mp;
+}
+
+// return whether the x,y position is inside the node
+// based on pythagorean theorem
+function posInNode(x,y,node){
+    return node.r**2 >= (x-node.x)**2 + (y-node.y)**2;
+}
+
+
+// handle mouse down events on the canvas
+function mouseDown(e){
+    // tell the browser we're handling this mouse event
+    e.preventDefault();
+    e.stopPropagation();
+
+    // find the node being dragged
+    let m = getMousePos(e);
+    cur_drag_node = null;
+    for(let i = 0; i < G_NODES.length; i++){
+        let node = G_NODES[i];
+        if(posInNode(m.x, m.y, node)){
+            cur_drag_node = node;
+            break;
+        }
+    }
+
+    //save the current mouse position
+    mouse_pos = m;
+}
+
+// handle mouse up events on the canvas
+function mouseUp(e){
+    // tell the browser we're handling this mouse event
+    e.preventDefault();
+    e.stopPropagation();
+
+    // clear the current drag node
+    cur_drag_node = null;
+}
+
+// handle mouse move events on the canvas
+function mouseMove(e){
+    // tell the browser we're handling this mouse event
+    e.preventDefault();
+    e.stopPropagation();
+
+    // if we're dragging a node, update its position
+    if(cur_drag_node){
+        let m = getMousePos(e);
+        cur_drag_node.x += m.x - mouse_pos.x;
+        cur_drag_node.y += m.y - mouse_pos.y;
+        mouse_pos = m;
+        renderGraph();
+    }
+}
+
+
