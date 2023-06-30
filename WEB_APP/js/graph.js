@@ -282,7 +282,6 @@ class CANV_NODE {
 
         // this.isDragging = false; //whether or not the node is being dragged
     }
-
 }
 
 // define the edge class for rendering
@@ -290,10 +289,10 @@ class CANV_EDGE{
     constructor(n1,n2, angle, double, label){
         this.n1 = n1;       // node 1
         this.n2 = n2;       // node 2
-        this.angle = angle; // angle between nodes 1 and 2
         this.label = label; // label of the edge
         this.double_edge = double; // whether or not this edge is a double edge
         this.edge_key = `${n1.idx}-${n2.idx}`; // key for the edge
+        this.invis_pt = {x:0,y:0}; // invisible point for rendering
     }
 
 }
@@ -401,6 +400,10 @@ function drawEdges(){
         let y1 = edge.n1.y;
         let x2 = edge.n2.x;
         let y2 = edge.n2.y;
+        let xm = (x1 + x2) / 2;  //midpoint x
+        let ym = (y1 + y2) / 2;  //midpoint y
+        let cx = graph_canvas.width/2;
+        let cy = graph_canvas.height/2;
 
         let estr = edge.edge_key;
 
@@ -410,10 +413,11 @@ function drawEdges(){
 
         // double line
         if(edge.double_edge){
-            let alt_pts = getPerpBisectors(edge.n1,edge.n2);
+            let inv_pt_d = dist({x:x1,y:y1},{x:xm,y:ym})/2;
+            let alt_pts = getPerpBisectors(edge.n1,edge.n2,inv_pt_d);
             let ei = (de.indexOf(oppEdge(estr)) == -1) ? 0 : 1;
+            edge.invis_pt = alt_pts[ei];
             gctx.quadraticCurveTo(alt_pts[ei].x, alt_pts[ei].y, x2, y2)   //need to get perpendicular line to pull the quadratic curve to
-            de.push(estr);
             et.push("double");
         }
 
@@ -426,33 +430,85 @@ function drawEdges(){
         // loop
         else if(edge.n1 == edge.n2){
             // make an arc to loop around
-            let r = edge.n1.r;
-            // gctx.moveTo(x1, y1-edge.n1.r);
+            let r2 = edge.n1.r*(2/3);
+
+            //get the angle from the center of the canvas
+            let c_angle = Math.atan2(y1 - cy, x1 - cx);
+
+            edge.invis_pt = {x:(x1+edge.n1.r*(6/5)*Math.cos(c_angle)),y:(y1+edge.n1.r*(6/5)*Math.sin(c_angle)), r:r2};  //point of the 2 circle
+
+            // make the mini loop on the node
             gctx.beginPath();
-            gctx.arc(x1, y1-edge.n1.r, 25, 0, 2*Math.PI);
-            et.push("loop");
+            gctx.arc((x1+edge.n1.r*(6/5)*Math.cos(c_angle)), (y1+edge.n1.r*(6/5)*Math.sin(c_angle)), r2, 0, 2 * Math.PI);
         }
 
         gctx.stroke();
 
-        //add the label (with rotation if needed)å
-        let mid_x = (x1+x2)/2;
-        let mid_y = (y1+y2)/2;
+        // add the label (with rotation if needed)
+        // let mid_x = (x1+x2)/2;
+        // let mid_y = (y1+y2)/2;
+        // gctx.font = "20px monospace";
+        // gctx.textAlign = "center";
+        // gctx.save();
+        // gctx.translate(mid_x, mid_y);
+        // let abs_angle = Math.abs(edge.angle)
+        // if(abs_angle < 2){
+        //     gctx.rotate(edge.angle);
+        // }else{
+        //     gctx.rotate(edge.angle + Math.PI);
+        // }
+        // gctx.fillText(edge.label, 0, (edge.double_edge ? -14 : -7));
+        // gctx.restore();
+
+        // add angle 
+        // let edge_angle = rad2deg(Math.atan2(y2 - y1, x2 - x1));
+        let edge_angle = Math.atan2(y2 - y1, x2 - x1);
         gctx.font = "20px monospace";
         gctx.textAlign = "center";
+        // gctx.fillText(edge_angle.toFixed(2) + "|" + estr, (x1+x2)/2, (y1+y2)/2 +(i%2*10));
+
+        // draw the arrow at the midpoint of the edge
+        // find midpoint of alt point and midpoint
+        let angle_point = null;
+        if(edge.double_edge)
+            angle_point = {x: (edge.invis_pt.x+xm)/2, y: (edge.invis_pt.y+ym)/2};
+        else if(edge.n1 == edge.n2){
+            let c_ang = Math.atan2(y1 - cy, x1 - cx);
+            angle_point = {x: edge.invis_pt.x+edge.invis_pt.r*Math.cos(c_ang), y: edge.invis_pt.y+edge.invis_pt.r*Math.sin(c_ang)};
+        }else
+            angle_point = {x: (x1+x2)/2, y: (y1+y2)/2};
+        
+        // add 2 lines to the angle point
+        gctx.lineWidth = 2;
+        gctx.beginPath();
+        gctx.moveTo(angle_point.x, angle_point.y);
+        gctx.lineTo(angle_point.x+15*Math.cos(edge_angle+Math.PI/6), angle_point.y+15*Math.sin(edge_angle+Math.PI/6));
+        gctx.stroke();
+        gctx.beginPath();
+        gctx.moveTo(angle_point.x, angle_point.y);
+        gctx.lineTo(angle_point.x+15*Math.cos(edge_angle-Math.PI/6), angle_point.y+15*Math.sin(edge_angle-Math.PI/6));
+        gctx.stroke();
+        gctx.lineWidth = 1;
+
+        // add the edge label (rotated)
         gctx.save();
-        gctx.translate(mid_x, mid_y);
-        let abs_angle = Math.abs(edge.angle)
-        if(abs_angle < 2){
-            gctx.rotate(edge.angle);
-        }else{
-            gctx.rotate(edge.angle + Math.PI);
-        }
-        gctx.fillText(edge.label, 0, (edge.double_edge ? -14 : -7));
+        gctx.translate(angle_point.x, angle_point.y);
+        // gctx.rotate(edge_angle);
+        gctx.rotate(Math.abs(edge_angle) > 2 ? edge_angle + Math.PI : edge_angle)
+        gctx.fillText(edge.label, 0, -10);
+        // gctx.fillText(edge_angle.toFixed(2), 0, -10);
         gctx.restore();
+        
+
+
+        de.push(estr);
 
     }
-    DEBUG(et);
+    // DEBUG(et);
+
+
+
+    DEBUG(G_EDGES.map(e => e.edge_key));
 }
 
 

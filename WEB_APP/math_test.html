@@ -14,22 +14,30 @@
                 border: 1px solid black;
                 display:block;
             }
-            button{
-                display: block;
-                margin: 10px auto;
-            }
             #coords{
                 text-align: center;
                 margin: 0 auto;
                 color:#000;
             }
+            #button_set{
+                text-align: center;
+                margin: auto;
+                display:block;
+            }
+            button{
+                margin: 10px;
+            }
 
         </style>
     </head>
-    <body>
+    <body >
         <canvas id="graph-canvas"></canvas>
         <div id="coords"></div>
-        <button onclick="render()">Re-render</button>
+        <div id="button_set">
+            <button onclick="bisect()">Bisection</button>
+            <button onclick="atan2()">atan2</button>
+        </div>
+        <!-- <button onclick="render()">Re-render</button> -->
 
         <script>
             let canvas = document.getElementById("graph-canvas");
@@ -45,10 +53,6 @@
             let a = {x: 20, y:22}
             let b = null;
 
-            function newB(){
-                b = {x:Math.floor(Math.random()*20)+10, y:Math.floor(Math.random()*20)+10}
-            }
-            
             function slope(a,b){
                 return (b.y-a.y)/(b.x-a.x);   //JS coordinates use top left as origin
             }
@@ -57,8 +61,9 @@
                 return Math.sqrt(Math.pow(b.x-a.x,2)+Math.pow(b.y-a.y,2));
             }
 
-            function render(){
-                newB();
+            // bisectional
+            function bisect(){
+                b = {x:Math.floor(Math.random()*20)+10, y:Math.floor(Math.random()*20)+10}
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 // make grid lines
@@ -129,7 +134,66 @@
                 document.getElementById("coords").innerHTML += `<br>Perp Slope: ${perp_slope.toFixed(2)} | dx: ${dx.toFixed(2)} | dy: ${dy.toFixed(2)}`
                 document.getElementById("coords").innerHTML += `<br>Alt Points: (${alt_points[0].x},${alt_points[0].y}) (${alt_points[1].x},${alt_points[1].y})`
             }
-            render();
+
+            // check angle
+            function atan2(){
+                a = {x:20, y:20};
+                b = {x:Math.floor(Math.random()*25)+5, y:Math.floor(Math.random()*25)+5}
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // make grid lines
+                ctx.strokeStyle = "#dedede";
+                ctx.lineWidth = 1;
+                for(let i = 0; i < canvas.width; i+=off){
+                    ctx.beginPath();
+                    ctx.moveTo(i, 0);
+                    ctx.lineTo(i, canvas.height);
+                    ctx.stroke();
+                }
+                for(let i = 0; i < canvas.height; i+=off){
+                    ctx.beginPath();
+                    ctx.moveTo(0, i);
+                    ctx.lineTo(canvas.width, i);
+                    ctx.stroke();
+                }
+
+                // draw points (a = red, b = blue)
+                ctx.fillStyle = "#f00";
+                ctx.fillRect(a.x*off-(s/2), a.y*off-(s/2), s, s);
+
+                ctx.fillStyle = "#00f";
+                ctx.fillRect(b.x*off-(s/2), b.y*off-(s/2), s, s);
+
+                // draw line between points a + b
+                ctx.strokeStyle = "#000";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(a.x*off, a.y*off);
+                ctx.lineTo(b.x*off, b.y*off);
+                ctx.stroke();
+
+                // write the angle 
+                let angle = Math.atan2(b.y-a.y, b.x-a.x);
+                document.getElementById("coords").innerHTML = `A:(${a.x},${a.y}) B:${b.x},${b.y} | Angle: ${angle.toFixed(2)}`
+
+
+
+                // make a circle r distance at the same angle from b
+                let r = 5;
+                ctx.beginPath();
+                ctx.arc(b.x*off, b.y*off, r*off, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                // make a mini circle at the angle from b
+                let r2 = 2;
+                ctx.strokeStyle = "#f00";
+                ctx.beginPath();
+                ctx.arc((b.x+r*(6/5)*Math.cos(angle))*off, (b.y+r*(6/5)*Math.sin(angle))*off, r2*off, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.strokeStyle = "#000";
+
+
+            }
 
         </script>
     </body>
