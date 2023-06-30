@@ -5,55 +5,14 @@
         <!-- ADD STYLES TO SHEET WHEN FINISHED -->
         <style>
 
-            /* 
-            <div class="edge-item">
-                <div class='edge-conn'><div class="edge-s">0</div><div class="edge-a">-></div><div class="edge-e">1</div></div>
-                <div class='edge-label'>touch $</div>
-            </div>
-             */
+            #graph-canvas{
+                width: 625px;
+                height: 615px;
+                background-color: #f0f8ff;
+            }
             
-            .edge-item{
-                width:100%;
-                height:22px;
-                font-size:16px;
-                font-family: monospace;
-                line-height: 22px;
-                display:block;
-            }
-            .edge-item:hover{
-                background-color: #d2d2d2;
-            }
+            
 
-            .edge-conn{
-                float:left;
-                width:90px;
-                height:22px;
-                text-align:center;
-                border-right:1px solid #ababab;
-                display: block;
-                padding-left:4px;
-
-            }
-            .edge-s,.edge-a,.edge-e{
-                float:left;
-                height:22px;
-                text-align:center;
-                vertical-align:middle;
-                /* border:1px solid blue; */
-            }
-            .edge-a{
-                width:24px;
-            }
-            .edge-s,.edge-e{
-                width:30px;
-            }
-
-            .edge-label{
-                float:left;
-                width:calc(100% - 110px);
-                height:22px;
-                text-align:center;
-            }
             
 
 
@@ -69,10 +28,10 @@
             <div id="menu">
                 <div class="menu-item">File
                     <div id='file_menu' class="menu-dropdown">
-                        <div class="menudrop-item">New</div>
+                        <div class="menudrop-item" onclick="newGraph()">New</div>
                         <div class="menudrop-item" onclick="document.getElementById('entFileIn').click();">Open</div>
                             <input type="file" id="entFileIn" style="display: none;" accept=".txt" onchange="readEntFile()"/>
-                        <div class="menudrop-item">Save</div>
+                        <!-- <div class="menudrop-item">Save</div> -->
                         <div class="menudrop-item" onclick="exportEntGraph()">Save As</div>
                     </div>
                 </div>
@@ -89,7 +48,7 @@
                 </div>
 
 
-                <div class="menu-item">View
+                <!-- <div class="menu-item">View
                     <div id='view_menu' class="menu-dropdown">
                         <div class="menudrop-item">Zoom In</div>
                         <div class="menudrop-item">Zoom Out</div>
@@ -97,7 +56,7 @@
                         <div class="menudrop-item">Toggle Grid Snap</div>
                         <div class="menudrop-item">Clean Up Graph</div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class="menu-item">Help
@@ -111,7 +70,7 @@
             </div>
             <!-- GRAPH NODE EDITOR CANVAS -->
             <div id="gfx-editor">
-                
+                <canvas id="graph-canvas" width="625" height="615"></canvas>
             </div>
             <!-- SIDE BAR TEXT EDITOR -->
             <div id="txt-editor">
@@ -165,7 +124,7 @@
         <script src="js/ui.js"></script>
         <script src="js/graph.js"></script>
 
-        <!-- REMOVE THESE SCRIPTS - PURELY FOR TEST PURPOSES -->
+        <!-- REMOVE THESE SCRIPTS OR PUT THEM SOMEWHERE ELSE - PURELY FOR TEST PURPOSES -->
         <script>
             function fakeGraph(){
                 CUR_NAME = "phd"
@@ -175,15 +134,28 @@
                     "0-1":"step 10",
                     "1-0":"none",
                     "0-2":"nextTo c",
-                    "2-2":"none"
+                    "2-2":"none",
+                    "2-1": "within m",
+                    "1-2": "none"
                 }
                 
             }
 
+            // it's the initial function, innit?
             function init(){
                 fakeGraph();
                 addCurGraphDivs();
+                makeNodes();
+                makeEdges();
             }
+
+            // main loop
+            function main(){
+                requestAnimationFrame(main);
+
+                renderGraph();
+            }
+            main();
         </script>
     </body>
 </html>

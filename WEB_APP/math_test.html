@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <title>Trig Test</title>
+        <style>
+            body{
+                background-color: #dedede;
+            }
+            canvas{
+                width: 400px;
+                height: 400px;
+                background-color: #fff;
+                margin: 50px auto 10px auto;
+                text-align: center;
+                border: 1px solid black;
+                display:block;
+            }
+            button{
+                display: block;
+                margin: 10px auto;
+            }
+            #coords{
+                text-align: center;
+                margin: 0 auto;
+                color:#000;
+            }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="graph-canvas"></canvas>
+        <div id="coords"></div>
+        <button onclick="render()">Re-render</button>
+
+        <script>
+            let canvas = document.getElementById("graph-canvas");
+            canvas.width = 400;
+            canvas.height = 400;
+            let ctx = canvas.getContext("2d");
+
+            let off = 10;  //offset of grid
+            let s = 8;     //size of points
+            let d = 4;     //distance between points (take distance from bisector to a)
+ 
+            // draw onto the canvas
+            let a = {x: 20, y:22}
+            let b = null;
+
+            function newB(){
+                b = {x:Math.floor(Math.random()*20)+10, y:Math.floor(Math.random()*20)+10}
+            }
+            
+            function slope(a,b){
+                return (b.y-a.y)/(b.x-a.x);   //JS coordinates use top left as origin
+            }
+            
+            function dist(a,b){
+                return Math.sqrt(Math.pow(b.x-a.x,2)+Math.pow(b.y-a.y,2));
+            }
+
+            function render(){
+                newB();
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // make grid lines
+                ctx.strokeStyle = "#dedede";
+                ctx.lineWidth = 1;
+                for(let i = 0; i < canvas.width; i+=off){
+                    ctx.beginPath();
+                    ctx.moveTo(i, 0);
+                    ctx.lineTo(i, canvas.height);
+                    ctx.stroke();
+                }
+                for(let i = 0; i < canvas.height; i+=off){
+                    ctx.beginPath();
+                    ctx.moveTo(0, i);
+                    ctx.lineTo(canvas.width, i);
+                    ctx.stroke();
+                }
+
+                // draw points (a = red, b = blue)
+                ctx.fillStyle = "#f00";
+                ctx.fillRect(a.x*off-(s/2), a.y*off-(s/2), s, s);
+
+                ctx.fillStyle = "#00f";
+                ctx.fillRect(b.x*off-(s/2), b.y*off-(s/2), s, s);
+
+                // draw line between points a + b
+                ctx.strokeStyle = "#000";
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(a.x*off, a.y*off);
+                ctx.lineTo(b.x*off, b.y*off);
+                ctx.stroke();
+
+                //draw the midpoint
+                let mid = {x:(a.x+b.x)/2, y:(a.y+b.y)/2};
+                ctx.fillStyle = "#0f0";
+                ctx.fillRect(mid.x*off-(s/2), mid.y*off-(s/2), s, s);
+
+                //draw the perpendicular bisector
+                let perp_slope = null;
+                if(slope(a,b) == 0){
+                    perp_slope = Infinity;
+                }else if(slope(a,b) == Infinity){
+                    perp_slope = 0;
+                }else{
+                    perp_slope = -1/slope(a,b);
+                }
+
+                // EQUATION OF BISECTOR: y - mid.y = perp_slope(x - mid.x) 
+                d = dist(a,mid);  //distance between a and mid
+                dx = d*Math.cos(Math.atan(perp_slope));
+                dy = d*Math.sin(Math.atan(perp_slope));
+
+
+                let alt_points = [
+                    {x:mid.x+dx, y:mid.y+dy},
+                    {x:mid.x-dx, y:mid.y-dy}
+                ]
+
+                // draw alt points
+                ctx.fillStyle = "#ffabab";
+                ctx.fillRect(alt_points[0].x*off-(s/2), alt_points[0].y*off-(s/2), s, s);
+
+                ctx.fillStyle = "#ababff";
+                ctx.fillRect(alt_points[1].x*off-(s/2), alt_points[1].y*off-(s/2), s, s);
+
+                document.getElementById("coords").innerHTML = `A:(${a.x},${a.y}) B:${b.x},${b.y} | Slope: ${slope(a,b).toFixed(2)} | D: ${d.toFixed(2)} | Mid: ${mid.x}, ${mid.y}`
+                document.getElementById("coords").innerHTML += `<br>Perp Slope: ${perp_slope.toFixed(2)} | dx: ${dx.toFixed(2)} | dy: ${dy.toFixed(2)}`
+                document.getElementById("coords").innerHTML += `<br>Alt Points: (${alt_points[0].x},${alt_points[0].y}) (${alt_points[1].x},${alt_points[1].y})`
+            }
+            render();
+
+        </script>
+    </body>
+</html>l
