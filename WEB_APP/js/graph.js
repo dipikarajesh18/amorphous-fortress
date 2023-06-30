@@ -444,21 +444,6 @@ function drawEdges(){
 
         gctx.stroke();
 
-        // add the label (with rotation if needed)
-        // let mid_x = (x1+x2)/2;
-        // let mid_y = (y1+y2)/2;
-        // gctx.font = "20px monospace";
-        // gctx.textAlign = "center";
-        // gctx.save();
-        // gctx.translate(mid_x, mid_y);
-        // let abs_angle = Math.abs(edge.angle)
-        // if(abs_angle < 2){
-        //     gctx.rotate(edge.angle);
-        // }else{
-        //     gctx.rotate(edge.angle + Math.PI);
-        // }
-        // gctx.fillText(edge.label, 0, (edge.double_edge ? -14 : -7));
-        // gctx.restore();
 
         // add angle 
         // let edge_angle = rad2deg(Math.atan2(y2 - y1, x2 - x1));
@@ -482,11 +467,11 @@ function drawEdges(){
         gctx.lineWidth = 2;
         gctx.beginPath();
         gctx.moveTo(angle_point.x, angle_point.y);
-        gctx.lineTo(angle_point.x+15*Math.cos(edge_angle+Math.PI/6), angle_point.y+15*Math.sin(edge_angle+Math.PI/6));
+        gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
         gctx.stroke();
         gctx.beginPath();
         gctx.moveTo(angle_point.x, angle_point.y);
-        gctx.lineTo(angle_point.x+15*Math.cos(edge_angle-Math.PI/6), angle_point.y+15*Math.sin(edge_angle-Math.PI/6));
+        gctx.lineTo(angle_point.x-15*Math.cos(edge_angle-Math.PI/6), angle_point.y-15*Math.sin(edge_angle-Math.PI/6));
         gctx.stroke();
         gctx.lineWidth = 1;
 
