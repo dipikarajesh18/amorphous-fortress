@@ -1,3 +1,11 @@
+/*
+ * GRAPH_UI.JS
+ * Code for the graph canvas interactive UI (left section of the screen)
+ * Written by: Milk + Dipika + Github Copilot
+*/
+
+
+
 ///////////////////////////////     GLOBAL VARIABLE DECLARATIONS     ///////////////////////////////
 
 /// graph definitions ///
@@ -279,20 +287,19 @@ class CANV_NODE {
         this.fs = 24;        //font size
         this.label = label;  //label of the node inside the circle
         this.idx = idx;      //index of the node in the graph
-
-        // this.isDragging = false; //whether or not the node is being dragged
     }
 }
 
 // define the edge class for rendering
 class CANV_EDGE{
     constructor(n1,n2, angle, double, label){
-        this.n1 = n1;       // node 1
-        this.n2 = n2;       // node 2
-        this.label = label; // label of the edge
-        this.double_edge = double; // whether or not this edge is a double edge
-        this.edge_key = `${n1.idx}-${n2.idx}`; // key for the edge
-        this.invis_pt = {x:0,y:0}; // invisible point for rendering
+        this.n1 = n1;                            // node 1
+        this.n2 = n2;                            // node 2
+        this.label = label;                      // label of the edge
+        this.double_edge = double;               // whether or not this edge is a double edge
+        this.edge_key = `${n1.idx}-${n2.idx}`;   // key for the edge label (node1-node2)
+        this.invis_pt = {x:0,y:0};               // invisible point for rendering - pulls the quadratic curve edge line
+        this.label_dist = 14;                    // distance of label away from the edge
     }
 
 }
@@ -356,6 +363,7 @@ function makeEdges(){
 
 // draw each node in the graph
 function drawNodes(){
+
     // draw the nodes
     for(let i = 0; i < G_NODES.length; i++){
         let node = G_NODES[i];
@@ -379,9 +387,15 @@ function drawNodes(){
         gctx.fillText(node.label, node.x, node.y+(node.fs/4));
 
         //add the index (outside)
-        gctx.font = "20px monospace";
+        // gctx.font = "20px monospace";
+        // gctx.textAlign = "center";
+        // gctx.fillText(i, node.x-node.r, node.y-node.r);
+
+        //put the label on the inside
+        let idx_fs = parseInt(node.fs/2);
+        gctx.font = idx_fs+"px monospace";
         gctx.textAlign = "center";
-        gctx.fillText(i, node.x-node.r, node.y-node.r);
+        gctx.fillText(i, node.x, node.y-idx_fs-2);
     }
 }
 
@@ -407,6 +421,8 @@ function drawEdges(){
 
         let estr = edge.edge_key;
 
+        let self_edge = (edge.n1 == edge.n2);
+
         //draw the line
         gctx.beginPath();
         gctx.moveTo(x1,y1);
@@ -428,7 +444,7 @@ function drawEdges(){
         }
 
         // loop
-        else if(edge.n1 == edge.n2){
+        else if(self_edge){
             // make an arc to loop around
             let r2 = edge.n1.r*(2/3);
 
@@ -446,24 +462,24 @@ function drawEdges(){
 
 
         // add angle 
-        // let edge_angle = rad2deg(Math.atan2(y2 - y1, x2 - x1));
-        let edge_angle = Math.atan2(y2 - y1, x2 - x1);
-        gctx.font = "20px monospace";
-        gctx.textAlign = "center";
+        
+        
         // gctx.fillText(edge_angle.toFixed(2) + "|" + estr, (x1+x2)/2, (y1+y2)/2 +(i%2*10));
 
         // draw the arrow at the midpoint of the edge
         // find midpoint of alt point and midpoint
+        let edge_angle = Math.atan2(y2 - y1, x2 - x1);
         let angle_point = null;
         if(edge.double_edge)
             angle_point = {x: (edge.invis_pt.x+xm)/2, y: (edge.invis_pt.y+ym)/2};
-        else if(edge.n1 == edge.n2){
+        else if(self_edge){
             let c_ang = Math.atan2(y1 - cy, x1 - cx);
             angle_point = {x: edge.invis_pt.x+edge.invis_pt.r*Math.cos(c_ang), y: edge.invis_pt.y+edge.invis_pt.r*Math.sin(c_ang)};
         }else
             angle_point = {x: (x1+x2)/2, y: (y1+y2)/2};
         
         // add 2 lines to the angle point
+        // TODO: convert the self node to the 90 degree angle on the invisible point
         gctx.lineWidth = 2;
         gctx.beginPath();
         gctx.moveTo(angle_point.x, angle_point.y);
@@ -475,25 +491,43 @@ function drawEdges(){
         gctx.stroke();
         gctx.lineWidth = 1;
 
+        // if(self_edge){
+        //     debugPoint(edge.invis_pt, "red");
+        //     debugPoint(angle_point, "blue");
+
+        //     // get 90 degrees from the angle point
+        //     let nine = Math.atan2(angle_point.y - edge.invis_pt.y, angle_point.x - edge.invis_pt.x+Math.PI);
+        //     let ninety = {x: angle_point.x+15*Math.cos(nine), y: angle_point.y+15*Math.sin(nine)};
+            
+        //     debugPoint(ninety, "green");
+        // }
+
         // add the edge label (rotated)
+        let edge_fs = parseInt(edge.n1.fs*0.75);
+        gctx.font = edge_fs+"px monospace";
+        gctx.textAlign = "center";
         gctx.save();
-        gctx.translate(angle_point.x, angle_point.y);
-        // gctx.rotate(edge_angle);
-        gctx.rotate(Math.abs(edge_angle) > 2 ? edge_angle + Math.PI : edge_angle)
-        gctx.fillText(edge.label, 0, -10);
-        // gctx.fillText(edge_angle.toFixed(2), 0, -10);
+        //normal edge
+        if(!self_edge){
+            gctx.translate(angle_point.x, angle_point.y);
+            gctx.rotate(Math.abs(edge_angle) > 2 ? edge_angle + Math.PI : edge_angle)
+            gctx.fillText(edge.label, 0, -edge.label_dist);
+        }
+        //self loop
+        else{
+            let e_len = 25;
+            let ext = Math.atan2(angle_point.y - edge.invis_pt.y, angle_point.x - edge.invis_pt.x);
+            let ext_pt = {x:angle_point.x+e_len*Math.cos(ext), y:angle_point.y+e_len*Math.sin(ext)}
+            gctx.translate(ext_pt.x, ext_pt.y);
+            gctx.rotate(Math.abs(edge_angle) > 2 ? edge_angle + Math.PI : edge_angle)
+            gctx.fillText(edge.label, 0, 4);
+        }
+
         gctx.restore();
-        
 
-
-        de.push(estr);
-
+        de.push(estr);   //keep track of which edges have been drawn (for use with the bends)
+  
     }
-    // DEBUG(et);
-
-
-
-    DEBUG(G_EDGES.map(e => e.edge_key));
 }
 
 
@@ -525,8 +559,10 @@ graph_canvas.onmousemove = mouseMove;
 // get the position of the mouse relative to the bounding box of the canvas
 function getMousePos(e, int_form=true){
     let mp = {
-        x: e.clientX - graph_bound.left,
-        y: e.clientY - graph_bound.top
+        // x: e.clientX - graph_bound.left,
+        // y: e.clientY - graph_bound.top
+        x: (e.offsetX * graph_canvas.width) / graph_canvas.clientWidth,
+        y: (e.offsetY * graph_canvas.height) / graph_canvas.clientHeight
     };
 
     if(int_form){
@@ -562,6 +598,7 @@ function mouseDown(e){
 
     //save the current mouse position
     mouse_pos = m;
+    renderGraph();
 }
 
 // handle mouse up events on the canvas
@@ -572,6 +609,7 @@ function mouseUp(e){
 
     // clear the current drag node
     cur_drag_node = null;
+    renderGraph();
 }
 
 // handle mouse move events on the canvas

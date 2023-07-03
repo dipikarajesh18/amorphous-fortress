@@ -1,3 +1,9 @@
+/*
+ * GRAPH_UI.JS
+ * Code for the text table UI (right sidebar) and the top menu bar
+ * Written by: Milk 
+*/
+
 ///////////////////////////////     UI DECLARATIONS     ///////////////////////////////
 
 // MENU DROPDOWN

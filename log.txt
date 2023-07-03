@@ -1,0 +1,81 @@
+codo_init
+  platform: Max OS X
+  Found config.txt
+  
+    01 window_size 0 0 // window width, height
+    02 screen_size 0 0 // screen width, height (stretched to window) 
+    03 show_fps 0 // Draw frames per second in the corner
+    04 windowed 1 // 1 to start up in windowed mode
+    05 window_position -1 -1 // x and y position of window (-1, -1 to let the window manager decide)
+    new window position: -1, -1
+    06 frameless 0 // 1 to use a window with no frame
+    07 fullscreen_method 1 // 0 maximized window (linux)  1 borderless desktop-sized window  2 fullscreen
+    08 foreground_sleep_ms 2 // number of milliseconds to sleep each frame. Try 10 to conserve battery power
+    09 background_sleep_ms 10 // number of milliseconds to sleep each frame when running in the background
+    10 sessions 1 // number of times program has been run
+    11 rmb_key 0 // 0 for none  226 for LALT
+    12 desktop_path 
+    13 sound_volume 256 // 0..256
+    14 music_volume 256 // 0..256
+    15 mix_buffer_size 1024
+    16 version 0.1.12c
+    17 volume 256
+    18 root_path /Users/milk/Desktop/GIL_Lab/Amorphous_Fortress/amorphous-fortress/carts/
+    19 cdata_path /Users/milk/Desktop/GIL_Lab/Amorphous_Fortress/amorphous-fortress/cdata/
+    20 joystick_index 0
+    21 button_keys 0 0 0 0 0 0 0 0 0 0 0 0 0 
+    22 live_notes 0
+    23 cursor_snap 0
+    24 gif_len 8
+    25 gui_theme 0
+    26 screenshot_scale 3
+    27 gif_scale 2
+    28 shift_glyphs 1
+    29 host_framerate_control 1
+    30 splore_filter 0
+    31 tab_width 1
+  
+  codo_system_init
+  Compiled against SDL version: 2.0.8
+  Linked against SDL version:   2.0.8
+  Current video driver: cocoa
+  codo_reset_timer
+  codo_gui_init
+  codo_keys_init
+  codo_text_init
+  codo_video_init
+  codo_mouse_init
+  codo_joystick_init
+  Reading controller mappings: /Users/milk/Desktop/GIL_Lab/Amorphous_Fortress/amorphous-fortress/sdl_controllers.txt
+  searching for joysticks
+    found 0 joysticks
+  ok
+ok
+codo_load_pod: /Applications/PICO-8.app/Contents/MacOS/pico8.dat ok 
+codo_set_screen 128 128 8 100
+ window size: 640 480
+Current renderer:
+  Renderer opengl:
+    Flags: 0x0000000E ( |  | )
+    Texture formats (6): ARGB8888, YV12, IYUV, 0x3231564e, 0x3132564e, UYVY
+    Max Texture Size: 16384x16384
+codo_sound_init mix_buffer_size: 1024
+codo_sound_init
+SDL_INIT_AUDIO ok
+SDL_OpenAudio ok
+ freq:22050
+ channels:1
+Built-in audio drivers: 0 coreaudio 1 disk 2 dummy
+Current audio driver: coreaudio
+loading /Users/milk/Desktop/GIL_Lab/Amorphous_Fortress/amorphous-fortress/WEB_APP/index.html
+window closed (14)
+codo_exit
+  cmusic_stop
+  codo_main_exit
+  codo_config_save
+  codo_sound_exit
+  codo_video_exit
+  codo_joystick_exit
+  codo_system_exit
+  codo_items_created: 1026
+ok

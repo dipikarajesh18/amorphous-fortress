@@ -121,8 +121,8 @@
 
             
         </script>
-        <script src="js/ui.js"></script>
-        <script src="js/graph.js"></script>
+        <script src="js/text_ui.js"></script>
+        <script src="js/graph_ui.js"></script>
 
         <!-- REMOVE THESE SCRIPTS OR PUT THEM SOMEWHERE ELSE - PURELY FOR TEST PURPOSES -->
         <script>
@@ -147,15 +147,17 @@
                 addCurGraphDivs();
                 makeNodes();
                 makeEdges();
+
+                setInterval(renderGraph, 10);   //wait 10ms before rendering graph
             }
 
             // main loop
-            function main(){
-                requestAnimationFrame(main);
+            // function main(){
+            //     requestAnimationFrame(main);
 
-                renderGraph();
-            }
-            main();
+            //     renderGraph();  //called already by the 
+            // }
+            // main();
         </script>
     </body>
 </html>
