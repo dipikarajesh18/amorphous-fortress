@@ -194,6 +194,7 @@ body{
     font-size:18px;
     font-family: monospace;
     line-height: 25px;
+    cursor: pointer;
     /* border-bottom:1px solid #ababab; */
 }
 

@@ -87,9 +87,15 @@ function addNodeItem(node_id, label){
     node_label.innerHTML = label;
     node_div.appendChild(node_label);
 
+    // add an event listener for hover and unhover
+    node_div.addEventListener("mouseover", function(){hoverNode(node_id)});
+    node_div.addEventListener("mouseout", function(){unhoverNode(node_id)});
+    // node_div.addEventListener("click", function(){selectNode(node_id)});
+
     // add the div to the node list sidebar
     let node_list = document.getElementById("node-list");
     node_list.appendChild(node_div);
+
 }
 
 
@@ -131,6 +137,10 @@ function addEdgeItem(pair, label){
     edge_label.className = "edge-label";
     edge_label.innerHTML = label;
     edge_div.appendChild(edge_label);
+
+    // add an event listener for hover and unhover
+    edge_div.addEventListener("mouseover", function(){hoverEdge(pair)});
+    edge_div.addEventListener("mouseout", function(){unhoverEdge(pair)});
 
     // add the div to the edge list sidebar
     let edge_list = document.getElementById("edge-list");

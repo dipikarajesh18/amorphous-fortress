@@ -20,9 +20,12 @@ graph_canvas.width = 615;
 graph_canvas.height = 625;
 var gctx = graph_canvas.getContext("2d");
 
+var HIGHLIGHT_COLOR = "#00B6FF";  
+
 var graph_bound = graph_canvas.getBoundingClientRect();
 let cur_drag_node  = null;
 let mouse_pos = {x:0, y:0};
+
 
 
 /////////////////////////////   GENERIC FUNCTIONS     /////////////////////////////
@@ -280,13 +283,15 @@ function newGraph(){
 // define the node class for rendering
 class CANV_NODE {
     constructor(x, y, label, idx) {
-        this.x = x;          // x position
-        this.y = y;          // y position
-        this.r = 40;         //radius of the circle
-        this.canv_angle = 0; //angle of the node on the canvas relative to the central circle
-        this.fs = 24;        //font size
-        this.label = label;  //label of the node inside the circle
-        this.idx = idx;      //index of the node in the graph
+        this.x = x;                 // x position
+        this.y = y;                 // y position
+        this.r = 40;                //radius of the circle
+        this.canv_angle = 0;        //angle of the node on the canvas relative to the central circle
+        this.fs = 24;               //font size
+        this.label = label;         //label of the node inside the circle
+        this.idx = idx;             //index of the node in the graph
+        this.highlight = false;     //whether or not the node is highlighted
+        this.select = false;        //whether or not the node is selected
     }
 }
 
@@ -300,6 +305,8 @@ class CANV_EDGE{
         this.edge_key = `${n1.idx}-${n2.idx}`;   // key for the edge label (node1-node2)
         this.invis_pt = {x:0,y:0};               // invisible point for rendering - pulls the quadratic curve edge line
         this.label_dist = 14;                    // distance of label away from the edge
+        this.highlight = false;                  // whether or not the edge is highlighted
+        this.select = false;                     // whether or not the edge is selected
     }
 
 }
@@ -375,11 +382,18 @@ function drawNodes(){
         gctx.fill();
 
         //draw the circle
-        gctx.strokeStyle = "#000000";
-        gctx.fillStyle = "#000";
+        if(node.highlight){
+            gctx.strokeStyle = HIGHLIGHT_COLOR;
+            gctx.lineWidth = 4;
+        }else{
+            gctx.strokeStyle = "#000";
+            gctx.lineWidth = 1;
+        }
         gctx.beginPath();
         gctx.arc(node.x, node.y, node.r, 0, 2 * Math.PI);
         gctx.stroke();
+        gctx.strokeStyle = "#000";
+        gctx.fillStyle = "#000";
 
         //add the label
         gctx.font = node.fs + "px Proggy";
@@ -397,6 +411,11 @@ function drawNodes(){
         gctx.textAlign = "center";
         gctx.fillText(i, node.x, node.y-idx_fs-2);
     }
+
+    //reset colors just in case
+    gctx.strokeStyle = "#000";
+    gctx.fillStyle = "#000";
+    gctx.lineWidth = 1;
 }
 
 
@@ -420,9 +439,17 @@ function drawEdges(){
         let cy = graph_canvas.height/2;
 
         let estr = edge.edge_key;
-
         let self_edge = (edge.n1 == edge.n2);
 
+
+        // set the color of the line based on the highlight
+        if(edge.highlight){
+            gctx.strokeStyle = HIGHLIGHT_COLOR;
+            gctx.lineWidth = 3;
+        }else{
+            gctx.strokeStyle = "#000000";
+            gctx.lineWidth = 1;
+        }
         //draw the line
         gctx.beginPath();
         gctx.moveTo(x1,y1);
@@ -480,7 +507,7 @@ function drawEdges(){
         
         // add 2 lines to the angle point
         // TODO: convert the self node to the 90 degree angle on the invisible point
-        gctx.lineWidth = 2;
+        gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
         gctx.beginPath();
         gctx.moveTo(angle_point.x, angle_point.y);
         gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
@@ -629,3 +656,40 @@ function mouseMove(e){
 }
 
 
+
+
+// highlight a specific node
+function hoverNode(ni){
+    if(G_NODES[ni].select) return;
+
+    G_NODES[ni].highlight = true;
+}
+// unhighlight a specific node
+function unhoverNode(ni){
+    G_NODES[ni].highlight = false;
+}
+
+// highlight a specific edge
+function hoverEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    if(G_EDGES[ei].select) return;
+    G_EDGES[ei].highlight = true;
+}
+// unhighlight a specific edge
+function unhoverEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].highlight = false;
+}
+
+// unhighlight all nodes and edges
+function unhoverAll(){
+    for(let i = 0; i < G_NODES.length; i++)
+        G_NODES[i].highlight = false;
+    
+    for(let i = 0; i < G_EDGES.length; i++)
+        G_EDGES[i].highlight = false;
+}
