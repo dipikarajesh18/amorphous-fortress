@@ -115,6 +115,17 @@ function getPerpBisectors(a,b,d=null){
     return alt_points;
 }
 
+// check if 2 line segments intersect
+// a = [p1,p2], b = [p3,p4]
+function crosses(a,b){
+    return ccw(a[0],b[0],b[1]) != ccw(a[1],b[0],b[1]) && ccw(a[0],a[1],b[0]) != ccw(a[0],a[1],b[1]);
+}
+
+// idfk copilot wrote this
+function ccw(a,b,c){
+    return (c.y-a.y)*(b.x-a.x) > (b.y-a.y)*(c.x-a.x);
+}
+
 
 
 /////////////////////////////    FILE I/O FUNCTIONS     /////////////////////////////
@@ -326,11 +337,29 @@ class CANV_EDGE{
 
     // somewhat hacky way of creating a bounding box for the edge
     make_bound_box(vd,double){
+
+        //for self-loops, just make a square around the center node
+        if(this.n1.idx == this.n2.idx){
+            let x = this.invis_pt.x;
+            let y = this.invis_pt.y;
+            let r = this.n1.r*(2/3);
+
+            let bbox = [
+                {x:x-r, y:y-r},
+                {x:x+r, y:y-r},
+                {x:x+r, y:y+r},
+                {x:x-r, y:y+r}
+            ]
+            this.bbox = bbox;
+            return;
+        }
+
         // vd = vertical distance
         let x1 = this.n1.x;
         let y1 = this.n1.y;
         let x2 = this.n2.x;
         let y2 = this.n2.y;
+        let mdpt = {x:(x1+x2)/2, y:(y1+y2)/2};
 
         // get perpendicular angle
         let perp_angle = Math.atan2(y2-y1, x2-x1) + Math.PI/2;
@@ -344,25 +373,41 @@ class CANV_EDGE{
         let bbox = [new_point_1, new_point_3, new_point_4, new_point_2];
 
         // shift the points if it's a double edge
+        // TODO: this is technically wrong but it works (the overlap is incorrect ssshhhhhhh)
         if(double){
             //sort by the 2 closest points
             let bbox_i = [];
             for(let i =0;i<4;i++){
                 bbox_i[i] = {'i':i, 'd':dist(bbox[i], this.invis_pt), 'pt':bbox[i]};
             }
-            bbox_i.sort(function(a,b){return b['d']-a['d']});
+            bbox_i.sort(function(a,b){return a['d']-b['d']});
 
-            let mdpt = {x:(x1+x2)/2, y:(y1+y2)/2};
             let perp_angle = Math.atan2(mdpt.y-this.invis_pt.y, mdpt.x-this.invis_pt.x);
 
             // shift the 2 closest points
             for(let i = 0; i < 2; i++){
                 let pt = bbox_i[i]['pt'];
-                pt.x = pt.x + Math.cos(perp_angle) * this.invis_pt_d/2;
-                pt.y = pt.y + Math.sin(perp_angle) * this.invis_pt_d/2;
+                pt.x = pt.x - Math.cos(perp_angle) * this.invis_pt_d;
+                pt.y = pt.y - Math.sin(perp_angle) * this.invis_pt_d;
+                bbox[bbox_i['i']] = pt;
+            }
+            for(let i = 2; i < 4; i++){
+                let pt = bbox_i[i]['pt'];
+                pt.x = pt.x - Math.cos(perp_angle) * this.invis_pt_d/3;
+                pt.y = pt.y - Math.sin(perp_angle) * this.invis_pt_d/3;
                 bbox[bbox_i['i']] = pt;
             }
         }
+
+        //shrink to offset the node radius
+        let r = this.n1.r;
+        for(let i = 0; i < 4; i++){
+            let a = Math.atan2(bbox[i].y-mdpt.y, bbox[i].x-mdpt.x);
+            bbox[i].x = bbox[i].x - r*Math.cos(a);
+            bbox[i].y = bbox[i].y - r*Math.sin(a);
+        }
+
+
         this.bbox = bbox;
     }
 }
@@ -643,57 +688,8 @@ function renderGraph(){
     drawEdges();
     drawNodes();
 
-    fakeBox();
 }
 
-function fakeBox(){
-    let x1 = 20;
-    let y1 = 20;
-    let x2 = 100;
-    let y2 = 100;
-
-    let bbox = [{x:x1,y:y1},{x:x2,y:y2}];
-    debugPoly(bbox, "blue");
-
-    let angle = Math.atan2(y2-y1, x2-x1);
-    let vd = 10;
-
-    let slope = (y2-y1)/(x2-x1);
-    let perp = -1/slope;
-
-    // first point is x1 + vd, y1 + vd * perp
-    // second point is x1 - vd, y1 - vd * perp
-    let new_point_1 = {x:x1+vd, y:y1+vd*perp};
-    let new_point_2 = {x:x1-vd, y:y1-vd*perp};
-    let new_point_3 = {x:x2+vd, y:y2+vd*perp};
-    let new_point_4 = {x:x2-vd, y:y2-vd*perp};
-
-    bbox = [new_point_1, new_point_3, new_point_4, new_point_2];
-    debugPoly(bbox, "green");
-
-    // get modified angles
-    // let c1 = vd*Math.cos(angle+deg2rad(-90));
-    // let c2 = vd*Math.cos(angle+deg2rad(90));
-    // let s1 = vd*Math.sin(angle+deg2rad(-90));
-    // let s2 = vd*Math.sin(angle+deg2rad(90));
-
-    // bbox = []
-    // for(let i=0;i<4;i++){
-    //     let xi = (i == 0 || i == 3) ? x1 : x2;
-    //     let yi = (i < 2) ? y1 : y2;
-
-    //     // modify
-    //     xi += (i < 2) ? c1 : c2;
-    //     yi += (i == 0 || i == 3) ? s1 : s2;
-    //     xi = Math.round(xi);
-    //     yi = Math.round(yi);
-
-    //     bbox[i] = {x:xi,y:yi};
-    // }
-    // debugPoly(bbox, "red");
-    
-    // DEBUG(rad2deg(angle))
-}
 
 
 /////////////////////////////    INTERACTION FUNCTIONS    /////////////////////////////
@@ -732,15 +728,29 @@ function posInNode(x,y,node){
 
 // return whether the x,y position is inside the bounding box of the edge
 function posInEdge(x,y,edge){
-    let x1 = edge.n1.x;
-    let y1 = edge.n1.y;
-    let x2 = edge.n2.x;
-    let y2 = edge.n2.y;
+    // make the 4 line segments from the bbox
+    let bbox = edge.bbox;
+    let segs = [];
+    for(let i=0;i<3;i++){
+        segs.push([bbox[i], bbox[i+1]]);
+    }
+    segs.push([bbox[3], bbox[0]]);
 
-    // DEBUG: make a box around the edge
-    gctx.strokeStyle = "red";
-    gctx.strokeRect(Math.min(x1,x2), Math.min(y1,y2), Math.abs(x1-x2), Math.abs(y1-y2));
+    // create line segment for the mouse position
+    let mouse_seg = [{x:x,y:y}, {x:graph_canvas.width,y:y}];
+    // debugPoly([mouse_seg,mouse_seg], "green")
 
+    // check if the mouse segment intersects any of the bbox segments
+    let inter_ct = 0;
+    for(let i=0;i<segs.length;i++){
+        if(crosses(segs[i], mouse_seg))
+            inter_ct++;
+    }
+
+    if (inter_ct % 2 == 0)
+        return false;
+    else
+        return true;
 }
 
 
@@ -811,8 +821,25 @@ function mouseMove(e){
                 unhoverNode(i);
             }
         }
+
+        // if we're hovering over an edge, highlight it
+        for(let i = 0; i < G_EDGES.length; i++){
+            let edge = G_EDGES[i];
+            if(posInEdge(m.x, m.y, edge)){
+                hoverEdge(edge.edge_key);
+                DEBUG(edge.edge_key);
+            }else{
+                unhoverEdge(edge.edge_key);
+            }
+        }
+
         renderGraph();
     }
+
+    //laser pointer
+    // let m = getMousePos(e);
+    // let mouse_seg = [{x:m.x,y:m.y}, {x:graph_canvas.width,y:m.y}];
+    // debugPoly(mouse_seg, "green")
 }
 
 
