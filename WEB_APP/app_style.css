@@ -14,18 +14,27 @@ body{
 }
 #title{
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
-    line-height: 50px;
+    line-height: 32px;
     font-family: DwarfFortress;
-    margin-top:15px;
+    margin-top:12px;
 }
 #container{
     width: 900px;
     height: 648px;
     border:2px solid #4c4c4c;
-    margin:10px auto;
+    margin:8px auto;
     display: block;
+}
+
+#debug{
+    color:red;
+    font-size: 12px;
+    font-family: monospace;
+    width:400px;
+    text-align: center;
+    margin:auto;
 }
 
 /*******  MENU STYLING  ******/
@@ -181,7 +190,7 @@ body{
 
 #node-list{
     overflow-y: auto;
-    height:260px;
+    height:220px;
     width:100%
 }
 .node-item:hover{
@@ -194,7 +203,7 @@ body{
     font-size:18px;
     font-family: monospace;
     line-height: 25px;
-    cursor: pointer;
+    cursor: default;
     /* border-bottom:1px solid #ababab; */
 }
 
@@ -214,6 +223,24 @@ body{
     /* border:1px solid black; */
 }
 
+
+/*******  EDGES STYLING  ******/
+
+#entity-edges{
+    height: 285px;
+    width: 270px;
+    float:left;
+    /* border-top:10px double #ababab; */
+    
+}
+
+#edge-list{
+    width:100%;
+    height:260px;
+    overflow-y: auto;
+}
+
+
 .edge-item{
     width:100%;
     height:22px;
@@ -221,6 +248,7 @@ body{
     font-family: monospace;
     line-height: 22px;
     display:block;
+    cursor:default;
 }
 .edge-item:hover{
     background-color: #d2d2d2;
@@ -255,29 +283,4 @@ body{
     width:calc(100% - 110px);
     height:22px;
     text-align:center;
-}
-
-#debug{
-    color:red;
-    font-size: 12px;
-    font-family: monospace;
-    width:400px;
-    text-align: center;
-    margin:auto;
-}
-
-/*******  EDGES STYLING  ******/
-
-#entity-edges{
-    height: 285px;
-    width: 270px;
-    float:left;
-    /* border-top:10px double #ababab; */
-    
-}
-
-#edge-list{
-    width:100%;
-    height:260px;
-    overflow-y: auto;
 }
