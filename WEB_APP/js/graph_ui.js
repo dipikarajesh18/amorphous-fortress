@@ -21,6 +21,7 @@ graph_canvas.height = 625;
 var gctx = graph_canvas.getContext("2d");
 
 var HIGHLIGHT_COLOR = "#00B6FF";  
+let SELECT_COLOR = "#00EC16";
 
 var graph_bound = graph_canvas.getBoundingClientRect();
 let cur_drag_node  = null;
@@ -43,6 +44,19 @@ function oppEdge(edge){
     return `${es[1]}-${es[0]}`;
 }
 
+// draws a polygon given an array of points to move to
+function debugPoly(poly, c='blue'){
+    if(poly.length < 2) return;
+
+    gctx.strokeStyle = c;
+    gctx.beginPath();
+    gctx.moveTo(poly[0].x, poly[0].y);
+    for(let i = 1; i < poly.length; i++){
+        gctx.lineTo(poly[i].x, poly[i].y);
+    }
+    gctx.closePath();
+    gctx.stroke();
+}
 
 //////////////////////////   MATH BULLSHIT FUNCTIONS     /////////////////////////
 
@@ -300,6 +314,7 @@ class CANV_EDGE{
     constructor(n1,n2, angle, double, label){
         this.n1 = n1;                            // node 1
         this.n2 = n2;                            // node 2
+        this.angle = angle;                      // angle of the edge
         this.label = label;                      // label of the edge
         this.double_edge = double;               // whether or not this edge is a double edge
         this.edge_key = `${n1.idx}-${n2.idx}`;   // key for the edge label (node1-node2)
@@ -309,6 +324,47 @@ class CANV_EDGE{
         this.select = false;                     // whether or not the edge is selected
     }
 
+    // somewhat hacky way of creating a bounding box for the edge
+    make_bound_box(vd,double){
+        // vd = vertical distance
+        let x1 = this.n1.x;
+        let y1 = this.n1.y;
+        let x2 = this.n2.x;
+        let y2 = this.n2.y;
+
+        // get perpendicular angle
+        let perp_angle = Math.atan2(y2-y1, x2-x1) + Math.PI/2;
+
+        // create the points offset by the right angle perpendicular to the edge
+        let new_point_1 = {x:x1+vd*Math.cos(perp_angle), y:y1+vd*Math.sin(perp_angle)};
+        let new_point_2 = {x:x1-vd*Math.cos(perp_angle), y:y1-vd*Math.sin(perp_angle)};
+        let new_point_3 = {x:x2+vd*Math.cos(perp_angle), y:y2+vd*Math.sin(perp_angle)};
+        let new_point_4 = {x:x2-vd*Math.cos(perp_angle), y:y2-vd*Math.sin(perp_angle)};
+
+        let bbox = [new_point_1, new_point_3, new_point_4, new_point_2];
+
+        // shift the points if it's a double edge
+        if(double){
+            //sort by the 2 closest points
+            let bbox_i = [];
+            for(let i =0;i<4;i++){
+                bbox_i[i] = {'i':i, 'd':dist(bbox[i], this.invis_pt), 'pt':bbox[i]};
+            }
+            bbox_i.sort(function(a,b){return b['d']-a['d']});
+
+            let mdpt = {x:(x1+x2)/2, y:(y1+y2)/2};
+            let perp_angle = Math.atan2(mdpt.y-this.invis_pt.y, mdpt.x-this.invis_pt.x);
+
+            // shift the 2 closest points
+            for(let i = 0; i < 2; i++){
+                let pt = bbox_i[i]['pt'];
+                pt.x = pt.x + Math.cos(perp_angle) * this.invis_pt_d/2;
+                pt.y = pt.y + Math.sin(perp_angle) * this.invis_pt_d/2;
+                bbox[bbox_i['i']] = pt;
+            }
+        }
+        this.bbox = bbox;
+    }
 }
 
 let G_NODES = [];   // list of graph visualizer nodes
@@ -321,6 +377,8 @@ function makeNodes(){
     let r = Math.min(250,120 + (Math.max(num_nodes,4) * 10));
     let cx = graph_canvas.width/2;
     let cy = graph_canvas.height/2;
+
+    let offset_angle = -90;
     
     // arrange the nodes in a circle
     G_NODES = [];
@@ -329,8 +387,8 @@ function makeNodes(){
         let x = cx;
         let y = cy;
         if(num_nodes > 1){
-            x = cx + r * Math.cos(angle);
-            y = cy + r * Math.sin(angle);
+            x = cx + r * Math.cos(angle+deg2rad(offset_angle));
+            y = cy + r * Math.sin(angle+deg2rad(offset_angle));
         }
         let label = CUR_NODES[i];
         G_NODES.push(new CANV_NODE(x, y, label, i));
@@ -357,9 +415,13 @@ function makeEdges(){
         let alt_edge = oppEdge(pair);
         let double_edged = (all_pairs.indexOf(alt_edge) != -1 && alt_edge != pair);
 
-        G_EDGES.push(new CANV_EDGE(n1,n2,angle,double_edged,label));
+        let new_g_edge = new CANV_EDGE(n1,n2,angle,double_edged,label)
+
+        G_EDGES.push(new_g_edge);
+
         // e.push(`(${pair})[${label}] -> ${angle.toFixed(2)}(r)==${Math.round(rad2deg(angle))}(d)`)
         // e.push(`(${pair})[${label}] -> ${double_edged} => ${alt_edge}`)
+
     }
     // DEBUG(e);
 
@@ -382,7 +444,10 @@ function drawNodes(){
         gctx.fill();
 
         //draw the circle
-        if(node.highlight){
+        if(node.select){
+            gctx.strokeStyle = SELECT_COLOR;
+            gctx.lineWidth = 4;
+        }else if(node.highlight){
             gctx.strokeStyle = HIGHLIGHT_COLOR;
             gctx.lineWidth = 4;
         }else{
@@ -460,6 +525,7 @@ function drawEdges(){
             let alt_pts = getPerpBisectors(edge.n1,edge.n2,inv_pt_d);
             let ei = (de.indexOf(oppEdge(estr)) == -1) ? 0 : 1;
             edge.invis_pt = alt_pts[ei];
+            edge.invis_pt_d = inv_pt_d;
             gctx.quadraticCurveTo(alt_pts[ei].x, alt_pts[ei].y, x2, y2)   //need to get perpendicular line to pull the quadratic curve to
             et.push("double");
         }
@@ -486,16 +552,16 @@ function drawEdges(){
         }
 
         gctx.stroke();
+        // debugPoint(edge.invis_pt, "blue", 5);
 
 
         // add angle 
-        
         
         // gctx.fillText(edge_angle.toFixed(2) + "|" + estr, (x1+x2)/2, (y1+y2)/2 +(i%2*10));
 
         // draw the arrow at the midpoint of the edge
         // find midpoint of alt point and midpoint
-        let edge_angle = Math.atan2(y2 - y1, x2 - x1);
+        let edge_angle = Math.atan2(y1 - y2, x1 - x2);   // has to be recalculated each time for the nodes that get moved
         let angle_point = null;
         if(edge.double_edge)
             angle_point = {x: (edge.invis_pt.x+xm)/2, y: (edge.invis_pt.y+ym)/2};
@@ -518,6 +584,13 @@ function drawEdges(){
         gctx.stroke();
         gctx.lineWidth = 1;
 
+
+        // set the bounding box
+        edge.make_bound_box(10,edge.double_edge);
+        // debugPoly(edge.bbox, "red")
+
+        // TODO: Make the self edge arrow at a tangent to the curve relative to the central point
+
         // if(self_edge){
         //     debugPoint(edge.invis_pt, "red");
         //     debugPoint(angle_point, "blue");
@@ -534,6 +607,7 @@ function drawEdges(){
         gctx.font = edge_fs+"px monospace";
         gctx.textAlign = "center";
         gctx.save();
+
         //normal edge
         if(!self_edge){
             gctx.translate(angle_point.x, angle_point.y);
@@ -555,6 +629,8 @@ function drawEdges(){
         de.push(estr);   //keep track of which edges have been drawn (for use with the bends)
   
     }
+
+    // DEBUG(JSON.stringify(G_EDGES[0].bbox))
 }
 
 
@@ -566,9 +642,58 @@ function renderGraph(){
     //draw the graph
     drawEdges();
     drawNodes();
-   
+
+    fakeBox();
 }
 
+function fakeBox(){
+    let x1 = 20;
+    let y1 = 20;
+    let x2 = 100;
+    let y2 = 100;
+
+    let bbox = [{x:x1,y:y1},{x:x2,y:y2}];
+    debugPoly(bbox, "blue");
+
+    let angle = Math.atan2(y2-y1, x2-x1);
+    let vd = 10;
+
+    let slope = (y2-y1)/(x2-x1);
+    let perp = -1/slope;
+
+    // first point is x1 + vd, y1 + vd * perp
+    // second point is x1 - vd, y1 - vd * perp
+    let new_point_1 = {x:x1+vd, y:y1+vd*perp};
+    let new_point_2 = {x:x1-vd, y:y1-vd*perp};
+    let new_point_3 = {x:x2+vd, y:y2+vd*perp};
+    let new_point_4 = {x:x2-vd, y:y2-vd*perp};
+
+    bbox = [new_point_1, new_point_3, new_point_4, new_point_2];
+    debugPoly(bbox, "green");
+
+    // get modified angles
+    // let c1 = vd*Math.cos(angle+deg2rad(-90));
+    // let c2 = vd*Math.cos(angle+deg2rad(90));
+    // let s1 = vd*Math.sin(angle+deg2rad(-90));
+    // let s2 = vd*Math.sin(angle+deg2rad(90));
+
+    // bbox = []
+    // for(let i=0;i<4;i++){
+    //     let xi = (i == 0 || i == 3) ? x1 : x2;
+    //     let yi = (i < 2) ? y1 : y2;
+
+    //     // modify
+    //     xi += (i < 2) ? c1 : c2;
+    //     yi += (i == 0 || i == 3) ? s1 : s2;
+    //     xi = Math.round(xi);
+    //     yi = Math.round(yi);
+
+    //     bbox[i] = {x:xi,y:yi};
+    // }
+    // debugPoly(bbox, "red");
+    
+    // DEBUG(rad2deg(angle))
+}
 
 
 /////////////////////////////    INTERACTION FUNCTIONS    /////////////////////////////
@@ -605,6 +730,19 @@ function posInNode(x,y,node){
     return node.r**2 >= (x-node.x)**2 + (y-node.y)**2;
 }
 
+// return whether the x,y position is inside the bounding box of the edge
+function posInEdge(x,y,edge){
+    let x1 = edge.n1.x;
+    let y1 = edge.n1.y;
+    let x2 = edge.n2.x;
+    let y2 = edge.n2.y;
+
+    // DEBUG: make a box around the edge
+    gctx.strokeStyle = "red";
+    gctx.strokeRect(Math.min(x1,x2), Math.min(y1,y2), Math.abs(x1-x2), Math.abs(y1-y2));
+
+}
+
 
 // handle mouse down events on the canvas
 function mouseDown(e){
@@ -619,6 +757,7 @@ function mouseDown(e){
         let node = G_NODES[i];
         if(posInNode(m.x, m.y, node)){
             cur_drag_node = node;
+            node.select = true;
             break;
         }
     }
@@ -635,7 +774,13 @@ function mouseUp(e){
     e.stopPropagation();
 
     // clear the current drag node
+    if(cur_drag_node)
+        cur_drag_node.select = false;
     cur_drag_node = null;
+
+    //unselect everything
+    // unselectAll();
+
     renderGraph();
 }
 
@@ -651,6 +796,21 @@ function mouseMove(e){
         cur_drag_node.x += m.x - mouse_pos.x;
         cur_drag_node.y += m.y - mouse_pos.y;
         mouse_pos = m;
+        renderGraph();
+    }
+
+    // if we're hovering over a node, highlight it
+    else{
+        let m = getMousePos(e);
+        let hover_node = null;
+        for(let i = 0; i < G_NODES.length; i++){
+            let node = G_NODES[i];
+            if(posInNode(m.x, m.y, node)){
+                hoverNode(i);
+            }else{
+                unhoverNode(i);
+            }
+        }
         renderGraph();
     }
 }
@@ -692,4 +852,41 @@ function unhoverAll(){
     
     for(let i = 0; i < G_EDGES.length; i++)
         G_EDGES[i].highlight = false;
+}
+
+// select a specific node
+function selectNode(ni){
+    G_NODES[ni].select = true;
+    G_NODES[ni].highlight = false;
+}
+
+// unselect a specific node
+function unselectNode(ni){
+    G_NODES[ni].select = false;
+}
+
+// select a specific edge
+function selectEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].select = true;
+    G_EDGES[ei].highlight = false;
+}
+
+// unselect a specific edge
+function unselectEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].select = false;
+}
+
+// unselect all nodes and edges
+function unselectAll(){
+    for(let i = 0; i < G_NODES.length; i++)
+        G_NODES[i].select = false;
+    
+    for(let i = 0; i < G_EDGES.length; i++)
+        G_EDGES[i].select = false;
 }
