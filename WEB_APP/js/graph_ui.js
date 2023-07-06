@@ -387,8 +387,8 @@ class CANV_EDGE{
             // shift the 2 closest points
             for(let i = 0; i < 2; i++){
                 let pt = bbox_i[i]['pt'];
-                pt.x = pt.x - Math.cos(perp_angle) * this.invis_pt_d;
-                pt.y = pt.y - Math.sin(perp_angle) * this.invis_pt_d;
+                pt.x = pt.x - Math.cos(perp_angle) * this.invis_pt_d*(2/3);
+                pt.y = pt.y - Math.sin(perp_angle) * this.invis_pt_d*(2/3);
                 bbox[bbox_i['i']] = pt;
             }
             for(let i = 2; i < 4; i++){
@@ -617,18 +617,33 @@ function drawEdges(){
             angle_point = {x: (x1+x2)/2, y: (y1+y2)/2};
         
         // add 2 lines to the angle point
-        // TODO: convert the self node to the 90 degree angle on the invisible point
-        gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
-        gctx.beginPath();
-        gctx.moveTo(angle_point.x, angle_point.y);
-        gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
-        gctx.stroke();
-        gctx.beginPath();
-        gctx.moveTo(angle_point.x, angle_point.y);
-        gctx.lineTo(angle_point.x-15*Math.cos(edge_angle-Math.PI/6), angle_point.y-15*Math.sin(edge_angle-Math.PI/6));
-        gctx.stroke();
-        gctx.lineWidth = 1;
-
+        if(self_edge){
+            let tilt = Math.PI/6;
+            let c_ang = Math.atan2(y1 - cy, x1 - cx)+Math.PI/2.5;
+            gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
+            gctx.beginPath();
+            gctx.moveTo(angle_point.x, angle_point.y);
+            let to_pt = {x:angle_point.x-15*Math.cos(c_ang+tilt), y:angle_point.y-15*Math.sin(c_ang+tilt)};
+            let to_pt2 = {x:angle_point.x-15*Math.cos(c_ang-tilt), y:angle_point.y-15*Math.sin(c_ang-tilt)};
+            gctx.lineTo(to_pt.x, to_pt.y);
+            gctx.stroke();
+            gctx.beginPath();
+            gctx.moveTo(angle_point.x, angle_point.y);
+            gctx.lineTo(to_pt2.x, to_pt2.y);
+            gctx.stroke();
+            gctx.lineWidth = 1;
+        }else{
+            gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
+            gctx.beginPath();
+            gctx.moveTo(angle_point.x, angle_point.y);
+            gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
+            gctx.stroke();
+            gctx.beginPath();
+            gctx.moveTo(angle_point.x, angle_point.y);
+            gctx.lineTo(angle_point.x-15*Math.cos(edge_angle-Math.PI/6), angle_point.y-15*Math.sin(edge_angle-Math.PI/6));
+            gctx.stroke();
+            gctx.lineWidth = 1;
+        }
 
         // set the bounding box
         edge.make_bound_box(10,edge.double_edge);
