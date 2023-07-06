@@ -37,6 +37,7 @@ function showMenu(submenu){
 }
 function hideMenu(submenu){
     submenu.style.display = "none";
+    // DEBUG("hiding " + submenu.id);
 }
 
 
@@ -148,6 +149,24 @@ function addEdgeItem(pair, label){
 
 }
 
+
+// format the placement of the graphs and the nodes cleanly
+function orderGraph(){
+    addCurGraphDivs();
+    makeNodes();
+    makeEdges();
+    renderGraph();
+
+    hideAllMenus();
+}
+
+function hideAllMenus(){
+    let all_menus = document.getElementsByClassName("menu_dropdown");
+    for(let i = 0; i < all_menus.length; i++){
+        hideMenu(all_menus[i]);
+    }
+}
+
 ///////////////////////////////     EVENT LISTENERS     ///////////////////////////////
 
 
@@ -170,5 +189,5 @@ for(let i = 0; i < all_menus.length; i++){
 
     menu.addEventListener("click", function(){showMenu(submenus[0])});
     menu.addEventListener("mouseleave", function(){hideMenu(submenus[0])});
-    // menu.addEventListener("mouseleave", function(){debug.innerHTML = `mouseout (${submenus[0].id})`;});
+    // menu.addEventListener("mouseleave", function(){DEBUG(`mouseout (${submenus[0].id})`);});
 }

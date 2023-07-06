@@ -96,6 +96,12 @@ body{
     border-right:#ababab 5px double;
 }
 
+#graph-canvas{
+    width: 625px;
+    height: 615px;
+    background-color: #f0f8ff;
+}
+
 /*******  TEXT INFO STYLING  ******/
 
 #txt-editor{
@@ -193,7 +199,7 @@ body{
     height:220px;
     width:100%
 }
-.node-item:hover{
+.node-item:hover, .node-item-hover{
     background-color: #d1d1d1;
 }
 
@@ -250,7 +256,7 @@ body{
     display:block;
     cursor:default;
 }
-.edge-item:hover{
+.edge-item:hover, .edge-item-hover{
     background-color: #d2d2d2;
 }
 

@@ -21,27 +21,29 @@ graph_canvas.height = 625;
 var gctx = graph_canvas.getContext("2d");
 
 var HIGHLIGHT_COLOR = "#00B6FF";  
-let SELECT_COLOR = "#00EC16";
+var SELECT_COLOR = "#00EC16";
+var DRAG_COLOR = "#FFD200";
 
 var graph_bound = graph_canvas.getBoundingClientRect();
-let cur_drag_node  = null;
-let mouse_pos = {x:0, y:0};
+var cur_drag_node  = null;
+var cur_selection = null;   // can be a node or an edge
+var mouse_pos = {x:0, y:0};
 
 
 
 /////////////////////////////   GENERIC FUNCTIONS     /////////////////////////////
+
+// get the opposite edge
+function oppEdge(edge){
+    let es = edge.split("-");
+    return `${es[1]}-${es[0]}`;
+}
 
 // draws a debug point
 function debugPoint(p, c='blue', s=5){
     gctx.fillStyle = c;
     gctx.fillRect(p.x-Math.floor(s/2), p.y-Math.floor(s/2), s, s);
     gctx.fillStyle = "black";
-}
-
-// get the opposite edge
-function oppEdge(edge){
-    let es = edge.split("-");
-    return `${es[1]}-${es[0]}`;
 }
 
 // draws a polygon given an array of points to move to
@@ -472,6 +474,7 @@ function makeEdges(){
 
 }
 
+
 /////////////////////////////    RENDER FUNCTIONS    /////////////////////////////
 
 
@@ -489,7 +492,11 @@ function drawNodes(){
         gctx.fill();
 
         //draw the circle
-        if(node.select){
+        if(cur_drag_node && cur_drag_node.idx == node.idx && cur_drag_node.drag){
+            gctx.strokeStyle = DRAG_COLOR;
+            gctx.lineWidth = 4;
+        }
+        else if(node.select){
             gctx.strokeStyle = SELECT_COLOR;
             gctx.lineWidth = 4;
         }else if(node.highlight){
@@ -553,7 +560,10 @@ function drawEdges(){
 
 
         // set the color of the line based on the highlight
-        if(edge.highlight){
+        if(edge.select){
+            gctx.strokeStyle = SELECT_COLOR;
+            gctx.lineWidth = 3;
+        }else if(edge.highlight){
             gctx.strokeStyle = HIGHLIGHT_COLOR;
             gctx.lineWidth = 3;
         }else{
@@ -601,7 +611,6 @@ function drawEdges(){
 
 
         // add angle 
-        
         // gctx.fillText(edge_angle.toFixed(2) + "|" + estr, (x1+x2)/2, (y1+y2)/2 +(i%2*10));
 
         // draw the arrow at the midpoint of the edge
@@ -620,7 +629,7 @@ function drawEdges(){
         if(self_edge){
             let tilt = Math.PI/6;
             let c_ang = Math.atan2(y1 - cy, x1 - cx)+Math.PI/2.5;
-            gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
+            gctx.lineWidth = 2*(edge.highlight || edge.select ? 2 : 1);
             gctx.beginPath();
             gctx.moveTo(angle_point.x, angle_point.y);
             let to_pt = {x:angle_point.x-15*Math.cos(c_ang+tilt), y:angle_point.y-15*Math.sin(c_ang+tilt)};
@@ -632,8 +641,11 @@ function drawEdges(){
             gctx.lineTo(to_pt2.x, to_pt2.y);
             gctx.stroke();
             gctx.lineWidth = 1;
-        }else{
-            gctx.lineWidth = 2*(edge.highlight ? 2 : 1);
+        }
+        
+        // double and single lines
+        else{
+            gctx.lineWidth = 2*(edge.highlight || edge.select ? 2 : 1);
             gctx.beginPath();
             gctx.moveTo(angle_point.x, angle_point.y);
             gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
@@ -649,18 +661,6 @@ function drawEdges(){
         edge.make_bound_box(10,edge.double_edge);
         // debugPoly(edge.bbox, "red")
 
-        // TODO: Make the self edge arrow at a tangent to the curve relative to the central point
-
-        // if(self_edge){
-        //     debugPoint(edge.invis_pt, "red");
-        //     debugPoint(angle_point, "blue");
-
-        //     // get 90 degrees from the angle point
-        //     let nine = Math.atan2(angle_point.y - edge.invis_pt.y, angle_point.x - edge.invis_pt.x+Math.PI);
-        //     let ninety = {x: angle_point.x+15*Math.cos(nine), y: angle_point.y+15*Math.sin(nine)};
-            
-        //     debugPoint(ninety, "green");
-        // }
 
         // add the edge label (rotated)
         let edge_fs = parseInt(edge.n1.fs*0.75);
@@ -718,6 +718,18 @@ graph_canvas.onmouseup = mouseUp;
 graph_canvas.onmouseleave = mouseUp;
 graph_canvas.onmousemove = mouseMove;
 
+var active_dbl_click = false;
+
+// check if the mouse was double clicked
+function dblclick(){
+    if(!active_dbl_click){
+        active_dbl_click = true;
+        setTimeout(function(){active_dbl_click = false;}, 500);
+        return false;
+    }else{
+        return true;
+    }
+}
 
 // get the position of the mouse relative to the bounding box of the canvas
 function getMousePos(e, int_form=true){
@@ -769,27 +781,67 @@ function posInEdge(x,y,edge){
 }
 
 
-// handle mouse down events on the canvas
+// handle mouse down/click events on the canvas
 function mouseDown(e){
     // tell the browser we're handling this mouse event
     e.preventDefault();
     e.stopPropagation();
 
+    
     // find the node being dragged
     let m = getMousePos(e);
     cur_drag_node = null;
+
+    // check if the mouse is in a node
+    let in_node = null;
     for(let i = 0; i < G_NODES.length; i++){
         let node = G_NODES[i];
         if(posInNode(m.x, m.y, node)){
-            cur_drag_node = node;
-            node.select = true;
+            in_node = node;
+            if(dblclick()){             // modify the node on double click
+                
+            }else{                      // select the node on a single click
+                unselectAll();
+                node.select = true;
+                cur_selection = node;
+                cur_drag_node = node;   // allow to be dragged as well
+            }
             break;
         }
     }
 
+    // check if mouse is in an edge
+    let in_edge = null;
+    for(let i = 0; i < G_EDGES.length; i++){
+        let edge = G_EDGES[i];
+        if(posInEdge(m.x, m.y, edge)){
+            in_edge = edge;
+            if(dblclick()){             // modify the edge on double click
+                
+            }else{                      // select the edge on a single click
+                unselectAll();
+                edge.select = true;
+                cur_selection = edge;
+            }
+            break;
+        }
+    }
+
+    // unselect
+    if(in_edge == null && in_node == null){
+        unselectAll();
+        cur_selection = null;
+    }
+
     //save the current mouse position
     mouse_pos = m;
+
+    //redraw the graph
     renderGraph();
+
+    //activate a double click for any check
+    if(!active_dbl_click)
+        dblclick();
 }
 
 // handle mouse up events on the canvas
@@ -800,7 +852,7 @@ function mouseUp(e){
 
     // clear the current drag node
     if(cur_drag_node)
-        cur_drag_node.select = false;
+        cur_drag_node.drag = false;
     cur_drag_node = null;
 
     //unselect everything
@@ -818,9 +870,18 @@ function mouseMove(e){
     // if we're dragging a node, update its position
     if(cur_drag_node){
         let m = getMousePos(e);
+
+        //moving?
+        if(cur_drag_node.drag || m.x != mouse_pos.x || m.y != mouse_pos.y){
+            cur_drag_node.drag = true;
+        }else{
+            cur_drag_node.drag = false;
+        }
+
         cur_drag_node.x += m.x - mouse_pos.x;
         cur_drag_node.y += m.y - mouse_pos.y;
         mouse_pos = m;
+        
         renderGraph();
     }
 
@@ -842,7 +903,6 @@ function mouseMove(e){
             let edge = G_EDGES[i];
             if(posInEdge(m.x, m.y, edge)){
                 hoverEdge(edge.edge_key);
-                DEBUG(edge.edge_key);
             }else{
                 unhoverEdge(edge.edge_key);
             }
@@ -862,13 +922,15 @@ function mouseMove(e){
 
 // highlight a specific node
 function hoverNode(ni){
-    if(G_NODES[ni].select) return;
+    if(G_NODES[ni].select || (cur_drag_node && cur_drag_node.idx == G_NODES[ni])) return;
 
-    G_NODES[ni].highlight = true;
+    G_NODES[ni].highlight = true;   //highlight the graph node
+    document.getElementById("node_"+ni).classList.add("node-item-hover"); //highlight the node in the list
 }
 // unhighlight a specific node
 function unhoverNode(ni){
     G_NODES[ni].highlight = false;
+    document.getElementById("node_"+ni).classList.remove("node-item-hover");
 }
 
 // highlight a specific edge
@@ -878,6 +940,9 @@ function hoverEdge(pair){
 
     if(G_EDGES[ei].select) return;
     G_EDGES[ei].highlight = true;
+    document.getElementById("edge_"+pair).classList.add("edge-item-hover");
+
+    // hover over 
 }
 // unhighlight a specific edge
 function unhoverEdge(pair){
@@ -885,6 +950,7 @@ function unhoverEdge(pair){
     let ei = G_EDGES.findIndex(e => e.edge_key == pair);
 
     G_EDGES[ei].highlight = false;
+    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
 }
 
 // unhighlight all nodes and edges
@@ -931,4 +997,6 @@ function unselectAll(){
     
     for(let i = 0; i < G_EDGES.length; i++)
         G_EDGES[i].select = false;
+
+    cur_selection = null;
 }

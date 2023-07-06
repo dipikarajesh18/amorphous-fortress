@@ -5,15 +5,20 @@
         <!-- ADD STYLES TO SHEET WHEN FINISHED -->
         <style>
 
-            #graph-canvas{
-                width: 625px;
-                height: 615px;
-                background-color: #f0f8ff;
+            #magic-button{
+                float:right;
+                height: 100%;
+                width: 80px;
+                text-align: center;
+                line-height: 32px;
+                font-size: 22px;
+                font-family: Proggy;
+                font-weight: bold;
+                color: #171717;
+                cursor: pointer;
+                border-left: #000 2px solid;
+                background-color:#f00;
             }
-            
-            
-
-            
 
 
 
@@ -25,22 +30,25 @@
         </div>
         <div id="container">
             <!-- TOP BAR MENU w/ DROPDOWN -->
+
+            <!-- TODO: Make the submenu disappear after a selection -->
+
             <div id="menu">
                 <div class="menu-item">File
                     <div id='file_menu' class="menu-dropdown">
-                        <div class="menudrop-item" onclick="newGraph()">New</div>
+                        <div class="menudrop-item" onclick="newGraph();">New</div>
                         <div class="menudrop-item" onclick="document.getElementById('entFileIn').click();">Open</div>
-                            <input type="file" id="entFileIn" style="display: none;" accept=".txt" onchange="readEntFile()"/>
+                            <input type="file" id="entFileIn" style="display: none;" accept=".txt" onchange="readEntFile();"/>
                         <!-- <div class="menudrop-item">Save</div> -->
-                        <div class="menudrop-item" onclick="exportEntGraph()">Save As</div>
+                        <div class="menudrop-item" onclick="exportEntGraph();">Save As</div>
                     </div>
                 </div>
                 
 
-
                 <div class="menu-item">Edit
                     <div id='edit_menu' class="menu-dropdown">
-                        <div class="menudrop-item">New Node</div>
+                        <div class="menudrop-item" onclick="orderGraph();">Organize Graph</div>
+                        <div class="menudrop-item" onclick="hideMenu(document.getElementById('edit_menu'))">New Node</div>
                         <div class="menudrop-item">New Edge</div>
                         <div class="menudrop-item">Delete Node</div>
                         <div class="menudrop-item">Delete Edge</div>
@@ -67,6 +75,10 @@
                         <div class="menudrop-item">Report Bug</div>
                     </div>
                 </div>
+
+                <!-- FOR DEBUGGNG -->
+                <!-- <div id="magic-button" onclick="">Magic Button</div> -->
+
             </div>
             <!-- GRAPH NODE EDITOR CANVAS -->
             <div id="gfx-editor">
@@ -114,11 +126,6 @@
             }
 
 
-            // graph setup
-
-
-
-
             
         </script>
         <script src="js/text_ui.js"></script>
@@ -153,11 +160,19 @@
 
             // main loop
             // function main(){
-            //     requestAnimationFrame(main);
+            //     requestAnimationFrame(main); 
 
             //     renderGraph();  //called already by the 
             // }
             // main();
+
+            // debug keypress
+            window.addEventListener("keydown", function(e){ 
+                if(e.keyCode == 191){  // ? key
+                    DEBUG("hiding all menus");
+                    hideAllMenus();
+                }
+            });
         </script>
     </body>
 </html>
