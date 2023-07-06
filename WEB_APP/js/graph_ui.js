@@ -14,21 +14,26 @@ var CUR_NAME = "";     // the current character's name
 var CUR_NODES = [];    // order in the array corresponds to node index
 var CUR_EDGES = {};    // key is the node-to-node pairing (e.g. "0-1" for node 0 to node 1) and value is the edge label
 
-// canvas definitions ///
+/// canvas definitions ///
 var graph_canvas = document.getElementById("graph-canvas");
 graph_canvas.width = 615;
 graph_canvas.height = 625;
 var gctx = graph_canvas.getContext("2d");
 
+/// node color changes ///
 var HIGHLIGHT_COLOR = "#00B6FF";  
 var SELECT_COLOR = "#00EC16";
 var DRAG_COLOR = "#FFD200";
 
+/// mouse definitions ///
 var graph_bound = graph_canvas.getBoundingClientRect();
 var cur_drag_node  = null;
 var cur_selection = null;   // can be a node or an edge
 var mouse_pos = {x:0, y:0};
 
+/// keypress definitions ///
+var DELETE_KEY = "x";
+var ADD_KEY = "c";
 
 
 /////////////////////////////   GENERIC FUNCTIONS     /////////////////////////////
@@ -312,13 +317,14 @@ class CANV_NODE {
     constructor(x, y, label, idx) {
         this.x = x;                 // x position
         this.y = y;                 // y position
-        this.r = 40;                //radius of the circle
-        this.canv_angle = 0;        //angle of the node on the canvas relative to the central circle
-        this.fs = 24;               //font size
-        this.label = label;         //label of the node inside the circle
-        this.idx = idx;             //index of the node in the graph
-        this.highlight = false;     //whether or not the node is highlighted
-        this.select = false;        //whether or not the node is selected
+        this.r = 40;                // radius of the circle
+        this.canv_angle = 0;        // angle of the node on the canvas relative to the central circle
+        this.fs = 24;               // font size
+        this.label = label;         // label of the node inside the circle
+        this.idx = idx;             // index of the node in the graph
+        this.highlight = false;     // whether or not the node is highlighted
+        this.select = false;        // whether or not the node is selected
+        this.type = "node";         // type of the object
     }
 }
 
@@ -335,6 +341,7 @@ class CANV_EDGE{
         this.label_dist = 14;                    // distance of label away from the edge
         this.highlight = false;                  // whether or not the edge is highlighted
         this.select = false;                     // whether or not the edge is selected
+        this.type = "edge";                      // type of the object
     }
 
     // somewhat hacky way of creating a bounding box for the edge
@@ -475,7 +482,9 @@ function makeEdges(){
 }
 
 
+
 /////////////////////////////    RENDER FUNCTIONS    /////////////////////////////
+
 
 
 // draw each node in the graph
@@ -707,20 +716,179 @@ function renderGraph(){
 
 
 
+
+
+/////////////////////////////    GRAPH STATE ACTIVATION FUNCTIONS    /////////////////////////////
+
+
+///////   HOVER FUNCTIONS   ///////
+
+// highlight a specific node
+function hoverNode(ni){
+    if(G_NODES[ni].select || (cur_drag_node && cur_drag_node.idx == G_NODES[ni])) return;
+
+    G_NODES[ni].highlight = true;   //highlight the graph node
+    document.getElementById("node_"+ni).classList.add("node-item-hover"); //highlight the node in the list
+}
+// unhighlight a specific node
+function unhoverNode(ni){
+    G_NODES[ni].highlight = false;
+    document.getElementById("node_"+ni).classList.remove("node-item-hover");
+}
+
+// highlight a specific edge
+function hoverEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    if(G_EDGES[ei].select) return;
+    G_EDGES[ei].highlight = true;
+    document.getElementById("edge_"+pair).classList.add("edge-item-hover");
+
+    // hover over 
+}
+// unhighlight a specific edge
+function unhoverEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].highlight = false;
+    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
+}
+
+// unhighlight all nodes and edges
+function unhoverAll(){
+    for(let i = 0; i < G_NODES.length; i++)
+        G_NODES[i].highlight = false;
+    
+    for(let i = 0; i < G_EDGES.length; i++)
+        G_EDGES[i].highlight = false;
+}
+
+
+///////   SELECTION FUNCTIONS   ///////
+
+// select a specific node
+function selectNode(ni){
+    // unselect everything else
+    unselectAll();
+
+
+    let node = G_NODES[ni];
+    G_NODES[ni].select = true;
+    G_NODES[ni].highlight = false;
+    cur_selection = node;
+        
+    // DEBUG("selecting node "+ni)
+    
+    // highlight the node in the list
+    document.getElementById("node_"+ni).classList.add("node-item-select");
+    document.getElementById("node_"+ni).classList.remove("node-item-hover");
+
+}
+
+// unselect a specific node
+function unselectNode(ni){
+    G_NODES[ni].select = false;
+
+    // unhighlight the node in the list
+    document.getElementById("node_"+ni).classList.remove("node-item-select");
+}
+
+// select a specific edge
+function selectEdge(pair){
+    // unselect everything else
+    unselectAll();
+
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].select = true;
+    G_EDGES[ei].highlight = false;
+    cur_selection = G_EDGES[ei];
+
+    // DEBUG("selecting edge "+pair)
+
+    // highlight the edge in the list
+    document.getElementById("edge_"+pair).classList.add("edge-item-select");
+    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
+}
+
+// unselect a specific edge
+function unselectEdge(pair){
+    // retrieve index of pair
+    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
+
+    G_EDGES[ei].select = false;
+
+    // unhighlight the edge in the list
+    document.getElementById("edge_"+pair).classList.remove("edge-item-select");
+}
+
+// unselect all nodes and edges
+function unselectAll(){
+    for(let i = 0; i < G_NODES.length; i++){
+        G_NODES[i].select = false;
+        document.getElementById("node_"+i).classList.remove("node-item-select");
+    }
+    
+    for(let i = 0; i < G_EDGES.length; i++){
+        G_EDGES[i].select = false;
+        document.getElementById("edge_"+G_EDGES[i].edge_key).classList.remove("edge-item-select");
+    }
+
+    cur_selection = null;
+}
+
+
+///////   DELETE FUNCTIONS   ///////
+
+// delete a node and remake the whole graph
+function deleteNode(ni){
+
+}
+
+// delete a specific edge
+function deleteEdge(edge_key){
+    delete CUR_EDGES[edge_key];
+    makeEdges();
+}
+
+// delete all of the edges for a node
+function deleteNodeEdges(ni){
+    // retrieve the edges for the node
+    let edges = CUR_EDGES.filter(e => e.split("-")[0] == ni || e.split("-")[1] == ni);
+
+    // delete each edge
+    for(let i = 0; i < edges.length; i++)
+        delete CUR_EDGES[edges[i].edge_key];
+
+    DEBUG(CUR_EDGES);
+    
+    // remake the edges
+    makeEdges();
+    unselectAll();
+    addCurGraphDivs();
+}
+
+
 /////////////////////////////    INTERACTION FUNCTIONS    /////////////////////////////
 
 
-// from https://stackoverflow.com/questions/28284754/dragging-shapes-using-mouse-after-creating-them-with-html5-canvas
+// shape detection from https://stackoverflow.com/questions/28284754/dragging-shapes-using-mouse-after-creating-them-with-html5-canvas
 
 // listen for mouse events on the canvas
 graph_canvas.onmousedown = mouseDown;
 graph_canvas.onmouseup = mouseUp;
-graph_canvas.onmouseleave = offScreen;
+graph_canvas.onmouseleave = graph_offScreen;
 graph_canvas.onmousemove = mouseMove;
+window.addEventListener('keypress', function(e){graph_keypress(e)}, false);
+window.addEventListener('keydown', function(e){graph_keydown(e)}, false);
 
-var active_dbl_click = false;
+
 
 // check if the mouse was double clicked
+var active_dbl_click = false;
 function dblclick(){
     if(!active_dbl_click){
         active_dbl_click = true;
@@ -779,7 +947,6 @@ function posInEdge(x,y,edge){
     else
         return true;
 }
-
 
 // handle mouse down/click events on the canvas
 function mouseDown(e){
@@ -916,122 +1083,38 @@ function mouseMove(e){
 }
 
 // when the mouse leaves the canvas
-function offScreen(){
-    mouseUp();
+function graph_offScreen(e){
+    mouseUp(e);
     unhoverAll();
 }
 
 
-// highlight a specific node
-function hoverNode(ni){
-    if(G_NODES[ni].select || (cur_drag_node && cur_drag_node.idx == G_NODES[ni])) return;
-
-    G_NODES[ni].highlight = true;   //highlight the graph node
-    document.getElementById("node_"+ni).classList.add("node-item-hover"); //highlight the node in the list
-}
-// unhighlight a specific node
-function unhoverNode(ni){
-    G_NODES[ni].highlight = false;
-    document.getElementById("node_"+ni).classList.remove("node-item-hover");
-}
-
-// highlight a specific edge
-function hoverEdge(pair){
-    // retrieve index of pair
-    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
-
-    if(G_EDGES[ei].select) return;
-    G_EDGES[ei].highlight = true;
-    document.getElementById("edge_"+pair).classList.add("edge-item-hover");
-
-    // hover over 
-}
-// unhighlight a specific edge
-function unhoverEdge(pair){
-    // retrieve index of pair
-    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
-
-    G_EDGES[ei].highlight = false;
-    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
-}
-
-// unhighlight all nodes and edges
-function unhoverAll(){
-    for(let i = 0; i < G_NODES.length; i++)
-        G_NODES[i].highlight = false;
-    
-    for(let i = 0; i < G_EDGES.length; i++)
-        G_EDGES[i].highlight = false;
-}
-
-// select a specific node
-function selectNode(ni){
-    // unselect everything else
-    unselectAll();
-
-
-    let node = G_NODES[ni];
-    G_NODES[ni].select = true;
-    G_NODES[ni].highlight = false;
-    cur_selection = node;
-        
-    // DEBUG("selecting node "+ni)
-    
-    // highlight the node in the list
-    document.getElementById("node_"+ni).classList.add("node-item-select");
-    document.getElementById("node_"+ni).classList.remove("node-item-hover");
-
-}
-
-// unselect a specific node
-function unselectNode(ni){
-    G_NODES[ni].select = false;
-
-    // unhighlight the node in the list
-    document.getElementById("node_"+ni).classList.remove("node-item-select");
-}
-
-// select a specific edge
-function selectEdge(pair){
-    // unselect everything else
-    unselectAll();
-
-    // retrieve index of pair
-    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
-
-    G_EDGES[ei].select = true;
-    G_EDGES[ei].highlight = false;
-    cur_selection = G_EDGES[ei];
-
-    // DEBUG("selecting edge "+pair)
-
-    // highlight the edge in the list
-    document.getElementById("edge_"+pair).classList.add("edge-item-select");
-    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
-}
-
-// unselect a specific edge
-function unselectEdge(pair){
-    // retrieve index of pair
-    let ei = G_EDGES.findIndex(e => e.edge_key == pair);
-
-    G_EDGES[ei].select = false;
-
-    // unhighlight the edge in the list
-    document.getElementById("edge_"+pair).classList.remove("edge-item-select");
-}
-
-// unselect all nodes and edges
-function unselectAll(){
-    for(let i = 0; i < G_NODES.length; i++){
-        G_NODES[i].select = false;
-        document.getElementById("node_"+i).classList.remove("node-item-select");
+// TODO: for some reason, the key press doesn't always work, the table list also doesn't update after deletion
+// when a key is pressed
+function graph_keypress(e){
+    // only activate if not editing text
+    if(!editing_ent_info){
+        if(e.key == DELETE_KEY){
+            DEBUG("DELETE!")
+            if(cur_selection){
+                if(cur_selection.type == "node"){
+                    deleteNode(cur_selection.idx);
+                }else if(cur_selection.type == "edge"){
+                    deleteEdge(cur_selection.edge_key);
+                }
+            }
+        }
+    }else{
+        DEBUG("EDITING TEXT!")
     }
-    
-    for(let i = 0; i < G_EDGES.length; i++){
-        G_EDGES[i].select = false;
-        document.getElementById("edge_"+G_EDGES[i].edge_key).classList.remove("edge-item-select");
-    }
+}
 
-    cur_selection = null;
+// when a key is down
+function graph_keydown(e){
+    // only activate if not editing text
+    if(!editing_ent_info){
+        if(e.key == ADD_KEY){
+            DEBUG("ADD!")
+        }
+    }
 }

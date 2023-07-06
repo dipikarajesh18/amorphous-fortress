@@ -15,6 +15,8 @@ var char_txt = document.getElementById("char_txt");
 var name_in = document.getElementById("name_in");
 var name_txt = document.getElementById("name_txt");
 
+var editing_ent_info = false;
+
 
 /////////////////////////////     FUNCTION DEFINITIONS     /////////////////////////////
 
@@ -23,6 +25,7 @@ function showTxtIn(txt,ipt){
     txt.style.display = "none";
     ipt.style.display = "block";
     ipt.focus();
+    editing_ent_info = true;
 }
 
 // hide the input and show the text - save the value
@@ -30,6 +33,7 @@ function hideTxtIn(txt,ipt){
     txt.style.display = "block";
     ipt.style.display = "none";
     txt.innerHTML = ipt.value;
+    editing_ent_info = false;
 }
 
 function showMenu(submenu){
@@ -66,6 +70,8 @@ function addCurGraphDivs(){
         let label = CUR_EDGES[pair];
         addEdgeItem(pair, label);
     }
+
+    DEBUG("new graph made!");
 }
 
 
