@@ -91,7 +91,7 @@ function addNodeItem(node_id, label){
     // add an event listener for hover and unhover
     node_div.addEventListener("mouseover", function(){hoverNode(node_id)});
     node_div.addEventListener("mouseout", function(){unhoverNode(node_id)});
-    // node_div.addEventListener("click", function(){selectNode(node_id)});
+    node_div.addEventListener("click", function(){selectNode(node_id)});
 
     // add the div to the node list sidebar
     let node_list = document.getElementById("node-list");
@@ -142,6 +142,7 @@ function addEdgeItem(pair, label){
     // add an event listener for hover and unhover
     edge_div.addEventListener("mouseover", function(){hoverEdge(pair)});
     edge_div.addEventListener("mouseout", function(){unhoverEdge(pair)});
+    edge_div.addEventListener("click", function(){selectEdge(pair)});
 
     // add the div to the edge list sidebar
     let edge_list = document.getElementById("edge-list");
@@ -157,15 +158,8 @@ function orderGraph(){
     makeEdges();
     renderGraph();
 
-    hideAllMenus();
 }
 
-function hideAllMenus(){
-    let all_menus = document.getElementsByClassName("menu_dropdown");
-    for(let i = 0; i < all_menus.length; i++){
-        hideMenu(all_menus[i]);
-    }
-}
 
 ///////////////////////////////     EVENT LISTENERS     ///////////////////////////////
 

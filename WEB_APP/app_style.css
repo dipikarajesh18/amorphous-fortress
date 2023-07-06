@@ -202,7 +202,9 @@ body{
 .node-item:hover, .node-item-hover{
     background-color: #d1d1d1;
 }
-
+.node-item-select{
+    background-color: #a6d2af;
+}
 .node-item{
     width:100%;
     height:25px;
@@ -259,7 +261,9 @@ body{
 .edge-item:hover, .edge-item-hover{
     background-color: #d2d2d2;
 }
-
+.edge-item-select{
+    background-color: #a6d2af;
+}
 .edge-conn{
     float:left;
     width:90px;

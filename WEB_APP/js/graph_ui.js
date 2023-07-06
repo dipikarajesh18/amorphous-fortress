@@ -715,7 +715,7 @@ function renderGraph(){
 // listen for mouse events on the canvas
 graph_canvas.onmousedown = mouseDown;
 graph_canvas.onmouseup = mouseUp;
-graph_canvas.onmouseleave = mouseUp;
+graph_canvas.onmouseleave = offScreen;
 graph_canvas.onmousemove = mouseMove;
 
 var active_dbl_click = false;
@@ -802,8 +802,7 @@ function mouseDown(e){
                 
             }else{                      // select the node on a single click
                 unselectAll();
-                node.select = true;
-                cur_selection = node;
+                selectNode(i);
                 cur_drag_node = node;   // allow to be dragged as well
             }
             break;
@@ -820,8 +819,7 @@ function mouseDown(e){
                 
             }else{                      // select the edge on a single click
                 unselectAll();
-                edge.select = true;
-                cur_selection = edge;
+                selectEdge(edge.edge_key);
             }
             break;
         }
@@ -917,7 +915,11 @@ function mouseMove(e){
     // debugPoly(mouse_seg, "green")
 }
 
-
+// when the mouse leaves the canvas
+function offScreen(){
+    mouseUp();
+    unhoverAll();
+}
 
 
 // highlight a specific node
@@ -964,22 +966,48 @@ function unhoverAll(){
 
 // select a specific node
 function selectNode(ni){
+    // unselect everything else
+    unselectAll();
+
+
+    let node = G_NODES[ni];
     G_NODES[ni].select = true;
     G_NODES[ni].highlight = false;
+    cur_selection = node;
+        
+    // DEBUG("selecting node "+ni)
+    
+    // highlight the node in the list
+    document.getElementById("node_"+ni).classList.add("node-item-select");
+    document.getElementById("node_"+ni).classList.remove("node-item-hover");
+
 }
 
 // unselect a specific node
 function unselectNode(ni){
     G_NODES[ni].select = false;
+
+    // unhighlight the node in the list
+    document.getElementById("node_"+ni).classList.remove("node-item-select");
 }
 
 // select a specific edge
 function selectEdge(pair){
+    // unselect everything else
+    unselectAll();
+
     // retrieve index of pair
     let ei = G_EDGES.findIndex(e => e.edge_key == pair);
 
     G_EDGES[ei].select = true;
     G_EDGES[ei].highlight = false;
+    cur_selection = G_EDGES[ei];
+
+    // DEBUG("selecting edge "+pair)
+
+    // highlight the edge in the list
+    document.getElementById("edge_"+pair).classList.add("edge-item-select");
+    document.getElementById("edge_"+pair).classList.remove("edge-item-hover");
 }
 
 // unselect a specific edge
@@ -988,15 +1016,22 @@ function unselectEdge(pair){
     let ei = G_EDGES.findIndex(e => e.edge_key == pair);
 
     G_EDGES[ei].select = false;
+
+    // unhighlight the edge in the list
+    document.getElementById("edge_"+pair).classList.remove("edge-item-select");
 }
 
 // unselect all nodes and edges
 function unselectAll(){
-    for(let i = 0; i < G_NODES.length; i++)
+    for(let i = 0; i < G_NODES.length; i++){
         G_NODES[i].select = false;
+        document.getElementById("node_"+i).classList.remove("node-item-select");
+    }
     
-    for(let i = 0; i < G_EDGES.length; i++)
+    for(let i = 0; i < G_EDGES.length; i++){
         G_EDGES[i].select = false;
+        document.getElementById("edge_"+G_EDGES[i].edge_key).classList.remove("edge-item-select");
+    }
 
     cur_selection = null;
 }
