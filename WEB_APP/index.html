@@ -4,23 +4,46 @@
         <link rel="stylesheet" href="app_style.css">
         <!-- ADD STYLES TO SHEET WHEN FINISHED -->
         <style>
-
-            #magic-button{
-                float:right;
-                height: 100%;
-                width: 80px;
-                text-align: center;
-                line-height: 32px;
-                font-size: 22px;
-                font-family: Proggy;
-                font-weight: bold;
-                color: #171717;
-                cursor: pointer;
-                border-left: #000 2px solid;
-                background-color:#f00;
+            #keycode-debug{
+                color:white;
+                border:1px solid white;
+                width:90px;
+                height:44px;
+                margin: 10 auto;
+                line-height: 20px;
+            }
+            #keycode_lights{
+                color:white;
+                border:1px solid white;
+                height:20px;
+                margin: auto;
+            }
+            #keycode_txt{
+                color:white;
+                border:1px solid white;
+                height:20px;
+                margin: auto;
             }
 
+            .keycode_light{
+                width:20px;
+                height:20px;
+                text-align: center;
+                border:1px solid white;
+                float:left;
+            }
+            .keycode_txt{
+                width:20px;
+                height:20px;
+                text-align: center;
+                border:1px solid white;
+                float:left;
+            }
 
+            .keycode_light.on{
+                background-color: #0f0;
+                color:#000;
+            }
 
         </style>
     </head>
@@ -116,7 +139,13 @@
             </div>
         </div>
 
+        <!-- DEBUG -->
         <div id="debug"><< DEBUG HERE >></div>
+        <div id="keycode-debug">
+            <div id="keycode_lights"></div>
+            <div id="keycode_txt"></div>
+        </div>
+        
 
         <!-- MOVE THIS TO SCRIPTS LATER WHEN IT'S FUNCTIONAL -->
         <script>
@@ -133,6 +162,71 @@
 
         <!-- REMOVE THESE SCRIPTS OR PUT THEM SOMEWHERE ELSE - PURELY FOR TEST PURPOSES -->
         <script>
+            // event.key -> symbol
+            var KEY_DEBUG_SET = [
+                {"key":"x", "sym":"x"},
+                {"key":"c", "sym":"c"},
+                {"key": " ", "sym":"_"},
+                {"key": "ArrowUp", "sym":"↑"}
+            ]
+
+
+            // debug keypress
+            function addKeyLights(keyset){
+                // remove the old lights
+                let key_div = document.getElementById("keycode-debug");
+                key_div.style.width = (keyset.length*22+2)+"px";
+                let lights = document.getElementById("keycode_lights");
+                let keys = document.getElementById("keycode_txt");
+                lights.innerHTML = "";
+                keys.innerHTML = "";
+
+                // add the new lights for keypress activation
+                for(let k=0;k<keyset.length;k++){
+                    let light = document.createElement("div");
+                    light.classList.add("keycode_light");
+                    light.id = "kcl_"+(k+1);
+                    light.innerHTML = "O";
+                    lights.appendChild(light);
+
+                    let key = document.createElement("div");
+                    key.classList.add("keycode_txt");
+                    key.id = "kct_"+(k+1);
+                    key.innerHTML = keyset[k]["sym"];
+                    keys.appendChild(key);
+                }
+            }
+
+            // turn the light on for the specific keycode
+            function lightOn(keycode){
+                let light_idx = -1;
+                for(let k=0;k<KEY_DEBUG_SET.length;k++){
+                    if(KEY_DEBUG_SET[k]["key"] == keycode){
+                        light_idx = k;
+                        break;
+                    }
+                }
+                if(light_idx != -1){
+                    let light = document.getElementById("kcl_"+(light_idx+1));
+                    light.classList.add("on");
+                }
+            }
+            function lightOff(keycode){
+                let light_idx = -1;
+                for(let k=0;k<KEY_DEBUG_SET.length;k++){
+                    if(KEY_DEBUG_SET[k]["key"] == keycode){
+                        light_idx = k;
+                        break;
+                    }
+                }
+                if(light_idx != -1){
+                    let light = document.getElementById("kcl_"+(light_idx+1));
+                    light.classList.remove("on");
+                }
+            }
+
+
+            // fake initial graph for testing the UI
             function fakeGraph(){
                 CUR_NAME = "phd"
                 CUR_CHAR = "@"
@@ -156,6 +250,9 @@
                 makeEdges();
 
                 setInterval(renderGraph, 10);   //wait 10ms before rendering graph (to load the fonts)
+
+                //add the lights
+                addKeyLights(KEY_DEBUG_SET);
             }
 
             // main loop
@@ -172,6 +269,17 @@
             //         DEBUG(document.activeElement == document.getElementById("graph_canvas"));
             //     }
             // });
+
+
+            // turn key lights on and off
+            window.addEventListener("keydown", function(e){
+                lightOn(e.key)
+            });
+            window.addEventListener("keyup", function(e){
+                lightOff(e.key)
+            });
+
+
         </script>
     </body>
 </html>
