@@ -626,13 +626,19 @@ function drawEdges(){
         // find midpoint of alt point and midpoint
         let edge_angle = Math.atan2(y1 - y2, x1 - x2);   // has to be recalculated each time for the nodes that get moved
         let angle_point = null;
-        if(edge.double_edge)
+        let offset = -7;
+        if(edge.double_edge){
             angle_point = {x: (edge.invis_pt.x+xm)/2, y: (edge.invis_pt.y+ym)/2};
-        else if(self_edge){
+            angle_point.x += offset*Math.cos(edge_angle);
+            angle_point.y += offset*Math.sin(edge_angle);
+        }else if(self_edge){
             let c_ang = Math.atan2(y1 - cy, x1 - cx);
             angle_point = {x: edge.invis_pt.x+edge.invis_pt.r*Math.cos(c_ang), y: edge.invis_pt.y+edge.invis_pt.r*Math.sin(c_ang)};
-        }else
+        }else{
             angle_point = {x: (x1+x2)/2, y: (y1+y2)/2};
+            angle_point.x += offset*Math.cos(edge_angle);
+            angle_point.y += offset*Math.sin(edge_angle);
+        }
         
         // add 2 lines to the angle point
         if(self_edge){
@@ -657,11 +663,11 @@ function drawEdges(){
             gctx.lineWidth = 2*(edge.highlight || edge.select ? 2 : 1);
             gctx.beginPath();
             gctx.moveTo(angle_point.x, angle_point.y);
-            gctx.lineTo(angle_point.x-15*Math.cos(edge_angle+Math.PI/6), angle_point.y-15*Math.sin(edge_angle+Math.PI/6));
+            gctx.lineTo(angle_point.x+15*Math.cos(edge_angle+Math.PI/6), angle_point.y+15*Math.sin(edge_angle+Math.PI/6));
             gctx.stroke();
             gctx.beginPath();
             gctx.moveTo(angle_point.x, angle_point.y);
-            gctx.lineTo(angle_point.x-15*Math.cos(edge_angle-Math.PI/6), angle_point.y-15*Math.sin(edge_angle-Math.PI/6));
+            gctx.lineTo(angle_point.x+15*Math.cos(edge_angle-Math.PI/6), angle_point.y+15*Math.sin(edge_angle-Math.PI/6));
             gctx.stroke();
             gctx.lineWidth = 1;
         }
@@ -685,14 +691,13 @@ function drawEdges(){
         }
         //self loop
         else{
-            let e_len = 25;
-            let ext = Math.atan2(angle_point.y - edge.invis_pt.y, angle_point.x - edge.invis_pt.x);
-            let ext_pt = {x:angle_point.x+e_len*Math.cos(ext), y:angle_point.y+e_len*Math.sin(ext)}
-            gctx.translate(ext_pt.x, ext_pt.y);
-            gctx.rotate(Math.abs(edge_angle) > 2 ? edge_angle + Math.PI : edge_angle)
-            gctx.fillText(edge.label, 0, 4);
+            let c_ang = Math.atan2(y1 - cy, x1 - cx);
+            let outer = {x:angle_point.x+30*Math.cos(c_ang), y:angle_point.y+30*Math.sin(c_ang)};
+            // debugPoint(outer, "red", 10)
+            gctx.translate(outer.x, outer.y);
+            gctx.rotate(Math.abs(c_ang) > 2 ? c_ang + Math.PI : c_ang)
+            gctx.fillText(edge.label, 0, 0);
         }
-
         gctx.restore();
 
         de.push(estr);   //keep track of which edges have been drawn (for use with the bends)
@@ -845,30 +850,60 @@ function unselectAll(){
 
 // delete a node and remake the whole graph
 function deleteNode(ni){
-
+    CUR_NODES.splice(ni,1); // delete the node
+    unselectAll();
+    makeNodes();         // remake the nodes
+    deleteNodeEdges(ni); // delete all edges connected to the node
 }
 
 // delete a specific edge
 function deleteEdge(edge_key){
     delete CUR_EDGES[edge_key];
+    unselectAll();
     makeEdges();
+    addCurGraphDivs();
+    renderGraph();
 }
 
 // delete all of the edges for a node
 function deleteNodeEdges(ni){
     // retrieve the edges for the node
-    let edges = CUR_EDGES.filter(e => e.split("-")[0] == ni || e.split("-")[1] == ni);
+    // let edges = [];
+    let edge_set = Object.keys(CUR_EDGES);
+    let rem_edges = edge_set.filter(e => e.split("-")[0] == ni || e.split("-")[1] == ni);
 
     // delete each edge
-    for(let i = 0; i < edges.length; i++)
-        delete CUR_EDGES[edges[i].edge_key];
+    for(let i = 0; i < rem_edges.length; i++)
+        delete CUR_EDGES[rem_edges[i]];
 
-    DEBUG(CUR_EDGES);
+    
+
+    // need to reroute all of the other edges
+    let last_edges = Object.keys(CUR_EDGES);
+    let NEW_EDGES = {};
+    for(let i = 0; i < last_edges.length; i++){
+        let edge = last_edges[i];
+        let act = CUR_EDGES[edge];
+
+        // decrease the node indices if they are greater than the deleted node
+        let ns = edge.split("-");
+        ns[0] = parseInt(ns[0]);
+        ns[1] = parseInt(ns[1]);
+        if(ns[0] > ni) ns[0]--;
+        if(ns[1] > ni) ns[1]--;
+
+        // remake the edge
+        let new_key = ns[0]+"-"+ns[1];
+        NEW_EDGES[new_key] = act;
+    }
+    CUR_EDGES = NEW_EDGES;
+    DEBUG(JSON.stringify(NEW_EDGES));
     
     // remake the edges
-    makeEdges();
     unselectAll();
+    makeEdges();
     addCurGraphDivs();
+    renderGraph();
 }
 
 
@@ -1089,7 +1124,6 @@ function graph_offScreen(e){
 }
 
 
-// TODO: for some reason, the key press doesn't always work, the table list also doesn't update after deletion
 // when a key is pressed
 function graph_keypress(e){
     // only activate if not editing text
