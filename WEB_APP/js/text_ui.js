@@ -1,5 +1,5 @@
 /*
- * GRAPH_UI.JS
+ * TEXT_UI.JS
  * Code for the text table UI (right sidebar) and the top menu bar
  * Written by: Milk 
 */
@@ -18,7 +18,29 @@ var name_txt = document.getElementById("name_txt");
 var editing_ent_info = false;
 
 
-/////////////////////////////     FUNCTION DEFINITIONS     /////////////////////////////
+/////////////////////////////     MENU FUNCTION DEFINITIONS     /////////////////////////////
+
+function showMenu(submenu){
+    submenu.style.display = "block";
+}
+function hideMenu(submenu){
+    submenu.style.display = "none";
+    // DEBUG("hiding " + submenu.id);
+}
+
+// show the configuration editor window
+function showConfigEditor(){
+    document.getElementById("config-editor").style.display = "block";
+    document.getElementById("gfx-editor").style.display = "none";
+}
+// show the graph configuration window
+function showGraphEditor(){
+    document.getElementById("gfx-editor").style.display = "block";
+    document.getElementById("config-editor").style.display = "none";
+}
+
+
+/////////////////////////////     SIDEBAR FUNCTION DEFINITIONS     /////////////////////////////
 
 // show the input and hide the text
 function showTxtIn(txt,ipt){
@@ -35,15 +57,6 @@ function hideTxtIn(txt,ipt){
     txt.innerHTML = ipt.value;
     editing_ent_info = false;
 }
-
-function showMenu(submenu){
-    submenu.style.display = "block";
-}
-function hideMenu(submenu){
-    submenu.style.display = "none";
-    // DEBUG("hiding " + submenu.id);
-}
-
 
 // adds the current nodes and edges to the sidebar
 function addCurGraphDivs(){
@@ -71,7 +84,7 @@ function addCurGraphDivs(){
         addEdgeItem(pair, label);
     }
 
-    DEBUG("new graph made!");
+    // DEBUG("new graph made!");
 }
 
 
