@@ -6,6 +6,8 @@ import numpy as np
 import datetime
 
 class Engine():
+    fortress: Fortress
+
     def __init__(self,config_file):
 
         # load the config file

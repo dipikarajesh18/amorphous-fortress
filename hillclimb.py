@@ -12,8 +12,7 @@ import numpy as np
 
 from engine import Engine
 from entities import Entity
-from evo_utils import mutate_and_eval_ind
-from hillclimb import EvoIndividual
+from evo_utils import EvoIndividual
 # from main import curses_render_loop, init_screens, DEBUG
 from utils import newID
 
@@ -28,26 +27,17 @@ parser.add_argument("-e", "--edge_coin", type=float, default=0.5, help='Probabil
 parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probability of mutating an node')
 parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
 parser.add_argument("-a", "--alife_exp", action="store_true", help="Running the alife experiment")
-parser.add_argument("-p", "--pop_size", type=int, default=10, help="Population size")
 
 
-def evolve(config_file: str):
+def hillclimb(config_file: str):
     global parser
     args = parser.parse_args()
 
     best_ind = None
     best_score = -math.inf
 
-    population = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
-    [ind.init_random_fortress() for ind in population]
-    [ind.simulate_fortress(generation=0) for ind in population]
-
-    # Sort by fitness (descending)
-    population = sorted(population, key=lambda ind: ind.score, reverse=True)
-    scores = [ind.score for ind in population]
-    bes_ind = population[0]
-    best_score = scores[0]
-    print(f"Initial population sorted by fitness: {[score for score in scores]}")
+    ind = EvoIndividual(config_file, args.render)
+    ind.init_random_fortress()
 
     generation = 0
 
@@ -55,43 +45,53 @@ def evolve(config_file: str):
     cur_score_history = []
     entity_num_history = []
 
-
     # while best_score < ind.max_score:
     while generation < args.generations:
 
-        for i,parent_i in enumerate(population):
-            ind_i = mutate_and_eval_ind(parent_i.clone(), generation, args)
+        # mutate randomly
+        edge_rando = random.random()
+        node_rando = random.random()
+        instance_rando = random.random()
 
-            added = False
-            for (j, ind_j) in enumerate(population):
-                # Have a little drift, as a treat
-                if ind_i.score >= ind_j.score:
-                    population 
-                    population = population[:j] + [ind_i] + population[j:-1]
-                    scores = scores[:j] + [ind_i.score] + scores[j:-1]
-                    # population[j] = ind_i
-                    # scores[j] = ind_i.score
-                    added = True
-                    if j == 0:
-                        print(f"Added mutant {i} to the population at rank {j}, with score {ind_i.score}")
-                        best_score = ind_i.score
-                        best_ind = ind_i
-                    break
+        while edge_rando < args.edge_coin:
+            ind.mutateFSMEdges()
+            edge_rando = random.random()
+        
+        while node_rando < args.node_coin:
+            ind.mutateFSMNodes()
+            node_rando = random.random()
 
-            # best_score = ind_i.score
-            # best_ind = ind_i.clone()  # Seems redundant?
+        while instance_rando < args.instance_coin:
+            ind.mutateEnt()
+            instance_rando = random.random()
+
+        ind.simulate_fortress(generation)
+
+        if ind.score >= best_score:
+            print(f'+++ New best score! {ind.score} - generation = {generation} +++')
+
+            if ind.fitness_type == "M":
+                print("=====   M   ======")
+                print(ind.engine.fortress.CHARACTER_DICT['M'].printTree())
+                print("")
+
+            best_score = ind.score
+            best_ind = ind.clone()
         
         # print the stats of the generation
         print(f"[ GENERATION {generation} ]")
+        print(f'> Current fortress score: {ind.score}')
         print(f'> Best fortress score: {best_score}')
-        print(f"> Total entities: {len(best_ind.engine.fortress.entities)}")
+        print(f"> Total entities: {len(ind.engine.fortress.entities)}")
         print("")
 
         # add to the histories
         best_score_history.append(best_score)
-        cur_score_history.append(best_ind.score)
-        entity_num_history.append(len(best_ind.engine.fortress.entities))
+        cur_score_history.append(ind.score)
+        entity_num_history.append(len(ind.engine.fortress.entities))
 
+
+        ind = best_ind.clone()
         generation+=1
 
 
@@ -168,5 +168,5 @@ def evolve(config_file: str):
 if __name__ == '__main__':
     # Create argparser with boolean flag for rendering
     sub_args = parser.parse_args()
-    evolve(sub_args.config)
+    hillclimb(sub_args.config)
     # cProfile.run("evolve(conf_file)")
