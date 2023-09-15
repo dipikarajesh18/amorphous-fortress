@@ -5,6 +5,7 @@ import random
 import math
 import pickle
 import cProfile
+from typing import List
 import matplotlib.pyplot as plt
 
 import argparse
@@ -29,25 +30,44 @@ parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probabil
 parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
 parser.add_argument("-a", "--alife_exp", action="store_true", help="Running the alife experiment")
 parser.add_argument("-p", "--pop_size", type=int, default=10, help="Population size")
+parser.add_argument("-xb", "--x_bins", type=int, default=100, help="Number of bins for x axis")
+parser.add_argument("-yb", "--y_bins", type=int, default=100, help="Number of bins for y axis")
 
 
-def evolve(config_file: str):
+def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
+    x = int((bc[0] - bc_bounds[0][0]) / (bc_bounds[0][1] - bc_bounds[0][0]) * x_bins)
+    y = int((bc[1] - bc_bounds[1][0]) / (bc_bounds[1][1] - bc_bounds[1][0]) * y_bins)
+    return (x, y)
+
+
+def illuminate(config_file: str):
     global parser
     args = parser.parse_args()
 
     best_ind = None
     best_score = -math.inf
 
-    population = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
-    [ind.init_random_fortress() for ind in population]
-    [ind.simulate_fortress(generation=0) for ind in population]
+    mutants: List[EvoIndividual]
+    mutants = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
+    [ind.init_random_fortress() for ind in mutants]
+    [ind.simulate_fortress(generation=0) for ind in mutants]
+    mutant_scores = [ind.score for ind in mutants]
+    mutant_bcs = [ind.get_bcs() for ind in mutants]
+    bc_bounds = mutants[0].get_bc_bounds()
+    mutant_xys = [get_xy_from_bcs(bc, bc_bounds, args.x_bins, args.y_bins) for bc in mutant_bcs]
+
+    bc_0_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], args.x_bins)
+    bc_1_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], args.y_bins)
+
+    archive = np.full((args.x_bins, args.y_bins), None)
+    fits = np.full((args.x_bins, args.y_bins), np.nan)
 
     # Sort by fitness (descending)
-    population = sorted(population, key=lambda ind: ind.score, reverse=True)
-    scores = [ind.score for ind in population]
-    bes_ind = population[0]
-    best_score = scores[0]
-    print(f"Initial population sorted by fitness: {[score for score in scores]}")
+    # offspring = sorted(offspring, key=lambda ind: ind.score, reverse=True)
+    # scores = [ind.score for ind in offspring]
+    # bes_ind = offspring[0]
+    # best_score = scores[0]
+    # print(f"Initial population sorted by fitness: {[score for score in scores]}")
 
     generation = 0
 
@@ -58,39 +78,52 @@ def evolve(config_file: str):
 
     # while best_score < ind.max_score:
     while generation < args.generations:
+        
+        if generation > 0:
+            # Select `po_size` individuals from the population
+            nonempty_cells  = np.argwhere(archive != None)
+            parent_xys = random.choices(nonempty_cells, k=args.pop_size)
+            mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
+            [ind.simulate_fortress(generation=generation) for ind in mutants]
+            mutant_scores = [ind.score for ind in mutants]
+            mutant_xys = [get_xy_from_bcs(ind.get_bcs(), bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
 
-        for i,parent_i in enumerate(population):
-            ind_i = mutate_and_eval_ind(parent_i.clone(), generation, args)
 
-            added = False
-            for (j, ind_j) in enumerate(population):
-                # Have a little drift, as a treat
-                if ind_i.score >= ind_j.score:
-                    population 
-                    population = population[:j] + [ind_i] + population[j:-1]
-                    scores = scores[:j] + [ind_i.score] + scores[j:-1]
-                    # population[j] = ind_i
-                    # scores[j] = ind_i.score
-                    added = True
-                    if j == 0:
-                        print(f"Added mutant {i} to the population at rank {j}, with score {ind_i.score}")
-                        best_score = ind_i.score
-                        best_ind = ind_i
-                    break
-
-            # best_score = ind_i.score
-            # best_ind = ind_i.clone()  # Seems redundant?
+        for i, ind_i in enumerate(mutants):
+            score_i = ind_i.score
+            xy_i = mutant_xys[i]
+            incumbent = archive[xy_i]
+            if incumbent is None or score_i > incumbent.score:
+                archive[xy_i] = ind_i
+                fits[xy_i] = score_i
+                print(f"Added mutant {i} to the archive at {xy_i}, with score {score_i}")
+                if score_i > best_score:
+                    best_score = score_i
+                    best_ind = ind_i
         
         # print the stats of the generation
         print(f"[ GENERATION {generation} ]")
         print(f'> Best fortress score: {best_score}')
-        print(f"> Total entities: {len(best_ind.engine.fortress.entities)}")
+        # print(f"> Total entities: {len(best_ind.engine.fortress.entities)}")
+        print(f'> Archive size: {len(np.argwhere(archive != None))}')
+        print(f"> QD score: {np.nansum(fits)}")
         print("")
 
         # add to the histories
         best_score_history.append(best_score)
         cur_score_history.append(best_ind.score)
         entity_num_history.append(len(best_ind.engine.fortress.entities))
+
+        if generation % 1 == 0:
+            # Plot a heatmap of the archive
+            plt.figure(figsize=(15,10))
+            plt.imshow(fits, cmap='cool', interpolation='nearest')
+            # Add x and y labels
+            plt.xlabel('x') 
+            plt.xticks(np.arange(args.x_bins // 10) * 10, [f"{bc_0_ticks[i] * 10:.2f}" for i in range(args.x_bins // 10)])
+            plt.ylabel('y')
+            plt.yticks(np.arange(args.y_bins // 10) * 10, [f"{bc_1_ticks[i] * 10:.2f}" for i in range(args.y_bins // 10)])
+            plt.savefig(f"ALIFE_EXP/heatmap_gen-{generation}.png")
 
         generation+=1
 
@@ -168,5 +201,5 @@ def evolve(config_file: str):
 if __name__ == '__main__':
     # Create argparser with boolean flag for rendering
     sub_args = parser.parse_args()
-    evolve(sub_args.config)
+    illuminate(sub_args.config)
     # cProfile.run("evolve(conf_file)")
