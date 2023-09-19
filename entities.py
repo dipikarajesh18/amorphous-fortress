@@ -29,6 +29,31 @@ class Entity:
         # seed = self.fortress.seed
         # random.seed(seed)
 
+        # associates names to the functions for the node actions the agent will perform
+        self.NODE_DICT = {
+            "idle": {'func':self.noneAct, 'args':[]},
+            "move": {'func':self.move, 'args':[]},
+            "die": {'func':self.die, 'args':[]},
+            "clone": {'func':self.clone, 'args':[]},
+            "take": {'func':self.take, 'args':['entityChar']}, 
+            "chase": {'func':self.chase, 'args':['entityChar']},
+            "push": {'func':self.push, 'args':['entityChar']},
+            "add": {'func':self.addEnt, 'args':['entityChar']},
+            'transform': {'func':self.transform, 'args':['entityChar']},
+            "move_wall":{'func':self.wall, 'args':['entityChar']}
+        }
+
+        # associates names to functions for the edge conditions that will activate the node actions
+        # lower number means it will happen last
+        self.EDGE_DICT = {
+
+            "none": {'func':self.noneCond, 'args':[], 'priority':0},
+            "step": {'func':self.every_step, 'args':['steps'], 'priority':1},
+            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':2},
+            "nextTo": {'func':self.nextTo, 'args':['entityChar'], 'priority':3},
+            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4}
+        }
+
         # define the AI state graph
         self.nodes = []      # list of nodes; the index position corresponds to the node ID while the function name; saved as a string with the function name followed by any arguments with the value in parentheses
         self.edges = {}      # dictionary of node -> node activations; the key is the 2 node ID separated by a - and the value is the condition that activates the edge followed by any arguments with the value in parentheses
