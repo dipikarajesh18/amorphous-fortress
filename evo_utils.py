@@ -147,7 +147,7 @@ class EvoIndividual():
                 ent.edges[edge_ind] = ent.newEdge()
             
 
-    def simulate_fortress(self,generation):
+    def simulate_fortress(self, show_prints=False):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
@@ -174,7 +174,6 @@ class EvoIndividual():
         if self.fitness_type == "M":
             self.score = compute_fortress_score_dummy(self.engine)
         elif self.fitness_type == "tree":
-            show_prints = generation%25==0
             self.score = compute_fortress_score(self.engine,show_prints)
 
     def get_bcs(self):
@@ -264,6 +263,7 @@ def mutate_and_eval_ind(ind: EvoIndividual, generation: int, args):
         ind.mutateEnt()
         instance_rando = random.random()
 
-    ind.simulate_fortress(generation)
+    show_prints = generation % 25 == 0
+    ind.simulate_fortress(show_prints=show_prints)
     return ind
 

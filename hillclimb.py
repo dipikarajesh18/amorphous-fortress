@@ -65,7 +65,8 @@ def hillclimb(config_file: str):
             ind.mutateEnt()
             instance_rando = random.random()
 
-        ind.simulate_fortress(generation)
+        show_prints = generation % 25 == 0
+        ind.simulate_fortress(show_prints)
 
         if ind.score >= best_score:
             print(f'+++ New best score! {ind.score} - generation = {generation} +++')
