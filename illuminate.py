@@ -1,10 +1,12 @@
 """Evolve fortress configurations to maximize the complexity of entities' finite state machines."""
 import copy
 import curses
+import os
 import random
 import math
 import pickle
 import cProfile
+import shutil
 from typing import List
 import matplotlib.pyplot as plt
 
@@ -15,8 +17,6 @@ from engine import Engine
 from entities import Entity
 from evo_utils import mutate_and_eval_ind
 from hillclimb import EvoIndividual
-# from main import curses_render_loop, init_screens, DEBUG
-from utils import newID
 
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
 
@@ -32,6 +32,11 @@ parser.add_argument("-a", "--alife_exp", action="store_true", help="Running the 
 parser.add_argument("-p", "--pop_size", type=int, default=10, help="Population size")
 parser.add_argument("-xb", "--x_bins", type=int, default=100, help="Number of bins for x axis")
 parser.add_argument("-yb", "--y_bins", type=int, default=100, help="Number of bins for y axis")
+parser.add_argument("-cf", "--checkpoint_frequency", type=int, default=10, help="Number of generations between checkpoints")
+parser.add_argument("-pf", "--plot_frequency", type=int, default=10, help="Number of generations between plots")
+parser.add_argument("-s", "--seed", type=int, default=0, help="Random seed for the experiment")
+parser.add_argument("-ev", "--evauate", action="store_true", help="Evaluate the archive")
+parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
@@ -39,28 +44,78 @@ def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
     y = int((bc[1] - bc_bounds[1][0]) / (bc_bounds[1][1] - bc_bounds[1][0]) * y_bins)
     return (x, y)
 
+    
+def evaluate(args, archive):
+    # Iterate through the archive and simulate each fortress while rendering
+    for xy in np.argwhere(archive != None):
+        ind: EvoIndividual = archive[xy[0], xy[1]]
+        ind.render = True
+        ind.simulate_fortress(show_prints=True)        
+
 
 def illuminate(config_file: str):
     global parser
     args = parser.parse_args()
+
+    # WARNING: Stopping & resuming evolution mid-run will break reproducibility. Runs that go straight-through should
+    #   be reproducible though.
+    np.random.seed(args.seed)
+    random.seed(args.seed)
 
     best_ind = None
     best_score = -math.inf
 
     mutants: List[EvoIndividual]
     mutants = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
+
+    # FIXME: Need to do this to get fitness type
     [ind.init_random_fortress() for ind in mutants]
-    [ind.simulate_fortress(generation=0) for ind in mutants]
-    mutant_scores = [ind.score for ind in mutants]
-    mutant_bcs = [ind.get_bcs() for ind in mutants]
+    fitness_type = mutants[0].fitness_type
+    exp_dir = os.path.join("saves", 
+                           (f"ME_fit-{fitness_type}_s-{args.seed}"
+                            f"_n-{args.node_coin}_e-{args.edge_coin}_i-{args.instance_coin}"
+                            f"_xb-{args.x_bins}_yb-{args.y_bins}"
+                            f"_p-{args.pop_size}"))
+
+    # Find any existing archive files
+    archive_files = ([f for f in os.listdir(exp_dir) if f.startswith("archive_gen-")] 
+                        if os.path.exists(exp_dir) else [])
+    if len(archive_files) == 0 or args.overwrite:
+        if os.path.exists(exp_dir):
+            shutil.rmtree(exp_dir)
+        os.makedirs(exp_dir)
+        generation = 0
+
+        show_prints = generation % 25 == 0
+
+        # TODO: Encode each fortress as some set (e.g. jax PyTree) of arrays.
+        archive = np.full((args.x_bins, args.y_bins), None, dtype=object)
+        fits = np.full((args.x_bins, args.y_bins), np.nan)
+
+    else:
+        # Get the latest archive
+        latest_archive_file = max(archive_files, key=lambda f: int(f.split("-")[1].split(".")[0]))
+        # Load it
+        with open(os.path.join(exp_dir, latest_archive_file), 'rb') as f:
+            archive = pickle.load(f)
+        fits = np.full((args.x_bins, args.y_bins), np.nan)
+        for xy in np.argwhere(archive != None):
+            fits[xy[0], xy[1]] = archive[xy[0], xy[1]].score
+
+        if args.evauate:
+            return evaluate(args, archive)
+
+        # Get generation number
+        generation = int(latest_archive_file.split("-")[1].split(".")[0])
+
+        best_score = np.nanmax(fits)
+        best_ind_xy = np.argwhere(fits == best_score)[0]
+        best_ind = archive[best_ind_xy[0], best_ind_xy[1]]
+
     bc_bounds = mutants[0].get_bc_bounds()
-    mutant_xys = [get_xy_from_bcs(bc, bc_bounds, args.x_bins, args.y_bins) for bc in mutant_bcs]
 
     bc_0_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], args.x_bins)
     bc_1_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], args.y_bins)
-
-    archive = np.full((args.x_bins, args.y_bins), None)
-    fits = np.full((args.x_bins, args.y_bins), np.nan)
 
     # Sort by fitness (descending)
     # offspring = sorted(offspring, key=lambda ind: ind.score, reverse=True)
@@ -69,11 +124,8 @@ def illuminate(config_file: str):
     # best_score = scores[0]
     # print(f"Initial population sorted by fitness: {[score for score in scores]}")
 
-    generation = 0
-
-    best_score_history = []
-    cur_score_history = []
-    entity_num_history = []
+    # best_score_history = []
+    # entity_num_history = []
 
 
     # while best_score < ind.max_score:
@@ -84,9 +136,10 @@ def illuminate(config_file: str):
             nonempty_cells  = np.argwhere(archive != None)
             parent_xys = random.choices(nonempty_cells, k=args.pop_size)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
-            [ind.simulate_fortress(generation=generation) for ind in mutants]
-            mutant_scores = [ind.score for ind in mutants]
-            mutant_xys = [get_xy_from_bcs(ind.get_bcs(), bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
+            show_prints = generation % 25 == 0
+
+        [ind.simulate_fortress(show_prints=show_prints) for ind in mutants]
+        mutant_xys = [get_xy_from_bcs(ind.get_bcs(), bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
 
 
         for i, ind_i in enumerate(mutants):
@@ -110,20 +163,33 @@ def illuminate(config_file: str):
         print("")
 
         # add to the histories
-        best_score_history.append(best_score)
-        cur_score_history.append(best_ind.score)
-        entity_num_history.append(len(best_ind.engine.fortress.entities))
+        # best_score_history.append(best_score)
+        # entity_num_history.append(len(best_ind.engine.fortress.entities))
 
-        if generation % 1 == 0:
+        if fitness_type == "M":
+            x_label, y_label = "n. entities", "n. @-type entities"
+        else:
+            pass
+
+        if generation % args.plot_frequency == 0:
             # Plot a heatmap of the archive
             plt.figure(figsize=(15,10))
             plt.imshow(fits, cmap='cool', interpolation='nearest')
             # Add x and y labels
-            plt.xlabel('x') 
+            plt.xlabel(x_label) 
             plt.xticks(np.arange(args.x_bins // 10) * 10, [f"{bc_0_ticks[i] * 10:.2f}" for i in range(args.x_bins // 10)])
-            plt.ylabel('y')
+            plt.ylabel(y_label)
             plt.yticks(np.arange(args.y_bins // 10) * 10, [f"{bc_1_ticks[i] * 10:.2f}" for i in range(args.y_bins // 10)])
-            plt.savefig(f"ALIFE_EXP/heatmap_gen-{generation}.png")
+            # Add colorbar
+            plt.colorbar()
+            plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
+
+        if generation % args.checkpoint_frequency == 0:
+            # Save the archive as a pickle
+            with open(os.path.join(exp_dir, f"archive_gen-{generation}.pkl"), 'wb') as f:
+                pickle.dump(archive, f)
+            if os.path.exists(os.path.join(exp_dir, f"archive_gen-{generation - args.checkpoint_frequency * 2}.pkl")):
+                os.remove(os.path.join(exp_dir, f"archive_gen-{generation - args.checkpoint_frequency * 2}.pkl"))
 
         generation+=1
 
@@ -170,18 +236,17 @@ def illuminate(config_file: str):
 
     if not args.alife_exp:
         # export the log
-        best_ind.engine.exportLog(f"LOGS/hillclimber_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
+        best_ind.engine.exportLog(f"LOGS/MAP-Elites_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
 
         # export the evo individual as a pickle
-        best_ind.expEvoInd(f"EVO_IND/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+        best_ind.expEvoInd(f"EVO_IND/MAP-Elites_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
 
         # export the histories to a matplotlib graph
         plt.figure(figsize=(15,10))
-        plt.plot(best_score_history, label="Best Score", color="red")
-        plt.plot(cur_score_history, label="Current Score", color="orange")
-        plt.plot(entity_num_history, label="Entity Count", color="green")
+        # plt.plot(best_score_history, label="Best Score", color="red")
+        # plt.plot(entity_num_history, label="Entity Count", color="green")
         plt.legend()
-        plt.savefig(f"EVO_FIT/hillclimber_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
+        plt.savefig(f"EVO_FIT/MAP-Elites_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
 
 
     #####      ALIFE EXPERIMENT      #####
@@ -191,10 +256,10 @@ def illuminate(config_file: str):
         best_ind.engine.exportLog(best_ind.engine.config['log_file'])
 
         # export the evo individual as a pickle
-        best_ind.expEvoInd(f"ALIFE_EXP/_pickle/hillclimber_{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")
+        best_ind.expEvoInd(os.path.join(exp_dir, os.path.join(exp_dir, f"_pickle/{best_ind.fitness_type}_f-{best_score:.2f}_[{best_ind.engine.seed}].pkl")))
 
         # export the histories to numpy array file
-        np.save(f"ALIFE_EXP/_history/history_s[{best_ind.engine.seed}].npy", np.array([best_score_history, cur_score_history, entity_num_history]))
+        # np.save(os.path.join(exp_dir, f"_history/history_s[{best_ind.engine.seed}].npy"), np.array([best_score_history, entity_num_history]))
 
         
 

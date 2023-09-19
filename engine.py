@@ -1,9 +1,11 @@
+import datetime
 import random
 import yaml
-from fortress import Fortress
-from entities import Entity
+
 import numpy as np
-import datetime
+
+from entities import Entity
+from fortress import Fortress
 
 class Engine():
     fortress: Fortress

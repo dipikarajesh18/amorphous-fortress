@@ -1,3 +1,8 @@
+ALIFE_EXP
+EVO_FIT
+EVO_IND
+LOGS
+saves
 curses_tests_chatgpt/
 *.pyc
 __pycache__/*
