@@ -1,17 +1,17 @@
 """Evolve fortress configurations to maximize the complexity of entities' finite state machines."""
+import argparse
 import copy
 import curses
 import os
 import random
 import math
 import pickle
-import cProfile
 import shutil
 from typing import List
-import matplotlib.pyplot as plt
 
-import argparse
+import matplotlib.pyplot as plt
 import numpy as np
+from tensorboardX import SummaryWriter
 
 from engine import Engine
 from entities import Entity
@@ -37,6 +37,7 @@ parser.add_argument("-pf", "--plot_frequency", type=int, default=10, help="Numbe
 parser.add_argument("-s", "--seed", type=int, default=0, help="Random seed for the experiment")
 parser.add_argument("-ev", "--evauate", action="store_true", help="Evaluate the archive")
 parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
+parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Percent of random individuals to add to the population")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
@@ -75,7 +76,10 @@ def illuminate(config_file: str):
                            (f"ME_fit-{fitness_type}_s-{args.seed}"
                             f"_n-{args.node_coin}_e-{args.edge_coin}_i-{args.instance_coin}"
                             f"_xb-{args.x_bins}_yb-{args.y_bins}"
-                            f"_p-{args.pop_size}"))
+                            f"_p-{args.pop_size}"
+                            f"_pr-{args.percent_random}"
+                            ))
+    tb_writer = SummaryWriter(log_dir=exp_dir)
 
     # Find any existing archive files
     archive_files = ([f for f in os.listdir(exp_dir) if f.startswith("archive_gen-")] 
@@ -134,8 +138,13 @@ def illuminate(config_file: str):
         if generation > 0:
             # Select `po_size` individuals from the population
             nonempty_cells  = np.argwhere(archive != None)
-            parent_xys = random.choices(nonempty_cells, k=args.pop_size)
+            n_rand_inds = int(args.pop_size * args.percent_random)
+            n_parents = args.pop_size - n_rand_inds
+            parent_xys = random.choices(nonempty_cells, k=n_parents)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
+            rand_inds = [EvoIndividual(config_file, args.render) for _ in range(n_rand_inds)]
+            [ind.init_random_fortress() for ind in rand_inds]
+            mutants += rand_inds
             show_prints = generation % 25 == 0
 
         [ind.simulate_fortress(show_prints=show_prints) for ind in mutants]
@@ -154,20 +163,22 @@ def illuminate(config_file: str):
                     best_score = score_i
                     best_ind = ind_i
         
+        archive_size = len(np.argwhere(archive != None))
+        qd_score = np.nansum(fits)
         # print the stats of the generation
         print(f"[ GENERATION {generation} ]")
         print(f'> Best fortress score: {best_score}')
         # print(f"> Total entities: {len(best_ind.engine.fortress.entities)}")
-        print(f'> Archive size: {len(np.argwhere(archive != None))}')
-        print(f"> QD score: {np.nansum(fits)}")
+        print(f'> Archive size: {archive_size}')
+        print(f"> QD score: {qd_score}")
         print("")
 
-        # add to the histories
-        # best_score_history.append(best_score)
-        # entity_num_history.append(len(best_ind.engine.fortress.entities))
+        tb_writer.add_scalar("qd_score", qd_score, generation)
+        tb_writer.add_scalar("archive_size", archive_size, generation)
+        tb_writer.add_scalar("best_score", best_score, generation)
 
         if fitness_type == "M":
-            x_label, y_label = "n. entities", "n. @-type entities"
+            y_label, x_label = "n. entities", "n. @-type entities"
         else:
             pass
 
