@@ -27,15 +27,16 @@ class Entity:
 
         # associates names to the functions for the node actions the agent will perform
         self.NODE_DICT = {
+            "idle": {'func':self.noneAct, 'args':[]},
             "move": {'func':self.move, 'args':[]},
             "die": {'func':self.die, 'args':[]},
-            "take": {'func':self.take, 'args':[]},  #only activated if other_ent is not None
-            "chase": {'func':self.chase, 'args':[]},
             "clone": {'func':self.clone, 'args':[]},
-            "push": {'func':self.push, 'args':[]},
+            "take": {'func':self.take, 'args':['entityChar']}, 
+            "chase": {'func':self.chase, 'args':['entityChar']},
+            "push": {'func':self.push, 'args':['entityChar']},
             "add": {'func':self.addEnt, 'args':['entityChar']},
             'transform': {'func':self.transform, 'args':['entityChar']},
-            "idle": {'func':self.noneAct, 'args':[]}
+            "move_wall":{'func':self.wall, 'args':['entityChar']}
         }
 
         # associates names to functions for the edge conditions that will activate the node actions
@@ -76,6 +77,23 @@ class Entity:
 
     #######     NODE ACTIONS     #######
 
+     # returns the nearest entity of a certain character (excluding itself)
+    def _anotherEnt(self, entChar):
+        return self.fortress.closestEnt(self.pos[0],self.pos[1],entChar,(self.id if entChar == self.char else None))
+    
+
+    # move to a random adjacent position if possible
+    def _randAdjPos(self):
+        # TODO: currently moves one tile at a tile in a random direction
+        pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
+        rpos = random.choice(pos_mod)
+        new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
+        # self.fortress.addLog("Entity trying to move to " + str(new_pos))
+        if self.fortress.validPos(new_pos[0], new_pos[1]):
+            return new_pos
+        return None
+    
+
     # create another instance of the entity but with different id and position
     def clone(self,pos=None,transform=False):
         new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
@@ -99,22 +117,18 @@ class Entity:
         self.fortress.removeFromMap(self)
     
     # if entity takes another entity, remove from map
-    def take(self):
-        if self.other_ent:
-            self.fortress.addLog(f"[{self.char}.{self.id}] took [{self.other_ent.char}.{self.other_ent.id}]")
-            self.other_ent.die()
-            self.other_ent = None
+    def take(self, entityChar):
+        # if self.other_ent:
+            # self.fortress.addLog(f"[{self.char}.{self.id}] took [{self.other_ent.char}.{self.other_ent.id}]")
+            # self.other_ent.die()
+            # self.other_ent = None
 
-    def _randAdjPos(self):
-        # TODO: currently moves one tile at a tile in a random direction
-        pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
-        rpos = random.choice(pos_mod)
-        new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
-        # self.fortress.addLog("Entity trying to move to " + str(new_pos))
-        if self.fortress.validPos(new_pos[0], new_pos[1]):
-            return new_pos
-        return None
-    
+        other_ent = self._anotherEnt(entityChar)
+        if other_ent:
+            self.fortress.addLog(f"[{self.char}.{self.id}] took [{other_ent.char}.{other_ent.id}]")
+            other_ent.die()
+
+   
     # if entity moves, update position
     def move(self):
         new_pos = self._randAdjPos()
@@ -123,13 +137,30 @@ class Entity:
             self.pos = new_pos
             self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)}")
 
+     # if entity moves and entity is not in the way, update position
+    def wall(self, entityChar):
+        new_pos = self._randAdjPos()
+        # self.fortress.addLog("Entity trying to move to " + str(new_pos))
+        if new_pos:
+            eap = self.fortress.entAtPos(new_pos[0],new_pos[1])   # check if there's an entity at the position and if so, not the specified one
+            if not eap or eap.char != entityChar:
+                self.pos = new_pos
+                self.fortress.addLog(f"[{self.char}.{self.id}] moved to {str(self.pos)}")
+            else:
+                self.fortress.addLog(f"[{self.char}.{self.id}] blocked by wall {eap.char}.{eap.id}")
+
     # moves the entity towards a particular entity on the map
-    def chase(self):
-        if not self.other_ent:
+    def chase(self, entityChar):
+
+        # if not self.other_ent:
+        #     return
+        other_ent = self._anotherEnt(entityChar)
+        if not other_ent:
             return
 
         # set the target position to the other entity's position
-        pos = self.other_ent.pos
+        # pos = self.other_ent.pos
+        pos = other_ent.pos
 
         new_pos = self.pos.copy()
         dir = []
@@ -167,8 +198,12 @@ class Entity:
         return pos1[0] == pos2[0] and pos1[1] == pos2[1]
 
     # if entity pushes another entity, move the other entity
-    def push(self):
-        if not self.other_ent:
+    def push(self, entityChar):
+
+        # if not self.other_ent:
+        #     return
+        other_ent = self._anotherEnt(entityChar)
+        if not other_ent:
             return
             
         # get the next position over
@@ -177,16 +212,27 @@ class Entity:
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
 
         # check if the other entity is in the next position
-        if self._samePos(new_pos, self.other_ent.pos):
+        # if self._samePos(new_pos, self.other_ent.pos):
+        #     # move the other entity in the same direction as the entity (if the previous position matched)
+        #     new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
+        #     if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
+        #         # move this entity
+        #         self.pos = new_pos
+
+        #         # move the other entity
+        #         self.other_ent.pos = new_pos_e
+        #         self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
+
+        if self._samePos(new_pos, other_ent.pos):
             # move the other entity in the same direction as the entity (if the previous position matched)
-            new_pos_e = [self.other_ent.pos[0] + rpos[0], self.other_ent.pos[1] + rpos[1]]
+            new_pos_e = [other_ent.pos[0] + rpos[0], other_ent.pos[1] + rpos[1]]
             if self.fortress.validPos(new_pos_e[0], new_pos_e[1]):
                 # move this entity
                 self.pos = new_pos
 
                 # move the other entity
-                self.other_ent.pos = new_pos_e
-                self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{self.other_ent.char}.{self.other_ent.id}]")
+                other_ent.pos = new_pos_e
+                self.fortress.addLog(f"[{self.char}.{self.id}] pushed [{other_ent.char}.{other_ent.id}]")
 
         elif self.fortress.validPos(new_pos[0], new_pos[1]):
             # move this entity

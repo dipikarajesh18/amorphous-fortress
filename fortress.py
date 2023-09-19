@@ -96,6 +96,28 @@ class Fortress():
             if ent.pos[0] == x and ent.pos[1] == y:
                 return ent
         return None
+    
+    # find the closest entity character from a specific position
+    def closestEnt(self, x,y, c, eid=None):
+        # find all of the characters (not including self)
+        all_c = []
+        for ent in self.entities.values():
+            if ent.char == c and (eid == None or ent.id != eid):
+                all_c.append(ent)
+
+        # no entities left in the map
+        if len(all_c) == 0:
+            return None
+        
+        # calculate distances from all of the positions
+        dist = {}
+        for e in all_c:
+            dist[e] = abs(e.pos[0]-x) + abs(e.pos[1]-y)
+        
+        # return entity with the smallest distance
+        return sorted(dist.items(), key=lambda x:x[1])[0][0]
+        
+
 
 
     # create new trees for every character in the config file
