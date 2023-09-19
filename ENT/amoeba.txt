@@ -1,7 +1,7 @@
 $
 -- NODES --
 0: idle
-1: take
+1: take $
 2: move
 -- EDGES --
 0-1: touch $

@@ -223,7 +223,7 @@ def main(config_file):
     # test chase
     elif TEST == "BOKO":
         b = Entity(ENGINE.fortress, filename="ENT/boko.txt")
-        b.pos = [7,5]
+        b.pos = [9,5]
         ENGINE.fortress.addEntity(b)
 
         l = Entity(ENGINE.fortress, filename="ENT/link.txt")
@@ -303,6 +303,19 @@ def main(config_file):
 
         ENGINE.fortress.addLog(">>> Running [KOROK] test <<<")
 
+    # test wall
+    elif TEST == "POKEMON":
+        for i in range(5):
+            w = Entity(ENGINE.fortress, filename="ENT/rock.txt")
+            w.pos = [5+i,3]
+            ENGINE.fortress.addEntity(w)
+        
+        t = Entity(ENGINE.fortress, filename="ENT/poke_trainer.txt")
+        t.pos = [7,4]
+        ENGINE.fortress.addEntity(t)
+
+        ENGINE.fortress.addLog(">>> Running [POKEMON] test <<<")
+
     else:
         ENGINE.populateFortress()
 
@@ -334,7 +347,7 @@ def main(config_file):
 if __name__ == "__main__":
 
     try:
-        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/beta_config.yaml"
+        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/gamma_config.yaml"
         TEST = sys.argv[2] if len(sys.argv) > 2 else ""
         DEBUG = True if len(sys.argv) > 3 else False
         main(conf_file)

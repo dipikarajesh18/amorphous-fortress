@@ -1,7 +1,7 @@
 G
 -- NODES --
 0: idle
-1: push
+1: push *
 2: move
 -- EDGES --
 0-1: nextTo *
