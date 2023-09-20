@@ -12,7 +12,9 @@ class EvoIndividual():
 
     def __init__(self, config_file: str, fitness_type: str, render: bool = False):
         self.config_file = config_file
-        self.score = None
+        self.score = 0
+        self.bcs = (0, 0)
+        self.n_sims = 0
         engine = Engine(config_file)
         self.engine = engine
         self.render = render
@@ -57,7 +59,10 @@ class EvoIndividual():
             c = random.choice(self.engine.fortress.CONFIG['character'])
             self.engine.init_ents.append({'char':c, 'pos':[x, y]})
 
-        self.score = None
+        self.score = 0
+        self.bcs = (0, 0)
+        self.n_sims = 0
+
 
     # only change the nodes of an entity
     def mutateFSMNodes(self):
@@ -147,9 +152,54 @@ class EvoIndividual():
             if len(ent.edges) > 0:
                 edge_ind = random.choice(list(ent.edges.keys()))
                 ent.edges[edge_ind] = ent.newEdge()
-            
+
+    def update(self, ret, map_elites):
+        """ multiprocessing hack"""
+        ret, self.n_sims = ret
+        if not map_elites:
+            self.score = ret
+        else:
+            self.score, self.bcs = ret
 
     def simulate_fortress(self, show_prints=False, map_elites=False):
+        n_new_sims = 5
+
+        metrics = []
+        for i in range(n_new_sims):
+            m = self.simulate_fortress_once(show_prints, map_elites)
+            metrics.append(m)
+        
+        self.n_sims += len(metrics)
+        if not map_elites:
+            self.score = (
+                (self.score * (self.n_sims - n_new_sims) 
+                + sum(metrics)) 
+                / self.n_sims
+            )
+            ret = self.score
+        if map_elites:
+            # TODO: vectorize this
+            self.score = (
+                (self.score * (self.n_sims - n_new_sims)
+                + sum([m[0] for m in metrics]))
+                / self.n_sims
+            )
+            bc_0 = (
+                (self.bcs[0] * (self.n_sims - n_new_sims)
+                + sum([m[1] for m in metrics]))
+                / self.n_sims
+            )
+            bc_1 = (
+                (self.bcs[1] * (self.n_sims - n_new_sims)
+                + sum([m[2] for m in metrics]))
+                / self.n_sims
+            )
+            self.bcs = (bc_0, bc_1)
+            ret = self.score, self.bcs
+        return ret, self.n_sims
+            
+
+    def simulate_fortress_once(self, show_prints=False, map_elites=False):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
@@ -176,9 +226,10 @@ class EvoIndividual():
 
         if not map_elites:
             if self.fitness_type == "M":
-                self.score = compute_fortress_score_dummy(self.engine)
+                score = compute_fortress_score_dummy(self.engine)
             elif self.fitness_type == "tree":
-                self.score = compute_fortress_score(self.engine, show_prints)
+                score = compute_fortress_score(self.engine, show_prints)
+            return score
         elif map_elites:
             if self.fitness_type == "M":
                 score = compute_fortress_score_dummy(self.engine)
@@ -186,7 +237,7 @@ class EvoIndividual():
                 bc_1 = len([e for e in self.engine.fortress.entities.values() if e.char == '@'])
             elif self.fitness_type == "tree":
                 score, bc_0, bc_1 = compute_fortress_fit_bcs(self.engine, show_prints)
-            self.score, self.bcs = score, (bc_0, bc_1)
+            return score, bc_0, bc_1
 
     # export the evo individual to a file as pickle to reload object
     def expEvoInd(self, filename):

@@ -7,10 +7,12 @@ import random
 import math
 import pickle
 import shutil
+from timeit import default_timer as timer
 from typing import List
 
 import matplotlib.pyplot as plt
 import numpy as np
+from ray.util.multiprocessing import Pool
 from tensorboardX import SummaryWriter
 
 from evo_utils import EvoIndividual, mutate_ind
@@ -36,6 +38,7 @@ parser.add_argument("-ev", "--evaluate", action="store_true", help="Evaluate the
 parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
 parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Percent of random individuals to add to the population")
 parser.add_argument("-ft", "--fitness_type", type=str, default="tree", help="Fitness type: 'tree' or 'M'")
+parser.add_argument("-np", "--n_proc", type=int, default=1, help="Number of processes to use for simulation")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
@@ -130,9 +133,12 @@ def illuminate(config_file: str):
     # best_score_history = []
     # entity_num_history = []
 
+    if not args.n_proc == 1:
+        pool = Pool(processes=args.n_proc)
 
     # while best_score < ind.max_score:
     while generation < args.generations:
+        gen_start_time = timer()
         
         if generation > 0:
             # Select `po_size` individuals from the population
@@ -148,7 +154,14 @@ def illuminate(config_file: str):
             mutants += rand_inds
             show_prints = generation % 25 == 0
 
-        [ind.simulate_fortress(show_prints=False, map_elites=True) for ind in mutants]
+        if args.n_proc == 1:
+            [ind.simulate_fortress(show_prints=False, map_elites=True) for ind in mutants]
+        else:
+            # User ray to parallelize the simulation
+            # Notice how the individuals in `mutants` aren't updated by this function. Why?
+            rets = pool.map(lambda ind: ind.simulate_fortress(show_prints=False, map_elites=True), mutants)
+            [ind.update(ret, map_elites=True) for ind, ret in zip(mutants, rets)]
+
         mutant_xys = [get_xy_from_bcs(ind.bcs, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
 
 
@@ -172,6 +185,7 @@ def illuminate(config_file: str):
         # print(f"> Total entities: {len(best_ind.engine.fortress.entities)}")
         print(f'> Archive size: {archive_size}')
         print(f"> QD score: {qd_score}")
+        print(f"> Time elapsed: {timer() - gen_start_time:.2f} seconds")
         print("")
 
         tb_writer.add_scalar("qd_score", qd_score, generation)
