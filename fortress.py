@@ -16,6 +16,7 @@ class Fortress():
         self.entities = {}   # dictionary of entities
         self.CHARACTER_DICT = {}    # definition of all of the characters classes in the simulation 
         self.CHAR_VISIT_TREE = {}   # stores the tree node visits of each entity instance per class
+        self.max_aggregate_fsm_nodes = None   # the maximum number of nodes and edges over all entity types
 
         self.CONFIG = config  # a dictionary of values for configuration
         self.seed = random.randint(0,1000000) if seed == None else seed
@@ -132,6 +133,18 @@ class Fortress():
 
         self.addLog(f"{len(self.CHARACTER_DICT)} Unique character trees created")
 
+    def get_max_aggregate_fsm_nodes(self):
+        n_ent_types = len(self.CHARACTER_DICT)
+        ent: Entity = self.CHARACTER_DICT['@']  # Just need a dummy entity to get the NODE_DICT
+        nodes_per_ent_type = 0
+        for node_dict in ent.NODE_DICT.values():
+            node_args = node_dict['args']
+            if node_args == []:
+                nodes_per_ent_type += 1
+            elif node_args == ['entityChar']:
+                nodes_per_ent_type += n_ent_types
+        max_aggregate_fsm_nodes = nodes_per_ent_type * n_ent_types
+        return max_aggregate_fsm_nodes
         
     # check if the simulation should terminate
     def terminate(self):
