@@ -13,10 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from tensorboardX import SummaryWriter
 
-from engine import Engine
-from entities import Entity
-from evo_utils import mutate_and_eval_ind
-from hillclimb import EvoIndividual
+from evo_utils import EvoIndividual, mutate_ind
 
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
 
@@ -35,9 +32,10 @@ parser.add_argument("-yb", "--y_bins", type=int, default=100, help="Number of bi
 parser.add_argument("-cf", "--checkpoint_frequency", type=int, default=10, help="Number of generations between checkpoints")
 parser.add_argument("-pf", "--plot_frequency", type=int, default=10, help="Number of generations between plots")
 parser.add_argument("-s", "--seed", type=int, default=0, help="Random seed for the experiment")
-parser.add_argument("-ev", "--evauate", action="store_true", help="Evaluate the archive")
+parser.add_argument("-ev", "--evaluate", action="store_true", help="Evaluate the archive")
 parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
 parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Percent of random individuals to add to the population")
+parser.add_argument("-ft", "--fitness_type", type=str, default="tree", help="Fitness type: 'tree' or 'M'")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
@@ -47,11 +45,14 @@ def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
 
     
 def evaluate(args, archive):
+    valid_xys = np.argwhere(archive != None)
+    # Get list of individuals in order of decreasing fitness
+    valid_inds = [archive[xy[0], xy[1]] for xy in valid_xys]
+    valid_inds = sorted(valid_inds, key=lambda ind: ind.score, reverse=True)
     # Iterate through the archive and simulate each fortress while rendering
-    for xy in np.argwhere(archive != None):
-        ind: EvoIndividual = archive[xy[0], xy[1]]
+    for ind in valid_inds:
         ind.render = True
-        ind.simulate_fortress(show_prints=True)        
+        ind.simulate_fortress(show_prints=False, map_elites=True)
 
 
 def illuminate(config_file: str):
@@ -67,13 +68,11 @@ def illuminate(config_file: str):
     best_score = -math.inf
 
     mutants: List[EvoIndividual]
-    mutants = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
-
-    # FIXME: Need to do this to get fitness type
+    mutants = [EvoIndividual(config_file, args.fitness_type, args.render) for _ in range(args.pop_size)]
     [ind.init_random_fortress() for ind in mutants]
-    fitness_type = mutants[0].fitness_type
+
     exp_dir = os.path.join("saves", 
-                           (f"ME_fit-{fitness_type}_s-{args.seed}"
+                           (f"ME_fit-{args.fitness_type}_s-{args.seed}"
                             f"_n-{args.node_coin}_e-{args.edge_coin}_i-{args.instance_coin}"
                             f"_xb-{args.x_bins}_yb-{args.y_bins}"
                             f"_p-{args.pop_size}"
@@ -106,7 +105,7 @@ def illuminate(config_file: str):
         for xy in np.argwhere(archive != None):
             fits[xy[0], xy[1]] = archive[xy[0], xy[1]].score
 
-        if args.evauate:
+        if args.evaluate:
             return evaluate(args, archive)
 
         # Get generation number
@@ -118,8 +117,8 @@ def illuminate(config_file: str):
 
     bc_bounds = mutants[0].get_bc_bounds()
 
-    bc_0_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], args.x_bins)
-    bc_1_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], args.y_bins)
+    bc_1_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], args.x_bins)
+    bc_0_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], args.y_bins)
 
     # Sort by fitness (descending)
     # offspring = sorted(offspring, key=lambda ind: ind.score, reverse=True)
@@ -142,13 +141,15 @@ def illuminate(config_file: str):
             n_parents = args.pop_size - n_rand_inds
             parent_xys = random.choices(nonempty_cells, k=n_parents)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
-            rand_inds = [EvoIndividual(config_file, args.render) for _ in range(n_rand_inds)]
+            [mutate_ind(m, args) for m in mutants]
+            rand_inds = [EvoIndividual(config_file, fitness_type=args.fitness_type, render=args.render) \
+                            for _ in range(n_rand_inds)]
             [ind.init_random_fortress() for ind in rand_inds]
             mutants += rand_inds
             show_prints = generation % 25 == 0
 
-        [ind.simulate_fortress(show_prints=show_prints) for ind in mutants]
-        mutant_xys = [get_xy_from_bcs(ind.get_bcs(), bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
+        [ind.simulate_fortress(show_prints=False, map_elites=True) for ind in mutants]
+        mutant_xys = [get_xy_from_bcs(ind.bcs, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
 
 
         for i, ind_i in enumerate(mutants):
@@ -177,10 +178,10 @@ def illuminate(config_file: str):
         tb_writer.add_scalar("archive_size", archive_size, generation)
         tb_writer.add_scalar("best_score", best_score, generation)
 
-        if fitness_type == "M":
+        if args.fitness_type == "M":
             y_label, x_label = "n. entities", "n. @-type entities"
         else:
-            pass
+            y_label, x_label = "n. entities", "n. nodes"
 
         if generation % args.plot_frequency == 0:
             # Plot a heatmap of the archive

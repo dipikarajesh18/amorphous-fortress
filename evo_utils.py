@@ -2,13 +2,15 @@ import copy
 import curses
 import pickle
 import random
+import time
 from engine import Engine
+from render_curses import curses_render_loop, init_screens
 
 
 class EvoIndividual():
     engine: Engine
 
-    def __init__(self, config_file: str, render: bool = False):
+    def __init__(self, config_file: str, fitness_type: str, render: bool = False):
         self.config_file = config_file
         self.score = None
         engine = Engine(config_file)
@@ -16,7 +18,7 @@ class EvoIndividual():
         self.render = render
 
         self.n_sim_steps = 20
-        self.fitness_type = "M"
+        self.fitness_type = fitness_type
 
         self.init_fortress_str = ""
 
@@ -147,22 +149,23 @@ class EvoIndividual():
                 ent.edges[edge_ind] = ent.newEdge()
             
 
-    def simulate_fortress(self, show_prints=False):
+    def simulate_fortress(self, show_prints=False, map_elites=False):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
         self.init_fortress_str = self.engine.fortress.renderEntities()
 
-        # if self.render:
-        #     screen_set, screen_dims = init_screens()
+        if self.render:
+            screen_set, screen_dims = init_screens()
 
         loops = 0
         while not (self.engine.fortress.terminate() or self.engine.fortress.inactive() or \
                    self.engine.fortress.overpop() or loops >= self.n_sim_steps):
             # print(self.engine.fortress.renderEntities())
             self.engine.update(True)
-            # if self.render:
-            #     curses_render_loop(screen_set, screen_dims, self.engine)
+            if self.render:
+                curses_render_loop(screen_set, screen_dims, self.engine)
+                time.sleep(0.1)
             # print(loops)
             loops+=1
 
@@ -171,19 +174,19 @@ class EvoIndividual():
 
         # print(self.engine.fortress.renderEntities())
 
-        if self.fitness_type == "M":
-            self.score = compute_fortress_score_dummy(self.engine)
-        elif self.fitness_type == "tree":
-            self.score = compute_fortress_score(self.engine,show_prints)
-
-    def get_bcs(self):
-        if self.fitness_type == "M":
-            bc_0 = len(self.engine.fortress.entities)
-            bc_1 = len([e for e in self.engine.fortress.entities.values() if e.char == '@'])
-        elif self.fitness_type == "tree":
-            pass
-        self.bcs = (bc_0, bc_1)
-        return (bc_0, bc_1)
+        if not map_elites:
+            if self.fitness_type == "M":
+                self.score = compute_fortress_score_dummy(self.engine)
+            elif self.fitness_type == "tree":
+                self.score = compute_fortress_score(self.engine, show_prints)
+        elif map_elites:
+            if self.fitness_type == "M":
+                score = compute_fortress_score_dummy(self.engine)
+                bc_0 = len(self.engine.fortress.entities)
+                bc_1 = len([e for e in self.engine.fortress.entities.values() if e.char == '@'])
+            elif self.fitness_type == "tree":
+                score, bc_0, bc_1 = compute_fortress_fit_bcs(self.engine, show_prints)
+            self.score, self.bcs = score, (bc_0, bc_1)
 
     # export the evo individual to a file as pickle to reload object
     def expEvoInd(self, filename):
@@ -197,8 +200,12 @@ class EvoIndividual():
 
     def get_bc_bounds(self):
         if self.fitness_type == "M":
-           bc_0_bounds = (0, self.engine.fortress.max_entities) 
-           bc_1_bounds = (0, self.engine.fortress.max_entities)
+            bc_0_bounds = (0, self.engine.fortress.max_entities) 
+            bc_1_bounds = (0, self.engine.fortress.max_entities)
+        elif self.fitness_type == "tree":
+            bc_0_bounds = (0, self.engine.fortress.max_entities)
+            max_aggregate_fsm_nodes = self.engine.fortress.get_max_aggregate_fsm_nodes()
+            bc_1_bounds = (0, max_aggregate_fsm_nodes)
         return (bc_0_bounds, bc_1_bounds)
 
 
@@ -245,7 +252,39 @@ def compute_fortress_score(engine: Engine, print_debug=False):
     # return n_visited_nodes + n_visited_edges - n_unvisited*1
 
 
-def mutate_and_eval_ind(ind: EvoIndividual, generation: int, args):
+def compute_fortress_fit_bcs(engine: Engine, print_debug=False):
+    """Compute the score of a fortress. for realsies"""
+    n_visited_nodes = 0
+    n_visited_edges = 0
+    n_total_nodes = 0
+    n_total_edges = 0
+    for c, k in engine.fortress.CHAR_VISIT_TREE.items():
+        n_visited_nodes += len(k['nodes'])
+        n_total_nodes += len(engine.fortress.CHARACTER_DICT[c].nodes)
+        n_visited_edges += len(k['edges'])
+        n_total_edges += len(engine.fortress.CHARACTER_DICT[c].edges)
+
+    n_unvisited_nodes = n_total_nodes - n_visited_nodes
+    n_unvisited_edges = n_total_edges - n_visited_edges
+
+    visit = n_visited_nodes + n_visited_edges
+    unvisit = n_unvisited_nodes + n_unvisited_edges
+    tree_size = n_total_edges+n_total_nodes
+
+    if print_debug: 
+        print("::::::::::::")
+        print(f"Total # nodes + edges: {n_total_edges + n_total_nodes}")
+        print(f"Visited (n/e): {n_visited_nodes} / {n_visited_edges}")
+        print(f"Unvisited (n/e): {n_unvisited_nodes} / {n_unvisited_edges}")
+        print("::::::::::::")
+
+    score = (visit / (unvisit+1))
+    bc_0 = len(engine.fortress.entities)
+    bc_1 = n_total_nodes
+    return score, bc_0, bc_1
+
+
+def mutate_ind(ind: EvoIndividual, args):
     # mutate randomly
     edge_rando = random.random()
     node_rando = random.random()
@@ -263,6 +302,9 @@ def mutate_and_eval_ind(ind: EvoIndividual, generation: int, args):
         ind.mutateEnt()
         instance_rando = random.random()
 
+
+def mutate_and_eval_ind(ind: EvoIndividual, generation: int, args):
+    mutate_ind(ind, args)
     show_prints = generation % 25 == 0
     ind.simulate_fortress(show_prints=show_prints)
     return ind
