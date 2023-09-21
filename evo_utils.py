@@ -4,6 +4,7 @@ import pickle
 import random
 import time
 from engine import Engine
+from entities import NODE_DICT
 from render_curses import curses_render_loop, init_screens
 
 
@@ -72,7 +73,8 @@ class EvoIndividual():
 
         # find the nodes already available
         avail_nodes = []
-        for node in self.engine.fortress.CONFIG['action_space'].copy():
+        # for node in self.engine.fortress.CONFIG['action_space'].copy():
+        for node in self.engine.fortress.node_types:
             if node not in ent.nodes:
                 avail_nodes.append(node)
 
@@ -89,13 +91,7 @@ class EvoIndividual():
             rand_anode = random.choice(avail_nodes)
             
             new_node = f"{rand_anode} "
-
-            # add the arguments to the node
-            if ent.NODE_DICT[rand_anode]['args'] != []:
-                for arg in ent.NODE_DICT[rand_anode]['args']:
-                    if arg == "entityChar":
-                        new_node += f"{random.choice(self.engine.fortress.CONFIG['character'])} "
-            
+  
             ent.nodes.append(new_node.strip())
             ent.connectAnnieNode(len(ent.nodes)-1)
             # print(f'Added node {node} to entity {ent_id}')
@@ -106,12 +102,6 @@ class EvoIndividual():
                 node_ind = random.choice(range(len(ent.nodes)))
                 rand_anode = random.choice(avail_nodes)
                 new_node = f"{rand_anode} "
-
-                # add the arguments to the node
-                if ent.NODE_DICT[rand_anode]['args'] != []:
-                    for arg in ent.NODE_DICT[rand_anode]['args']:
-                        if arg == "entityChar":
-                            new_node += f"{random.choice(self.engine.fortress.CONFIG['character'])} "
 
                 ent.nodes[node_ind] = new_node.strip()
                 # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
@@ -233,7 +223,7 @@ class EvoIndividual():
         elif map_elites:
             if self.fitness_type == "M":
                 score = compute_fortress_score_dummy(self.engine)
-                bc_0 = len(self.engine.fortress.entities)
+                bc_0 = min(len(self.engine.fortress.entities), self.engine.fortress.max_entities)
                 bc_1 = len([e for e in self.engine.fortress.entities.values() if e.char == '@'])
             elif self.fitness_type == "tree":
                 score, bc_0, bc_1 = compute_fortress_fit_bcs(self.engine, show_prints)
@@ -330,7 +320,7 @@ def compute_fortress_fit_bcs(engine: Engine, print_debug=False):
         print("::::::::::::")
 
     score = (visit / (unvisit+1))
-    bc_0 = len(engine.fortress.entities)
+    bc_0 = min(len(engine.fortress.entities), engine.fortress.max_entities)
     bc_1 = n_total_nodes
     return score, bc_0, bc_1
 
