@@ -494,26 +494,70 @@ class Entity:
         edges = [key for key in self.edges.keys() if key.split("-")[0] == str(self.cur_node)]
 
         # sort the edges by priority
-        edges = sorted(edges, key=lambda x: EDGE_DICT[self.edges[x].split(" ")[0]]['priority'], reverse=True)
+        # edges = sorted(edges, key=lambda x: EDGE_DICT[self.edges[x].split(" ")[0]]['priority'], reverse=True)
+        
+        # # check if any of the edges are valid
+        # for edge in edges:
+        #     # get the condition
+        #     cond = self.edges[edge].split(" ")[0]
+        #     cond = EDGE_DICT[cond]['func']
+        #     cond = partial(cond, self)
 
-        # check if any of the edges are valid
-        for edge in edges:
-            # get the condition
-            cond = self.edges[edge].split(" ")[0]
-            cond = EDGE_DICT[cond]['func']
-            cond = partial(cond, self)
+        #     # get the arguments
+        #     args = self.edges[edge].split(" ")[1:]
 
-            # get the arguments
-            args = self.edges[edge].split(" ")[1:]
+        #     # check if the condition is met
+        #     if cond(*args):
+        #         # get the node to transition to
+        #         self.cur_node = int(edge.split("-")[1])
+        #         self.moved_edge = edge
+        #         break
+        #     else:
+        #         self.moved_edge = None
 
-            # check if the condition is met
-            if cond(*args):
-                # get the node to transition to
-                self.cur_node = int(edge.split("-")[1])
-                self.moved_edge = edge
+
+        ### FASTER EDGE CALCULATION ###
+
+        # divide the edges into priority bins O(# edges @ cur_node)
+        edge_prior = [[] for i in range(len(EDGE_DICT.keys()))]   # assume that the priorities are numerical 0-n
+        for e in edges:
+            edge_prior[EDGE_DICT[self.edges[e].split(" ")[0]]['priority']].append(e)
+
+        # self.fortress.addLog(f"{self.char} -> {edge_prior}")
+
+        # based on the bins enact the first possible priority - reversed order
+        # worst case O(# edges @ cur_node) lower bound 1
+        updated = False
+        for i in range(len(edge_prior)-1,-1,-1):
+            # finished updating
+            if updated:
                 break
-            else:
-                self.moved_edge = None
+
+            # self.fortress.addLog(f"{self.char}: {i} = {edge_prior[i]}")
+
+            for edge in edge_prior[i]:
+                # get the condition
+                cond = self.edges[edge].split(" ")[0]
+                cond = EDGE_DICT[cond]['func']
+                cond = partial(cond, self)
+
+                # get the arguments
+                args = self.edges[edge].split(" ")[1:]
+
+                # check if the condition is met
+                if cond(*args):
+                    # get the node to transition to
+                    self.cur_node = int(edge.split("-")[1])
+                    self.moved_edge = edge
+                    updated = True
+                    break   # end update
+                else:
+                    self.moved_edge = None
+
+            
+
+
+
 
         # self.fortress.addLog(f"{self.char} is at node {self.cur_node}")
 
