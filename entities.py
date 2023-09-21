@@ -1,3 +1,4 @@
+from functools import partial
 import random
 # from fortress import Fortress
 # from engine import Engine
@@ -19,36 +20,11 @@ class Entity:
         self.cur_node = 0        # the current node the agent is on
         self.moved_edge = None   # the edge that was activated when the node state changed
         self.other_ent = None    # the other entity that was involved in the edge activation
-        self.possible_actions = self.fortress.CONFIG['action_space'].copy()
+        self.possible_actions = fortress.node_types.copy()
 
         # get the random seed from the fortress and set it
         # seed = self.fortress.seed
         # random.seed(seed)
-
-        # associates names to the functions for the node actions the agent will perform
-        self.NODE_DICT = {
-            "idle": {'func':self.noneAct, 'args':[]},
-            "move": {'func':self.move, 'args':[]},
-            "die": {'func':self.die, 'args':[]},
-            "clone": {'func':self.clone, 'args':[]},
-            "take": {'func':self.take, 'args':['entityChar']}, 
-            "chase": {'func':self.chase, 'args':['entityChar']},
-            "push": {'func':self.push, 'args':['entityChar']},
-            "add": {'func':self.addEnt, 'args':['entityChar']},
-            'transform': {'func':self.transform, 'args':['entityChar']},
-            "move_wall":{'func':self.wall, 'args':['entityChar']}
-        }
-
-        # associates names to functions for the edge conditions that will activate the node actions
-        # lower number means it will happen last
-        self.EDGE_DICT = {
-
-            "none": {'func':self.noneCond, 'args':[], 'priority':0},
-            "step": {'func':self.every_step, 'args':['steps'], 'priority':1},
-            "within": {'func':self.within, 'args':['entityChar','range'], 'priority':2},
-            "nextTo": {'func':self.nextTo, 'args':['entityChar'], 'priority':3},
-            "touch": {'func':self.touch, 'args':['entityChar'], 'priority':4}
-        }
 
         # define the AI state graph
         self.nodes = []      # list of nodes; the index position corresponds to the node ID while the function name; saved as a string with the function name followed by any arguments with the value in parentheses
@@ -326,12 +302,6 @@ class Entity:
         
         new_node = f"{new_state} "
 
-        # add the arguments to the node
-        if self.NODE_DICT[new_state]['args'] != []:
-            for arg in self.NODE_DICT[new_state]['args']:
-                if arg == "entityChar":
-                    new_node += f"{random.choice(self.fortress.CONFIG['character'])} "
-        
         return new_node.strip()
     
     # return a new random edge with the condition and parameters provided
@@ -340,8 +310,8 @@ class Entity:
         new_cond = random.choice(self.fortress.CONFIG['edge_conditions'])
 
         new_edge = f"{new_cond} "
-        if self.EDGE_DICT[new_cond]['args'] != []:
-            for arg in self.EDGE_DICT[new_cond]['args']:
+        if EDGE_DICT[new_cond]['args'] != []:
+            for arg in EDGE_DICT[new_cond]['args']:
                 if arg == "entityChar":
                     new_edge += f"{random.choice(self.fortress.CONFIG['character'])} "
                 elif arg == "steps":
@@ -507,7 +477,8 @@ class Entity:
 
         # get the function to call
         func = act_node_parts[0]
-        func = self.NODE_DICT[func]['func']  # could also use getattr(self, func)
+        func = NODE_DICT[func]['func']  # could also use getattr(self, func)
+        func = partial(func, self)
 
         # call the function with or without arguments
         if len(act_node_parts) > 1:
@@ -523,13 +494,14 @@ class Entity:
         edges = [key for key in self.edges.keys() if key.split("-")[0] == str(self.cur_node)]
 
         # sort the edges by priority
-        edges = sorted(edges, key=lambda x: self.EDGE_DICT[self.edges[x].split(" ")[0]]['priority'], reverse=True)
+        edges = sorted(edges, key=lambda x: EDGE_DICT[self.edges[x].split(" ")[0]]['priority'], reverse=True)
 
         # check if any of the edges are valid
         for edge in edges:
             # get the condition
             cond = self.edges[edge].split(" ")[0]
-            cond = self.EDGE_DICT[cond]['func']
+            cond = EDGE_DICT[cond]['func']
+            cond = partial(cond, self)
 
             # get the arguments
             args = self.edges[edge].split(" ")[1:]
@@ -545,8 +517,28 @@ class Entity:
 
         # self.fortress.addLog(f"{self.char} is at node {self.cur_node}")
 
+ 
+# associates names to the functions for the node actions the agent will perform
+NODE_DICT = {
+    "idle": {'func':Entity.noneAct, 'args':[]},
+    "move": {'func':Entity.move, 'args':[]},
+    "die": {'func':Entity.die, 'args':[]},
+    "clone": {'func':Entity.clone, 'args':[]},
+    "take": {'func':Entity.take, 'args':['entityChar']}, 
+    "chase": {'func':Entity.chase, 'args':['entityChar']},
+    "push": {'func':Entity.push, 'args':['entityChar']},
+    "add": {'func':Entity.addEnt, 'args':['entityChar']},
+    'transform': {'func':Entity.transform, 'args':['entityChar']},
+    "move_wall":{'func':Entity.wall, 'args':['entityChar']}
+}
 
 
-
-
-    
+# associates names to functions for the edge conditions that will activate the node actions
+# lower number means it will happen last
+EDGE_DICT = {
+    "none": {'func':Entity.noneCond, 'args':[], 'priority':0},
+    "step": {'func':Entity.every_step, 'args':['steps'], 'priority':1},
+    "within": {'func':Entity.within, 'args':['entityChar','range'], 'priority':2},
+    "nextTo": {'func':Entity.nextTo, 'args':['entityChar'], 'priority':3},
+    "touch": {'func':Entity.touch, 'args':['entityChar'], 'priority':4}
+}

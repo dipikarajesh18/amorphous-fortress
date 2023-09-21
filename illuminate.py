@@ -42,8 +42,8 @@ parser.add_argument("-np", "--n_proc", type=int, default=1, help="Number of proc
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
-    x = int((bc[0] - bc_bounds[0][0]) / (bc_bounds[0][1] - bc_bounds[0][0]) * x_bins)
-    y = int((bc[1] - bc_bounds[1][0]) / (bc_bounds[1][1] - bc_bounds[1][0]) * y_bins)
+    x = int((bc[0] - bc_bounds[0][0]) / (bc_bounds[0][1] - bc_bounds[0][0]) * (x_bins - 1))
+    y = int((bc[1] - bc_bounds[1][0]) / (bc_bounds[1][1] - bc_bounds[1][0]) * (y_bins - 1))
     return (x, y)
 
     

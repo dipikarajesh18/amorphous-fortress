@@ -1,7 +1,8 @@
 import numpy as np
 import random
 import re
-from entities import Entity
+from entities import NODE_DICT, Entity
+
 
 # the environment where all of the simulation takes place
 class Fortress():
@@ -28,6 +29,12 @@ class Fortress():
         self.steps = 0
         self.end_cause = "Code Interruption"
 
+        self.node_types = []
+        for node in NODE_DICT:
+            if NODE_DICT[node]['args'] == []:
+                self.node_types.append(node)
+            elif NODE_DICT[node]['args'] == ['entityChar']:
+                self.node_types += [f"{node} {c}" for c in self.CONFIG['character']]
 
     # create a blank fortress
     def blankFortress(self):
@@ -135,9 +142,8 @@ class Fortress():
 
     def get_max_aggregate_fsm_nodes(self):
         n_ent_types = len(self.CHARACTER_DICT)
-        ent: Entity = self.CHARACTER_DICT['@']  # Just need a dummy entity to get the NODE_DICT
         nodes_per_ent_type = 0
-        for node_dict in ent.NODE_DICT.values():
+        for node_dict in NODE_DICT.values():
             node_args = node_dict['args']
             if node_args == []:
                 nodes_per_ent_type += 1
