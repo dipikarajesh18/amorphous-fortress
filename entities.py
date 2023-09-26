@@ -11,7 +11,7 @@ class Entity:
 
     #######     NODE ACTIONS     #######
 
-    def __init__(self, fortress, char=None, filename=None, nodes=None, edges=None):
+    def __init__(self, fortress, char=None, filename=None, nodes=None, edges=None, n_rand_nodes=None):
         self.char = char if char else '?'
         self.pos = [None, None]
         self.fortress = fortress  
@@ -22,7 +22,8 @@ class Entity:
         self.cur_node = 0        # the current node the agent is on
         self.moved_edge = None   # the edge that was activated when the node state changed
         self.other_ent = None    # the other entity that was involved in the edge activation
-        self.possible_actions = fortress.node_types.copy()
+        self.avail_node_types = fortress.node_types.copy()
+        self.n_node_types = len(self.avail_node_types)
 
         # get the random seed from the fortress and set it
         # seed = self.fortress.seed
@@ -39,7 +40,13 @@ class Entity:
             self.nodes = nodes
             self.edges = edges
         else:
-            self.makeTree(max_nodes_per_entity=len(fortress.node_types))
+            # self.makeTree(max_nodes_per_entity=len(fortress.node_types))
+            assert n_rand_nodes is not None
+            self.makeTree(n_nodes=n_rand_nodes)
+
+            assert len(self.avail_node_types) == (len(fortress.node_types) - len(self.nodes)), \
+                (f"Number of possible actions {len(self.avail_node_types)}, "
+                    f"does not match number of nodes {len(self.nodes)}. n_nodes {n_rand_nodes}")
 
     # create a new id for the entity
     def newID(self,id_len=4):
@@ -75,6 +82,7 @@ class Entity:
     # create another instance of the entity but with different id and position
     def clone(self,pos=None,transform=False):
         new_ent = Entity(self.fortress, self.char,nodes=self.nodes.copy(),edges=self.edges.copy())
+        # new_ent.avail_node_types = self.avail_node_types.copy()  # NOTE: only 
         new_ent.id = self.newID()
 
         #new_ent.pos = pos if pos else self.fortress.randomPos()
@@ -245,6 +253,11 @@ class Entity:
     def noneAct(self):
         pass
 
+    def validate_avail_nodes(self):
+        """For debugging."""
+        assert len(self.avail_node_types) == (self.n_node_types - len(self.nodes)), \
+            (f"Number of possible actions {len(self.avail_node_types)}, "
+                f"does not match number of nodes {len(self.nodes)}")
 
     #######     EDGE CONDITIONS     #######
 
@@ -299,10 +312,10 @@ class Entity:
 
     # return a new random node with the name and parameters provided
     def newNode(self):
-        new_state = random.choice(self.possible_actions)
-        self.possible_actions.remove(new_state)
+        new_state = random.choice(self.avail_node_types)
+        self.avail_node_types.remove(new_state)
         
-        new_node = f"{new_state} "
+        new_node = f"{new_state}"
 
         return new_node.strip()
     
@@ -326,30 +339,25 @@ class Entity:
 
 
     # create a new FSM tree
-    def makeTree(self, max_nodes_per_entity):
+    def makeTree(self, n_nodes):
 
         # random.seed(self.fortress.seed+int(self.id,16))  # set the seed for the entity
 
         # add base idle node
         self.nodes.append("idle")
+        self.avail_node_types.remove("idle")
 
         # get the pdf of an inverse logarithmic distribution
         
         # create the nodes (must have at least 2)
-        # num_nodes = random.randint(1, max_nodes_per_entity-1)
-        idxs = np.arange(max_nodes_per_entity) + 1
-        vals = (1 / idxs ) ** 2
-        # Make the decrease even steeper
-        vals = vals / np.sum(vals)
-        num_nodes = np.random.choice(idxs, p=vals)
-        # print(f"num_nodes: {num_nodes}")
-        for i in range(num_nodes):
+        # print(f"num_nodes: {n_nodes}")
+        for i in range(n_nodes):
             self.nodes.append(self.newNode())
 
         # create edges based on the nodes
-        for i in range(num_nodes*2):  #arbitrary number of edges (randomly assigned so some may get overwritten)
-            node1 = random.randint(0, num_nodes)
-            node2 = random.randint(0, num_nodes)
+        for i in range(n_nodes*2):  #arbitrary number of edges (randomly assigned so some may get overwritten)
+            node1 = random.randint(0, n_nodes)
+            node2 = random.randint(0, n_nodes)
 
             edge = f"{node1}-{node2}"   # create the edge
 

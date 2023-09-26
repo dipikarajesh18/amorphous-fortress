@@ -1,4 +1,6 @@
+matplotlib
 numpy
 ray
+scipy
 tensorboard
 tensorboardX

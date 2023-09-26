@@ -9,7 +9,7 @@ import numpy as np
 from scipy.stats import entropy
 
 from engine import Engine
-from entities import NODE_DICT
+from entities import NODE_DICT, Entity
 from render_curses import curses_render_loop, init_screens
 from utils import get_bin_idx
 
@@ -42,7 +42,7 @@ class EvoIndividual():
         self.engine.populateFortress()
         self.get_fsm_stats()
         self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
-        max_aggregate_fsm_nodes = self.engine.fortress.get_max_aggregate_fsm_nodes()
+        max_aggregate_fsm_nodes = self.engine.fortress.max_aggregate_fsm_nodes
         self.max_nodes_per_entity = max_aggregate_fsm_nodes / self.n_entity_types
         bc_bounds = {
             'n_entities': (0, self.engine.fortress.max_entities),
@@ -135,14 +135,18 @@ class EvoIndividual():
     def mutateFSMNodes(self):
         i = random.randint(0, 2)
         ent_id = random.choice(list(self.engine.fortress.CHARACTER_DICT.keys()))
-        ent = self.engine.fortress.CHARACTER_DICT[ent_id]
+        ent: Entity = self.engine.fortress.CHARACTER_DICT[ent_id]
 
+        # TODO: We don't need this. Just use `ent.avail_node_types`. Useful for debugging the latter though.
         # find the nodes already available
-        avail_nodes = []
+        # avail_nodes = []
         # for node in self.engine.fortress.CONFIG['action_space'].copy():
-        for node in self.engine.fortress.node_types:
-            if node not in ent.nodes:
-                avail_nodes.append(node)
+        # for node in self.engine.fortress.node_types:
+        #     if node not in ent.nodes:
+        #         avail_nodes.append(node)
+        # assert len(avail_nodes) == len(ent.avail_node_types)
+        # if len(avail_nodes) != len(ent.avail_node_types):
+        #     breakpoint()
 
         # delete a random node 
         if i == 0 and len(ent.nodes) > 1:
@@ -153,25 +157,30 @@ class EvoIndividual():
             # print(f"Removing {n_to_delete} nodes from entity {ent_id}")
             for _ in range(n_to_delete):
                 node_ind = random.choice(range(len(ent.nodes)))
+                node_str = ent.nodes[node_ind]
                 del ent.nodes[node_ind]
                 ent.killOrphanEdges(node_ind)
+                # print(f"Removed node {node_str} from entity {ent_id}")
+                ent.avail_node_types.append(node_str)
                 # print(f'Removed node {node_id} from entity {ent_id}')
 
 
         # add a node
-        elif i == 1 and len(avail_nodes) > 0:
-            idxs = np.arange(len(avail_nodes)) + 1
+        elif i == 1 and len(ent.avail_node_types) > 0:
+            idxs = np.arange(len(ent.avail_node_types)) + 1
             vals = 1 / idxs
             vals = vals / np.sum(vals)
             n_to_add = np.random.choice(idxs, p=vals)
+            assert n_to_add <= len(ent.avail_node_types)
             # print(f"Adding {n_to_add} nodes to entity {ent_id}")
             for _ in range(n_to_add):
-                rand_anode = random.choice(avail_nodes)
+                rand_anode = random.choice(ent.avail_node_types)
                 
                 new_node = f"{rand_anode} "
     
                 ent.nodes.append(new_node.strip())
                 ent.connectAnnieNode(len(ent.nodes)-1)
+                ent.avail_node_types.remove(rand_anode)
                 # print(f'Added node {node} to entity {ent_id}')
 
         # change a node to another available node
@@ -183,12 +192,15 @@ class EvoIndividual():
             # print(f"Changing {n_to_change} nodes in entity {ent_id}")
 
             for _ in range(n_to_change):
-                if len(avail_nodes) > 0:
+                if len(ent.avail_node_types) > 0:
                     node_ind = random.choice(range(len(ent.nodes)))
-                    rand_anode = random.choice(avail_nodes)
-                    new_node = f"{rand_anode} "
+                    rand_anode = random.choice(ent.avail_node_types)
+                    new_node = f"{rand_anode}"
+                    old_node = ent.nodes[node_ind]
 
                     ent.nodes[node_ind] = new_node.strip()
+                    ent.avail_node_types.append(old_node)
+                    ent.avail_node_types.remove(new_node)
                     # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
                     
 
@@ -200,6 +212,8 @@ class EvoIndividual():
                     # print(f'Swapped nodes {node_ind1} and {node_ind2} in entity {ent_id}')
                 
         # #3 does nothing :D
+        # ent.validate_avail_nodes()
+        # print('YA VALID\n')
 
 
     # only change the edges of an entity
