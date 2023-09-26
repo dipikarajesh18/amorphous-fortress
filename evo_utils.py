@@ -3,27 +3,92 @@ import curses
 import pickle
 import random
 import time
+from typing import List
+
+import numpy as np
+from scipy.stats import entropy
+
 from engine import Engine
 from entities import NODE_DICT
 from render_curses import curses_render_loop, init_screens
+from utils import get_bin_idx
 
 
 class EvoIndividual():
     engine: Engine
 
-    def __init__(self, config_file: str, fitness_type: str, render: bool = False):
+    def __init__(self, config_file: str, fitness_type: str, bcs: List[str], render: bool = False):
         self.config_file = config_file
         self.score = 0
-        self.bcs = (0, 0)
+        self.bc_sim_vals = (0, 0)
         self.n_sims = 0
         engine = Engine(config_file)
         self.engine = engine
         self.render = render
 
-        self.n_sim_steps = 20
+        self.n_sim_steps = 100
         self.fitness_type = fitness_type
 
         self.init_fortress_str = ""
+
+        bc_funcs = {
+            'n_entities': self.get_n_entities,
+            'n_nodes': self.get_n_nodes,
+            'n_nodes_and_edges': self.get_n_nodes_and_edges,
+            'n_edges': self.get_n_edges,
+            'entropy': self.get_entropy,
+        }
+
+        self.engine.populateFortress()
+        self.get_fsm_stats()
+        self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
+        max_aggregate_fsm_nodes = self.engine.fortress.get_max_aggregate_fsm_nodes()
+        self.max_nodes_per_entity = max_aggregate_fsm_nodes / self.n_entity_types
+        bc_bounds = {
+            'n_entities': (0, self.engine.fortress.max_entities),
+            'n_nodes': (0, max_aggregate_fsm_nodes),
+            # 'n_edges': (0, self.engine.fortress.get_max_aggregate_fsm_edges()),
+            'entropy': (0, 1),
+        } 
+
+        self.bc_bounds = []
+        for bc in bcs:
+            self.bc_bounds.append(bc_bounds[bc])
+
+        self.bc_funcs = []
+        for bc in bcs:
+            self.bc_funcs.append(bc_funcs[bc])
+
+        self.entropy_is_stale = True
+
+    def get_n_nodes_and_edges(self):
+        return self.fsm_stats['n_nodes'] + self.fsm_stats['n_edges']
+
+    def get_n_edges(self):
+        return self.fsm_stats['n_edges']
+
+    def get_n_nodes(self):
+        return self.fsm_stats['n_nodes']
+
+    def mutate_ind(self, args):
+        # mutate randomly
+        edge_rando = random.random()
+        node_rando = random.random()
+        instance_rando = random.random()
+
+        while edge_rando < args.edge_coin:
+            self.mutateFSMEdges()
+            edge_rando = random.random()
+        
+        if node_rando < args.node_coin:
+            self.mutateFSMNodes()
+
+        while instance_rando < args.instance_coin:
+            self.mutateEnt()
+            instance_rando = random.random()
+
+        self.get_fsm_stats()
+        self.entropy_is_stale = True
 
     def clone(self):
         """Clone the individual."""
@@ -39,10 +104,11 @@ class EvoIndividual():
         # The sketchy way...
         return copy.deepcopy(self)
 
-    def init_random_fortress(self):
-        self.engine.populateFortress()
+    # # f init_random_fortress(self):
+    #     self.engine.populateFortress()
+    #     self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
 
-    # adds or deletes an entity
+    # adds or deletes an instance entity
     def mutateEnt(self):
         """Mutate the fortress."""
         i = random.randint(0, 1)
@@ -61,11 +127,11 @@ class EvoIndividual():
             self.engine.init_ents.append({'char':c, 'pos':[x, y]})
 
         self.score = 0
-        self.bcs = (0, 0)
+        self.bc_sim_vals = (0, 0)
         self.n_sims = 0
 
 
-    # only change the nodes of an entity
+    # only change the nodes of an entity type
     def mutateFSMNodes(self):
         i = random.randint(0, 2)
         ent_id = random.choice(list(self.engine.fortress.CHARACTER_DICT.keys()))
@@ -80,39 +146,58 @@ class EvoIndividual():
 
         # delete a random node 
         if i == 0 and len(ent.nodes) > 1:
-            node_ind = random.choice(range(len(ent.nodes)))
-            del ent.nodes[node_ind]
-            ent.killOrphanEdges(node_ind)
-            # print(f'Removed node {node_id} from entity {ent_id}')
+            idxs = np.arange(len(ent.nodes) - 1) + 1
+            vals = 1 / idxs
+            vals = vals / np.sum(vals)
+            n_to_delete = np.random.choice(idxs, p=vals)
+            # print(f"Removing {n_to_delete} nodes from entity {ent_id}")
+            for _ in range(n_to_delete):
+                node_ind = random.choice(range(len(ent.nodes)))
+                del ent.nodes[node_ind]
+                ent.killOrphanEdges(node_ind)
+                # print(f'Removed node {node_id} from entity {ent_id}')
 
 
         # add a node
         elif i == 1 and len(avail_nodes) > 0:
-            rand_anode = random.choice(avail_nodes)
-            
-            new_node = f"{rand_anode} "
-  
-            ent.nodes.append(new_node.strip())
-            ent.connectAnnieNode(len(ent.nodes)-1)
-            # print(f'Added node {node} to entity {ent_id}')
+            idxs = np.arange(len(avail_nodes)) + 1
+            vals = 1 / idxs
+            vals = vals / np.sum(vals)
+            n_to_add = np.random.choice(idxs, p=vals)
+            # print(f"Adding {n_to_add} nodes to entity {ent_id}")
+            for _ in range(n_to_add):
+                rand_anode = random.choice(avail_nodes)
+                
+                new_node = f"{rand_anode} "
+    
+                ent.nodes.append(new_node.strip())
+                ent.connectAnnieNode(len(ent.nodes)-1)
+                # print(f'Added node {node} to entity {ent_id}')
 
         # change a node to another available node
         elif i == 2:
-            if len(avail_nodes) > 0:
-                node_ind = random.choice(range(len(ent.nodes)))
-                rand_anode = random.choice(avail_nodes)
-                new_node = f"{rand_anode} "
+            idxs = np.arange(len(ent.nodes)) + 1
+            vals = 1 / idxs
+            vals = vals / np.sum(vals)
+            n_to_change = np.random.choice(idxs, p=vals)
+            # print(f"Changing {n_to_change} nodes in entity {ent_id}")
 
-                ent.nodes[node_ind] = new_node.strip()
-                # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
-                
+            for _ in range(n_to_change):
+                if len(avail_nodes) > 0:
+                    node_ind = random.choice(range(len(ent.nodes)))
+                    rand_anode = random.choice(avail_nodes)
+                    new_node = f"{rand_anode} "
 
-            # swap 2 nodes
-            else:
-                node_ind1 = random.choice(range(len(ent.nodes)))
-                node_ind2 = random.choice(range(len(ent.nodes)))
-                ent.nodes[node_ind1], ent.nodes[node_ind2] = ent.nodes[node_ind2], ent.nodes[node_ind1]
-                # print(f'Swapped nodes {node_ind1} and {node_ind2} in entity {ent_id}')
+                    ent.nodes[node_ind] = new_node.strip()
+                    # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
+                    
+
+                # swap 2 nodes
+                else:
+                    node_ind1 = random.choice(range(len(ent.nodes)))
+                    node_ind2 = random.choice(range(len(ent.nodes)))
+                    ent.nodes[node_ind1], ent.nodes[node_ind2] = ent.nodes[node_ind2], ent.nodes[node_ind1]
+                    # print(f'Swapped nodes {node_ind1} and {node_ind2} in entity {ent_id}')
                 
         # #3 does nothing :D
 
@@ -149,7 +234,7 @@ class EvoIndividual():
         if not map_elites:
             self.score = ret
         else:
-            self.score, self.bcs = ret
+            self.score, self.bc_sim_vals = ret
 
     def simulate_fortress(self, show_prints=False, map_elites=False):
         n_new_sims = 5
@@ -175,20 +260,20 @@ class EvoIndividual():
                 / self.n_sims
             )
             bc_0 = (
-                (self.bcs[0] * (self.n_sims - n_new_sims)
+                (self.bc_sim_vals[0] * (self.n_sims - n_new_sims)
                 + sum([m[1] for m in metrics]))
                 / self.n_sims
             )
             bc_1 = (
-                (self.bcs[1] * (self.n_sims - n_new_sims)
+                (self.bc_sim_vals[1] * (self.n_sims - n_new_sims)
                 + sum([m[2] for m in metrics]))
                 / self.n_sims
             )
-            self.bcs = (bc_0, bc_1)
-            ret = self.score, self.bcs
+            self.bc_sim_vals = (bc_0, bc_1)
+            ret = self.score, self.bc_sim_vals
+        self.fsm_stats = self.get_fsm_stats()
         return ret, self.n_sims
             
-
     def simulate_fortress_once(self, show_prints=False, map_elites=False):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
@@ -218,16 +303,22 @@ class EvoIndividual():
             if self.fitness_type == "M":
                 score = compute_fortress_score_dummy(self.engine)
             elif self.fitness_type == "tree":
-                score = compute_fortress_score(self.engine, show_prints)
+                self.get_fsm_stats()
+                score = self.fsm_stats['prop_visited']
             return score
         elif map_elites:
             if self.fitness_type == "M":
                 score = compute_fortress_score_dummy(self.engine)
-                bc_0 = min(len(self.engine.fortress.entities), self.engine.fortress.max_entities)
+                bc_0 = self.get_n_entities()
                 bc_1 = len([e for e in self.engine.fortress.entities.values() if e.char == '@'])
             elif self.fitness_type == "tree":
-                score, bc_0, bc_1 = compute_fortress_fit_bcs(self.engine, show_prints)
+                self.get_fsm_stats(show_prints)
+                score = self.fsm_stats['prop_visited']
+                bc_0, bc_1 = self.bc_funcs[0](), self.bc_funcs[1]()
             return score, bc_0, bc_1
+
+    def get_n_entities(self):
+        return min(len(self.engine.fortress.entities), self.engine.fortress.max_entities)
 
     # export the evo individual to a file as pickle to reload object
     def expEvoInd(self, filename):
@@ -244,10 +335,57 @@ class EvoIndividual():
             bc_0_bounds = (0, self.engine.fortress.max_entities) 
             bc_1_bounds = (0, self.engine.fortress.max_entities)
         elif self.fitness_type == "tree":
-            bc_0_bounds = (0, self.engine.fortress.max_entities)
-            max_aggregate_fsm_nodes = self.engine.fortress.get_max_aggregate_fsm_nodes()
-            bc_1_bounds = (0, max_aggregate_fsm_nodes)
+            return self.bc_bounds
         return (bc_0_bounds, bc_1_bounds)
+
+    def get_fsm_stats(self, print_debug=False):
+        """Compute the score of a fortress. for realsies"""
+        engine = self.engine
+        n_visited_nodes = 0
+        n_visited_edges = 0
+        n_total_nodes = 0
+        n_total_edges = 0
+        self.n_nodes_per_ent = []
+        for c, k in engine.fortress.CHAR_VISIT_TREE.items():
+            n_visited_nodes += len(k['nodes'])
+            n_nodes_c = len(engine.fortress.CHARACTER_DICT[c].nodes)
+            self.n_nodes_per_ent.append(n_nodes_c)
+            n_visited_edges += len(k['edges'])
+            n_total_edges += len(engine.fortress.CHARACTER_DICT[c].edges)
+        n_total_nodes = sum(self.n_nodes_per_ent)
+
+        n_unvisited_nodes = n_total_nodes - n_visited_nodes
+        n_unvisited_edges = n_total_edges - n_visited_edges
+
+        visit = n_visited_nodes + n_visited_edges
+        unvisit = n_unvisited_nodes + n_unvisited_edges
+        tree_size = n_total_edges + n_total_nodes
+
+        # if print_debug: 
+        #     print("::::::::::::")
+        #     print(f"Total # nodes + edges: {n_total_edges + n_total_nodes}")
+        #     print(f"Visited (n/e): {n_visited_nodes} / {n_visited_edges}")
+        #     print(f"Unvisited (n/e): {n_unvisited_nodes} / {n_unvisited_edges}")
+        #     print("::::::::::::")
+
+        prop_visited = (visit / tree_size)
+        self.fsm_stats = {
+            'prop_visited': prop_visited,
+            'n_nodes': n_total_nodes,
+            'n_edges': n_total_edges,
+            'n_nodes_per_ent': self.n_nodes_per_ent,
+        }
+
+    def get_entropy(self):
+        if not self.entropy_is_stale:
+            return self.ent_val
+        # Get entropy of number of nodes per entity, binning into as many bins as there are entity types
+        bin_idxs = [get_bin_idx(e, (0, self.max_nodes_per_entity), n_bins=self.n_entity_types) for e in self.n_nodes_per_ent]
+        unique, counts = np.unique(bin_idxs, return_counts=True)
+        bin_probs = counts / np.sum(counts)
+        self.ent_val = entropy(bin_probs, base=len(bin_probs))
+        self.entropy_is_stale = False
+        return self.ent_val
 
 
 # counts the number of M's in the fortress
@@ -259,93 +397,12 @@ def compute_fortress_score_dummy(engine: Engine):
     return score
 
 
-# actual fitness function
-# calculates how many tree traversal of a entity class - more traversal = better fitness
-def compute_fortress_score(engine: Engine, print_debug=False):
-    """Compute the score of a fortress. for realsies"""
-    n_visited_nodes = 0
-    n_visited_edges = 0
-    n_total_nodes = 0
-    n_total_edges = 0
-    for c, k in engine.fortress.CHAR_VISIT_TREE.items():
-        n_visited_nodes += len(k['nodes'])
-        n_total_nodes += len(engine.fortress.CHARACTER_DICT[c].nodes)
-        n_visited_edges += len(k['edges'])
-        n_total_edges += len(engine.fortress.CHARACTER_DICT[c].edges)
-
-    n_unvisited_nodes = n_total_nodes - n_visited_nodes
-    n_unvisited_edges = n_total_edges - n_visited_edges
-
-    visit = n_visited_nodes + n_visited_edges
-    unvisit = n_unvisited_nodes + n_unvisited_edges
-    tree_size = n_total_edges+n_total_nodes
-
-    if print_debug: 
-        print("::::::::::::")
-        print(f"Total # nodes + edges: {n_total_edges + n_total_nodes}")
-        print(f"Visited (n/e): {n_visited_nodes} / {n_visited_edges}")
-        print(f"Unvisited (n/e): {n_unvisited_nodes} / {n_unvisited_edges}")
-        print("::::::::::::")
-
-    return (visit / (unvisit+1)) * tree_size
-
     # n_unvisited = (n_total_nodes - n_visited_nodes) + (n_total_edges - n_visited_edges)
     # return n_visited_nodes + n_visited_edges - n_unvisited*1
 
 
-def compute_fortress_fit_bcs(engine: Engine, print_debug=False):
-    """Compute the score of a fortress. for realsies"""
-    n_visited_nodes = 0
-    n_visited_edges = 0
-    n_total_nodes = 0
-    n_total_edges = 0
-    for c, k in engine.fortress.CHAR_VISIT_TREE.items():
-        n_visited_nodes += len(k['nodes'])
-        n_total_nodes += len(engine.fortress.CHARACTER_DICT[c].nodes)
-        n_visited_edges += len(k['edges'])
-        n_total_edges += len(engine.fortress.CHARACTER_DICT[c].edges)
-
-    n_unvisited_nodes = n_total_nodes - n_visited_nodes
-    n_unvisited_edges = n_total_edges - n_visited_edges
-
-    visit = n_visited_nodes + n_visited_edges
-    unvisit = n_unvisited_nodes + n_unvisited_edges
-    tree_size = n_total_edges+n_total_nodes
-
-    if print_debug: 
-        print("::::::::::::")
-        print(f"Total # nodes + edges: {n_total_edges + n_total_nodes}")
-        print(f"Visited (n/e): {n_visited_nodes} / {n_visited_edges}")
-        print(f"Unvisited (n/e): {n_unvisited_nodes} / {n_unvisited_edges}")
-        print("::::::::::::")
-
-    score = (visit / (unvisit+1))
-    bc_0 = min(len(engine.fortress.entities), engine.fortress.max_entities)
-    bc_1 = n_total_nodes
-    return score, bc_0, bc_1
-
-
-def mutate_ind(ind: EvoIndividual, args):
-    # mutate randomly
-    edge_rando = random.random()
-    node_rando = random.random()
-    instance_rando = random.random()
-
-    while edge_rando < args.edge_coin:
-        ind.mutateFSMEdges()
-        edge_rando = random.random()
-    
-    while node_rando < args.node_coin:
-        ind.mutateFSMNodes()
-        node_rando = random.random()
-
-    while instance_rando < args.instance_coin:
-        ind.mutateEnt()
-        instance_rando = random.random()
-
-
 def mutate_and_eval_ind(ind: EvoIndividual, generation: int, args):
-    mutate_ind(ind, args)
+    ind.mutate_ind(ind, args)
     show_prints = generation % 25 == 0
     ind.simulate_fortress(show_prints=show_prints)
     return ind

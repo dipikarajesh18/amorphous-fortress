@@ -15,7 +15,8 @@ import numpy as np
 from ray.util.multiprocessing import Pool
 from tensorboardX import SummaryWriter
 
-from evo_utils import EvoIndividual, mutate_ind
+from evo_utils import EvoIndividual
+from utils import get_bin_idx
 
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
 
@@ -38,12 +39,13 @@ parser.add_argument("-ev", "--evaluate", action="store_true", help="Evaluate the
 parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
 parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Percent of random individuals to add to the population")
 parser.add_argument("-ft", "--fitness_type", type=str, default="tree", help="Fitness type: 'tree' or 'M'")
+parser.add_argument("-bcs", "--bcs", type=str, nargs="+", default=['n_entities', 'n_nodes'], help="Behavior characteristics to use for evaluation")
 parser.add_argument("-np", "--n_proc", type=int, default=1, help="Number of processes to use for simulation")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
-    x = int((bc[0] - bc_bounds[0][0]) / (bc_bounds[0][1] - bc_bounds[0][0]) * (x_bins - 1))
-    y = int((bc[1] - bc_bounds[1][0]) / (bc_bounds[1][1] - bc_bounds[1][0]) * (y_bins - 1))
+    x = get_bin_idx(bc[0], bc_bounds[0], x_bins)
+    y = get_bin_idx(bc[1], bc_bounds[1], y_bins)
     return (x, y)
 
     
@@ -52,6 +54,7 @@ def evaluate(args, archive):
     # Get list of individuals in order of decreasing fitness
     valid_inds = [archive[xy[0], xy[1]] for xy in valid_xys]
     valid_inds = sorted(valid_inds, key=lambda ind: ind.score, reverse=True)
+    ind: EvoIndividual
     # Iterate through the archive and simulate each fortress while rendering
     for ind in valid_inds:
         ind.render = True
@@ -71,15 +74,15 @@ def illuminate(config_file: str):
     best_score = -math.inf
 
     mutants: List[EvoIndividual]
-    mutants = [EvoIndividual(config_file, args.fitness_type, args.render) for _ in range(args.pop_size)]
-    [ind.init_random_fortress() for ind in mutants]
+    mutants = [EvoIndividual(config_file, fitness_type=args.fitness_type, bcs=args.bcs, render=args.render) for _ in range(args.pop_size)]
 
     exp_dir = os.path.join("saves", 
-                           (f"ME_fit-{args.fitness_type}_s-{args.seed}"
+                           (f"ME_fit-{args.fitness_type}_bcs-{args.bcs[0]}-{args.bcs[1]}"
                             f"_n-{args.node_coin}_e-{args.edge_coin}_i-{args.instance_coin}"
                             f"_xb-{args.x_bins}_yb-{args.y_bins}"
                             f"_p-{args.pop_size}"
                             f"_pr-{args.percent_random}"
+                            f"_s-{args.seed}"
                             ))
     tb_writer = SummaryWriter(log_dir=exp_dir)
 
@@ -133,7 +136,7 @@ def illuminate(config_file: str):
     # best_score_history = []
     # entity_num_history = []
 
-    if not args.n_proc == 1:
+    if args.n_proc != 1:
         pool = Pool(processes=args.n_proc)
 
     # while best_score < ind.max_score:
@@ -147,10 +150,9 @@ def illuminate(config_file: str):
             n_parents = args.pop_size - n_rand_inds
             parent_xys = random.choices(nonempty_cells, k=n_parents)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
-            [mutate_ind(m, args) for m in mutants]
-            rand_inds = [EvoIndividual(config_file, fitness_type=args.fitness_type, render=args.render) \
+            [m.mutate_ind(args) for m in mutants]
+            rand_inds = [EvoIndividual(config_file, fitness_type=args.fitness_type, bcs=args.bcs, render=args.render) \
                             for _ in range(n_rand_inds)]
-            [ind.init_random_fortress() for ind in rand_inds]
             mutants += rand_inds
             show_prints = generation % 25 == 0
 
@@ -162,7 +164,7 @@ def illuminate(config_file: str):
             rets = pool.map(lambda ind: ind.simulate_fortress(show_prints=False, map_elites=True), mutants)
             [ind.update(ret, map_elites=True) for ind, ret in zip(mutants, rets)]
 
-        mutant_xys = [get_xy_from_bcs(ind.bcs, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
+        mutant_xys = [get_xy_from_bcs(ind.bc_sim_vals, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
 
 
         for i, ind_i in enumerate(mutants):
@@ -195,21 +197,49 @@ def illuminate(config_file: str):
         if args.fitness_type == "M":
             y_label, x_label = "n. entities", "n. @-type entities"
         else:
-            y_label, x_label = "n. entities", "n. nodes"
+            y_label, x_label = args.bcs
 
         if generation % args.plot_frequency == 0:
             # Plot a heatmap of the archive
-            plt.figure(figsize=(15,10))
-            plt.imshow(fits, cmap='cool', interpolation='nearest')
-            # Add x and y labels
-            plt.xlabel(x_label) 
-            plt.xticks(np.arange(args.x_bins // 10) * 10, [f"{bc_0_ticks[i] * 10:.2f}" for i in range(args.x_bins // 10)])
-            plt.ylabel(y_label)
-            plt.yticks(np.arange(args.y_bins // 10) * 10, [f"{bc_1_ticks[i] * 10:.2f}" for i in range(args.y_bins // 10)])
-            # Add colorbar
-            plt.colorbar()
-            plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
+            # Calculate the aspect ratio based on x_bins and y_bins
+            aspect_ratio = args.x_bins / args.y_bins
 
+        plt.figure(figsize=(15,10))
+        plt.imshow(fits, cmap='cool', interpolation='nearest', aspect='auto')  # Ensure that imshow respects aspect ratio setting of the axes
+
+        # Add x and y labels
+        plt.xlabel(x_label) 
+        plt.ylabel(y_label)
+
+        # Determine the scaling based on the size of x_bins and y_bins
+        longest_bin = max(args.x_bins, args.y_bins)
+
+        if args.x_bins < longest_bin:
+            scale_factor_x = longest_bin / args.x_bins
+        else:
+            scale_factor_x = 1
+
+        if args.y_bins < longest_bin:
+            scale_factor_y = longest_bin / args.y_bins
+        else:
+            scale_factor_y = 1
+
+        x_ticks = np.linspace(0, args.y_bins, 10)
+        y_ticks = np.linspace(0, args.x_bins, 10)
+        x_tick_vals = np.linspace(bc_bounds[1][0], bc_bounds[1][1], 10)
+        y_tick_vals = np.linspace(bc_bounds[0][0], bc_bounds[0][1], 10)
+
+        # Ensure axes have 1:1 aspect ratio
+        plt.gca().set_aspect('equal', adjustable='box')
+
+        # Set ticks
+        plt.xticks(x_ticks, [f"{x:.2f}" for x in x_tick_vals])
+        plt.yticks(y_ticks, [f"{y:.2f}" for y in y_tick_vals])
+
+        # Add colorbar
+        plt.colorbar()
+        # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
+        plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
         if generation % args.checkpoint_frequency == 0:
             # Save the archive as a pickle
             with open(os.path.join(exp_dir, f"archive_gen-{generation}.pkl"), 'wb') as f:

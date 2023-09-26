@@ -37,7 +37,6 @@ def hillclimb(config_file: str):
     best_score = -math.inf
 
     ind = EvoIndividual(config_file, args.render)
-    ind.init_random_fortress()
 
     generation = 0
 

@@ -1,5 +1,7 @@
 from functools import partial
 import random
+
+import numpy as np
 # from fortress import Fortress
 # from engine import Engine
 
@@ -37,7 +39,7 @@ class Entity:
             self.nodes = nodes
             self.edges = edges
         else:
-            self.makeTree()
+            self.makeTree(max_nodes_per_entity=len(fortress.node_types))
 
     # create a new id for the entity
     def newID(self,id_len=4):
@@ -324,15 +326,23 @@ class Entity:
 
 
     # create a new FSM tree
-    def makeTree(self):
+    def makeTree(self, max_nodes_per_entity):
 
         # random.seed(self.fortress.seed+int(self.id,16))  # set the seed for the entity
 
         # add base idle node
         self.nodes.append("idle")
+
+        # get the pdf of an inverse logarithmic distribution
         
         # create the nodes (must have at least 2)
-        num_nodes = random.randint(1, len(self.possible_actions)-1)
+        # num_nodes = random.randint(1, max_nodes_per_entity-1)
+        idxs = np.arange(max_nodes_per_entity) + 1
+        vals = (1 / idxs ) ** 2
+        # Make the decrease even steeper
+        vals = vals / np.sum(vals)
+        num_nodes = np.random.choice(idxs, p=vals)
+        # print(f"num_nodes: {num_nodes}")
         for i in range(num_nodes):
             self.nodes.append(self.newNode())
 
@@ -472,6 +482,8 @@ class Entity:
         self.cur_step += 1
 
         # do whatever is set at the current node first
+        assert self.cur_node < len(self.nodes), (f"Current node {self.cur_node}"
+                                                 f" is greater than the number of nodes {len(self.nodes)}")
         active_node = self.nodes[self.cur_node]
         act_node_parts = active_node.split(" ")
 

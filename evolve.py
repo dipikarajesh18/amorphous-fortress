@@ -39,7 +39,6 @@ def evolve(config_file: str):
     best_score = -math.inf
 
     population = [EvoIndividual(config_file, args.render) for _ in range(args.pop_size)]
-    [ind.init_random_fortress() for ind in population]
     [ind.simulate_fortress(show_prints=True) for ind in population]
 
     # Sort by fitness (descending)
