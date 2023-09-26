@@ -204,42 +204,42 @@ def illuminate(config_file: str):
             # Calculate the aspect ratio based on x_bins and y_bins
             aspect_ratio = args.x_bins / args.y_bins
 
-        plt.figure(figsize=(15,10))
-        plt.imshow(fits, cmap='cool', interpolation='nearest', aspect='auto')  # Ensure that imshow respects aspect ratio setting of the axes
+            plt.figure(figsize=(15,10))
+            plt.imshow(fits, cmap='cool', interpolation='nearest', aspect='auto')  # Ensure that imshow respects aspect ratio setting of the axes
 
-        # Add x and y labels
-        plt.xlabel(x_label) 
-        plt.ylabel(y_label)
+            # Add x and y labels
+            plt.xlabel(x_label) 
+            plt.ylabel(y_label)
 
-        # Determine the scaling based on the size of x_bins and y_bins
-        longest_bin = max(args.x_bins, args.y_bins)
+            # Determine the scaling based on the size of x_bins and y_bins
+            longest_bin = max(args.x_bins, args.y_bins)
 
-        if args.x_bins < longest_bin:
-            scale_factor_x = longest_bin / args.x_bins
-        else:
-            scale_factor_x = 1
+            if args.x_bins < longest_bin:
+                scale_factor_x = longest_bin / args.x_bins
+            else:
+                scale_factor_x = 1
 
-        if args.y_bins < longest_bin:
-            scale_factor_y = longest_bin / args.y_bins
-        else:
-            scale_factor_y = 1
+            if args.y_bins < longest_bin:
+                scale_factor_y = longest_bin / args.y_bins
+            else:
+                scale_factor_y = 1
 
-        x_ticks = np.linspace(0, args.y_bins, 10)
-        y_ticks = np.linspace(0, args.x_bins, 10)
-        x_tick_vals = np.linspace(bc_bounds[1][0], bc_bounds[1][1], 10)
-        y_tick_vals = np.linspace(bc_bounds[0][0], bc_bounds[0][1], 10)
+            x_ticks = np.linspace(0, args.y_bins, 10)
+            y_ticks = np.linspace(0, args.x_bins, 10)
+            x_tick_vals = np.linspace(bc_bounds[1][0], bc_bounds[1][1], 10)
+            y_tick_vals = np.linspace(bc_bounds[0][0], bc_bounds[0][1], 10)
 
-        # Ensure axes have 1:1 aspect ratio
-        plt.gca().set_aspect('equal', adjustable='box')
+            # Ensure axes have 1:1 aspect ratio
+            plt.gca().set_aspect('equal', adjustable='box')
 
-        # Set ticks
-        plt.xticks(x_ticks, [f"{x:.2f}" for x in x_tick_vals])
-        plt.yticks(y_ticks, [f"{y:.2f}" for y in y_tick_vals])
+            # Set ticks
+            plt.xticks(x_ticks, [f"{x:.2f}" for x in x_tick_vals])
+            plt.yticks(y_ticks, [f"{y:.2f}" for y in y_tick_vals])
 
-        # Add colorbar
-        plt.colorbar()
-        # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
-        plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
+            # Add colorbar
+            plt.colorbar()
+            # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
+            plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
         if generation % args.checkpoint_frequency == 0:
             # Save the archive as a pickle
             with open(os.path.join(exp_dir, f"archive_gen-{generation}.pkl"), 'wb') as f:

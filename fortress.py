@@ -130,28 +130,39 @@ class Fortress():
 
     # create new trees for every character in the config file
     def makeCharacters(self):
+        n_ent_types = len(self.CONFIG['character'])
+        n_node_types = len(self.node_types)
+        self.max_nodes_per_type = len(self.node_types)
+        self.max_aggregate_fsm_nodes = n_ent_types * n_node_types
+
+        n_aggregate_nodes = random.randint(1, self.max_aggregate_fsm_nodes)
+        # Randomly partition this number into a number of nodes per entity type
+        n_nodes_per_ent_type = np.random.multinomial(n_aggregate_nodes, [1/n_ent_types]*n_ent_types, )
+
         self.CHARACTER_DICT = {}
         self.CHAR_VISIT_TREE = {}
-        for c in self.CONFIG['character']:
-            ent = Entity(self,char=c)
+        for i, c in enumerate(self.CONFIG['character']):
+            # Hack it so that no nodes have empty or impossibly large FSMs. Sketchy, but it's ok because n_n
+            n_nodes = min(max(n_nodes_per_ent_type[i], 1), self.max_nodes_per_type - 1)  # idle is already there by default
+            ent = Entity(self,char=c, n_rand_nodes=n_nodes)
             ent.pos = [-1,-1]
             self.CHARACTER_DICT[c] = ent
             self.CHAR_VISIT_TREE[c] = {'nodes':set(),'edges':set()}
 
         self.addLog(f"{len(self.CHARACTER_DICT)} Unique character trees created")
 
-    def get_max_aggregate_fsm_nodes(self):
-        n_ent_types = len(self.CHARACTER_DICT)
-        nodes_per_ent_type = 0
-        for node_dict in NODE_DICT.values():
-            node_args = node_dict['args']
-            if node_args == []:
-                nodes_per_ent_type += 1
-            elif node_args == ['entityChar']:
-                nodes_per_ent_type += n_ent_types
-        self.max_aggregate_fsm_nodes = nodes_per_ent_type * n_ent_types
-        self.max_nodes_per_entity = nodes_per_ent_type
-        return self.max_aggregate_fsm_nodes
+    # def get_max_aggregate_fsm_nodes(self):
+    #     n_ent_types = len(self.CHARACTER_DICT)
+    #     nodes_per_ent_type = 0
+    #     for node_dict in NODE_DICT.values():
+    #         node_args = node_dict['args']
+    #         if node_args == []:
+    #             nodes_per_ent_type += 1
+    #         elif node_args == ['entityChar']:
+    #             nodes_per_ent_type += n_ent_types
+    #     self.max_aggregate_fsm_nodes = nodes_per_ent_type * n_ent_types
+    #     self.max_nodes_per_entity = nodes_per_ent_type
+    #     return self.max_aggregate_fsm_nodes
         
     # check if the simulation should terminate
     def terminate(self):
