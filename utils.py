@@ -11,3 +11,7 @@ def newID(all_ids,id_len=4):
         all_num.remove(int(i,16))
 
     return f'%0{id_len}x' % random.randrange(16**(id_len+1))
+
+
+def get_bin_idx(val, bounds, n_bins):
+    return int((val - bounds[0]) / (bounds[1] - bounds[0]) * (n_bins - 1))

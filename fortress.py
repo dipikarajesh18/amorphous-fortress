@@ -149,8 +149,9 @@ class Fortress():
                 nodes_per_ent_type += 1
             elif node_args == ['entityChar']:
                 nodes_per_ent_type += n_ent_types
-        max_aggregate_fsm_nodes = nodes_per_ent_type * n_ent_types
-        return max_aggregate_fsm_nodes
+        self.max_aggregate_fsm_nodes = nodes_per_ent_type * n_ent_types
+        self.max_nodes_per_entity = nodes_per_ent_type
+        return self.max_aggregate_fsm_nodes
         
     # check if the simulation should terminate
     def terminate(self):
