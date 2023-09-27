@@ -10,7 +10,7 @@ class EvolveConfig:
     # Render the simulation
     render: bool = False
     # Number of generations to evolve for
-    generations: int = 1000
+    generations: int = 10000
     # Probability of mutating an edge
     edge_coin: float = 0.5
     # Probability of mutating a node
@@ -44,7 +44,7 @@ class EvolveConfig:
     # User defaults factory
     bcs: list = dataclasses.field(default_factory=lambda: ['n_entities', 'n_nodes'])
     # Number of processes to use for simulation
-    n_proc: int = 0
+    n_proc: int = 10
     # Number of simulations to run per evaluation
     n_sims: int = 5
     # Number of steps per episode

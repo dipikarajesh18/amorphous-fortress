@@ -44,10 +44,12 @@ class EvoIndividual():
         self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
         max_aggregate_fsm_nodes = self.engine.fortress.max_aggregate_fsm_nodes
         self.max_nodes_per_entity = max_aggregate_fsm_nodes / self.n_entity_types
+        max_aggregate_edges = (self.max_nodes_per_entity ** 2) * self.n_entity_types
         bc_bounds = {
             'n_entities': (0, self.engine.fortress.max_entities),
             'n_nodes': (0, max_aggregate_fsm_nodes),
-            # 'n_edges': (0, self.engine.fortress.get_max_aggregate_fsm_edges()),
+            'n_edges': (0, max_aggregate_edges),
+            'n_nodes_and_edges': (0, max_aggregate_fsm_nodes + max_aggregate_edges),
             'entropy': (0, 1),
         } 
 
