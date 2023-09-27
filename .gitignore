@@ -2,7 +2,8 @@ ALIFE_EXP
 EVO_FIT
 EVO_IND
 LOGS
-saves
+outputs
+saves*
 curses_tests_chatgpt/
 *.pyc
 __pycache__/*

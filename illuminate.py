@@ -9,6 +9,8 @@ import pickle
 import shutil
 from timeit import default_timer as timer
 from typing import List
+import hydra
+from config import EvolveConfig
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,29 +23,7 @@ from utils import get_bin_idx
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
 
 # Create argparser with boolean flag for rendering
-parser = argparse.ArgumentParser()
-parser.add_argument("-c", "--config", type=str, default="CONFIGS/beta_config.yaml", help='Path to config file')
-parser.add_argument("-r", "--render", action="store_true", help="Render the simulation")
-parser.add_argument("-g", "--generations", type=int, default=1000, help='Number of generations to evolve for')
-parser.add_argument("-e", "--edge_coin", type=float, default=0.5, help='Probability of mutating an edge')
-parser.add_argument("-n", "--node_coin", type=float, default=0.5, help='Probability of mutating an node')
-parser.add_argument("-i", "--instance_coin", type=float, default=0.5, help='Probability of adding or removing an entity instance')
-parser.add_argument("-a", "--alife_exp", action="store_true", help="Running the alife experiment")
-parser.add_argument("-p", "--pop_size", type=int, default=10, help="Population size")
-parser.add_argument("-xb", "--x_bins", type=int, default=100, help="Number of bins for x axis")
-parser.add_argument("-yb", "--y_bins", type=int, default=100, help="Number of bins for y axis")
-parser.add_argument("-cf", "--checkpoint_frequency", type=int, default=10, help="Number of generations between checkpoints")
-parser.add_argument("-pf", "--plot_frequency", type=int, default=10, help="Number of generations between plots")
-parser.add_argument("-s", "--seed", type=int, default=0, help="Random seed for the experiment")
-parser.add_argument("-ev", "--evaluate", action="store_true", help="Evaluate the archive")
-parser.add_argument("-o", "--overwrite", action="store_true", help="Overwrite existing experiment directory")
-parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Percent of random individuals to add to the population")
-parser.add_argument("-ft", "--fitness_type", type=str, default="tree", help="Fitness type: 'tree' or 'M'")
-parser.add_argument("-bcs", "--bcs", type=str, nargs="+", default=['n_entities', 'n_nodes'], help="Behavior characteristics to use for evaluation")
-parser.add_argument("-np", "--n_proc", type=int, default=1, help="Number of processes to use for simulation")
-parser.add_argument("-ns", "--n_sims", type=int, default=5, help="Number of simulations to run per evaluation")
-parser.add_argument("-nse", "--n_steps_per_episode", type=int, default=100, help="Number of steps per episode")
-
+# parser = argparse.ArgumentParser()
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
     x = get_bin_idx(bc[0], bc_bounds[0], x_bins)
@@ -65,35 +45,36 @@ def evaluate(args, archive):
             n_steps_per_episode=args.n_steps_per_episode)
 
 
-def illuminate(config_file: str):
+@hydra.main(version_base=None, config_path="conf", config_name="evolve")
+def illuminate(config: EvolveConfig):
+    config_file: str = config.config_file
     global parser
-    args = parser.parse_args()
 
     # WARNING: Stopping & resuming evolution mid-run will break reproducibility. Runs that go straight-through should
     #   be reproducible though.
-    np.random.seed(args.seed)
-    random.seed(args.seed)
+    np.random.seed(config.seed)
+    random.seed(config.seed)
 
     best_ind = None
     best_score = -math.inf
 
     mutants: List[EvoIndividual]
-    mutants = [EvoIndividual(config_file, fitness_type=args.fitness_type, bcs=args.bcs, render=args.render) for _ in range(args.pop_size)]
+    mutants = [EvoIndividual(config_file, fitness_type=config.fitness_type, bcs=config.bcs, render=config.render) for _ in range(config.pop_size)]
 
     exp_dir = os.path.join("saves", 
-                           (f"ME_fit-{args.fitness_type}_bcs-{args.bcs[0]}-{args.bcs[1]}"
-                            f"_n-{args.node_coin}_e-{args.edge_coin}_i-{args.instance_coin}"
-                            f"_xb-{args.x_bins}_yb-{args.y_bins}"
-                            f"_p-{args.pop_size}"
-                            f"_pr-{args.percent_random}"
-                            f"_s-{args.seed}"
+                           (f"ME_fit-{config.fitness_type}_bcs-{config.bcs[0]}-{config.bcs[1]}"
+                            f"_n-{config.node_coin}_e-{config.edge_coin}_i-{config.instance_coin}"
+                            f"_xb-{config.x_bins}_yb-{config.y_bins}"
+                            f"_p-{config.pop_size}"
+                            f"_pr-{config.percent_random}"
+                            f"_s-{config.seed}"
                             ))
     tb_writer = SummaryWriter(log_dir=exp_dir)
 
     # Find any existing archive files
     archive_files = ([f for f in os.listdir(exp_dir) if f.startswith("archive_gen-")] 
                         if os.path.exists(exp_dir) else [])
-    if len(archive_files) == 0 or args.overwrite:
+    if len(archive_files) == 0 or config.overwrite:
         if os.path.exists(exp_dir):
             shutil.rmtree(exp_dir)
         os.makedirs(exp_dir)
@@ -102,8 +83,8 @@ def illuminate(config_file: str):
         show_prints = generation % 25 == 0
 
         # TODO: Encode each fortress as some set (e.g. jax PyTree) of arrays.
-        archive = np.full((args.x_bins, args.y_bins), None, dtype=object)
-        fits = np.full((args.x_bins, args.y_bins), np.nan)
+        archive = np.full((config.x_bins, config.y_bins), None, dtype=object)
+        fits = np.full((config.x_bins, config.y_bins), np.nan)
 
     else:
         # Get the latest archive
@@ -111,12 +92,12 @@ def illuminate(config_file: str):
         # Load it
         with open(os.path.join(exp_dir, latest_archive_file), 'rb') as f:
             archive = pickle.load(f)
-        fits = np.full((args.x_bins, args.y_bins), np.nan)
+        fits = np.full((config.x_bins, config.y_bins), np.nan)
         for xy in np.argwhere(archive != None):
             fits[xy[0], xy[1]] = archive[xy[0], xy[1]].score
 
-        if args.evaluate:
-            return evaluate(args, archive)
+        if config.evaluate:
+            return evaluate(config, archive)
 
         # Get generation number
         generation = int(latest_archive_file.split("-")[1].split(".")[0])
@@ -127,8 +108,8 @@ def illuminate(config_file: str):
 
     bc_bounds = mutants[0].get_bc_bounds()
 
-    bc_1_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], args.x_bins)
-    bc_0_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], args.y_bins)
+    bc_1_ticks = np.linspace(bc_bounds[0][0], bc_bounds[0][1], config.x_bins)
+    bc_0_ticks = np.linspace(bc_bounds[1][0], bc_bounds[1][1], config.y_bins)
 
     # Sort by fitness (descending)
     # offspring = sorted(offspring, key=lambda ind: ind.score, reverse=True)
@@ -140,44 +121,44 @@ def illuminate(config_file: str):
     # best_score_history = []
     # entity_num_history = []
 
-    if args.n_proc != 1:
-        pool = Pool(processes=args.n_proc)
+    if config.n_proc != 1:
+        pool = Pool(processes=config.n_proc)
 
     evo_start_time = timer()
     total_timesteps_since_reload = 0
 
     # while best_score < ind.max_score:
-    while generation < args.generations:
+    while generation < config.generations:
         gen_start_time = timer()
         
         if generation > 0:
             # Select `po_size` individuals from the population
             nonempty_cells  = np.argwhere(archive != None)
-            n_rand_inds = int(args.pop_size * args.percent_random)
-            n_parents = args.pop_size - n_rand_inds
+            n_rand_inds = int(config.pop_size * config.percent_random)
+            n_parents = config.pop_size - n_rand_inds
             parent_xys = random.choices(nonempty_cells, k=n_parents)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
-            [m.mutate_ind(args) for m in mutants]
-            rand_inds = [EvoIndividual(config_file, fitness_type=args.fitness_type, bcs=args.bcs, render=args.render) \
+            [m.mutate_ind(config) for m in mutants]
+            rand_inds = [EvoIndividual(config_file, fitness_type=config.fitness_type, bcs=config.bcs, render=config.render) \
                             for _ in range(n_rand_inds)]
             mutants += rand_inds
             show_prints = generation % 25 == 0
 
-        if args.n_proc == 1:
+        if config.n_proc == 1:
             [ind.simulate_fortress(
-                show_prints=False, map_elites=True, n_new_sims=args.n_sims,
-                n_steps_per_episode=args.n_steps_per_episode,
+                show_prints=False, map_elites=True, n_new_sims=config.n_sims,
+                n_steps_per_episode=config.n_steps_per_episode,
             ) for ind in mutants]
         else:
             # User ray to parallelize the simulation
             # Notice how the individuals in `mutants` aren't updated by this function. Why?
             rets = pool.map(lambda ind: ind.simulate_fortress(
-                show_prints=False, map_elites=True, n_new_sims=args.n_sims,
-                n_steps_per_episode=args.n_steps_per_episode,
+                show_prints=False, map_elites=True, n_new_sims=config.n_sims,
+                n_steps_per_episode=config.n_steps_per_episode,
             ), mutants)
             [ind.update(ret, map_elites=True) for ind, ret in zip(mutants, rets)]
 
-        mutant_xys = [get_xy_from_bcs(ind.bc_sim_vals, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
+        mutant_xys = [get_xy_from_bcs(ind.bc_sim_vals, bc_bounds, config.x_bins, config.y_bins) for ind in mutants]
 
 
         for i, ind_i in enumerate(mutants):
@@ -192,7 +173,7 @@ def illuminate(config_file: str):
                     best_score = score_i
                     best_ind = ind_i
         
-        total_timesteps_since_reload += args.pop_size * (args.n_sims * args.n_steps_per_episode)
+        total_timesteps_since_reload += config.pop_size * (config.n_sims * config.n_steps_per_episode)
         archive_size = len(np.argwhere(archive != None))
         qd_score = np.nansum(fits)
         # print the stats of the generation
@@ -209,15 +190,15 @@ def illuminate(config_file: str):
         tb_writer.add_scalar("archive_size", archive_size, generation)
         tb_writer.add_scalar("best_score", best_score, generation)
 
-        if args.fitness_type == "M":
+        if config.fitness_type == "M":
             y_label, x_label = "n. entities", "n. @-type entities"
         else:
-            y_label, x_label = args.bcs
+            y_label, x_label = config.bcs
 
-        if generation % args.plot_frequency == 0:
+        if generation % config.plot_frequency == 0:
             # Plot a heatmap of the archive
             # Calculate the aspect ratio based on x_bins and y_bins
-            aspect_ratio = args.x_bins / args.y_bins
+            aspect_ratio = config.x_bins / config.y_bins
 
             plt.figure(figsize=(15,10))
             plt.imshow(fits, cmap='cool', interpolation='nearest', aspect='auto')  # Ensure that imshow respects aspect ratio setting of the axes
@@ -227,20 +208,20 @@ def illuminate(config_file: str):
             plt.ylabel(y_label)
 
             # Determine the scaling based on the size of x_bins and y_bins
-            longest_bin = max(args.x_bins, args.y_bins)
+            longest_bin = max(config.x_bins, config.y_bins)
 
-            if args.x_bins < longest_bin:
-                scale_factor_x = longest_bin / args.x_bins
+            if config.x_bins < longest_bin:
+                scale_factor_x = longest_bin / config.x_bins
             else:
                 scale_factor_x = 1
 
-            if args.y_bins < longest_bin:
-                scale_factor_y = longest_bin / args.y_bins
+            if config.y_bins < longest_bin:
+                scale_factor_y = longest_bin / config.y_bins
             else:
                 scale_factor_y = 1
 
-            x_ticks = np.linspace(0, args.y_bins, 10)
-            y_ticks = np.linspace(0, args.x_bins, 10)
+            x_ticks = np.linspace(0, config.y_bins, 10)
+            y_ticks = np.linspace(0, config.x_bins, 10)
             x_tick_vals = np.linspace(bc_bounds[1][0], bc_bounds[1][1], 10)
             y_tick_vals = np.linspace(bc_bounds[0][0], bc_bounds[0][1], 10)
 
@@ -255,12 +236,12 @@ def illuminate(config_file: str):
             plt.colorbar()
             # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
             plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.png"))
-        if generation % args.checkpoint_frequency == 0:
+        if generation % config.checkpoint_frequency == 0:
             # Save the archive as a pickle
             with open(os.path.join(exp_dir, f"archive_gen-{generation}.pkl"), 'wb') as f:
                 pickle.dump(archive, f)
-            if os.path.exists(os.path.join(exp_dir, f"archive_gen-{generation - args.checkpoint_frequency * 2}.pkl")):
-                os.remove(os.path.join(exp_dir, f"archive_gen-{generation - args.checkpoint_frequency * 2}.pkl"))
+            if os.path.exists(os.path.join(exp_dir, f"archive_gen-{generation - config.checkpoint_frequency * 2}.pkl")):
+                os.remove(os.path.join(exp_dir, f"archive_gen-{generation - config.checkpoint_frequency * 2}.pkl"))
 
         generation+=1
 
@@ -276,7 +257,7 @@ def illuminate(config_file: str):
     
     # add the coin flip probabilities
     best_ind.engine.fortress.log.append(f"\n++++  COIN FLIP PROBABILITIES  ++++\n")
-    best_ind.engine.fortress.log.append(f"\nEdge: {args.edge_coin}\nNode: {args.node_coin}\nInstance: {args.instance_coin}\n")
+    best_ind.engine.fortress.log.append(f"\nEdge: {config.edge_coin}\nNode: {config.node_coin}\nInstance: {config.instance_coin}\n")
 
     # add the initial map output
     best_ind.engine.fortress.log.append(f"\n++++  INITIAL MAP  ++++\n")
@@ -305,7 +286,7 @@ def illuminate(config_file: str):
     
     #####      NON ALIFE EXPERIMENT      #####
 
-    if not args.alife_exp:
+    if not config.alife_exp:
         # export the log
         best_ind.engine.exportLog(f"LOGS/MAP-Elites_{best_ind.fitness_type}_[{best_ind.engine.seed}].txt")
 
@@ -317,7 +298,7 @@ def illuminate(config_file: str):
         # plt.plot(best_score_history, label="Best Score", color="red")
         # plt.plot(entity_num_history, label="Entity Count", color="green")
         plt.legend()
-        plt.savefig(f"EVO_FIT/MAP-Elites_{best_ind.fitness_type}_[n-{args.node_coin},e-{args.edge_coin},i-{args.instance_coin}]_s[{best_ind.engine.seed}].png")
+        plt.savefig(f"EVO_FIT/MAP-Elites_{best_ind.fitness_type}_[n-{config.node_coin},e-{config.edge_coin},i-{config.instance_coin}]_s[{best_ind.engine.seed}].png")
 
 
     #####      ALIFE EXPERIMENT      #####
@@ -336,6 +317,7 @@ def illuminate(config_file: str):
 
 if __name__ == '__main__':
     # Create argparser with boolean flag for rendering
-    sub_args = parser.parse_args()
-    illuminate(sub_args.config)
+    # sub_args = parser.parse_args()
+    # illuminate(sub_args.config)
+    illuminate()
     # cProfile.run("evolve(conf_file)")

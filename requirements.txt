@@ -1,3 +1,5 @@
+hydra-core
+hydra-submitit-launcher
 matplotlib
 numpy
 ray
