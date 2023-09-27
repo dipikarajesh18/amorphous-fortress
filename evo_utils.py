@@ -26,7 +26,7 @@ class EvoIndividual():
         self.engine = engine
         self.render = render
 
-        self.n_sim_steps = 100
+        # self.n_sim_steps = 100
         self.fitness_type = fitness_type
 
         self.init_fortress_str = ""
@@ -162,6 +162,7 @@ class EvoIndividual():
                 ent.killOrphanEdges(node_ind)
                 # print(f"Removed node {node_str} from entity {ent_id}")
                 ent.avail_node_types.append(node_str)
+                # ent.avail_node_types.add(node_str)
                 # print(f'Removed node {node_id} from entity {ent_id}')
 
 
@@ -174,6 +175,7 @@ class EvoIndividual():
             assert n_to_add <= len(ent.avail_node_types)
             # print(f"Adding {n_to_add} nodes to entity {ent_id}")
             for _ in range(n_to_add):
+                # rand_anode = random.choice(tuple(ent.avail_node_types))
                 rand_anode = random.choice(ent.avail_node_types)
                 
                 new_node = f"{rand_anode} "
@@ -194,11 +196,13 @@ class EvoIndividual():
             for _ in range(n_to_change):
                 if len(ent.avail_node_types) > 0:
                     node_ind = random.choice(range(len(ent.nodes)))
+                    # rand_anode = random.choice(tuple(ent.avail_node_types))
                     rand_anode = random.choice(ent.avail_node_types)
                     new_node = f"{rand_anode}"
                     old_node = ent.nodes[node_ind]
 
                     ent.nodes[node_ind] = new_node.strip()
+                    # ent.avail_node_types.add(old_node)
                     ent.avail_node_types.append(old_node)
                     ent.avail_node_types.remove(new_node)
                     # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
@@ -250,12 +254,13 @@ class EvoIndividual():
         else:
             self.score, self.bc_sim_vals = ret
 
-    def simulate_fortress(self, show_prints=False, map_elites=False):
-        n_new_sims = 5
+    def simulate_fortress(self, show_prints=False, map_elites=False, n_new_sims=5,
+                          n_steps_per_episode=100):
 
         metrics = []
         for i in range(n_new_sims):
-            m = self.simulate_fortress_once(show_prints, map_elites)
+            m = self.simulate_fortress_once(
+                show_prints, map_elites, n_steps=n_steps_per_episode)
             metrics.append(m)
         
         self.n_sims += len(metrics)
@@ -288,7 +293,7 @@ class EvoIndividual():
         self.fsm_stats = self.get_fsm_stats()
         return ret, self.n_sims
             
-    def simulate_fortress_once(self, show_prints=False, map_elites=False):
+    def simulate_fortress_once(self, show_prints=False, map_elites=False, n_steps=100):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
@@ -299,7 +304,7 @@ class EvoIndividual():
 
         loops = 0
         while not (self.engine.fortress.terminate() or self.engine.fortress.inactive() or \
-                   self.engine.fortress.overpop() or loops >= self.n_sim_steps):
+                   self.engine.fortress.overpop() or loops >= n_steps):
             # print(self.engine.fortress.renderEntities())
             self.engine.update(True)
             if self.render:
@@ -397,7 +402,10 @@ class EvoIndividual():
         bin_idxs = [get_bin_idx(e, (0, self.max_nodes_per_entity), n_bins=self.n_entity_types) for e in self.n_nodes_per_ent]
         unique, counts = np.unique(bin_idxs, return_counts=True)
         bin_probs = counts / np.sum(counts)
+        # print(f"bin_probs: {bin_probs}")
         self.ent_val = entropy(bin_probs, base=len(bin_probs))
+        self.ent_val = 0 if np.isnan(self.ent_val) else self.ent_val
+        # print(f"Entropy: {self.ent_val}")
         self.entropy_is_stale = False
         return self.ent_val
 
