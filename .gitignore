@@ -8,3 +8,5 @@ saves*
 curses_tests_chatgpt/
 *.pyc
 __pycache__/*
+ind-character-def/
+.DS_Store
