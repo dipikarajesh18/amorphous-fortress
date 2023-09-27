@@ -41,6 +41,8 @@ parser.add_argument("-pr", "--percent_random", type=float, default=0.1, help="Pe
 parser.add_argument("-ft", "--fitness_type", type=str, default="tree", help="Fitness type: 'tree' or 'M'")
 parser.add_argument("-bcs", "--bcs", type=str, nargs="+", default=['n_entities', 'n_nodes'], help="Behavior characteristics to use for evaluation")
 parser.add_argument("-np", "--n_proc", type=int, default=1, help="Number of processes to use for simulation")
+parser.add_argument("-ns", "--n_sims", type=int, default=5, help="Number of simulations to run per evaluation")
+parser.add_argument("-nse", "--n_steps_per_episode", type=int, default=100, help="Number of steps per episode")
 
 
 def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
@@ -58,7 +60,9 @@ def evaluate(args, archive):
     # Iterate through the archive and simulate each fortress while rendering
     for ind in valid_inds:
         ind.render = True
-        ind.simulate_fortress(show_prints=False, map_elites=True)
+        ind.simulate_fortress(
+            show_prints=False, map_elites=True, n_new_sims=args.n_sims,
+            n_steps_per_episode=args.n_steps_per_episode)
 
 
 def illuminate(config_file: str):
@@ -139,6 +143,9 @@ def illuminate(config_file: str):
     if args.n_proc != 1:
         pool = Pool(processes=args.n_proc)
 
+    evo_start_time = timer()
+    total_timesteps_since_reload = 0
+
     # while best_score < ind.max_score:
     while generation < args.generations:
         gen_start_time = timer()
@@ -157,11 +164,17 @@ def illuminate(config_file: str):
             show_prints = generation % 25 == 0
 
         if args.n_proc == 1:
-            [ind.simulate_fortress(show_prints=False, map_elites=True) for ind in mutants]
+            [ind.simulate_fortress(
+                show_prints=False, map_elites=True, n_new_sims=args.n_sims,
+                n_steps_per_episode=args.n_steps_per_episode,
+            ) for ind in mutants]
         else:
             # User ray to parallelize the simulation
             # Notice how the individuals in `mutants` aren't updated by this function. Why?
-            rets = pool.map(lambda ind: ind.simulate_fortress(show_prints=False, map_elites=True), mutants)
+            rets = pool.map(lambda ind: ind.simulate_fortress(
+                show_prints=False, map_elites=True, n_new_sims=args.n_sims,
+                n_steps_per_episode=args.n_steps_per_episode,
+            ), mutants)
             [ind.update(ret, map_elites=True) for ind, ret in zip(mutants, rets)]
 
         mutant_xys = [get_xy_from_bcs(ind.bc_sim_vals, bc_bounds, args.x_bins, args.y_bins) for ind in mutants]
@@ -179,6 +192,7 @@ def illuminate(config_file: str):
                     best_score = score_i
                     best_ind = ind_i
         
+        total_timesteps_since_reload += args.pop_size * (args.n_sims * args.n_steps_per_episode)
         archive_size = len(np.argwhere(archive != None))
         qd_score = np.nansum(fits)
         # print the stats of the generation
@@ -188,6 +202,7 @@ def illuminate(config_file: str):
         print(f'> Archive size: {archive_size}')
         print(f"> QD score: {qd_score}")
         print(f"> Time elapsed: {timer() - gen_start_time:.2f} seconds")
+        print(f"> Running FPS: {total_timesteps_since_reload / (timer() - evo_start_time):.2f}")
         print("")
 
         tb_writer.add_scalar("qd_score", qd_score, generation)

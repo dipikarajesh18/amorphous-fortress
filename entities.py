@@ -312,6 +312,7 @@ class Entity:
 
     # return a new random node with the name and parameters provided
     def newNode(self):
+        # new_state = random.choice(tuple(self.avail_node_types))
         new_state = random.choice(self.avail_node_types)
         self.avail_node_types.remove(new_state)
         

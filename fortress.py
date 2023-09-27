@@ -29,12 +29,16 @@ class Fortress():
         self.steps = 0
         self.end_cause = "Code Interruption"
 
+        # self.node_types = set()
         self.node_types = []
         for node in NODE_DICT:
             if NODE_DICT[node]['args'] == []:
+                # self.node_types.add(node)
                 self.node_types.append(node)
             elif NODE_DICT[node]['args'] == ['entityChar']:
+                # [self.node_types.add(f"{node} {c}") for c in self.CONFIG['character']]
                 self.node_types += [f"{node} {c}" for c in self.CONFIG['character']]
+
 
     # create a blank fortress
     def blankFortress(self):
