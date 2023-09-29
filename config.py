@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class EvolveConfig:
+class EvoConfig:
     # Path to config file
     config_file: str = "CONFIGS/beta_config.yaml"
     # Render the simulation
@@ -31,8 +31,10 @@ class EvolveConfig:
     plot_frequency: int = 10
     # Random seed for the experiment
     seed: int = 0
-    # Evaluate the archive
-    evaluate: bool = False
+    # Iterate through individuals in the archive and render them in the terminal using curses
+    enjoy: bool = False
+    # Re-evaluate the archive on new seeds
+    eval_swiss_cheese: bool = False
     # Overwrite existing experiment directory
     overwrite: bool = False
     # Percent of random individuals to add to the population
@@ -52,7 +54,7 @@ class EvolveConfig:
 
 
 cs = ConfigStore.instance()
-cs.store(name="evolve_base", node=EvolveConfig)
+cs.store(name="evolve_base", node=EvoConfig)
 
 
 # parser.add_argument("-c", "--config", type=str, default="CONFIGS/beta_config.yaml", help='Path to config file')

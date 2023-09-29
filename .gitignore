@@ -10,3 +10,4 @@ curses_tests_chatgpt/
 __pycache__/*
 ind-character-def/
 .DS_Store
+*.egg-info
