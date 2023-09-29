@@ -410,6 +410,7 @@ class EvoIndividual():
                 + sum([m[-1] for m in metrics]))
                 / self.n_sims
             ) 
+        self.get_fsm_stats()
         if verbose:
             print(f"Score: {self.score}")
         return ret, self.n_sims

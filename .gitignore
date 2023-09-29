@@ -16,3 +16,4 @@ archive_pickles/*
 ELITE_FORT_SIM/*_arx_*
 ELITE_CHAR_DEF*
 copy2v2.sh
+*.egg-info

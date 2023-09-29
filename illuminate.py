@@ -12,6 +12,7 @@ from timeit import default_timer as timer
 from typing import List
 import hydra
 import yaml
+from config import EvoConfig
 
 from config import EvoConfig
 import matplotlib.pyplot as plt
@@ -31,9 +32,132 @@ from utils import get_archive_files, get_bin_idx, get_exp_dir, get_xy_from_bcs, 
 # parser = argparse.ArgumentParser()
 
 
+def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
+    x = get_bin_idx(bc[0], bc_bounds[0], x_bins)
+    y = get_bin_idx(bc[1], bc_bounds[1], y_bins)
+    return (x, y)
+
+    
+def enjoy(args, archive):
+    valid_xys = np.argwhere(archive != None)
+    # Get list of individuals in order of decreasing fitness
+    valid_inds = [archive[tuple(xy)] for xy in valid_xys]
+    ind: EvoIndividual
+    # Iterate through the archive and simulate each fortress while rendering
+    for ind in valid_inds:
+        ind.render = True
+        ind.simulate_fortress(
+            show_prints=False, map_elites=True, n_new_sims=args.n_sims,
+            n_steps_per_episode=args.n_steps_per_episode)
 
 
-@hydra.main(version_base="1.3", config_path="conf", config_name="evolve")
+def eval_swiss_cheese(config: EvoConfig, archive, bc_bounds, exp_dir):
+    cheese_name = "swiss_cheese"
+    eval_cheese(config, archive, bc_bounds, exp_dir, config.n_steps_per_episode, cheese_name)
+
+
+def eval_cheesestring(config: EvoConfig, archive, bc_bounds, exp_dir):
+    cheese_name = "cheesestring"
+    eval_cheese(config, archive, bc_bounds, exp_dir, config.n_steps_per_episode * 5, cheese_name)
+
+
+def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir, n_steps_per_episode: int, cheese_name: str):
+    """Iterate through all elites in an archive, evaluate them on new seeds, and add them to a new archive.
+    Note that we add results of new simulations to those of previous simulations (averaging evenly over all seeds)."""
+    swiss_fits = np.full((config.x_bins, config.y_bins), np.nan)
+    # Get list of individuals in order of decreasing fitness
+    swiss_archive = np.empty_like(archive)
+    ind_i: EvoIndividual
+    # Iterate through the archive and simulate each fortress while rendering
+    valid_xys = np.argwhere(archive != None)
+
+    if config.n_proc != 1:
+        pool = Pool(processes=config.n_proc)
+
+    if config.n_proc == 1:
+        for xy in valid_xys:
+            xy = tuple(xy)
+            ind_i = archive[xy]
+            ind_i.simulate_fortress(
+                show_prints=False, map_elites=True,
+                n_new_sims=config.n_sims,
+                n_steps_per_episode=config.n_steps_per_episode)
+    
+    else:
+        valid_inds = [archive[tuple(xy)] for xy in valid_xys]
+        rets = pool.map(lambda ind: ind.simulate_fortress(
+            show_prints=False, map_elites=True, n_new_sims=config.n_sims,
+            n_steps_per_episode=config.n_steps_per_episode, verbose=True,
+        ), valid_inds)
+        [ind.update(ret, map_elites=True) for ind, ret in zip(valid_inds, rets)]
+            
+    for xy in valid_xys:
+        ind_i = archive[tuple(xy)]
+        xy_new = get_xy_from_bcs(ind_i.bc_sim_vals, bc_bounds, config.x_bins, config.y_bins)
+        score_i = ind_i.score
+        incumbent = swiss_archive[xy_new]
+        if incumbent is None or score_i > incumbent.score:
+            swiss_archive[xy_new] = ind_i
+            swiss_fits[xy_new] = score_i
+            print(f"Added mutant formerly at {xy} to the archive at {xy_new}, with score {score_i}")
+    heatmap_filename = os.path.join(exp_dir, f"{cheese_name}_heatmap.png")
+    plot_archive_heatmap(config, swiss_fits, heatmap_filename)
+
+    # Save the archive as a pickle
+    with open(os.path.join(exp_dir, f"{cheese_name}_archive.pkl"), 'wb') as f:
+        pickle.dump(swiss_archive, f)
+
+
+def plot_archive_heatmap(config: EvoConfig, fits, bc_bounds, heatmap_filename):
+
+    if config.fitness_type == "M":
+        y_label, x_label = "n. entities", "n. @-type entities"
+    else:
+        y_label, x_label = config.bcs
+
+    # Plot a heatmap of the archive
+    # Calculate the aspect ratio based on x_bins and y_bins
+    aspect_ratio = config.x_bins / config.y_bins
+
+    plt.figure(figsize=(15,10))
+    plt.imshow(fits, cmap='cool', interpolation='nearest', aspect='auto')  # Ensure that imshow respects aspect ratio setting of the axes
+
+    # Add x and y labels
+    plt.xlabel(x_label) 
+    plt.ylabel(y_label)
+
+    # Determine the scaling based on the size of x_bins and y_bins
+    longest_bin = max(config.x_bins, config.y_bins)
+
+    if config.x_bins < longest_bin:
+        scale_factor_x = longest_bin / config.x_bins
+    else:
+        scale_factor_x = 1
+
+    if config.y_bins < longest_bin:
+        scale_factor_y = longest_bin / config.y_bins
+    else:
+        scale_factor_y = 1
+
+    x_ticks = np.linspace(0, config.y_bins, 10)
+    y_ticks = np.linspace(0, config.x_bins, 10)
+    x_tick_vals = np.linspace(bc_bounds[1][0], bc_bounds[1][1], 10)
+    y_tick_vals = np.linspace(bc_bounds[0][0], bc_bounds[0][1], 10)
+
+    # Ensure axes have 1:1 aspect ratio
+    plt.gca().set_aspect('equal', adjustable='box')
+
+    # Set ticks
+    plt.xticks(x_ticks, [f"{x:.2f}" for x in x_tick_vals])
+    plt.yticks(y_ticks, [f"{y:.2f}" for y in y_tick_vals])
+
+    # Add colorbar
+    plt.colorbar()
+    # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
+    plt.savefig(heatmap_filename)
+
+
+@hydra.main(version_base=None, config_path="conf", config_name="evolve")
 def illuminate(config: EvoConfig):
     config_file: str = config.config_file
     # global parser
