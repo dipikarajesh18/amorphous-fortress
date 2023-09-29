@@ -257,7 +257,7 @@ class EvoIndividual():
             self.score, self.bc_sim_vals = ret
 
     def simulate_fortress(self, show_prints=False, map_elites=False, n_new_sims=5,
-                          n_steps_per_episode=100):
+                          n_steps_per_episode=100, verbose=False):
 
         metrics = []
         for i in range(n_new_sims):
@@ -292,7 +292,9 @@ class EvoIndividual():
             )
             self.bc_sim_vals = (bc_0, bc_1)
             ret = self.score, self.bc_sim_vals
-        self.fsm_stats = self.get_fsm_stats()
+        self.get_fsm_stats()
+        if verbose:
+            print(f"Score: {self.score}")
         return ret, self.n_sims
             
     def simulate_fortress_once(self, show_prints=False, map_elites=False, n_steps=100):
