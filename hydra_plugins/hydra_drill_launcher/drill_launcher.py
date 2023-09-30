@@ -11,8 +11,6 @@ from hydra.plugins.launcher import Launcher
 from hydra.types import HydraContext, TaskFunction
 from omegaconf import DictConfig, OmegaConf, open_dict
 
-from control_pcgrl.rl.utils import validate_config
-
 from .config import BaseQueueConf
 
 log = logging.getLogger(__name__)
@@ -158,7 +156,7 @@ class BaseDrillLauncher(Launcher):
 
         
         # This is the custom drill bit.
-        sweep_configs = [validate_config(c) for c in sweep_configs]
+        # sweep_configs = [validate_config(c) for c in sweep_configs]
         job_params = [j for i, j in enumerate(job_params) if sweep_configs[i] is not False]
         # End custom drill bit.
 
@@ -169,8 +167,8 @@ class BaseDrillLauncher(Launcher):
             # NOTE: We're only able to get the sweeper params when they're in the yaml (not command line).
             sweep_params = self.config.hydra.sweeper.params
         
-            from control_pcgrl.rl.cross_eval import cross_evaluate
-            cross_evaluate(self.config, sweep_configs, sweep_params)
+            from illuminate_cross_eval import ill_cross_eval
+            ill_cross_eval(self.config, sweep_configs, sweep_params)
 
             # Just a dummy to placate hydra.
             return [JobReturn(_return_value=None, status=JobStatus.COMPLETED) for j in sweep_configs]

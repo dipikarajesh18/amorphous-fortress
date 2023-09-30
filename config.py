@@ -35,6 +35,8 @@ class EvoConfig:
     enjoy: bool = False
     # Re-evaluate the archive on new seeds
     eval_swiss_cheese: bool = False
+    # Re-evaluate with longer episodes to see if more fortresses overpopulate/extinguish than before
+    eval_cheesestring: bool = False
     # Overwrite existing experiment directory
     overwrite: bool = False
     # Percent of random individuals to add to the population
