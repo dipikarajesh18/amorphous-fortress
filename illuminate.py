@@ -157,10 +157,48 @@ def plot_archive_heatmap(config: EvoConfig, fits, bc_bounds, heatmap_filename):
     plt.savefig(heatmap_filename)
 
 
+def get_exp_dir(config: EvoConfig):
+    exp_dir = os.path.join("saves", 
+                           (f"ME_fit-{config.fitness_type}"
+                            f"_bcs-{config.bcs[0]}-{config.bcs[1]}"
+                            f"_n-{config.node_coin}_e-{config.edge_coin}"
+                            f"_i-{config.instance_coin}"
+                            f"_xb-{config.x_bins}_yb-{config.y_bins}"
+                            f"_p-{config.pop_size}"
+                            f"_pr-{config.percent_random}"
+                            f"_s-{config.seed}"
+                            ))
+    return exp_dir
+
+
+def get_archive_files(exp_dir: str):
+    """Find any existing archive files."""
+    archive_files = ([f for f in os.listdir(exp_dir) 
+                      if f.startswith("archive_gen-")] 
+                        if os.path.exists(exp_dir) else [])
+    return archive_files
+
+
+def load_latest_archive(exp_dir: str, archive_files: List[str]):
+    # Get the latest archive
+    archive_files = sorted(archive_files,
+                           key=lambda f: int(f.split("-")[1].split(".")[0]))
+    latest_archive_file = archive_files[-1]
+    # Load it
+    try:
+        with open(os.path.join(exp_dir, latest_archive_file), 'rb') as f:
+            archive = pickle.load(f)
+    except EOFError:
+        latest_archive_file = archive_files[-2]
+        with open(os.path.join(exp_dir, latest_archive_file), 'rb') as f:
+            archive = pickle.load(f)
+    return archive
+
+
 @hydra.main(version_base="1.3", config_path="conf", config_name="evolve")
 def illuminate(config: EvoConfig):
     config_file: str = config.config_file
-    global parser
+    # global parser
 
     # FIXME: Stopping & resuming evolution mid-run will break reproducibility.
     # Runs that go straight-through should be reproducible though.
@@ -175,23 +213,11 @@ def illuminate(config: EvoConfig):
                              bcs=config.bcs, render=config.render)
                              for _ in range(config.pop_size)]
     bc_bounds = mutants[0].get_bc_bounds()
+    exp_dir = get_exp_dir(config)
 
-    exp_dir = os.path.join("saves", 
-                           (f"ME_fit-{config.fitness_type}"
-                            f"_bcs-{config.bcs[0]}-{config.bcs[1]}"
-                            f"_n-{config.node_coin}_e-{config.edge_coin}"
-                            f"_i-{config.instance_coin}"
-                            f"_xb-{config.x_bins}_yb-{config.y_bins}"
-                            f"_p-{config.pop_size}"
-                            f"_pr-{config.percent_random}"
-                            f"_s-{config.seed}"
-                            ))
     tb_writer = SummaryWriter(log_dir=exp_dir)
 
-    # Find any existing archive files
-    archive_files = ([f for f in os.listdir(exp_dir) 
-                      if f.startswith("archive_gen-")] 
-                        if os.path.exists(exp_dir) else [])
+    archive_files = get_archive_files(exp_dir)
     if len(archive_files) == 0 or config.overwrite:
         if os.path.exists(exp_dir):
             shutil.rmtree(exp_dir)
@@ -205,12 +231,7 @@ def illuminate(config: EvoConfig):
         fits = np.full((config.x_bins, config.y_bins), np.nan)
 
     else:
-        # Get the latest archive
-        latest_archive_file = max(
-            archive_files, key=lambda f: int(f.split("-")[1].split(".")[0]))
-        # Load it
-        with open(os.path.join(exp_dir, latest_archive_file), 'rb') as f:
-            archive = pickle.load(f)
+        return load_latest_archive()
         fits = np.full((config.x_bins, config.y_bins), np.nan)
         valid_xys = np.argwhere(archive != None)
         for xy in valid_xys:
