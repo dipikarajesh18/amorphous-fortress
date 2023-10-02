@@ -53,6 +53,8 @@ class EvoConfig:
     n_sims: int = 5
     # Number of steps per episode
     n_steps_per_episode: int = 100
+    # Name of hyperparameter sweep (if applicable)
+    sweep_name: str = "none"
 
 
 cs = ConfigStore.instance()

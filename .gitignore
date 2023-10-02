@@ -5,6 +5,7 @@ LOGS
 multirun
 outputs
 saves*
+cross_evals*
 curses_tests_chatgpt/
 *.pyc
 __pycache__/*
