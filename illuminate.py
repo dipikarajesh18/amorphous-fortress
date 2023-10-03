@@ -231,7 +231,10 @@ def illuminate(config: EvoConfig):
         fits = np.full((config.x_bins, config.y_bins), np.nan)
 
     else:
-        return load_latest_archive()
+        archive_files = sorted(archive_files,
+                            key=lambda f: int(f.split("-")[1].split(".")[0]))
+        latest_archive_file = archive_files[-1]
+        archive = load_latest_archive(exp_dir=exp_dir, archive_files=archive_files)
         fits = np.full((config.x_bins, config.y_bins), np.nan)
         valid_xys = np.argwhere(archive != None)
         for xy in valid_xys:

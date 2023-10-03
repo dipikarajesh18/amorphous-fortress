@@ -33,6 +33,14 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
                 ind = exp_archive[x, y]
                 if ind is None:
                     continue
+                if ind.score > 1.0:
+                    for c, k in ind.engine.fortress.CHAR_VISIT_TREE.items():
+                        if len(k['nodes']) > len(ind.engine.fortress.CHARACTER_DICT[c].nodes):
+                            breakpoint()
+                        if len(k['edges']) > len(ind.engine.fortress.CHARACTER_DICT[c].edges):
+                            breakpoint()
+                    breakpoint()
+
                 if incumbent is None or ind.score > incumbent.score:
                     sweep_archive[x, y] = ind
     sweep_fits = np.vectorize(
@@ -45,7 +53,7 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
     with open(os.path.join(eval_dir, "sweep_archive.pkl"), "wb") as f:
         pickle.dump(sweep_archive, f)
 
-    plot_archive_heatmap(cfg, sweep_fits, bc_bounds,
+    plot_archive_heatmap(sweep_configs[0], sweep_fits, bc_bounds,
                          os.path.join(eval_dir, "best_fits.png"))
 
 
