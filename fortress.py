@@ -207,7 +207,8 @@ class Fortress():
     # record the tree visits per entity and save it
     def addTreeVisit(self, ent):
         self.CHAR_VISIT_TREE[ent.char]['nodes'].add(ent.cur_node)
-        self.CHAR_VISIT_TREE[ent.char]['edges'].add(ent.moved_edge)
+        if ent.moved_edge != None:
+            self.CHAR_VISIT_TREE[ent.char]['edges'].add(ent.moved_edge)
 
     # reset the tree visits per entity
     def resetCharVisit(self):

@@ -73,6 +73,12 @@ class EvoIndividual():
         return self.fsm_stats['n_nodes']
 
     def mutate_ind(self, args):
+        """Mutate the fortress by mutating entity class FSMs or the placement of entity instances on the initial map."""
+        # do not inherit fitness/BCs from parents
+        self.n_sims = 0
+        self.score = 0
+        self.bc_sim_vals = (0, 0)
+
         # mutate randomly
         edge_rando = random.random()
         node_rando = random.random()
@@ -110,9 +116,8 @@ class EvoIndividual():
     #     self.engine.populateFortress()
     #     self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
 
-    # adds or deletes an instance entity
     def mutateEnt(self):
-        """Mutate the fortress."""
+        """Add or delete an entity from the initial map."""
         i = random.randint(0, 1)
         if i == 0 and len(self.engine.init_ents) > 0:
             # Remove a random entity
@@ -127,10 +132,6 @@ class EvoIndividual():
 
             c = random.choice(self.engine.fortress.CONFIG['character'])
             self.engine.init_ents.append({'char':c, 'pos':[x, y]})
-
-        self.score = 0
-        self.bc_sim_vals = (0, 0)
-        self.n_sims = 0
 
 
     # only change the nodes of an entity type
@@ -166,7 +167,6 @@ class EvoIndividual():
                 ent.avail_node_types.append(node_str)
                 # ent.avail_node_types.add(node_str)
                 # print(f'Removed node {node_id} from entity {ent_id}')
-
 
         # add a node
         elif i == 1 and len(ent.avail_node_types) > 0:
@@ -209,7 +209,6 @@ class EvoIndividual():
                     ent.avail_node_types.remove(new_node)
                     # print(f'Changed node {node_id} to {rand_anode} in entity {ent_id}')
                     
-
                 # swap 2 nodes
                 else:
                     node_ind1 = random.choice(range(len(ent.nodes)))
@@ -292,7 +291,6 @@ class EvoIndividual():
             )
             self.bc_sim_vals = (bc_0, bc_1)
             ret = self.score, self.bc_sim_vals
-        self.get_fsm_stats()
         if verbose:
             print(f"Score: {self.score}")
         return ret, self.n_sims
