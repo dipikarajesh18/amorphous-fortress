@@ -17,7 +17,8 @@ from utils import get_bin_idx
 class EvoIndividual():
     engine: Engine
 
-    def __init__(self, config_file: str, fitness_type: str, bcs: List[str], render: bool = False):
+    def __init__(self, config_file: str, fitness_type: str, bcs: List[str],
+                 render: bool = False, init_strat='n_nodes', entropy_dict=None):
         self.config_file = config_file
         self.score = 0
         self.bc_sim_vals = (0, 0)
@@ -38,8 +39,10 @@ class EvoIndividual():
             'n_edges': self.get_n_edges,
             'entropy': self.get_entropy,
         }
-
-        self.engine.populateFortress()
+        if init_strat == 'entropy':
+            assert entropy_dict is not None
+        self.engine.populateFortress(
+            init_strat=init_strat, entropy_dict=entropy_dict)
         self.get_fsm_stats()
         self.n_entity_types = len(self.engine.fortress.CHARACTER_DICT)
         max_aggregate_fsm_nodes = self.engine.fortress.max_aggregate_fsm_nodes
@@ -47,8 +50,9 @@ class EvoIndividual():
         max_aggregate_edges = (self.max_nodes_per_entity ** 2) * self.n_entity_types
         bc_bounds = {
             'n_entities': (0, self.engine.fortress.max_entities),
-            'n_nodes': (0, max_aggregate_fsm_nodes),
-            'n_edges': (0, max_aggregate_edges),
+            # each node at least has one idle node with a self-edge
+            'n_nodes': (self.n_entity_types, max_aggregate_fsm_nodes),
+            'n_edges': (1, max_aggregate_edges),
             'n_nodes_and_edges': (0, max_aggregate_fsm_nodes + max_aggregate_edges),
             'entropy': (0, 1),
         } 
@@ -95,8 +99,8 @@ class EvoIndividual():
             self.mutateEnt()
             instance_rando = random.random()
 
-        self.get_fsm_stats()
         self.entropy_is_stale = True
+        self.get_fsm_stats()
 
     def clone(self):
         """Clone the individual."""
@@ -401,14 +405,28 @@ class EvoIndividual():
         if not self.entropy_is_stale:
             return self.ent_val
         # Get entropy of number of nodes per entity, binning into as many bins as there are entity types
-        bin_idxs = [get_bin_idx(e, (0, self.max_nodes_per_entity), n_bins=self.n_entity_types) for e in self.n_nodes_per_ent]
+        bin_idxs = [
+            get_bin_idx(e-1, (1, self.max_nodes_per_entity), 
+                        n_bins=self.n_entity_types
+            ) 
+                        for e in self.n_nodes_per_ent]
         unique, counts = np.unique(bin_idxs, return_counts=True)
+        # Pad counts so with 0s so that the number of bins is equal to the number of entity types
+        counts = np.pad(counts, (0, self.n_entity_types - len(counts)), mode='constant')
         bin_probs = counts / np.sum(counts)
         # print(f"bin_probs: {bin_probs}")
         self.ent_val = entropy(bin_probs, base=len(bin_probs))
+        # if np.isnan(self.ent_val):
+        #     breakpoint()
         self.ent_val = 0 if np.isnan(self.ent_val) else self.ent_val
         # print(f"Entropy: {self.ent_val}")
         self.entropy_is_stale = False
+        # print(bin_probs)
+
+        # Make sure our entropy calculation here matches up with the one intended
+        #   when the individual was initialized (only valid pre-mutation!)
+        fsm_size_bin_dist = np.unique(bin_idxs, return_counts=True)
+
         return self.ent_val
 
 

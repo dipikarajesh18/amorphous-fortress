@@ -2,6 +2,7 @@ import numpy as np
 import random
 import re
 from entities import NODE_DICT, Entity
+from entropy_utils import sum_combinations
 
 
 # the environment where all of the simulation takes place
@@ -133,21 +134,106 @@ class Fortress():
 
 
     # create new trees for every character in the config file
-    def makeCharacters(self):
+    def makeCharacters(self, init_strat='n_nodes', entropy_dict=None):
         n_ent_types = len(self.CONFIG['character'])
         n_node_types = len(self.node_types)
         self.max_nodes_per_type = len(self.node_types)
         self.max_aggregate_fsm_nodes = n_ent_types * n_node_types
 
-        n_aggregate_nodes = random.randint(1, self.max_aggregate_fsm_nodes)
-        # Randomly partition this number into a number of nodes per entity type
-        n_nodes_per_ent_type = np.random.multinomial(n_aggregate_nodes, [1/n_ent_types]*n_ent_types, )
-
         self.CHARACTER_DICT = {}
         self.CHAR_VISIT_TREE = {}
-        for i, c in enumerate(self.CONFIG['character']):
-            # Hack it so that no nodes have empty or impossibly large FSMs. Sketchy, but it's ok because n_n
-            n_nodes = min(max(n_nodes_per_ent_type[i], 1), self.max_nodes_per_type - 1)  # idle is already there by default
+        char_list = self.CONFIG['character'].copy()
+
+        if init_strat == 'entropy':
+            # Sample uniformly over possible entropy values
+
+            assert isinstance(entropy_dict, dict)
+            n_fsm_size_bins = n_ent_types
+
+            if True:
+                entropy_bin_idx = random.choice(list(entropy_dict.keys()))
+                # Pick a random entropy bucket
+                fsm_size_bin_dists = entropy_dict[
+                    entropy_bin_idx
+                ]
+                fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
+                fsm_size_bin_dist = fsm_size_bin_dist.copy()
+                self._fsm_size_bin_dist = fsm_size_bin_dist.copy()
+            else:
+                fsm_size_bin_dists = list(sum_combinations(n_fsm_size_bins, n_ent_types))
+                fsm_size_bin_dist = np.array(random.choice(fsm_size_bin_dists))
+            np.random.shuffle(fsm_size_bin_dist)
+            idxs = np.argwhere(fsm_size_bin_dist > 0)
+            if len(idxs) == 0:
+                ents_n_nodes = [0] * n_ent_types
+            else:
+                fsm_size_bin_idx = idxs[0].item()
+                fsm_size_bin_bounds = np.linspace(
+                    0, self.max_nodes_per_type, n_fsm_size_bins+1
+                ).astype(int)
+                cur_fsm_size_bounds = fsm_size_bin_bounds[fsm_size_bin_idx:fsm_size_bin_idx+2]
+
+                ents_n_nodes = []
+                break_outer_loop = False  # flag to break from outer loop
+                for i in range(len(char_list)):
+                    n_nodes = random.randint(
+                        cur_fsm_size_bounds[0], cur_fsm_size_bounds[1]
+                    )
+                    n_nodes = min(max(n_nodes, 1), self.max_nodes_per_type - 1)
+                    ents_n_nodes.append(n_nodes)
+                    fsm_size_bin_dist[fsm_size_bin_idx] -= 1
+                    while fsm_size_bin_dist[fsm_size_bin_idx] == 0:
+                        fsm_size_bin_idx += 1
+                        cur_fsm_size_bounds = fsm_size_bin_bounds[fsm_size_bin_idx:fsm_size_bin_idx+2]
+                        if fsm_size_bin_idx == fsm_size_bin_dist.shape[0]:
+                            break_outer_loop = True  # set the flag to True to break from outer loop
+                            break
+
+                    if break_outer_loop:  # check the flag at the end of for loop iteration
+                        break
+                # Pad the rest of the entities with 0 nodes
+                ents_n_nodes += [0] * (n_ent_types - len(ents_n_nodes))
+            self._ents_n_nodes = ents_n_nodes
+
+        elif init_strat == 'n_nodes':
+            # Sample uniformly across number of aggregate FSM nodes
+            n_aggregate_nodes = random.randint(0, self.max_aggregate_fsm_nodes - n_ent_types)
+            # Randomly partition this number into a number of nodes per entity type
+            n_nodes_per_ent_type = np.random.multinomial(
+                n_aggregate_nodes, [1/n_ent_types]*n_ent_types)
+            # If any entity types have more than the maximum number of nodes per type,
+            # then add these nodes to other entity types
+            overfilled_bins = np.argwhere(
+                n_nodes_per_ent_type > self.max_nodes_per_type - 1)
+            for bin_idx in overfilled_bins:
+                overfilled_by = \
+                    n_nodes_per_ent_type[bin_idx] - (self.max_nodes_per_type - 1)
+                n_nodes_per_ent_type[bin_idx] = self.max_nodes_per_type - 1
+                underfilled_bins = np.argwhere(
+                    n_nodes_per_ent_type < self.max_nodes_per_type - 1)
+                under_idx = 0
+                while overfilled_by > 0:
+                    underfilled_bin_idx = underfilled_bins[under_idx]
+                    underfilled_by = \
+                        ((self.max_nodes_per_type - 1)
+                         - n_nodes_per_ent_type[underfilled_bin_idx])
+                    if underfilled_by > overfilled_by:
+                        n_nodes_per_ent_type[underfilled_bin_idx] += overfilled_by
+                        overfilled_by = 0
+                    else:
+                        n_nodes_per_ent_type[underfilled_bin_idx] += underfilled_by
+                        overfilled_by -= underfilled_by
+                        under_idx += 1
+
+            ents_n_nodes = []
+            for i in range(len(char_list)):
+                ents_n_nodes.append(
+                    min(n_nodes_per_ent_type[i], self.max_nodes_per_type - 1)  # idle is already there by default
+                )
+
+        np.random.shuffle(char_list)
+        for i, c in enumerate(char_list):
+            n_nodes = ents_n_nodes[i]
             ent = Entity(self,char=c, n_rand_nodes=n_nodes)
             ent.pos = [-1,-1]
             self.CHARACTER_DICT[c] = ent

@@ -10,6 +10,7 @@ import shutil
 from timeit import default_timer as timer
 from typing import List
 import hydra
+import yaml
 
 from config import EvoConfig
 import matplotlib.pyplot as plt
@@ -17,6 +18,7 @@ import numpy as np
 from ray.util.multiprocessing import Pool
 from tensorboardX import SummaryWriter
 from tqdm import tqdm
+from entropy_utils import gen_entropy_dict
 
 from evo_utils import EvoIndividual
 from utils import get_bin_idx
@@ -161,6 +163,7 @@ def get_exp_dir(config: EvoConfig):
     exp_dir = os.path.join("saves", 
                            (f"ME_fit-{config.fitness_type}"
                             f"_bcs-{config.bcs[0]}-{config.bcs[1]}"
+                            f"_ss-{config.n_steps_per_episode}"
                             f"_n-{config.node_coin}_e-{config.edge_coin}"
                             f"_i-{config.instance_coin}"
                             f"_xb-{config.x_bins}_yb-{config.y_bins}"
@@ -208,9 +211,30 @@ def illuminate(config: EvoConfig):
     best_ind = None
     best_score = -math.inf
 
+    if 'entropy' in config.bcs:
+        if config.bcs.index('entropy') == 0:
+            n_entropy_bins = config.x_bins
+        else:
+            n_entropy_bins = config.y_bins
+        # Load config yaml
+        config_file = os.path.join(config.config_file)
+        config_file_dict = yaml.safe_load(open(config_file, 'r'))
+        n_ent_types = len(config_file_dict['character'])
+
+
+        entropy_dict = gen_entropy_dict(
+            n_fsm_size_bins=n_ent_types, n_fsms=n_ent_types,
+            n_entropy_bins=n_entropy_bins)
+        init_strat = 'entropy'
+
+    else:
+        entropy_dict = None
+        init_strat = 'n_nodes'
+
     mutants: List[EvoIndividual]
     mutants = [EvoIndividual(config_file, fitness_type=config.fitness_type, 
-                             bcs=config.bcs, render=config.render)
+                             bcs=config.bcs, render=config.render,
+                             init_strat=init_strat, entropy_dict=entropy_dict)
                              for _ in range(config.pop_size)]
     bc_bounds = mutants[0].get_bc_bounds()
     exp_dir = get_exp_dir(config)
@@ -309,7 +333,11 @@ def illuminate(config: EvoConfig):
             ), mutants)
             [ind.update(ret, map_elites=True) for ind, ret in zip(mutants, rets)]
 
-        mutant_xys = [get_xy_from_bcs(ind.bc_sim_vals, bc_bounds, config.x_bins, config.y_bins) for ind in mutants]
+        mutant_xys = [
+            get_xy_from_bcs(
+                ind.bc_sim_vals, bc_bounds, config.x_bins, config.y_bins
+            ) 
+                for ind in mutants]
 
 
         for i, ind_i in enumerate(mutants):
