@@ -365,8 +365,9 @@ class Entity:
             # add the condition
             self.edges[edge] = self.newEdge()
 
-        # validate the tree
-        self.connectOrphanNodes()
+        if n_nodes > 0:
+            # validate the tree
+            self.connectOrphanNodes()
 
 
     # validate the tree
