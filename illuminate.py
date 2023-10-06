@@ -34,6 +34,96 @@ def get_xy_from_bcs(bc: tuple, bc_bounds: tuple, x_bins: int, y_bins: int):
     y = get_bin_idx(bc[1], bc_bounds[1], y_bins)
     return (x, y)
 
+
+def enjoy_printout(args, archive, exp_dir):
+    exp_frames_dir = os.path.join(exp_dir, "printouts")
+    os.makedirs(exp_frames_dir, exist_ok=True)
+    valid_xys = np.argwhere(archive != None)
+    valid_inds = [archive[tuple(xy)] for xy in valid_xys]
+    # Get the individual with highest fitness
+    best_ind = max(valid_inds, key=lambda ind: ind.score)
+    # Get the individuals with lowest/highest values in each bc
+    l_ind = min(valid_inds, key=lambda ind: ind.bc_sim_vals[0])
+    r_ind = max(valid_inds, key=lambda ind: ind.bc_sim_vals[0])
+    t_ind = min(valid_inds, key=lambda ind: ind.bc_sim_vals[1])
+    b_ind = max(valid_inds, key=lambda ind: ind.bc_sim_vals[1])
+    # Get individuals on the top/bottom of the leftmost column
+    # First, get index of leftmost nonempty column
+    l_col = np.argwhere(np.any(archive != None, axis=1))[0][0]
+    l_col_inds = archive[:, l_col]
+    r_col = np.argwhere(np.any(archive != None, axis=1))[-1][0]
+    r_col_inds = archive[:, r_col]
+    # t_row = np.argwhere(np.any(archive != None, axis=0))[0][0]
+    # t_row_inds = archive[t_row, :]
+    # b_row = np.argwhere(np.any(archive != None, axis=0))[-1][0]
+    # b_row_inds = archive[b_row, :]
+    # Get the individuals on the top/bottom of the leftmost column
+    nonempty_l_col_idxs = np.argwhere(l_col_inds != None).flatten()
+    nonempty_r_col_idxs = np.argwhere(r_col_inds != None).flatten()
+    tl_ind, bl_ind = l_col_inds[nonempty_l_col_idxs[0]],\
+        l_col_inds[nonempty_l_col_idxs[-1]]
+    tr_ind, br_ind = r_col_inds[nonempty_r_col_idxs[0]],\
+        r_col_inds[nonempty_r_col_idxs[-1]]
+    # Find an individual in the middle of the archive
+    mid_x = archive.shape[0] // 2
+    mid_y = archive.shape[1] // 2
+    # TODO: Make this robust in case there is no individual here
+    mid_ind = archive[mid_x, mid_y]
+
+    special_inds = [best_ind, l_ind, r_ind, t_ind, b_ind, tl_ind, bl_ind, 
+                    tr_ind, br_ind, mid_ind]
+
+    ind: EvoIndividual
+    # Iterate through the archive and simulate each fortress while rendering
+    # for xy in valid_xys:
+    for ind in special_inds:
+        archive_xy = get_xy_from_bcs(ind.bc_sim_vals, ind.get_bc_bounds(),
+                                        args.x_bins, args.y_bins)
+        # ind = archive[tuple(xy)]
+        frames = []
+        frames.append("Reloading individual:")
+        frames.append(f"xy = {archive_xy}")
+        frames.append(f"BCs = {ind.bc_sim_vals}\n")
+        scores = []
+        bcs = []
+        for i in range(5):
+            frames.append(f"Sim seed: {i}")
+            ind.engine.fortress.rng_sim = np.random.default_rng(i)
+            ind.engine.resetFortress()
+            frames.append(ind.engine.fortress.renderEntities())
+            loops = 0
+            while not (ind.engine.fortress.terminate() or ind.engine.fortress.inactive() or \
+                    ind.engine.fortress.overpop() or loops >= args.n_steps_per_episode):
+                # print(self.engine.fortress.renderEntities())
+                ind.engine.update(True)
+                loops += 1
+            frames.append(f'step: {loops}')
+            frames.append(ind.engine.fortress.renderEntities())
+
+            ind.get_fsm_stats()
+            score = ind.fsm_stats['prop_visited']
+            scores.append(score)
+            bc_0, bc_1 = ind.bc_funcs[0](), ind.bc_funcs[1]()
+            bcs.append((bc_0, bc_1))
+            frames.append(f"Score: {score}")
+            frames.append(f"BCs: {bc_0}, {bc_1}")
+            # Add some stats about the fsm and the final number of entities
+            frames.append(f"Final number of entities: {len(ind.engine.fortress.entities)}")
+            frames.append(f"Number of nodes: {ind.fsm_stats['n_nodes']}")
+            frames.append(f"Entropy of FSM sizes: {ind.get_entropy()}")
+        mean_score = np.mean(scores)
+        mean_bcs = np.mean(bcs, axis=0)
+        frames.append(f"Mean score: {mean_score}")
+        frames.append(f"Mean BCs: {mean_bcs}")
+        new_xy = get_xy_from_bcs(mean_bcs, ind.get_bc_bounds(),
+                                    args.x_bins, args.y_bins)
+        frames.append(f"New xy: {new_xy}")
+        # Join frames with newlines
+        frames = "\n".join(frames)
+        # Save frames to text file named after x and y coordinates
+        with open(os.path.join(exp_frames_dir, f"{archive_xy[0]}-{archive_xy[1]}.txt"), "w") as f:
+            f.write(frames)
+
     
 def enjoy(args, archive):
     valid_xys = np.argwhere(archive != None)
@@ -289,6 +379,9 @@ def illuminate(config: EvoConfig):
 
         if config.enjoy:
             return enjoy(config, archive)
+
+        if config.enjoy_printout:
+            return enjoy_printout(config, archive, exp_dir)
 
         if config.eval_swiss_cheese:
             return eval_cheese(config, archive, bc_bounds, exp_dir,
