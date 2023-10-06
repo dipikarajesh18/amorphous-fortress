@@ -21,7 +21,7 @@ from tensorboardX import SummaryWriter
 from tqdm import tqdm
 from entropy_utils import gen_entropy_dict
 
-from evo_utils import EvoIndividual
+from evo_utils import EvoIndividual, bc_funcs
 from utils import get_bin_idx
 
 # NOTE: Need to turn off `DEBUG` in `main.py` lest curses interfere with printouts.
@@ -145,6 +145,18 @@ def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
     """Iterate through all elites in an archive, evaluate them on new seeds, 
     and add them to a new archive. Note that we add results of new simulations
     to those of previous simulations (averaging evenly over all seeds)."""
+
+
+    # FIXME: Remove this backward-compatibility hack.
+    # Swapping BC funcs to the unbounded versions. (Which themselves are
+    # backward-compatibility hacks)
+    for ind in archive.flatten():
+        if ind is None:
+            continue
+        if not hasattr(ind, 'instance_entropy'):
+            ind.instance_entropy = 0
+        ind.bc_funcs = [bc_funcs[k] for k in config.bcs]
+
     swiss_fits = np.full((config.x_bins, config.y_bins), np.nan)
     # Get list of individuals in order of decreasing fitness
     swiss_archive = np.empty_like(archive)
@@ -171,6 +183,7 @@ def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
                 show_prints=False, map_elites=True,
                 n_new_sims=config.n_sims,
                 n_steps_per_episode=n_steps_per_episode, verbose=False,
+                eval_instance_entropy=True,
             )
     
     else:
@@ -178,6 +191,7 @@ def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
         rets = list(tqdm(pool.imap(lambda ind: ind.simulate_fortress(
             show_prints=False, map_elites=True, n_new_sims=config.n_sims,
             n_steps_per_episode=config.n_steps_per_episode, verbose=False,
+            eval_instance_entropy=True,
         ), valid_inds), desc="Evaluating elites"))
         [ind.update(ret, map_elites=True) for ind, ret in zip(valid_inds, rets)]
             
@@ -389,7 +403,7 @@ def illuminate(config: EvoConfig):
 
         if config.eval_cheesestring:
             return eval_cheese(config, archive, bc_bounds, exp_dir,
-                               config.n_steps_per_episode * 5, "cheesestring")
+                               config.n_steps_per_episode * 2, "cheesestring")
 
         # Get generation number
         generation = int(latest_archive_file.split("-")[1].split(".")[0])

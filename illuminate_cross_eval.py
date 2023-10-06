@@ -6,6 +6,7 @@ import hydra
 import numpy as np
 
 from config import EvoConfig
+from evo_utils import EvoIndividual, bc_funcs
 from illuminate import get_archive_files, get_exp_dir, load_latest_archive, plot_archive_heatmap
 
 
@@ -30,30 +31,43 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
         sweep_archive = np.full((cfg.x_bins, cfg.y_bins), None, dtype=object)
         for exp_cfg in sweep_configs:
             exp_dir = get_exp_dir(exp_cfg)
-            archive_files = get_archive_files(exp_dir)
-            if len(archive_files) == 0:
-                print(f"Skipping {exp_dir} because it has no archives.")
-                continue
-            exp_archive = load_latest_archive(exp_dir, archive_files)
+            if cfg.eval_swiss_cheese:
+                archive_file = os.path.join(
+                    exp_dir, "swiss_cheese_archive.pkl"
+                )
+                with open(archive_file, "rb") as f:
+                    exp_archive = pickle.load(f)
+            elif cfg.eval_cheesestring:
+                archive_file = os.path.join(
+                    exp_dir, "cheesestring_archive.pkl"
+                )
+                with open(archive_file, "rb") as f:
+                    exp_archive = pickle.load(f)
+            else:
+                archive_files = get_archive_files(exp_dir)
+                if len(archive_files) == 0:
+                    print(f"Skipping {exp_dir} because it has no archives.")
+                    continue
+                exp_archive = load_latest_archive(exp_dir, archive_files)
 
             # Update the sweep archive with the best individuals from the current
             #   experiment.
             for x in range(cfg.x_bins):
                 for y in range(cfg.y_bins):
                     incumbent = sweep_archive[x, y]
-                    ind = exp_archive[x, y]
-                    if ind is None:
+                    best_ind = exp_archive[x, y]
+                    if best_ind is None:
                         continue
-                    if ind.score > 1.0:
-                        for c, k in ind.engine.fortress.CHAR_VISIT_TREE.items():
-                            if len(k['nodes']) > len(ind.engine.fortress.CHARACTER_DICT[c].nodes):
+                    if best_ind.score > 1.0:
+                        for c, k in best_ind.engine.fortress.CHAR_VISIT_TREE.items():
+                            if len(k['nodes']) > len(best_ind.engine.fortress.CHARACTER_DICT[c].nodes):
                                 breakpoint()
-                            if len(k['edges']) > len(ind.engine.fortress.CHARACTER_DICT[c].edges):
+                            if len(k['edges']) > len(best_ind.engine.fortress.CHARACTER_DICT[c].edges):
                                 breakpoint()
                         breakpoint()
 
-                    if incumbent is None or ind.score > incumbent.score:
-                        sweep_archive[x, y] = ind
+                    if incumbent is None or best_ind.score > incumbent.score:
+                        sweep_archive[x, y] = best_ind
 
         # Save the sweep archive and a heatmap
         with open(sweep_archive_path, "wb") as f:
@@ -78,7 +92,7 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
     }
     stats_json_path = os.path.join(eval_dir, "stats.json")
     with open(stats_json_path, "w") as f:
-        json.dump(stats, f)
+        json.dump(stats, f, indent=4)
 
     bc_bounds = sweep_archive[
         tuple(np.argwhere(sweep_archive != None)[0])].get_bc_bounds()
@@ -86,18 +100,34 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
     plot_archive_heatmap(sweep_configs[0], sweep_fits, bc_bounds,
                          os.path.join(eval_dir, "best_fits.png"))
 
-    ind = sweep_archive[best_fit_xy]
+    # this is a dummy individual
+    dummy_ind = EvoIndividual(
+        config_file=sweep_configs[0].config_file,
+        fitness_type=sweep_configs[0].fitness_type, render=False,
+        bcs=sweep_configs[0].bcs,
+        init_strat='n_nodes', # doesn't matter
+        entropy_dict=None, # doesn't matter
+        init_seed=0,
+    )
+    best_ind = sweep_archive[best_fit_xy]
     # Plot alternate heatmaps showing the values of behavior characteristics not
     #   used as axes of this archive.
-    possible_bcs = list(ind.all_bc_funcs.keys())
+    possible_bcs = list(bc_funcs.keys())
     for bc_name in possible_bcs:
         # if bc_name in cfg.bcs:
         #     continue
-        sweep_entropies = np.vectorize(
-            lambda x: float(x.all_bc_funcs[bc_name]()) if x is not None else np.nan)(sweep_archive)
+        sweep_vals = np.vectorize(
+            lambda x: float(bc_funcs[bc_name](x)) if x is not None else np.nan)(sweep_archive)
         plot_archive_heatmap(
-            sweep_configs[0], sweep_entropies, bc_bounds,
+            sweep_configs[0], sweep_vals, bc_bounds,
             os.path.join(eval_dir, f"{bc_name}.png"), cbar_label=bc_name)
+
+    sweep_instance_entropies = np.vectorize(
+        lambda x: x.instance_entropy if x is not None else np.nan)(sweep_archive)
+    plot_archive_heatmap(
+        sweep_configs[0], sweep_instance_entropies, bc_bounds,
+        os.path.join(eval_dir, "instance_entropies.png"),
+        cbar_label="instance entropy")
 
 
 @hydra.main(version_base="1.3", config_path="conf", config_name="cross_eval")
