@@ -55,6 +55,9 @@ class EvoConfig:
     n_steps_per_episode: int = 100
     # Name of hyperparameter sweep (if applicable)
     sweep_name: str = "none"
+    # When aggregating archives for cross-evaluation, re-aggregate rather than
+    #  reusing the existing sweep archive.
+    reuse_sweep_archive: bool = False
 
 
 cs = ConfigStore.instance()

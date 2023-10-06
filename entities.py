@@ -71,7 +71,8 @@ class Entity:
     def _randAdjPos(self):
         # TODO: currently moves one tile at a tile in a random direction
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
-        rpos = random.choice(pos_mod)
+        # rpos = random.choice(pos_mod)
+        rpos = self.fortress.rng_sim.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
         # self.fortress.addLog("Entity trying to move to " + str(new_pos))
         if self.fortress.validPos(new_pos[0], new_pos[1]):
@@ -164,7 +165,8 @@ class Entity:
             return
         
         # randomly choose a direction to move from the directions need to go in
-        rdir = random.choice(dir)
+        # rdir = random.choice(dir)
+        rdir = self.fortress.rng_sim.choice(dir)
         if rdir == 'east':
             new_pos[0] += 1
         elif rdir == 'west':
@@ -194,7 +196,8 @@ class Entity:
             
         # get the next position over
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
-        rpos = random.choice(pos_mod)
+        # rpos = random.choice(pos_mod)
+        rpos = self.fortress.rng_sim.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
 
         # check if the other entity is in the next position

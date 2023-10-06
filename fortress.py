@@ -21,12 +21,16 @@ class Fortress():
         self.max_aggregate_fsm_nodes = None   # the maximum number of nodes and edges over all entity types
 
         self.CONFIG = config  # a dictionary of values for configuration
-        self.seed = random.randint(0,1000000) if seed == None else seed
+        # self.seed = random.randint(0,1000000) if seed == None else seed
+
+        self.rng_init = np.random.default_rng(seed)
+        # Seed for determining random movement dynamics during an episode
+        self.rng_sim = np.random.default_rng(0)
 
         # random.seed(self.seed)
         # np.random.seed(self.seed)
 
-        self.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
+        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
         self.steps = 0
         self.end_cause = "Code Interruption"
 
@@ -95,7 +99,8 @@ class Fortress():
     # return a random position in the fortress
     def randomPos(self,inc_ent=True):
         all_pos = [(x,y) for x in range(1,self.width-1) for y in range(1,self.height-1)]
-        random.shuffle(all_pos)
+        # random.shuffle(all_pos)
+        self.rng_init.shuffle(all_pos)
         for p in all_pos:
             x,y = p
             if self.validPos(x,y) and (not inc_ent or self.entAtPos(x,y) == None):
@@ -152,18 +157,20 @@ class Fortress():
             n_fsm_size_bins = n_ent_types
 
             if True:
-                entropy_bin_idx = random.choice(list(entropy_dict.keys()))
+                entropy_bin_idx = self.rng_init.choice(list(entropy_dict.keys()))
                 # Pick a random entropy bucket
                 fsm_size_bin_dists = entropy_dict[
                     entropy_bin_idx
                 ]
-                fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
+                # fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
+                fsm_size_bin_dist = fsm_size_bin_dists[
+                    self.rng_init.randint(0, len(fsm_size_bin_dists) - 1)]
                 fsm_size_bin_dist = fsm_size_bin_dist.copy()
                 self._fsm_size_bin_dist = fsm_size_bin_dist.copy()
             else:
                 fsm_size_bin_dists = list(sum_combinations(n_fsm_size_bins, n_ent_types))
-                fsm_size_bin_dist = np.array(random.choice(fsm_size_bin_dists))
-            np.random.shuffle(fsm_size_bin_dist)
+                fsm_size_bin_dist = np.array(self.rng_init.choice(fsm_size_bin_dists))
+            self.rng_init.shuffle(fsm_size_bin_dist)
             idxs = np.argwhere(fsm_size_bin_dist > 0)
             if len(idxs) == 0:
                 ents_n_nodes = [0] * n_ent_types
@@ -177,7 +184,7 @@ class Fortress():
                 ents_n_nodes = []
                 break_outer_loop = False  # flag to break from outer loop
                 for i in range(len(char_list)):
-                    n_nodes = random.randint(
+                    n_nodes = self.rng_init.randint(
                         cur_fsm_size_bounds[0], cur_fsm_size_bounds[1]
                     )
                     n_nodes = min(max(n_nodes, 1), self.max_nodes_per_type - 1)
@@ -198,9 +205,9 @@ class Fortress():
 
         elif init_strat == 'n_nodes':
             # Sample uniformly across number of aggregate FSM nodes
-            n_aggregate_nodes = random.randint(0, self.max_aggregate_fsm_nodes - n_ent_types)
+            n_aggregate_nodes = self.rng_init.integers(0, self.max_aggregate_fsm_nodes - n_ent_types)
             # Randomly partition this number into a number of nodes per entity type
-            n_nodes_per_ent_type = np.random.multinomial(
+            n_nodes_per_ent_type = self.rng_init.multinomial(
                 n_aggregate_nodes, [1/n_ent_types]*n_ent_types)
             # If any entity types have more than the maximum number of nodes per type,
             # then add these nodes to other entity types
@@ -232,7 +239,7 @@ class Fortress():
                     min(n_nodes_per_ent_type[i], self.max_nodes_per_type - 1)  # idle is already there by default
                 )
 
-        np.random.shuffle(char_list)
+        self.rng_init.shuffle(char_list)
         for i, c in enumerate(char_list):
             n_nodes = ents_n_nodes[i]
             ent = Entity(self,char=c, n_rand_nodes=n_nodes)

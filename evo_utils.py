@@ -18,12 +18,14 @@ class EvoIndividual():
     engine: Engine
 
     def __init__(self, config_file: str, fitness_type: str, bcs: List[str],
-                 render: bool = False, init_strat='n_nodes', entropy_dict=None):
+                 render: bool = False, init_strat='n_nodes', entropy_dict=None,
+                 init_seed=None):
         self.config_file = config_file
         self.score = 0
         self.bc_sim_vals = (0, 0)
         self.n_sims = 0
-        engine = Engine(config_file)
+        init_seed = random.randint(0, 1000000) if init_seed is None else init_seed
+        engine = Engine(config_file, init_seed=init_seed)
         self.engine = engine
         self.render = render
 
@@ -39,6 +41,7 @@ class EvoIndividual():
             'n_edges': self.get_n_edges,
             'entropy': self.get_entropy,
         }
+        self.all_bc_funcs = bc_funcs
         if init_strat == 'entropy':
             assert entropy_dict is not None
         self.engine.populateFortress(
@@ -264,6 +267,7 @@ class EvoIndividual():
 
         metrics = []
         for i in range(n_new_sims):
+            self.engine.fortress.rng = np.random.default_rng(i + self.n_sims)
             m = self.simulate_fortress_once(
                 show_prints, map_elites, n_steps=n_steps_per_episode)
             metrics.append(m)

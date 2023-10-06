@@ -2,7 +2,7 @@
 hydra:
   sweeper:
     params:
-      seed: range(10,20)
-      # seed: 0, 1
+      n_steps_per_episode: 100, 500
+      seed: range(20,30)
 
 sweep_name: exp1

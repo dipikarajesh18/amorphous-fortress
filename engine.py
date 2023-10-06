@@ -10,20 +10,23 @@ from fortress import Fortress
 class Engine():
     fortress: Fortress
 
-    def __init__(self,config_file):
+    def __init__(self, config_file, init_seed=None):
 
         # load the config file
         with open(config_file, 'r') as file:
             self.config = yaml.safe_load(file)
 
         # set the random seed
-        self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
+        if init_seed is None:
+            self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
+        else:
+            self.seed = init_seed
         # random.seed(self.seed)
         # np.random.seed(self.seed)
         # print(f"Seed: {self.seed}")
 
         # define the fortress
-        self.fortress = Fortress(self.config,15,8,seed=self.seed)
+        self.fortress = Fortress(self.config, 15, 8, seed=self.seed)
         self.fortress.blankFortress()
         self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
         self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")

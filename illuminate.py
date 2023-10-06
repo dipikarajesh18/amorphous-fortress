@@ -2,6 +2,7 @@
 import argparse
 import copy
 import curses
+import json
 import os
 import random
 import math
@@ -45,6 +46,7 @@ def enjoy(args, archive):
         ind.simulate_fortress(
             show_prints=False, map_elites=True, n_new_sims=args.n_sims,
             n_steps_per_episode=args.n_steps_per_episode)
+        breakpoint()
 
 
 def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
@@ -77,7 +79,7 @@ def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
             ind_i.simulate_fortress(
                 show_prints=False, map_elites=True,
                 n_new_sims=config.n_sims,
-                n_steps_per_episode=config.n_steps_per_episode, verbose=False,
+                n_steps_per_episode=n_steps_per_episode, verbose=False,
             )
     
     else:
@@ -109,7 +111,8 @@ def eval_cheese(config: EvoConfig, archive, bc_bounds, exp_dir,
                          heatmap_filename=heatmap_filename)
 
 
-def plot_archive_heatmap(config: EvoConfig, fits, bc_bounds, heatmap_filename):
+def plot_archive_heatmap(config: EvoConfig, fits, bc_bounds, heatmap_filename,
+                         cbar_label="% FSMs explored"):
 
     if config.fitness_type == "M":
         y_label, x_label = "n. entities", "n. @-type entities"
@@ -154,7 +157,8 @@ def plot_archive_heatmap(config: EvoConfig, fits, bc_bounds, heatmap_filename):
     plt.yticks(y_ticks, [f"{y:.2f}" for y in y_tick_vals])
 
     # Add colorbar
-    plt.colorbar()
+    plt.colorbar(label=cbar_label)
+    plt.tight_layout()
     # plt.savefig(os.path.join(exp_dir, f"heatmap_gen-{generation}.svg"))
     plt.savefig(heatmap_filename)
 
@@ -232,11 +236,11 @@ def illuminate(config: EvoConfig):
         init_strat = 'n_nodes'
 
     mutants: List[EvoIndividual]
-    mutants = [EvoIndividual(config_file, fitness_type=config.fitness_type, 
-                             bcs=config.bcs, render=config.render,
-                             init_strat=init_strat, entropy_dict=entropy_dict)
-                             for _ in range(config.pop_size)]
-    bc_bounds = mutants[0].get_bc_bounds()
+    dummy_ind = EvoIndividual(config_file, fitness_type=config.fitness_type,
+                                bcs=config.bcs, render=config.render,
+                                init_strat=init_strat, entropy_dict=entropy_dict,
+                                init_seed=0)
+    bc_bounds = dummy_ind.get_bc_bounds()
     exp_dir = get_exp_dir(config)
 
     tb_writer = SummaryWriter(log_dir=exp_dir)
@@ -249,16 +253,26 @@ def illuminate(config: EvoConfig):
         generation = 0
 
         show_prints = generation % 25 == 0
+        rand_ind_seed_i = 0
 
         # TODO: Encode each fortress as some set (e.g. jax PyTree) of arrays.
         archive = np.full((config.x_bins, config.y_bins), None, dtype=object)
         fits = np.full((config.x_bins, config.y_bins), np.nan)
+
+        mutants = [EvoIndividual(config_file, fitness_type=config.fitness_type, 
+                                bcs=config.bcs, render=config.render,
+                                init_strat=init_strat, entropy_dict=entropy_dict,
+                                init_seed=rand_ind_seed_i+i)
+                                for i in range(config.pop_size)]
+        rand_ind_seed_i += config.pop_size
 
     else:
         archive_files = sorted(archive_files,
                             key=lambda f: int(f.split("-")[1].split(".")[0]))
         latest_archive_file = archive_files[-1]
         archive = load_latest_archive(exp_dir=exp_dir, archive_files=archive_files)
+        stats = json.load(open(os.path.join(exp_dir, "stats.json"), "r"))
+        rand_ind_seed_i = stats['rand_ind_seed_i']
         fits = np.full((config.x_bins, config.y_bins), np.nan)
         valid_xys = np.argwhere(archive != None)
         for xy in valid_xys:
@@ -314,10 +328,13 @@ def illuminate(config: EvoConfig):
             parent_xys = random.choices(nonempty_cells, k=n_parents)
             mutants = [archive[xy[0], xy[1]].clone() for xy in parent_xys]
             [m.mutate_ind(config) for m in mutants]
-            rand_inds = [EvoIndividual(config_file, fitness_type=config.fitness_type, bcs=config.bcs, render=config.render) \
-                            for _ in range(n_rand_inds)]
+            rand_inds = [EvoIndividual(
+                config_file, fitness_type=config.fitness_type, bcs=config.bcs, 
+                render=config.render, init_seed=rand_ind_seed_i+i) \
+                            for i in range(n_rand_inds)]
+            rand_ind_seed_i += n_rand_inds
             mutants += rand_inds
-            show_prints = generation % 25 == 0
+            # show_prints = generation % 25 == 0
 
         if config.n_proc == 1:
             [ind.simulate_fortress(
@@ -377,6 +394,14 @@ def illuminate(config: EvoConfig):
             # Save the archive as a pickle
             with open(os.path.join(exp_dir, f"archive_gen-{generation}.pkl"), 'wb') as f:
                 pickle.dump(archive, f)
+            # Save stats as a json
+            stats = {
+                'rand_ind_seed_i': rand_ind_seed_i,
+            }
+            stats_json_path = os.path.join(exp_dir, "stats.json")
+            with open(stats_json_path, "w") as f:
+                json.dump(stats, f)
+
             if os.path.exists(os.path.join(exp_dir, f"archive_gen-{generation - config.checkpoint_frequency * 2}.pkl")):
                 os.remove(os.path.join(exp_dir, f"archive_gen-{generation - config.checkpoint_frequency * 2}.pkl"))
 
