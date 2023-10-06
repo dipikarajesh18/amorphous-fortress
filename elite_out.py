@@ -6,7 +6,7 @@ from evo_utils import EvoIndividual
 
 OUTPUT_FOLDER = "ELITE_CHAR_DEF"
 SAVE_FOLDER = "archive_pickles"
-SIMULATE_STEPS = 0
+SIMULATE_STEPS = 100
 
 
 # report saving - format is the value followed by filename
@@ -62,13 +62,18 @@ def convert_pkl_to_txt_def():
                     # write the fortress string
                     f.write("-- INIT FORT --\n")
                     f.write(ind.engine.fortress.renderEntities())
-                    f.write("\n")
+                    f.write("\n\n")
 
+                    # simulate a bit and show the output fortress
                     if SIMULATE_STEPS > 0:
+                        # set the seed so it doesn't have a cow (this ind pickle uses an old version of the fortress)
+                        ind.engine.fortress.rng_init = np.random.default_rng(7)
+                        ind.engine.fortress.rng_sim = np.random.default_rng(0)
+
                         ind.simulate_fortress_once(n_steps=SIMULATE_STEPS)
-                        f.write(f"-- FORT @ STEPS {SIMULATE_STEPS} --\n")
+                        f.write(f"\n-- FORT @ STEPS {SIMULATE_STEPS} --\n")
                         f.write(ind.engine.fortress.renderEntities())
-                        f.write("\n")
+                        f.write("\n\n")
                         
                     f.write("\n")
 

@@ -330,14 +330,14 @@ class Fortress():
                     continue
 
                 # entity positions
-                if("-- INIT ENT POS --" in estr):
+                if("-- INIT ENT POS --" in estr and len(self.entities) == 0):
                     self.setFortStateStr(estr,"pos")
                 # import the fortress setup initial state
-                elif("-- INIT FORT --" in estr):
+                elif("-- INIT FORT --" in estr and len(self.entities) == 0):
                     self.setFortStateStr(estr,"fort")
                 # another state of the fortress, skip
-                elif("FORT --" in estr):
-                    continue
+                elif("FORT --" in estr and len(self.entities) == 0):
+                    self.setFortStateStr(estr,"fort")
                 # import the entity definition
                 else:
                     ent = Entity(self,n_rand_nodes=1)  #dummy n_rand_nodes to allow import
@@ -356,7 +356,7 @@ class Fortress():
         self.resetCharVisit()
 
         if(type_init == "fort"):
-            init_ents = self.fortStr2EntPos(fort_str)   # parse the fortress string
+            init_ents = self.fortStr2EntPos(fort_str.split("\n")[1:])   # parse the fortress string
         if(type_init == "pos"):
             init_ents = self.posStr2EntPos(fort_str)    # parse the entity position string
 
@@ -378,10 +378,9 @@ class Fortress():
         return
 
     # converts a raw string format of the fortress to entity positions
-    def fortStr2EntPos(self, s):
+    def fortStr2EntPos(self, lines):
         pos_set = []
         # iterate through each character of the fortress string
-        lines = s.split("\n")
         for r in range(len(lines)):
             cols = lines[r].split("")
             for c in range(len(cols)):
