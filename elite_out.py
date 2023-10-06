@@ -6,6 +6,7 @@ from evo_utils import EvoIndividual
 
 OUTPUT_FOLDER = "ELITE_CHAR_DEF"
 SAVE_FOLDER = "archive_pickles"
+SIMULATE_STEPS = 0
 
 
 # report saving - format is the value followed by filename
@@ -44,10 +45,32 @@ def convert_pkl_to_txt_def():
 
             # write each individual to a txt file
             with tqdm(total=(len(valid_inds))) as pbar:         
-                for ind in valid_inds:
-                    output_filepath = f"{OUTPUT_FOLDER}/{archive_name}_f[{ind.score:.3f}]_xy[{ind.bc_sim_vals[0]:.3f}, {ind.bc_sim_vals[1]:.3f}].txt"
+                for i in range(len(valid_inds)):
+                    ind = valid_inds[i]
+                    output_filepath = f"{OUTPUT_FOLDER}/{archive_name}_f[{ind.score:.3f}]_xy[{str(valid_xys[i])}]-[{ind.bc_sim_vals[0]:.3f},{ind.bc_sim_vals[1]:.3f}].txt"
                     f = open(output_filepath, "w")
                     f.write(ind.engine.init_ent_str)
+                    f.write("\n\n")
+
+
+                    # write the positions string
+                    ind.engine.resetFortress()
+                    f.write("-- INIT ENT POS --\n")
+                    f.write("\n".join(ind.engine.fortress.exportEntPosList()))
+                    f.write("\n\n")
+
+                    # write the fortress string
+                    f.write("-- INIT FORT --\n")
+                    f.write(ind.engine.fortress.renderEntities())
+                    f.write("\n")
+
+                    if SIMULATE_STEPS > 0:
+                        ind.simulate_fortress_once(n_steps=SIMULATE_STEPS)
+                        f.write(f"-- FORT @ STEPS {SIMULATE_STEPS} --\n")
+                        f.write(ind.engine.fortress.renderEntities())
+                        f.write("\n")
+                        
+                    f.write("\n")
 
                     # check against the superlatives
                     isBest(ind,output_filepath)

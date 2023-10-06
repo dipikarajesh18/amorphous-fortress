@@ -428,7 +428,7 @@ class Entity:
     # print the tree out in a nice format
     '''
 
-        [CHARACTER SYMBOL]:
+        [CHARACTER SYMBOL]
         -- NODES --
         [INDEX #]: [NAME] 
         -- EDGES --
@@ -438,7 +438,7 @@ class Entity:
         outStr = ""
 
         # character symbol
-        outStr += f"{self.char}:\n"
+        outStr += f"{self.char}\n"
 
         # nodes
         outStr += "-- NODES --\n"

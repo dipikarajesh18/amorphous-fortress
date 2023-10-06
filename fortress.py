@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import datetime
 import re
 from entities import NODE_DICT, Entity
 from entropy_utils import sum_combinations
@@ -324,10 +325,91 @@ class Fortress():
 
             # add each entity definition to the dictionary set
             for estr in ent_sets:
+                estr = estr.strip()
                 if estr == "":
                     continue
-                ent = Entity(self,n_rand_nodes=1)  #dummy n_rand_nodes to allow import
-                ent.importTreeStr(estr)
-                ent.pos = [-1,-1]
-                self.CHARACTER_DICT[ent.char] = ent
-                self.CHAR_VISIT_TREE[ent.char] = {'nodes':set(),'edges':set()}
+
+                # entity positions
+                if("-- INIT ENT POS --" in estr):
+                    self.setFortStateStr(estr,"pos")
+                # import the fortress setup initial state
+                elif("-- INIT FORT --" in estr):
+                    self.setFortStateStr(estr,"fort")
+                # another state of the fortress, skip
+                elif("FORT --" in estr):
+                    continue
+                # import the entity definition
+                else:
+                    ent = Entity(self,n_rand_nodes=1)  #dummy n_rand_nodes to allow import
+                    ent.importTreeStr(estr)
+                    ent.pos = [-1,-1]
+                    self.CHARACTER_DICT[ent.char] = ent
+                    self.CHAR_VISIT_TREE[ent.char] = {'nodes':set(),'edges':set()}
+
+    # sets a fortress state based on a string
+    # essentially the same as engine.resetFortress
+    def setFortStateStr(self,fort_str,type_init):
+        # Remove all current entities
+        self.entities = {}
+
+        # reset the visits
+        self.resetCharVisit()
+
+        if(type_init == "fort"):
+            init_ents = self.fortStr2EntPos(fort_str)   # parse the fortress string
+        if(type_init == "pos"):
+            init_ents = self.posStr2EntPos(fort_str)    # parse the entity position string
+
+        # Add the entities back in
+        for e in init_ents:
+            new_ent = self.CHARACTER_DICT[e['char']].clone(e['pos'])
+            if new_ent:
+                self.addEntity(new_ent)
+
+        # reset the log
+        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
+        self.addLog(f">>> CONFIG FILE: {self.CONFIG} <<<")
+        self.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
+        self.addLog(f"Fortress randomly populated with {len(init_ents)} entities")    # add a log message
+
+
+        self.steps = 0
+
+        return
+
+    # converts a raw string format of the fortress to entity positions
+    def fortStr2EntPos(self, s):
+        pos_set = []
+        # iterate through each character of the fortress string
+        lines = s.split("\n")
+        for r in range(len(lines)):
+            cols = lines[r].split("")
+            for c in range(len(cols)):
+                p = cols[c]
+                if p == self.border or p == self.floor:      # if wall or floor, skip
+                    continue
+                elif p in self.CHARACTER_DICT:               # if the character exists in the set, save it
+                    pos_set.append({'char':p, 'pos':[r,c]})
+        return pos_set
+
+
+    # converts a list of entity positions to the initial position set
+    def posStr2EntPos(self,s):
+        pos_set = []
+
+        lines = s.split("\n")
+        for l in lines:
+            d = l.split("-")
+            c = d[0]
+            pos = [int(x) for x in d[1].strip('][').split(', ')]
+            pos_set.append({"char":c,"pos":pos})
+
+        return pos_set
+
+
+    # exports the entity positions as a string list
+    def exportEntPosList(self):
+        init_ents = []
+        for e in self.entities.values():
+            init_ents.append(f"{e.char}-{e.pos}")
+        return init_ents

@@ -6,7 +6,7 @@ from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
-SEED = "any"
+SEED = 9
 reportFile = "_REPORT-exp1_arx.txt"
 
 # shows the fortress initialization and steps in between
@@ -22,7 +22,7 @@ def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,
     # import the fortress and populate randomly
     ENGINE.fortress.importEntityFortDef(filename)
     # print(ENGINE.fortress.CHARACTER_DICT)
-    ENGINE.populateFortress(make_char=False)
+    # ENGINE.populateFortress(make_char=False)
 
     # ----- SIMULATION ----- #
 
