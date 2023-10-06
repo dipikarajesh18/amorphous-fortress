@@ -484,6 +484,35 @@ class Entity:
 
             f.close()
 
+    # imports a tree from a string format
+    def importTreeStr(self, str):
+        # reset arrays
+        self.nodes = []
+        self.edges = {}
+
+
+        lines = str.split("\n")
+        lines = [line.strip() for line in lines if line != "\n"]
+
+        # parse the character
+        self.char = lines[0].strip()[0]
+
+        # find the breaker headers
+        node_break = lines.index("-- NODES --")
+        edge_break = lines.index("-- EDGES --")
+
+        # parse the nodes
+        for i in range(node_break+1, edge_break):
+            n = lines[i].split(": ")[1]
+            self.nodes.append(n)
+
+        # parse the edges
+        for i in range(edge_break+1, len(lines)):
+            e = lines[i].split(": ")
+            self.edges[e[0]] = e[1]
+
+
+
     #######     UPDATES AND LOOPS    #######
 
     # update the behavior tree of the entity by looking at the graph and any connections

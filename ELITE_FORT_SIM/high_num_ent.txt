@@ -1,0 +1,250 @@
+ELITE_CHAR_DEF/exp1_arx_f[0.584]_xy[156.000, 41.000].txt - SEED: 225894 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#;...<.......@#
+#.>O...M<..^..#
+#M.S+.........#
+#.S>.......*.D#
+#....*O...D...#
+#...OM!.......#
+###############
+
+> GENERATION 20
+###############
+#;D..<.......@#
+#.SS...M<.....#
+#MDS..........#
+#.SS......^*.D#
+#...+*S...D...#
+#...SM!.......#
+###############
+
+> GENERATION 40
+###############
+#;D..<.......@#
+#.SS...M<.....#
+#MDS..........#
+#.SS......^*.D#
+#...+*S...D...#
+#...SM!.......#
+###############
+
+> GENERATION 60
+###############
+#;D..<.....^.@#
+#.SS...M<.....#
+#MDS..........#
+#.SS.......*.D#
+#...+*S...D...#
+#...SM!.......#
+###############
+
+> GENERATION 80
+###############
+#;D..<.......@#
+#.SS....<M....#
+#MDS....^.....#
+#.SS.......*.D#
+#...+*S...D...#
+#...SM!.......#
+###############
+
+> GENERATION 100
+###############
+#;D..<.......@#
+#.SS....<M....#
+#MDS..^.......#
+#.SS.......*.D#
+#...+*S...D...#
+#...SM!.......#
+###############
+
+Number of entities: 23
+
+
+===============
+
+^:
+-- NODES --
+0: idle
+1: move_wall M
+2: push M
+3: move_wall ^
+-- EDGES --
+0-2: nextTo $
+0-3: step 7
+1-0: step 4
+1-1: touch M
+1-3: step 2
+2-1: nextTo !
+2-2: none
+3-2: within D 3
+
+>:
+-- NODES --
+0: idle
+1: chase *
+2: transform S
+3: add >
+4: add D
+-- EDGES --
+0-2: step 5
+0-4: none
+1-0: step 2
+2-1: touch ^
+2-3: within M 5
+3-1: nextTo !
+3-2: step 9
+3-3: touch S
+4-0: nextTo M
+4-2: none
+
+*:
+-- NODES --
+0: idle
+1: move_wall M
+2: push !
+3: clone
+4: move_wall ;
+-- EDGES --
+0-3: touch X
+0-4: touch @
+1-2: touch X
+1-3: none
+1-4: nextTo +
+2-2: none
+3-0: within O 10
+3-3: nextTo $
+4-1: touch <
+4-2: nextTo ;
+4-4: nextTo @
+
+@:
+-- NODES --
+0: idle
+-- EDGES --
+
++:
+-- NODES --
+0: idle
+1: push >
+2: take X
+-- EDGES --
+0-0: nextTo ;
+0-1: none
+0-2: none
+1-0: within O 9
+2-0: within O 9
+2-1: within < 2
+
+<:
+-- NODES --
+0: idle
+1: add D
+-- EDGES --
+0-0: none
+0-1: nextTo X
+1-0: none
+1-1: nextTo ^
+
+O:
+-- NODES --
+0: idle
+1: transform S
+2: push ^
+-- EDGES --
+0-1: none
+0-2: nextTo @
+1-0: touch ;
+2-1: step 4
+2-2: none
+
+$:
+-- NODES --
+0: idle
+1: add !
+-- EDGES --
+0-0: step 5
+0-1: step 1
+1-0: touch D
+
+!:
+-- NODES --
+0: idle
+1: add O
+2: push &
+-- EDGES --
+0-1: nextTo !
+1-0: none
+1-1: touch &
+1-2: none
+
+D:
+-- NODES --
+0: idle
+1: add !
+-- EDGES --
+0-1: touch D
+1-0: step 2
+1-1: touch &
+
+M:
+-- NODES --
+0: idle
+1: move_wall *
+2: take *
+3: chase X
+-- EDGES --
+0-3: nextTo >
+1-0: step 8
+1-1: step 7
+1-3: none
+2-0: nextTo *
+2-3: touch <
+3-1: step 1
+3-2: none
+
+S:
+-- NODES --
+0: idle
+1: add ;
+2: take <
+-- EDGES --
+0-0: nextTo X
+0-2: within @ 3
+1-0: touch M
+1-1: touch @
+1-2: nextTo D
+2-1: within * 8
+
+X:
+-- NODES --
+0: idle
+1: move_wall ^
+-- EDGES --
+0-1: step 4
+1-0: touch *
+
+&:
+-- NODES --
+0: idle
+1: push !
+2: transform <
+3: move_wall S
+-- EDGES --
+0-2: touch O
+0-3: touch *
+1-0: nextTo @
+1-2: within & 7
+1-3: nextTo ^
+2-0: touch M
+2-1: within $ 8
+2-3: within * 4
+3-3: touch S
+
+;:
+-- NODES --
+0: idle
+-- EDGES --
+

@@ -60,9 +60,11 @@ class Engine():
 
 
     # populate the fortress with entities
-    def populateFortress(self, init_strat='n_nodes', entropy_dict=None):
+    def populateFortress(self, init_strat='n_nodes', entropy_dict=None, make_char=True):
         # make every character
-        self.fortress.makeCharacters(init_strat=init_strat, entropy_dict=entropy_dict)
+        if(make_char):
+            self.fortress.makeCharacters(init_strat=init_strat, entropy_dict=entropy_dict)
+        # record the tree of every character
         for c,e in self.fortress.CHARACTER_DICT.items():
             self.init_ent_str += f"{e.printTree()}\n"
 

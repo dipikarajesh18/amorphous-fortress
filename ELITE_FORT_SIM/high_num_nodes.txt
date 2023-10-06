@@ -1,0 +1,5681 @@
+ELITE_CHAR_DEF/exp1_arx_f[0.001]_xy[1.000, 1410.000].txt - SEED: 879968 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#.........<...#
+#.^..&........#
+#.............#
+#..$..........#
+#....>........#
+#............&#
+###############
+
+> GENERATION 20
+###############
+#.......;.<...#
+#.^...........#
+#.^!..........#
+#.!$!.........#
+#.^!..........#
+#..........;..#
+###############
+
+> GENERATION 40
+###############
+#.........<...#
+#.^...........#
+#.^!..........#
+#.!$!....;....#
+#.^!..........#
+#.............#
+###############
+
+> GENERATION 60
+###############
+#.........<...#
+#.^...........#
+#.^!..;;......#
+#.!$!.........#
+#.^!..........#
+#.............#
+###############
+
+> GENERATION 80
+###############
+#...!.....<...#
+#.^.^;........#
+#.^..;........#
+#..$..........#
+#.^...;.......#
+#.............#
+###############
+
+> GENERATION 100
+###############
+#...!.....<...#
+#.^.^;........#
+#.^..;........#
+#..$..........#
+#.^...;.......#
+#.............#
+###############
+
+Number of entities: 16
+
+
+===============
+
+*:
+-- NODES --
+0: idle
+1: transform *
+2: chase <
+3: take +
+4: transform <
+5: push O
+6: take *
+7: add ^
+8: transform &
+9: move_wall $
+10: chase S
+11: chase >
+12: push @
+13: transform X
+14: push $
+15: add ;
+16: transform !
+17: add $
+18: transform ^
+19: move_wall <
+20: move_wall !
+21: add &
+22: move_wall *
+23: move_wall S
+24: clone
+25: transform M
+26: transform O
+27: die
+28: transform S
+29: push D
+30: add >
+31: add +
+32: chase D
+33: take X
+34: chase !
+35: chase *
+36: push <
+37: move_wall >
+38: chase ;
+39: add <
+40: add @
+41: push +
+42: transform @
+43: move_wall X
+44: push M
+45: transform >
+46: chase &
+47: push S
+48: push ;
+49: push &
+50: take M
+51: take D
+52: chase X
+53: add D
+54: push ^
+55: chase ^
+56: chase +
+57: transform $
+58: take @
+59: chase $
+60: push *
+61: push !
+62: move
+63: move_wall D
+64: add !
+65: take ;
+66: chase M
+67: move_wall ^
+68: take <
+69: push X
+70: add O
+71: add *
+72: push >
+73: take S
+74: transform ;
+75: transform D
+76: add M
+77: take >
+78: move_wall +
+79: move_wall @
+80: take $
+81: take O
+82: move_wall ;
+83: move_wall O
+84: chase O
+85: add X
+86: add S
+87: transform +
+88: take ^
+89: take &
+90: chase @
+91: move_wall M
+92: move_wall &
+93: take !
+-- EDGES --
+0-17: nextTo $
+0-64: touch D
+0-69: nextTo ^
+0-91: touch M
+1-16: step 1
+1-27: step 10
+1-32: within M 7
+1-60: nextTo @
+1-69: touch *
+1-83: none
+10-11: none
+10-2: touch *
+10-25: step 10
+10-53: touch M
+10-56: none
+10-61: none
+10-66: none
+11-49: none
+11-6: nextTo &
+11-76: none
+13-23: touch ^
+14-38: touch S
+14-42: none
+15-1: touch >
+15-13: nextTo S
+15-93: step 5
+16-32: within > 5
+16-48: step 4
+16-75: within O 3
+18-23: touch >
+2-16: none
+2-62: within ! 4
+2-78: nextTo M
+20-62: none
+20-84: none
+21-25: none
+21-68: none
+21-69: none
+22-32: none
+23-18: touch ^
+23-5: none
+23-50: within ^ 5
+23-58: touch ;
+23-72: step 9
+23-88: nextTo <
+24-25: none
+24-73: none
+24-76: step 7
+24-92: touch !
+25-11: touch @
+25-15: touch >
+25-37: within X 4
+25-51: within ; 8
+25-55: nextTo ;
+25-60: touch ;
+25-7: nextTo ;
+26-13: nextTo ^
+26-88: nextTo D
+27-10: nextTo @
+27-62: nextTo !
+27-63: touch <
+27-66: touch S
+27-79: nextTo >
+27-81: none
+27-89: step 1
+28-18: step 10
+28-19: touch $
+28-32: none
+28-37: touch +
+29-57: within M 5
+29-85: nextTo M
+29-88: touch @
+29-92: nextTo S
+3-49: within $ 1
+3-88: within * 8
+30-10: step 10
+30-32: within ^ 9
+30-33: none
+30-34: nextTo >
+30-53: touch $
+30-67: touch +
+30-80: none
+30-92: within * 9
+32-60: step 10
+32-75: touch &
+32-86: nextTo ^
+33-51: step 1
+33-87: none
+33-89: none
+34-3: within > 2
+34-45: touch <
+36-38: touch ;
+36-59: within S 3
+38-35: step 8
+38-51: nextTo <
+38-59: none
+38-75: none
+38-82: nextTo ^
+38-93: within ! 8
+39-25: none
+4-67: step 6
+40-81: within ! 1
+41-10: none
+41-37: none
+41-50: nextTo D
+41-81: within ! 10
+42-0: within O 5
+42-28: step 2
+42-60: nextTo $
+43-31: step 6
+43-4: within ! 7
+43-63: nextTo O
+43-70: touch ^
+43-81: nextTo >
+43-91: step 1
+44-61: step 2
+44-9: step 2
+45-10: touch @
+45-26: nextTo ;
+45-42: touch >
+45-50: step 4
+46-56: within & 4
+46-85: step 4
+48-14: within S 3
+48-39: none
+49-29: none
+49-39: touch X
+49-40: none
+49-69: touch S
+49-77: within O 1
+5-50: nextTo ^
+5-81: touch @
+5-87: nextTo &
+50-49: nextTo +
+51-12: nextTo ^
+51-47: nextTo &
+51-52: nextTo +
+52-12: step 1
+52-20: within ; 2
+52-22: nextTo O
+53-28: touch S
+53-50: within ^ 4
+54-3: touch &
+54-68: step 4
+54-78: within ^ 6
+54-90: touch O
+55-83: nextTo M
+56-34: nextTo @
+57-38: none
+57-58: touch ;
+57-62: none
+57-89: none
+58-24: nextTo ;
+58-29: step 4
+58-53: touch S
+58-86: touch M
+59-16: nextTo M
+59-55: none
+6-44: within ^ 9
+6-52: step 9
+6-57: step 4
+60-22: step 7
+60-3: nextTo S
+60-32: step 2
+60-74: nextTo ;
+61-12: touch S
+61-19: touch ;
+62-48: nextTo +
+62-79: touch X
+63-34: none
+63-66: within & 5
+63-73: step 1
+63-84: touch &
+64-42: nextTo $
+65-34: touch X
+65-54: touch M
+66-21: nextTo X
+66-26: within + 8
+66-62: within O 2
+66-73: touch *
+66-90: step 5
+67-14: touch ^
+67-15: nextTo ^
+67-39: within < 3
+67-47: nextTo S
+67-65: touch >
+67-68: nextTo $
+68-39: touch X
+68-49: within < 2
+68-50: nextTo <
+68-65: touch @
+68-67: nextTo ^
+69-21: step 1
+69-58: touch M
+69-6: within ^ 8
+7-10: touch S
+7-13: nextTo ;
+7-30: nextTo $
+7-53: touch D
+7-8: none
+70-81: step 5
+71-45: step 1
+71-61: none
+71-79: nextTo S
+72-37: step 2
+72-59: touch &
+73-34: nextTo $
+73-44: nextTo +
+73-45: step 6
+74-77: touch @
+75-56: step 1
+75-59: within ! 4
+75-64: nextTo ;
+75-70: within X 10
+75-71: touch X
+76-36: nextTo $
+76-5: nextTo O
+77-1: within X 6
+77-74: touch M
+78-37: step 8
+78-38: none
+78-43: nextTo O
+78-71: touch <
+78-85: nextTo D
+79-24: touch ^
+79-72: nextTo @
+8-34: step 6
+8-70: nextTo &
+80-35: none
+80-39: none
+80-5: touch <
+80-56: nextTo &
+81-16: step 8
+81-46: within ; 4
+81-81: nextTo O
+82-41: nextTo &
+83-67: none
+83-90: within ^ 10
+84-23: none
+84-56: none
+85-47: step 9
+85-71: none
+86-15: touch ^
+86-20: none
+86-49: touch ^
+86-66: none
+87-34: within @ 10
+87-38: nextTo >
+87-42: touch D
+87-59: step 2
+87-66: step 7
+87-72: nextTo X
+87-87: within > 8
+88-41: none
+88-62: nextTo ^
+89-10: none
+89-47: touch O
+9-65: within ! 4
+9-79: none
+9-83: touch @
+9-88: none
+90-33: within > 4
+90-51: nextTo X
+90-53: nextTo >
+90-61: touch ;
+90-70: step 1
+90-8: step 5
+91-31: step 3
+91-34: within * 10
+91-42: within < 6
+91-71: touch @
+92-16: touch ^
+92-50: step 4
+93-25: none
+93-35: step 3
+93-53: step 6
+
+O:
+-- NODES --
+0: idle
+1: move_wall ^
+2: add @
+3: chase @
+4: add $
+5: add >
+6: chase >
+7: chase D
+8: move_wall &
+9: chase X
+10: transform <
+11: move_wall !
+12: push @
+13: push &
+14: chase <
+15: add ;
+16: transform &
+17: add O
+18: push D
+19: transform $
+20: transform M
+21: add +
+22: add &
+23: take &
+24: transform X
+25: add D
+26: take ^
+27: transform @
+28: chase S
+29: push +
+30: add !
+31: take +
+32: take *
+33: move_wall S
+34: take <
+35: move_wall *
+36: take ;
+37: chase M
+38: push >
+39: transform ^
+40: move_wall @
+41: chase &
+42: move_wall >
+43: chase ;
+44: chase ^
+45: push S
+46: transform S
+47: transform >
+48: push X
+49: move_wall D
+50: chase +
+51: take >
+52: push !
+53: move_wall O
+54: add *
+55: chase !
+56: take $
+57: transform ;
+58: push ^
+59: chase O
+60: add <
+61: take D
+62: move_wall M
+63: push O
+64: move_wall ;
+65: move_wall +
+66: transform D
+67: take O
+68: push <
+69: push *
+70: transform !
+71: chase *
+72: push M
+73: transform *
+74: push $
+75: add X
+76: move
+77: add ^
+78: transform +
+79: transform O
+80: take X
+81: clone
+82: take M
+83: move_wall <
+84: take !
+85: die
+86: take S
+87: add S
+88: chase $
+89: push ;
+90: move_wall X
+91: move_wall $
+92: take @
+93: add M
+-- EDGES --
+0-10: none
+0-6: touch @
+1-71: nextTo D
+10-45: step 1
+10-71: step 5
+10-79: touch >
+11-57: step 7
+11-65: touch ;
+11-67: nextTo ^
+11-82: none
+12-34: within & 3
+12-50: none
+12-60: step 3
+13-25: within D 9
+13-46: none
+13-73: within @ 7
+13-84: within & 3
+14-8: touch <
+15-32: none
+15-86: within + 9
+15-9: step 10
+16-19: touch ^
+16-24: none
+16-30: step 6
+16-79: none
+16-81: touch ;
+16-93: none
+17-16: none
+17-36: nextTo &
+18-45: nextTo D
+18-75: none
+18-84: none
+19-32: nextTo !
+19-52: within > 1
+19-83: touch <
+2-61: nextTo M
+20-55: none
+21-45: none
+21-6: nextTo @
+21-82: touch >
+22-49: none
+22-90: none
+23-6: nextTo <
+23-83: none
+24-42: step 4
+24-52: within + 5
+24-63: nextTo !
+25-17: within ! 2
+25-26: within @ 2
+25-27: nextTo &
+25-40: touch &
+25-63: within X 10
+26-5: within D 6
+26-90: nextTo <
+26-91: step 6
+27-39: nextTo !
+28-27: within X 4
+28-47: nextTo S
+28-75: touch O
+28-78: within > 5
+28-79: touch ;
+29-15: nextTo @
+29-37: touch ^
+29-4: step 4
+29-47: nextTo <
+29-68: touch S
+29-88: step 4
+3-24: none
+3-58: touch D
+3-62: none
+3-7: within < 1
+3-91: touch @
+30-13: touch >
+30-34: none
+30-49: within $ 2
+30-67: none
+30-71: nextTo ;
+30-75: none
+31-36: touch <
+31-73: within ^ 3
+33-51: step 2
+34-12: none
+34-14: nextTo +
+34-51: touch <
+34-6: none
+34-66: touch O
+34-67: within M 7
+34-82: step 1
+35-0: none
+35-4: within @ 5
+35-48: step 3
+35-64: nextTo <
+36-17: none
+36-22: within D 3
+36-3: touch +
+36-38: step 10
+36-4: nextTo S
+36-41: none
+36-66: step 3
+37-14: nextTo S
+37-9: nextTo <
+38-7: touch &
+4-43: touch ^
+40-38: touch O
+41-77: none
+42-46: none
+43-44: touch M
+43-45: touch ;
+43-48: step 10
+43-61: touch >
+44-3: touch &
+45-28: step 4
+45-62: touch S
+46-17: none
+46-5: touch X
+46-88: touch <
+47-48: none
+47-5: within @ 2
+47-64: within ! 8
+47-78: nextTo S
+48-19: none
+48-45: none
+48-77: nextTo O
+49-2: step 9
+49-23: touch >
+49-85: within ^ 1
+5-40: touch M
+5-59: none
+50-3: none
+50-55: touch *
+51-15: touch $
+51-24: nextTo *
+51-55: none
+51-77: within < 9
+52-12: touch ;
+53-12: none
+53-46: within ; 4
+53-48: none
+53-63: step 5
+54-24: step 10
+54-33: none
+54-39: within ^ 3
+54-41: none
+54-44: within ^ 4
+54-74: step 9
+55-3: step 6
+55-73: nextTo O
+56-21: step 2
+56-28: step 4
+56-43: touch @
+56-62: nextTo +
+56-70: within X 7
+57-15: within S 3
+57-27: touch ^
+57-43: step 5
+58-19: step 10
+58-69: step 10
+59-39: within < 3
+59-43: none
+59-48: nextTo D
+59-69: step 9
+6-19: none
+6-28: within ; 10
+60-16: nextTo S
+60-60: none
+60-68: step 1
+61-2: touch @
+61-48: within O 8
+61-53: touch !
+61-62: step 10
+61-64: none
+61-80: nextTo D
+61-91: within > 3
+62-18: step 8
+62-68: touch O
+63-59: touch *
+64-68: within < 5
+64-78: touch S
+65-0: none
+65-28: within < 6
+65-80: within * 3
+65-92: within + 5
+66-17: nextTo M
+66-27: nextTo !
+66-47: within & 2
+66-79: nextTo O
+66-88: touch +
+67-1: nextTo <
+67-10: nextTo X
+67-39: step 2
+67-82: step 3
+67-88: touch D
+69-1: nextTo !
+69-24: touch X
+69-26: step 7
+69-30: step 3
+69-32: nextTo ;
+69-8: touch &
+69-82: nextTo >
+7-2: none
+7-45: touch +
+7-75: nextTo X
+7-76: nextTo X
+7-84: within ; 1
+70-85: none
+70-9: within ^ 5
+71-28: step 4
+71-92: step 8
+72-89: step 6
+73-10: step 9
+73-44: within O 2
+74-1: nextTo D
+74-20: within $ 4
+74-32: within ^ 6
+74-92: step 8
+75-48: nextTo <
+75-74: within ! 8
+77-30: within D 1
+77-66: none
+78-15: touch $
+78-73: step 5
+78-8: nextTo +
+79-11: none
+79-42: none
+79-53: within > 7
+8-19: step 6
+8-37: step 2
+80-37: within X 7
+80-42: touch D
+80-50: within > 10
+80-78: nextTo &
+81-25: none
+81-57: touch @
+81-92: within ; 2
+82-54: none
+82-56: none
+82-9: none
+83-4: none
+83-86: touch ;
+84-29: within * 1
+84-72: step 10
+86-1: none
+86-57: none
+87-22: nextTo S
+87-35: touch $
+87-40: within O 5
+87-50: none
+87-60: step 7
+88-29: step 9
+88-55: step 5
+88-70: touch *
+88-93: within X 1
+89-31: none
+89-55: nextTo >
+89-9: touch O
+9-48: touch >
+9-50: step 3
+9-73: within ^ 4
+9-77: nextTo X
+9-86: none
+90-20: within * 10
+90-56: nextTo ;
+90-59: nextTo O
+90-61: step 4
+90-62: touch ;
+91-13: nextTo >
+91-71: step 2
+92-21: nextTo $
+92-31: within > 1
+92-33: touch ;
+92-35: nextTo O
+92-60: none
+92-87: none
+93-33: within > 6
+93-38: within & 5
+93-72: none
+93-90: none
+
+!:
+-- NODES --
+0: idle
+1: transform S
+2: take O
+3: add O
+4: push D
+5: transform $
+6: transform *
+7: transform O
+8: take *
+9: transform X
+10: transform !
+11: push ;
+12: add !
+13: push X
+14: take X
+15: chase ^
+16: move_wall !
+17: chase !
+18: take &
+19: clone
+20: add *
+21: add <
+22: take D
+23: push !
+24: add D
+25: transform ;
+26: push <
+27: move_wall *
+28: add +
+29: move_wall <
+30: push ^
+31: add ;
+32: push S
+33: add &
+34: move_wall S
+35: move_wall O
+36: chase S
+37: die
+38: transform <
+39: transform ^
+40: add S
+41: move_wall X
+42: move_wall &
+43: take @
+44: chase >
+45: push *
+46: take >
+47: move_wall $
+48: add >
+49: chase *
+50: take S
+51: transform D
+52: push M
+53: add $
+54: take ;
+55: chase $
+56: chase <
+57: take <
+58: transform &
+59: chase ;
+60: push +
+61: move_wall @
+62: transform @
+63: chase O
+64: push @
+65: move_wall D
+66: push &
+67: add @
+68: add ^
+69: chase M
+70: take M
+71: move_wall ^
+72: push >
+73: transform +
+74: take +
+75: chase X
+76: add M
+77: move_wall M
+78: transform >
+79: add X
+80: take ^
+81: push $
+82: move_wall ;
+83: chase &
+84: move_wall >
+85: take !
+86: chase D
+87: move_wall +
+88: push O
+89: chase +
+90: take $
+91: move
+92: transform M
+93: chase @
+-- EDGES --
+0-11: step 7
+0-4: within < 4
+0-46: touch $
+0-55: touch ^
+0-66: touch +
+0-68: within $ 2
+0-86: within X 9
+0-88: step 1
+1-19: within * 7
+1-89: touch O
+10-37: none
+10-43: step 1
+10-7: within O 9
+11-1: nextTo S
+11-10: none
+11-50: step 10
+11-88: touch D
+12-20: none
+12-41: nextTo $
+12-52: step 6
+12-61: step 6
+13-23: step 4
+13-3: nextTo $
+13-51: touch <
+13-61: none
+13-66: nextTo ^
+13-87: step 4
+14-54: step 4
+14-70: touch >
+14-90: touch X
+15-59: touch D
+16-0: within O 4
+16-38: nextTo !
+16-4: none
+16-64: touch >
+16-75: touch !
+17-60: within O 8
+17-64: step 2
+19-8: nextTo D
+19-91: none
+20-18: within X 9
+20-3: nextTo ^
+20-83: nextTo ^
+21-27: step 7
+21-38: within ^ 9
+21-40: within S 4
+21-83: touch !
+22-16: nextTo D
+22-3: none
+22-50: nextTo >
+22-62: none
+22-72: touch D
+22-90: nextTo D
+24-27: step 4
+24-34: step 3
+24-45: nextTo $
+24-67: touch M
+25-23: none
+25-24: none
+25-28: none
+25-54: touch +
+25-62: nextTo !
+26-40: nextTo ^
+26-57: touch !
+26-6: none
+27-1: nextTo $
+27-32: none
+27-71: step 1
+27-75: none
+28-42: none
+28-93: step 9
+29-5: none
+29-51: within + 3
+29-57: within ! 3
+29-79: none
+3-6: step 9
+3-92: within X 7
+30-33: none
+30-46: touch *
+30-67: step 2
+30-8: touch M
+31-47: touch $
+31-69: within ! 1
+32-20: nextTo O
+32-24: none
+32-25: none
+32-59: nextTo ;
+32-78: touch <
+33-12: nextTo M
+33-17: step 10
+33-22: none
+33-79: nextTo ;
+34-2: step 10
+34-47: nextTo O
+34-56: none
+34-79: nextTo $
+35-3: touch S
+35-40: step 7
+36-34: within > 4
+37-46: within O 5
+37-70: within > 2
+38-31: none
+38-46: step 3
+39-0: nextTo M
+39-11: step 1
+39-16: within & 5
+39-49: touch D
+39-73: nextTo !
+39-78: none
+4-21: step 5
+4-29: step 10
+4-47: none
+4-77: step 5
+40-81: within D 2
+41-16: touch ^
+41-44: step 4
+41-84: step 10
+43-26: step 8
+43-57: within X 9
+43-75: nextTo ;
+44-23: touch M
+44-5: within O 10
+44-82: nextTo @
+45-3: step 1
+45-36: touch <
+45-80: none
+46-83: touch &
+47-22: nextTo S
+47-63: within < 10
+47-66: none
+48-34: within + 9
+48-85: touch +
+49-89: none
+5-22: touch O
+5-28: nextTo +
+5-54: within ; 2
+50-22: step 10
+51-29: within M 5
+51-44: none
+52-13: nextTo D
+52-26: touch $
+52-33: within ! 8
+53-28: within > 7
+53-60: within ^ 4
+53-92: touch @
+53-93: within $ 8
+54-4: within D 7
+54-74: step 1
+56-40: nextTo M
+56-41: touch ;
+56-87: step 3
+57-34: touch +
+57-52: touch *
+57-63: touch &
+58-19: step 6
+58-27: within ! 8
+58-36: nextTo M
+58-4: nextTo O
+58-48: step 7
+58-7: touch M
+58-79: step 3
+59-19: nextTo <
+59-26: within * 5
+59-79: nextTo D
+59-8: touch *
+6-22: step 6
+6-43: nextTo ;
+6-60: touch ;
+6-63: step 3
+6-73: none
+6-75: within @ 6
+60-3: none
+60-56: nextTo O
+60-6: touch >
+60-83: within ! 3
+61-24: within + 7
+61-33: nextTo <
+61-44: step 5
+63-36: none
+63-47: within D 4
+63-61: step 8
+63-81: none
+63-9: none
+64-53: step 1
+64-80: within ^ 3
+64-91: within $ 1
+65-15: within ! 1
+65-63: touch &
+66-32: within * 9
+66-35: step 10
+67-11: within + 4
+67-35: within @ 6
+67-54: none
+68-36: within < 8
+68-79: nextTo S
+69-47: touch D
+69-64: none
+69-8: touch +
+7-20: none
+7-39: nextTo &
+71-15: nextTo >
+71-33: touch >
+71-57: none
+71-92: touch M
+72-42: touch *
+73-51: step 3
+74-30: none
+74-34: none
+74-69: none
+74-91: none
+75-10: nextTo &
+75-12: step 4
+75-18: touch @
+75-25: touch @
+75-7: touch $
+75-76: within ! 2
+75-80: touch ;
+76-2: touch O
+76-36: none
+76-50: none
+77-21: within < 4
+77-63: within X 10
+77-68: nextTo S
+78-74: touch ^
+79-12: nextTo S
+79-16: step 9
+79-24: step 6
+79-70: within < 7
+8-23: touch >
+8-37: touch >
+8-74: within * 8
+80-13: step 6
+80-50: none
+81-34: touch D
+81-88: nextTo *
+81-92: nextTo @
+82-37: within & 10
+82-81: nextTo ;
+83-68: step 2
+84-51: none
+85-14: within D 6
+85-30: nextTo $
+85-37: within D 2
+85-57: nextTo S
+85-68: touch O
+85-78: touch &
+86-42: touch &
+86-65: none
+86-77: nextTo X
+86-90: nextTo +
+87-18: none
+88-31: none
+88-52: touch M
+88-56: none
+88-87: nextTo ;
+88-90: none
+89-53: step 9
+89-64: nextTo ;
+89-81: step 6
+9-59: nextTo X
+9-75: none
+90-58: none
+91-21: none
+91-32: nextTo M
+91-58: within M 9
+91-72: nextTo ^
+92-14: within > 2
+92-22: touch <
+92-40: within < 5
+92-45: step 1
+92-5: step 9
+93-20: within ; 5
+93-23: nextTo X
+93-59: none
+93-81: nextTo >
+
+<:
+-- NODES --
+0: idle
+1: add X
+2: take <
+3: take ^
+4: chase ^
+5: take D
+6: push @
+7: transform ^
+8: move_wall M
+9: add S
+10: die
+11: transform M
+12: move_wall &
+13: clone
+14: transform D
+15: move_wall O
+16: add &
+17: push >
+18: take >
+19: push D
+20: add @
+21: take $
+22: add >
+23: move_wall S
+24: chase S
+25: push X
+26: transform >
+27: push &
+28: push +
+29: chase $
+30: add *
+31: move_wall ^
+32: add +
+33: move_wall $
+34: move_wall @
+35: add !
+36: push O
+37: chase &
+38: chase >
+39: add O
+40: move_wall D
+41: push M
+42: add $
+43: transform +
+44: transform ;
+45: move_wall +
+46: transform O
+47: take M
+48: transform *
+49: chase O
+50: chase M
+51: add <
+52: chase @
+53: chase !
+54: transform S
+55: transform &
+56: take +
+57: chase D
+58: transform X
+59: take *
+60: push ^
+61: push ;
+62: take &
+63: take O
+64: take S
+65: move_wall >
+66: add ;
+67: push $
+68: chase +
+69: move_wall ;
+70: push *
+71: take X
+72: transform $
+73: transform !
+74: move_wall X
+75: chase X
+76: move_wall *
+77: take ;
+78: transform @
+79: push !
+80: transform <
+81: add M
+82: push <
+83: add ^
+84: push S
+85: move_wall !
+86: take @
+87: take !
+88: chase <
+89: move_wall <
+90: add D
+91: chase ;
+92: move
+93: chase *
+-- EDGES --
+0-18: none
+0-22: none
+0-36: none
+0-40: nextTo $
+0-42: touch *
+0-53: nextTo !
+0-84: nextTo S
+1-30: within * 7
+1-88: step 9
+10-36: touch S
+10-47: touch &
+11-21: touch S
+11-25: nextTo O
+11-39: none
+11-84: none
+12-45: nextTo &
+12-84: step 2
+13-34: within + 4
+13-57: touch &
+13-74: within ; 2
+14-12: within X 10
+14-19: touch X
+14-27: within + 4
+14-39: none
+14-93: none
+15-54: touch X
+15-59: none
+15-60: none
+15-66: step 8
+15-77: step 4
+15-84: within O 1
+16-12: none
+16-44: nextTo X
+16-64: nextTo M
+16-93: step 6
+17-13: within ^ 6
+17-57: none
+17-88: none
+17-9: touch +
+18-35: touch S
+18-36: touch M
+18-51: touch <
+18-52: nextTo @
+19-1: nextTo M
+19-2: touch D
+19-5: none
+19-73: step 4
+2-16: within S 9
+2-55: step 6
+2-80: nextTo ;
+20-10: touch !
+20-11: none
+20-16: nextTo !
+20-62: none
+20-63: step 5
+20-68: step 5
+21-38: none
+22-0: within X 5
+22-75: none
+22-86: touch @
+23-20: none
+23-69: within ! 2
+23-89: none
+23-93: step 8
+24-51: nextTo D
+25-33: touch &
+25-35: nextTo *
+25-41: touch O
+25-47: touch +
+25-51: step 8
+25-6: touch S
+25-65: none
+25-77: step 9
+25-90: step 7
+26-3: touch X
+27-0: none
+27-84: within < 4
+27-87: none
+27-88: step 6
+28-45: nextTo &
+28-6: touch ^
+29-65: step 8
+29-90: touch X
+3-39: none
+3-66: within $ 6
+3-68: step 4
+3-78: step 4
+30-3: nextTo O
+30-40: none
+31-55: within O 4
+31-89: step 7
+31-92: within ! 6
+32-44: none
+33-15: nextTo D
+33-19: nextTo $
+33-77: step 5
+34-41: touch *
+34-46: none
+34-85: touch @
+35-31: touch +
+35-49: touch <
+35-66: nextTo +
+35-83: touch ^
+35-91: touch +
+36-67: nextTo <
+37-15: step 5
+37-24: within < 10
+37-54: none
+37-73: step 4
+37-9: none
+38-17: touch X
+39-13: step 3
+39-21: step 7
+4-14: none
+4-3: none
+4-63: within M 7
+40-13: step 8
+40-7: within + 2
+40-92: touch M
+41-26: touch !
+41-43: step 8
+41-82: within M 9
+42-11: nextTo O
+42-13: nextTo !
+42-21: within & 3
+42-61: within S 5
+42-7: within ^ 4
+42-87: touch <
+43-16: touch D
+43-43: within ! 8
+43-83: nextTo M
+43-92: touch O
+44-10: step 5
+44-43: nextTo D
+44-46: within & 4
+44-48: none
+44-61: touch @
+44-76: touch >
+44-77: none
+45-18: within ^ 9
+45-48: nextTo <
+45-83: step 10
+46-5: touch <
+46-78: none
+47-50: touch *
+47-72: touch >
+48-18: none
+48-3: within ^ 5
+48-30: within O 5
+48-43: within ; 5
+48-91: none
+49-58: within ! 2
+49-76: touch <
+49-93: none
+5-30: step 9
+5-31: nextTo M
+50-3: nextTo $
+50-38: touch *
+50-5: nextTo O
+51-26: step 4
+52-0: touch !
+52-74: none
+53-16: none
+53-18: within $ 9
+53-64: within X 1
+54-22: none
+54-47: within + 8
+54-71: none
+55-33: within * 10
+55-43: none
+56-16: touch X
+56-19: step 6
+56-20: nextTo $
+56-25: nextTo S
+56-53: within ^ 8
+56-70: nextTo !
+57-19: step 4
+57-28: step 9
+57-72: none
+58-23: within * 1
+58-44: within @ 6
+58-57: within & 3
+58-71: none
+58-92: none
+59-1: step 6
+59-26: step 10
+59-58: step 5
+59-86: within ; 8
+6-10: touch $
+6-15: touch ;
+6-30: nextTo *
+60-68: touch ;
+60-80: none
+61-14: within ^ 6
+61-26: step 5
+62-42: within ; 9
+62-59: within D 3
+62-85: touch &
+62-88: none
+64-18: within S 7
+64-20: touch D
+64-23: step 1
+64-60: none
+64-61: step 4
+64-78: step 2
+65-31: none
+65-53: none
+65-90: touch $
+66-20: touch <
+66-33: step 2
+66-35: none
+66-38: step 6
+66-72: within > 1
+67-20: none
+67-65: within D 4
+68-19: nextTo +
+68-27: step 5
+68-33: none
+68-54: within S 5
+68-9: touch M
+69-79: touch $
+7-81: nextTo ;
+70-10: touch *
+70-5: step 4
+70-64: within ! 4
+70-85: within ^ 1
+71-22: none
+71-29: step 3
+71-9: touch <
+72-45: nextTo *
+72-6: none
+73-33: step 9
+73-71: touch M
+74-75: touch <
+75-92: none
+76-4: none
+77-5: within S 1
+77-63: none
+77-79: step 7
+77-85: step 9
+79-18: nextTo &
+79-20: within @ 6
+79-78: within M 6
+8-15: touch ^
+8-20: within S 2
+8-32: touch &
+8-56: step 1
+8-69: touch X
+8-86: step 10
+80-66: none
+80-8: within > 8
+81-11: touch *
+83-40: within D 7
+84-86: nextTo *
+84-88: step 7
+85-17: nextTo !
+85-29: nextTo >
+85-31: nextTo +
+85-89: within O 1
+86-80: nextTo ;
+87-32: step 7
+87-69: none
+88-1: nextTo >
+89-49: within O 9
+89-5: step 2
+89-80: touch $
+9-19: touch >
+9-23: within > 7
+9-36: within M 6
+90-10: nextTo $
+90-67: touch >
+90-73: step 5
+90-83: step 6
+91-20: step 7
+91-22: nextTo @
+91-25: touch $
+91-37: touch ^
+91-81: none
+93-76: nextTo *
+
+;:
+-- NODES --
+0: idle
+1: chase S
+2: add ^
+3: chase *
+4: push @
+5: take &
+6: transform !
+7: move_wall M
+8: transform <
+9: move_wall O
+10: push S
+11: move_wall $
+12: push !
+13: take O
+14: transform O
+15: move_wall ^
+16: add !
+17: take >
+18: die
+19: add X
+20: push D
+21: add *
+22: transform >
+23: push X
+24: take !
+25: move_wall ;
+26: push M
+27: chase +
+28: add <
+29: move_wall D
+30: take <
+31: take ^
+32: add @
+33: move
+34: take M
+35: take X
+36: take D
+37: push $
+38: add M
+39: add $
+40: transform +
+41: transform M
+42: transform *
+43: add O
+44: transform &
+45: move_wall &
+46: transform S
+47: push &
+48: add S
+49: chase $
+50: push *
+51: push O
+52: chase ^
+53: chase <
+54: chase ;
+55: transform ;
+56: move_wall S
+57: take *
+58: transform ^
+59: move_wall *
+60: add &
+61: chase M
+62: move_wall !
+63: push +
+64: take ;
+65: transform @
+66: transform D
+67: move_wall <
+68: take @
+69: add +
+70: move_wall @
+71: push ^
+72: chase D
+73: push >
+74: move_wall X
+75: chase >
+76: take +
+77: add D
+78: transform X
+79: transform $
+80: chase O
+81: take S
+82: chase @
+83: move_wall +
+84: take $
+85: chase !
+86: push <
+87: push ;
+88: chase X
+89: move_wall >
+90: add ;
+91: clone
+92: add >
+93: chase &
+-- EDGES --
+0-25: none
+0-27: step 7
+0-32: nextTo X
+0-43: step 6
+0-57: none
+0-91: nextTo !
+1-30: nextTo ;
+1-47: within ^ 1
+1-87: touch $
+10-48: touch X
+10-61: none
+11-45: none
+12-3: nextTo M
+13-4: none
+13-65: within ; 6
+14-36: none
+14-45: within D 2
+14-51: step 6
+14-68: step 1
+14-86: touch @
+15-79: step 4
+16-18: touch @
+16-34: none
+17-28: within @ 1
+17-34: nextTo >
+18-28: nextTo M
+18-6: touch +
+18-8: within M 6
+18-85: nextTo +
+19-20: nextTo &
+19-83: within ! 4
+19-88: touch O
+20-1: step 2
+20-14: touch ^
+20-46: nextTo &
+20-51: within @ 10
+20-77: within O 4
+21-30: none
+21-56: none
+22-16: within > 1
+22-7: touch M
+23-21: none
+23-26: within < 6
+23-36: touch D
+23-69: touch M
+23-70: nextTo X
+23-80: touch @
+24-16: step 6
+24-30: within + 3
+24-47: touch X
+24-59: nextTo O
+25-35: step 4
+25-55: none
+25-9: nextTo ^
+26-14: nextTo <
+26-48: step 2
+26-49: touch +
+26-52: touch S
+26-66: none
+27-22: nextTo D
+27-47: within > 2
+27-78: touch @
+27-89: within X 9
+28-11: none
+28-38: nextTo >
+28-67: within @ 10
+28-76: step 1
+28-81: nextTo +
+29-39: nextTo X
+29-5: touch ^
+3-26: touch *
+3-47: step 9
+3-90: step 7
+30-13: none
+30-42: none
+30-47: step 10
+30-64: nextTo +
+30-70: touch >
+30-92: none
+31-4: nextTo X
+31-72: touch >
+32-17: nextTo !
+32-47: step 8
+33-20: step 3
+34-0: touch !
+34-41: within X 8
+34-70: within O 8
+36-52: none
+36-57: step 5
+37-17: nextTo ^
+37-33: within > 10
+38-59: nextTo M
+4-19: nextTo &
+4-22: touch >
+4-4: within D 5
+4-6: step 3
+4-74: touch >
+4-90: step 4
+40-67: nextTo O
+41-6: step 2
+41-91: none
+42-34: within @ 3
+42-37: step 4
+42-7: step 1
+43-46: none
+45-28: step 3
+45-48: touch *
+45-85: step 7
+45-91: within @ 3
+46-30: touch @
+46-45: within > 1
+46-50: none
+46-66: step 2
+46-79: within $ 6
+46-83: step 4
+47-1: within * 10
+47-21: nextTo ^
+47-22: none
+47-37: step 9
+47-58: touch X
+47-71: none
+47-84: touch ^
+48-39: within & 10
+48-53: within S 2
+48-63: step 4
+48-80: none
+49-90: touch S
+5-22: nextTo &
+5-35: nextTo &
+5-39: within & 1
+5-59: nextTo O
+5-93: within ; 7
+50-40: step 9
+50-47: within < 2
+50-56: step 6
+50-59: nextTo @
+50-6: touch @
+51-19: touch ^
+51-59: touch &
+52-24: touch S
+53-65: nextTo &
+53-89: within O 2
+54-15: nextTo +
+54-26: nextTo *
+54-31: nextTo >
+54-51: touch @
+54-69: none
+54-81: nextTo D
+54-88: touch &
+55-14: none
+55-18: step 7
+55-29: nextTo !
+55-3: nextTo >
+55-41: step 3
+55-88: touch M
+56-70: within $ 10
+58-62: touch D
+58-79: nextTo M
+59-22: touch !
+59-46: within M 10
+6-88: touch @
+60-32: nextTo *
+60-36: none
+60-40: touch $
+61-1: none
+61-19: step 6
+62-34: within O 4
+62-65: nextTo ;
+62-76: within < 6
+62-80: nextTo *
+63-40: within @ 7
+63-60: within M 8
+63-7: step 3
+63-86: nextTo D
+64-10: nextTo &
+64-24: none
+64-29: touch ^
+64-57: step 1
+64-66: nextTo >
+64-87: none
+65-66: touch ^
+66-0: touch $
+66-67: within + 6
+66-8: step 9
+66-87: touch S
+67-20: touch >
+67-65: none
+67-7: within O 5
+67-77: step 5
+68-1: nextTo ;
+68-32: touch !
+68-45: step 9
+68-52: none
+68-63: step 7
+69-21: touch X
+69-44: touch >
+69-51: step 3
+69-91: nextTo !
+7-13: nextTo $
+70-16: none
+70-39: nextTo &
+70-55: nextTo @
+70-65: none
+70-71: step 9
+70-73: touch ^
+71-2: none
+71-86: touch ;
+72-63: touch O
+72-64: nextTo *
+73-28: nextTo &
+73-31: nextTo >
+73-33: within & 5
+73-35: within < 1
+73-54: touch ;
+73-72: within & 6
+75-12: step 4
+75-66: none
+75-9: nextTo *
+76-20: touch !
+77-26: touch D
+77-50: within < 2
+78-31: nextTo !
+78-54: within & 4
+79-34: touch >
+79-48: none
+8-5: within O 5
+80-25: touch <
+80-49: within * 10
+80-82: none
+81-44: touch <
+81-70: within M 1
+81-80: step 10
+81-89: none
+81-92: nextTo $
+82-4: none
+82-48: nextTo ^
+82-78: nextTo <
+83-60: step 9
+83-62: step 5
+83-77: within O 3
+83-85: step 10
+84-2: within ; 7
+84-68: touch O
+84-87: nextTo <
+85-15: step 9
+85-27: none
+85-89: none
+85-9: nextTo ^
+86-15: within & 3
+86-5: none
+86-75: nextTo +
+86-79: within @ 3
+87-31: touch X
+87-57: within X 5
+87-84: none
+88-27: touch &
+88-34: none
+88-56: step 1
+88-74: none
+89-37: step 1
+89-88: none
+9-26: within < 10
+9-86: touch $
+9-88: nextTo *
+9-89: none
+90-28: nextTo $
+90-42: nextTo $
+90-84: within ! 5
+91-16: none
+91-51: touch $
+92-57: within X 8
+92-86: none
+93-16: none
+93-23: within @ 10
+93-53: nextTo X
+93-61: within D 9
+93-82: nextTo *
+
+D:
+-- NODES --
+0: idle
+1: take &
+2: add &
+3: add D
+4: chase >
+5: move_wall &
+6: move_wall @
+7: move_wall X
+8: take S
+9: take ;
+10: add S
+11: add X
+12: take <
+13: chase <
+14: push $
+15: transform O
+16: push &
+17: take @
+18: take O
+19: chase &
+20: push D
+21: chase +
+22: push <
+23: add ^
+24: move_wall ^
+25: add +
+26: chase $
+27: transform D
+28: chase ^
+29: take D
+30: push O
+31: transform S
+32: chase S
+33: chase ;
+34: chase O
+35: push !
+36: move_wall S
+37: chase !
+38: move_wall <
+39: chase D
+40: transform !
+41: add >
+42: add ;
+43: transform @
+44: take ^
+45: transform M
+46: push *
+47: move_wall ;
+48: move_wall >
+49: transform >
+50: move_wall D
+51: chase M
+52: chase @
+53: move_wall !
+54: take *
+55: transform ;
+56: add M
+57: transform X
+58: transform $
+59: take M
+60: transform &
+61: add O
+62: chase *
+63: transform ^
+64: transform +
+65: chase X
+66: move_wall $
+67: add @
+68: take +
+69: add <
+70: add *
+71: take >
+72: add !
+73: clone
+74: move_wall O
+75: push @
+76: transform *
+77: die
+78: move_wall +
+79: take !
+80: push >
+81: move_wall M
+82: move_wall *
+83: add $
+84: take $
+85: move
+86: push S
+87: push ^
+88: transform <
+89: take X
+90: push M
+91: push ;
+92: push X
+93: push +
+-- EDGES --
+0-17: nextTo $
+1-18: nextTo ^
+1-30: nextTo &
+1-56: none
+1-75: within $ 9
+10-15: within $ 1
+10-69: none
+10-73: within ^ 9
+11-51: nextTo >
+11-59: within S 6
+12-19: step 3
+12-21: touch O
+12-49: step 7
+13-37: none
+13-7: touch M
+13-88: within X 6
+13-93: touch D
+14-77: within * 7
+15-26: step 5
+15-4: nextTo ;
+15-42: none
+15-71: within * 2
+15-81: within @ 9
+16-1: touch *
+16-60: within X 4
+16-79: touch ;
+18-34: step 3
+18-6: nextTo <
+19-2: none
+19-24: nextTo ;
+19-87: touch M
+19-92: touch >
+2-56: within O 9
+2-66: step 4
+20-12: none
+20-5: within $ 1
+20-55: within * 3
+20-57: nextTo >
+20-72: nextTo ^
+20-87: none
+21-40: step 10
+21-47: nextTo D
+21-5: touch M
+21-72: nextTo S
+22-49: touch *
+22-59: nextTo <
+22-92: within S 8
+23-17: step 10
+23-20: none
+23-31: nextTo &
+23-74: step 7
+23-79: touch S
+24-38: step 2
+24-49: step 8
+24-78: nextTo <
+25-44: step 8
+25-48: touch X
+25-5: within ^ 2
+25-71: within ^ 3
+26-36: within M 5
+26-46: step 6
+27-40: nextTo X
+27-58: touch >
+28-2: within O 10
+28-27: nextTo <
+28-85: none
+29-13: within S 2
+29-4: none
+29-53: none
+29-66: none
+29-72: within O 2
+3-3: touch @
+3-34: within ^ 4
+3-35: nextTo D
+3-39: within < 10
+3-50: none
+3-8: touch !
+3-92: none
+30-16: nextTo >
+30-84: nextTo X
+31-12: within ! 6
+31-89: nextTo M
+32-32: nextTo S
+32-77: within & 9
+33-40: step 10
+33-63: none
+34-17: none
+34-18: step 5
+34-54: within ^ 6
+35-22: step 4
+35-52: nextTo D
+35-79: step 6
+36-35: step 7
+36-41: none
+37-25: step 4
+37-27: step 1
+37-31: step 10
+37-91: nextTo !
+38-48: touch O
+38-63: none
+38-66: within ; 9
+38-83: nextTo >
+39-29: touch D
+39-36: touch @
+4-66: within ^ 6
+40-31: nextTo ^
+40-68: nextTo D
+41-38: none
+41-4: touch !
+41-66: touch M
+41-70: touch <
+41-76: within ; 9
+42-21: within D 8
+42-32: within D 3
+42-60: step 4
+43-45: none
+44-12: none
+44-44: touch M
+44-67: touch O
+44-9: within < 5
+45-59: step 1
+45-60: step 8
+45-68: nextTo D
+46-1: none
+46-29: nextTo O
+46-58: within + 2
+46-64: nextTo M
+46-85: none
+46-87: none
+46-89: within ^ 2
+47-24: none
+47-48: nextTo D
+47-54: nextTo <
+47-78: touch M
+48-42: within ; 4
+48-62: within @ 4
+49-35: touch X
+49-52: none
+49-54: touch >
+49-65: touch D
+49-84: touch <
+5-21: none
+5-29: within @ 8
+5-82: step 5
+50-25: step 8
+50-41: touch @
+50-48: within < 3
+50-68: step 2
+50-78: step 6
+52-37: none
+52-66: touch &
+52-69: touch S
+53-12: none
+53-69: nextTo ;
+54-15: touch D
+54-23: step 1
+55-89: step 1
+56-46: touch $
+57-41: nextTo ^
+57-89: none
+59-11: step 4
+59-23: nextTo !
+59-4: nextTo >
+59-74: within > 9
+59-84: nextTo S
+6-80: nextTo @
+60-10: touch M
+60-6: none
+61-3: step 9
+61-41: nextTo *
+61-5: within ! 3
+61-77: step 8
+61-93: none
+62-25: step 3
+62-45: nextTo +
+62-68: none
+62-83: nextTo >
+65-40: none
+65-74: within M 3
+66-37: within ! 9
+66-48: touch O
+66-53: step 4
+66-70: nextTo X
+66-86: step 9
+67-22: none
+67-32: within ! 6
+67-45: none
+67-69: touch D
+67-76: touch $
+67-9: none
+68-3: touch >
+68-41: nextTo <
+68-45: within X 6
+68-62: step 9
+69-21: none
+69-22: step 9
+69-32: none
+69-41: none
+69-42: nextTo <
+69-67: step 10
+7-0: within * 3
+7-39: nextTo @
+7-4: within ; 4
+7-58: step 7
+7-73: within X 8
+70-43: step 4
+71-28: within ; 10
+71-62: nextTo &
+71-9: within D 5
+72-19: none
+72-28: nextTo &
+72-58: touch D
+72-63: within M 6
+72-91: step 7
+73-13: touch *
+73-66: within ; 3
+74-5: nextTo +
+74-55: step 5
+74-76: step 6
+74-86: within S 6
+75-20: touch $
+75-23: nextTo ;
+76-16: nextTo *
+76-33: nextTo !
+76-44: nextTo +
+76-60: nextTo X
+76-70: nextTo ^
+77-26: step 7
+77-41: touch O
+78-0: nextTo @
+78-28: within ; 8
+78-38: within O 5
+78-62: none
+79-78: step 1
+8-33: step 1
+8-36: touch +
+80-14: within M 3
+80-56: touch !
+80-89: touch &
+81-21: touch X
+81-25: touch +
+81-51: touch @
+81-83: none
+81-87: step 4
+82-30: none
+82-47: none
+83-13: touch ;
+83-43: within $ 5
+83-61: nextTo O
+83-87: within M 2
+84-23: within ! 7
+85-51: none
+86-37: within > 7
+86-58: within ; 10
+86-82: touch $
+86-92: within @ 10
+86-93: nextTo S
+87-39: step 2
+88-33: nextTo +
+88-6: within ! 8
+88-9: within ! 4
+89-24: within > 10
+89-27: nextTo $
+89-75: step 7
+9-10: none
+9-27: none
+9-41: step 10
+9-49: none
+90-2: none
+90-20: touch >
+90-54: none
+90-9: within > 6
+91-19: nextTo ^
+91-72: none
+92-29: touch @
+92-69: none
+92-73: within & 7
+92-90: touch >
+93-35: none
+93-93: nextTo M
+
+S:
+-- NODES --
+0: idle
+1: take *
+2: add <
+3: chase O
+4: chase <
+5: add ;
+6: add @
+7: chase &
+8: transform ^
+9: transform @
+10: move_wall D
+11: chase $
+12: move_wall ;
+13: push M
+14: add O
+15: chase !
+16: take O
+17: push >
+18: push D
+19: move_wall X
+20: move_wall +
+21: chase ^
+22: take M
+23: push X
+24: move
+25: take ^
+26: move_wall @
+27: clone
+28: push $
+29: take +
+30: add +
+31: move_wall M
+32: transform +
+33: chase +
+34: take D
+35: push O
+36: add M
+37: take !
+38: push !
+39: add >
+40: add S
+41: transform *
+42: take >
+43: push +
+44: take $
+45: add &
+46: take <
+47: chase @
+48: move_wall <
+49: add ^
+50: move_wall &
+51: move_wall *
+52: transform &
+53: chase M
+54: push S
+55: move_wall !
+56: take &
+57: transform X
+58: take S
+59: transform $
+60: push *
+61: take ;
+62: push ^
+63: move_wall S
+64: chase X
+65: transform O
+66: take @
+67: transform M
+68: take X
+69: transform <
+70: chase S
+71: move_wall $
+72: move_wall ^
+73: chase *
+74: add D
+75: push @
+76: die
+77: push <
+78: transform >
+79: transform !
+80: transform S
+81: chase >
+82: push &
+83: move_wall O
+84: add X
+85: add !
+86: add *
+87: chase D
+88: move_wall >
+89: chase ;
+90: transform ;
+91: add $
+92: transform D
+93: push ;
+-- EDGES --
+0-56: none
+0-57: touch D
+0-65: touch ^
+0-78: nextTo <
+1-3: nextTo X
+1-58: none
+1-68: nextTo S
+10-4: touch *
+11-35: touch X
+11-36: within ; 9
+11-39: step 5
+11-41: within * 5
+11-42: none
+11-78: within ; 1
+12-47: nextTo $
+13-12: none
+13-22: none
+13-78: none
+14-22: within O 2
+14-59: within D 3
+14-61: touch >
+15-0: touch &
+15-49: touch +
+15-51: step 9
+16-37: touch &
+16-38: touch +
+16-54: step 4
+16-66: touch X
+16-92: nextTo ^
+17-14: touch O
+17-21: within S 9
+17-43: nextTo M
+17-47: none
+18-41: within < 3
+19-7: none
+19-70: step 2
+19-85: step 4
+2-67: touch +
+20-17: step 10
+20-28: nextTo <
+20-32: within ! 3
+20-47: none
+20-61: nextTo +
+21-1: step 2
+21-30: none
+21-41: touch D
+21-85: nextTo @
+22-37: within O 8
+22-39: touch O
+22-74: within S 5
+23-78: within D 6
+23-91: step 3
+24-26: none
+24-59: within S 8
+26-16: none
+27-36: step 8
+27-4: nextTo <
+27-69: within ^ 4
+28-25: nextTo @
+28-29: step 3
+29-56: none
+3-27: none
+3-46: step 9
+3-74: touch O
+30-21: within + 3
+30-92: none
+31-12: within < 7
+31-5: none
+32-53: none
+32-91: nextTo S
+33-13: within M 1
+33-23: nextTo X
+33-33: touch &
+33-49: none
+33-81: step 8
+33-89: touch $
+34-50: none
+34-87: none
+34-92: within ; 2
+35-17: step 3
+35-31: within + 9
+35-84: none
+36-19: step 6
+36-48: nextTo ^
+36-62: none
+37-86: within ! 6
+38-19: within * 6
+38-29: nextTo M
+38-83: none
+39-78: touch ;
+4-28: within S 10
+4-93: none
+40-2: step 3
+40-55: within S 5
+40-7: touch D
+40-76: within + 9
+41-16: none
+41-70: touch &
+42-11: nextTo !
+42-24: touch +
+42-57: step 2
+42-58: step 10
+42-88: step 1
+43-3: step 5
+43-33: touch O
+43-51: touch !
+43-63: touch S
+44-38: touch @
+44-90: touch !
+45-19: nextTo <
+45-2: step 5
+45-48: none
+45-68: touch +
+46-53: nextTo +
+46-83: nextTo *
+46-85: within M 4
+48-3: nextTo S
+48-30: touch <
+48-42: none
+48-8: within & 5
+48-87: step 4
+49-30: nextTo X
+49-31: nextTo >
+49-43: touch ^
+49-63: nextTo !
+5-12: step 4
+5-14: within ^ 9
+5-29: nextTo *
+5-36: none
+5-61: none
+50-33: within ; 6
+50-45: nextTo D
+50-92: nextTo +
+51-63: touch <
+51-81: step 1
+52-16: within & 2
+52-18: step 6
+52-22: within O 6
+53-55: step 3
+53-63: touch &
+53-92: touch <
+54-45: nextTo !
+54-59: touch ;
+54-73: none
+55-37: nextTo >
+55-61: touch ;
+55-73: within O 9
+56-26: step 2
+56-34: nextTo D
+56-43: touch S
+57-22: none
+57-58: nextTo $
+58-0: touch S
+58-13: touch $
+58-34: within < 1
+58-37: touch O
+58-45: none
+58-76: nextTo !
+59-27: nextTo D
+59-49: touch S
+59-67: step 6
+59-80: within ; 8
+6-13: step 7
+6-35: within > 8
+6-86: nextTo ;
+60-12: step 10
+60-50: none
+60-52: within ! 10
+60-62: none
+61-22: none
+61-35: step 5
+61-54: nextTo >
+61-62: within ^ 8
+61-83: step 10
+62-41: none
+62-56: step 9
+62-64: within ^ 3
+63-12: step 8
+63-20: within & 10
+63-24: none
+63-90: step 5
+64-37: nextTo X
+64-53: step 9
+64-76: within @ 4
+65-15: nextTo ^
+65-40: touch M
+65-88: touch D
+66-3: step 3
+66-40: step 5
+66-50: none
+66-79: none
+66-81: step 8
+67-10: within ; 4
+67-48: nextTo &
+67-75: nextTo $
+67-84: step 7
+68-34: touch $
+68-60: none
+69-15: nextTo D
+69-20: step 1
+69-25: none
+7-51: step 10
+7-73: within ! 1
+70-12: none
+70-63: touch ^
+70-91: step 3
+71-36: none
+71-70: step 10
+72-24: step 5
+73-77: step 8
+74-87: nextTo X
+75-13: touch *
+75-44: touch >
+75-49: touch >
+75-50: touch *
+75-52: nextTo D
+75-82: step 4
+75-88: within O 4
+76-13: nextTo >
+76-63: none
+77-30: within O 1
+77-49: nextTo S
+77-6: touch ^
+78-32: none
+78-48: touch M
+79-2: step 8
+79-3: nextTo $
+79-33: none
+79-57: step 8
+79-65: within M 5
+8-84: step 1
+80-18: within @ 4
+80-21: touch ;
+80-26: none
+80-4: touch D
+80-41: none
+80-42: touch !
+80-54: none
+81-66: step 4
+81-9: within ; 9
+82-21: none
+82-90: none
+83-29: step 5
+84-26: touch X
+84-50: within O 6
+84-83: none
+85-36: step 2
+85-4: within @ 9
+85-55: within + 8
+86-53: nextTo ;
+86-63: step 4
+87-32: within ! 4
+87-7: none
+88-17: step 7
+88-55: nextTo X
+88-6: nextTo X
+88-85: nextTo !
+88-9: within + 2
+89-54: within & 9
+89-74: within + 4
+89-91: within * 5
+9-30: within < 2
+9-71: touch X
+9-83: none
+90-81: nextTo >
+90-93: step 1
+91-23: none
+91-26: step 6
+91-54: none
+92-43: nextTo D
+92-5: step 3
+93-72: none
+93-82: touch &
+93-89: nextTo @
+93-91: within > 8
+
+M:
+-- NODES --
+0: idle
+1: push >
+2: push O
+3: push @
+4: push X
+5: add !
+6: chase M
+7: take O
+8: chase $
+9: chase &
+10: chase S
+11: add M
+12: transform S
+13: clone
+14: move_wall +
+15: transform <
+16: transform D
+17: chase D
+18: push &
+19: push <
+20: push $
+21: take $
+22: push S
+23: transform ^
+24: transform +
+25: move_wall ;
+26: take *
+27: transform &
+28: move_wall ^
+29: add <
+30: chase !
+31: push *
+32: chase X
+33: transform *
+34: chase @
+35: take &
+36: chase O
+37: chase <
+38: move_wall @
+39: add $
+40: die
+41: chase ;
+42: take !
+43: move_wall &
+44: take ^
+45: move_wall *
+46: push D
+47: push ^
+48: transform $
+49: transform ;
+50: transform M
+51: add ^
+52: take >
+53: add >
+54: move_wall $
+55: move_wall O
+56: chase +
+57: push !
+58: transform X
+59: chase *
+60: add S
+61: add +
+62: chase ^
+63: take D
+64: take <
+65: take S
+66: move_wall S
+67: move_wall >
+68: transform @
+69: add *
+70: add ;
+71: move_wall X
+72: add X
+73: take @
+74: take X
+75: add D
+76: move_wall <
+77: take M
+78: add @
+79: transform >
+80: move_wall M
+81: move_wall D
+82: push ;
+83: push +
+84: move
+85: take +
+86: add O
+87: move_wall !
+88: take ;
+89: push M
+90: chase >
+91: add &
+92: transform O
+93: transform !
+-- EDGES --
+0-30: none
+0-42: touch +
+0-44: step 3
+0-62: touch <
+0-86: step 3
+1-3: nextTo M
+10-25: nextTo +
+10-6: touch *
+10-91: touch !
+11-19: none
+12-18: within M 1
+12-80: nextTo +
+12-92: step 3
+13-35: step 1
+13-46: step 6
+14-48: touch M
+14-83: none
+15-36: step 6
+15-38: step 6
+15-40: touch O
+16-15: step 7
+16-63: within $ 5
+16-91: step 8
+16-92: none
+17-26: touch +
+17-44: nextTo &
+18-29: touch D
+18-33: step 2
+18-40: step 2
+19-68: step 5
+20-1: none
+20-52: step 2
+20-90: none
+21-13: within X 10
+21-16: step 10
+21-19: nextTo !
+21-27: within ; 6
+21-44: step 4
+22-84: step 2
+23-13: within * 7
+23-5: none
+23-73: within $ 6
+24-2: step 5
+24-32: none
+24-70: within ^ 9
+24-88: nextTo >
+25-53: step 3
+25-59: touch O
+25-7: step 10
+25-82: nextTo !
+26-11: step 8
+26-3: none
+26-61: step 10
+26-69: within S 9
+27-21: within * 4
+27-23: touch ^
+27-50: touch M
+28-76: step 3
+28-81: nextTo +
+3-1: touch ;
+3-32: none
+3-37: touch X
+3-65: within O 10
+30-22: touch D
+31-21: within * 8
+31-27: step 3
+31-56: nextTo >
+32-58: touch D
+32-90: touch *
+33-24: none
+34-28: step 4
+35-39: nextTo $
+35-5: within > 7
+35-73: none
+35-77: nextTo >
+36-16: step 9
+36-21: touch @
+36-57: touch <
+37-14: nextTo *
+37-39: within D 1
+37-54: step 2
+37-60: nextTo $
+38-31: within X 10
+38-7: nextTo *
+38-72: within D 2
+38-82: nextTo +
+38-93: step 8
+39-62: nextTo *
+39-64: touch @
+39-71: within & 8
+39-80: none
+4-58: step 6
+4-70: none
+4-73: within $ 3
+40-14: touch S
+40-27: touch M
+40-42: none
+41-34: none
+43-41: nextTo >
+43-48: none
+43-51: within ^ 1
+43-57: step 3
+43-79: nextTo S
+44-38: nextTo <
+44-67: nextTo >
+44-82: touch >
+44-89: nextTo @
+45-11: within O 5
+45-34: nextTo *
+45-80: touch ;
+46-32: touch <
+46-43: touch *
+47-10: nextTo X
+47-70: none
+47-87: touch X
+48-35: nextTo O
+48-59: none
+49-0: within * 4
+49-26: step 10
+49-41: none
+49-42: nextTo $
+49-48: touch M
+49-52: within M 1
+49-93: none
+5-26: within + 4
+5-55: step 2
+5-9: touch ^
+50-34: step 8
+50-53: step 9
+50-67: within ! 7
+50-70: step 10
+50-8: within S 7
+50-93: none
+51-63: none
+51-84: touch M
+52-23: nextTo >
+52-85: touch X
+52-86: touch <
+53-15: nextTo >
+53-45: none
+53-90: none
+54-33: step 8
+54-47: within M 6
+54-48: within S 9
+55-11: touch &
+55-17: none
+55-4: step 3
+55-76: touch <
+56-18: touch O
+56-59: step 5
+57-35: nextTo &
+57-49: touch @
+58-12: none
+58-3: touch &
+58-41: none
+58-58: within < 7
+58-74: none
+58-85: step 9
+59-17: within + 7
+59-35: within O 9
+59-40: touch ^
+6-17: touch X
+6-29: step 10
+6-3: touch O
+6-33: nextTo +
+6-41: nextTo D
+6-76: nextTo X
+60-14: nextTo M
+60-65: step 3
+60-71: none
+60-87: within O 8
+60-89: touch O
+61-2: step 3
+61-21: touch &
+61-43: touch *
+61-54: nextTo ^
+62-61: none
+62-67: none
+63-23: within D 5
+63-25: step 1
+63-51: nextTo X
+63-54: within M 5
+63-69: touch $
+63-70: nextTo M
+64-29: none
+64-36: touch <
+64-52: within X 8
+64-55: nextTo &
+64-8: touch &
+64-85: within O 6
+65-11: within * 5
+65-22: none
+65-76: touch M
+65-79: touch !
+66-20: touch !
+66-60: step 8
+66-7: nextTo >
+67-66: touch D
+68-25: within O 1
+68-85: within > 8
+69-39: nextTo M
+69-75: none
+69-78: step 9
+69-79: within < 8
+7-22: none
+7-52: step 9
+7-81: nextTo $
+7-91: none
+70-26: touch ;
+70-48: touch *
+70-49: none
+71-29: touch +
+71-54: none
+71-61: none
+71-76: none
+73-52: step 1
+74-36: touch $
+74-75: touch *
+75-51: nextTo ^
+75-56: touch ^
+75-59: none
+76-12: nextTo <
+77-50: step 5
+78-4: touch X
+78-40: touch X
+78-46: touch *
+78-48: touch &
+78-63: none
+78-66: step 4
+78-74: within + 2
+79-11: none
+8-5: step 3
+8-52: within > 5
+8-82: within @ 9
+80-20: within O 7
+80-55: none
+80-59: nextTo M
+82-17: none
+82-58: touch $
+82-67: within + 1
+82-85: within X 4
+83-20: none
+83-29: step 6
+83-88: touch O
+84-78: none
+84-83: nextTo $
+85-21: nextTo O
+85-41: nextTo O
+85-63: within ! 8
+85-83: nextTo M
+86-0: nextTo M
+86-56: nextTo X
+87-13: none
+87-82: touch !
+87-89: step 2
+88-46: step 6
+88-75: none
+89-31: none
+89-50: within X 5
+89-59: nextTo &
+89-64: touch *
+89-9: nextTo &
+89-91: step 10
+89-93: none
+9-21: within S 6
+9-38: nextTo +
+90-42: nextTo S
+90-75: none
+90-86: nextTo !
+91-3: step 4
+91-89: nextTo *
+92-49: within M 1
+92-77: within O 10
+92-88: step 9
+93-57: touch &
+93-71: none
+
++:
+-- NODES --
+0: idle
+1: chase !
+2: transform D
+3: push $
+4: move_wall O
+5: push ;
+6: push <
+7: take *
+8: take $
+9: transform ;
+10: push ^
+11: transform >
+12: take >
+13: move_wall D
+14: add *
+15: move_wall @
+16: take X
+17: take &
+18: push &
+19: transform &
+20: add ^
+21: add M
+22: transform O
+23: move_wall S
+24: take ^
+25: move_wall M
+26: move_wall ;
+27: transform <
+28: move_wall +
+29: chase ;
+30: add S
+31: add D
+32: push D
+33: move_wall !
+34: chase +
+35: chase $
+36: chase S
+37: chase *
+38: take <
+39: chase <
+40: move_wall ^
+41: chase O
+42: move_wall *
+43: add +
+44: push *
+45: transform X
+46: add &
+47: push +
+48: chase &
+49: transform *
+50: transform +
+51: chase ^
+52: move_wall <
+53: move_wall $
+54: push X
+55: take ;
+56: add @
+57: chase M
+58: move
+59: clone
+60: add $
+61: push S
+62: chase X
+63: take @
+64: push M
+65: push O
+66: add ;
+67: take M
+68: transform $
+69: transform !
+70: take O
+71: take !
+72: die
+73: move_wall &
+74: take S
+75: transform ^
+76: transform M
+77: transform @
+78: chase D
+79: add >
+80: push !
+81: take D
+82: take +
+83: transform S
+84: add <
+85: push >
+86: move_wall >
+87: add O
+88: move_wall X
+89: chase @
+90: add X
+91: chase >
+92: push @
+93: add !
+-- EDGES --
+0-5: within O 9
+0-84: none
+1-12: touch ^
+11-33: touch D
+11-34: step 5
+12-17: none
+12-36: within < 6
+12-4: none
+12-67: touch D
+12-92: none
+13-42: touch O
+14-83: none
+14-86: step 2
+15-19: none
+15-66: within + 5
+15-69: within $ 8
+15-74: touch *
+15-78: step 10
+15-91: within > 7
+16-0: step 6
+16-28: touch &
+16-31: touch >
+16-4: touch @
+16-40: nextTo $
+16-46: within D 1
+16-63: none
+18-1: nextTo M
+18-86: step 1
+19-11: step 5
+19-29: none
+2-27: none
+2-28: step 3
+2-31: nextTo ;
+2-71: none
+2-87: step 7
+20-46: within + 6
+20-7: none
+20-87: none
+21-14: touch +
+21-42: none
+21-44: within & 2
+21-57: none
+21-85: within ; 4
+22-10: within ! 6
+22-31: touch &
+22-5: none
+22-52: nextTo O
+22-62: touch M
+22-68: nextTo S
+22-70: touch ;
+22-80: step 4
+23-40: step 1
+24-11: within S 1
+24-15: none
+24-35: touch ;
+24-8: nextTo M
+24-84: nextTo ;
+25-1: within @ 6
+25-31: touch M
+25-57: none
+26-14: touch *
+26-39: nextTo X
+26-46: none
+26-63: none
+27-43: nextTo O
+27-44: touch ^
+28-56: nextTo *
+28-77: step 1
+28-82: step 10
+28-84: nextTo S
+29-49: none
+3-55: step 9
+3-81: within * 3
+30-20: nextTo <
+31-1: none
+31-15: nextTo $
+31-3: none
+31-6: touch O
+32-18: nextTo O
+32-6: touch <
+32-84: none
+33-14: nextTo >
+33-21: nextTo S
+33-54: touch *
+33-77: nextTo $
+33-80: none
+34-42: none
+34-60: none
+34-74: step 4
+35-19: step 8
+35-26: nextTo M
+36-55: within S 10
+36-81: step 3
+37-30: nextTo +
+37-88: touch X
+38-44: none
+38-58: step 2
+39-47: within @ 9
+39-53: step 1
+39-56: touch ^
+39-65: step 7
+4-41: touch $
+4-56: none
+40-34: none
+40-36: nextTo $
+40-59: within D 4
+40-64: none
+40-66: step 10
+40-73: touch M
+41-37: touch @
+41-82: none
+42-22: nextTo O
+42-43: touch M
+42-60: touch S
+43-4: within $ 1
+43-42: nextTo S
+43-48: nextTo S
+43-9: touch @
+44-25: within S 1
+44-3: touch !
+44-72: nextTo ^
+44-77: step 3
+45-15: within > 8
+45-59: nextTo @
+45-76: step 6
+45-80: within O 4
+45-93: step 9
+46-75: step 5
+47-22: step 10
+47-48: nextTo ;
+48-43: none
+48-63: within ; 10
+48-82: nextTo >
+48-93: none
+49-44: nextTo D
+49-67: none
+49-77: nextTo ;
+49-79: touch O
+49-8: none
+49-83: touch >
+5-34: touch !
+5-45: nextTo $
+5-64: none
+5-9: touch +
+50-44: none
+51-31: step 9
+51-48: step 9
+52-53: within * 10
+52-55: nextTo D
+52-68: touch *
+52-91: none
+53-30: touch +
+53-34: nextTo O
+53-58: touch S
+55-59: touch S
+55-74: touch ^
+56-11: nextTo O
+56-13: step 1
+56-38: step 10
+56-43: step 4
+56-82: nextTo X
+57-30: nextTo S
+57-5: touch D
+57-63: nextTo ;
+57-69: touch X
+57-82: touch >
+57-83: within + 10
+57-90: nextTo @
+58-41: step 8
+58-6: none
+58-73: touch $
+59-49: step 2
+6-14: touch &
+6-60: none
+60-2: nextTo S
+60-22: step 3
+60-44: nextTo @
+60-64: none
+60-85: step 1
+61-16: none
+62-25: none
+62-38: step 9
+62-4: nextTo S
+62-75: none
+63-72: touch <
+64-87: within * 10
+64-88: within * 5
+64-91: touch <
+65-22: within ! 9
+65-66: step 6
+65-69: nextTo X
+66-52: step 4
+66-58: touch ^
+67-49: step 2
+67-55: step 1
+67-6: touch >
+67-78: none
+67-86: within M 2
+67-89: nextTo $
+68-2: within $ 5
+68-22: step 6
+68-24: step 3
+68-3: nextTo ^
+68-5: touch $
+69-49: none
+69-66: none
+69-78: nextTo M
+7-13: touch &
+7-14: nextTo &
+7-32: touch <
+7-6: none
+7-80: step 7
+7-81: step 1
+70-3: touch <
+70-47: step 9
+70-76: none
+71-21: none
+71-33: step 9
+71-58: step 9
+72-10: nextTo O
+73-45: within @ 3
+74-27: within ; 8
+75-23: nextTo @
+75-81: nextTo M
+76-15: within * 9
+76-29: touch $
+76-49: within M 2
+76-75: step 10
+76-86: nextTo <
+77-26: touch !
+77-4: nextTo *
+77-80: touch ^
+77-86: none
+78-35: step 4
+78-61: step 5
+78-66: step 5
+78-75: touch S
+79-19: touch !
+79-23: touch $
+79-91: nextTo >
+8-55: none
+80-23: none
+80-61: none
+80-70: within ; 3
+81-89: step 5
+82-79: within ; 8
+83-1: none
+83-64: touch +
+84-50: step 6
+85-53: nextTo $
+86-16: touch X
+86-18: touch ^
+86-85: none
+87-22: touch ^
+87-44: within S 4
+87-70: nextTo D
+88-11: none
+88-38: touch *
+89-17: touch &
+89-33: none
+89-68: none
+9-44: nextTo O
+90-28: touch >
+90-50: within & 6
+90-87: none
+91-15: within ; 2
+91-30: touch M
+91-43: touch ;
+91-63: step 7
+91-76: none
+92-67: none
+92-68: within ! 10
+92-81: within S 5
+93-19: nextTo +
+93-51: step 5
+93-88: within * 8
+
+&:
+-- NODES --
+0: idle
+1: transform *
+2: chase <
+3: chase !
+4: transform ^
+5: take S
+6: chase *
+7: add &
+8: add +
+9: chase X
+10: take O
+11: add ^
+12: transform !
+13: transform D
+14: move_wall X
+15: transform +
+16: push @
+17: add M
+18: transform &
+19: move_wall *
+20: push $
+21: add $
+22: take +
+23: chase ;
+24: take M
+25: take D
+26: take $
+27: add O
+28: take X
+29: die
+30: move_wall @
+31: chase &
+32: chase O
+33: transform <
+34: move
+35: push <
+36: add !
+37: add ;
+38: push X
+39: move_wall ;
+40: move_wall $
+41: push O
+42: push D
+43: chase D
+44: add <
+45: transform S
+46: push M
+47: add X
+48: chase ^
+49: chase +
+50: transform $
+51: transform M
+52: move_wall S
+53: move_wall O
+54: chase $
+55: clone
+56: transform O
+57: move_wall M
+58: add D
+59: take ;
+60: move_wall &
+61: move_wall !
+62: chase @
+63: take <
+64: take !
+65: take @
+66: chase S
+67: move_wall +
+68: add >
+69: transform >
+70: chase M
+71: push >
+72: push !
+73: push ^
+74: take &
+75: push +
+76: take ^
+77: transform X
+78: push &
+79: take *
+80: move_wall D
+81: push *
+82: push S
+83: add @
+84: add *
+85: move_wall >
+86: chase >
+87: push ;
+88: transform @
+89: add S
+90: move_wall ^
+91: take >
+92: move_wall <
+93: transform ;
+-- EDGES --
+0-10: none
+0-93: step 1
+1-23: within S 3
+1-25: step 6
+1-51: within X 7
+1-83: touch S
+10-30: touch O
+10-32: touch +
+10-70: step 4
+11-10: touch !
+11-17: step 3
+11-72: none
+11-78: nextTo ;
+12-46: touch D
+12-68: nextTo X
+13-22: nextTo >
+13-29: nextTo $
+14-4: within & 5
+15-0: nextTo M
+15-22: step 8
+15-33: touch O
+15-76: none
+16-0: touch <
+16-60: step 6
+16-9: none
+17-42: within & 7
+17-8: none
+18-19: touch X
+18-29: within ; 7
+18-48: within D 4
+19-38: nextTo ^
+19-39: nextTo *
+19-4: none
+19-45: step 1
+19-53: none
+19-56: nextTo +
+19-83: within ^ 6
+2-38: nextTo ;
+2-67: none
+2-74: within ^ 6
+2-89: step 5
+20-0: within ^ 1
+20-33: none
+20-53: within O 8
+20-63: touch +
+20-78: touch *
+21-45: touch ;
+21-51: touch $
+21-57: none
+21-7: touch M
+21-81: nextTo &
+22-19: within D 7
+22-25: none
+22-72: touch <
+22-73: within D 2
+23-33: touch &
+23-55: none
+24-11: nextTo S
+24-37: touch O
+24-47: none
+24-9: touch @
+25-82: step 8
+26-47: within M 9
+26-66: touch S
+27-12: touch >
+27-17: step 5
+27-41: touch <
+27-69: step 8
+27-77: step 1
+28-13: nextTo X
+28-30: step 4
+28-63: step 7
+29-28: nextTo !
+29-37: step 1
+29-54: step 1
+29-75: touch X
+29-84: touch ^
+3-42: within $ 10
+3-58: none
+3-75: none
+3-92: none
+30-8: nextTo S
+31-2: touch *
+32-0: touch @
+32-73: step 1
+32-82: nextTo $
+32-87: none
+33-0: touch !
+33-42: touch !
+33-66: none
+34-16: step 6
+34-27: none
+34-50: touch ^
+34-67: touch @
+35-33: within X 7
+35-78: none
+36-51: within ! 9
+36-54: within ! 3
+36-69: nextTo +
+37-52: step 10
+37-64: within $ 2
+38-73: nextTo S
+38-80: within ^ 9
+39-60: within X 7
+4-64: step 7
+4-68: within D 5
+40-3: within M 3
+40-8: nextTo ;
+41-60: within ! 7
+41-93: nextTo O
+42-13: nextTo &
+42-2: nextTo M
+42-23: none
+42-60: touch *
+42-80: none
+43-58: none
+43-92: step 6
+44-20: nextTo <
+44-28: nextTo ^
+44-87: nextTo &
+45-40: within O 9
+45-8: within * 10
+46-10: step 7
+46-27: within $ 10
+46-37: none
+46-72: step 7
+46-74: step 6
+46-9: nextTo *
+47-18: step 8
+47-20: nextTo &
+47-26: touch &
+47-33: step 10
+48-11: none
+49-5: within & 7
+49-80: step 6
+5-7: step 5
+50-19: none
+51-2: none
+51-63: touch $
+51-70: touch >
+51-72: within + 4
+52-16: none
+52-4: within + 8
+52-42: nextTo +
+53-26: within S 7
+53-30: step 8
+53-68: nextTo O
+53-69: touch S
+54-26: nextTo O
+55-42: nextTo &
+55-46: nextTo *
+55-59: nextTo *
+56-51: within & 2
+56-65: within ^ 9
+56-71: touch S
+57-14: step 2
+57-61: touch O
+58-11: touch @
+58-17: touch >
+58-47: touch ^
+58-54: step 1
+58-68: none
+58-82: step 4
+58-85: none
+59-41: nextTo ^
+6-1: step 10
+60-1: touch <
+60-30: touch D
+60-37: nextTo @
+61-28: step 6
+61-60: within M 3
+61-76: nextTo ^
+61-79: step 2
+61-90: nextTo @
+62-13: nextTo >
+62-48: within < 4
+62-70: within $ 6
+62-76: none
+63-69: nextTo >
+64-24: within X 6
+64-29: none
+64-46: touch $
+65-35: none
+65-78: nextTo M
+65-81: within & 1
+65-88: step 7
+66-22: step 1
+66-3: none
+66-62: step 7
+66-67: none
+66-70: step 1
+67-71: none
+68-44: touch *
+68-59: within > 3
+69-30: none
+69-32: touch $
+69-34: within X 8
+69-35: nextTo ;
+69-52: step 6
+7-13: none
+7-2: nextTo S
+7-70: none
+7-86: touch ;
+70-35: step 1
+70-43: within * 3
+71-93: within & 5
+72-38: none
+72-60: none
+72-8: within * 2
+73-31: nextTo $
+74-91: none
+75-12: step 3
+76-54: nextTo +
+76-69: step 9
+76-77: within + 5
+76-81: touch &
+77-73: step 7
+77-82: within > 6
+77-84: within @ 7
+78-16: nextTo *
+78-21: nextTo &
+78-77: nextTo ;
+79-36: touch @
+8-28: nextTo ^
+8-44: touch ^
+8-75: step 3
+80-10: step 7
+80-24: within < 2
+80-29: nextTo ^
+80-43: touch D
+81-54: nextTo S
+81-59: step 7
+81-66: touch >
+81-79: touch *
+83-6: within ! 5
+83-75: within S 4
+84-12: none
+84-20: touch ^
+84-25: step 10
+84-35: within M 4
+84-41: touch ;
+84-89: none
+84-91: none
+85-0: touch O
+85-14: within > 6
+85-42: nextTo ^
+85-43: touch O
+85-62: nextTo ^
+86-33: nextTo *
+86-84: touch D
+87-28: touch <
+87-33: nextTo S
+87-8: nextTo +
+88-1: none
+88-69: step 1
+88-71: step 9
+88-74: step 8
+89-10: touch S
+89-11: none
+89-8: touch @
+9-34: none
+9-43: nextTo ^
+9-49: none
+9-62: step 4
+90-46: none
+90-48: none
+90-86: nextTo X
+91-31: step 2
+91-64: step 7
+91-92: touch S
+92-15: touch @
+92-29: within M 6
+92-5: step 8
+
+@:
+-- NODES --
+0: idle
+1: push *
+2: move
+3: push S
+4: transform S
+5: add X
+6: take +
+7: chase M
+8: transform <
+9: take $
+10: move_wall +
+11: add +
+12: chase !
+13: transform $
+14: add S
+15: push @
+16: move_wall D
+17: transform ^
+18: take ^
+19: add >
+20: take <
+21: add @
+22: move_wall O
+23: move_wall X
+24: add <
+25: chase &
+26: push D
+27: move_wall M
+28: add D
+29: take !
+30: push X
+31: push ;
+32: chase >
+33: transform >
+34: add &
+35: chase <
+36: push O
+37: transform X
+38: take >
+39: die
+40: transform M
+41: take D
+42: chase @
+43: transform !
+44: move_wall *
+45: add !
+46: chase *
+47: move_wall >
+48: take O
+49: take ;
+50: clone
+51: add *
+52: chase O
+53: push >
+54: move_wall !
+55: move_wall S
+56: transform *
+57: take *
+58: transform +
+59: push $
+60: transform O
+61: push +
+62: push <
+63: add ^
+64: move_wall ^
+65: take &
+66: chase X
+67: push ^
+68: add $
+69: push &
+70: move_wall ;
+71: push !
+72: add M
+73: add O
+74: move_wall &
+75: transform D
+76: take X
+77: take @
+78: move_wall @
+79: chase ;
+80: move_wall $
+81: take M
+82: transform @
+83: chase D
+84: take S
+85: add ;
+86: transform &
+87: push M
+88: chase ^
+89: chase +
+90: transform ;
+91: chase S
+92: move_wall <
+93: chase $
+-- EDGES --
+0-67: nextTo &
+0-79: within $ 1
+1-13: touch ^
+1-27: within X 6
+1-63: within ! 2
+1-90: none
+10-19: none
+10-75: within D 6
+10-83: within * 7
+11-0: nextTo !
+11-1: within X 2
+11-15: within O 9
+12-1: touch ^
+12-54: nextTo D
+12-60: nextTo S
+12-89: none
+13-18: nextTo X
+13-44: within & 2
+14-10: nextTo +
+14-3: step 5
+15-11: step 5
+15-34: step 4
+15-45: none
+15-84: step 9
+16-39: step 6
+16-44: within > 6
+17-0: touch @
+17-15: none
+17-22: step 8
+17-33: step 7
+18-23: touch ;
+18-38: step 6
+19-15: none
+19-16: step 2
+19-45: step 1
+19-72: within $ 6
+19-87: step 4
+19-92: touch *
+2-56: none
+2-69: step 4
+2-88: within O 6
+20-39: touch S
+20-7: touch >
+20-8: none
+21-88: within X 7
+22-27: touch !
+22-29: touch $
+22-33: nextTo @
+22-47: none
+22-73: nextTo O
+22-75: step 5
+23-43: step 10
+23-60: touch S
+23-77: step 1
+23-86: nextTo ^
+23-9: touch $
+24-1: within M 6
+24-23: within ; 6
+24-54: touch S
+24-70: step 5
+25-24: step 7
+25-40: within < 2
+25-42: within M 7
+25-48: touch <
+25-90: step 1
+26-69: nextTo ^
+26-74: within < 9
+26-85: touch S
+26-9: touch O
+27-1: within + 1
+27-20: within S 1
+27-84: none
+28-0: nextTo ^
+28-44: touch *
+28-70: nextTo X
+29-5: within + 3
+29-86: nextTo &
+3-19: step 8
+3-59: within < 8
+3-72: touch !
+3-82: nextTo S
+30-31: within O 5
+30-49: step 9
+30-75: touch @
+31-25: step 8
+31-28: nextTo &
+31-65: step 2
+32-0: none
+32-29: step 6
+32-67: touch <
+32-83: step 8
+32-87: touch X
+34-30: touch $
+34-43: nextTo &
+34-58: none
+34-61: none
+35-62: within O 2
+35-82: within ; 8
+36-10: none
+36-16: touch @
+37-28: step 5
+37-50: nextTo S
+37-51: nextTo @
+37-85: step 7
+38-29: touch X
+39-26: none
+39-44: nextTo >
+39-47: nextTo +
+39-6: step 9
+39-62: none
+4-36: step 1
+4-69: within & 6
+40-32: nextTo $
+40-36: touch +
+40-40: nextTo ;
+40-41: within D 9
+40-84: step 10
+40-92: within S 7
+41-27: nextTo O
+41-53: within + 3
+42-12: nextTo >
+42-35: nextTo *
+42-36: touch !
+42-91: touch +
+43-67: none
+44-2: within O 8
+44-23: within $ 8
+44-77: nextTo @
+45-40: touch *
+45-51: none
+45-88: step 6
+47-27: step 6
+47-36: none
+48-27: within < 7
+49-70: touch >
+5-10: none
+5-76: nextTo !
+50-3: none
+50-33: nextTo &
+50-84: touch M
+50-88: step 6
+51-15: none
+52-2: step 6
+52-67: nextTo &
+52-93: touch &
+53-32: none
+54-57: touch *
+54-65: nextTo ;
+54-66: nextTo +
+54-93: none
+55-18: touch >
+55-3: nextTo D
+56-22: none
+56-36: within ; 8
+56-85: nextTo S
+57-21: none
+57-81: none
+58-16: within $ 1
+58-42: touch $
+58-59: none
+58-79: none
+59-93: step 2
+6-49: step 3
+6-75: nextTo @
+60-14: within O 10
+60-66: touch +
+60-86: within > 8
+61-36: within > 5
+61-64: nextTo <
+61-71: touch O
+61-85: nextTo S
+61-86: touch D
+61-87: nextTo !
+62-14: step 9
+62-47: nextTo O
+63-70: none
+64-10: step 5
+64-34: touch $
+64-53: step 8
+64-9: nextTo O
+65-30: none
+66-37: touch +
+66-45: step 9
+66-74: step 7
+67-11: step 2
+67-16: within * 8
+68-25: none
+68-31: step 4
+68-83: touch O
+69-30: within * 5
+69-77: nextTo $
+69-78: nextTo $
+7-93: within S 6
+70-55: none
+70-67: none
+70-68: touch D
+70-69: touch $
+71-4: nextTo *
+71-44: step 6
+71-56: step 6
+72-19: touch M
+72-33: touch D
+73-11: none
+73-14: nextTo ^
+73-52: nextTo &
+73-85: nextTo &
+73-93: within ; 9
+74-0: touch ^
+74-14: touch S
+76-19: within > 10
+76-28: none
+77-28: step 8
+77-53: step 5
+78-2: nextTo D
+78-54: step 8
+78-86: within ! 4
+79-17: none
+79-23: step 3
+79-32: none
+79-41: touch M
+79-45: within & 5
+79-53: step 6
+79-6: within $ 8
+79-83: nextTo @
+8-10: nextTo D
+8-29: step 3
+8-31: step 1
+8-53: nextTo &
+8-67: step 2
+8-75: within ! 4
+80-13: touch +
+80-14: touch &
+80-2: within @ 1
+80-42: nextTo D
+80-57: none
+80-77: within D 2
+81-21: within + 1
+81-29: nextTo M
+81-5: step 3
+81-80: touch @
+82-60: nextTo X
+83-10: step 4
+83-86: touch S
+84-15: touch $
+85-14: nextTo M
+85-2: step 7
+86-13: touch @
+86-4: touch @
+86-58: none
+86-62: step 7
+87-38: step 8
+87-53: step 4
+87-64: within M 9
+87-76: within X 9
+88-66: nextTo S
+89-0: touch &
+89-20: nextTo >
+89-53: touch ^
+9-46: none
+9-6: step 8
+90-5: nextTo X
+90-53: within ; 1
+90-54: touch ^
+91-11: touch M
+91-40: nextTo O
+91-7: none
+92-12: within * 8
+92-14: step 3
+92-24: nextTo @
+92-43: nextTo >
+92-54: touch M
+93-14: nextTo !
+93-26: within & 5
+93-69: step 6
+
+X:
+-- NODES --
+0: idle
+1: move_wall &
+2: take !
+3: push +
+4: push ^
+5: push M
+6: move_wall *
+7: add ;
+8: push @
+9: transform ;
+10: chase X
+11: transform >
+12: clone
+13: chase <
+14: transform O
+15: add @
+16: chase O
+17: chase +
+18: take ^
+19: move_wall @
+20: chase >
+21: transform $
+22: push ;
+23: add +
+24: transform D
+25: take >
+26: move_wall X
+27: push !
+28: transform *
+29: chase $
+30: take O
+31: take D
+32: add X
+33: take S
+34: push S
+35: add M
+36: add &
+37: take $
+38: chase ^
+39: move_wall O
+40: add O
+41: add *
+42: add $
+43: take X
+44: push <
+45: push D
+46: move_wall ;
+47: transform X
+48: transform !
+49: chase !
+50: transform +
+51: take &
+52: add >
+53: take @
+54: transform ^
+55: chase M
+56: chase *
+57: add ^
+58: move_wall >
+59: move_wall +
+60: transform M
+61: take *
+62: move_wall !
+63: push $
+64: take ;
+65: move_wall <
+66: chase D
+67: transform S
+68: die
+69: chase @
+70: add D
+71: take <
+72: chase &
+73: move_wall ^
+74: push &
+75: take +
+76: move
+77: move_wall D
+78: push X
+79: push O
+80: move_wall $
+81: push >
+82: push *
+83: take M
+84: add !
+85: add S
+86: add <
+87: chase S
+88: move_wall M
+89: move_wall S
+90: transform <
+91: transform &
+92: transform @
+93: chase ;
+-- EDGES --
+0-34: step 7
+0-64: touch &
+1-15: within S 4
+1-22: touch D
+1-30: within & 7
+1-50: touch M
+1-53: touch $
+10-23: step 7
+10-8: within $ 3
+11-84: nextTo S
+11-92: touch M
+12-4: nextTo $
+12-56: none
+13-16: step 10
+13-18: step 8
+13-86: touch *
+13-87: none
+14-91: none
+15-16: touch >
+15-31: step 3
+15-38: touch *
+15-84: within O 1
+15-93: none
+16-1: touch >
+16-59: within & 1
+16-73: step 1
+17-30: nextTo X
+17-32: step 7
+17-39: none
+17-85: touch >
+17-90: within < 8
+18-38: none
+18-4: none
+18-43: within $ 7
+19-27: none
+19-28: nextTo O
+2-35: none
+2-52: touch <
+2-63: touch X
+2-83: within ! 1
+20-16: none
+20-19: none
+20-68: nextTo M
+20-77: touch !
+20-92: touch +
+22-2: none
+22-78: none
+22-9: nextTo *
+23-88: step 6
+23-91: step 5
+23-93: touch +
+24-13: nextTo M
+24-44: none
+24-76: step 5
+24-93: nextTo X
+25-17: nextTo ^
+26-72: none
+26-76: touch !
+27-22: none
+27-47: nextTo $
+27-61: within @ 10
+28-17: step 3
+28-22: touch O
+28-76: nextTo X
+28-78: within * 4
+28-83: within * 4
+29-19: within > 5
+29-23: nextTo ;
+29-3: within + 2
+29-42: nextTo &
+29-51: step 4
+29-6: none
+29-75: touch <
+3-0: step 8
+3-1: step 3
+3-17: step 6
+3-20: step 6
+3-21: none
+3-32: none
+3-54: step 6
+3-55: within D 4
+30-77: within & 7
+30-84: none
+30-88: step 7
+31-0: touch @
+31-26: within ; 10
+31-37: within ! 4
+32-19: step 7
+32-36: touch @
+33-1: nextTo X
+33-14: touch ^
+33-55: touch @
+33-70: none
+33-72: step 3
+34-52: nextTo *
+35-17: within ; 9
+36-23: nextTo <
+36-51: none
+37-20: nextTo O
+38-23: touch D
+38-43: nextTo !
+38-61: touch &
+38-7: none
+38-93: step 9
+4-32: step 7
+4-82: none
+40-12: within M 8
+40-2: step 6
+41-11: within ^ 9
+41-39: within O 5
+41-40: none
+41-62: touch &
+41-67: within * 10
+41-92: nextTo <
+42-33: within ; 2
+42-46: none
+43-74: step 1
+43-91: none
+44-33: none
+44-60: step 3
+44-83: touch O
+45-42: none
+46-10: none
+46-15: none
+46-80: within ^ 7
+47-56: within X 8
+48-25: within @ 5
+48-40: touch >
+48-76: touch O
+48-80: step 5
+49-46: within M 1
+49-69: none
+49-82: none
+5-54: step 1
+5-70: nextTo +
+50-21: touch ^
+50-58: none
+50-59: step 8
+50-73: none
+50-9: within @ 3
+51-6: within ^ 10
+51-76: nextTo &
+52-50: none
+52-57: touch @
+52-72: touch @
+53-21: none
+53-24: step 7
+53-49: none
+53-52: touch !
+53-59: within S 9
+53-89: touch +
+54-29: none
+54-63: touch &
+55-45: nextTo ;
+55-54: nextTo *
+56-36: nextTo !
+57-26: nextTo X
+57-58: touch !
+57-73: none
+57-77: touch ^
+58-79: within & 2
+59-16: touch @
+59-71: within ; 6
+59-81: touch S
+6-47: none
+6-89: touch ^
+60-26: step 8
+60-35: none
+60-51: none
+60-65: none
+60-7: touch X
+60-79: within < 8
+61-24: nextTo O
+62-28: nextTo ^
+62-53: step 2
+62-64: touch +
+62-72: step 9
+63-43: step 7
+63-5: none
+63-7: within $ 3
+63-77: touch &
+64-26: nextTo <
+64-71: touch ^
+65-29: nextTo $
+65-32: touch S
+65-40: within < 6
+65-52: touch ^
+65-75: none
+65-83: none
+66-6: touch X
+66-60: touch $
+66-67: none
+66-90: step 2
+67-25: nextTo S
+67-75: none
+67-85: nextTo $
+68-61: nextTo &
+68-66: touch <
+69-21: within S 2
+69-3: step 10
+69-56: step 6
+7-14: nextTo *
+7-40: within < 3
+7-62: within & 10
+7-66: none
+7-85: within < 5
+7-89: within ! 5
+7-93: nextTo X
+70-61: within D 9
+70-85: nextTo ^
+71-23: nextTo M
+71-66: touch <
+71-78: within @ 4
+72-22: within X 2
+72-90: within > 4
+73-48: touch @
+73-51: touch !
+73-58: none
+73-8: within + 5
+74-20: none
+74-40: none
+74-75: within ; 4
+74-87: nextTo &
+75-30: step 4
+75-80: step 8
+76-62: within ; 10
+76-79: touch ^
+77-2: step 10
+77-3: none
+77-41: step 4
+77-92: none
+78-1: touch ^
+78-29: touch @
+78-69: nextTo D
+79-10: within > 4
+8-23: nextTo ;
+8-82: none
+80-38: none
+80-66: nextTo >
+82-19: touch M
+82-21: nextTo S
+82-23: touch >
+82-29: step 3
+82-36: none
+83-23: nextTo $
+83-53: within > 3
+84-11: step 6
+84-7: within ! 1
+84-70: none
+84-79: none
+85-33: step 3
+85-57: touch <
+86-70: step 2
+86-79: none
+86-83: none
+87-1: within ! 2
+87-8: touch @
+88-11: none
+88-34: step 4
+88-47: step 8
+88-66: none
+88-73: step 5
+88-82: touch S
+89-33: within < 1
+9-12: touch >
+90-72: touch ;
+90-78: step 9
+91-28: none
+91-45: none
+92-13: none
+92-17: none
+92-28: nextTo *
+92-55: step 9
+93-11: nextTo ^
+93-13: nextTo !
+93-59: touch S
+93-83: touch X
+
+$:
+-- NODES --
+0: idle
+1: transform D
+2: transform !
+3: transform &
+4: chase &
+5: chase !
+6: push >
+7: move_wall M
+8: add X
+9: move_wall +
+10: move_wall $
+11: transform @
+12: transform X
+13: push M
+14: take @
+15: move_wall @
+16: take *
+17: transform $
+18: chase *
+19: add &
+20: chase <
+21: push S
+22: take D
+23: move_wall S
+24: add >
+25: transform S
+26: move_wall *
+27: take X
+28: transform M
+29: take !
+30: take O
+31: transform O
+32: move_wall ;
+33: transform ;
+34: add S
+35: chase >
+36: add $
+37: move_wall X
+38: push <
+39: add *
+40: move_wall D
+41: push +
+42: move
+43: transform ^
+44: move_wall ^
+45: chase @
+46: add ;
+47: take &
+48: move_wall O
+49: take +
+50: chase ^
+51: push $
+52: move_wall !
+53: chase X
+54: transform <
+55: take $
+56: add O
+57: chase M
+58: add M
+59: die
+60: add +
+61: push D
+62: transform >
+63: push O
+64: push !
+65: add ^
+66: take M
+67: chase S
+68: add !
+69: move_wall &
+70: chase O
+71: take S
+72: add <
+73: move_wall <
+74: push @
+75: push &
+76: chase $
+77: clone
+78: chase +
+79: add D
+80: take <
+81: push ;
+82: move_wall >
+83: take ;
+84: chase ;
+85: transform *
+86: transform +
+87: add @
+88: take ^
+89: take >
+90: push ^
+91: push X
+92: push *
+93: chase D
+-- EDGES --
+0-1: nextTo S
+0-63: touch D
+0-68: none
+0-72: within ! 4
+0-77: nextTo D
+0-93: nextTo D
+1-2: none
+1-78: none
+1-79: nextTo +
+11-17: nextTo X
+11-30: within ! 10
+11-48: touch O
+11-88: touch !
+11-90: step 5
+12-13: nextTo M
+12-46: none
+12-77: touch <
+13-23: touch $
+13-75: within ; 3
+13-86: none
+14-3: none
+14-80: step 10
+14-93: nextTo <
+16-40: none
+16-50: nextTo *
+16-57: within O 1
+16-86: within + 2
+16-88: step 3
+17-24: step 8
+17-47: within M 8
+17-64: step 7
+17-75: none
+17-81: step 8
+18-29: none
+18-50: none
+18-51: touch +
+19-0: nextTo !
+2-0: touch &
+2-36: within ! 3
+2-40: within ^ 8
+2-8: none
+20-19: step 10
+20-64: step 2
+20-8: nextTo M
+21-13: touch &
+21-81: nextTo ^
+22-41: within & 2
+22-46: step 5
+23-30: step 3
+23-46: nextTo M
+23-74: none
+24-12: none
+24-49: none
+24-51: touch ;
+24-60: nextTo !
+25-14: touch $
+25-26: within X 9
+25-33: step 5
+25-87: none
+26-23: none
+26-43: nextTo S
+26-70: step 8
+26-72: none
+28-13: step 4
+28-37: within M 6
+28-56: nextTo $
+28-6: within M 2
+28-80: none
+29-24: step 2
+29-38: none
+29-43: none
+29-7: touch S
+29-70: none
+29-75: within $ 3
+3-70: nextTo D
+3-79: none
+30-18: touch ;
+30-33: none
+31-34: nextTo S
+31-36: none
+31-4: touch X
+31-41: none
+32-19: none
+32-34: nextTo O
+32-65: within + 7
+33-53: nextTo X
+33-60: step 10
+34-64: nextTo O
+35-85: within & 4
+36-3: within + 7
+36-90: within $ 6
+37-43: step 4
+37-57: nextTo X
+38-10: touch ^
+38-31: touch X
+39-25: touch *
+39-5: none
+39-79: nextTo @
+39-82: touch O
+39-87: nextTo O
+4-13: nextTo $
+4-31: within S 5
+4-53: none
+4-84: none
+4-85: touch S
+40-86: touch X
+41-55: step 7
+41-60: touch *
+42-0: within & 5
+42-10: step 6
+42-6: none
+43-25: touch M
+43-89: none
+44-64: step 10
+44-67: none
+45-42: within < 8
+46-15: step 6
+46-26: none
+46-32: step 8
+46-6: within ; 2
+46-79: nextTo &
+46-81: nextTo !
+46-85: within * 4
+46-92: step 9
+47-48: step 9
+47-49: none
+47-54: nextTo +
+47-71: none
+47-88: touch <
+47-93: nextTo ;
+48-22: step 3
+48-59: within > 4
+48-72: step 10
+49-2: nextTo D
+49-35: step 8
+49-48: nextTo M
+5-30: none
+5-61: within < 1
+50-20: step 7
+50-24: nextTo X
+50-31: none
+50-46: nextTo @
+50-57: touch <
+51-2: none
+51-55: within X 5
+51-75: nextTo D
+52-80: step 2
+52-9: none
+54-18: within @ 4
+54-27: step 1
+54-4: nextTo X
+54-44: within + 5
+54-50: within < 9
+54-64: none
+54-89: within + 6
+55-1: touch <
+55-45: within $ 6
+55-52: nextTo D
+55-63: none
+55-74: step 6
+55-8: none
+56-37: step 5
+56-4: touch *
+57-5: nextTo M
+59-20: touch X
+59-7: step 6
+59-76: within ^ 1
+6-74: within * 2
+6-8: step 6
+60-37: nextTo &
+60-59: step 4
+60-89: within S 1
+61-11: within $ 5
+61-54: step 1
+62-4: nextTo <
+62-46: nextTo $
+62-67: step 6
+62-73: within * 1
+63-5: nextTo X
+63-7: none
+64-11: touch +
+64-20: nextTo ^
+64-76: none
+65-58: nextTo !
+65-69: step 5
+65-73: within + 8
+66-24: within & 10
+67-19: within * 6
+67-3: none
+67-31: within S 5
+67-38: within ! 7
+67-49: none
+67-57: touch ^
+67-61: nextTo &
+67-82: step 5
+68-20: touch D
+68-25: touch M
+68-41: touch @
+68-45: nextTo O
+68-58: step 6
+68-77: touch !
+69-16: none
+69-27: step 9
+69-74: none
+69-79: step 2
+7-21: step 2
+7-76: none
+70-12: step 3
+70-35: within $ 1
+70-59: none
+70-65: step 7
+71-41: touch S
+72-61: touch @
+72-66: none
+72-71: none
+73-65: nextTo *
+73-68: nextTo @
+73-69: within X 8
+74-55: touch &
+74-82: within X 4
+75-35: nextTo $
+75-55: nextTo &
+76-6: within D 3
+78-26: nextTo ^
+78-43: nextTo S
+78-62: step 5
+79-17: touch *
+79-26: nextTo +
+79-28: nextTo X
+79-59: within M 6
+79-73: nextTo X
+8-30: nextTo &
+8-9: none
+8-93: touch S
+80-17: step 4
+80-21: step 6
+80-64: touch D
+80-66: nextTo S
+80-67: touch <
+80-91: none
+81-10: touch $
+81-65: none
+82-30: nextTo X
+82-85: within * 3
+83-47: step 6
+83-48: none
+83-91: none
+84-22: within + 6
+84-23: step 8
+84-29: touch O
+84-78: step 9
+85-90: nextTo >
+86-1: nextTo S
+86-20: touch M
+86-70: none
+87-23: within O 4
+87-30: within X 6
+88-18: nextTo O
+88-27: step 9
+88-28: nextTo >
+88-39: touch !
+88-69: within & 10
+89-37: none
+89-59: within + 8
+89-83: touch O
+89-9: nextTo >
+9-59: within * 1
+9-63: touch X
+9-64: touch $
+91-2: within > 3
+91-7: nextTo @
+91-89: nextTo @
+92-23: none
+92-29: within X 1
+92-31: none
+92-60: touch D
+92-74: none
+93-22: step 6
+93-25: within + 4
+
+^:
+-- NODES --
+0: idle
+1: push S
+2: transform ;
+3: take S
+4: transform >
+5: move_wall @
+6: die
+7: add D
+8: push <
+9: move_wall *
+10: transform !
+11: push &
+12: push ^
+13: add &
+14: chase M
+15: add X
+16: move_wall $
+17: take O
+18: move_wall &
+19: transform +
+20: chase +
+21: add $
+22: move_wall +
+23: push D
+24: take M
+25: take X
+26: take D
+27: push O
+28: push $
+29: transform X
+30: add <
+31: take &
+32: add ;
+33: transform S
+34: take !
+35: add ^
+36: take @
+37: add +
+38: clone
+39: transform @
+40: chase ;
+41: push X
+42: move_wall D
+43: take $
+44: push *
+45: push M
+46: chase X
+47: transform *
+48: move_wall S
+49: chase >
+50: chase <
+51: move_wall ;
+52: transform ^
+53: add *
+54: add O
+55: move_wall O
+56: transform D
+57: transform <
+58: push @
+59: take ^
+60: move_wall ^
+61: add >
+62: transform $
+63: push +
+64: take <
+65: chase D
+66: add !
+67: add S
+68: take ;
+69: chase O
+70: transform &
+71: chase &
+72: move
+73: chase *
+74: take *
+75: transform O
+76: move_wall X
+77: chase @
+78: add @
+79: push !
+80: chase S
+81: take >
+82: chase !
+83: chase ^
+84: transform M
+85: move_wall !
+86: add M
+87: move_wall <
+88: push >
+89: move_wall M
+90: take +
+91: chase $
+92: push ;
+93: move_wall >
+-- EDGES --
+0-14: none
+0-28: step 6
+0-34: step 2
+0-4: nextTo @
+1-0: within + 10
+1-24: within & 2
+1-73: within @ 9
+10-22: step 10
+10-28: none
+10-57: touch @
+10-69: touch $
+11-21: nextTo !
+11-88: none
+12-43: within ; 7
+12-6: nextTo X
+12-8: nextTo <
+13-41: touch D
+13-55: nextTo $
+13-62: none
+13-73: nextTo ;
+14-64: nextTo D
+14-71: step 9
+15-13: nextTo $
+15-9: none
+16-38: none
+16-48: within & 7
+17-18: none
+17-82: touch +
+18-50: touch S
+18-62: none
+19-39: touch $
+19-60: step 10
+19-73: nextTo !
+2-23: touch *
+2-35: step 3
+2-78: step 1
+20-11: nextTo >
+20-22: touch &
+20-51: none
+20-60: touch ;
+20-64: touch ^
+20-85: nextTo M
+21-42: within + 8
+21-78: touch *
+22-56: nextTo !
+22-63: nextTo ^
+22-68: nextTo >
+23-29: nextTo +
+23-53: none
+23-89: within D 3
+24-0: within & 3
+24-38: nextTo D
+24-54: step 8
+24-79: step 6
+25-13: none
+26-18: step 5
+26-19: within ! 1
+26-29: step 6
+26-64: none
+26-86: within > 4
+27-15: nextTo <
+27-40: step 5
+27-67: none
+27-70: nextTo *
+27-9: within X 4
+27-90: step 4
+28-4: nextTo <
+28-56: touch D
+28-61: step 7
+29-23: within & 1
+29-63: nextTo *
+3-63: within M 6
+3-64: touch $
+3-74: nextTo *
+3-79: none
+3-80: none
+30-0: nextTo ;
+30-77: nextTo !
+30-83: within @ 5
+31-42: step 1
+32-20: step 2
+32-30: step 4
+32-73: step 1
+32-90: nextTo ;
+33-27: nextTo X
+33-65: none
+33-74: within < 10
+33-91: touch *
+34-31: nextTo @
+34-48: touch O
+34-5: nextTo ^
+34-75: touch M
+35-46: step 1
+35-57: within @ 7
+36-27: within D 1
+36-36: nextTo $
+36-38: none
+37-42: none
+38-27: nextTo !
+38-53: touch S
+38-79: step 6
+38-81: nextTo <
+38-9: within D 10
+39-13: within O 6
+39-36: none
+39-67: within O 2
+39-91: step 5
+4-16: none
+4-18: nextTo $
+4-26: within > 7
+40-10: within * 5
+40-32: step 1
+40-39: step 8
+40-65: within * 3
+41-68: step 7
+41-86: within < 8
+42-90: within @ 5
+43-0: none
+43-67: nextTo ;
+43-74: nextTo X
+44-93: none
+45-21: within ; 2
+45-30: within @ 10
+45-37: step 8
+46-21: within S 3
+46-7: nextTo *
+46-80: nextTo &
+47-72: within D 7
+48-24: touch ;
+48-28: nextTo +
+48-3: within < 2
+48-51: within * 9
+48-66: none
+48-8: nextTo M
+48-90: step 3
+49-17: step 9
+49-5: nextTo !
+49-7: within $ 7
+49-81: nextTo ^
+5-22: none
+5-24: step 9
+5-52: nextTo S
+5-81: within ! 2
+5-91: step 8
+50-10: step 1
+50-11: within O 9
+50-48: touch ^
+50-61: none
+51-16: step 1
+51-42: nextTo S
+52-33: none
+52-87: none
+53-1: none
+53-79: step 2
+53-88: touch S
+54-13: none
+54-29: step 2
+54-82: touch $
+55-59: touch S
+55-64: within + 2
+55-67: within * 2
+56-41: nextTo *
+57-15: within O 8
+57-26: step 2
+57-30: none
+57-43: step 1
+57-63: nextTo >
+58-11: none
+58-26: nextTo @
+58-60: nextTo O
+58-69: step 5
+58-92: nextTo X
+59-11: none
+59-35: step 7
+59-5: step 10
+6-45: within & 10
+6-62: nextTo M
+6-89: within & 9
+60-13: none
+60-45: nextTo &
+60-47: touch D
+60-50: touch <
+60-55: none
+60-66: nextTo M
+61-45: nextTo @
+62-77: none
+63-13: within ! 6
+63-43: nextTo O
+63-44: nextTo $
+63-64: within D 9
+63-83: step 2
+64-52: none
+64-60: nextTo +
+64-91: nextTo $
+66-2: nextTo !
+66-3: none
+66-35: nextTo >
+66-50: within & 1
+67-22: within + 4
+67-28: touch $
+67-43: step 5
+67-71: within + 4
+68-31: step 10
+68-87: step 9
+69-56: nextTo X
+69-60: step 1
+7-74: touch X
+7-77: within O 7
+7-80: step 5
+70-34: touch !
+70-40: nextTo >
+70-86: touch ;
+72-46: step 4
+72-49: step 10
+73-56: within < 7
+74-37: step 9
+75-8: within M 5
+75-89: none
+76-16: touch &
+76-17: nextTo S
+76-23: within S 6
+76-27: touch *
+76-38: within $ 3
+76-72: nextTo D
+76-78: step 2
+78-30: touch ^
+79-43: touch <
+79-92: step 2
+80-25: nextTo <
+80-35: touch >
+80-74: touch +
+80-76: touch ^
+80-89: none
+81-51: step 5
+81-66: nextTo O
+81-84: nextTo S
+82-10: touch ;
+82-12: within S 1
+82-92: step 9
+83-68: none
+84-64: none
+84-73: none
+84-78: none
+85-49: step 5
+85-50: within M 5
+85-82: touch X
+86-26: nextTo >
+86-43: step 1
+86-84: nextTo S
+86-91: within @ 5
+87-18: nextTo >
+87-26: touch >
+87-36: within M 10
+87-4: within ^ 6
+88-15: touch M
+88-6: step 7
+88-65: nextTo <
+89-14: touch +
+89-33: nextTo S
+89-40: none
+89-63: none
+89-80: step 5
+9-0: within ^ 8
+9-15: nextTo O
+9-3: step 7
+9-32: nextTo ^
+90-29: step 10
+90-43: within @ 4
+90-59: touch O
+91-58: step 6
+91-73: touch $
+92-25: step 10
+93-63: none
+
+>:
+-- NODES --
+0: idle
+1: add *
+2: add ;
+3: transform D
+4: take O
+5: chase *
+6: push M
+7: chase S
+8: transform @
+9: add $
+10: chase M
+11: push ;
+12: move_wall @
+13: chase $
+14: move_wall $
+15: die
+16: add S
+17: move_wall S
+18: transform !
+19: add D
+20: move_wall ;
+21: transform +
+22: move_wall *
+23: take $
+24: push @
+25: transform *
+26: push <
+27: take X
+28: push S
+29: add >
+30: chase !
+31: move_wall M
+32: move_wall &
+33: move_wall >
+34: transform X
+35: move_wall ^
+36: push >
+37: add @
+38: chase @
+39: take *
+40: take +
+41: push !
+42: add M
+43: take <
+44: chase ;
+45: push $
+46: take S
+47: move_wall X
+48: push X
+49: push O
+50: take ;
+51: take M
+52: move_wall !
+53: take D
+54: take @
+55: move
+56: move_wall <
+57: push *
+58: chase <
+59: transform O
+60: take ^
+61: chase O
+62: take &
+63: add X
+64: chase +
+65: add !
+66: add &
+67: transform <
+68: transform S
+69: chase &
+70: push D
+71: take !
+72: push ^
+73: transform ^
+74: transform ;
+75: transform $
+76: chase >
+77: transform M
+78: add <
+79: move_wall +
+80: clone
+81: take >
+82: chase X
+83: move_wall D
+84: move_wall O
+85: add +
+86: add ^
+87: chase D
+88: push &
+89: transform >
+90: add O
+91: transform &
+92: chase ^
+93: push +
+-- EDGES --
+0-32: step 1
+0-54: step 3
+0-88: nextTo +
+1-40: none
+1-49: step 7
+1-80: none
+10-17: nextTo >
+10-72: step 9
+10-85: within O 7
+10-93: step 7
+11-49: touch M
+11-77: within D 3
+11-79: touch ^
+12-83: step 10
+12-86: touch O
+13-27: within & 5
+13-60: within M 5
+13-79: touch S
+14-19: step 7
+14-49: nextTo *
+14-69: step 6
+15-49: within @ 4
+15-62: within ! 4
+16-67: touch +
+16-76: touch S
+17-18: touch @
+17-48: within & 4
+17-63: nextTo ^
+17-89: step 3
+18-78: touch @
+18-92: none
+19-25: none
+19-6: none
+2-35: within * 2
+2-82: step 8
+20-4: step 10
+20-41: touch <
+20-93: nextTo D
+21-26: step 7
+21-29: nextTo O
+21-38: touch D
+21-39: nextTo <
+21-47: step 3
+21-71: touch >
+22-45: within ! 4
+22-67: nextTo >
+22-76: nextTo +
+22-78: nextTo S
+22-81: step 5
+23-10: nextTo >
+23-23: touch ;
+23-29: touch S
+23-59: step 3
+23-61: within O 7
+23-86: step 5
+24-11: within O 9
+24-84: step 2
+25-0: nextTo &
+25-53: touch X
+25-9: nextTo D
+26-36: none
+26-5: within ^ 10
+26-84: nextTo ;
+27-90: step 7
+28-32: step 6
+29-19: step 9
+29-32: step 10
+29-4: touch ^
+29-45: step 3
+3-57: nextTo ^
+30-25: step 7
+30-43: within $ 4
+30-78: within $ 10
+31-26: none
+31-50: within ! 4
+32-27: step 4
+32-59: none
+34-10: none
+34-43: within M 9
+34-62: step 3
+34-92: none
+34-93: nextTo <
+35-37: touch X
+35-73: within + 8
+35-75: step 1
+36-12: step 1
+36-49: none
+37-18: nextTo ^
+37-68: within O 7
+37-92: within * 7
+38-72: step 7
+39-43: nextTo X
+39-64: within D 8
+39-73: nextTo ^
+4-38: within $ 3
+4-51: nextTo ;
+4-83: step 8
+40-41: touch *
+40-62: touch <
+40-85: nextTo >
+41-46: none
+42-3: step 3
+44-0: step 4
+44-57: step 2
+45-1: step 7
+45-25: touch ^
+45-3: none
+45-68: step 2
+45-77: within + 2
+46-44: within > 9
+47-1: none
+47-23: nextTo >
+47-41: none
+48-11: touch ;
+48-49: touch +
+48-52: nextTo &
+48-92: nextTo @
+49-26: nextTo ;
+49-45: nextTo *
+49-49: within ! 7
+5-28: nextTo ;
+5-3: touch +
+5-6: step 4
+5-70: none
+5-71: touch X
+5-74: nextTo !
+50-1: within ; 5
+50-69: none
+50-72: none
+50-76: nextTo O
+51-72: none
+51-74: within ^ 4
+51-84: none
+53-21: none
+53-52: step 7
+53-56: within $ 9
+53-62: none
+53-7: within M 6
+55-33: touch O
+56-0: step 8
+56-27: within > 6
+56-57: step 8
+56-7: within + 8
+56-72: none
+57-12: none
+57-21: touch ;
+57-40: within S 4
+57-8: none
+58-39: touch X
+58-59: nextTo !
+58-70: step 9
+58-75: within $ 4
+58-86: none
+59-44: touch $
+59-74: touch $
+59-81: step 9
+6-78: touch +
+60-12: step 8
+60-26: none
+60-8: step 6
+61-57: nextTo S
+62-39: touch D
+62-55: none
+63-44: step 5
+63-64: nextTo &
+64-1: touch S
+64-31: step 3
+64-32: touch >
+64-50: none
+65-31: none
+65-50: within M 6
+66-1: none
+66-15: none
+66-93: within X 1
+67-84: within < 8
+67-9: none
+68-24: within * 6
+68-32: touch ;
+69-34: touch *
+69-58: touch ^
+7-1: nextTo @
+7-16: touch >
+7-29: nextTo X
+7-6: step 3
+7-93: none
+70-22: none
+70-35: step 1
+70-39: none
+70-51: nextTo >
+70-72: nextTo O
+71-26: none
+71-35: within & 9
+71-40: within > 4
+71-42: nextTo +
+71-62: none
+71-73: touch S
+72-29: touch ^
+72-6: none
+72-64: touch M
+72-69: nextTo ;
+73-25: within $ 5
+73-40: within S 4
+73-44: within S 10
+74-12: nextTo !
+75-13: nextTo &
+75-8: none
+76-21: none
+76-68: step 2
+76-7: step 10
+76-9: touch ;
+77-69: step 7
+78-22: within > 7
+78-57: none
+78-87: within S 6
+8-15: none
+8-42: nextTo D
+8-55: step 9
+8-88: within @ 3
+80-20: within ^ 10
+80-66: touch S
+81-14: nextTo S
+81-32: within M 8
+81-38: nextTo <
+81-46: none
+81-58: within < 6
+81-7: none
+82-16: none
+82-22: step 2
+82-30: within + 2
+82-83: none
+82-86: none
+83-23: within > 2
+83-29: none
+83-42: touch O
+83-44: none
+83-52: none
+83-88: nextTo *
+84-16: touch ^
+84-19: step 3
+84-83: touch ;
+84-87: nextTo O
+85-65: nextTo X
+85-76: touch ;
+85-81: within ^ 7
+85-90: nextTo *
+86-13: touch *
+86-16: nextTo $
+86-2: none
+86-51: within S 9
+86-55: none
+86-76: nextTo &
+87-0: step 10
+87-77: none
+87-87: none
+88-66: touch D
+89-16: nextTo D
+89-43: nextTo <
+89-7: step 3
+89-80: none
+9-13: within @ 8
+9-29: step 2
+9-30: nextTo $
+9-47: none
+9-88: nextTo O
+90-41: touch +
+90-48: step 2
+90-5: step 9
+90-53: step 10
+90-6: nextTo !
+90-91: within * 2
+91-2: within ^ 1
+91-26: none
+91-33: nextTo $
+92-22: step 3
+92-31: step 10
+92-49: nextTo !
+93-58: none
+

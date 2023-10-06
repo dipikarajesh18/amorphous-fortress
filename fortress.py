@@ -48,6 +48,7 @@ class Fortress():
         self.fortmap[-1,:] = self.border
         self.fortmap[:,0] = self.border
         self.fortmap[:,-1] = self.border
+        
 
     # print the fortress to the console
     def printFortress(self):
@@ -301,3 +302,25 @@ class Fortress():
         for c in self.CHAR_VISIT_TREE:
             self.CHAR_VISIT_TREE[c]['nodes'] = set()
             self.CHAR_VISIT_TREE[c]['edges'] = set()
+
+
+    # imports a fortress from entity class definition list
+    def importEntityFortDef(self, filename):
+        # reset everything
+        self.CHARACTER_DICT = {}
+        self.CHAR_VISIT_TREE = {}
+        self.entities = {}
+
+        with open(filename, "r") as f:
+            lines = f.read()
+            ent_sets = lines.split("\n\n")
+
+            # add each entity definition to the dictionary set
+            for estr in ent_sets:
+                if estr == "":
+                    continue
+                ent = Entity(self,n_rand_nodes=1)  #dummy n_rand_nodes to allow import
+                ent.importTreeStr(estr)
+                ent.pos = [-1,-1]
+                self.CHARACTER_DICT[ent.char] = ent
+                self.CHAR_VISIT_TREE[ent.char] = {'nodes':set(),'edges':set()}
