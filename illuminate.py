@@ -43,6 +43,7 @@ def enjoy(args, archive):
     # Iterate through the archive and simulate each fortress while rendering
     for ind in valid_inds:
         ind.render = True
+        breakpoint()
         ind.simulate_fortress(
             show_prints=False, map_elites=True, n_new_sims=args.n_sims,
             n_steps_per_episode=args.n_steps_per_episode)
@@ -271,8 +272,15 @@ def illuminate(config: EvoConfig):
                             key=lambda f: int(f.split("-")[1].split(".")[0]))
         latest_archive_file = archive_files[-1]
         archive = load_latest_archive(exp_dir=exp_dir, archive_files=archive_files)
-        stats = json.load(open(os.path.join(exp_dir, "stats.json"), "r"))
-        rand_ind_seed_i = stats['rand_ind_seed_i']
+        stats_path = os.path.join(exp_dir, "stats.json")
+
+        # FIXME: Just for backward compatibility
+        if os.path.exists(stats_path):
+            stats = json.load(open(stats_path, 'r'))
+            rand_ind_seed_i = stats['rand_ind_seed_i']
+        else:
+            rand_ind_seed_i = 0
+
         fits = np.full((config.x_bins, config.y_bins), np.nan)
         valid_xys = np.argwhere(archive != None)
         for xy in valid_xys:

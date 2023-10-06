@@ -116,6 +116,7 @@ class Engine():
 
 
         self.fortress.steps = 0
+        self.sim_tick = 0
 
 
 

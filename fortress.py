@@ -164,7 +164,7 @@ class Fortress():
                 ]
                 # fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
                 fsm_size_bin_dist = fsm_size_bin_dists[
-                    self.rng_init.randint(0, len(fsm_size_bin_dists) - 1)]
+                    self.rng_init.integers(0, len(fsm_size_bin_dists))]
                 fsm_size_bin_dist = fsm_size_bin_dist.copy()
                 self._fsm_size_bin_dist = fsm_size_bin_dist.copy()
             else:
@@ -184,7 +184,7 @@ class Fortress():
                 ents_n_nodes = []
                 break_outer_loop = False  # flag to break from outer loop
                 for i in range(len(char_list)):
-                    n_nodes = self.rng_init.randint(
+                    n_nodes = self.rng_init.integers(
                         cur_fsm_size_bounds[0], cur_fsm_size_bounds[1]
                     )
                     n_nodes = min(max(n_nodes, 1), self.max_nodes_per_type - 1)

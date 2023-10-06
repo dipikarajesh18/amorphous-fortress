@@ -67,7 +67,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
     title_text = f"====== AMORPHOUS FORTRESS [{engine.seed}] ======"
     sim.addstr(0, sim_width//2-len(title_text)//2, title_text)
 
-    time_text = f"Timestep: {engine.sim_tick} --- # entities: {engine.fortress.max_entities} / {(engine.fortress.max_entities)}"
+    time_text = f"Timestep: {engine.sim_tick} --- # entities: {len(engine.fortress.entities)} / {(engine.fortress.max_entities)}"
     sim.addstr(2, sim_width//2-len(time_text)//2, time_text)
 
 
