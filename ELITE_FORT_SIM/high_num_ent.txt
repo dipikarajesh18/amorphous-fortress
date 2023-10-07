@@ -68,7 +68,7 @@ Number of entities: 58
 ============    FORTRESS SEED [Generator(PCG64)]    =========
 Fortress initialized! - <0>
 >>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
->>> TIME: 2023-10-06 22:30:39.055254 <<< -- <0>
+>>> TIME: 2023-10-06 22:36:22.196953 <<< -- <0>
 Fortress randomly populated with 23 entities -- <0>
 [^.fde9] moved to [3, 3] - (not able to push) -- <2>
 [!.c344] cloned to [!.350d] at [2, 3] -- <2>
@@ -388,13 +388,13 @@ Fortress randomly populated with 23 entities -- <0>
 Nodes: 4 / 4 = 1.00
 Edges: 7 / 8 = 0.88
 NODE SET: ['idle', 'move_wall M', 'push M', 'move_wall ^']
-EDGE SET: ['step 4', 'nextTo !', 'step 2', 'within D 3', 'nextTo $', 'step 7', 'none']
+EDGE SET: ['none', 'nextTo !', 'nextTo $', 'within D 3', 'step 7', 'step 2', 'step 4']
 
 >
 Nodes: 4 / 5 = 0.80
 Edges: 5 / 10 = 0.50
 NODE SET: ['idle', 'transform S', 'add >', 'add D']
-EDGE SET: ['none', 'within M 5', 'none', 'nextTo M', 'step 5']
+EDGE SET: ['within M 5', 'none', 'step 5', 'nextTo M', 'none']
 
 *
 Nodes: 1 / 5 = 0.20
@@ -412,7 +412,7 @@ EDGE SET: []
 Nodes: 2 / 3 = 0.67
 Edges: 3 / 6 = 0.50
 NODE SET: ['idle', 'push >']
-EDGE SET: ['nextTo ;', 'none', 'within O 9']
+EDGE SET: ['nextTo ;', 'within O 9', 'none']
 
 <
 Nodes: 0 / 2 = 0.00
@@ -424,7 +424,7 @@ O
 Nodes: 3 / 3 = 1.00
 Edges: 5 / 5 = 1.00
 NODE SET: ['idle', 'transform S', 'push ^']
-EDGE SET: ['touch ;', 'step 4', 'none', 'nextTo @', 'none']
+EDGE SET: ['none', 'step 4', 'none', 'nextTo @', 'touch ;']
 
 $
 Nodes: 1 / 2 = 0.50
@@ -448,13 +448,13 @@ M
 Nodes: 3 / 4 = 0.75
 Edges: 5 / 8 = 0.62
 NODE SET: ['idle', 'move_wall *', 'chase X']
-EDGE SET: ['step 8', 'none', 'step 1', 'nextTo >', 'step 7']
+EDGE SET: ['step 7', 'nextTo >', 'none', 'step 1', 'step 8']
 
 S
 Nodes: 3 / 3 = 1.00
 Edges: 4 / 6 = 0.67
 NODE SET: ['idle', 'add ;', 'take <']
-EDGE SET: ['touch @', 'within @ 3', 'nextTo D', 'within * 8']
+EDGE SET: ['within * 8', 'touch @', 'nextTo D', 'within @ 3']
 
 X
 Nodes: 0 / 2 = 0.00
@@ -466,7 +466,7 @@ EDGE SET: []
 Nodes: 3 / 4 = 0.75
 Edges: 2 / 9 = 0.22
 NODE SET: ['idle', 'push !', 'transform <']
-EDGE SET: ['touch O', 'within $ 8']
+EDGE SET: ['within $ 8', 'touch O']
 
 ;
 Nodes: 1 / 1 = 1.00

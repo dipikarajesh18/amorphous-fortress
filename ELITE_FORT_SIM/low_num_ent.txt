@@ -68,7 +68,7 @@ Number of entities: 1
 ============    FORTRESS SEED [Generator(PCG64)]    =========
 Fortress initialized! - <0>
 >>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
->>> TIME: 2023-10-06 22:30:39.488754 <<< -- <0>
+>>> TIME: 2023-10-06 22:36:22.617740 <<< -- <0>
 Fortress randomly populated with 3 entities -- <0>
 [^.7653] moved to [7, 2] - (not able to push) -- <2>
 [*.fde9] took [M.126e] -- <2>
@@ -112,7 +112,7 @@ EDGE SET: []
 Nodes: 7 / 42 = 0.17
 Edges: 7 / 120 = 0.06
 NODE SET: ['take !', 'take *', 'die', 'take &', 'push *', 'push !', 'clone']
-EDGE SET: ['step 9', 'none', 'step 8', 'step 5', 'step 1', 'none', 'step 2']
+EDGE SET: ['none', 'none', 'step 2', 'step 8', 'step 5', 'step 1', 'step 9']
 
 X
 Nodes: 0 / 40 = 0.00
@@ -142,7 +142,7 @@ EDGE SET: []
 Nodes: 3 / 27 = 0.11
 Edges: 3 / 76 = 0.04
 NODE SET: ['take M', 'move_wall !', 'chase +']
-EDGE SET: ['none', 'none', 'step 1']
+EDGE SET: ['step 1', 'none', 'none']
 
 D
 Nodes: 0 / 30 = 0.00

@@ -14,3 +14,4 @@ ind-character-def/
 *.egg-info
 archive_pickles/*
 ELITE_CHAR_DEF/*
+ELITE_FORT_SIM/*_arx_*

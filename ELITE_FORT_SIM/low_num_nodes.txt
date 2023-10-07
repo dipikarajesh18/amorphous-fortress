@@ -68,7 +68,7 @@ Number of entities: 4
 ============    FORTRESS SEED [Generator(PCG64)]    =========
 Fortress initialized! - <0>
 >>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
->>> TIME: 2023-10-06 22:30:39.638188 <<< -- <0>
+>>> TIME: 2023-10-06 22:36:22.816576 <<< -- <0>
 Fortress randomly populated with 4 entities -- <0>
 
 ++++  TREE COVERAGE  ++++
