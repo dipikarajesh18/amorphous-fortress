@@ -1,250 +1,475 @@
-ELITE_CHAR_DEF/exp1_arx_f[0.584]_xy[156.000, 41.000].txt - SEED: 9 - SIM_NUM : 100
+ELITE_CHAR_DEF/exp1_arx_f[0.584]_xy[[99  1]]-[156.000,41.000].txt - SEED: 9 - SIM_NUM : 100
 
 > GENERATION: 0
 ###############
-#....^.^.^.O>$#
-#.....&<.$..^.#
-#..X..@..M..^&#
-#.>......M.;D.#
-#M.........D.&#
-#.>....@.!...>#
+#.&......!....#
+#.........*...#
+#$..^$.*...*..#
+#..D.$...M..>.#
+#&+@..+..^..>M#
+#.>..$;..S....#
 ###############
 
 > GENERATION 20
 ###############
-#...^...^!^S^$#
-#.....&.!$!..!#
-#.M...@.SMS..&#
-#.SDX...M^.;D.#
-#.D........D.&#
-#.SD...@.!...S#
+#^&..S;..!....#
+#!S;S!S;.M*...#
+#$!S!$!*...*..#
+#!.D!$!S....SD#
+#&;@O!+.^...SM#
+#;+;!$;..S..D.#
 ###############
 
 > GENERATION 40
 ###############
-#.^^....S^SSS$#
-#....X..^$!S.!#
-#M....@SSMS..&#
-#.SD....M..;D.#
-#.D.^......D.&#
-#.SD...@.!...S#
+#S&.;S;..!....#
+#!S^S!S;.M*...#
+#$!S!$!*...*..#
+#!;D!$!S....SD#
+#S;@;!+.....SM#
+#;+;!$;^.S..D.#
 ###############
 
 > GENERATION 60
 ###############
-#.....OS^!SSS$#
-#....^X.!^!^.!#
-#.....@SSMS..&#
-#.SD....M..;D.#
-#^D........D.&#
-#MSD...@.!...S#
+#S&.;S;..!....#
+#!S;S!S;.M*...#
+#$!S!$!*...*..#
+#!;D!$!^....SD#
+#S;@;!^.....SM#
+#;+;!$;..S..D.#
 ###############
 
 > GENERATION 80
 ###############
-#.....SS^^SSS$#
-#.....S.!$!S.!#
-#.....@SSMS..&#
-#.SD..X.M..;D.#
-#.D.^..^...D.&#
-#MSD...@.!...S#
+#S&.;S;..!....#
+#!S;S!S;.M*...#
+#$!S!$!*...*..#
+#!;D!$!S....SD#
+#S;@;!+^....SM#
+#;+;!$^..S..D.#
 ###############
 
 > GENERATION 100
 ###############
-#.....SSS!SSS$#
-#.....S.!$!S.!#
-#....^@^S^S..&#
-#.SD....MM.;D.#
-#.D......^.D.&#
-#MSD...@.!...S#
+#S&.^S;..!....#
+#!S;S!S;.M*...#
+#$!S!$!*...*..#
+#!;D!$!S....SD#
+#S;@;!+.^...SM#
+#;+;!$;..S..D.#
 ###############
 
-Number of entities: 44
+Number of entities: 58
 
 
 ===============
 
-^:
--- NODES --
-0: idle
-1: move_wall M
-2: push M
-3: move_wall ^
--- EDGES --
-0-2: nextTo $
-0-3: step 7
-1-0: step 4
-1-1: touch M
-1-3: step 2
-2-1: nextTo !
-2-2: none
-3-2: within D 3
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-06 22:30:39.055254 <<< -- <0>
+Fortress randomly populated with 23 entities -- <0>
+[^.fde9] moved to [3, 3] - (not able to push) -- <2>
+[!.c344] cloned to [!.350d] at [2, 3] -- <2>
+[$.126e] added [!.350d] at [2, 3] -- <2>
+[D.94a1] cloned to [D.ef5d] at [13, 4] -- <2>
+[>.d037] added [D.ef5d] at [13, 4] -- <2>
+[!.c344] cloned to [!.bd2d] at [5, 5] -- <2>
+[$.2956] added [!.bd2d] at [5, 5] -- <2>
+[D.94a1] cloned to [D.78e9] at [12, 6] -- <2>
+[>. d4c] added [D.78e9] at [12, 6] -- <2>
+[^.fde9] moved to [2, 3] - (not able to push) -- <3>
+[!.c344] cloned to [!.8342] at [4, 6] -- <3>
+[$.2956] added [!.8342] at [4, 6] -- <3>
+[S.2195] cloned to [S. 7ed] at [2, 6] -- <3>
+[>.2b38] transformed into [S. 7ed] at [2, 6] -- <3>
+[>.2b38] died -- <3>
+[!.c344] cloned to [!.81ab] at [6, 3] -- <3>
+[$.f4db] added [!.81ab] at [6, 3] -- <3>
+[!.c344] cloned to [!.34dd] at [4, 4] -- <3>
+[$.38a1] added [!.34dd] at [4, 4] -- <3>
+[+.2a44] moved to [3, 5] - (not able to push) -- <3>
+[^.fde9] moved to [3, 3] -- <4>
+[!.c344] cloned to [!.1d98] at [4, 3] -- <4>
+[$.f4db] added [!.1d98] at [4, 3] -- <4>
+[!.c344] cloned to [!.f37e] at [6, 4] -- <4>
+[$.38a1] added [!.f37e] at [6, 4] -- <4>
+[+.2a44] moved to [3, 6] - (not able to push) -- <4>
+[M.766f] moved to [12, 5] -- <5>
+[+.2a44] moved to [2, 6] - (not able to push) -- <5>
+[!.c344] cloned to [!.70ff] at [1, 4] -- <6>
+[$.126e] added [!.70ff] at [1, 4] -- <6>
+[S.2195] cloned to [S.8ce4] at [12, 4] -- <6>
+[>.d037] transformed into [S.8ce4] at [12, 4] -- <6>
+[>.d037] died -- <6>
+[S.2195] cloned to [S.99ad] at [12, 5] -- <6>
+[>. d4c] transformed into [S.99ad] at [12, 5] -- <6>
+[>. d4c] died -- <6>
+[;.72d6] cloned to [;.5f95] at [2, 5] -- <6>
+[S. 7ed] added [;.5f95] at [2, 5] -- <6>
+[O.1608] cloned to [O.ce72] at [4, 2] -- <6>
+[!.1d98] added [O.ce72] at [4, 2] -- <6>
+[M.766f] moved to [13, 5] -- <7>
+[O.1608] cloned to [O.9aff] at [4, 5] -- <7>
+[!.8342] added [O.9aff] at [4, 5] -- <7>
+[;.72d6] cloned to [;. f16] at [3, 6] -- <7>
+[S. 7ed] added [;. f16] at [3, 6] -- <7>
+[^.fde9] moved to [3, 2] -- <8>
+[^. f4a] moved to [8, 5] -- <8>
+[!.c344] cloned to [!.e0ee] at [5, 2] -- <8>
+[$.f4db] added [!.e0ee] at [5, 2] -- <8>
+[;.72d6] cloned to [;.d549] at [1, 6] -- <8>
+[S. 7ed] added [;.d549] at [1, 6] -- <8>
+[O.1608] cloned to [O.fbc0] at [7, 4] -- <8>
+[!.f37e] added [O.fbc0] at [7, 4] -- <8>
+[S.2195] cloned to [S.cc55] at [4, 2] -- <8>
+[O.ce72] transformed into [S.cc55] at [4, 2] -- <8>
+[O.ce72] died -- <8>
+[^.fde9] moved to [2, 2] - (not able to push) -- <9>
+[^. f4a] moved to [9, 5] -- <9>
+[O.1608] cloned to [O.6af9] at [6, 2] -- <9>
+[!.81ab] added [O.6af9] at [6, 2] -- <9>
+[O.9aff] moved to [3, 5] - (not able to push) -- <9>
+[^.fde9] moved to [2, 3] -- <10>
+[^. f4a] pushed [M.7653] -- <10>
+[O.1608] cloned to [O.8d82] at [2, 4] -- <10>
+[!.70ff] added [O.8d82] at [2, 4] -- <10>
+[O.9aff] moved to [3, 4] - (not able to push) -- <10>
+[S.2195] cloned to [S.ec6a] at [7, 4] -- <10>
+[O.fbc0] transformed into [S.ec6a] at [7, 4] -- <10>
+[O.fbc0] died -- <10>
+[^.fde9] moved to [2, 2] -- <11>
+[!.c344] cloned to [!.e96c] at [1, 2] -- <11>
+[$.126e] added [!.e96c] at [1, 2] -- <11>
+[^. f4a] pushed [M.7653] -- <11>
+[O.1608] cloned to [O.c521] at [3, 3] -- <11>
+[!.350d] added [O.c521] at [3, 3] -- <11>
+[O.9aff] moved to [3, 3] - (not able to push) -- <11>
+[;.72d6] cloned to [;.a8b1] at [3, 2] -- <11>
+[S.cc55] added [;.a8b1] at [3, 2] -- <11>
+[S.2195] cloned to [S.1e25] at [6, 2] -- <11>
+[O.6af9] transformed into [S.1e25] at [6, 2] -- <11>
+[O.6af9] died -- <11>
+[^.fde9] moved to [2, 1] - (not able to push) -- <12>
+[^. f4a] moved to [8, 3] - (not able to push) -- <12>
+[S.2195] cloned to [S.2f03] at [3, 3] -- <12>
+[O.9aff] transformed into [S.2f03] at [3, 3] -- <12>
+[O.9aff] died -- <12>
+[O.1608] cloned to [O.a291] at [5, 1] -- <12>
+[!.e0ee] added [O.a291] at [5, 1] -- <12>
+[O.8d82] moved to [1, 4] - (not able to push) -- <12>
+[^.fde9] moved to [3, 1] -- <13>
+[^. f4a] moved to [8, 4] - (not able to push) -- <13>
+[O.1608] cloned to [O.608b] at [1, 1] -- <13>
+[!.e96c] added [O.608b] at [1, 1] -- <13>
+[S.2195] cloned to [S.baad] at [3, 3] -- <13>
+[O.c521] transformed into [S.baad] at [3, 3] -- <13>
+[O.c521] died -- <13>
+[^.fde9] moved to [2, 1] -- <14>
+[^. f4a] moved to [8, 5] - (not able to push) -- <14>
+[O.1608] cloned to [O.2bfd] at [2, 4] -- <14>
+[!.70ff] added [O.2bfd] at [2, 4] -- <14>
+[;.72d6] cloned to [;.e4e7] at [6, 1] -- <14>
+[S.1e25] added [;.e4e7] at [6, 1] -- <14>
+[S.2195] cloned to [S.6c26] at [5, 1] -- <14>
+[O.a291] transformed into [S.6c26] at [5, 1] -- <14>
+[O.a291] died -- <14>
+[^. f4a] moved to [8, 6] - (not able to push) -- <15>
+[O.1608] cloned to [O.26d7] at [2, 2] -- <15>
+[!.350d] added [O.26d7] at [2, 2] -- <15>
+[S.2195] cloned to [S.d7f9] at [1, 4] -- <15>
+[O.8d82] transformed into [S.d7f9] at [1, 4] -- <15>
+[O.8d82] died -- <15>
+[S.2195] cloned to [S.7467] at [1, 1] -- <15>
+[O.608b] transformed into [S.7467] at [1, 1] -- <15>
+[O.608b] died -- <15>
+[^.fde9] moved to [1, 1] - (not able to push) -- <16>
+[^. f4a] moved to [8, 5] - (not able to push) -- <16>
+[;.72d6] cloned to [;.32bc] at [7, 2] -- <16>
+[S.1e25] added [;.32bc] at [7, 2] -- <16>
+[O.2bfd] moved to [1, 4] - (not able to push) -- <16>
+[^.fde9] moved to [1, 2] -- <17>
+[^. f4a] moved to [9, 5] - (not able to push) -- <17>
+[O.1608] cloned to [O. 1a3] at [4, 5] -- <17>
+[!.34dd] added [O. 1a3] at [4, 5] -- <17>
+[S.2195] cloned to [S.6905] at [2, 2] -- <17>
+[O.26d7] transformed into [S.6905] at [2, 2] -- <17>
+[O.26d7] died -- <17>
+[^.fde9] moved to [1, 1] -- <18>
+[^. f4a] moved to [8, 5] - (not able to push) -- <18>
+[^. f4a] moved to [9, 5] - (not able to push) -- <19>
+[S.2195] cloned to [S.728e] at [1, 4] -- <19>
+[O.2bfd] transformed into [S.728e] at [1, 4] -- <19>
+[O.2bfd] died -- <19>
+[O. 1a3] moved to [5, 5] - (not able to push) -- <19>
+[^. f4a] moved to [8, 5] - (not able to push) -- <20>
+[O.1608] cloned to [O.a119] at [4, 5] -- <20>
+[!.bd2d] added [O.a119] at [4, 5] -- <20>
+[O. 1a3] moved to [5, 6] - (not able to push) -- <20>
+[^. f4a] moved to [9, 5] - (not able to push) -- <21>
+[O. 1a3] moved to [4, 6] - (not able to push) -- <21>
+[^. f4a] moved to [8, 5] - (not able to push) -- <22>
+[S.2195] cloned to [S.2ed7] at [4, 6] -- <22>
+[O. 1a3] transformed into [S.2ed7] at [4, 6] -- <22>
+[O. 1a3] died -- <22>
+[O.a119] moved to [4, 6] - (not able to push) -- <22>
+[^.fde9] moved to [2, 1] -- <23>
+[^. f4a] moved to [8, 6] - (not able to push) -- <23>
+[O.1608] cloned to [O.a838] at [2, 4] -- <23>
+[!.350d] added [O.a838] at [2, 4] -- <23>
+[O.a119] moved to [3, 6] - (not able to push) -- <23>
+[^.fde9] moved to [2, 2] - (not able to push) -- <24>
+[^. f4a] moved to [8, 5] - (not able to push) -- <24>
+[O.a119] moved to [3, 5] - (not able to push) -- <24>
+[^.fde9] moved to [2, 3] -- <25>
+[^. f4a] moved to [8, 4] - (not able to push) -- <25>
+[O.1608] cloned to [O.312d] at [4, 5] -- <25>
+[!.8342] added [O.312d] at [4, 5] -- <25>
+[S.2195] cloned to [S.ca79] at [3, 5] -- <25>
+[O.a119] transformed into [S.ca79] at [3, 5] -- <25>
+[O.a119] died -- <25>
+[O.a838] moved to [2, 5] - (not able to push) -- <25>
+[^.fde9] moved to [3, 3] -- <26>
+[^. f4a] moved to [9, 4] - (not able to push) -- <26>
+[;.72d6] cloned to [;.450a] at [2, 4] -- <26>
+[S.d7f9] added [;.450a] at [2, 4] -- <26>
+[O.a838] moved to [1, 5] - (not able to push) -- <26>
+[^.fde9] moved to [4, 3] -- <27>
+[^. f4a] moved to [8, 4] - (not able to push) -- <27>
+[O.a838] moved to [2, 5] - (not able to push) -- <27>
+[O.312d] moved to [5, 5] - (not able to push) -- <27>
+[^.fde9] moved to [5, 3] - (not able to push) -- <28>
+[^. f4a] moved to [9, 4] - (not able to push) -- <28>
+[<.5859] cloned to [<.b7ce] at [1, 5] -- <28>
+[&.3d7c] transformed into [<.b7ce] at [1, 5] -- <28>
+[&.3d7c] died -- <28>
+[;.72d6] cloned to [;.676a] at [4, 1] -- <28>
+[S.cc55] added [;.676a] at [4, 1] -- <28>
+[S.2f03] took [<.b7ce] -- <28>
+[<.b7ce] died -- <28>
+[S.2195] cloned to [S.c524] at [2, 5] -- <28>
+[O.a838] transformed into [S.c524] at [2, 5] -- <28>
+[O.a838] died -- <28>
+[O.312d] moved to [6, 5] - (not able to push) -- <28>
+[^.fde9] moved to [5, 2] -- <29>
+[^. f4a] moved to [9, 3] - (not able to push) -- <29>
+[O.312d] moved to [6, 4] - (not able to push) -- <29>
+[^.fde9] moved to [6, 2] -- <30>
+[^. f4a] moved to [9, 4] - (not able to push) -- <30>
+[S.2195] cloned to [S.5b35] at [6, 4] -- <30>
+[O.312d] transformed into [S.5b35] at [6, 4] -- <30>
+[O.312d] died -- <30>
+[^.fde9] moved to [6, 1] -- <31>
+[^. f4a] moved to [9, 5] - (not able to push) -- <31>
+[;.72d6] cloned to [;. 4d6] at [4, 5] -- <31>
+[S.ca79] added [;. 4d6] at [4, 5] -- <31>
+[^. f4a] moved to [10, 5] - (not able to push) -- <32>
+[O.1608] cloned to [O. a4d] at [1, 5] -- <32>
+[!.70ff] added [O. a4d] at [1, 5] -- <32>
+[^.fde9] moved to [5, 1] -- <33>
+[^. f4a] moved to [11, 5] - (not able to push) -- <33>
+[^.fde9] moved to [4, 1] -- <34>
+[^. f4a] moved to [11, 6] - (not able to push) -- <34>
+[S.2195] cloned to [S.f523] at [1, 5] -- <34>
+[O. a4d] transformed into [S.f523] at [1, 5] -- <34>
+[O. a4d] died -- <34>
+[^.fde9] moved to [5, 1] -- <35>
+[^. f4a] moved to [11, 5] - (not able to push) -- <35>
+[^. f4a] moved to [10, 5] - (not able to push) -- <36>
+[^.fde9] moved to [4, 1] -- <37>
+[^. f4a] moved to [9, 5] - (not able to push) -- <37>
+[^.fde9] moved to [3, 1] -- <38>
+[^. f4a] moved to [8, 5] - (not able to push) -- <38>
+[^. f4a] moved to [7, 5] - (not able to push) -- <39>
+[^.fde9] moved to [3, 2] - (not able to push) -- <40>
+[^. f4a] moved to [7, 6] -- <40>
+[^.fde9] moved to [3, 1] -- <41>
+[^.fde9] moved to [3, 2] -- <42>
+[^.fde9] moved to [3, 3] -- <43>
+[^. f4a] moved to [8, 6] -- <43>
+[^.fde9] moved to [3, 2] - (not able to push) -- <44>
+[^.fde9] moved to [4, 2] -- <45>
+[^.fde9] moved to [4, 3] -- <46>
+[^. f4a] moved to [8, 5] -- <46>
+[^.fde9] moved to [5, 3] -- <47>
+[^. f4a] moved to [8, 6] -- <47>
+[^.fde9] moved to [4, 3] - (not able to push) -- <48>
+[^. f4a] moved to [7, 6] -- <48>
+[^.fde9] moved to [5, 3] -- <49>
+[^.fde9] moved to [5, 4] -- <50>
+[^. f4a] moved to [8, 6] -- <50>
+[^.fde9] moved to [5, 5] -- <51>
+[^. f4a] moved to [7, 6] -- <51>
+[^.fde9] moved to [6, 5] - (not able to push) -- <52>
+[^. f4a] moved to [7, 5] -- <52>
+[^.fde9] moved to [7, 5] -- <53>
+[^. f4a] moved to [7, 6] -- <53>
+[^.fde9] moved to [8, 5] -- <54>
+[^. f4a] moved to [6, 6] -- <54>
+[^.fde9] moved to [9, 5] -- <55>
+[^. f4a] moved to [6, 5] - (not able to push) -- <55>
+[^.fde9] moved to [8, 5] - (not able to push) -- <56>
+[^. f4a] moved to [6, 6] -- <56>
+[^.fde9] moved to [7, 5] - (not able to push) -- <57>
+[^.fde9] moved to [7, 6] -- <58>
+[^. f4a] moved to [6, 5] - (not able to push) -- <58>
+[^.fde9] moved to [6, 6] -- <59>
+[^. f4a] moved to [6, 4] -- <59>
+[^.fde9] moved to [6, 5] - (not able to push) -- <60>
+[^. f4a] moved to [7, 4] -- <60>
+[^.fde9] moved to [7, 5] -- <61>
+[^.fde9] moved to [6, 5] -- <62>
+[^.fde9] moved to [6, 6] -- <63>
+[^.fde9] moved to [5, 6] - (not able to push) -- <64>
+[^. f4a] moved to [6, 4] -- <64>
+[^.fde9] moved to [6, 6] -- <65>
+[^. f4a] moved to [6, 5] - (not able to push) -- <65>
+[^.fde9] moved to [5, 6] -- <66>
+[^. f4a] moved to [6, 6] -- <66>
+[^. f4a] moved to [7, 6] -- <67>
+[^.fde9] moved to [5, 5] - (not able to push) -- <68>
+[^. f4a] moved to [7, 5] -- <68>
+[^.fde9] moved to [5, 6] -- <69>
+[^. f4a] moved to [6, 5] -- <69>
+[^.fde9] moved to [6, 6] -- <70>
+[^. f4a] moved to [5, 5] - (not able to push) -- <70>
+[^.fde9] moved to [7, 6] -- <71>
+[^. f4a] moved to [5, 4] -- <71>
+[^. f4a] moved to [4, 4] -- <72>
+[^.fde9] moved to [8, 6] -- <73>
+[^.fde9] moved to [8, 5] -- <74>
+[^. f4a] moved to [4, 3] - (not able to push) -- <74>
+[^.fde9] moved to [9, 5] -- <75>
+[^. f4a] moved to [5, 3] -- <75>
+[^.fde9] moved to [9, 6] - (not able to push) -- <76>
+[^. f4a] moved to [6, 3] -- <76>
+[^.fde9] moved to [8, 6] - (not able to push) -- <78>
+[^. f4a] moved to [6, 4] - (not able to push) -- <78>
+[^.fde9] moved to [7, 6] - (not able to push) -- <79>
+[^. f4a] moved to [6, 5] -- <79>
+[^.fde9] moved to [7, 5] - (not able to push) -- <80>
+[^. f4a] moved to [6, 6] -- <80>
+[^.fde9] moved to [7, 6] -- <81>
+[^.fde9] moved to [6, 6] -- <82>
+[^. f4a] moved to [7, 6] - (not able to push) -- <82>
+[^.fde9] moved to [6, 5] -- <83>
+[^. f4a] moved to [7, 5] - (not able to push) -- <83>
+[^.fde9] moved to [6, 4] - (not able to push) -- <84>
+[^. f4a] moved to [7, 6] -- <84>
+[^.fde9] moved to [6, 3] -- <85>
+[^.fde9] moved to [6, 2] -- <86>
+[^.fde9] moved to [7, 2] -- <87>
+[^.fde9] moved to [6, 2] -- <88>
+[^.fde9] moved to [6, 1] - (not able to push) -- <89>
+[^.fde9] moved to [5, 1] -- <90>
+[^.fde9] moved to [6, 1] -- <91>
+[^.fde9] moved to [5, 1] - (not able to push) -- <92>
+[^. f4a] moved to [8, 6] -- <92>
+[^.fde9] moved to [6, 1] -- <93>
+[^. f4a] moved to [8, 5] -- <93>
+[^.fde9] moved to [5, 1] -- <94>
+[^. f4a] moved to [8, 6] -- <94>
+[^. f4a] moved to [8, 5] -- <95>
+[^.fde9] moved to [6, 1] - (not able to push) -- <96>
+[^. f4a] moved to [7, 5] -- <96>
+[^.fde9] moved to [6, 2] -- <97>
+[^. f4a] moved to [7, 6] -- <97>
+[^.fde9] moved to [5, 2] -- <98>
+[^.fde9] moved to [5, 1] -- <99>
+[^. f4a] moved to [7, 5] -- <99>
+[^.fde9] moved to [4, 1] - (not able to push) -- <100>
+[^. f4a] moved to [8, 5] -- <100>
 
->:
--- NODES --
-0: idle
-1: chase *
-2: transform S
-3: add >
-4: add D
--- EDGES --
-0-2: step 5
-0-4: none
-1-0: step 2
-2-1: touch ^
-2-3: within M 5
-3-1: nextTo !
-3-2: step 9
-3-3: touch S
-4-0: nextTo M
-4-2: none
+++++  TREE COVERAGE  ++++
 
-*:
--- NODES --
-0: idle
-1: move_wall M
-2: push !
-3: clone
-4: move_wall ;
--- EDGES --
-0-3: touch X
-0-4: touch @
-1-2: touch X
-1-3: none
-1-4: nextTo +
-2-2: none
-3-0: within O 10
-3-3: nextTo $
-4-1: touch <
-4-2: nextTo ;
-4-4: nextTo @
 
-@:
--- NODES --
-0: idle
--- EDGES --
+^
+Nodes: 4 / 4 = 1.00
+Edges: 7 / 8 = 0.88
+NODE SET: ['idle', 'move_wall M', 'push M', 'move_wall ^']
+EDGE SET: ['step 4', 'nextTo !', 'step 2', 'within D 3', 'nextTo $', 'step 7', 'none']
 
-+:
--- NODES --
-0: idle
-1: push >
-2: take X
--- EDGES --
-0-0: nextTo ;
-0-1: none
-0-2: none
-1-0: within O 9
-2-0: within O 9
-2-1: within < 2
+>
+Nodes: 4 / 5 = 0.80
+Edges: 5 / 10 = 0.50
+NODE SET: ['idle', 'transform S', 'add >', 'add D']
+EDGE SET: ['none', 'within M 5', 'none', 'nextTo M', 'step 5']
 
-<:
--- NODES --
-0: idle
-1: add D
--- EDGES --
-0-0: none
-0-1: nextTo X
-1-0: none
-1-1: nextTo ^
+*
+Nodes: 1 / 5 = 0.20
+Edges: 0 / 11 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
-O:
--- NODES --
-0: idle
-1: transform S
-2: push ^
--- EDGES --
-0-1: none
-0-2: nextTo @
-1-0: touch ;
-2-1: step 4
-2-2: none
+@
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
-$:
--- NODES --
-0: idle
-1: add !
--- EDGES --
-0-0: step 5
-0-1: step 1
-1-0: touch D
++
+Nodes: 2 / 3 = 0.67
+Edges: 3 / 6 = 0.50
+NODE SET: ['idle', 'push >']
+EDGE SET: ['nextTo ;', 'none', 'within O 9']
 
-!:
--- NODES --
-0: idle
-1: add O
-2: push &
--- EDGES --
-0-1: nextTo !
-1-0: none
-1-1: touch &
-1-2: none
+<
+Nodes: 0 / 2 = 0.00
+Edges: 0 / 4 = 0.00
+NODE SET: []
+EDGE SET: []
 
-D:
--- NODES --
-0: idle
-1: add !
--- EDGES --
-0-1: touch D
-1-0: step 2
-1-1: touch &
+O
+Nodes: 3 / 3 = 1.00
+Edges: 5 / 5 = 1.00
+NODE SET: ['idle', 'transform S', 'push ^']
+EDGE SET: ['touch ;', 'step 4', 'none', 'nextTo @', 'none']
 
-M:
--- NODES --
-0: idle
-1: move_wall *
-2: take *
-3: chase X
--- EDGES --
-0-3: nextTo >
-1-0: step 8
-1-1: step 7
-1-3: none
-2-0: nextTo *
-2-3: touch <
-3-1: step 1
-3-2: none
+$
+Nodes: 1 / 2 = 0.50
+Edges: 1 / 3 = 0.33
+NODE SET: ['add !']
+EDGE SET: ['step 1']
 
-S:
--- NODES --
-0: idle
-1: add ;
-2: take <
--- EDGES --
-0-0: nextTo X
-0-2: within @ 3
-1-0: touch M
-1-1: touch @
-1-2: nextTo D
-2-1: within * 8
+!
+Nodes: 2 / 3 = 0.67
+Edges: 2 / 4 = 0.50
+NODE SET: ['idle', 'add O']
+EDGE SET: ['none', 'nextTo !']
 
-X:
--- NODES --
-0: idle
-1: move_wall ^
--- EDGES --
-0-1: step 4
-1-0: touch *
+D
+Nodes: 1 / 2 = 0.50
+Edges: 0 / 3 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
-&:
--- NODES --
-0: idle
-1: push !
-2: transform <
-3: move_wall S
--- EDGES --
-0-2: touch O
-0-3: touch *
-1-0: nextTo @
-1-2: within & 7
-1-3: nextTo ^
-2-0: touch M
-2-1: within $ 8
-2-3: within * 4
-3-3: touch S
+M
+Nodes: 3 / 4 = 0.75
+Edges: 5 / 8 = 0.62
+NODE SET: ['idle', 'move_wall *', 'chase X']
+EDGE SET: ['step 8', 'none', 'step 1', 'nextTo >', 'step 7']
 
-;:
--- NODES --
-0: idle
--- EDGES --
+S
+Nodes: 3 / 3 = 1.00
+Edges: 4 / 6 = 0.67
+NODE SET: ['idle', 'add ;', 'take <']
+EDGE SET: ['touch @', 'within @ 3', 'nextTo D', 'within * 8']
 
+X
+Nodes: 0 / 2 = 0.00
+Edges: 0 / 2 = 0.00
+NODE SET: []
+EDGE SET: []
+
+&
+Nodes: 3 / 4 = 0.75
+Edges: 2 / 9 = 0.22
+NODE SET: ['idle', 'push !', 'transform <']
+EDGE SET: ['touch O', 'within $ 8']
+
+;
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []

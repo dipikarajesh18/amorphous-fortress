@@ -1,8 +1,8 @@
 == REPORT ==
-Best fitness = [0.9412] => ELITE_CHAR_DEF/exp1_arx_f[0.941]_xy[[17  0]]-[27.000, 15.000].txt
-Highest X = [156.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.584]_xy[[99  1]]-[156.000, 41.000].txt
-Lowest X = [0.4000] => ELITE_CHAR_DEF/exp1_arx_f[0.011]_xy[[ 0 36]]-[0.400, 526.000].txt
-Highest Y = [1410.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.001]_xy[[ 0 99]]-[1.000, 1410.000].txt
-Lowest Y = [15.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[[2 0]]-[4.000, 15.000].txt
-Highest X Lowest Y = [4.0000] [15.0] => ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[[2 0]]-[4.000, 15.000].txt
-Lowest X Highest Y = [0.4000] [526.0] => ELITE_CHAR_DEF/exp1_arx_f[0.011]_xy[[ 0 36]]-[0.400, 526.000].txt
+Best fitness = [0.9412] => ELITE_CHAR_DEF/exp1_arx_f[0.941]_xy[[17  0]]-[27.000,15.000].txt
+Highest X = [156.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.584]_xy[[99  1]]-[156.000,41.000].txt
+Lowest X = [0.4000] => ELITE_CHAR_DEF/exp1_arx_f[0.011]_xy[[ 0 36]]-[0.400,526.000].txt
+Highest Y = [1410.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.001]_xy[[ 0 99]]-[1.000,1410.000].txt
+Lowest Y = [15.0000] => ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[[2 0]]-[4.000,15.000].txt
+Highest X Lowest Y = [4.0000] [15.0] => ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[[2 0]]-[4.000,15.000].txt
+Lowest X Highest Y = [0.4000] [526.0] => ELITE_CHAR_DEF/exp1_arx_f[0.011]_xy[[ 0 36]]-[0.400,526.000].txt

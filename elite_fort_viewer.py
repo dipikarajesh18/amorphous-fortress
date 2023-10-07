@@ -49,6 +49,25 @@ def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,
     fort_str += "\n\n===============\n\n"
     fort_str += ENGINE.init_ent_str
 
+    # show the character visit tree
+    ENGINE.fortress.log.append(f"\n++++  TREE COVERAGE  ++++\n")
+    for c, k in ENGINE.fortress.CHAR_VISIT_TREE.items():
+        ENGINE.fortress.log.append(f"\n{c}")
+        ent = ENGINE.fortress.CHARACTER_DICT[c]
+
+        prob_n = len(k['nodes'])/len(ent.nodes) if len(ent.nodes) > 0 else 0
+        prob_e = len(k['edges'])/len(ent.edges) if len(ent.edges) > 0 else 0
+
+        ENGINE.fortress.log.append(f"Nodes: {len(k['nodes'])} / {len(ent.nodes)} = {prob_n:.2f}")
+        ENGINE.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {prob_e:.2f}")
+        v_nodes = [ent.nodes[i] for i in k['nodes']]
+        v_edges = [ent.edges[i] for i in k['edges']]
+        ENGINE.fortress.log.append(f"NODE SET: {v_nodes}")
+        ENGINE.fortress.log.append(f"EDGE SET: {v_edges}")
+
+    # show the log
+    fort_str += "\n".join(ENGINE.fortress.log)
+
     # ----- EXPORT ----- #
 
     # print to file if asked

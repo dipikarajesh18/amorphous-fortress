@@ -1,142 +1,165 @@
-ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[4.000, 15.000].txt - SEED: 9 - SIM_NUM : 100
+ELITE_CHAR_DEF/exp1_arx_f[0.267]_xy[[2 0]]-[4.000,15.000].txt - SEED: 9 - SIM_NUM : 100
 
 > GENERATION: 0
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
 > GENERATION 20
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
 > GENERATION 40
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
 > GENERATION 60
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
 > GENERATION 80
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
 > GENERATION 100
 ###############
-#....<.<.<.;@X#
-#.....>&.X..<.#
-#..O..D..!..<>#
-#.@......!.+$.#
-#!.........$.>#
-#.@....D.M...@#
+#..........^..#
+#.............#
+#.............#
+#...D.........#
+#.............#
+#.......$..X..#
 ###############
 
-Number of entities: 26
+Number of entities: 4
 
 
 ===============
 
-<:
--- NODES --
-0: idle
--- EDGES --
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-06 22:30:39.638188 <<< -- <0>
+Fortress randomly populated with 4 entities -- <0>
 
-@:
--- NODES --
-0: idle
--- EDGES --
+++++  TREE COVERAGE  ++++
 
-*:
--- NODES --
-0: idle
--- EDGES --
 
-D:
--- NODES --
-0: idle
--- EDGES --
+<
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-S:
--- NODES --
-0: idle
--- EDGES --
+@
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-&:
--- NODES --
-0: idle
--- EDGES --
+*
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-;:
--- NODES --
-0: idle
--- EDGES --
+D
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
-X:
--- NODES --
-0: idle
--- EDGES --
+S
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-M:
--- NODES --
-0: idle
--- EDGES --
+&
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-$:
--- NODES --
-0: idle
--- EDGES --
+;
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-!:
--- NODES --
-0: idle
--- EDGES --
+X
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
-^:
--- NODES --
-0: idle
--- EDGES --
+M
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-O:
--- NODES --
-0: idle
--- EDGES --
+$
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
->:
--- NODES --
-0: idle
--- EDGES --
+!
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
 
-+:
--- NODES --
-0: idle
--- EDGES --
+^
+Nodes: 1 / 1 = 1.00
+Edges: 0 / 0 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
 
+O
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
+
+>
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
+
++
+Nodes: 0 / 1 = 0.00
+Edges: 0 / 0 = 0.00
+NODE SET: []
+EDGE SET: []
