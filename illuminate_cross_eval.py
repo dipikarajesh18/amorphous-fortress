@@ -73,6 +73,56 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
         with open(sweep_archive_path, "wb") as f:
             pickle.dump(sweep_archive, f)
 
+    # Evaluate 
+    if cfg.eval_sweep_archive:
+        reeval_sweep_archive = np.array(
+            [[None for _ in range(cfg.y_bins)] for _ in range(cfg.x_bins)],
+            dtype=object
+        )
+        print("You're evaluated individuals in all experiments already. You "
+              "sure you want to re-evaluate the sweep archive too? This is "
+              "currently only here for some speedy last-minute eval :)")
+        valid_xys = np.argwhere(sweep_archive != None)
+        np.random.shuffle(valid_xys)
+        for xy in valid_xys:
+            ind: EvoIndividual = sweep_archive[tuple(xy)]
+            print(f"Re-evaluating ind at {xy}")
+            print(f"bc vals: {ind.bc_sim_vals}")
+            if ind is None:
+                continue
+            if not hasattr(ind, 'instance_entropy'):
+                ind.instance_entropy = 0
+            
+            # TODO: remove this backward compatibility hack for runs after 30 onward
+            ind.bc_funcs = [bc_funcs[k] for k in cfg.bcs]
+
+            ind.simulate_fortress(
+                map_elites=True, n_new_sims=1, 
+                n_steps_per_episode=cfg.n_steps_per_episode,
+                eval_instance_entropy=True,
+            )
+            print(f"new bc vals: {ind.bc_sim_vals}")
+            print(f"new instance entropy: {ind.instance_entropy}")
+            if ind is None:
+                continue
+
+            reeval_sweep_archive[xy] = ind
+
+        # Save the reevaluated sweep archive and a heatmap
+        reeval_sweep_archive_path = os.path.join(eval_dir, "reeval_sweep_archive.pkl")
+        with open(reeval_sweep_archive_path, "wb") as f:
+            pickle.dump(reeval_sweep_archive, f)
+
+        reeval_sweep_fits = np.vectorize(
+            lambda x: x.score if x is not None else np.nan)(reeval_sweep_archive)
+        plot_archive_heatmap(sweep_configs[0], reeval_sweep_fits, bc_bounds,
+                                os.path.join(eval_dir, "reeval_best_fits.png"))
+
+        reeval_sweep_instance_entropies = np.vectorize(
+            lambda x: x.instance_entropy if x is not None else np.nan)(reeval_sweep_archive)
+
+        
+
     sweep_fits = np.vectorize(
         lambda x: x.score if x is not None else np.nan)(sweep_archive)
 
@@ -122,6 +172,7 @@ def ill_cross_eval(cfg: EvoConfig, sweep_configs, sweep_params):
             sweep_configs[0], sweep_vals, bc_bounds,
             os.path.join(eval_dir, f"{bc_name}.png"), cbar_label=bc_name)
 
+    breakpoint()
     sweep_instance_entropies = np.vectorize(
         lambda x: x.instance_entropy if x is not None else np.nan)(sweep_archive)
     plot_archive_heatmap(

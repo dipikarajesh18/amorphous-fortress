@@ -391,6 +391,10 @@ def illuminate(config: EvoConfig):
             xy = tuple(xy)
             fits[xy] = archive[xy].score
 
+            ind = archive[xy]
+            # TODO: remove this backward compatibility hack for runs after 30 onward
+            ind.bc_funcs = [bc_funcs[k] for k in config.bcs]
+
         if config.enjoy:
             return enjoy(config, archive)
 

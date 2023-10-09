@@ -62,6 +62,8 @@ class EvoConfig:
     #  reusing the existing sweep archive.
     reuse_sweep_archive: bool = False
 
+    eval_sweep_archive: bool = False
+
 
 cs = ConfigStore.instance()
 cs.store(name="evolve_base", node=EvoConfig)
