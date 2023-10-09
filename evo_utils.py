@@ -349,13 +349,19 @@ class EvoIndividual():
                 edge_ind = random.choice(list(ent.edges.keys()))
                 ent.edges[edge_ind] = ent.newEdge()
 
-    def update(self, ret, map_elites):
+    def update(self, ret, map_elites, eval_instance_entropy=False):
         """ multiprocessing hack"""
         ret, self.n_sims = ret
         if not map_elites:
-            self.score, self.instance_entropy = ret
+            if eval_instance_entropy:
+                self.score, self.instance_entropy = ret
+            else:
+                self.score = ret
         else:
-            self.score, self.bc_sim_vals, self.instance_entropy = ret
+            if eval_instance_entropy:
+                self.score, self.bc_sim_vals, self.instance_entropy = ret
+            else:
+                self.score, self.bc_sim_vals = ret
 
     def simulate_fortress(
             self, show_prints=False, map_elites=False, n_new_sims=5,
