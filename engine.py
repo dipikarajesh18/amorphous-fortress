@@ -10,22 +10,23 @@ from fortress import Fortress
 class Engine():
     fortress: Fortress
 
-    def __init__(self,config_file):
+    def __init__(self, config_file, init_seed=None):
 
         # load the config file
         with open(config_file, 'r') as file:
             self.config = yaml.safe_load(file)
 
         # set the random seed
-        self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
+        if init_seed is None:
+            self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
+        else:
+            self.seed = init_seed
         # random.seed(self.seed)
         # np.random.seed(self.seed)
         # print(f"Seed: {self.seed}")
 
         # define the fortress
-        fort_w = int(self.config['width']) if 'width' in self.config else 15
-        fort_h = int(self.config['height']) if 'height' in self.config else 8
-        self.fortress = Fortress(self.config,fort_w,fort_h,seed=self.seed)
+        self.fortress = Fortress(self.config, 15, 8, seed=self.seed)
         self.fortress.blankFortress()
         self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
         self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
@@ -62,9 +63,11 @@ class Engine():
 
 
     # populate the fortress with entities
-    def populateFortress(self, init_strat='n_nodes', entropy_dict=None):
+    def populateFortress(self, init_strat='n_nodes', entropy_dict=None, make_char=True):
         # make every character
-        self.fortress.makeCharacters(init_strat=init_strat, entropy_dict=entropy_dict)
+        if(make_char):
+            self.fortress.makeCharacters(init_strat=init_strat, entropy_dict=entropy_dict)
+        # record the tree of every character
         for c,e in self.fortress.CHARACTER_DICT.items():
             self.init_ent_str += f"{e.printTree()}\n"
 
@@ -113,6 +116,7 @@ class Engine():
 
 
         self.fortress.steps = 0
+        self.sim_tick = 0
 
 
 

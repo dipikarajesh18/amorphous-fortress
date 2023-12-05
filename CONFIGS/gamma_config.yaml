@@ -1,4 +1,4 @@
-action_space : ['take', 'move', 'die', 'chase', 'clone','add','transform','push', 'move_wall']
+action_space : ['idle','die','take', 'move', 'chase', 'clone','add','transform','push', 'move_wall']
 character : ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S']
 edge_conditions : ['none','touch', 'step', 'within', 'nextTo']
 step_range : [1,10]
@@ -10,3 +10,4 @@ log_file : 'LOGS/log_[<SEED>].txt' # <SEED> will be replaced by the seed value
 min_log : 10                  # minimum number of steps to log
 inactive_limit : 20           # how long to let the simulation run before stopping due to inactivity
 pop_perc : 0.25              # maximum percentage of the map for entities to spawn on
+min_view : true             # render in minimalist view (only show active nodes and edges for each entity)

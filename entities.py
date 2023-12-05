@@ -71,7 +71,8 @@ class Entity:
     def _randAdjPos(self):
         # TODO: currently moves one tile at a tile in a random direction
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
-        rpos = random.choice(pos_mod)
+        # rpos = random.choice(pos_mod)
+        rpos = self.fortress.rng_sim.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
         # self.fortress.addLog("Entity trying to move to " + str(new_pos))
         if self.fortress.validPos(new_pos[0], new_pos[1]):
@@ -164,7 +165,8 @@ class Entity:
             return
         
         # randomly choose a direction to move from the directions need to go in
-        rdir = random.choice(dir)
+        # rdir = random.choice(dir)
+        rdir = self.fortress.rng_sim.choice(dir)
         if rdir == 'east':
             new_pos[0] += 1
         elif rdir == 'west':
@@ -194,7 +196,8 @@ class Entity:
             
         # get the next position over
         pos_mod = [[0,1], [0,-1], [1,0], [-1,0]]
-        rpos = random.choice(pos_mod)
+        # rpos = random.choice(pos_mod)
+        rpos = self.fortress.rng_sim.choice(pos_mod)
         new_pos = [self.pos[0] + rpos[0], self.pos[1] + rpos[1]]
 
         # check if the other entity is in the next position
@@ -425,7 +428,7 @@ class Entity:
     # print the tree out in a nice format
     '''
 
-        [CHARACTER SYMBOL]:
+        [CHARACTER SYMBOL]
         -- NODES --
         [INDEX #]: [NAME] 
         -- EDGES --
@@ -435,7 +438,7 @@ class Entity:
         outStr = ""
 
         # character symbol
-        outStr += f"{self.char}:\n"
+        outStr += f"{self.char}\n"
 
         # nodes
         outStr += "-- NODES --\n"
@@ -483,6 +486,35 @@ class Entity:
                 self.edges[e[0]] = e[1]
 
             f.close()
+
+    # imports a tree from a string format
+    def importTreeStr(self, str):
+        # reset arrays
+        self.nodes = []
+        self.edges = {}
+
+
+        lines = str.split("\n")
+        lines = [line.strip() for line in lines if line != "\n"]
+
+        # parse the character
+        self.char = lines[0].strip()[0]
+
+        # find the breaker headers
+        node_break = lines.index("-- NODES --")
+        edge_break = lines.index("-- EDGES --")
+
+        # parse the nodes
+        for i in range(node_break+1, edge_break):
+            n = lines[i].split(": ")[1]
+            self.nodes.append(n)
+
+        # parse the edges
+        for i in range(edge_break+1, len(lines)):
+            e = lines[i].split(": ")
+            self.edges[e[0]] = e[1]
+
+
 
     #######     UPDATES AND LOOPS    #######
 

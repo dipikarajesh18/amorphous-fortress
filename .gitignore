@@ -9,8 +9,9 @@ cross_evals*
 curses_tests_chatgpt/
 *.pyc 
 __pycache__/*
-copy2v2.sh
 ind-character-def/
 .DS_Store
 *.egg-info
-copy2v2.sh
+archive_pickles/*
+ELITE_FORT_SIM/*_arx_*
+ELITE_CHAR_DEF*

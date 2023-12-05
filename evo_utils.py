@@ -14,16 +14,68 @@ from render_curses import curses_render_loop, init_screens
 from utils import get_bin_idx
 
 
+def get_n_nodes_and_edges(self):
+    return self.fsm_stats['n_nodes'] + self.fsm_stats['n_edges']
+
+def get_n_edges(self):
+    return self.fsm_stats['n_edges']
+
+def get_n_nodes(self):
+    return self.fsm_stats['n_nodes']
+
+def get_n_entities(self):
+    return min(len(self.engine.fortress.entities), self.engine.fortress.max_entities)
+
+def get_entropy(self):
+    if not self.entropy_is_stale:
+        return self.ent_val
+    # Get entropy of number of nodes per entity, binning into as many bins as there are entity types
+    bin_idxs = [
+        get_bin_idx(e-1, (1, self.max_nodes_per_entity), 
+                    n_bins=self.n_entity_types
+        ) 
+                    for e in self.n_nodes_per_ent]
+    unique, counts = np.unique(bin_idxs, return_counts=True)
+    # Pad counts so with 0s so that the number of bins is equal to the number of entity types
+    counts = np.pad(counts, (0, self.n_entity_types - len(counts)), mode='constant')
+    bin_probs = counts / np.sum(counts)
+    # print(f"bin_probs: {bin_probs}")
+    self.ent_val = entropy(bin_probs, base=len(bin_probs))
+    # if np.isnan(self.ent_val):
+    #     breakpoint()
+    self.ent_val = 0 if np.isnan(self.ent_val) else self.ent_val
+    # print(f"Entropy: {self.ent_val}")
+    self.entropy_is_stale = False
+    # print(bin_probs)
+
+    # Make sure our entropy calculation here matches up with the one intended
+    #   when the individual was initialized (only valid pre-mutation!)
+    fsm_size_bin_dist = np.unique(bin_idxs, return_counts=True)
+
+    return self.ent_val
+
+bc_funcs = {
+    'n_entities': get_n_entities,
+    'n_nodes': get_n_nodes,
+    'n_nodes_and_edges': get_n_nodes_and_edges,
+    'n_edges': get_n_edges,
+    'entropy': get_entropy,
+}
+
+
 class EvoIndividual():
     engine: Engine
 
     def __init__(self, config_file: str, fitness_type: str, bcs: List[str],
-                 render: bool = False, init_strat='n_nodes', entropy_dict=None):
+                 render: bool = False, init_strat='n_nodes', entropy_dict=None,
+                 init_seed=None):
         self.config_file = config_file
         self.score = 0
         self.bc_sim_vals = (0, 0)
+        self.instance_entropy = 0
         self.n_sims = 0
-        engine = Engine(config_file)
+        init_seed = random.randint(0, 1000000) if init_seed is None else init_seed
+        engine = Engine(config_file, init_seed=init_seed)
         self.engine = engine
         self.render = render
 
@@ -32,13 +84,7 @@ class EvoIndividual():
 
         self.init_fortress_str = ""
 
-        bc_funcs = {
-            'n_entities': self.get_n_entities,
-            'n_nodes': self.get_n_nodes,
-            'n_nodes_and_edges': self.get_n_nodes_and_edges,
-            'n_edges': self.get_n_edges,
-            'entropy': self.get_entropy,
-        }
+        self.all_bc_funcs = bc_funcs
         if init_strat == 'entropy':
             assert entropy_dict is not None
         self.engine.populateFortress(
@@ -76,12 +122,64 @@ class EvoIndividual():
     def get_n_nodes(self):
         return self.fsm_stats['n_nodes']
 
+    def get_instance_entropy(self):
+        # First count how many instances of each entity type there are
+        unique, counts = np.unique(
+            [e.char for e in self.engine.fortress.entities.values()],
+            return_counts=True
+        )
+        counts = np.pad(counts, (0, self.n_entity_types - len(counts)), 
+                        mode='constant', constant_values=0)
+        bin_idxs = [
+            get_bin_idx(e, (0, self.engine.fortress.max_entities),
+                        n_bins=self.n_entity_types
+            )
+            for e in counts
+        ]
+        unique, bin_counts = np.unique(bin_idxs, return_counts=True)
+        bin_counts = np.pad(
+            bin_counts, (0, self.n_entity_types - len(bin_counts)),
+            mode='constant', constant_values=0)
+        bin_probs = bin_counts / np.sum(bin_counts)
+        instance_ent_val = entropy(bin_probs, base=len(bin_probs))
+        return instance_ent_val
+
+    def get_entropy(self):
+        if not self.entropy_is_stale:
+            return self.ent_val
+        # Get entropy of number of nodes per entity, binning into as many bins as there are entity types
+        bin_idxs = [
+            get_bin_idx(e-1, (1, self.max_nodes_per_entity), 
+                        n_bins=self.n_entity_types
+            ) 
+                        for e in self.n_nodes_per_ent]
+        unique, counts = np.unique(bin_idxs, return_counts=True)
+        # Pad counts so with 0s so that the number of bins is equal to the number of entity types
+        counts = np.pad(counts, (0, self.n_entity_types - len(counts)),
+                        mode='constant', constant_values=0)
+        bin_probs = counts / np.sum(counts)
+        # print(f"bin_probs: {bin_probs}")
+        self.ent_val = entropy(bin_probs, base=len(bin_probs))
+        # if np.isnan(self.ent_val):
+        #     breakpoint()
+        self.ent_val = 0 if np.isnan(self.ent_val) else self.ent_val
+        # print(f"Entropy: {self.ent_val}")
+        self.entropy_is_stale = False
+        # print(bin_probs)
+
+        # Make sure our entropy calculation here matches up with the one intended
+        #   when the individual was initialized (only valid pre-mutation!)
+        # fsm_size_bin_dist = np.unique(bin_idxs, return_counts=True)
+
+        return self.ent_val
+
     def mutate_ind(self, args):
         """Mutate the fortress by mutating entity class FSMs or the placement of entity instances on the initial map."""
         # do not inherit fitness/BCs from parents
         self.n_sims = 0
         self.score = 0
         self.bc_sim_vals = (0, 0)
+        self.instance_entropy = 0
 
         # mutate randomly
         edge_rando = random.random()
@@ -251,28 +349,39 @@ class EvoIndividual():
                 edge_ind = random.choice(list(ent.edges.keys()))
                 ent.edges[edge_ind] = ent.newEdge()
 
-    def update(self, ret, map_elites):
+    def update(self, ret, map_elites, eval_instance_entropy=False):
         """ multiprocessing hack"""
         ret, self.n_sims = ret
         if not map_elites:
-            self.score = ret
+            if eval_instance_entropy:
+                self.score, self.instance_entropy = ret
+            else:
+                self.score = ret
         else:
-            self.score, self.bc_sim_vals = ret
+            if eval_instance_entropy:
+                self.score, self.bc_sim_vals, self.instance_entropy = ret
+            else:
+                self.score, self.bc_sim_vals = ret
 
-    def simulate_fortress(self, show_prints=False, map_elites=False, n_new_sims=5,
-                          n_steps_per_episode=100, verbose=False):
+    def simulate_fortress(
+            self, show_prints=False, map_elites=False, n_new_sims=5,
+            n_steps_per_episode=100, verbose=False, eval_instance_entropy=False
+        ):
 
         metrics = []
         for i in range(n_new_sims):
+            self.engine.fortress.rng_sim = np.random.default_rng(i + self.n_sims)
             m = self.simulate_fortress_once(
-                show_prints, map_elites, n_steps=n_steps_per_episode)
+                show_prints, map_elites, n_steps=n_steps_per_episode,
+                eval_instance_entropy=eval_instance_entropy,
+            )
             metrics.append(m)
         
         self.n_sims += len(metrics)
         if not map_elites:
             self.score = (
                 (self.score * (self.n_sims - n_new_sims) 
-                + sum(metrics)) 
+                + sum([m[0] for m in metrics])) 
                 / self.n_sims
             )
             ret = self.score
@@ -295,11 +404,19 @@ class EvoIndividual():
             )
             self.bc_sim_vals = (bc_0, bc_1)
             ret = self.score, self.bc_sim_vals
+        if eval_instance_entropy:
+            self.instance_entropy = (
+                (self.instance_entropy * (self.n_sims - n_new_sims)
+                + sum([m[-1] for m in metrics]))
+                / self.n_sims
+            ) 
         if verbose:
             print(f"Score: {self.score}")
         return ret, self.n_sims
             
-    def simulate_fortress_once(self, show_prints=False, map_elites=False, n_steps=100):
+    def simulate_fortress_once(
+            self, show_prints=False, map_elites=False, n_steps=100,
+            eval_instance_entropy=False,):
         """Reset and simulate the fortress."""
         self.engine.resetFortress()
 
@@ -323,6 +440,10 @@ class EvoIndividual():
             curses.endwin()
 
         # print(self.engine.fortress.renderEntities())
+        if not eval_instance_entropy:
+            instance_entropy = 0
+        else:
+            instance_entropy = self.get_instance_entropy()
 
         if not map_elites:
             if self.fitness_type == "M":
@@ -330,7 +451,7 @@ class EvoIndividual():
             elif self.fitness_type == "tree":
                 self.get_fsm_stats()
                 score = self.fsm_stats['prop_visited']
-            return score
+            return score, instance_entropy
         elif map_elites:
             if self.fitness_type == "M":
                 score = compute_fortress_score_dummy(self.engine)
@@ -339,8 +460,8 @@ class EvoIndividual():
             elif self.fitness_type == "tree":
                 self.get_fsm_stats(show_prints)
                 score = self.fsm_stats['prop_visited']
-                bc_0, bc_1 = self.bc_funcs[0](), self.bc_funcs[1]()
-            return score, bc_0, bc_1
+                bc_0, bc_1 = self.bc_funcs[0](self), self.bc_funcs[1](self)
+            return score, bc_0, bc_1, instance_entropy
 
     def get_n_entities(self):
         return min(len(self.engine.fortress.entities), self.engine.fortress.max_entities)
@@ -400,34 +521,6 @@ class EvoIndividual():
             'n_edges': n_total_edges,
             'n_nodes_per_ent': self.n_nodes_per_ent,
         }
-
-    def get_entropy(self):
-        if not self.entropy_is_stale:
-            return self.ent_val
-        # Get entropy of number of nodes per entity, binning into as many bins as there are entity types
-        bin_idxs = [
-            get_bin_idx(e-1, (1, self.max_nodes_per_entity), 
-                        n_bins=self.n_entity_types
-            ) 
-                        for e in self.n_nodes_per_ent]
-        unique, counts = np.unique(bin_idxs, return_counts=True)
-        # Pad counts so with 0s so that the number of bins is equal to the number of entity types
-        counts = np.pad(counts, (0, self.n_entity_types - len(counts)), mode='constant')
-        bin_probs = counts / np.sum(counts)
-        # print(f"bin_probs: {bin_probs}")
-        self.ent_val = entropy(bin_probs, base=len(bin_probs))
-        # if np.isnan(self.ent_val):
-        #     breakpoint()
-        self.ent_val = 0 if np.isnan(self.ent_val) else self.ent_val
-        # print(f"Entropy: {self.ent_val}")
-        self.entropy_is_stale = False
-        # print(bin_probs)
-
-        # Make sure our entropy calculation here matches up with the one intended
-        #   when the individual was initialized (only valid pre-mutation!)
-        fsm_size_bin_dist = np.unique(bin_idxs, return_counts=True)
-
-        return self.ent_val
 
 
 # counts the number of M's in the fortress

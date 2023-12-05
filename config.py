@@ -33,6 +33,9 @@ class EvoConfig:
     seed: int = 0
     # Iterate through individuals in the archive and render them in the terminal using curses
     enjoy: bool = False
+    # Iterate through individuals in the archive and render them as strings,
+    #   saving them to a file.
+    enjoy_printout: bool = False
     # Re-evaluate the archive on new seeds
     eval_swiss_cheese: bool = False
     # Re-evaluate with longer episodes to see if more fortresses overpopulate/extinguish than before
@@ -55,6 +58,11 @@ class EvoConfig:
     n_steps_per_episode: int = 100
     # Name of hyperparameter sweep (if applicable)
     sweep_name: str = "none"
+    # When aggregating archives for cross-evaluation, re-aggregate rather than
+    #  reusing the existing sweep archive.
+    reuse_sweep_archive: bool = False
+
+    eval_sweep_archive: bool = False
 
 
 cs = ConfigStore.instance()

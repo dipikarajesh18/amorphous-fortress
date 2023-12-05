@@ -1,5 +1,6 @@
 import numpy as np
 import random
+import datetime
 import re
 from entities import NODE_DICT, Entity
 from entropy_utils import sum_combinations
@@ -21,12 +22,16 @@ class Fortress():
         self.max_aggregate_fsm_nodes = None   # the maximum number of nodes and edges over all entity types
 
         self.CONFIG = config  # a dictionary of values for configuration
-        self.seed = random.randint(0,1000000) if seed == None else seed
+        # self.seed = random.randint(0,1000000) if seed == None else seed
+
+        self.rng_init = np.random.default_rng(seed)
+        # Seed for determining random movement dynamics during an episode
+        self.rng_sim = np.random.default_rng(0)
 
         # random.seed(self.seed)
         # np.random.seed(self.seed)
 
-        self.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
+        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
         self.steps = 0
         self.end_cause = "Code Interruption"
 
@@ -48,6 +53,7 @@ class Fortress():
         self.fortmap[-1,:] = self.border
         self.fortmap[:,0] = self.border
         self.fortmap[:,-1] = self.border
+        
 
     # print the fortress to the console
     def printFortress(self):
@@ -58,6 +64,15 @@ class Fortress():
     # add an entity to the map
     def addEntity(self, ent):
         self.entities[ent.id] = ent
+
+    # returns the entities sorted by character
+    def getEntCharSet(self):
+        ent_set = {}
+        for e in self.entities.values():
+            if e.char not in ent_set:
+                ent_set[e.char] = []
+            ent_set[e.char].append(e)
+        return ent_set
 
     # remove from the entity list and ID list based on the entity ID
     def removeFromMap(self, ent):
@@ -94,7 +109,8 @@ class Fortress():
     # return a random position in the fortress
     def randomPos(self,inc_ent=True):
         all_pos = [(x,y) for x in range(1,self.width-1) for y in range(1,self.height-1)]
-        random.shuffle(all_pos)
+        # random.shuffle(all_pos)
+        self.rng_init.shuffle(all_pos)
         for p in all_pos:
             x,y = p
             if self.validPos(x,y) and (not inc_ent or self.entAtPos(x,y) == None):
@@ -151,18 +167,20 @@ class Fortress():
             n_fsm_size_bins = n_ent_types
 
             if True:
-                entropy_bin_idx = random.choice(list(entropy_dict.keys()))
+                entropy_bin_idx = self.rng_init.choice(list(entropy_dict.keys()))
                 # Pick a random entropy bucket
                 fsm_size_bin_dists = entropy_dict[
                     entropy_bin_idx
                 ]
-                fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
+                # fsm_size_bin_dist = fsm_size_bin_dists[random.randint(0, len(fsm_size_bin_dists) - 1)]
+                fsm_size_bin_dist = fsm_size_bin_dists[
+                    self.rng_init.integers(0, len(fsm_size_bin_dists))]
                 fsm_size_bin_dist = fsm_size_bin_dist.copy()
                 self._fsm_size_bin_dist = fsm_size_bin_dist.copy()
             else:
                 fsm_size_bin_dists = list(sum_combinations(n_fsm_size_bins, n_ent_types))
-                fsm_size_bin_dist = np.array(random.choice(fsm_size_bin_dists))
-            np.random.shuffle(fsm_size_bin_dist)
+                fsm_size_bin_dist = np.array(self.rng_init.choice(fsm_size_bin_dists))
+            self.rng_init.shuffle(fsm_size_bin_dist)
             idxs = np.argwhere(fsm_size_bin_dist > 0)
             if len(idxs) == 0:
                 ents_n_nodes = [0] * n_ent_types
@@ -176,7 +194,7 @@ class Fortress():
                 ents_n_nodes = []
                 break_outer_loop = False  # flag to break from outer loop
                 for i in range(len(char_list)):
-                    n_nodes = random.randint(
+                    n_nodes = self.rng_init.integers(
                         cur_fsm_size_bounds[0], cur_fsm_size_bounds[1]
                     )
                     n_nodes = min(max(n_nodes, 1), self.max_nodes_per_type - 1)
@@ -197,9 +215,9 @@ class Fortress():
 
         elif init_strat == 'n_nodes':
             # Sample uniformly across number of aggregate FSM nodes
-            n_aggregate_nodes = random.randint(0, self.max_aggregate_fsm_nodes - n_ent_types)
+            n_aggregate_nodes = self.rng_init.integers(0, self.max_aggregate_fsm_nodes - n_ent_types)
             # Randomly partition this number into a number of nodes per entity type
-            n_nodes_per_ent_type = np.random.multinomial(
+            n_nodes_per_ent_type = self.rng_init.multinomial(
                 n_aggregate_nodes, [1/n_ent_types]*n_ent_types)
             # If any entity types have more than the maximum number of nodes per type,
             # then add these nodes to other entity types
@@ -231,7 +249,7 @@ class Fortress():
                     min(n_nodes_per_ent_type[i], self.max_nodes_per_type - 1)  # idle is already there by default
                 )
 
-        np.random.shuffle(char_list)
+        self.rng_init.shuffle(char_list)
         for i, c in enumerate(char_list):
             n_nodes = ents_n_nodes[i]
             ent = Entity(self,char=c, n_rand_nodes=n_nodes)
@@ -301,3 +319,110 @@ class Fortress():
         for c in self.CHAR_VISIT_TREE:
             self.CHAR_VISIT_TREE[c]['nodes'] = set()
             self.CHAR_VISIT_TREE[c]['edges'] = set()
+
+
+    # imports a fortress from entity class definition list
+    def importEntityFortDef(self, filename):
+        # reset everything
+        self.CHARACTER_DICT = {}
+        self.CHAR_VISIT_TREE = {}
+        self.entities = {}
+
+        with open(filename, "r") as f:
+            lines = f.read()
+            ent_sets = lines.split("\n\n")
+
+            # add each entity definition to the dictionary set
+            for estr in ent_sets:
+                estr = estr.strip()
+                if estr == "":
+                    continue
+
+                # entity positions
+                if("-- INIT ENT POS --" in estr):
+                    if len(self.entities) == 0:
+                        self.setFortStateStr(estr,"pos")
+                # import the fortress setup initial state
+                elif("-- INIT FORT --" in estr):
+                    if len(self.entities) == 0:
+                        self.setFortStateStr(estr,"fort")
+                # another state of the fortress, skip
+                elif("FORT" in estr):
+                    if len(self.entities) == 0:
+                        self.setFortStateStr(estr,"fort")
+                # import the entity definition
+                else:
+                    ent = Entity(self,n_rand_nodes=1)  #dummy n_rand_nodes to allow import
+                    ent.importTreeStr(estr)
+                    ent.pos = [-1,-1]
+                    self.CHARACTER_DICT[ent.char] = ent
+                    self.CHAR_VISIT_TREE[ent.char] = {'nodes':set(),'edges':set()}
+
+    # sets a fortress state based on a string
+    # essentially the same as engine.resetFortress
+    def setFortStateStr(self,fort_str,type_init):
+        # Remove all current entities
+        self.entities = {}
+
+        # reset the visits
+        self.resetCharVisit()
+
+        if(type_init == "fort"):
+            init_ents = self.fortStr2EntPos(fort_str.split("\n")[1:])   # parse the fortress string
+        if(type_init == "pos"):
+            init_ents = self.posStr2EntPos(fort_str)    # parse the entity position string
+
+        # Add the entities back in
+        for e in init_ents:
+            new_ent = self.CHARACTER_DICT[e['char']].clone(e['pos'])
+            if new_ent:
+                self.addEntity(new_ent)
+
+        # reset the log
+        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
+        self.addLog(f">>> CONFIG FILE: {self.CONFIG} <<<")
+        self.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
+        self.addLog(f"Fortress randomly populated with {len(init_ents)} entities")    # add a log message
+
+
+        self.steps = 0
+
+        return
+
+    # converts a raw string format of the fortress to entity positions
+    def fortStr2EntPos(self, lines):
+        pos_set = []
+        # iterate through each character of the fortress string
+        for r in range(len(lines)):
+            cols = lines[r].split("")
+            for c in range(len(cols)):
+                p = cols[c]
+                if p == self.border or p == self.floor:      # if wall or floor, skip
+                    continue
+                elif p in self.CHARACTER_DICT:               # if the character exists in the set, save it
+                    pos_set.append({'char':p, 'pos':[r,c]})
+        return pos_set
+
+
+    # converts a list of entity positions to the initial position set
+    def posStr2EntPos(self,s):
+        pos_set = []
+        # print(s)
+
+        lines = s.split("\n")
+        lines = lines[1:]
+        for l in lines:
+            d = l.split("-")
+            c = d[0]
+            pos = [int(x) for x in d[1].strip('][').split(', ')]
+            pos_set.append({"char":c,"pos":pos})
+
+        return pos_set
+
+
+    # exports the entity positions as a string list
+    def exportEntPosList(self):
+        init_ents = []
+        for e in self.entities.values():
+            init_ents.append(f"{e.char}-{e.pos}")
+        return init_ents

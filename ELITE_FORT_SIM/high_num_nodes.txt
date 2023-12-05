@@ -1,0 +1,168 @@
+ELITE_CHAR_DEF/exp1_arx_f[0.001]_xy[[ 0 99]]-[1.000,1410.000].txt - SEED: 9 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....O.......#
+###############
+
+> GENERATION 20
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....<.......#
+###############
+
+> GENERATION 40
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....<.......#
+###############
+
+> GENERATION 60
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....<.......#
+###############
+
+> GENERATION 80
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....<.......#
+###############
+
+> GENERATION 100
+###############
+#.............#
+#.............#
+#.............#
+#.............#
+#.............#
+#.....<.......#
+###############
+
+Number of entities: 1
+
+
+===============
+
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-06 22:36:22.704062 <<< -- <0>
+Fortress randomly populated with 1 entities -- <0>
+[<.c1f4] cloned to [<.fde9] at [6, 6] -- <2>
+[O.7653] transformed into [<.fde9] at [6, 6] -- <2>
+[O.7653] died -- <2>
+
+++++  TREE COVERAGE  ++++
+
+
+*
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 276 = 0.00
+NODE SET: []
+EDGE SET: []
+
+O
+Nodes: 2 / 94 = 0.02
+Edges: 2 / 277 = 0.01
+NODE SET: ['transform <', 'push S']
+EDGE SET: ['none', 'step 1']
+
+!
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 275 = 0.00
+NODE SET: []
+EDGE SET: []
+
+<
+Nodes: 1 / 94 = 0.01
+Edges: 1 / 279 = 0.00
+NODE SET: ['take >']
+EDGE SET: ['none']
+
+;
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 277 = 0.00
+NODE SET: []
+EDGE SET: []
+
+D
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 280 = 0.00
+NODE SET: []
+EDGE SET: []
+
+S
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 275 = 0.00
+NODE SET: []
+EDGE SET: []
+
+M
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 276 = 0.00
+NODE SET: []
+EDGE SET: []
+
++
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 276 = 0.00
+NODE SET: []
+EDGE SET: []
+
+&
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 273 = 0.00
+NODE SET: []
+EDGE SET: []
+
+@
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 274 = 0.00
+NODE SET: []
+EDGE SET: []
+
+X
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 277 = 0.00
+NODE SET: []
+EDGE SET: []
+
+$
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 279 = 0.00
+NODE SET: []
+EDGE SET: []
+
+^
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 273 = 0.00
+NODE SET: []
+EDGE SET: []
+
+>
+Nodes: 0 / 94 = 0.00
+Edges: 0 / 277 = 0.00
+NODE SET: []
+EDGE SET: []

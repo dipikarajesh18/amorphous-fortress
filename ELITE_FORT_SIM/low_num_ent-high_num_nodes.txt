@@ -1,0 +1,193 @@
+ELITE_CHAR_DEF/exp1_arx_f[0.011]_xy[[ 0 36]]-[0.400,526.000].txt - SEED: 9 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#.............#
+#.......^.....#
+#.............#
+#..........*..#
+#.............#
+#...........M.#
+###############
+
+> GENERATION 20
+###############
+#.............#
+#.............#
+#......^......#
+#.............#
+#.............#
+#.............#
+###############
+
+> GENERATION 40
+###############
+#.............#
+#.............#
+#......^......#
+#.............#
+#.............#
+#.............#
+###############
+
+> GENERATION 60
+###############
+#.............#
+#.............#
+#.....^^......#
+#.............#
+#.............#
+#.............#
+###############
+
+> GENERATION 80
+###############
+#.............#
+#.............#
+#.......^.....#
+#.............#
+#.............#
+#.............#
+###############
+
+> GENERATION 100
+###############
+#.............#
+#.............#
+#.......^.....#
+#.............#
+#.............#
+#.............#
+###############
+
+Number of entities: 1
+
+
+===============
+
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-06 22:36:23.089192 <<< -- <0>
+Fortress randomly populated with 3 entities -- <0>
+[^.7653] moved to [7, 2] - (not able to push) -- <2>
+[*.fde9] took [M.126e] -- <2>
+[M.126e] died -- <2>
+[*.fde9] moved to [12, 4] -- <4>
+[*.fde9] moved to [13, 4] -- <5>
+[*.fde9] moved to [13, 3] -- <6>
+[*.fde9] moved to [13, 2] -- <7>
+[*.fde9] moved to [13, 3] -- <8>
+[*.fde9] moved to [13, 4] -- <9>
+[*.fde9] moved to [13, 5] -- <10>
+[^.7653] took [*.fde9] -- <11>
+[*.fde9] died -- <11>
+[^.7653] cloned to [^.1804] at [7, 3] -- <12>
+[^.7653] died -- <13>
+[^.1804] cloned to [^.d037] at [6, 3] -- <24>
+[^.1804] died -- <25>
+[^.d037] cloned to [^.2956] at [7, 3] -- <36>
+[^.d037] died -- <37>
+[^.2956] cloned to [^.1176] at [6, 3] -- <48>
+[^.2956] died -- <49>
+[^.1176] cloned to [^.2b38] at [7, 3] -- <60>
+[^.1176] died -- <61>
+[^.2b38] cloned to [^. f4a] at [8, 3] -- <72>
+[^.2b38] died -- <73>
+[^. f4a] cloned to [^.f0c3] at [7, 3] -- <84>
+[^. f4a] died -- <85>
+[^.f0c3] cloned to [^. d4c] at [8, 3] -- <96>
+[^.f0c3] died -- <97>
+
+++++  TREE COVERAGE  ++++
+
+
+O
+Nodes: 0 / 25 = 0.00
+Edges: 0 / 70 = 0.00
+NODE SET: []
+EDGE SET: []
+
+^
+Nodes: 7 / 42 = 0.17
+Edges: 7 / 120 = 0.06
+NODE SET: ['take !', 'take *', 'die', 'take &', 'push *', 'push !', 'clone']
+EDGE SET: ['none', 'none', 'step 2', 'step 8', 'step 5', 'step 1', 'step 9']
+
+X
+Nodes: 0 / 40 = 0.00
+Edges: 0 / 116 = 0.00
+NODE SET: []
+EDGE SET: []
+
+M
+Nodes: 1 / 35 = 0.03
+Edges: 1 / 96 = 0.01
+NODE SET: ['add O']
+EDGE SET: ['step 1']
+
+&
+Nodes: 0 / 34 = 0.00
+Edges: 0 / 95 = 0.00
+NODE SET: []
+EDGE SET: []
+
+>
+Nodes: 0 / 38 = 0.00
+Edges: 0 / 107 = 0.00
+NODE SET: []
+EDGE SET: []
+
+*
+Nodes: 3 / 27 = 0.11
+Edges: 3 / 76 = 0.04
+NODE SET: ['take M', 'move_wall !', 'chase +']
+EDGE SET: ['step 1', 'none', 'none']
+
+D
+Nodes: 0 / 30 = 0.00
+Edges: 0 / 85 = 0.00
+NODE SET: []
+EDGE SET: []
+
+S
+Nodes: 0 / 39 = 0.00
+Edges: 0 / 115 = 0.00
+NODE SET: []
+EDGE SET: []
+
+<
+Nodes: 0 / 36 = 0.00
+Edges: 0 / 102 = 0.00
+NODE SET: []
+EDGE SET: []
+
++
+Nodes: 0 / 31 = 0.00
+Edges: 0 / 90 = 0.00
+NODE SET: []
+EDGE SET: []
+
+;
+Nodes: 0 / 40 = 0.00
+Edges: 0 / 111 = 0.00
+NODE SET: []
+EDGE SET: []
+
+@
+Nodes: 0 / 42 = 0.00
+Edges: 0 / 123 = 0.00
+NODE SET: []
+EDGE SET: []
+
+!
+Nodes: 0 / 33 = 0.00
+Edges: 0 / 91 = 0.00
+NODE SET: []
+EDGE SET: []
+
+$
+Nodes: 0 / 43 = 0.00
+Edges: 0 / 123 = 0.00
+NODE SET: []
+EDGE SET: []

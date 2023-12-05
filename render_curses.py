@@ -14,6 +14,8 @@ COLORS = {
     'WHITE': 7
 }
 
+OFFSET_W = 30
+
 def init_screens():
     # Initialize the screen
     SCREEN = curses.initscr()
@@ -54,7 +56,7 @@ def init_screens():
 
 
 # the update loop for the simulation
-def curses_render_loop(screen_set, screen_dims, engine):
+def curses_render_loop(screen_set, screen_dims, engine, minimal=False):
     sim, log, tree = screen_set  # unpack the screen set
     sim_height, sim_width, log_height, log_width, tree_height, tree_width = screen_dims  # unpack the screen dimensions
 
@@ -67,7 +69,7 @@ def curses_render_loop(screen_set, screen_dims, engine):
     title_text = f"====== AMORPHOUS FORTRESS [{engine.seed}] ======"
     sim.addstr(0, sim_width//2-len(title_text)//2, title_text)
 
-    time_text = f"Timestep: {engine.sim_tick} --- # entities: {engine.fortress.max_entities} / {(engine.fortress.max_entities)}"
+    time_text = f"Timestep: {engine.sim_tick} --- # entities: {len(engine.fortress.entities)} / {(engine.fortress.max_entities)}"
     sim.addstr(2, sim_width//2-len(time_text)//2, time_text)
 
 
@@ -116,41 +118,118 @@ def curses_render_loop(screen_set, screen_dims, engine):
 
     ent_txt = "======= ENTITY TREE ======="
     tree.addstr(0, tree_width//2-len(ent_txt)//2, ent_txt)
-    num_entities = len(engine.fortress.entities)
 
     cur_line = 0
     offY = 2
     offX = 3
-    ent_list = list(engine.fortress.entities.values())
-    for i in range(num_entities):
-        ent = ent_list[i]
-        entTree = ent.printTree()
-        entTree_lines = entTree.split("\n")
-        entTree_lines = [l for l in entTree_lines if l != ""]
-        for j in range(len(entTree_lines)):
 
-            # highlight the character (add id and position)
-            if j == 0:
-                tree.addstr(offY+cur_line, offX, f"{ent.char}.{ent.id} ({ent.pos})", curses.color_pair(COLORS['RED']))
-            # highlight current node
-            elif entTree_lines[j].split(":")[0] == str(ent.cur_node):
-                tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['CYAN']))
-            # highlight the current edge (if there is one)
-            elif ent.moved_edge and entTree_lines[j].split(":")[0] == ent.moved_edge:
-                tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['GREEN']))
-            # write everything else
-            else:
-                tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['WHITE']))
+    # get the list of entities (ordered by different char first)
+    ent_set = engine.fortress.getEntCharSet()
+    ent_list = []
+
+    # order entity sets by most active first (ordered in the config)
+    node_move_order = engine.config['action_space']
+    active_ent = []
+    for c, e in ent_set.items():
+        active_ent += e
+    active_ent.sort(key=lambda x: node_move_order.index(x.nodes[x.cur_node].split(" ")[0]), reverse=True)
+
+    # get the initial list of entities
+    cur_c = []
+    for i in range(len(active_ent)):
+        ent = active_ent[i]
+        if ent.char not in cur_c:
+            cur_c.append(ent.char)
+            ent_list.append(ent)
+
+    # combine and add the rest of the entities
+    for e in active_ent:
+        if len(ent_list) >= 50:
+            break
+
+        if e not in ent_list:
+            ent_list.append(e)
+    
+    num_entities = len(ent_list)
+
+    # show the entities
+
+    # FULL TREE OF THE ENTITIES
+    if not minimal:
+        for i in range(num_entities):
+            ent = ent_list[i]
+            entTree = ent.printTree()
+            entTree_lines = entTree.split("\n")
+            entTree_lines = [l for l in entTree_lines if l != ""]
+
+            if cur_line + len(entTree_lines) >= tree_height:
+                cur_line = 0
+                offX += OFFSET_W
+
+            for j in range(len(entTree_lines)):
+                if offY+cur_line >= tree_height:
+                    break
+
+                # highlight the character (add id and position)
+                if j == 0:
+                    tree.addstr(offY+cur_line, offX, f"{ent.char}.{ent.id} ({ent.pos})", curses.color_pair(COLORS['RED']))
+                # highlight current node
+                elif entTree_lines[j].split(":")[0] == str(ent.cur_node):
+                    tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['CYAN']))
+                # highlight the current edge (if there is one)
+                elif ent.moved_edge and entTree_lines[j].split(":")[0] == ent.moved_edge:
+                    tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['GREEN']))
+                # write everything else
+                else:
+                    tree.addstr(offY+cur_line, offX, entTree_lines[j], curses.color_pair(COLORS['WHITE']))
+                cur_line += 1
             cur_line += 1
-        cur_line += 1
 
-        if cur_line >= tree_height or (i<(num_entities-1) and cur_line+len(ent_list[i+1].printTree().split('\n')) >= tree_height):
-            cur_line = 0
-            offX += 20
+            if cur_line >= tree_height or (i<(num_entities-1) and cur_line+len(ent_list[i+1].printTree().split('\n')) >= tree_height):
+                cur_line = 0
+                offX += OFFSET_W
 
-            # not enough room to draw the next entity
-            if offX > tree_width-20: 
-                break
+                # not enough room to draw the next entity
+                if offX > tree_width-OFFSET_W: 
+                    break
+
+    # SHOW THE MINIMALIST FORM
+    else:
+        # show the entities
+        for i in range(num_entities):
+            ent = ent_list[i]
+
+            printItems = [f"{ent.char}.{ent.id} ({ent.pos})", 
+                          f"FSM SIZE: N={len(ent.nodes)} E={len(ent.edges)}",
+                          f"CUR NODE: {ent.cur_node}:{ent.nodes[int(ent.cur_node)]}", 
+                          f"ON EDGE: {ent.moved_edge}:{ent.edges[ent.moved_edge]}" if ent.moved_edge else ""]
+            colorOrder = [COLORS["RED"], COLORS["YELLOW"], COLORS["WHITE"], COLORS["WHITE"]]
+
+            if cur_line + len(printItems) >= tree_height:
+                cur_line = 0
+                offX += OFFSET_W
+
+            # show each item
+            for pi in range(len(printItems)):
+                p = printItems[pi]
+                if offY+cur_line >= tree_height:
+                    break
+
+                tree.addstr(offY+cur_line, offX, p, curses.color_pair(colorOrder[pi]))
+                cur_line += 1
+
+
+            cur_line += 1
+
+            if cur_line >= tree_height or (i<(num_entities-1) and cur_line+len(printItems) >= tree_height):
+                cur_line = 0
+                offX += OFFSET_W
+
+                # not enough room to draw the next entity
+                if offX > tree_width-OFFSET_W: 
+                    break
+
+
 
 
     # refresh all the windows
