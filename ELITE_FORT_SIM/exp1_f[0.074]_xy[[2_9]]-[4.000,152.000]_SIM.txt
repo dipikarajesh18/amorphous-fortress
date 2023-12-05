@@ -1,0 +1,229 @@
+ELITE_CHAR_DEF/exp1_f[0.074]_xy[[2_9]]-[4.000,152.000].txt - SEED: 7 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#.............#
+#.......$.!...#
+#.S.D.....<...#
+#......*......#
+#..&.........D#
+#.......D.....#
+###############
+
+> GENERATION 20
+###############
+#.............#
+#.............#
+#.S........!..#
+#......*......#
+#.............#
+#.............#
+###############
+
+> GENERATION 40
+###############
+#.............#
+#.............#
+#.S...........#
+#......*......#
+#...........!.#
+#.............#
+###############
+
+> GENERATION 60
+###############
+#.............#
+#.............#
+#.S...........#
+#......*......#
+#.............#
+#.........!...#
+###############
+
+> GENERATION 80
+###############
+#.............#
+#.............#
+#.S...........#
+#......*......#
+#.............#
+#............!#
+###############
+
+> GENERATION 100
+###############
+#.............#
+#.........!...#
+#.S...........#
+#......*......#
+#.............#
+#.............#
+###############
+
+Number of entities: 3
+Number of nodes: 143
+
+===============
+
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-07 01:40:13.515019 <<< -- <0>
+Fortress randomly populated with 9 entities -- <0>
+[S.f0ae] took [$.2b68] -- <2>
+[$.2b68] died -- <2>
+[*.f57d] took [<.c6ee] -- <2>
+[<.c6ee] died -- <2>
+[*.f57d] took [D.2c6a] -- <3>
+[D.2c6a] died -- <3>
+[*.f57d] took [D.f71e] -- <4>
+[D.f71e] died -- <4>
+[*.f57d] took [D.f4c0] -- <8>
+[D.f4c0] died -- <8>
+[!.de2b] moved to [9, 2] -- <11>
+[*.f57d] took [&.aceb] -- <12>
+[&.aceb] died -- <12>
+[!.de2b] moved to [10, 2] -- <12>
+[!.de2b] moved to [11, 2] -- <14>
+[!.de2b] moved to [11, 1] -- <15>
+[!.de2b] moved to [11, 2] -- <18>
+[!.de2b] moved to [11, 3] -- <20>
+[!.de2b] moved to [11, 4] -- <21>
+[!.de2b] moved to [11, 5] -- <23>
+[!.de2b] moved to [10, 5] -- <24>
+[!.de2b] moved to [11, 5] -- <26>
+[!.de2b] moved to [10, 5] -- <27>
+[!.de2b] moved to [11, 5] -- <29>
+[!.de2b] moved to [12, 5] -- <30>
+[!.de2b] moved to [11, 5] -- <32>
+[!.de2b] moved to [12, 5] -- <33>
+[!.de2b] moved to [13, 5] -- <35>
+[!.de2b] moved to [12, 5] -- <39>
+[!.de2b] moved to [12, 4] -- <41>
+[!.de2b] moved to [11, 4] -- <42>
+[!.de2b] moved to [12, 4] -- <44>
+[!.de2b] moved to [12, 5] -- <45>
+[!.de2b] moved to [12, 4] -- <47>
+[!.de2b] moved to [11, 4] -- <48>
+[!.de2b] moved to [12, 4] -- <50>
+[!.de2b] moved to [12, 5] -- <51>
+[!.de2b] moved to [11, 5] -- <53>
+[!.de2b] moved to [12, 5] -- <54>
+[!.de2b] moved to [11, 5] -- <56>
+[!.de2b] moved to [11, 6] -- <57>
+[!.de2b] moved to [10, 6] -- <60>
+[!.de2b] moved to [11, 6] -- <63>
+[!.de2b] moved to [11, 5] -- <66>
+[!.de2b] moved to [11, 4] -- <68>
+[!.de2b] moved to [11, 3] -- <69>
+[!.de2b] moved to [11, 2] -- <71>
+[!.de2b] moved to [11, 3] -- <72>
+[!.de2b] moved to [11, 4] -- <74>
+[!.de2b] moved to [11, 5] -- <75>
+[!.de2b] moved to [11, 6] -- <77>
+[!.de2b] moved to [12, 6] -- <78>
+[!.de2b] moved to [13, 6] -- <80>
+[!.de2b] moved to [13, 5] -- <83>
+[!.de2b] moved to [12, 5] -- <86>
+[!.de2b] moved to [12, 4] -- <87>
+[!.de2b] moved to [12, 3] -- <89>
+[!.de2b] moved to [11, 3] -- <90>
+[!.de2b] moved to [10, 3] -- <92>
+[!.de2b] moved to [9, 3] -- <93>
+[!.de2b] moved to [9, 2] -- <95>
+[!.de2b] moved to [10, 2] -- <96>
+[!.de2b] moved to [9, 2] -- <98>
+[!.de2b] moved to [10, 2] -- <99>
+
+++++  TREE COVERAGE  ++++
+
+
+D
+Nodes: 1 / 5 = 0.20
+Edges: 0 / 11 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
+
+X
+Nodes: 0 / 9 = 0.00
+Edges: 0 / 25 = 0.00
+NODE SET: []
+EDGE SET: []
+
+*
+Nodes: 6 / 10 = 0.60
+Edges: 8 / 26 = 0.31
+NODE SET: ['chase X', 'take D', 'push M', 'take <', 'take &', 'take +']
+EDGE SET: ['none', 'step 2', 'within < 8', 'none', 'none', 'none', 'step 1', 'step 6']
+
+$
+Nodes: 1 / 8 = 0.12
+Edges: 1 / 19 = 0.05
+NODE SET: ['idle']
+EDGE SET: ['none']
+
+<
+Nodes: 1 / 12 = 0.08
+Edges: 1 / 32 = 0.03
+NODE SET: ['chase M']
+EDGE SET: ['none']
+
+S
+Nodes: 1 / 12 = 0.08
+Edges: 1 / 30 = 0.03
+NODE SET: ['take $']
+EDGE SET: ['none']
+
+!
+Nodes: 3 / 12 = 0.25
+Edges: 3 / 32 = 0.09
+NODE SET: ['idle', 'chase !', 'move_wall @']
+EDGE SET: ['step 1', 'step 10', 'step 3']
+
+O
+Nodes: 0 / 6 = 0.00
+Edges: 0 / 13 = 0.00
+NODE SET: []
+EDGE SET: []
+
+&
+Nodes: 1 / 3 = 0.33
+Edges: 0 / 4 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
+
+@
+Nodes: 0 / 15 = 0.00
+Edges: 0 / 41 = 0.00
+NODE SET: []
+EDGE SET: []
+
++
+Nodes: 0 / 7 = 0.00
+Edges: 0 / 16 = 0.00
+NODE SET: []
+EDGE SET: []
+
+M
+Nodes: 0 / 10 = 0.00
+Edges: 0 / 24 = 0.00
+NODE SET: []
+EDGE SET: []
+
+>
+Nodes: 0 / 6 = 0.00
+Edges: 0 / 15 = 0.00
+NODE SET: []
+EDGE SET: []
+
+^
+Nodes: 0 / 11 = 0.00
+Edges: 0 / 26 = 0.00
+NODE SET: []
+EDGE SET: []
+
+;
+Nodes: 0 / 17 = 0.00
+Edges: 0 / 46 = 0.00
+NODE SET: []
+EDGE SET: []

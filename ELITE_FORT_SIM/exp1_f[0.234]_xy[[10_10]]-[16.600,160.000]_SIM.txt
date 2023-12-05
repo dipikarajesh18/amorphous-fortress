@@ -1,0 +1,1865 @@
+ELITE_CHAR_DEF/exp1_f[0.234]_xy[[10_10]]-[16.600,160.000].txt - SEED: 7 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#....>!.......#
+#........>..^.#
+#..X.@........#
+#.>S@....;....#
+#.^.;...^.....#
+#@...>..S.....#
+###############
+
+> GENERATION 20
+###############
+#.....O.O...^.#
+#O^...........#
+#.....!...^...#
+#...SO&..D....#
+#^>^.O.M......#
+#.$X...SM.....#
+###############
+
+> GENERATION 40
+###############
+#.^!.O........#
+#.O...........#
+#....O........#
+#X!...&.......#
+#O>O...^......#
+#!^.OSM....D..#
+###############
+
+> GENERATION 60
+###############
+#..O....^.....#
+#O......O..!..#
+#.OO..........#
+#^!O.^&.......#
+#>O.OS!S......#
+#.XO..!....D..#
+###############
+
+> GENERATION 80
+###############
+#.!!!..O!.....#
+#....^........#
+#OOO.O........#
+#....>&XO.!...#
+#>O!OSO!......#
+#O^.OSS.O!.D!.#
+###############
+
+> GENERATION 100
+###############
+#!.X.!!O.....!#
+#O!.O.OO.^....#
+#O*.....O!....#
+#.O!O!&!......#
+#>*OOS..!.!...#
+#^OOSS.O...D..#
+###############
+
+Number of entities: 62
+Number of nodes: 161
+
+===============
+
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['take', 'move', 'die', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25} <<< -- <0>
+>>> TIME: 2023-10-07 01:35:44.686992 <<< -- <0>
+Fortress randomly populated with 16 entities -- <0>
+[O.5a39] cloned to [O. af4] at [2, 4] -- <2>
+[>.f0ae] transformed into [O. af4] at [2, 4] -- <2>
+[>.f0ae] died -- <2>
+[+.2400] cloned to [+.349e] at [4, 4] -- <2>
+[@.f71e] transformed into [+.349e] at [4, 4] -- <2>
+[@.f71e] died -- <2>
+[X.f57d] moved to [2, 3] - (not able to push) -- <2>
+[^.f4c0] moved to [8, 6] goto [8, 6] -- <2>
+[^.2c6a] moved to [2, 4] goto [3, 4] -- <2>
+[O.5a39] cloned to [O.de1c] at [5, 6] -- <2>
+[>.ed23] transformed into [O.de1c] at [5, 6] -- <2>
+[>.ed23] died -- <2>
+[!.2b7a] moved to [7, 1] -- <2>
+[+.2400] cloned to [+.6c0d] at [5, 3] -- <2>
+[@.570a] transformed into [+.6c0d] at [5, 3] -- <2>
+[@.570a] died -- <2>
+[O.5a39] cloned to [O.80f0] at [5, 1] -- <2>
+[>. e1a] transformed into [O.80f0] at [5, 1] -- <2>
+[>. e1a] died -- <2>
+[+.2400] cloned to [+.95ff] at [1, 6] -- <2>
+[@.ee42] transformed into [+.95ff] at [1, 6] -- <2>
+[@.ee42] died -- <2>
+[^.f2de] moved to [11, 2] goto [8, 6] -- <2>
+[X.f57d] moved to [2, 4] goto [2, 4] -- <3>
+[^.f4c0] moved to [8, 5] - (not able to push) -- <3>
+[^.2c6a] moved to [2, 5] - (not able to push) -- <3>
+[>.6973] cloned to [>.a6e8] at [7, 1] -- <3>
+[!.2b7a] transformed into [>.a6e8] at [7, 1] -- <3>
+[!.2b7a] died -- <3>
+[D.6ae3] cloned to [D.d688] at [4, 5] -- <3>
+[;.4fd3] transformed into [D.d688] at [4, 5] -- <3>
+[;.4fd3] died -- <3>
+[+.349e] pushed [D.d688] -- <4>
+[+.6c0d] moved to [5, 4] - (not able to push) -- <4>
+[&.2941] cloned to [&.1f2e] at [1, 6] -- <4>
+[+.95ff] transformed into [&.1f2e] at [1, 6] -- <4>
+[+.95ff] died -- <4>
+[X.f57d] moved to [2, 5] - (not able to push) -- <5>
+[S.2b68] moved to [3, 5] goto [8, 6] -- <5>
+[S.c6ee] moved to [8, 5] goto [3, 5] -- <5>
+[O.5a39] cloned to [O.ea94] at [7, 1] -- <5>
+[>.a6e8] transformed into [O.ea94] at [7, 1] -- <5>
+[>.a6e8] died -- <5>
+[D.d688] moved to [3, 6] -- <5>
+[;.aceb] took [&.1f2e] -- <6>
+[&.1f2e] died -- <6>
+[>.6973] cloned to [>.42f3] at [5, 5] -- <6>
+[+.349e] added [>.42f3] at [5, 5] -- <6>
+[>.6973] cloned to [>. 993] at [6, 4] -- <6>
+[+.6c0d] added [>. 993] at [6, 4] -- <6>
+[D.d688] moved to [2, 6] -- <7>
+[X.f57d] pushed [S.2b68] -- <8>
+[S.2b68] moved to [5, 5] goto [8, 5] -- <8>
+[S.c6ee] moved to [7, 5] goto [5, 5] -- <8>
+[+.349e] moved to [5, 5] - (not able to push) -- <8>
+[+.6c0d] moved to [6, 4] - (not able to push) -- <8>
+[O.5a39] cloned to [O.5dc0] at [5, 5] -- <8>
+[>.42f3] transformed into [O.5dc0] at [5, 5] -- <8>
+[>.42f3] died -- <8>
+[O.5a39] cloned to [O.4cb2] at [6, 4] -- <8>
+[>. 993] transformed into [O.4cb2] at [6, 4] -- <8>
+[>. 993] died -- <8>
+[D.d688] moved to [3, 6] -- <9>
+[X.f57d] moved to [2, 5] - (not able to push) -- <10>
+[>.6973] cloned to [>.487a] at [5, 4] -- <10>
+[+.349e] added [>.487a] at [5, 4] -- <10>
+[*.2e98] cloned to [*.3d9c] at [2, 5] -- <11>
+[X.f57d] transformed into [*.3d9c] at [2, 5] -- <11>
+[X.f57d] died -- <11>
+[S.2b68] moved to [6, 5] goto [7, 5] -- <11>
+[S.c6ee] moved to [6, 5] goto [6, 5] -- <11>
+[>.de2b] moved to [9, 3] goto [2, 5] -- <11>
+[X.a321] cloned to [X.a6e7] at [5, 5] -- <11>
+[+.349e] transformed into [X.a6e7] at [5, 5] -- <11>
+[+.349e] died -- <11>
+[D.d688] moved to [3, 5] -- <11>
+[M.a5cd] cloned to [M.3653] at [7, 5] -- <12>
+[S.c6ee] added [M.3653] at [7, 5] -- <12>
+[>.de2b] moved to [8, 3] goto [2, 5] -- <12>
+[D.d688] moved to [2, 5] - (not able to push) -- <12>
+[>.487a] moved to [5, 5] goto [2, 5] -- <12>
+[S.2b68] moved to [5, 5] - (not able to push) -- <13>
+[S.c6ee] moved to [6, 6] - (not able to push) -- <13>
+[>.de2b] moved to [7, 3] goto [2, 5] -- <13>
+[&.2941] cloned to [&.7f3a] at [6, 4] -- <13>
+[+.6c0d] transformed into [&.7f3a] at [6, 4] -- <13>
+[+.6c0d] died -- <13>
+[S.afdc] cloned to [S.8dc8] at [2, 5] -- <13>
+[D.d688] transformed into [S.8dc8] at [2, 5] -- <13>
+[D.d688] died -- <13>
+[>.487a] moved to [4, 5] goto [2, 5] -- <13>
+[X.a6e7] moved to [4, 5] - (not able to push) -- <13>
+[>.de2b] moved to [6, 3] goto [2, 5] -- <14>
+[!.442f] cloned to [!.320b] at [6, 4] -- <14>
+[O.4cb2] transformed into [!.320b] at [6, 4] -- <14>
+[O.4cb2] died -- <14>
+[>.487a] moved to [3, 5] goto [2, 5] -- <14>
+[X.a6e7] pushed [S.2b68] -- <14>
+[M.3653] moved to [7, 6] -- <14>
+[D.6ae3] cloned to [D. e44] at [9, 4] -- <15>
+[;.aceb] transformed into [D. e44] at [9, 4] -- <15>
+[;.aceb] died -- <15>
+[S.2b68] took [M.3653] -- <15>
+[M.3653] died -- <15>
+[^.f4c0] moved to [8, 4] - (not able to push) -- <15>
+[>.de2b] moved to [5, 3] goto [2, 5] -- <15>
+[^.2c6a] moved to [2, 4] - (not able to push) -- <15>
+[^.f2de] moved to [11, 1] - (not able to push) -- <15>
+[O.ea94] moved to [7, 2] - (not able to push) -- <15>
+[>.487a] moved to [2, 5] goto [2, 5] -- <15>
+[^.fc4d] cloned to [^.e2f1] at [2, 6] -- <15>
+[*.3d9c] added [^.e2f1] at [2, 6] -- <15>
+[X.a6e7] moved to [5, 6] - (not able to push) -- <15>
+[S.2b68] moved to [6, 6] - (not able to push) -- <16>
+[S.c6ee] moved to [7, 6] - (not able to push) -- <16>
+[^.f4c0] moved to [9, 4] - (not able to push) -- <16>
+[>.de2b] moved to [5, 4] goto [2, 5] -- <16>
+[^.2c6a] moved to [2, 3] - (not able to push) -- <16>
+[^.f2de] moved to [12, 1] - (not able to push) -- <16>
+[O. af4] moved to [1, 4] - (not able to push) -- <16>
+[O.de1c] moved to [5, 5] - (not able to push) -- <16>
+[O.5dc0] moved to [4, 5] - (not able to push) -- <16>
+[^.fc4d] cloned to [^.6618] at [1, 5] -- <16>
+[*.3d9c] added [^.6618] at [1, 5] -- <16>
+[X.a6e7] moved to [4, 6] - (not able to push) -- <16>
+[S.8dc8] moved to [2, 4] - (not able to push) -- <16>
+[!.320b] moved to [7, 4] -- <16>
+[^.f4c0] moved to [8, 4] - (not able to push) -- <17>
+[>.de2b] moved to [5, 5] goto [2, 5] -- <17>
+[^.2c6a] moved to [1, 3] - (not able to push) -- <17>
+[^.f2de] moved to [13, 1] - (not able to push) -- <17>
+[O.ea94] moved to [8, 2] - (not able to push) -- <17>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <17>
+[!.320b] moved to [7, 5] -- <17>
+[D. e44] moved to [10, 4] -- <17>
+[S.2b68] moved to [7, 6] goto [7, 6] -- <18>
+[^.f4c0] moved to [9, 4] - (not able to push) -- <18>
+[>.de2b] moved to [4, 5] goto [2, 5] -- <18>
+[O. af4] moved to [1, 3] - (not able to push) -- <18>
+[O.de1c] moved to [5, 4] - (not able to push) -- <18>
+[O.5dc0] moved to [4, 4] - (not able to push) -- <18>
+[^.fc4d] cloned to [^.e799] at [3, 5] -- <18>
+[*.3d9c] added [^.e799] at [3, 5] -- <18>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <18>
+[S.8dc8] moved to [3, 4] goto [7, 6] -- <18>
+[!.320b] moved to [6, 5] -- <18>
+[M.a5cd] cloned to [M.7ecc] at [8, 6] -- <19>
+[S.2b68] added [M.7ecc] at [8, 6] -- <19>
+[M.a5cd] cloned to [M.67b9] at [7, 5] -- <19>
+[S.c6ee] added [M.67b9] at [7, 5] -- <19>
+[^.f4c0] moved to [10, 4] - (not able to push) -- <19>
+[>.de2b] moved to [3, 5] goto [2, 5] -- <19>
+[^.2c6a] moved to [2, 3] - (not able to push) -- <19>
+[O.ea94] moved to [8, 1] - (not able to push) -- <19>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <19>
+[S.8dc8] moved to [4, 4] - (not able to push) -- <19>
+[!.320b] moved to [6, 4] -- <19>
+[D. e44] moved to [9, 4] -- <19>
+[^.f4c0] moved to [10, 3] - (not able to push) -- <20>
+[>.de2b] moved to [2, 5] goto [2, 5] -- <20>
+[^.2c6a] moved to [2, 2] - (not able to push) -- <20>
+[^.f2de] moved to [12, 1] - (not able to push) -- <20>
+[O. af4] moved to [1, 2] - (not able to push) -- <20>
+[O.de1c] moved to [5, 5] - (not able to push) -- <20>
+[O.80f0] moved to [6, 1] - (not able to push) -- <20>
+[O.5dc0] moved to [5, 4] - (not able to push) -- <20>
+[!.320b] moved to [6, 3] -- <20>
+[$.b1aa] cloned to [$.4636] at [2, 6] -- <20>
+[^.e2f1] transformed into [$.4636] at [2, 6] -- <20>
+[^.e2f1] died -- <20>
+[^.f4c0] moved to [9, 3] - (not able to push) -- <21>
+[^.2c6a] moved to [2, 1] - (not able to push) -- <21>
+[^.f2de] moved to [11, 1] - (not able to push) -- <21>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <21>
+[S.8dc8] moved to [4, 5] goto [7, 6] -- <21>
+[!.320b] moved to [6, 4] -- <21>
+[D. e44] moved to [9, 5] -- <21>
+[$.b1aa] cloned to [$.3e45] at [1, 5] -- <21>
+[^.6618] transformed into [$.3e45] at [1, 5] -- <21>
+[^.6618] died -- <21>
+[^.e799] moved to [4, 5] - (not able to push) -- <21>
+[M.7ecc] moved to [8, 5] -- <21>
+[M.67b9] moved to [8, 5] -- <21>
+[S.2b68] took [M.7ecc] -- <22>
+[M.7ecc] died -- <22>
+[S.c6ee] took [M.67b9] -- <22>
+[M.67b9] died -- <22>
+[^.f4c0] moved to [9, 4] - (not able to push) -- <22>
+[^.2c6a] moved to [1, 1] - (not able to push) -- <22>
+[O.de1c] moved to [4, 5] - (not able to push) -- <22>
+[O.80f0] moved to [7, 1] - (not able to push) -- <22>
+[O.5dc0] moved to [5, 5] - (not able to push) -- <22>
+[S.8dc8] moved to [5, 5] - (not able to push) -- <22>
+[!.320b] moved to [6, 3] -- <22>
+[^.fc4d] cloned to [^.e25d] at [2, 6] -- <22>
+[$.4636] transformed into [^.e25d] at [2, 6] -- <22>
+[$.4636] died -- <22>
+[S.2b68] moved to [6, 6] - (not able to push) -- <23>
+[^.f4c0] moved to [8, 4] - (not able to push) -- <23>
+[^.2c6a] moved to [1, 2] - (not able to push) -- <23>
+[^.f2de] moved to [12, 1] - (not able to push) -- <23>
+[O.ea94] moved to [9, 1] - (not able to push) -- <23>
+[X.a6e7] moved to [2, 5] - (not able to push) -- <23>
+[!.320b] moved to [5, 3] -- <23>
+[D. e44] moved to [10, 5] -- <23>
+[^.e799] moved to [3, 5] - (not able to push) -- <23>
+[^.fc4d] cloned to [^.2524] at [1, 5] -- <23>
+[$.3e45] transformed into [^.2524] at [1, 5] -- <23>
+[$.3e45] died -- <23>
+[^.f4c0] moved to [8, 5] - (not able to push) -- <24>
+[^.f2de] moved to [11, 1] - (not able to push) -- <24>
+[O. af4] moved to [1, 3] - (not able to push) -- <24>
+[O.de1c] moved to [4, 4] - (not able to push) -- <24>
+[O.80f0] moved to [8, 1] - (not able to push) -- <24>
+[O.5dc0] moved to [5, 6] - (not able to push) -- <24>
+[X.a6e7] moved to [3, 5] - (not able to push) -- <24>
+[S.8dc8] moved to [5, 6] goto [6, 6] -- <24>
+[!.320b] moved to [4, 3] -- <24>
+[S.2b68] moved to [7, 6] goto [7, 6] -- <25>
+[^.f4c0] moved to [8, 4] - (not able to push) -- <25>
+[^.2c6a] moved to [1, 1] - (not able to push) -- <25>
+[O.ea94] moved to [8, 1] - (not able to push) -- <25>
+[X.a6e7] moved to [3, 4] - (not able to push) -- <25>
+[!.320b] moved to [4, 2] -- <25>
+[D. e44] moved to [9, 5] -- <25>
+[M.a5cd] cloned to [M.db4f] at [8, 6] -- <26>
+[S.2b68] added [M.db4f] at [8, 6] -- <26>
+[M.a5cd] cloned to [M.6ce5] at [7, 5] -- <26>
+[S.c6ee] added [M.6ce5] at [7, 5] -- <26>
+[^.f4c0] moved to [7, 4] - (not able to push) -- <26>
+[^.2c6a] moved to [2, 1] - (not able to push) -- <26>
+[^.f2de] moved to [10, 1] - (not able to push) -- <26>
+[O. af4] moved to [1, 4] - (not able to push) -- <26>
+[O.de1c] moved to [4, 3] - (not able to push) -- <26>
+[O.80f0] moved to [7, 1] - (not able to push) -- <26>
+[O.5dc0] moved to [4, 6] - (not able to push) -- <26>
+[^.fc4d] cloned to [^.3ea4] at [2, 4] -- <26>
+[*.3d9c] added [^.3ea4] at [2, 4] -- <26>
+[X.a6e7] moved to [3, 3] - (not able to push) -- <26>
+[!.320b] moved to [4, 1] -- <26>
+[^.f4c0] moved to [8, 4] - (not able to push) -- <27>
+[^.2c6a] moved to [2, 2] - (not able to push) -- <27>
+[^.f2de] moved to [9, 1] - (not able to push) -- <27>
+[O.ea94] moved to [8, 2] - (not able to push) -- <27>
+[X.a6e7] moved to [3, 2] - (not able to push) -- <27>
+[!.320b] moved to [5, 1] -- <27>
+[D. e44] moved to [10, 5] -- <27>
+[$.b1aa] cloned to [$.bb7c] at [3, 5] -- <27>
+[^.e799] transformed into [$.bb7c] at [3, 5] -- <27>
+[^.e799] died -- <27>
+[$.b1aa] cloned to [$.8197] at [2, 6] -- <27>
+[^.e25d] transformed into [$.8197] at [2, 6] -- <27>
+[^.e25d] died -- <27>
+[^.f4c0] moved to [9, 4] - (not able to push) -- <28>
+[^.2c6a] moved to [1, 2] - (not able to push) -- <28>
+[^.f2de] moved to [8, 1] - (not able to push) -- <28>
+[O. af4] moved to [1, 5] - (not able to push) -- <28>
+[O.de1c] moved to [4, 4] - (not able to push) -- <28>
+[O.80f0] moved to [7, 2] - (not able to push) -- <28>
+[O.5dc0] moved to [5, 6] - (not able to push) -- <28>
+[X.a6e7] moved to [2, 2] - (not able to push) -- <28>
+[S.8dc8] took [M.db4f] -- <28>
+[M.db4f] died -- <28>
+[!.320b] moved to [6, 1] -- <28>
+[$.b1aa] cloned to [$.ef7b] at [1, 5] -- <28>
+[^.2524] transformed into [$.ef7b] at [1, 5] -- <28>
+[^.2524] died -- <28>
+[M.6ce5] moved to [6, 5] -- <28>
+[^.3ea4] moved to [1, 4] - (not able to push) -- <28>
+[S.2b68] took [M.6ce5] -- <29>
+[M.6ce5] died -- <29>
+[^.f4c0] moved to [9, 5] - (not able to push) -- <29>
+[^.2c6a] moved to [1, 3] - (not able to push) -- <29>
+[^.f2de] moved to [7, 1] - (not able to push) -- <29>
+[O.ea94] moved to [8, 3] - (not able to push) -- <29>
+[X.a6e7] moved to [1, 2] - (not able to push) -- <29>
+[S.8dc8] moved to [4, 6] - (not able to push) -- <29>
+[D. e44] moved to [10, 6] -- <29>
+[^.3ea4] moved to [2, 4] - (not able to push) -- <29>
+[>.6973] cloned to [>.3031] at [3, 5] -- <29>
+[$.bb7c] transformed into [>.3031] at [3, 5] -- <29>
+[$.bb7c] died -- <29>
+[>.6973] cloned to [>.f97a] at [2, 6] -- <29>
+[$.8197] transformed into [>.f97a] at [2, 6] -- <29>
+[$.8197] died -- <29>
+[S.2b68] moved to [6, 6] - (not able to push) -- <30>
+[S.c6ee] moved to [7, 5] - (not able to push) -- <30>
+[^.f4c0] moved to [8, 5] - (not able to push) -- <30>
+[^.2c6a] moved to [1, 2] goto [1, 2] -- <30>
+[O.de1c] moved to [4, 5] - (not able to push) -- <30>
+[O.80f0] moved to [7, 1] - (not able to push) -- <30>
+[O.5dc0] moved to [5, 5] - (not able to push) -- <30>
+[!.320b] moved to [5, 1] -- <30>
+[^.3ea4] moved to [1, 4] goto [1, 2] -- <30>
+[>.6973] cloned to [>.728a] at [1, 5] -- <30>
+[$.ef7b] transformed into [>.728a] at [1, 5] -- <30>
+[$.ef7b] died -- <30>
+[^.f4c0] moved to [7, 5] - (not able to push) -- <31>
+[O.ea94] moved to [8, 2] - (not able to push) -- <31>
+[X.a6e7] moved to [2, 2] - (not able to push) -- <31>
+[S.8dc8] moved to [5, 6] goto [6, 6] -- <31>
+[O.5a39] cloned to [O.dcf0] at [3, 5] -- <31>
+[>.3031] transformed into [O.dcf0] at [3, 5] -- <31>
+[>.3031] died -- <31>
+[O.5a39] cloned to [O.ada0] at [2, 6] -- <31>
+[>.f97a] transformed into [O.ada0] at [2, 6] -- <31>
+[>.f97a] died -- <31>
+[S.2b68] moved to [5, 6] goto [5, 6] -- <32>
+[S.c6ee] moved to [7, 6] goto [5, 6] -- <32>
+[^.f4c0] moved to [7, 6] - (not able to push) -- <32>
+[^.f2de] moved to [6, 1] - (not able to push) -- <32>
+[O. af4] moved to [2, 5] - (not able to push) -- <32>
+[O.de1c] moved to [4, 6] - (not able to push) -- <32>
+[O.80f0] moved to [8, 1] - (not able to push) -- <32>
+[O.5dc0] moved to [6, 5] - (not able to push) -- <32>
+[X.a6e7] moved to [1, 2] - (not able to push) -- <32>
+[M.a5cd] cloned to [M.6438] at [6, 6] -- <32>
+[S.8dc8] added [M.6438] at [6, 6] -- <32>
+[^.3ea4] moved to [2, 4] goto [6, 6] -- <32>
+[O.5a39] cloned to [O.a315] at [1, 5] -- <32>
+[>.728a] transformed into [O.a315] at [1, 5] -- <32>
+[>.728a] died -- <32>
+[S.c6ee] moved to [6, 6] - (not able to push) -- <33>
+[^.2c6a] moved to [2, 2] - (not able to push) -- <33>
+[^.f2de] pushed [!.320b] -- <33>
+[O.ea94] moved to [7, 2] - (not able to push) -- <33>
+[X.a6e7] moved to [1, 3] - (not able to push) -- <33>
+[!.442f] cloned to [!.bb5e] at [2, 4] -- <33>
+[^.3ea4] transformed into [!.bb5e] at [2, 4] -- <33>
+[^.3ea4] died -- <33>
+[O.dcf0] moved to [2, 5] - (not able to push) -- <33>
+[O.ada0] moved to [3, 6] - (not able to push) -- <33>
+[^.2c6a] moved to [3, 2] - (not able to push) -- <34>
+[O. af4] moved to [2, 6] - (not able to push) -- <34>
+[O.de1c] moved to [4, 5] - (not able to push) -- <34>
+[O.80f0] moved to [7, 1] - (not able to push) -- <34>
+[O.5dc0] moved to [5, 5] - (not able to push) -- <34>
+[X.a6e7] moved to [2, 3] - (not able to push) -- <34>
+[!.320b] moved to [3, 1] -- <34>
+[M.6438] moved to [6, 5] -- <34>
+[O.a315] moved to [1, 4] - (not able to push) -- <34>
+[^.2c6a] moved to [3, 3] -- <35>
+[^.f2de] moved to [4, 1] - (not able to push) -- <35>
+[O.ea94] moved to [7, 3] - (not able to push) -- <35>
+[X.a6e7] moved to [2, 4] - (not able to push) -- <35>
+[S.8dc8] took [M.6438] -- <35>
+[M.6438] died -- <35>
+[!.320b] moved to [3, 2] -- <35>
+[O.dcf0] moved to [1, 5] - (not able to push) -- <35>
+[O.ada0] moved to [3, 5] - (not able to push) -- <35>
+[!.bb5e] moved to [1, 4] -- <35>
+[^.f4c0] moved to [8, 6] - (not able to push) -- <36>
+[^.f2de] moved to [3, 1] - (not able to push) -- <36>
+[O. af4] moved to [3, 6] - (not able to push) -- <36>
+[O.de1c] moved to [3, 5] - (not able to push) -- <36>
+[O.80f0] moved to [6, 1] - (not able to push) -- <36>
+[O.5dc0] moved to [5, 6] - (not able to push) -- <36>
+[X.a6e7] moved to [2, 3] - (not able to push) -- <36>
+[S.8dc8] moved to [5, 5] - (not able to push) -- <36>
+[!.320b] moved to [3, 1] -- <36>
+[O.a315] moved to [1, 3] - (not able to push) -- <36>
+[!.bb5e] moved to [1, 3] -- <36>
+[S.2b68] moved to [4, 6] - (not able to push) -- <37>
+[S.c6ee] moved to [5, 6] - (not able to push) -- <37>
+[^.f4c0] moved to [9, 6] - (not able to push) -- <37>
+[!.442f] cloned to [!.ad0b] at [3, 3] -- <37>
+[^.2c6a] transformed into [!.ad0b] at [3, 3] -- <37>
+[^.2c6a] died -- <37>
+[^.f2de] moved to [4, 1] - (not able to push) -- <37>
+[O.ea94] moved to [6, 3] - (not able to push) -- <37>
+[X.a6e7] moved to [2, 2] - (not able to push) -- <37>
+[!.320b] moved to [3, 2] -- <37>
+[D. e44] moved to [11, 6] -- <37>
+[O.dcf0] moved to [1, 6] - (not able to push) -- <37>
+[O.ada0] moved to [4, 5] - (not able to push) -- <37>
+[!.bb5e] moved to [1, 4] -- <37>
+[^.f4c0] moved to [8, 6] - (not able to push) -- <38>
+[^.f2de] moved to [3, 1] - (not able to push) -- <38>
+[O.de1c] moved to [2, 5] - (not able to push) -- <38>
+[^.fc4d] cloned to [^.e183] at [1, 5] -- <38>
+[*.3d9c] added [^.e183] at [1, 5] -- <38>
+[X.a6e7] moved to [1, 2] - (not able to push) -- <38>
+[S.8dc8] moved to [5, 6] goto [5, 6] -- <38>
+[!.320b] moved to [3, 3] -- <38>
+[O.a315] moved to [2, 3] - (not able to push) -- <38>
+[S.2b68] moved to [5, 6] goto [5, 6] -- <39>
+[^.f4c0] moved to [7, 6] - (not able to push) -- <39>
+[O.ea94] moved to [5, 3] - (not able to push) -- <39>
+[X.a6e7] moved to [1, 3] - (not able to push) -- <39>
+[!.320b] moved to [3, 4] -- <39>
+[O.dcf0] moved to [1, 5] - (not able to push) -- <39>
+[O.ada0] moved to [4, 6] - (not able to push) -- <39>
+[!.bb5e] moved to [1, 5] -- <39>
+[!.ad0b] moved to [3, 2] -- <39>
+[M.a5cd] cloned to [M.c4c8] at [6, 6] -- <40>
+[S.2b68] added [M.c4c8] at [6, 6] -- <40>
+[^.f4c0] moved to [7, 5] - (not able to push) -- <40>
+[^.f2de] moved to [2, 1] - (not able to push) -- <40>
+[O. af4] moved to [4, 6] - (not able to push) -- <40>
+[O.de1c] moved to [3, 5] - (not able to push) -- <40>
+[O.80f0] moved to [5, 1] - (not able to push) -- <40>
+[O.5dc0] moved to [4, 6] - (not able to push) -- <40>
+[^.fc4d] cloned to [^.9745] at [2, 6] -- <40>
+[*.3d9c] added [^.9745] at [2, 6] -- <40>
+[X.a6e7] moved to [1, 4] - (not able to push) -- <40>
+[!.320b] moved to [2, 4] -- <40>
+[O.a315] moved to [2, 2] - (not able to push) -- <40>
+[!.bb5e] moved to [1, 6] -- <40>
+[!.ad0b] moved to [3, 1] -- <40>
+[^.f4c0] moved to [7, 4] - (not able to push) -- <41>
+[O.ea94] moved to [5, 2] - (not able to push) -- <41>
+[X.a6e7] moved to [1, 3] - (not able to push) -- <41>
+[!.320b] moved to [1, 4] -- <41>
+[O.dcf0] moved to [2, 5] - (not able to push) -- <41>
+[O.ada0] moved to [3, 6] - (not able to push) -- <41>
+[^.e183] moved to [1, 6] goto [6, 6] -- <41>
+[^.f4c0] moved to [7, 3] - (not able to push) -- <42>
+[^.f2de] pushed [!.ad0b] -- <42>
+[O. af4] moved to [3, 6] - (not able to push) -- <42>
+[O.de1c] moved to [4, 5] - (not able to push) -- <42>
+[O.80f0] pushed [!.ad0b] -- <42>
+[^.fc4d] cloned to [^.39c7] at [3, 5] -- <42>
+[*.3d9c] added [^.39c7] at [3, 5] -- <42>
+[X.a6e7] moved to [2, 3] - (not able to push) -- <42>
+[S.8dc8] took [M.c4c8] -- <42>
+[M.c4c8] died -- <42>
+[!.320b] moved to [1, 3] -- <42>
+[O.a315] moved to [3, 2] - (not able to push) -- <42>
+[!.ad0b] moved to [4, 1] -- <42>
+[!.442f] cloned to [!.35a5] at [1, 6] -- <42>
+[^.e183] transformed into [!.35a5] at [1, 6] -- <42>
+[^.e183] died -- <42>
+[^.f4c0] moved to [7, 2] - (not able to push) -- <43>
+[^.f2de] moved to [3, 2] - (not able to push) -- <43>
+[O.ea94] moved to [5, 3] - (not able to push) -- <43>
+[^.fc4d] cloned to [^.87f8] at [2, 4] -- <43>
+[*.3d9c] added [^.87f8] at [2, 4] -- <43>
+[X.a6e7] moved to [1, 3] - (not able to push) -- <43>
+[S.8dc8] moved to [5, 5] - (not able to push) -- <43>
+[O.dcf0] moved to [2, 4] - (not able to push) -- <43>
+[O.ada0] moved to [4, 6] - (not able to push) -- <43>
+[!.bb5e] moved to [2, 6] -- <43>
+[!.ad0b] moved to [3, 1] -- <43>
+[S.2b68] moved to [6, 6] - (not able to push) -- <44>
+[S.c6ee] moved to [4, 6] - (not able to push) -- <44>
+[^.f4c0] moved to [6, 2] - (not able to push) -- <44>
+[^.f2de] moved to [4, 2] - (not able to push) -- <44>
+[O. af4] moved to [4, 6] - (not able to push) -- <44>
+[O.de1c] moved to [3, 5] - (not able to push) -- <44>
+[O.80f0] pushed [!.ad0b] -- <44>
+[X.a6e7] moved to [1, 4] - (not able to push) -- <44>
+[!.320b] moved to [1, 4] -- <44>
+[O.a315] moved to [4, 2] - (not able to push) -- <44>
+[!.ad0b] moved to [3, 1] -- <44>
+[^.f4c0] moved to [6, 3] - (not able to push) -- <45>
+[^.f2de] moved to [5, 2] - (not able to push) -- <45>
+[O.ea94] moved to [5, 2] - (not able to push) -- <45>
+[^.fc4d] cloned to [^.1444] at [1, 5] -- <45>
+[*.3d9c] added [^.1444] at [1, 5] -- <45>
+[S.8dc8] moved to [5, 6] goto [6, 6] -- <45>
+[!.320b] moved to [2, 4] -- <45>
+[O.dcf0] moved to [3, 4] - (not able to push) -- <45>
+[O.ada0] moved to [5, 6] - (not able to push) -- <45>
+[!.bb5e] moved to [3, 6] -- <45>
+[!.ad0b] moved to [3, 2] -- <45>
+[$.b1aa] cloned to [$.8a77] at [2, 6] -- <45>
+[^.9745] transformed into [$.8a77] at [2, 6] -- <45>
+[^.9745] died -- <45>
+[^.39c7] pushed [*.3d9c] -- <45>
+[!.35a5] moved to [2, 6] -- <45>
+[S.2b68] moved to [5, 6] goto [5, 6] -- <46>
+[S.c6ee] moved to [5, 6] goto [5, 6] -- <46>
+[^.f4c0] moved to [7, 3] - (not able to push) -- <46>
+[>.de2b] moved to [1, 5] goto [1, 5] -- <46>
+[^.f2de] moved to [4, 2] goto [1, 4] -- <46>
+[O.de1c] moved to [4, 5] - (not able to push) -- <46>
+[O.80f0] moved to [2, 1] - (not able to push) -- <46>
+[>.487a] moved to [1, 5] goto [1, 5] -- <46>
+[X.a6e7] moved to [1, 3] - (not able to push) -- <46>
+[!.320b] moved to [3, 4] -- <46>
+[O.a315] pushed [!.ad0b] -- <46>
+[!.bb5e] moved to [4, 6] -- <46>
+[!.ad0b] moved to [1, 2] -- <46>
+[!.35a5] moved to [3, 6] -- <46>
+[M.a5cd] cloned to [M.d831] at [6, 6] -- <47>
+[S.2b68] added [M.d831] at [6, 6] -- <47>
+[^.f4c0] moved to [7, 2] - (not able to push) -- <47>
+[O.ea94] moved to [5, 3] - (not able to push) -- <47>
+[^.fc4d] cloned to [^.cfd8] at [1, 4] -- <47>
+[*.3d9c] added [^.cfd8] at [1, 4] -- <47>
+[X.a6e7] moved to [2, 3] - (not able to push) -- <47>
+[!.320b] moved to [4, 4] -- <47>
+[O.dcf0] moved to [3, 5] - (not able to push) -- <47>
+[O.ada0] moved to [6, 6] - (not able to push) -- <47>
+[!.bb5e] moved to [5, 6] -- <47>
+[$.b1aa] cloned to [$.fd3d] at [2, 5] -- <47>
+[^.39c7] transformed into [$.fd3d] at [2, 5] -- <47>
+[^.39c7] died -- <47>
+[!.35a5] moved to [4, 6] -- <47>
+[!.442f] cloned to [!.2dcd] at [2, 4] -- <47>
+[^.87f8] transformed into [!.2dcd] at [2, 4] -- <47>
+[^.87f8] died -- <47>
+[^.fc4d] cloned to [^.1d74] at [2, 6] -- <47>
+[$.8a77] transformed into [^.1d74] at [2, 6] -- <47>
+[$.8a77] died -- <47>
+[^.f4c0] moved to [6, 2] - (not able to push) -- <48>
+[^.f2de] moved to [5, 2] goto [6, 6] -- <48>
+[O.de1c] moved to [5, 5] - (not able to push) -- <48>
+[O.5dc0] moved to [5, 6] - (not able to push) -- <48>
+[X.a6e7] moved to [2, 2] - (not able to push) -- <48>
+[!.320b] moved to [4, 5] -- <48>
+[O.a315] moved to [4, 2] - (not able to push) -- <48>
+[!.bb5e] moved to [5, 5] -- <48>
+[^.1444] moved to [1, 4] goto [2, 2] -- <48>
+[^.f4c0] moved to [7, 2] - (not able to push) -- <49>
+[!.442f] cloned to [!.d9c3] at [5, 2] -- <49>
+[^.f2de] transformed into [!.d9c3] at [5, 2] -- <49>
+[^.f2de] died -- <49>
+[O.ea94] pushed [!.d9c3] -- <49>
+[^.fc4d] cloned to [^.89b0] at [1, 6] -- <49>
+[*.3d9c] added [^.89b0] at [1, 6] -- <49>
+[X.a6e7] moved to [2, 1] - (not able to push) -- <49>
+[S.8dc8] took [M.d831] -- <49>
+[M.d831] died -- <49>
+[!.320b] moved to [4, 4] -- <49>
+[O.dcf0] moved to [2, 5] - (not able to push) -- <49>
+[O.ada0] moved to [5, 6] - (not able to push) -- <49>
+[!.bb5e] moved to [5, 6] -- <49>
+[!.ad0b] moved to [1, 1] -- <49>
+[!.35a5] moved to [5, 6] -- <49>
+[^.cfd8] moved to [1, 5] - (not able to push) -- <49>
+[>.6973] cloned to [>.2d58] at [2, 5] -- <49>
+[$.fd3d] transformed into [>.2d58] at [2, 5] -- <49>
+[$.fd3d] died -- <49>
+[!.2dcd] moved to [1, 4] -- <49>
+[^.1d74] moved to [1, 6] - (not able to push) -- <49>
+[^.f4c0] moved to [6, 2] - (not able to push) -- <50>
+[O. af4] moved to [4, 5] - (not able to push) -- <50>
+[O.80f0] moved to [3, 1] - (not able to push) -- <50>
+[X.a6e7] moved to [2, 2] - (not able to push) -- <50>
+[!.320b] moved to [3, 4] -- <50>
+[O.a315] moved to [5, 2] - (not able to push) -- <50>
+[!.bb5e] moved to [6, 6] -- <50>
+[!.35a5] moved to [5, 5] -- <50>
+[^.cfd8] moved to [2, 5] goto [2, 2] -- <50>
+[!.2dcd] moved to [1, 5] -- <50>
+[^.1d74] moved to [2, 6] goto [2, 2] -- <50>
+[S.2b68] moved to [6, 6] - (not able to push) -- <51>
+[S.c6ee] moved to [5, 5] - (not able to push) -- <51>
+[^.f4c0] moved to [6, 1] - (not able to push) -- <51>
+[O.ea94] moved to [5, 3] - (not able to push) -- <51>
+[X.a6e7] moved to [2, 3] - (not able to push) -- <51>
+[!.320b] moved to [3, 3] -- <51>
+[O.dcf0] moved to [3, 5] - (not able to push) -- <51>
+[O.ada0] pushed [!.bb5e] -- <51>
+[!.bb5e] moved to [8, 6] -- <51>
+[!.35a5] moved to [5, 6] -- <51>
+[^.1444] moved to [1, 5] - (not able to push) -- <51>
+[!.2dcd] moved to [1, 6] -- <51>
+[!.d9c3] moved to [6, 1] -- <51>
+[O.5a39] cloned to [O.2ae0] at [2, 5] -- <51>
+[>.2d58] transformed into [O.2ae0] at [2, 5] -- <51>
+[>.2d58] died -- <51>
+[O. af4] moved to [4, 6] - (not able to push) -- <52>
+[O.de1c] moved to [6, 5] - (not able to push) -- <52>
+[O.80f0] moved to [2, 1] - (not able to push) -- <52>
+[O.5dc0] moved to [4, 6] - (not able to push) -- <52>
+[^.fc4d] cloned to [^.221c] at [1, 4] -- <52>
+[*.3d9c] added [^.221c] at [1, 4] -- <52>
+[X.a6e7] moved to [3, 3] - (not able to push) -- <52>
+[S.8dc8] moved to [6, 6] goto [6, 6] -- <52>
+[!.320b] moved to [2, 3] -- <52>
+[O.a315] moved to [6, 2] - (not able to push) -- <52>
+[!.35a5] moved to [4, 6] -- <52>
+[^.1444] moved to [1, 6] -- <52>
+[!.d9c3] moved to [7, 1] -- <52>
+[S.c6ee] moved to [6, 5] goto [6, 6] -- <53>
+[^.f4c0] moved to [5, 1] - (not able to push) -- <53>
+[O.ea94] moved to [4, 3] - (not able to push) -- <53>
+[X.a6e7] moved to [4, 3] - (not able to push) -- <53>
+[M.a5cd] cloned to [M.3e4c] at [5, 6] -- <53>
+[S.8dc8] added [M.3e4c] at [5, 6] -- <53>
+[!.320b] moved to [3, 3] -- <53>
+[O.dcf0] moved to [3, 4] - (not able to push) -- <53>
+[O.ada0] moved to [5, 6] - (not able to push) -- <53>
+[!.bb5e] moved to [7, 6] -- <53>
+[!.ad0b] moved to [1, 2] -- <53>
+[!.35a5] moved to [5, 6] -- <53>
+[^.1444] moved to [2, 6] goto [5, 6] -- <53>
+[!.d9c3] moved to [7, 2] -- <53>
+[O.2ae0] moved to [2, 4] - (not able to push) -- <53>
+[^.f4c0] moved to [6, 1] - (not able to push) -- <54>
+[O. af4] moved to [3, 6] - (not able to push) -- <54>
+[O.de1c] moved to [6, 4] - (not able to push) -- <54>
+[O.80f0] moved to [1, 1] - (not able to push) -- <54>
+[X.a6e7] moved to [4, 4] - (not able to push) -- <54>
+[!.320b] moved to [3, 2] -- <54>
+[O.a315] moved to [6, 3] - (not able to push) -- <54>
+[!.bb5e] moved to [6, 6] -- <54>
+[^.1444] moved to [1, 6] - (not able to push) -- <54>
+[!.2dcd] moved to [2, 6] -- <54>
+[!.d9c3] moved to [7, 1] -- <54>
+[$.b1aa] cloned to [$. 5e9] at [1, 6] -- <54>
+[^.89b0] transformed into [$. 5e9] at [1, 6] -- <54>
+[^.89b0] died -- <54>
+[^.f4c0] moved to [5, 1] - (not able to push) -- <55>
+[O.ea94] moved to [3, 3] - (not able to push) -- <55>
+[X.a6e7] moved to [5, 4] - (not able to push) -- <55>
+[!.320b] moved to [3, 1] -- <55>
+[O.dcf0] moved to [4, 4] - (not able to push) -- <55>
+[O.ada0] moved to [4, 6] - (not able to push) -- <55>
+[!.bb5e] moved to [7, 6] -- <55>
+[!.ad0b] moved to [1, 3] -- <55>
+[!.35a5] moved to [5, 5] -- <55>
+[^.1444] moved to [1, 5] - (not able to push) -- <55>
+[!.2dcd] moved to [3, 6] -- <55>
+[O.2ae0] moved to [2, 3] - (not able to push) -- <55>
+[M.3e4c] moved to [6, 6] -- <55>
+[^.f4c0] moved to [6, 1] - (not able to push) -- <56>
+[!.442f] cloned to [!.d5e4] at [6, 4] -- <56>
+[O.de1c] transformed into [!.d5e4] at [6, 4] -- <56>
+[O.de1c] died -- <56>
+[O.5dc0] moved to [4, 5] - (not able to push) -- <56>
+[X.a6e7] moved to [5, 5] - (not able to push) -- <56>
+[S.8dc8] took [M.3e4c] -- <56>
+[M.3e4c] died -- <56>
+[O.a315] moved to [7, 3] - (not able to push) -- <56>
+[!.bb5e] moved to [7, 5] -- <56>
+[!.35a5] moved to [5, 6] -- <56>
+[^.1444] moved to [2, 5] goto [6, 5] -- <56>
+[$.b1aa] cloned to [$.4229] at [2, 5] -- <56>
+[^.cfd8] transformed into [$.4229] at [2, 5] -- <56>
+[^.cfd8] died -- <56>
+[$.b1aa] cloned to [$.7a14] at [2, 6] -- <56>
+[^.1d74] transformed into [$.7a14] at [2, 6] -- <56>
+[^.1d74] died -- <56>
+[^.fc4d] cloned to [^.52a9] at [1, 6] -- <56>
+[$. 5e9] transformed into [^.52a9] at [1, 6] -- <56>
+[$. 5e9] died -- <56>
+[^.f4c0] pushed [!.d9c3] -- <57>
+[O.ea94] moved to [3, 2] - (not able to push) -- <57>
+[X.a6e7] moved to [5, 6] - (not able to push) -- <57>
+[S.8dc8] moved to [5, 6] - (not able to push) -- <57>
+[!.320b] moved to [3, 2] -- <57>
+[O.dcf0] moved to [3, 4] - (not able to push) -- <57>
+[!.bb5e] moved to [7, 4] -- <57>
+[!.ad0b] moved to [1, 2] -- <57>
+[!.35a5] moved to [4, 6] -- <57>
+[^.1444] moved to [3, 5] - (not able to push) -- <57>
+[!.2dcd] moved to [2, 6] -- <57>
+[O.2ae0] moved to [3, 3] - (not able to push) -- <57>
+[$.b1aa] cloned to [$.19cb] at [1, 4] -- <57>
+[^.221c] transformed into [$.19cb] at [1, 4] -- <57>
+[^.221c] died -- <57>
+[S.2b68] moved to [7, 6] - (not able to push) -- <58>
+[S.c6ee] moved to [5, 5] - (not able to push) -- <58>
+[^.f4c0] pushed [!.d9c3] -- <58>
+[O. af4] moved to [2, 6] - (not able to push) -- <58>
+[O.80f0] pushed [!.ad0b] -- <58>
+[O.5dc0] moved to [4, 4] - (not able to push) -- <58>
+[X.a6e7] moved to [4, 6] - (not able to push) -- <58>
+[!.320b] moved to [3, 3] -- <58>
+[O.a315] moved to [8, 3] - (not able to push) -- <58>
+[!.bb5e] moved to [6, 4] -- <58>
+[!.ad0b] moved to [1, 2] -- <58>
+[!.35a5] moved to [4, 5] -- <58>
+[^.1444] moved to [4, 5] goto [5, 5] -- <58>
+[!.2dcd] moved to [1, 6] -- <58>
+[!.d9c3] moved to [10, 1] -- <58>
+[!.d5e4] moved to [7, 4] -- <58>
+[>.6973] cloned to [>.674e] at [2, 5] -- <58>
+[$.4229] transformed into [>.674e] at [2, 5] -- <58>
+[$.4229] died -- <58>
+[>.6973] cloned to [>.9c29] at [2, 6] -- <58>
+[$.7a14] transformed into [>.9c29] at [2, 6] -- <58>
+[$.7a14] died -- <58>
+[^.f4c0] moved to [8, 2] - (not able to push) -- <59>
+[O.ea94] moved to [3, 1] - (not able to push) -- <59>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <59>
+[S.8dc8] moved to [5, 5] goto [5, 5] -- <59>
+[!.320b] moved to [3, 4] -- <59>
+[O.dcf0] moved to [3, 3] - (not able to push) -- <59>
+[O.ada0] pushed [!.35a5] -- <59>
+[!.bb5e] moved to [6, 5] -- <59>
+[!.ad0b] moved to [1, 1] -- <59>
+[!.35a5] moved to [5, 4] -- <59>
+[^.1444] moved to [4, 4] - (not able to push) -- <59>
+[!.2dcd] moved to [1, 5] -- <59>
+[!.d9c3] moved to [11, 1] -- <59>
+[O.2ae0] moved to [2, 3] - (not able to push) -- <59>
+[!.d5e4] moved to [7, 5] -- <59>
+[^.52a9] pushed [!.2dcd] -- <59>
+[^.fc4d] cloned to [^.9475] at [1, 4] -- <59>
+[$.19cb] transformed into [^.9475] at [1, 4] -- <59>
+[$.19cb] died -- <59>
+[S.2b68] moved to [7, 5] goto [5, 5] -- <60>
+[^.f4c0] moved to [8, 1] - (not able to push) -- <60>
+[O. af4] moved to [3, 6] - (not able to push) -- <60>
+[O.5dc0] pushed [!.320b] -- <60>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <60>
+[!.320b] moved to [3, 4] -- <60>
+[O.a315] moved to [8, 2] - (not able to push) -- <60>
+[!.bb5e] moved to [6, 6] -- <60>
+[!.ad0b] moved to [1, 2] -- <60>
+[!.35a5] moved to [6, 4] -- <60>
+[^.1444] moved to [5, 4] -- <60>
+[!.2dcd] moved to [2, 4] -- <60>
+[!.d9c3] moved to [11, 2] -- <60>
+[!.d5e4] moved to [6, 5] -- <60>
+[O.5a39] cloned to [O.5b15] at [2, 5] -- <60>
+[>.674e] transformed into [O.5b15] at [2, 5] -- <60>
+[>.674e] died -- <60>
+[O.5a39] cloned to [O.b1aa] at [2, 6] -- <60>
+[>.9c29] transformed into [O.b1aa] at [2, 6] -- <60>
+[>.9c29] died -- <60>
+[S.2b68] moved to [8, 5] - (not able to push) -- <61>
+[^.f4c0] moved to [7, 1] - (not able to push) -- <61>
+[O.ea94] moved to [4, 1] - (not able to push) -- <61>
+[X.a6e7] moved to [2, 5] - (not able to push) -- <61>
+[!.320b] moved to [3, 3] -- <61>
+[O.dcf0] moved to [2, 3] - (not able to push) -- <61>
+[O.ada0] moved to [4, 6] - (not able to push) -- <61>
+[!.bb5e] moved to [6, 5] -- <61>
+[!.ad0b] moved to [1, 1] -- <61>
+[!.35a5] moved to [7, 4] -- <61>
+[!.2dcd] moved to [1, 4] -- <61>
+[!.d9c3] moved to [10, 2] -- <61>
+[O.2ae0] moved to [2, 2] - (not able to push) -- <61>
+[!.d5e4] moved to [7, 5] -- <61>
+[^.52a9] moved to [2, 5] goto [2, 5] -- <61>
+[^.f4c0] moved to [8, 1] - (not able to push) -- <62>
+[O. af4] moved to [2, 6] - (not able to push) -- <62>
+[O.80f0] moved to [1, 3] - (not able to push) -- <62>
+[O.5dc0] pushed [!.320b] -- <62>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <62>
+[S.8dc8] blocked by wall ^.1444 -- <62>
+[!.320b] moved to [2, 2] -- <62>
+[O.a315] moved to [8, 3] - (not able to push) -- <62>
+[!.bb5e] moved to [5, 5] -- <62>
+[!.35a5] moved to [7, 5] -- <62>
+[^.1444] moved to [6, 4] - (not able to push) -- <62>
+[!.2dcd] moved to [1, 3] -- <62>
+[!.d9c3] moved to [10, 1] -- <62>
+[!.d5e4] moved to [8, 5] -- <62>
+[O.5b15] moved to [1, 5] - (not able to push) -- <62>
+[O.b1aa] moved to [1, 6] - (not able to push) -- <62>
+[S.2b68] moved to [7, 5] goto [5, 5] -- <63>
+[S.c6ee] moved to [5, 6] -- <63>
+[^.f4c0] moved to [8, 2] - (not able to push) -- <63>
+[O.ea94] moved to [5, 1] - (not able to push) -- <63>
+[X.a6e7] moved to [2, 5] - (not able to push) -- <63>
+[>.6973] cloned to [>.803a] at [6, 5] -- <63>
+[S.8dc8] added [>.803a] at [6, 5] -- <63>
+[!.320b] moved to [2, 3] -- <63>
+[O.dcf0] moved to [1, 3] - (not able to push) -- <63>
+[O.ada0] moved to [5, 6] - (not able to push) -- <63>
+[!.bb5e] moved to [5, 6] -- <63>
+[!.35a5] moved to [8, 5] -- <63>
+[^.1444] moved to [6, 3] - (not able to push) -- <63>
+[!.2dcd] moved to [2, 3] -- <63>
+[!.d9c3] moved to [9, 1] -- <63>
+[O.2ae0] moved to [2, 1] - (not able to push) -- <63>
+[!.d5e4] moved to [8, 6] -- <63>
+[*.2e98] cloned to [*. 7db] at [2, 4] -- <63>
+[^.52a9] added [*. 7db] at [2, 4] -- <63>
+[S.2b68] moved to [8, 5] - (not able to push) -- <64>
+[>.6973] cloned to [>.6100] at [6, 6] -- <64>
+[S.c6ee] added [>.6100] at [6, 6] -- <64>
+[^.f4c0] moved to [8, 3] - (not able to push) -- <64>
+[O. af4] moved to [3, 6] - (not able to push) -- <64>
+[O.80f0] moved to [1, 4] - (not able to push) -- <64>
+[O.5dc0] moved to [4, 3] - (not able to push) -- <64>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <64>
+[>.6973] cloned to [>.7dc9] at [4, 5] -- <64>
+[S.8dc8] added [>.7dc9] at [4, 5] -- <64>
+[!.320b] moved to [2, 4] -- <64>
+[O.a315] moved to [9, 3] - (not able to push) -- <64>
+[!.bb5e] moved to [6, 6] -- <64>
+[!.ad0b] moved to [1, 2] -- <64>
+[!.35a5] moved to [7, 5] -- <64>
+[^.1444] moved to [7, 3] -- <64>
+[!.2dcd] moved to [2, 2] -- <64>
+[!.d9c3] moved to [9, 2] -- <64>
+[$.b1aa] cloned to [$.366a] at [1, 4] -- <64>
+[^.9475] transformed into [$.366a] at [1, 4] -- <64>
+[^.9475] died -- <64>
+[O.5b15] moved to [2, 5] - (not able to push) -- <64>
+[O.b1aa] moved to [1, 5] - (not able to push) -- <64>
+[^.f4c0] moved to [7, 3] - (not able to push) -- <65>
+[O.ea94] moved to [6, 1] - (not able to push) -- <65>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <65>
+[>.6973] cloned to [>.fd70] at [5, 4] -- <65>
+[S.8dc8] added [>.fd70] at [5, 4] -- <65>
+[!.320b] moved to [2, 5] -- <65>
+[O.dcf0] moved to [2, 3] - (not able to push) -- <65>
+[!.ad0b] moved to [2, 2] -- <65>
+[!.35a5] moved to [8, 5] -- <65>
+[!.2dcd] moved to [2, 1] -- <65>
+[!.d9c3] moved to [10, 2] -- <65>
+[O.2ae0] moved to [1, 1] - (not able to push) -- <65>
+[!.d5e4] moved to [7, 6] -- <65>
+[^.52a9] moved to [1, 5] - (not able to push) -- <65>
+[O.5a39] cloned to [O.9d95] at [6, 5] -- <65>
+[>.803a] transformed into [O.9d95] at [6, 5] -- <65>
+[>.803a] died -- <65>
+[S.2b68] moved to [7, 5] goto [5, 5] -- <66>
+[^.f4c0] moved to [6, 3] goto [3, 6] -- <66>
+[O. af4] moved to [3, 5] - (not able to push) -- <66>
+[O.80f0] moved to [2, 4] - (not able to push) -- <66>
+[O.5dc0] moved to [5, 3] - (not able to push) -- <66>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <66>
+[!.320b] moved to [2, 6] -- <66>
+[O.a315] moved to [9, 2] - (not able to push) -- <66>
+[!.ad0b] moved to [3, 2] -- <66>
+[!.35a5] moved to [8, 4] -- <66>
+[^.1444] moved to [6, 3] - (not able to push) -- <66>
+[!.d9c3] moved to [10, 1] -- <66>
+[!.d5e4] moved to [7, 5] -- <66>
+[^.52a9] moved to [2, 5] goto [5, 5] -- <66>
+[O.5a39] cloned to [O.7589] at [6, 6] -- <66>
+[>.6100] transformed into [O.7589] at [6, 6] -- <66>
+[>.6100] died -- <66>
+[O.5a39] cloned to [O.65b2] at [4, 5] -- <66>
+[>.7dc9] transformed into [O.65b2] at [4, 5] -- <66>
+[>.7dc9] died -- <66>
+[>.6973] cloned to [>.cf34] at [1, 4] -- <66>
+[$.366a] transformed into [>.cf34] at [1, 4] -- <66>
+[$.366a] died -- <66>
+[S.2b68] moved to [6, 5] - (not able to push) -- <67>
+[O.ea94] moved to [7, 1] - (not able to push) -- <67>
+[X.a6e7] moved to [2, 5] - (not able to push) -- <67>
+[!.320b] moved to [2, 5] -- <67>
+[O.dcf0] moved to [2, 4] - (not able to push) -- <67>
+[!.bb5e] moved to [7, 6] -- <67>
+[!.ad0b] moved to [3, 3] -- <67>
+[!.35a5] moved to [8, 5] -- <67>
+[^.1444] moved to [7, 3] - (not able to push) -- <67>
+[!.d9c3] moved to [10, 2] -- <67>
+[O.2ae0] pushed [!.2dcd] -- <67>
+[!.d5e4] moved to [6, 5] -- <67>
+[^.52a9] moved to [1, 5] - (not able to push) -- <67>
+[*. 7db] moved to [2, 5] -- <67>
+[>.fd70] moved to [5, 5] goto [2, 5] -- <67>
+[O.9d95] moved to [6, 4] - (not able to push) -- <67>
+[O. af4] moved to [3, 4] - (not able to push) -- <68>
+[O.80f0] moved to [1, 4] - (not able to push) -- <68>
+[O.5dc0] moved to [5, 4] - (not able to push) -- <68>
+[X.a6e7] moved to [3, 5] - (not able to push) -- <68>
+[!.320b] moved to [3, 5] -- <68>
+[O.a315] moved to [9, 3] - (not able to push) -- <68>
+[!.bb5e] moved to [8, 6] -- <68>
+[!.ad0b] moved to [3, 2] -- <68>
+[!.35a5] moved to [8, 6] -- <68>
+[^.1444] moved to [7, 2] -- <68>
+[!.d9c3] moved to [11, 2] -- <68>
+[!.d5e4] moved to [7, 5] -- <68>
+[O.5b15] moved to [2, 4] - (not able to push) -- <68>
+[^.fc4d] cloned to [^.1bd8] at [2, 6] -- <68>
+[*. 7db] added [^.1bd8] at [2, 6] -- <68>
+[>.fd70] moved to [4, 5] goto [2, 5] -- <68>
+[O.7589] moved to [6, 5] - (not able to push) -- <68>
+[O.65b2] moved to [4, 6] - (not able to push) -- <68>
+[O.5a39] cloned to [O. 74c] at [1, 4] -- <68>
+[>.cf34] transformed into [O. 74c] at [1, 4] -- <68>
+[>.cf34] died -- <68>
+[S.2b68] moved to [5, 5] goto [5, 5] -- <69>
+[$.b1aa] cloned to [$.82dd] at [6, 3] -- <69>
+[^.f4c0] transformed into [$.82dd] at [6, 3] -- <69>
+[^.f4c0] died -- <69>
+[O.ea94] moved to [6, 1] - (not able to push) -- <69>
+[^.fc4d] cloned to [^.5395] at [1, 6] -- <69>
+[*.3d9c] added [^.5395] at [1, 6] -- <69>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <69>
+[!.320b] moved to [2, 5] -- <69>
+[O.dcf0] pushed [!.320b] -- <69>
+[O.ada0] moved to [4, 6] - (not able to push) -- <69>
+[!.bb5e] moved to [7, 6] -- <69>
+[!.ad0b] moved to [3, 1] -- <69>
+[!.d9c3] moved to [12, 2] -- <69>
+[O.2ae0] moved to [1, 1] - (not able to push) -- <69>
+[!.d5e4] moved to [7, 6] -- <69>
+[^.52a9] blocked by wall O.dcf0 -- <69>
+[^.fc4d] cloned to [^.2b41] at [3, 5] -- <69>
+[*. 7db] added [^.2b41] at [3, 5] -- <69>
+[>.fd70] moved to [3, 5] goto [2, 5] -- <69>
+[!.442f] cloned to [!.9059] at [6, 4] -- <69>
+[O.9d95] transformed into [!.9059] at [6, 4] -- <69>
+[O.9d95] died -- <69>
+[M.a5cd] cloned to [M.960b] at [4, 5] -- <70>
+[S.2b68] added [M.960b] at [4, 5] -- <70>
+[>.6973] cloned to [>.eb3d] at [6, 6] -- <70>
+[S.c6ee] added [>.eb3d] at [6, 6] -- <70>
+[O. af4] moved to [2, 4] - (not able to push) -- <70>
+[O.5dc0] pushed [!.9059] -- <70>
+[X.a6e7] moved to [2, 6] - (not able to push) -- <70>
+[!.320b] moved to [1, 6] -- <70>
+[O.a315] moved to [9, 4] - (not able to push) -- <70>
+[!.ad0b] moved to [4, 1] -- <70>
+[!.35a5] moved to [9, 6] -- <70>
+[!.442f] cloned to [!.50a8] at [7, 2] -- <70>
+[^.1444] transformed into [!.50a8] at [7, 2] -- <70>
+[^.1444] died -- <70>
+[!.2dcd] moved to [2, 1] -- <70>
+[!.d9c3] moved to [12, 3] -- <70>
+[!.d5e4] moved to [6, 6] -- <70>
+[^.52a9] moved to [2, 5] goto [4, 5] -- <70>
+[O.5b15] moved to [2, 3] - (not able to push) -- <70>
+[>.fd70] moved to [2, 5] goto [2, 5] -- <70>
+[O.7589] moved to [5, 5] - (not able to push) -- <70>
+[O. 74c] moved to [1, 3] - (not able to push) -- <70>
+[O.ea94] moved to [5, 1] - (not able to push) -- <71>
+[O.dcf0] moved to [2, 4] - (not able to push) -- <71>
+[O.ada0] moved to [5, 6] - (not able to push) -- <71>
+[!.bb5e] moved to [6, 6] -- <71>
+[!.ad0b] moved to [3, 1] -- <71>
+[!.35a5] moved to [9, 5] -- <71>
+[!.d9c3] moved to [11, 3] -- <71>
+[^.52a9] moved to [1, 5] - (not able to push) -- <71>
+[>.6973] cloned to [>.e443] at [6, 3] -- <71>
+[$.82dd] transformed into [>.e443] at [6, 3] -- <71>
+[$.82dd] died -- <71>
+[^.2b41] moved to [2, 5] - (not able to push) -- <71>
+[!.9059] moved to [6, 4] -- <71>
+[O. af4] moved to [3, 4] - (not able to push) -- <72>
+[!.442f] cloned to [!.86c7] at [6, 4] -- <72>
+[O.5dc0] transformed into [!.86c7] at [6, 4] -- <72>
+[O.5dc0] died -- <72>
+[X.a6e7] moved to [3, 6] - (not able to push) -- <72>
+[>.6973] cloned to [>.a869] at [6, 5] -- <72>
+[S.8dc8] added [>.a869] at [6, 5] -- <72>
+[!.320b] moved to [2, 6] -- <72>
+[O.a315] moved to [8, 4] - (not able to push) -- <72>
+[!.bb5e] moved to [6, 5] -- <72>
+[!.ad0b] moved to [2, 1] -- <72>
+[!.35a5] moved to [9, 4] -- <72>
+[!.2dcd] moved to [1, 1] -- <72>
+[!.d9c3] moved to [11, 4] -- <72>
+[!.d5e4] moved to [5, 6] -- <72>
+[^.52a9] moved to [1, 4] - (not able to push) -- <72>
+[O.5b15] moved to [3, 3] - (not able to push) -- <72>
+[O.b1aa] moved to [1, 6] - (not able to push) -- <72>
+[O.7589] moved to [5, 6] - (not able to push) -- <72>
+[O.65b2] pushed [!.d5e4] -- <72>
+[^.2b41] moved to [3, 5] goto [3, 6] -- <72>
+[!.9059] moved to [6, 3] -- <72>
+[M.960b] moved to [3, 5] -- <72>
+[O.5a39] cloned to [O.7d28] at [6, 6] -- <72>
+[>.eb3d] transformed into [O.7d28] at [6, 6] -- <72>
+[>.eb3d] died -- <72>
+[!.50a8] moved to [7, 3] -- <72>
+[S.2b68] took [M.960b] -- <73>
+[M.960b] died -- <73>
+[O.ea94] moved to [5, 2] - (not able to push) -- <73>
+[X.a6e7] moved to [4, 6] - (not able to push) -- <73>
+[O.dcf0] moved to [3, 4] - (not able to push) -- <73>
+[O.ada0] moved to [5, 5] - (not able to push) -- <73>
+[!.bb5e] moved to [5, 5] -- <73>
+[!.ad0b] moved to [1, 1] -- <73>
+[!.35a5] moved to [9, 5] -- <73>
+[!.d9c3] moved to [12, 4] -- <73>
+[O.2ae0] moved to [1, 2] - (not able to push) -- <73>
+[!.d5e4] moved to [6, 5] -- <73>
+[^.52a9] blocked by wall O. 74c -- <73>
+[$.b1aa] cloned to [$.9e7d] at [2, 6] -- <73>
+[^.1bd8] transformed into [$.9e7d] at [2, 6] -- <73>
+[^.1bd8] died -- <73>
+[!.9059] moved to [7, 3] -- <73>
+[!.50a8] moved to [8, 3] -- <73>
+[O.5a39] cloned to [O.b692] at [6, 3] -- <73>
+[>.e443] transformed into [O.b692] at [6, 3] -- <73>
+[>.e443] died -- <73>
+[S.2b68] moved to [5, 4] - (not able to push) -- <74>
+[O. af4] moved to [2, 4] - (not able to push) -- <74>
+[O.80f0] moved to [2, 4] - (not able to push) -- <74>
+[X.a6e7] pushed [S.c6ee] -- <74>
+[!.320b] moved to [2, 5] -- <74>
+[O.a315] moved to [9, 4] - (not able to push) -- <74>
+[!.bb5e] moved to [5, 4] -- <74>
+[!.35a5] moved to [9, 6] -- <74>
+[!.2dcd] moved to [2, 1] -- <74>
+[!.d9c3] moved to [13, 4] -- <74>
+[!.d5e4] moved to [5, 5] -- <74>
+[O.5b15] moved to [4, 3] - (not able to push) -- <74>
+[O.7589] pushed [!.d5e4] -- <74>
+[O.65b2] moved to [4, 6] - (not able to push) -- <74>
+[O. 74c] moved to [1, 4] - (not able to push) -- <74>
+[$.b1aa] cloned to [$.  8c] at [1, 6] -- <74>
+[^.5395] transformed into [$.  8c] at [1, 6] -- <74>
+[^.5395] died -- <74>
+[^.2b41] moved to [4, 5] - (not able to push) -- <74>
+[!.9059] moved to [7, 2] -- <74>
+[!.50a8] moved to [9, 3] -- <74>
+[!.86c7] moved to [6, 5] -- <74>
+[>.a869] moved to [5, 5] goto [2, 5] -- <74>
+[O.7d28] moved to [5, 6] - (not able to push) -- <74>
+[O.ea94] moved to [5, 1] - (not able to push) -- <75>
+[X.a6e7] moved to [5, 5] - (not able to push) -- <75>
+[!.320b] moved to [2, 4] -- <75>
+[O.dcf0] moved to [3, 3] - (not able to push) -- <75>
+[O.ada0] moved to [5, 6] - (not able to push) -- <75>
+[!.bb5e] moved to [5, 3] -- <75>
+[!.ad0b] moved to [2, 1] -- <75>
+[!.35a5] moved to [8, 6] -- <75>
+[!.2dcd] moved to [1, 1] -- <75>
+[!.d9c3] moved to [13, 5] -- <75>
+[O.2ae0] moved to [2, 2] - (not able to push) -- <75>
+[!.d5e4] moved to [5, 3] -- <75>
+[!.442f] cloned to [!.c364] at [1, 4] -- <75>
+[^.52a9] transformed into [!.c364] at [1, 4] -- <75>
+[^.52a9] died -- <75>
+[^.2b41] moved to [4, 4] - (not able to push) -- <75>
+[!.9059] moved to [8, 2] -- <75>
+[!.50a8] moved to [10, 3] -- <75>
+[!.86c7] moved to [7, 5] -- <75>
+[>.a869] moved to [4, 5] goto [2, 5] -- <75>
+[>.6973] cloned to [>.f304] at [2, 6] -- <75>
+[$.9e7d] transformed into [>.f304] at [2, 6] -- <75>
+[$.9e7d] died -- <75>
+[O.b692] moved to [6, 4] - (not able to push) -- <75>
+[S.2b68] moved to [5, 5] goto [5, 5] -- <76>
+[O. af4] moved to [1, 4] - (not able to push) -- <76>
+[O.80f0] moved to [2, 3] - (not able to push) -- <76>
+[X.a6e7] moved to [5, 6] - (not able to push) -- <76>
+[>.6973] cloned to [>.66e6] at [6, 5] -- <76>
+[S.8dc8] added [>.66e6] at [6, 5] -- <76>
+[!.320b] moved to [1, 4] -- <76>
+[O.a315] moved to [8, 4] - (not able to push) -- <76>
+[!.bb5e] moved to [4, 3] -- <76>
+[!.ad0b] moved to [2, 2] -- <76>
+[!.2dcd] moved to [2, 1] -- <76>
+[!.d9c3] moved to [13, 6] -- <76>
+[!.d5e4] moved to [5, 4] -- <76>
+[O.5b15] moved to [5, 3] - (not able to push) -- <76>
+[O.7589] moved to [5, 6] - (not able to push) -- <76>
+[O.65b2] moved to [5, 6] - (not able to push) -- <76>
+[O. 74c] moved to [2, 4] - (not able to push) -- <76>
+[^.2b41] moved to [4, 5] - (not able to push) -- <76>
+[!.9059] moved to [8, 1] -- <76>
+[!.50a8] moved to [10, 4] -- <76>
+[!.86c7] moved to [6, 5] -- <76>
+[>.a869] moved to [3, 5] goto [2, 5] -- <76>
+[O.7d28] moved to [6, 6] - (not able to push) -- <76>
+[>.6973] cloned to [>. 288] at [1, 6] -- <76>
+[$.  8c] transformed into [>. 288] at [1, 6] -- <76>
+[$.  8c] died -- <76>
+[S.2b68] moved to [5, 6] -- <77>
+[O.ea94] moved to [6, 1] - (not able to push) -- <77>
+[X.a6e7] moved to [5, 5] - (not able to push) -- <77>
+[!.320b] moved to [2, 4] -- <77>
+[O.dcf0] pushed [!.bb5e] -- <77>
+[!.bb5e] moved to [5, 4] -- <77>
+[!.ad0b] moved to [2, 1] -- <77>
+[!.2dcd] moved to [3, 1] -- <77>
+[!.d9c3] moved to [12, 6] -- <77>
+[O.2ae0] moved to [3, 2] - (not able to push) -- <77>
+[!.d5e4] moved to [4, 4] -- <77>
+[^.2b41] pushed [!.d5e4] -- <77>
+[!.50a8] moved to [10, 3] -- <77>
+[!.86c7] moved to [6, 6] -- <77>
+[>.a869] moved to [2, 5] goto [2, 5] -- <77>
+[!.442f] cloned to [!.8741] at [6, 4] -- <77>
+[O.b692] transformed into [!.8741] at [6, 4] -- <77>
+[O.b692] died -- <77>
+[!.c364] moved to [1, 3] -- <77>
+[O.5a39] cloned to [O.49a8] at [2, 6] -- <77>
+[>.f304] transformed into [O.49a8] at [2, 6] -- <77>
+[>.f304] died -- <77>
+[O.80f0] moved to [3, 3] - (not able to push) -- <78>
+[X.a6e7] moved to [6, 5] - (not able to push) -- <78>
+[>.6973] cloned to [>.1555] at [4, 5] -- <78>
+[S.8dc8] added [>.1555] at [4, 5] -- <78>
+[!.320b] moved to [2, 3] -- <78>
+[O.a315] moved to [9, 4] - (not able to push) -- <78>
+[!.bb5e] moved to [6, 4] -- <78>
+[!.ad0b] moved to [1, 1] -- <78>
+[!.35a5] moved to [9, 6] -- <78>
+[!.2dcd] moved to [4, 1] -- <78>
+[!.d9c3] moved to [13, 6] -- <78>
+[!.d5e4] moved to [4, 4] -- <78>
+[O.5b15] moved to [5, 2] - (not able to push) -- <78>
+[O.b1aa] moved to [1, 5] - (not able to push) -- <78>
+[^.fc4d] cloned to [^. b84] at [3, 5] -- <78>
+[*. 7db] added [^. b84] at [3, 5] -- <78>
+[O.7589] moved to [5, 5] - (not able to push) -- <78>
+[O.65b2] pushed [!.86c7] -- <78>
+[O. 74c] pushed [!.320b] -- <78>
+[^.2b41] moved to [4, 3] - (not able to push) -- <78>
+[!.9059] moved to [9, 1] -- <78>
+[!.50a8] moved to [10, 2] -- <78>
+[O.7d28] pushed [!.86c7] -- <78>
+[>.66e6] moved to [5, 5] goto [2, 5] -- <78>
+[O.5a39] cloned to [O.9bc5] at [1, 6] -- <78>
+[>. 288] transformed into [O.9bc5] at [1, 6] -- <78>
+[>. 288] died -- <78>
+[O.ea94] moved to [7, 1] - (not able to push) -- <79>
+[X.a6e7] moved to [6, 4] - (not able to push) -- <79>
+[>.6973] cloned to [>.95e9] at [5, 4] -- <79>
+[S.8dc8] added [>.95e9] at [5, 4] -- <79>
+[!.320b] moved to [3, 2] -- <79>
+[O.dcf0] moved to [5, 3] - (not able to push) -- <79>
+[O.ada0] moved to [4, 6] - (not able to push) -- <79>
+[!.bb5e] moved to [6, 5] -- <79>
+[!.2dcd] moved to [3, 1] -- <79>
+[O.2ae0] moved to [3, 3] - (not able to push) -- <79>
+[!.d5e4] moved to [4, 5] -- <79>
+[^.2b41] moved to [4, 2] - (not able to push) -- <79>
+[!.9059] moved to [8, 1] -- <79>
+[!.50a8] moved to [10, 3] -- <79>
+[!.86c7] moved to [8, 5] -- <79>
+[!.c364] moved to [2, 3] -- <79>
+[>.66e6] moved to [4, 5] goto [2, 5] -- <79>
+[!.8741] moved to [6, 5] -- <79>
+[O.49a8] moved to [2, 5] - (not able to push) -- <79>
+[O. af4] moved to [1, 5] - (not able to push) -- <80>
+[O.80f0] moved to [2, 3] - (not able to push) -- <80>
+[X.a6e7] moved to [7, 4] - (not able to push) -- <80>
+[!.320b] moved to [3, 1] -- <80>
+[O.a315] moved to [8, 4] - (not able to push) -- <80>
+[!.bb5e] moved to [6, 6] -- <80>
+[!.ad0b] moved to [2, 1] -- <80>
+[!.2dcd] moved to [4, 1] -- <80>
+[!.d9c3] moved to [12, 6] -- <80>
+[!.d5e4] moved to [3, 5] -- <80>
+[O.5b15] moved to [5, 3] - (not able to push) -- <80>
+[O.b1aa] moved to [2, 5] - (not able to push) -- <80>
+[^.fc4d] cloned to [^.c76e] at [2, 6] -- <80>
+[*. 7db] added [^.c76e] at [2, 6] -- <80>
+[O.7589] moved to [5, 6] - (not able to push) -- <80>
+[O.65b2] moved to [6, 5] - (not able to push) -- <80>
+[O. 74c] moved to [1, 3] - (not able to push) -- <80>
+[^.2b41] moved to [5, 2] - (not able to push) -- <80>
+[!.50a8] moved to [10, 4] -- <80>
+[!.86c7] moved to [7, 5] -- <80>
+[O.7d28] moved to [8, 6] - (not able to push) -- <80>
+[!.c364] moved to [3, 3] -- <80>
+[>.66e6] moved to [3, 5] goto [2, 5] -- <80>
+[!.8741] moved to [7, 5] -- <80>
+[O.5a39] cloned to [O.fd06] at [4, 5] -- <80>
+[>.1555] transformed into [O.fd06] at [4, 5] -- <80>
+[>.1555] died -- <80>
+[X.a6e7] moved to [7, 5] - (not able to push) -- <81>
+[O.dcf0] moved to [5, 4] - (not able to push) -- <81>
+[O.ada0] moved to [5, 6] - (not able to push) -- <81>
+[!.bb5e] moved to [6, 5] -- <81>
+[!.ad0b] moved to [2, 2] -- <81>
+[!.35a5] moved to [8, 6] -- <81>
+[!.d9c3] moved to [13, 6] -- <81>
+[O.2ae0] moved to [3, 4] - (not able to push) -- <81>
+[!.d5e4] moved to [3, 4] -- <81>
+[^.2b41] moved to [6, 2] - (not able to push) -- <81>
+[!.9059] moved to [9, 1] -- <81>
+[!.50a8] moved to [10, 3] -- <81>
+[!.86c7] moved to [7, 4] -- <81>
+[!.c364] moved to [2, 3] -- <81>
+[>.66e6] moved to [2, 5] goto [2, 5] -- <81>
+[!.8741] moved to [6, 5] -- <81>
+[O.49a8] moved to [1, 5] - (not able to push) -- <81>
+[O.5a39] cloned to [O.917f] at [5, 4] -- <81>
+[>.95e9] transformed into [O.917f] at [5, 4] -- <81>
+[>.95e9] died -- <81>
+[O. af4] moved to [2, 5] - (not able to push) -- <82>
+[O.80f0] moved to [2, 2] - (not able to push) -- <82>
+[X.a6e7] moved to [7, 6] - (not able to push) -- <82>
+[!.320b] moved to [3, 2] -- <82>
+[O.a315] moved to [8, 5] - (not able to push) -- <82>
+[!.bb5e] moved to [6, 4] -- <82>
+[!.ad0b] moved to [2, 1] -- <82>
+[!.35a5] moved to [9, 6] -- <82>
+[!.2dcd] moved to [4, 2] -- <82>
+[!.d5e4] moved to [3, 5] -- <82>
+[O.5b15] moved to [4, 3] - (not able to push) -- <82>
+[O.b1aa] moved to [2, 6] - (not able to push) -- <82>
+[O.65b2] moved to [6, 4] - (not able to push) -- <82>
+[O. 74c] moved to [1, 2] - (not able to push) -- <82>
+[^.2b41] moved to [7, 2] - (not able to push) -- <82>
+[!.50a8] moved to [11, 3] -- <82>
+[!.86c7] moved to [7, 3] -- <82>
+[O.7d28] pushed [!.35a5] -- <82>
+[!.c364] moved to [1, 3] -- <82>
+[!.8741] moved to [6, 6] -- <82>
+[O.fd06] moved to [4, 4] - (not able to push) -- <82>
+[O.ea94] moved to [8, 1] - (not able to push) -- <83>
+[X.a6e7] pushed [S.c6ee] -- <83>
+[>.6973] cloned to [>.166b] at [4, 5] -- <83>
+[S.8dc8] added [>.166b] at [4, 5] -- <83>
+[!.320b] moved to [2, 2] -- <83>
+[O.dcf0] moved to [5, 3] - (not able to push) -- <83>
+[O.ada0] pushed [!.8741] -- <83>
+[!.bb5e] moved to [6, 3] -- <83>
+[!.35a5] moved to [10, 5] -- <83>
+[!.2dcd] moved to [5, 2] -- <83>
+[O.2ae0] pushed [!.d5e4] -- <83>
+[!.d5e4] moved to [4, 6] -- <83>
+[^.2b41] moved to [7, 1] - (not able to push) -- <83>
+[!.50a8] moved to [10, 3] -- <83>
+[!.86c7] moved to [7, 4] -- <83>
+[!.c364] moved to [1, 2] -- <83>
+[!.8741] moved to [8, 6] -- <83>
+[O.49a8] moved to [2, 5] - (not able to push) -- <83>
+[$.b1aa] cloned to [$.4753] at [3, 5] -- <83>
+[^. b84] transformed into [$.4753] at [3, 5] -- <83>
+[^. b84] died -- <83>
+[O.917f] moved to [6, 4] - (not able to push) -- <83>
+[O. af4] moved to [3, 5] - (not able to push) -- <84>
+[O.80f0] moved to [3, 2] - (not able to push) -- <84>
+[X.a6e7] pushed [S.2b68] -- <84>
+[!.320b] moved to [1, 2] -- <84>
+[!.bb5e] moved to [5, 3] -- <84>
+[!.ad0b] moved to [2, 2] -- <84>
+[!.35a5] moved to [9, 5] -- <84>
+[!.2dcd] moved to [5, 3] -- <84>
+[!.d9c3] moved to [12, 6] -- <84>
+[!.d5e4] moved to [5, 6] -- <84>
+[O.5b15] pushed [!.bb5e] -- <84>
+[O.7589] moved to [4, 6] - (not able to push) -- <84>
+[!.442f] cloned to [!.75ba] at [6, 4] -- <84>
+[O.65b2] transformed into [!.75ba] at [6, 4] -- <84>
+[O.65b2] died -- <84>
+[O. 74c] moved to [1, 3] - (not able to push) -- <84>
+[^.2b41] moved to [7, 2] - (not able to push) -- <84>
+[!.50a8] moved to [10, 2] -- <84>
+[!.86c7] moved to [7, 3] -- <84>
+[O.7d28] pushed [!.35a5] -- <84>
+[!.c364] moved to [1, 3] -- <84>
+[O.9bc5] moved to [1, 5] - (not able to push) -- <84>
+[O.fd06] moved to [4, 3] - (not able to push) -- <84>
+[O.ea94] moved to [7, 1] - (not able to push) -- <85>
+[^.fc4d] cloned to [^. ff4] at [1, 4] -- <85>
+[*.3d9c] added [^. ff4] at [1, 4] -- <85>
+[X.a6e7] moved to [5, 5] - (not able to push) -- <85>
+[O.dcf0] moved to [5, 2] - (not able to push) -- <85>
+[O.ada0] moved to [6, 5] - (not able to push) -- <85>
+[!.bb5e] moved to [6, 2] -- <85>
+[!.ad0b] moved to [2, 1] -- <85>
+[!.35a5] moved to [10, 4] -- <85>
+[!.2dcd] moved to [6, 3] -- <85>
+[!.d9c3] moved to [13, 6] -- <85>
+[O.2ae0] moved to [2, 5] - (not able to push) -- <85>
+[!.d5e4] moved to [6, 6] -- <85>
+[^.fc4d] cloned to [^.4424] at [2, 4] -- <85>
+[*. 7db] added [^.4424] at [2, 4] -- <85>
+[^.2b41] moved to [7, 3] - (not able to push) -- <85>
+[!.50a8] moved to [11, 2] -- <85>
+[!.86c7] moved to [6, 3] -- <85>
+[!.c364] moved to [2, 3] -- <85>
+[!.8741] moved to [8, 5] -- <85>
+[O.49a8] moved to [1, 5] - (not able to push) -- <85>
+[$.b1aa] cloned to [$.35b7] at [2, 6] -- <85>
+[^.c76e] transformed into [$.35b7] at [2, 6] -- <85>
+[^.c76e] died -- <85>
+[!.442f] cloned to [!.e71c] at [6, 4] -- <85>
+[O.917f] transformed into [!.e71c] at [6, 4] -- <85>
+[O.917f] died -- <85>
+[O.5a39] cloned to [O. 9a5] at [4, 5] -- <85>
+[>.166b] transformed into [O. 9a5] at [4, 5] -- <85>
+[>.166b] died -- <85>
+[>.6973] cloned to [>.fa84] at [3, 5] -- <85>
+[$.4753] transformed into [>.fa84] at [3, 5] -- <85>
+[$.4753] died -- <85>
+[O. af4] moved to [2, 5] - (not able to push) -- <86>
+[O.80f0] moved to [3, 3] - (not able to push) -- <86>
+[X.a6e7] moved to [5, 6] - (not able to push) -- <86>
+[!.320b] moved to [1, 1] -- <86>
+[O.a315] moved to [7, 5] - (not able to push) -- <86>
+[!.bb5e] moved to [5, 2] -- <86>
+[!.ad0b] moved to [1, 1] -- <86>
+[!.35a5] moved to [10, 3] -- <86>
+[!.2dcd] moved to [7, 3] -- <86>
+[!.d9c3] moved to [12, 6] -- <86>
+[O.5b15] pushed [!.bb5e] -- <86>
+[O.b1aa] moved to [2, 5] - (not able to push) -- <86>
+[O.7589] moved to [3, 6] - (not able to push) -- <86>
+[O. 74c] moved to [1, 2] - (not able to push) -- <86>
+[^.2b41] moved to [7, 2] - (not able to push) -- <86>
+[!.9059] moved to [10, 1] -- <86>
+[!.50a8] moved to [11, 1] -- <86>
+[!.86c7] moved to [6, 2] -- <86>
+[O.7d28] moved to [9, 6] - (not able to push) -- <86>
+[!.c364] moved to [1, 3] -- <86>
+[!.8741] moved to [9, 5] -- <86>
+[O.9bc5] moved to [1, 4] - (not able to push) -- <86>
+[O.fd06] moved to [5, 3] - (not able to push) -- <86>
+[!.75ba] moved to [6, 5] -- <86>
+[O.ea94] moved to [6, 1] - (not able to push) -- <87>
+[!.320b] moved to [2, 1] -- <87>
+[O.dcf0] moved to [6, 2] - (not able to push) -- <87>
+[O.ada0] moved to [6, 6] - (not able to push) -- <87>
+[!.bb5e] moved to [6, 1] -- <87>
+[!.35a5] moved to [10, 4] -- <87>
+[!.2dcd] moved to [6, 3] -- <87>
+[!.d9c3] moved to [13, 6] -- <87>
+[O.2ae0] moved to [1, 5] - (not able to push) -- <87>
+[^.2b41] moved to [7, 3] - (not able to push) -- <87>
+[!.9059] moved to [9, 1] -- <87>
+[!.86c7] moved to [7, 2] -- <87>
+[!.c364] moved to [1, 2] -- <87>
+[!.8741] moved to [8, 5] -- <87>
+[O.49a8] moved to [1, 6] - (not able to push) -- <87>
+[!.75ba] moved to [6, 6] -- <87>
+[*.2e98] cloned to [*. 1b2] at [1, 3] -- <87>
+[^. ff4] added [*. 1b2] at [1, 3] -- <87>
+[^.4424] moved to [3, 4] - (not able to push) -- <87>
+[>.6973] cloned to [>.23e5] at [2, 6] -- <87>
+[$.35b7] transformed into [>.23e5] at [2, 6] -- <87>
+[$.35b7] died -- <87>
+[!.e71c] moved to [7, 4] -- <87>
+[O. 9a5] moved to [3, 5] - (not able to push) -- <87>
+[O.5a39] cloned to [O.21d1] at [3, 5] -- <87>
+[>.fa84] transformed into [O.21d1] at [3, 5] -- <87>
+[>.fa84] died -- <87>
+[>.6973] cloned to [>.811f] at [4, 5] -- <88>
+[S.2b68] added [>.811f] at [4, 5] -- <88>
+[O. af4] moved to [3, 5] - (not able to push) -- <88>
+[O.80f0] moved to [4, 3] - (not able to push) -- <88>
+[X.a6e7] moved to [6, 6] - (not able to push) -- <88>
+[!.320b] moved to [2, 2] -- <88>
+[O.a315] pushed [!.8741] -- <88>
+[!.bb5e] moved to [6, 2] -- <88>
+[!.ad0b] moved to [2, 1] -- <88>
+[!.35a5] moved to [11, 4] -- <88>
+[!.2dcd] moved to [6, 2] -- <88>
+[!.d9c3] moved to [13, 5] -- <88>
+[O.5b15] moved to [5, 1] - (not able to push) -- <88>
+[O.b1aa] moved to [3, 5] - (not able to push) -- <88>
+[^.fc4d] cloned to [^.87f7] at [2, 4] -- <88>
+[*. 7db] added [^.87f7] at [2, 4] -- <88>
+[O.7589] moved to [4, 6] - (not able to push) -- <88>
+[^.2b41] moved to [7, 4] - (not able to push) -- <88>
+[!.9059] moved to [9, 2] -- <88>
+[!.50a8] moved to [12, 1] -- <88>
+[!.86c7] moved to [7, 1] -- <88>
+[O.7d28] pushed [!.8741] -- <88>
+[!.8741] moved to [8, 4] -- <88>
+[O.fd06] moved to [4, 3] - (not able to push) -- <88>
+[^.4424] moved to [3, 3] - (not able to push) -- <88>
+[!.e71c] moved to [8, 4] -- <88>
+[>.6973] cloned to [>.6912] at [3, 6] -- <89>
+[S.2b68] added [>.6912] at [3, 6] -- <89>
+[O.ea94] pushed [!.bb5e] -- <89>
+[!.320b] moved to [2, 3] -- <89>
+[O.dcf0] moved to [6, 3] - (not able to push) -- <89>
+[O.ada0] moved to [7, 6] - (not able to push) -- <89>
+[!.bb5e] moved to [6, 4] -- <89>
+[!.ad0b] moved to [3, 1] -- <89>
+[!.35a5] moved to [10, 4] -- <89>
+[!.2dcd] moved to [6, 1] -- <89>
+[!.d9c3] moved to [13, 4] -- <89>
+[O.2ae0] moved to [1, 6] - (not able to push) -- <89>
+[!.d5e4] moved to [6, 5] -- <89>
+[^.2b41] moved to [8, 4] - (not able to push) -- <89>
+[!.9059] moved to [9, 3] -- <89>
+[!.50a8] moved to [13, 1] -- <89>
+[!.86c7] moved to [7, 2] -- <89>
+[!.c364] moved to [1, 1] -- <89>
+[!.8741] moved to [7, 4] -- <89>
+[!.75ba] moved to [6, 5] -- <89>
+[!.442f] cloned to [!.ebb1] at [1, 4] -- <89>
+[^. ff4] transformed into [!.ebb1] at [1, 4] -- <89>
+[^. ff4] died -- <89>
+[^.4424] moved to [4, 3] goto [6, 6] -- <89>
+[!.e71c] moved to [7, 4] -- <89>
+[O. 9a5] moved to [2, 5] - (not able to push) -- <89>
+[O.5a39] cloned to [O.c3de] at [2, 6] -- <89>
+[>.23e5] transformed into [O.c3de] at [2, 6] -- <89>
+[>.23e5] died -- <89>
+[O.21d1] moved to [4, 5] - (not able to push) -- <89>
+[O. af4] moved to [3, 4] - (not able to push) -- <90>
+[O.80f0] moved to [4, 4] - (not able to push) -- <90>
+[X.a6e7] moved to [6, 5] - (not able to push) -- <90>
+[!.320b] moved to [2, 2] -- <90>
+[O.a315] moved to [7, 5] - (not able to push) -- <90>
+[!.bb5e] moved to [6, 3] -- <90>
+[!.ad0b] moved to [4, 1] -- <90>
+[!.35a5] moved to [10, 3] -- <90>
+[!.2dcd] moved to [5, 1] -- <90>
+[!.d9c3] moved to [12, 4] -- <90>
+[!.d5e4] moved to [7, 5] -- <90>
+[O.5b15] moved to [5, 2] - (not able to push) -- <90>
+[O.b1aa] moved to [3, 4] - (not able to push) -- <90>
+[O.7589] moved to [3, 6] - (not able to push) -- <90>
+[^.2b41] pushed [!.8741] -- <90>
+[!.9059] moved to [9, 4] -- <90>
+[!.86c7] moved to [7, 3] -- <90>
+[O.7d28] moved to [9, 6] - (not able to push) -- <90>
+[!.8741] moved to [7, 4] -- <90>
+[O.9bc5] moved to [1, 3] - (not able to push) -- <90>
+[O.fd06] moved to [4, 2] - (not able to push) -- <90>
+[!.75ba] moved to [5, 5] -- <90>
+[!.e71c] moved to [6, 4] -- <90>
+[O.5a39] cloned to [O.f540] at [4, 5] -- <90>
+[>.811f] transformed into [O.f540] at [4, 5] -- <90>
+[>.811f] died -- <90>
+[O.ea94] moved to [5, 2] - (not able to push) -- <91>
+[X.a6e7] moved to [6, 4] - (not able to push) -- <91>
+[>.6973] cloned to [>.17ef] at [6, 5] -- <91>
+[S.8dc8] added [>.17ef] at [6, 5] -- <91>
+[!.320b] moved to [2, 3] -- <91>
+[O.dcf0] moved to [6, 2] - (not able to push) -- <91>
+[O.ada0] pushed [!.d5e4] -- <91>
+[!.bb5e] moved to [6, 2] -- <91>
+[!.35a5] moved to [10, 4] -- <91>
+[!.2dcd] moved to [5, 2] -- <91>
+[!.d9c3] moved to [13, 4] -- <91>
+[O.2ae0] moved to [1, 5] - (not able to push) -- <91>
+[!.d5e4] moved to [6, 4] -- <91>
+[^.2b41] moved to [7, 3] - (not able to push) -- <91>
+[!.9059] moved to [8, 4] -- <91>
+[!.50a8] moved to [13, 2] -- <91>
+[!.86c7] moved to [7, 2] -- <91>
+[!.8741] moved to [6, 4] -- <91>
+[!.75ba] moved to [5, 6] -- <91>
+[!.e71c] moved to [7, 4] -- <91>
+[O. 9a5] moved to [2, 6] - (not able to push) -- <91>
+[*. 1b2] moved to [1, 2] -- <91>
+[O.21d1] moved to [4, 6] - (not able to push) -- <91>
+[O.5a39] cloned to [O.27aa] at [3, 6] -- <91>
+[>.6912] transformed into [O.27aa] at [3, 6] -- <91>
+[>.6912] died -- <91>
+[!.ebb1] moved to [1, 3] -- <91>
+[O.c3de] moved to [3, 6] - (not able to push) -- <91>
+[O. af4] moved to [3, 3] - (not able to push) -- <92>
+[O.80f0] moved to [5, 4] - (not able to push) -- <92>
+[X.a6e7] moved to [5, 4] - (not able to push) -- <92>
+[!.320b] moved to [2, 2] -- <92>
+[O.a315] moved to [8, 5] - (not able to push) -- <92>
+[!.bb5e] moved to [6, 3] -- <92>
+[!.ad0b] moved to [4, 2] -- <92>
+[!.35a5] moved to [11, 4] -- <92>
+[!.2dcd] moved to [5, 1] -- <92>
+[!.d9c3] moved to [13, 3] -- <92>
+[!.d5e4] moved to [7, 4] -- <92>
+[O.5b15] moved to [5, 3] - (not able to push) -- <92>
+[O.b1aa] moved to [4, 4] - (not able to push) -- <92>
+[O. 74c] pushed [!.320b] -- <92>
+[^.2b41] moved to [7, 2] - (not able to push) -- <92>
+[!.9059] moved to [7, 4] -- <92>
+[!.50a8] moved to [12, 2] -- <92>
+[!.86c7] moved to [6, 2] -- <92>
+[!.c364] moved to [2, 1] -- <92>
+[!.8741] moved to [5, 4] -- <92>
+[O.9bc5] moved to [1, 4] - (not able to push) -- <92>
+[O.fd06] moved to [3, 2] - (not able to push) -- <92>
+[!.e71c] moved to [7, 3] -- <92>
+[^.fc4d] cloned to [^.a9de] at [1, 1] -- <92>
+[*. 1b2] added [^.a9de] at [1, 1] -- <92>
+[!.ebb1] moved to [1, 2] -- <92>
+[O.f540] moved to [3, 5] - (not able to push) -- <92>
+[>.6973] cloned to [>.9bdc] at [6, 6] -- <93>
+[S.c6ee] added [>.9bdc] at [6, 6] -- <93>
+[O.ea94] moved to [5, 1] - (not able to push) -- <93>
+[X.a6e7] moved to [5, 3] - (not able to push) -- <93>
+[>.6973] cloned to [>. 662] at [4, 5] -- <93>
+[S.8dc8] added [>. 662] at [4, 5] -- <93>
+[!.320b] moved to [3, 1] -- <93>
+[O.dcf0] moved to [6, 1] - (not able to push) -- <93>
+[O.ada0] pushed [!.d5e4] -- <93>
+[!.bb5e] moved to [5, 3] -- <93>
+[!.ad0b] moved to [4, 1] -- <93>
+[!.35a5] moved to [11, 3] -- <93>
+[!.2dcd] moved to [4, 1] -- <93>
+[!.d9c3] moved to [12, 3] -- <93>
+[O.2ae0] moved to [1, 6] - (not able to push) -- <93>
+[!.d5e4] moved to [7, 4] -- <93>
+[^.2b41] moved to [8, 2] - (not able to push) -- <93>
+[!.9059] moved to [6, 4] -- <93>
+[!.50a8] moved to [12, 1] -- <93>
+[!.86c7] moved to [6, 3] -- <93>
+[!.8741] moved to [5, 5] -- <93>
+[!.75ba] moved to [6, 6] -- <93>
+[!.e71c] moved to [6, 3] -- <93>
+[O. 9a5] moved to [2, 5] - (not able to push) -- <93>
+[^.fc4d] cloned to [^.1f0e] at [1, 3] -- <93>
+[*. 1b2] added [^.1f0e] at [1, 3] -- <93>
+[O.21d1] moved to [3, 6] - (not able to push) -- <93>
+[$.b1aa] cloned to [$.899c] at [2, 4] -- <93>
+[^.87f7] transformed into [$.899c] at [2, 4] -- <93>
+[^.87f7] died -- <93>
+[!.ebb1] moved to [2, 2] -- <93>
+[O.c3de] moved to [4, 6] - (not able to push) -- <93>
+[>.17ef] moved to [5, 5] goto [2, 5] -- <93>
+[O.27aa] moved to [4, 6] - (not able to push) -- <93>
+[O. af4] moved to [3, 4] - (not able to push) -- <94>
+[O.80f0] pushed [!.bb5e] -- <94>
+[X.a6e7] moved to [4, 3] - (not able to push) -- <94>
+[!.320b] moved to [4, 1] -- <94>
+[O.a315] moved to [8, 4] - (not able to push) -- <94>
+[!.bb5e] moved to [4, 2] -- <94>
+[!.ad0b] moved to [3, 1] -- <94>
+[!.35a5] moved to [12, 3] -- <94>
+[!.d9c3] moved to [11, 3] -- <94>
+[!.d5e4] moved to [7, 3] -- <94>
+[O.5b15] moved to [4, 3] - (not able to push) -- <94>
+[O.b1aa] moved to [5, 4] - (not able to push) -- <94>
+[O.7589] moved to [4, 6] - (not able to push) -- <94>
+[O. 74c] moved to [2, 3] - (not able to push) -- <94>
+[^.2b41] moved to [8, 3] - (not able to push) -- <94>
+[!.9059] moved to [6, 5] -- <94>
+[!.50a8] moved to [11, 1] -- <94>
+[!.86c7] moved to [7, 3] -- <94>
+[O.7d28] moved to [8, 6] - (not able to push) -- <94>
+[!.8741] moved to [6, 5] -- <94>
+[O.9bc5] moved to [1, 3] - (not able to push) -- <94>
+[O.fd06] pushed [!.bb5e] -- <94>
+[$.b1aa] cloned to [$.6f75] at [4, 3] -- <94>
+[^.4424] transformed into [$.6f75] at [4, 3] -- <94>
+[^.4424] died -- <94>
+[!.e71c] moved to [5, 3] -- <94>
+[!.ebb1] moved to [3, 2] -- <94>
+[O.f540] moved to [2, 5] - (not able to push) -- <94>
+[>.17ef] moved to [4, 5] goto [2, 5] -- <94>
+[O.ea94] moved to [6, 1] - (not able to push) -- <95>
+[X.a6e7] moved to [4, 2] - (not able to push) -- <95>
+[!.320b] moved to [3, 1] -- <95>
+[O.dcf0] moved to [6, 2] - (not able to push) -- <95>
+[O.ada0] pushed [!.d5e4] -- <95>
+[!.bb5e] moved to [6, 2] -- <95>
+[!.ad0b] moved to [4, 1] -- <95>
+[!.35a5] moved to [12, 4] -- <95>
+[!.2dcd] moved to [5, 1] -- <95>
+[!.d9c3] moved to [11, 4] -- <95>
+[!.d5e4] moved to [8, 2] -- <95>
+[^.2b41] pushed [!.d5e4] -- <95>
+[!.9059] moved to [5, 5] -- <95>
+[!.50a8] moved to [12, 1] -- <95>
+[!.86c7] moved to [7, 2] -- <95>
+[!.c364] moved to [3, 1] -- <95>
+[!.8741] moved to [6, 6] -- <95>
+[O.49a8] moved to [1, 5] - (not able to push) -- <95>
+[!.75ba] moved to [5, 6] -- <95>
+[!.e71c] moved to [4, 3] -- <95>
+[O. 9a5] moved to [2, 4] - (not able to push) -- <95>
+[O.21d1] moved to [4, 6] - (not able to push) -- <95>
+[!.ebb1] moved to [2, 2] -- <95>
+[O.c3de] pushed [!.75ba] -- <95>
+[>.17ef] moved to [3, 5] goto [2, 5] -- <95>
+[O.27aa] moved to [5, 6] - (not able to push) -- <95>
+[^.a9de] moved to [1, 2] - (not able to push) -- <95>
+[O.5a39] cloned to [O.94eb] at [6, 6] -- <95>
+[>.9bdc] transformed into [O.94eb] at [6, 6] -- <95>
+[>.9bdc] died -- <95>
+[O.5a39] cloned to [O.ede8] at [4, 5] -- <95>
+[>. 662] transformed into [O.ede8] at [4, 5] -- <95>
+[>. 662] died -- <95>
+[>.6973] cloned to [>.eec4] at [2, 4] -- <95>
+[$.899c] transformed into [>.eec4] at [2, 4] -- <95>
+[$.899c] died -- <95>
+[O. af4] moved to [2, 4] - (not able to push) -- <96>
+[O.80f0] moved to [6, 3] - (not able to push) -- <96>
+[X.a6e7] moved to [4, 1] - (not able to push) -- <96>
+[O.a315] moved to [7, 4] - (not able to push) -- <96>
+[!.bb5e] moved to [7, 2] -- <96>
+[!.35a5] moved to [11, 4] -- <96>
+[!.2dcd] moved to [5, 2] -- <96>
+[!.d9c3] moved to [11, 3] -- <96>
+[!.d5e4] moved to [7, 1] -- <96>
+[O.5b15] moved to [4, 2] - (not able to push) -- <96>
+[O.b1aa] moved to [4, 4] - (not able to push) -- <96>
+[O.7589] moved to [3, 6] - (not able to push) -- <96>
+[O. 74c] moved to [1, 3] - (not able to push) -- <96>
+[^.2b41] moved to [8, 3] - (not able to push) -- <96>
+[!.9059] moved to [6, 5] -- <96>
+[!.50a8] moved to [13, 1] -- <96>
+[!.86c7] moved to [6, 2] -- <96>
+[O.7d28] moved to [8, 5] - (not able to push) -- <96>
+[!.c364] moved to [3, 2] -- <96>
+[!.8741] moved to [6, 5] -- <96>
+[O.9bc5] moved to [1, 2] - (not able to push) -- <96>
+[O.fd06] moved to [5, 2] - (not able to push) -- <96>
+[!.e71c] moved to [3, 3] -- <96>
+[!.ebb1] moved to [2, 1] -- <96>
+[O.f540] moved to [1, 5] - (not able to push) -- <96>
+[>.17ef] moved to [2, 5] goto [2, 5] -- <96>
+[^.a9de] moved to [2, 2] goto [4, 1] -- <96>
+[>.6973] cloned to [>.6604] at [4, 3] -- <96>
+[$.6f75] transformed into [>.6604] at [4, 3] -- <96>
+[$.6f75] died -- <96>
+[O.ea94] pushed [!.d5e4] -- <97>
+[>.6973] cloned to [>.2bf5] at [5, 4] -- <97>
+[S.8dc8] added [>.2bf5] at [5, 4] -- <97>
+[O.dcf0] moved to [5, 2] - (not able to push) -- <97>
+[O.ada0] moved to [7, 4] - (not able to push) -- <97>
+[!.bb5e] moved to [7, 3] -- <97>
+[!.ad0b] moved to [5, 1] -- <97>
+[!.35a5] moved to [10, 4] -- <97>
+[!.2dcd] moved to [5, 3] -- <97>
+[!.d9c3] moved to [10, 3] -- <97>
+[O.2ae0] moved to [2, 6] - (not able to push) -- <97>
+[!.d5e4] moved to [8, 2] -- <97>
+[^.fc4d] cloned to [^. 8f6] at [3, 5] -- <97>
+[*. 7db] added [^. 8f6] at [3, 5] -- <97>
+[^.2b41] moved to [8, 2] - (not able to push) -- <97>
+[!.9059] moved to [7, 5] -- <97>
+[!.86c7] moved to [6, 3] -- <97>
+[!.c364] moved to [3, 1] -- <97>
+[!.8741] moved to [7, 5] -- <97>
+[O.49a8] moved to [2, 5] - (not able to push) -- <97>
+[!.e71c] moved to [4, 3] -- <97>
+[O. 9a5] moved to [2, 5] - (not able to push) -- <97>
+[O.21d1] moved to [3, 6] - (not able to push) -- <97>
+[!.ebb1] moved to [3, 1] -- <97>
+[O.c3de] moved to [4, 6] - (not able to push) -- <97>
+[*.2e98] cloned to [*.eafe] at [2, 3] -- <97>
+[^.a9de] added [*.eafe] at [2, 3] -- <97>
+[!.442f] cloned to [!.e61e] at [1, 3] -- <97>
+[^.1f0e] transformed into [!.e61e] at [1, 3] -- <97>
+[^.1f0e] died -- <97>
+[O.ede8] moved to [4, 4] - (not able to push) -- <97>
+[O.5a39] cloned to [O.c610] at [2, 4] -- <97>
+[>.eec4] transformed into [O.c610] at [2, 4] -- <97>
+[>.eec4] died -- <97>
+[O. af4] moved to [2, 3] - (not able to push) -- <98>
+[O.80f0] moved to [7, 3] - (not able to push) -- <98>
+[^.fc4d] cloned to [^.6be2] at [1, 6] -- <98>
+[*.3d9c] added [^.6be2] at [1, 6] -- <98>
+[>.6973] cloned to [>.2e3c] at [4, 5] -- <98>
+[S.8dc8] added [>.2e3c] at [4, 5] -- <98>
+[!.320b] moved to [2, 1] -- <98>
+[O.a315] moved to [7, 5] - (not able to push) -- <98>
+[!.bb5e] moved to [7, 4] -- <98>
+[!.35a5] moved to [9, 4] -- <98>
+[!.2dcd] moved to [5, 2] -- <98>
+[!.d9c3] moved to [10, 4] -- <98>
+[!.d5e4] moved to [7, 2] -- <98>
+[O.5b15] moved to [3, 2] - (not able to push) -- <98>
+[O.b1aa] pushed [!.e71c] -- <98>
+[O.7589] moved to [3, 5] - (not able to push) -- <98>
+[O. 74c] moved to [1, 4] - (not able to push) -- <98>
+[^.2b41] moved to [8, 1] - (not able to push) -- <98>
+[!.9059] moved to [7, 4] -- <98>
+[!.50a8] moved to [12, 1] -- <98>
+[!.86c7] moved to [7, 3] -- <98>
+[O.7d28] moved to [8, 4] - (not able to push) -- <98>
+[!.c364] moved to [3, 2] -- <98>
+[!.8741] moved to [7, 6] -- <98>
+[O.9bc5] moved to [2, 2] - (not able to push) -- <98>
+[O.fd06] moved to [6, 2] - (not able to push) -- <98>
+[!.75ba] moved to [7, 6] -- <98>
+[!.e71c] moved to [5, 2] -- <98>
+[O.f540] moved to [2, 5] - (not able to push) -- <98>
+[O.5a39] cloned to [O.860b] at [4, 3] -- <98>
+[>.6604] transformed into [O.860b] at [4, 3] -- <98>
+[>.6604] died -- <98>
+[!.320b] moved to [1, 1] -- <99>
+[O.dcf0] moved to [4, 2] - (not able to push) -- <99>
+[O.ada0] moved to [6, 4] - (not able to push) -- <99>
+[!.bb5e] moved to [8, 4] -- <99>
+[!.ad0b] moved to [6, 1] -- <99>
+[!.35a5] moved to [9, 5] -- <99>
+[!.2dcd] moved to [5, 3] -- <99>
+[!.d9c3] moved to [9, 4] -- <99>
+[O.2ae0] moved to [3, 6] - (not able to push) -- <99>
+[!.d5e4] moved to [7, 1] -- <99>
+[^.2b41] moved to [8, 2] - (not able to push) -- <99>
+[!.9059] moved to [7, 5] -- <99>
+[!.50a8] moved to [13, 1] -- <99>
+[!.86c7] moved to [7, 2] -- <99>
+[!.c364] moved to [3, 3] -- <99>
+[!.8741] moved to [7, 5] -- <99>
+[O.49a8] moved to [2, 6] - (not able to push) -- <99>
+[!.75ba] moved to [8, 6] -- <99>
+[!.e71c] moved to [5, 1] -- <99>
+[O. 9a5] moved to [3, 5] - (not able to push) -- <99>
+[O.c3de] moved to [4, 5] - (not able to push) -- <99>
+[O.27aa] moved to [4, 6] - (not able to push) -- <99>
+[!.442f] cloned to [!.43e4] at [2, 2] -- <99>
+[^.a9de] transformed into [!.43e4] at [2, 2] -- <99>
+[^.a9de] died -- <99>
+[O.94eb] moved to [5, 6] - (not able to push) -- <99>
+[O.ede8] moved to [4, 5] - (not able to push) -- <99>
+[O.5a39] cloned to [O.39b0] at [5, 4] -- <99>
+[>.2bf5] transformed into [O.39b0] at [5, 4] -- <99>
+[>.2bf5] died -- <99>
+[O.c610] moved to [2, 3] - (not able to push) -- <99>
+[O. af4] moved to [1, 3] - (not able to push) -- <100>
+[O.80f0] pushed [!.86c7] -- <100>
+[X.a6e7] moved to [3, 1] - (not able to push) -- <100>
+[O.a315] moved to [7, 6] - (not able to push) -- <100>
+[!.bb5e] moved to [7, 4] -- <100>
+[!.35a5] moved to [10, 5] -- <100>
+[!.2dcd] moved to [5, 4] -- <100>
+[!.d9c3] moved to [9, 3] -- <100>
+[!.d5e4] moved to [7, 2] -- <100>
+[O.5b15] moved to [3, 1] - (not able to push) -- <100>
+[O.b1aa] moved to [4, 4] - (not able to push) -- <100>
+[O.7589] moved to [2, 5] - (not able to push) -- <100>
+[O. 74c] moved to [2, 4] - (not able to push) -- <100>
+[^.2b41] moved to [9, 2] - (not able to push) -- <100>
+[!.9059] moved to [7, 6] -- <100>
+[!.86c7] moved to [7, 2] -- <100>
+[O.7d28] moved to [8, 3] - (not able to push) -- <100>
+[!.c364] moved to [3, 4] -- <100>
+[!.8741] moved to [7, 6] -- <100>
+[O.9bc5] moved to [1, 2] - (not able to push) -- <100>
+[!.75ba] moved to [8, 5] -- <100>
+[O.f540] moved to [1, 5] - (not able to push) -- <100>
+[!.e61e] moved to [1, 2] -- <100>
+[O.5a39] cloned to [O.7677] at [4, 5] -- <100>
+[>.2e3c] transformed into [O.7677] at [4, 5] -- <100>
+[>.2e3c] died -- <100>
+[O.860b] moved to [4, 4] - (not able to push) -- <100>
+
+++++  TREE COVERAGE  ++++
+
+
+M
+Nodes: 2 / 16 = 0.12
+Edges: 2 / 40 = 0.05
+NODE SET: ['take M', 'move_wall >']
+EDGE SET: ['within & 6', 'none']
+
+<
+Nodes: 0 / 10 = 0.00
+Edges: 0 / 26 = 0.00
+NODE SET: []
+EDGE SET: []
+
+!
+Nodes: 3 / 13 = 0.23
+Edges: 3 / 35 = 0.09
+NODE SET: ['move_wall $', 'transform >', 'move_wall D']
+EDGE SET: ['within & 6', 'none', 'step 1']
+
+>
+Nodes: 3 / 13 = 0.23
+Edges: 3 / 36 = 0.08
+NODE SET: ['transform O', 'chase *', 'transform @']
+EDGE SET: ['none', 'step 1', 'within > 3']
+
+S
+Nodes: 9 / 10 = 0.90
+Edges: 13 / 22 = 0.59
+NODE SET: ['idle', 'add M', 'chase S', 'push +', 'push @', 'take M', 'push *', 'move_wall ^', 'add >']
+EDGE SET: ['none', 'touch M', 'none', 'step 3', 'within M 9', 'none', 'none', 'within X 4', 'none', 'touch X', 'step 1', 'none', 'nextTo S']
+
+;
+Nodes: 4 / 9 = 0.44
+Edges: 5 / 23 = 0.22
+NODE SET: ['idle', 'transform D', 'take &', 'push @']
+EDGE SET: ['step 2', 'step 1', 'nextTo >', 'none', 'nextTo ^']
+
+$
+Nodes: 3 / 8 = 0.38
+Edges: 3 / 19 = 0.16
+NODE SET: ['clone', 'transform >', 'transform ^']
+EDGE SET: ['step 1', 'nextTo S', 'nextTo O']
+
+&
+Nodes: 2 / 9 = 0.22
+Edges: 1 / 22 = 0.05
+NODE SET: ['idle', 'take <']
+EDGE SET: ['touch !']
+
+O
+Nodes: 3 / 6 = 0.50
+Edges: 3 / 15 = 0.20
+NODE SET: ['idle', 'push !', 'transform !']
+EDGE SET: ['touch &', 'none', 'step 2']
+
+X
+Nodes: 5 / 7 = 0.71
+Edges: 7 / 14 = 0.50
+NODE SET: ['idle', 'transform *', 'push S', 'push &', 'chase O']
+EDGE SET: ['nextTo +', 'none', 'step 6', 'within @ 5', 'step 1', 'none', 'within D 2']
+
+D
+Nodes: 4 / 11 = 0.36
+Edges: 6 / 30 = 0.20
+NODE SET: ['idle', 'move_wall ^', 'transform S', 'push X']
+EDGE SET: ['nextTo O', 'none', 'nextTo *', 'within ^ 2', 'within ^ 6', 'none']
+
++
+Nodes: 7 / 14 = 0.50
+Edges: 9 / 38 = 0.24
+NODE SET: ['idle', 'add >', 'take $', 'transform &', 'push D', 'take <', 'transform X']
+EDGE SET: ['step 2', 'none', 'within S 6', 'nextTo +', 'step 1', 'none', 'touch S', 'step 8', 'none']
+
+@
+Nodes: 1 / 10 = 0.10
+Edges: 1 / 26 = 0.04
+NODE SET: ['transform +']
+EDGE SET: ['none']
+
+*
+Nodes: 4 / 12 = 0.33
+Edges: 4 / 31 = 0.13
+NODE SET: ['idle', 'take *', 'add ^', 'move_wall M']
+EDGE SET: ['nextTo S', 'step 3', 'nextTo ^', 'within X 7']
+
+^
+Nodes: 12 / 13 = 0.92
+Edges: 19 / 32 = 0.59
+NODE SET: ['idle', 'chase S', 'transform !', 'push X', 'push *', 'add *', 'push !', 'move_wall O', 'transform $', 'chase M', 'push +', 'chase X']
+EDGE SET: ['step 1', 'within $ 3', 'step 4', 'step 3', 'step 2', 'touch O', 'nextTo $', 'none', 'within * 4', 'within $ 4', 'none', 'within & 10', 'none', 'within O 4', 'within * 4', 'step 1', 'within ; 3', 'nextTo ^', 'nextTo S']
