@@ -26,9 +26,7 @@ class Engine():
         # print(f"Seed: {self.seed}")
 
         # define the fortress
-        fort_w = int(self.config['width']) if 'width' in self.config else 15
-        fort_h = int(self.config['height']) if 'height' in self.config else 8
-        self.fortress = Fortress(self.config,fort_w,fort_h,seed=self.seed)
+        self.fortress = Fortress(self.config, 15, 8, seed=self.seed)
         self.fortress.blankFortress()
         self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
         self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")

@@ -65,6 +65,15 @@ class Fortress():
     def addEntity(self, ent):
         self.entities[ent.id] = ent
 
+    # returns the entities sorted by character
+    def getEntCharSet(self):
+        ent_set = {}
+        for e in self.entities.values():
+            if e.char not in ent_set:
+                ent_set[e.char] = []
+            ent_set[e.char].append(e)
+        return ent_set
+
     # remove from the entity list and ID list based on the entity ID
     def removeFromMap(self, ent):
         if ent.id in self.entities:
