@@ -137,6 +137,9 @@ def curses_render_loop(screen_set, screen_dims, engine):
         entTree = ent.printTree()
         entTree_lines = entTree.split("\n")
         entTree_lines = [l for l in entTree_lines if l != ""]
+        if(len(entTree_lines) == 0):
+            continue
+
         for j in range(len(entTree_lines)):
 
             # highlight the character (add id and position)
