@@ -1,0 +1,260 @@
+FORTS/HYRULE.txt - SEED: 1 - SIM_NUM : 100
+
+> GENERATION: 0
+###############
+#..*.......B..#
+#.............#
+#..*..L...X...#
+#..........*.*#
+#..k.....*..G.#
+#......*.G....#
+###############
+
+> GENERATION 20
+###############
+#..*..........#
+#.............#
+#..*B.....X...#
+#.........$*.*#
+#..k.....*G...#
+#......*.....G#
+###############
+
+> GENERATION 40
+###############
+#..*..........#
+#........X....#
+#..*B......$.*#
+#.........$*.G#
+#..k....*G....#
+#......*......#
+###############
+
+> GENERATION 60
+###############
+#..*.....G..X*#
+#.........$..G#
+#..*..B....$..#
+#.........$*..#
+#..k...*......#
+#......*......#
+###############
+
+> GENERATION 80
+###############
+#..*..G..$...*#
+#.........$...#
+#..*B......$.X#
+#.........$*G.#
+#..k...*......#
+#......*......#
+###############
+
+> GENERATION 100
+###############
+#..*.....$...*#
+#..B......$...#
+#..*.......$$X#
+#..G......$*$.#
+#..k...*...G..#
+#......*......#
+###############
+
+Number of entities: 18
+
+
+===============
+
+============    FORTRESS SEED [Generator(PCG64)]    =========
+Fortress initialized! - <0>
+>>> CONFIG FILE: {'action_space': ['idle', 'die', 'take', 'move', 'chase', 'clone', 'add', 'transform', 'push', 'move_wall'], 'character': ['@', '$', '&', '+', ';', '!', '>', '<', 'X', 'O', '*', '^', 'M', 'D', 'S'], 'edge_conditions': ['none', 'touch', 'step', 'within', 'nextTo'], 'step_range': [1, 10], 'prox_range': [1, 10], 'seed': 'any', 'sim_speed': 0.3, 'save_log': True, 'log_file': 'LOGS/log_[<SEED>].txt', 'min_log': 10, 'inactive_limit': 20, 'pop_perc': 0.25, 'min_view': True} <<< -- <0>
+>>> TIME: 2023-12-06 17:11:22.155074 <<< -- <0>
+Fortress randomly populated with 12 entities -- <0>
+[B.f848] moved to [11, 2] goto [6, 3] -- <2>
+[G. 88b] moved to [13, 5] - (not able to push) -- <2>
+[G.7fc6] moved to [10, 6] - (not able to push) -- <2>
+[B.f848] moved to [10, 2] goto [6, 3] -- <3>
+[L.  cf] moved to [6, 2] -- <3>
+[B.f848] moved to [9, 2] goto [6, 2] -- <4>
+[G. 88b] moved to [13, 6] - (not able to push) -- <4>
+[B.f848] moved to [8, 2] goto [6, 2] -- <5>
+[L.  cf] moved to [6, 3] -- <5>
+[X.ea92] moved to [10, 4] -- <5>
+[B.f848] moved to [8, 3] goto [6, 3] -- <6>
+[G.7fc6] moved to [11, 6] - (not able to push) -- <6>
+[B.f848] moved to [7, 3] goto [6, 3] -- <7>
+[L.  cf] moved to [5, 3] -- <7>
+[B.f848] moved to [6, 3] goto [5, 3] -- <8>
+[B.f848] moved to [5, 3] goto [5, 3] -- <9>
+[L.  cf] moved to [6, 3] -- <9>
+[X.ea92] moved to [9, 4] -- <9>
+[G.7fc6] moved to [12, 6] -- <9>
+[B.f848] took [L.  cf] -- <10>
+[L.  cf] died -- <10>
+[$.76df] cloned to [$.380e] at [10, 4] -- <11>
+[X.ea92] added [$.380e] at [10, 4] -- <11>
+[G.7fc6] moved to [11, 6] -- <11>
+[X.ea92] moved to [9, 3] -- <13>
+[G. 88b] moved to [12, 6] -- <13>
+[G.7fc6] moved to [12, 6] -- <13>
+[G.7fc6] moved to [12, 5] -- <15>
+[B.f848] moved to [4, 3] -- <16>
+[X.ea92] moved to [10, 3] -- <17>
+[G.7fc6] moved to [11, 5] - (not able to push) -- <17>
+[G. 88b] moved to [13, 6] -- <19>
+[G.7fc6] moved to [10, 5] - (not able to push) -- <19>
+[B.f848] moved to [4, 4] -- <21>
+[G. 88b] moved to [12, 6] -- <21>
+[G.7fc6] moved to [10, 6] - (not able to push) -- <21>
+[G. 88b] moved to [13, 6] -- <23>
+[X.ea92] moved to [10, 2] -- <25>
+[G. 88b] moved to [13, 5] -- <25>
+[G.7fc6] moved to [10, 5] - (not able to push) -- <25>
+[B.f848] moved to [4, 3] -- <26>
+[G. 88b] moved to [13, 6] - (not able to push) -- <27>
+[G.7fc6] moved to [10, 6] - (not able to push) -- <27>
+[X.ea92] moved to [10, 3] -- <29>
+[G.7fc6] moved to [11, 6] - (not able to push) -- <29>
+[B.f848] moved to [5, 3] -- <31>
+[$.76df] cloned to [$.b058] at [11, 3] -- <31>
+[X.ea92] added [$.b058] at [11, 3] -- <31>
+[G. 88b] moved to [13, 5] -- <31>
+[G.7fc6] moved to [12, 6] -- <31>
+[X.ea92] moved to [9, 3] -- <33>
+[G. 88b] pushed [*.5c8f] -- <33>
+[G.7fc6] moved to [12, 5] -- <33>
+[G. 88b] moved to [12, 4] - (not able to push) -- <35>
+[G.7fc6] moved to [11, 5] - (not able to push) -- <35>
+[B.f848] moved to [4, 3] -- <36>
+[X.ea92] moved to [9, 2] -- <37>
+[G. 88b] moved to [13, 4] - (not able to push) -- <37>
+[G.7fc6] moved to [10, 5] - (not able to push) -- <37>
+[G.7fc6] pushed [*.2412] -- <39>
+[B.f848] moved to [5, 3] -- <41>
+[$.76df] cloned to [$.2397] at [10, 2] -- <41>
+[X.ea92] added [$.2397] at [10, 2] -- <41>
+[G. 88b] pushed [*.5c8f] -- <41>
+[G.7fc6] pushed [*.2412] -- <41>
+[G. 88b] moved to [13, 4] - (not able to push) -- <43>
+[G.7fc6] moved to [9, 5] - (not able to push) -- <43>
+[X.ea92] moved to [10, 2] -- <45>
+[G. 88b] moved to [12, 4] -- <45>
+[G.7fc6] moved to [10, 5] -- <45>
+[B.f848] moved to [5, 2] -- <46>
+[G. 88b] moved to [12, 3] - (not able to push) -- <47>
+[G.7fc6] moved to [10, 4] - (not able to push) -- <47>
+[X.ea92] moved to [10, 1] -- <49>
+[G. 88b] moved to [13, 3] - (not able to push) -- <49>
+[G.7fc6] moved to [9, 4] - (not able to push) -- <49>
+[B.f848] moved to [5, 3] -- <51>
+[$.76df] cloned to [$.51ba] at [9, 1] -- <51>
+[X.ea92] added [$.51ba] at [9, 1] -- <51>
+[G.7fc6] moved to [9, 3] -- <51>
+[X.ea92] moved to [11, 1] -- <53>
+[G.7fc6] moved to [9, 2] -- <53>
+[G. 88b] pushed [*.5c8f] -- <55>
+[G.7fc6] moved to [10, 2] -- <55>
+[B.f848] moved to [6, 3] -- <56>
+[X.ea92] moved to [12, 1] -- <57>
+[G.7fc6] moved to [9, 2] -- <57>
+[G.7fc6] moved to [9, 1] -- <59>
+[B.f848] moved to [5, 3] -- <61>
+[G. 88b] moved to [13, 3] - (not able to push) -- <61>
+[G.7fc6] moved to [10, 1] -- <61>
+[G.7fc6] moved to [10, 2] -- <63>
+[X.ea92] moved to [12, 2] -- <65>
+[G. 88b] moved to [13, 2] -- <65>
+[G.7fc6] moved to [9, 2] -- <65>
+[B.f848] moved to [5, 2] -- <66>
+[G. 88b] moved to [12, 2] - (not able to push) -- <67>
+[G.7fc6] moved to [9, 1] -- <67>
+[X.ea92] moved to [12, 3] -- <69>
+[G. 88b] moved to [11, 2] - (not able to push) -- <69>
+[G.7fc6] moved to [8, 1] -- <69>
+[B.f848] moved to [5, 3] -- <71>
+[$.76df] cloned to [$.5617] at [12, 4] -- <71>
+[X.ea92] added [$.5617] at [12, 4] -- <71>
+[G. 88b] moved to [12, 2] -- <71>
+[X.ea92] moved to [13, 3] -- <73>
+[G. 88b] moved to [12, 3] - (not able to push) -- <73>
+[G.7fc6] moved to [7, 1] -- <73>
+[G. 88b] moved to [12, 2] - (not able to push) -- <75>
+[G.7fc6] moved to [6, 1] -- <75>
+[B.f848] moved to [4, 3] -- <76>
+[G. 88b] moved to [12, 3] - (not able to push) -- <77>
+[G.7fc6] moved to [5, 1] -- <77>
+[G. 88b] moved to [12, 4] - (not able to push) -- <79>
+[G.7fc6] moved to [6, 1] -- <79>
+[B.f848] moved to [4, 2] -- <81>
+[$.76df] cloned to [$.96c7] at [12, 3] -- <81>
+[X.ea92] added [$.96c7] at [12, 3] -- <81>
+[G. 88b] moved to [12, 5] - (not able to push) -- <81>
+[G.7fc6] moved to [5, 1] -- <81>
+[G. 88b] moved to [12, 6] - (not able to push) -- <83>
+[G.7fc6] moved to [6, 1] -- <83>
+[G. 88b] moved to [11, 6] -- <85>
+[B.f848] moved to [3, 2] -- <86>
+[G. 88b] moved to [12, 6] -- <87>
+[G.7fc6] moved to [5, 1] -- <87>
+[X.ea92] moved to [13, 4] -- <89>
+[G. 88b] moved to [11, 6] -- <89>
+[G.7fc6] moved to [4, 1] -- <89>
+[B.f848] moved to [3, 3] -- <91>
+[$.76df] cloned to [$.a4dd] at [13, 3] -- <91>
+[X.ea92] added [$.a4dd] at [13, 3] -- <91>
+[G. 88b] moved to [12, 6] -- <91>
+[G.7fc6] moved to [4, 2] - (not able to push) -- <91>
+[G. 88b] moved to [13, 6] -- <93>
+[G.7fc6] moved to [3, 2] - (not able to push) -- <93>
+[G. 88b] moved to [12, 6] -- <95>
+[B.f848] moved to [3, 2] -- <96>
+[X.ea92] moved to [13, 3] -- <97>
+[G. 88b] moved to [11, 6] -- <97>
+[G.7fc6] moved to [3, 3] - (not able to push) -- <97>
+[G. 88b] moved to [11, 5] -- <99>
+[G.7fc6] moved to [3, 4] - (not able to push) -- <99>
+
+++++  TREE COVERAGE  ++++
+
+
+L
+Nodes: 2 / 4 = 0.50
+Edges: 2 / 5 = 0.40
+NODE SET: ['idle', 'move_wall *']
+EDGE SET: ['step 2', 'none']
+
+k
+Nodes: 1 / 2 = 0.50
+Edges: 0 / 2 = 0.00
+NODE SET: ['idle']
+EDGE SET: []
+
+X
+Nodes: 3 / 3 = 1.00
+Edges: 4 / 4 = 1.00
+NODE SET: ['idle', 'add $', 'move']
+EDGE SET: ['step 4', 'none', 'none', 'step 10']
+
+B
+Nodes: 4 / 4 = 1.00
+Edges: 6 / 8 = 0.75
+NODE SET: ['idle', 'take L', 'move', 'chase L']
+EDGE SET: ['none', 'none', 'touch L', 'within L 5', 'step 5', 'within L 5']
+
+G
+Nodes: 3 / 3 = 1.00
+Edges: 4 / 4 = 1.00
+NODE SET: ['idle', 'push *', 'move']
+EDGE SET: ['step 2', 'none', 'none', 'nextTo *']
+
+*
+Nodes: 1 / 1 = 1.00
+Edges: 1 / 1 = 1.00
+NODE SET: ['idle']
+EDGE SET: ['none']
+
+$
+Nodes: 1 / 1 = 1.00
+Edges: 1 / 1 = 1.00
+NODE SET: ['idle']
+EDGE SET: ['none']

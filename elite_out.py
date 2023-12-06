@@ -4,8 +4,8 @@ import numpy as np
 from tqdm import tqdm
 from evo_utils import EvoIndividual
 
-OUTPUT_FOLDER = "ELITE_CHAR_DEF"
-SAVE_FOLDER = "archive_pickles"
+OUTPUT_FOLDER = "QD_EXP/ELITE_CHAR_DEF"
+SAVE_FOLDER = "QD_EXP/archive_pickles"
 SIMULATE_STEPS = 100
 
 
@@ -84,7 +84,7 @@ def convert_pkl_to_txt_def():
 
         
         # print a report for the filename for the highest and lowest of each 
-        with open(f"_REPORT-{archive_name}.txt", "w+") as rpt:
+        with open(f"QD_EXP/_REPORT-{archive_name}.txt", "w+") as rpt:
             report = "== REPORT ==\n"
             report += f"Best fitness = [{highest_fitness[0]:.4f}] => {highest_fitness[1]}\n"
             report += f"Highest X = [{highest_x[0]:.4f}] => {highest_x[1]}\n"

@@ -1,16 +1,28 @@
+# simulates a fortress from a definition file
+# Usage: python offline_sim.py [fortress_def_filename] (exportFile?) (alternate_export_label)
+
 import sys
 import random
 import numpy as np
+import argparse
 
 from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
-SEED = 9
-reportFile = "_REPORT-exp1_arx.txt"
+
+
+# set up the argument parser
+parser = argparse.ArgumentParser()
+parser.add_argument("-f", "--fortress", type=str, default="FORTS/fortress.txt", help='Path to fortress definition file')
+parser.add_argument("-s", "--seed", type=int, default=1, help='Random seed')
+parser.add_argument("-n", "--n_sim_steps", type=int, default=100, help='Number of simulation steps')
+parser.add_argument("-p", "--show_step", type=int, default=20, help='Number of steps between prints')
+parser.add_argument("-e", "--export", action="store_true", help="Export to file")
+parser.add_argument("-l", "--label", type=str, default=None, help="Alternate label for export file")
 
 # shows the fortress initialization and steps in between
-def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,label=None):
+def showFortress(filename, seed, n_sim_steps=100, show_step=20, toFile=False,label=None):
     # ----- SETUP ----- #
 
     # make the engine
@@ -44,7 +56,7 @@ def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,
             fort_str += ENGINE.fortress.renderEntities()
             fort_str += "\n\n"
 
-
+    # show the number of entities total and initial fortress definition
     fort_str += f"Number of entities: {len(ENGINE.fortress.entities.keys())}\n"
     fort_str += "\n\n===============\n\n"
     fort_str += ENGINE.init_ent_str
@@ -62,10 +74,12 @@ def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,
         ENGINE.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {prob_e:.2f}")
         v_nodes = [ent.nodes[i] for i in k['nodes']]
         v_edges = [ent.edges[i] for i in k['edges']]
+
+        # show the node and edges visited
         ENGINE.fortress.log.append(f"NODE SET: {v_nodes}")
         ENGINE.fortress.log.append(f"EDGE SET: {v_edges}")
 
-    # show the log
+    # join the log
     fort_str += "\n".join(ENGINE.fortress.log)
 
     # ----- EXPORT ----- #
@@ -74,36 +88,20 @@ def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,
     if(toFile):
         alt_file = filename.split("/")[-1].replace(".txt","_SIM.txt")
         print(alt_file)
-        fort_file = f"QD_EXP/ELITE_FORT_SIM/" + (f"{alt_file}" if label == None else f"{label}")
+        fort_file = (f"{alt_file}" if label == None else f"{label}")
         with open(fort_file, "w+") as f:
             f.write(fort_str)
+    # otherwise print to terminal
+    else:   
+        print(fort_str)
         
     return fort_str
 
 
 
+# simulate the fortress
 def run():
-    # import from command line or use the report file
-    files = sys.argv[1:]
-    labels = []
-    if len(files) == 0:
-        print(">> USING REPORT DATA")
-        files = []
-        with open(reportFile, "r") as rf:
-            lines = rf.readlines()
-            for l in lines[1:]:
-                files.append(l.split("=> ")[-1].strip())
-        labels = ["high_fit.txt","high_num_ent.txt","low_num_ent.txt","high_num_nodes.txt","low_num_nodes.txt", "high_num_ent-low_num_nodes.txt", "low_num_ent-high_num_nodes.txt"]
-    print(files)
-
+    a = parser.parse_args()
+    showFortress(a.fortress,a.seed,a.n_sim_steps,toFile=a.export,label=a.label)
     
-    i = 0
-    
-    for f in files:
-        s = random.randint(0,1000000) if SEED == "any" else SEED
-        out_fort = showFortress(i,f,s,show_step=20,toFile=True,label=None if len(labels) == 0 else labels[i])
-        i+=1
-        # print(out_fort)
-
-
 run()

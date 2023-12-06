@@ -371,7 +371,7 @@ class Fortress():
             init_ents = self.fortStr2EntPos(fort_str.split("\n")[1:])   # parse the fortress string
         if(type_init == "pos"):
             init_ents = self.posStr2EntPos(fort_str)    # parse the entity position string
-
+            
         # Add the entities back in
         for e in init_ents:
             new_ent = self.CHARACTER_DICT[e['char']].clone(e['pos'])
@@ -394,13 +394,13 @@ class Fortress():
         pos_set = []
         # iterate through each character of the fortress string
         for r in range(len(lines)):
-            cols = lines[r].split("")
+            cols = list(lines[r].strip())
             for c in range(len(cols)):
                 p = cols[c]
                 if p == self.border or p == self.floor:      # if wall or floor, skip
                     continue
                 elif p in self.CHARACTER_DICT:               # if the character exists in the set, save it
-                    pos_set.append({'char':p, 'pos':[r,c]})
+                    pos_set.append({'char':p, 'pos':[c,r]})
         return pos_set
 
 

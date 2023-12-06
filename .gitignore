@@ -13,5 +13,5 @@ ind-character-def/
 .DS_Store
 *.egg-info
 archive_pickles/*
-ELITE_FORT_SIM/*_arx_*
-ELITE_CHAR_DEF*
+QD_EXP/ELITE_FORT_SIM/*_arx_*
+QD_EXP/ELITE_CHAR_DEF*
