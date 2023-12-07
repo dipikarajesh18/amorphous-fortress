@@ -11,16 +11,6 @@ from fortress import Fortress
 from entities import Entity
 
 
-
-# set up the argument parser
-parser = argparse.ArgumentParser()
-parser.add_argument("-f", "--fortress", type=str, default="FORTS/fortress.txt", help='Path to fortress definition file')
-parser.add_argument("-s", "--seed", type=int, default=1, help='Random seed')
-parser.add_argument("-n", "--n_sim_steps", type=int, default=100, help='Number of simulation steps')
-parser.add_argument("-p", "--show_step", type=int, default=20, help='Number of steps between prints')
-parser.add_argument("-e", "--export", action="store_true", help="Export to file")
-parser.add_argument("-l", "--label", type=str, default=None, help="Alternate label for export file")
-
 # shows the fortress initialization and steps in between
 def showFortress(filename, seed, n_sim_steps=100, show_step=20, toFile=False,label=None):
     # ----- SETUP ----- #
@@ -97,11 +87,16 @@ def showFortress(filename, seed, n_sim_steps=100, show_step=20, toFile=False,lab
         
     return fort_str
 
+if __name__ == "__main__":
+    # set up the argument parser
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--fortress", type=str, default="FORTS/fortress.txt", help='Path to fortress definition file')
+    parser.add_argument("-s", "--seed", type=int, default=1, help='Random seed')
+    parser.add_argument("-n", "--n_sim_steps", type=int, default=100, help='Number of simulation steps')
+    parser.add_argument("-p", "--show_step", type=int, default=20, help='Number of steps between prints')
+    parser.add_argument("-e", "--export", action="store_true", help="Export to file")
+    parser.add_argument("-l", "--label", type=str, default=None, help="Alternate label for export file")
 
-
-# simulate the fortress
-def run():
     a = parser.parse_args()
-    showFortress(a.fortress,a.seed,a.n_sim_steps,toFile=a.export,label=a.label)
+    showFortress(a.fortress,a.seed,a.n_sim_steps,a.show_step,toFile=a.export,label=a.label)
     
-run()

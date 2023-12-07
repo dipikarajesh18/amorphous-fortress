@@ -1,109 +1,59 @@
 import sys
 import random
 import numpy as np
+import argparse
+import glob
 
 from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
-SEED = 9
-reportFile = "_REPORT-exp1_arx.txt"
-
-# shows the fortress initialization and steps in between
-def showFortress(i,filename, seed, n_sim_steps=100, show_step=100, toFile=False,label=None):
-    # ----- SETUP ----- #
-
-    # make the engine
-    ENGINE = Engine("configs/gamma_config.yaml")
-    ENGINE.seed = seed;
-    np.random.seed(seed)
-    random.seed(seed)
-
-    # import the fortress and populate randomly
-    ENGINE.fortress.importEntityFortDef(filename)
-    # print(ENGINE.fortress.CHARACTER_DICT)
-    # ENGINE.populateFortress(make_char=False)
-
-    # ----- SIMULATION ----- #
-
-    fort_str = f"{filename} - SEED: {seed} - SIM_NUM : {n_sim_steps}\n\n"
-
-    # print the initial state
-    fort_str += "> GENERATION: 0\n"
-    fort_str += ENGINE.fortress.renderEntities()
-    fort_str += "\n\n"
-
-    # simulate 
-    loops = 0
-    while not (ENGINE.fortress.terminate() or ENGINE.fortress.inactive() or \
-                ENGINE.fortress.overpop() or loops >= n_sim_steps):
-        loops+=1
-        ENGINE.update(True)
-        if(loops % show_step == 0):
-            fort_str += f"> GENERATION {loops}\n"
-            fort_str += ENGINE.fortress.renderEntities()
-            fort_str += "\n\n"
-
-
-    fort_str += f"Number of entities: {len(ENGINE.fortress.entities.keys())}\n"
-    fort_str += "\n\n===============\n\n"
-    fort_str += ENGINE.init_ent_str
-
-    # show the character visit tree
-    ENGINE.fortress.log.append(f"\n++++  TREE COVERAGE  ++++\n")
-    for c, k in ENGINE.fortress.CHAR_VISIT_TREE.items():
-        ENGINE.fortress.log.append(f"\n{c}")
-        ent = ENGINE.fortress.CHARACTER_DICT[c]
-
-        prob_n = len(k['nodes'])/len(ent.nodes) if len(ent.nodes) > 0 else 0
-        prob_e = len(k['edges'])/len(ent.edges) if len(ent.edges) > 0 else 0
-
-        ENGINE.fortress.log.append(f"Nodes: {len(k['nodes'])} / {len(ent.nodes)} = {prob_n:.2f}")
-        ENGINE.fortress.log.append(f"Edges: {len(k['edges'])} / {len(ent.edges)} = {prob_e:.2f}")
-        v_nodes = [ent.nodes[i] for i in k['nodes']]
-        v_edges = [ent.edges[i] for i in k['edges']]
-        ENGINE.fortress.log.append(f"NODE SET: {v_nodes}")
-        ENGINE.fortress.log.append(f"EDGE SET: {v_edges}")
-
-    # show the log
-    fort_str += "\n".join(ENGINE.fortress.log)
-
-    # ----- EXPORT ----- #
-
-    # print to file if asked
-    if(toFile):
-        alt_file = filename.split("/")[-1].replace(".txt","_SIM.txt")
-        print(alt_file)
-        fort_file = f"QD_EXP/ELITE_FORT_SIM/" + (f"{alt_file}" if label == None else f"{label}")
-        with open(fort_file, "w+") as f:
-            f.write(fort_str)
-        
-    return fort_str
+from offline_sim import showFortress
 
 
 
-def run():
-    # import from command line or use the report file
-    files = sys.argv[1:]
+if __name__ == "__main__":
+
+    # set up the argument parser
+    el_parser = argparse.ArgumentParser()
+    el_parser.add_argument("-x", "--x_pos", type=str, default="30", help='X position in the archive ("*_xy[[X_POS,Y_POS]])_*"); allows wildcard characters')
+    el_parser.add_argument("-y", "--y_pos", type=str, default="70", help='Y position in the archive ("*_xy[[X_POS,Y_POS]])_*"); allows wildcard characters')
+    el_parser.add_argument("-a", "--archive", type=str, default="QD_EXP/ELITE_CHAR_DEF", help='Path to the archive')
+    el_parser.add_argument("-r", "--report", type=str, default=None, help='Path to the report file')
+    el_parser.add_argument("-s", "--seed", type=int, default=-1, help='Random seed')
+    el_parser.add_argument("-n", "--n_sim_steps", type=int, default=100, help='Number of simulation steps')
+    el_parser.add_argument("-p", "--show_step", type=int, default=20, help='Number of steps between prints')
+    el_parser.add_argument("-e", "--export", action="store_true", help="Export to file")
+
+
+    args = el_parser.parse_args()
     labels = []
-    if len(files) == 0:
+    files = []
+    # use report files
+    if args.report is not None:
         print(">> USING REPORT DATA")
-        files = []
-        with open(reportFile, "r") as rf:
+        with open(args.report, "r") as rf:
             lines = rf.readlines()
             for l in lines[1:]:
                 files.append(l.split("=> ")[-1].strip())
         labels = ["high_fit.txt","high_num_ent.txt","low_num_ent.txt","high_num_nodes.txt","low_num_nodes.txt", "high_num_ent-low_num_nodes.txt", "low_num_ent-high_num_nodes.txt"]
-    print(files)
+    # use specified archive files
+    else:
+        print(f">> USING ARCHIVE DATA from {args.archive}")
+        x_pos = args.x_pos
+        y_pos = args.y_pos
+        print(x_pos,y_pos)
 
+        # get the files using glob
+        files = glob.glob(f"{args.archive}/*_xy[[][[]{x_pos}_{y_pos}[]][]]*")
+        # files = glob.glob(args.archive+'/*_xy[[][[]*[]][]]*') 
+
+    print(files)
     
     i = 0
-    
     for f in files:
-        s = random.randint(0,1000000) if SEED == "any" else SEED
-        out_fort = showFortress(i,f,s,show_step=20,toFile=True,label=None if len(labels) == 0 else labels[i])
+        s = random.randint(0,1000000) if args.seed == -1 else args.seed
+        showFortress(f,s,n_sim_steps=args.n_sim_steps,show_step=args.show_step,toFile=args.export,label=None if len(labels) == 0 else labels[i])
         i+=1
         # print(out_fort)
 
-
-run()
