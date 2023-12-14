@@ -1,0 +1,74 @@
+V
+-- NODES --
+0: idle
+1: move_wall B
+2: chase W
+3: take W
+-- EDGES --
+0-1: step 3
+1-0: none
+0-2: within W 4
+2-2: within W 4
+2-0: none
+2-3: touch V
+3-0: none
+
+W
+-- NODES --
+0: idle
+1: move_wall B
+2: chase V
+3: take V
+-- EDGES --
+0-1: step 4
+1-0: none
+0-2: within V 4
+2-2: within V 4
+2-0: none
+2-3: touch V
+3-0: none
+
+B
+-- NODES --
+0: idle
+1: move
+-- EDGES --
+0-1: step 5
+1-0: none
+
+E
+-- NODES --
+0: idle
+1: move_wall B
+2: chase B
+-- EDGES --
+0-1: step 2
+1-0: none
+0-2: within B 3
+2-2: within B 3
+2-1: nextTo B
+2-0: none
+
+J
+-- NODES --
+0: idle
+1: move_wall B
+2: chase B
+-- EDGES --
+0-1: step 4
+1-0: none
+0-2: within B 3
+2-2: within B 3
+2-1: nextTo B
+2-0: none
+
+
+-- INIT FORT --
+###############
+#...V.........#
+#..E..V.......#
+#.V..B......W.#
+#........W....#
+#..........J..#
+#.......W.....#
+###############

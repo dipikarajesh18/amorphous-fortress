@@ -1,0 +1,42 @@
+S
+-- NODES --
+0: idle
+1: move_wall R
+2: chase R
+3: take X
+-- EDGES --
+0-1: step 3
+1-0: none
+0-2: within R 15
+2-2: within R 15
+2-1: nextTo R
+2-3: nextTo X
+3-0: none
+
+X
+-- NODES --
+0: idle
+1: chase S
+-- EDGES --
+0-1: within S 3
+1-0: nextTo S
+
+R
+-- NODES --
+0: idle
+1: move_wall S
+-- EDGES --
+0-1: step 4
+1-0: none
+
+
+
+-- INIT FORT --
+###############
+#.S....X......#
+#....X........#
+#......X......#
+#...X....X....#
+#.....X.......#
+#........X...R#
+###############

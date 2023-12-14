@@ -4,34 +4,18 @@ import random
 import numpy as np
 import sys
 import render_curses as render
+import argparse
 
 from engine import Engine
 from fortress import Fortress
 from entities import Entity
 
 DEBUG = False   # shows in curses if FALSE
+SEED = None     # set the seed (external from config)
 ENGINE = None   # the engine
 TEST = ""       # test a specific setup
-
-# Initialize the screen
-if not DEBUG:
-    SCREEN = curses.initscr()
-    curses.curs_set(0)
-    SCREEN.clear()
-    curses.start_color()
-
-    curs_colors = [curses.COLOR_RED,curses.COLOR_YELLOW,curses.COLOR_BLUE,curses.COLOR_CYAN,curses.COLOR_GREEN,curses.COLOR_MAGENTA, curses.COLOR_WHITE]
-    for i in range(len(curs_colors)):
-        curses.init_pair(i+1,curs_colors[i],curses.COLOR_BLACK)
-    COLORS = {
-        'RED': 1,
-        'YELLOW': 2,
-        'BLUE': 3,
-        'CYAN': 4,
-        'GREEN': 5,
-        'MAGENTA': 6,
-        'WHITE': 7
-    }
+FORTRESS_FILE = ""   # fortress file to import (if it is passed)
+RENDER_SPEED = None
 
 
 # main functionå
@@ -39,7 +23,7 @@ def main(config_file):
     global ENGINE
 
     # setup the engine
-    ENGINE = Engine(config_file)
+    ENGINE = Engine(config_file, SEED)
     np.random.seed(ENGINE.seed)
     random.seed(ENGINE.seed)
 
@@ -47,9 +31,16 @@ def main(config_file):
     if not DEBUG:
         screen_set, screen_dims = render.init_screens()
 
+    ######  IMPORT A FORT  ######
+
+    if FORTRESS_FILE != "":
+        ENGINE.fortress.importEntityFortDef(FORTRESS_FILE)
+
+
+    #######     TESTS     #######
 
     # test move
-    if TEST == "DUCK":
+    elif TEST == "DUCK":
         ent = Entity(ENGINE.fortress, filename="ENT/duck.txt")
         ent.pos = [3,3]
         ENGINE.fortress.addEntity(ent)
@@ -190,7 +181,7 @@ def main(config_file):
         while not (ENGINE.fortress.terminate() or ENGINE.fortress.inactive() or ENGINE.fortress.overpop()) :
             ENGINE.update()
             render.curses_render_loop(screen_set, screen_dims, ENGINE, ENGINE.config['min_view'])
-            time.sleep(ENGINE.config['sim_speed'])
+            time.sleep(RENDER_SPEED if not RENDER_SPEED is None else ENGINE.config['sim_speed'])
 
             # that swan's coming thomas.... kill it. RAAAARRRR!
             # if loops == 0:
@@ -211,10 +202,46 @@ def main(config_file):
 
 if __name__ == "__main__":
 
+     # set up the argument parser
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--test", dest='test', type=str, help='The test environment to use [DUCK, AMOEBA, GRASS, BOKO, GORON, KOROK, BLUPEE, POKEMON]')
+    parser.add_argument("-f", "--fortress_file", dest='fortress', type=str, default="", help="Path to a defined fortress file to import")
+    parser.add_argument("-s", "--seed", dest='seed', type=str, default=None, help="Seed to use for the fortress")
+    parser.add_argument("-e", "--render_speed", dest='render_speed', type=float, default=None, help="Render speed of the simulation (seconds per frame)")
+    parser.add_argument("-d", "--debug", dest='debug', action="store_true", help="Debug mode on?")
+    parser.add_argument("-c", "--config", dest='config', type=str, default="CONFIGS/gamma_config.yaml", help="Configuration file to use for the simulation")
+    arg_men = parser.parse_args()
+
+    conf_file = arg_men.config
+    TEST = arg_men.test
+    FORTRESS_FILE = arg_men.fortress
+    DEBUG = arg_men.debug
+    SEED = arg_men.seed
+    RENDER_SPEED = arg_men.render_speed
+
+
+    # Initialize the screen
+    if not DEBUG:
+        SCREEN = curses.initscr()
+        curses.curs_set(0)
+        SCREEN.clear()
+        curses.start_color()
+
+        curs_colors = [curses.COLOR_RED,curses.COLOR_YELLOW,curses.COLOR_BLUE,curses.COLOR_CYAN,curses.COLOR_GREEN,curses.COLOR_MAGENTA, curses.COLOR_WHITE]
+        for i in range(len(curs_colors)):
+            curses.init_pair(i+1,curs_colors[i],curses.COLOR_BLACK)
+        COLORS = {
+            'RED': 1,
+            'YELLOW': 2,
+            'BLUE': 3,
+            'CYAN': 4,
+            'GREEN': 5,
+            'MAGENTA': 6,
+            'WHITE': 7
+        }
+
+
     try:
-        conf_file = sys.argv[1] if len(sys.argv) > 1 else "CONFIGS/gamma_config.yaml"
-        TEST = sys.argv[2] if len(sys.argv) > 2 else ""
-        DEBUG = True if len(sys.argv) > 3 else False
         main(conf_file)
 
     # handle crashes

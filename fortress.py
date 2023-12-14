@@ -22,7 +22,7 @@ class Fortress():
         self.max_aggregate_fsm_nodes = None   # the maximum number of nodes and edges over all entity types
 
         self.CONFIG = config  # a dictionary of values for configuration
-        # self.seed = random.randint(0,1000000) if seed == None else seed
+        self.seed = random.randint(0,1000000) if seed == None else seed
 
         self.rng_init = np.random.default_rng(seed)
         # Seed for determining random movement dynamics during an episode
@@ -31,7 +31,7 @@ class Fortress():
         # random.seed(self.seed)
         # np.random.seed(self.seed)
 
-        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
+        self.log = [f"============    FORTRESS SEED [{seed}]    =========", "Fortress initialized! - <0>"]
         self.steps = 0
         self.end_cause = "Code Interruption"
 
@@ -379,8 +379,8 @@ class Fortress():
                 self.addEntity(new_ent)
 
         # reset the log
-        self.log = [f"============    FORTRESS SEED [{self.rng_sim}]    =========", "Fortress initialized! - <0>"]
-        self.addLog(f">>> CONFIG FILE: {self.CONFIG} <<<")
+        self.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
+        # self.addLog(f">>> CONFIG FILE: {self.CONFIG} <<<")
         self.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
         self.addLog(f"Fortress randomly populated with {len(init_ents)} entities")    # add a log message
 

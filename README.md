@@ -11,22 +11,22 @@
 
 
 ## 1. Real-Time Simulation
-This code allows you to see the fortress run in real time through the terminal using `curses`
+This code allows you to see the fortress run in real time through the terminal using `curses`. Recommended to use a fullscreen terminal.
 
 ### 1.1. Quick run
-`python main.py [CONFIG_FILE] [TEST_TYPE]`
+`python main.py`
 
-`python main.py CONFIGS/gamma_config.yaml KOROK  # runs the korok example`
+`python main.py -t KOROK  # runs the korok example`
 
-#### 1.2. Main Parameters
+`python main.py -f FORTS/HYRULE.txt   # imports the hyrule fortress`
 
-**CONFIG (found in CONFIGS/)**
-- alpha_config => basic interactions 
-- beta_config => most interaction spaces
-- *gamma_config => all interaction spaces and faster simulation speed
+#### 1.2. Arguments
 
-\* preferred use
-
+`-t --test` - The test environment to use [DUCK, AMOEBA, GRASS, BOKO, GORON, KOROK, BLUPEE, POKEMON] (see below)
+`-f --fortress_file` - Path to a defined fortress file to import
+`-s --seed` - Seed to use for the fortress
+`-d --debug` - In debug mode, doesn't show curses interface
+`-c --config` - Configuration file to use for the simulation
 
 **TESTS (populated by premade entities in ENT/)**
 - DUCK => test movement nodes

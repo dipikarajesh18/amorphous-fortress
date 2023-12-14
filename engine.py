@@ -20,16 +20,25 @@ class Engine():
         if init_seed is None:
             self.seed = int(self.config['seed']) if self.config['seed'] and self.config['seed'] != 'any' else random.randint(0,1000000)
         else:
-            self.seed = init_seed
+            self.seed = int(init_seed)
         # random.seed(self.seed)
         # np.random.seed(self.seed)
         # print(f"Seed: {self.seed}")
 
+
+
+        width = 15 if not 'width' in self.config else self.config['width']
+        height = 8 if not 'height' in self.config else self.config['height']
+
         # define the fortress
-        self.fortress = Fortress(self.config, 15, 8, seed=self.seed)
+        self.fortress = Fortress(self.config, width, height, seed=self.seed)
         self.fortress.blankFortress()
         self.fortress.addLog(f">>> CONFIG FILE: {config_file} <<<")
         self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
+        if init_seed is None:
+            self.fortress.addLog(f">>> USING CONFIG SEED {self.config['seed']} <<<")
+        else:
+            self.fortress.addLog(f">>> USING PARAMETER SEED {init_seed} <<<")
         # self.fortress.printFortress()
 
         self.sim_tick = 0    # simulation tick
@@ -110,7 +119,7 @@ class Engine():
 
         # reset the log
         self.fortress.log = [f"============    FORTRESS SEED [{self.seed}]    =========", "Fortress initialized! - <0>"]
-        self.fortress.addLog(f">>> CONFIG FILE: {self.config} <<<")
+        # self.fortress.addLog(f">>> CONFIG FILE: {self.config} <<<")
         self.fortress.addLog(f">>> TIME: {datetime.datetime.now()} <<<")
         self.fortress.addLog(f"Fortress randomly populated with {len(self.init_ents)} entities")    # add a log message
 

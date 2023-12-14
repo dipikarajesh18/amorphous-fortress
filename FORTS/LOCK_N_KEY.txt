@@ -1,0 +1,47 @@
+o
+-- NODES --
+0: move_wall X
+1: chase ?
+2: transform O
+-- EDGES --
+0-1: within ? 3
+1-2: touch ?
+
+O
+-- NODES --
+0: chase >
+1: die
+-- EDGES --
+0-0: none
+0-1: touch >
+
+X
+-- NODES --
+0: idle
+-- EDGES --
+0-0: none
+
+?
+-- NODES --
+0: idle
+1: die
+-- EDGES --
+0-0: none
+0-1: touch o
+
+>
+-- NODES --
+0: idle
+-- EDGES --
+0-0: none
+
+
+-- INIT FORT --
+###############
+#.>.X.........#
+#...X.........#
+#XXXX..o......#
+#.............#
+#.............#
+#..........?..#
+###############
