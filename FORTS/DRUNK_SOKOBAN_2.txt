@@ -1,0 +1,36 @@
+@
+-- NODES --
+1: push *
+-- EDGES --
+1-1: none
+
+X
+-- NODES --
+0: idle
+1: transform O
+-- EDGES --
+0-1: touch *
+
+*
+-- NODES --
+0: idle
+1: die
+-- EDGES --
+0-1: touch X
+
+O
+-- NODES --
+0: idle
+-- EDGES --
+0-0: none
+
+
+-- INIT FORT --
+###############
+#...X.....X...#
+#..X*X...X*X..#
+#...X.....X...#
+#...X..@..X...#
+#..X*X...X*X..#
+#...X.....X...#
+###############

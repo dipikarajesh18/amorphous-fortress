@@ -306,7 +306,7 @@ class Entity:
     def nextTo(self,entityChar):
         return self.within(entityChar,1)
 
-
+    # no condition required
     def noneCond(self):
         return True
         
@@ -607,11 +607,6 @@ class Entity:
                     break   # end update
                 else:
                     self.moved_edge = None
-
-            
-
-
-
 
         # self.fortress.addLog(f"{self.char} is at node {self.cur_node}")
 
